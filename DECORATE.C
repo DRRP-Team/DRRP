@@ -1,10 +1,10 @@
-#include actors/MONSTERS.TXT
-#include actors/BRAINFUCKERS.TXT
-#include actors/DECORATIONS.TXT
-#include actors/ITEMS.TXT
-#include actors/WEAPONS.TXT
-#include actors/SPARKS.TXT
-#include actors/CHARACTERS.TXT
+#include actors/MONSTERS.JAVA
+#include actors/BRAINFUCKERS.JAVA
+#include actors/DECORATIONS.JAVA
+#include actors/ITEMS.JAVA
+#include actors/WEAPONS.JAVA
+#include actors/SPARKS.JAVA
+#include actors/CHARACTERS.JAVA
 
 //Characters 10500-10555
 //Weapons 10556-10599
