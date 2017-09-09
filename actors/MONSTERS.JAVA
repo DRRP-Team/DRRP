@@ -79,11 +79,30 @@ actor Troop : ChaingunGuy 10264 {
 	Translation "32:47=163:167"
 }
 
-actor Apollyon : ArchVile 10273 {
+
+//Viles
+
+
+actor DRRPVile : ArchVile replaces ArchVile {
+	Scale 0.95
+}
+
+actor Apollyon : DRRPVile 10273 {
 //$Category DMonsters
 	Health 350
 	Translation "16:223=%[0.00,0.00,0.00]:[2.00,0.78,0.78]"
 }
 
-//Viles
+//Revenant
 
+actor DRRPRevenant : Revenant replaces Revenant {
+	Scale 0.95
+}
+
+//Minecraft
+
+actor DRRPCubus : Fatso replaces Fatso {
+	Scale 0.92
+	Radius 30
+	Height 62
+}
