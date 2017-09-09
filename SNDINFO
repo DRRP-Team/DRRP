@@ -1,0 +1,77 @@
+$ambient 1 drone1 World continuous 0.65
+$ambient 5 ambient/mach04 World continuous 0.45
+$ambient 4 ambient/mach04 Point continuous 0.45
+$random fire/loop { fire/loop1 fire/loop2 fire/loop3 }
+
+
+
+drone1		drone1
+ambient/mach04		mach04
+
+alarm/alarm1		ALARM1
+alarm/alarm2		ALARM2
+alarm/alarm3		ALARM3
+
+fire/start	FIRESTRT
+fire/loop1	FIRELOP1
+fire/loop2	FIRELOP2
+fire/loop3	FIRELOP3
+fire/die	FIREDIE
+
+$Limit SFX/FireStart	0
+$Limit SFX/FireLoop	0
+$Limit SFX/FireDie	0
+
+acess/grant1		ACGRA
+acess/deny1			acden
+acess/grant2		ACGRA2
+acess/deny2			ACDEN2
+acess/orange		ACORAN
+
+techno/lightsof		lightsof
+techno/lightson		lightson
+
+voice/reac01		reac01
+voice/reacon		REACON
+voice/hireactemp	HITEMP
+voice/wtf			WTF
+voice/god			GOD
+voice/only			ONLY
+voice/powerback		PWBACK
+voice/powershake	PWSH
+voice/teleport321	TP
+voice/systemsoff	SYSOFF
+voice/nofire		NOFIRE
+voice/c2			C2
+voice/uac			FUCK
+
+bet/destroy			BDEST
+bet/made			BMADE
+bet/earth			BEAR
+
+core/c1				C1
+core/c2				C2
+core/c3				C3
+core/c4				C4
+
+ms/doctor			MSDOC
+ms/psy				MSPSY
+ms/safe				MSSAFE
+
+weapon/gas			GAS
+
+misc/k_pkup			dskeyup
+
+DSPLDETH			DSPLDETH
+DSPLPAIN			DSPLPAIN
+DSPOPAIN			DSPOPAIN
+DSRADIO				DSRADIO
+CYBRSIGH			CYBRSIGH
+CYBRSIGH2			CYBRSIGH2
+DSBDCLS				DSBDCLS
+TAUNT				TAUNT
+ZBMB1				ZBMB1
+ZBMB2				ZBMB2
+DSBLUD03			DSBLUD03
+ROCK				ROCK
+DOGSONG				DOGSONG
