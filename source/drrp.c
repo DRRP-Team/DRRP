@@ -1,8 +1,5 @@
 #include <ACS_ZDoom.h>
 
-#include <limits.h>
-#include <stddef.h>
-#include <stdfix.h>
 #include <stdio.h>
 #include <stdbool.h>
 
