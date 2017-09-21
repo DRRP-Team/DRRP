@@ -11,7 +11,7 @@ Episode INTRO
 
 map TITLEMAP "Introduction"
 {
- music = "D_DEAD"
+ music = "D_TITLE"
  SkyBox = DARK0305
 }
 
@@ -40,7 +40,7 @@ map SEC1 "Sector 1" {
     cluster = 1
     skybox = sky2
     music = D_DOOM
-	EventHandlers = "DoorCodeInputHandler" // PROPHESSOR, there aren't any errors even on zandronum
+	EventHandlers = "DoorCodeInputHandler"
 }
 
 map SEC2 "Sector 2" {
@@ -96,5 +96,5 @@ map REAC "Reactor" {
     levelnum = 11
     cluster = 1
     skybox = sky2
-    music = D_DOOM
+    music = D_BLIZZ
 }
