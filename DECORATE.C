@@ -15,7 +15,7 @@
 //3 level = 10359-10400
 //Decorations 10701-10800
 
-//HELLO FROM RU AND UK!
+//HELLO FROM RU AND UA!
 
 //#############################
 //TODO: Spheres and Berserk - autouse = 0
@@ -25,7 +25,7 @@ actor DoomRPGPlayer : DoomPlayer {
 	Player.WeaponSlot 1, Chainsaw, FireExt, DRRPAxe
 	Health 30
 	Player.MaxHealth 30
-	Player.DisplayName "Doom RPG Guy"
+	Player.DisplayName "Marine"
 	//DamageType "Fire"
 	/*states {
 		Burn:
