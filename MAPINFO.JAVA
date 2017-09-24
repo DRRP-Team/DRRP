@@ -24,6 +24,10 @@ Map INTRO "Intro"
     Music = D_DEAD
 }
 
+Map INTRO2 "Titlemap"{
+	Music = "D_TITLE"
+}
+
 cluster 1 {
     hub
 }
