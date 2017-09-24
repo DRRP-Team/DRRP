@@ -4,19 +4,18 @@
 
 _All_
 
+
+
+_PROPHESSOR_
 * Reactor secret closes
 * Lava lamp doesn't block secret
 * Too fast plats
 * No damage on plats
+
+_UsernameAK_
 * Too big rods
 * Make dog collar work
 * Normal rod explosion
-
-
-_PROPHESSOR_
-
-
-_UsernameAK_
-
+* Guys on sector 1
 
 _DsSkl1_
