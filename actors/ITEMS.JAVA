@@ -140,3 +140,17 @@ actor Berserker : Berserk replaces Berserk 10623 {
 		Loop
 	}
 }
+
+actor DogCollar : CustomInventory 10624 {
+	Inventory.Icon "DOGCA0"
+	Tag "Dog Collar"
+	Inventory.PickupMessage "Got dog collar"
+	States {
+		Spawn:
+			DOGC A -1
+		stop
+		Use:
+			TNT1 A 0
+		fail
+	}
+}

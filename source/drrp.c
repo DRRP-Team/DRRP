@@ -7,7 +7,9 @@
 #define JUNCTION_LEVELNUM 2
 //#define DEBUGSCRIPT
 
-bool exitedLevels[MAX_LEVELS] = {false};
+[[__address(1)]] __addrdef __hub_arr hub_var;
+
+[[__address(0)]] hub_var bool exitedLevels[MAX_LEVELS] = {false};
 
 #ifdef DEBUGSCRIPT
 [[call("ScriptS"), script("Enter")]]
