@@ -15,7 +15,7 @@
 //3 level = 10359-10400
 //Decorations 10701-10800
 
-
+//HELLO FROM RU AND UK!
 
 //#############################
 //TODO: Spheres and Berserk - autouse = 0
