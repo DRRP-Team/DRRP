@@ -4,6 +4,11 @@ const struct = require("js-struct");
 const THINGS = require("./things");
 const DECALS = require("./decals");
 
+const Config = {
+    width: 768,
+    height: 768
+}
+
 const bspcolor_t = struct.Struct([
     struct.Type.uint8('b'),
     struct.Type.uint8('g'),
@@ -56,9 +61,9 @@ class Parser {
 
         const map = this.parseMap(this.from);
 
-        fs.writeFileSync(this.to, this.generate(map.lines, map.count, texmap, map.things));
+        fs.writeFileSync(this.to, this.generate(map.lines, map.count, texmap, map.things, map.decals));
 
-        this.display(map.lines, map.count, map.things);
+        this.display(map.lines, map.count, map.things, map.decals);
     }
 
     getMappings() {
@@ -93,7 +98,7 @@ class Parser {
         // let count = struct.Type.uint8.read(this.buffer, offset); //getSize
         offset += count * 10; //start lines
         offset += 2;
-        count = Count.read(this.buffer, offset).count;// * 156;
+        count = Count.read(this.buffer, offset).count; // * 156;
         offset += 2;
         // count     = struct.Type.uint8.read(this.buffer, offset); //getCount
         //offset += count ; //removeCount
@@ -103,78 +108,33 @@ class Parser {
             offset += linedef_t.size;
         }
 
-        var things = this.parseThings(offset);
+        let things = this.parseThings(offset);
 
-        return {lines, count, things};
+        let decals = this.parseDecals(things);
+
+        return {
+            lines,
+            count,
+            things,
+            decals
+        };
     }
 
     parseThings(offset) {
         let count = Count.read(this.buffer, offset).count;
         offset += 2;
         var things = [];
-        for(let i = 0; i < count; i++) {
+        for (let i = 0; i < count; i++) {
             things.push(thing_t.read(this.buffer, offset));
             offset += thing_t.size;
         }
         return things;
     }
 
-    generate(lines, count, texmap, things) {
-        let ss = "";
-        ss += "sector {\n";
-        ss += "\theightceiling = 64;\n";
-        ss += "\ttexturefloor = \"floor\";\n";
-        ss += "\ttextureceiling = \"ceiling\";\n";
-        ss += "}\n\n";
-        for (let i = 0; i < count; i++) {
-            ss += "vertex {\n";
-            ss += "\tx = " + lines[i].x1 * 8 + ";\n";
-            ss += "\ty = " + (256 - lines[i].y1) * 8 + ";\n";
-            ss += "}\n\n";
-            ss += "vertex {\n";
-            ss += "\tx = " + lines[i].x0 * 8 + ";\n";
-            ss += "\ty = " + (256 - lines[i].y0) * 8 + ";\n";
-            ss += "}\n\n";
-            ss += "sidedef {\n";
-            ss += "\tsector = 0;\n";
-            ss += "\ttexturemiddle = \"drdc" + texmap[lines[i].walltex] + "\";\n";
-            ss += "}\n\n";
-            ss += "linedef {\n";
-            ss += "\tv2 = " + (i * 2) + ";\n";
-            ss += "\tv1 = " + (i * 2 + 1) + ";\n";
-            ss += "\tsidefront = " + i + ";\n";
-            ss += "}\n\n";
-        }
-        for(let i = 0; i < things.length; i++) {
-            if (!THINGS[things[i].id.toString()]) continue;
-            ss += "thing {\n";
-            ss += "\ttype = " + THINGS[things[i].id.toString()] + ";\n";
-            ss += "\tx = " + things[i].x * 8 + ";\n";
-            ss += "\ty = " + (256 - things[i].y) * 8 + ";\n";
-            ss +=
-`    skill1 = true;
-    skill2 = true;
-    skill3 = true;
-    skill4 = true;
-    skill5 = true;
-    skill6 = true;
-    skill7 = true;
-    skill8 = true;
-    single = true;
-    coop = true;
-    dm = true;
-    class1 = true;
-    class2 = true;
-    class3 = true;
-    class4 = true;
-    class5 = true;
-`;
-            ss += "}\n\n";
-        }
-        let vertexid = count * 2;
-        let sideid = count;
-        for(let thing of things) {
-            if(!DECALS[thing.id.toString()]) continue;
+    parseDecals(things) {
+        let decals = [];
+        for (let thing of things) {
+            if (!DECALS[thing.id.toString()]) continue;
 
             let x0, y0, x1, y1;
             if (thing.flags & 32) { // east
@@ -215,19 +175,93 @@ class Parser {
                 y1 = (thing.y * 8 - 1);
             }
 
+            decals.push({
+                id: thing.id,
+                texture: DECALS[thing.id],
+                x0,
+                y0, //: 2048 - y0,
+                x1,
+                y1, //: 2048 - y1
+            })
+        }
+        return decals;
+    }
+
+    generate(lines, count, texmap, things, decals) {
+        let ss = "";
+        ss += "sector {\n";
+        ss += "\theightceiling = 64;\n";
+        ss += "\ttexturefloor = \"floor\";\n";
+        ss += "\ttextureceiling = \"ceiling\";\n";
+        ss += "}\n\n";
+
+        //vertexes
+        for (let i = 0; i < count; i++) {
             ss += "vertex {\n";
-            ss += "\tx = " + x0 + ";\n";
-            ss += "\ty = " + (2048 - y0) + ";\n";
+            ss += "\tx = " + lines[i].x1 * 8 + ";\n";
+            ss += "\ty = " + (256 - lines[i].y1) * 8 + ";\n";
+            ss += "}\n\n";
+            ss += "vertex {\n";
+            ss += "\tx = " + lines[i].x0 * 8 + ";\n";
+            ss += "\ty = " + (256 - lines[i].y0) * 8 + ";\n";
+            ss += "}\n\n";
+            ss += "sidedef {\n";
+            ss += "\tsector = 0;\n";
+            ss += "\ttexturemiddle = \"drdc" + texmap[lines[i].walltex] + "\";\n";
+            ss += "}\n\n";
+            ss += "linedef {\n";
+            ss += "\tv2 = " + (i * 2) + ";\n";
+            ss += "\tv1 = " + (i * 2 + 1) + ";\n";
+            ss += "\tsidefront = " + i + ";\n";
+            ss += "}\n\n";
+        }
+
+        //things
+        for (let i = 0; i < things.length; i++) {
+            if (!THINGS[things[i].id.toString()]) continue;
+            ss += "thing {\n";
+            ss += "\ttype = " + THINGS[things[i].id.toString()] + ";\n";
+            ss += "\tx = " + things[i].x * 8 + ";\n";
+            ss += "\ty = " + (256 - things[i].y) * 8 + ";\n";
+
+            ss += "\tskill1 = true;\n";
+            ss += "\tskill2 = true;\n";
+            ss += "\tskill3 = true;\n";
+            ss += "\tskill4 = true;\n";
+            ss += "\tskill5 = true;\n";
+            ss += "\tskill6 = true;\n";
+            ss += "\tskill7 = true;\n";
+            ss += "\tskill8 = true;\n";
+            ss += "\tsingle = true;\n";
+            ss += "\tcoop = true;\n";
+            ss += "\tdm = true;\n";
+            ss += "\tclass1 = true;\n";
+            ss += "\tclass2 = true;\n";
+            ss += "\tclass3 = true;\n";
+            ss += "\tclass4 = true;\n";
+            ss += "\tclass5 = true;\n";
+
+            ss += "}\n\n";
+        }
+
+        //decals
+        let vertexid = count * 2;
+        let sideid = count;
+
+        for (let decal of decals) {
+            ss += "vertex {\n";
+            ss += "\tx = " + decal.x0 + ";\n";
+            ss += "\ty = " + (2048 - decal.y0) + ";\n";
             ss += "}\n\n";
 
             ss += "vertex {\n";
-            ss += "\tx = " + x1 + ";\n";
-            ss += "\ty = " + (2048 - y1) + ";\n";
+            ss += "\tx = " + decal.x1 + ";\n";
+            ss += "\ty = " + (2048 - decal.y1) + ";\n";
             ss += "}\n\n";
 
             ss += "sidedef {\n"
             ss += "\tsector = 0;\n";
-            ss += "\ttexturemiddle = \"" + DECALS[thing.id] + "\";\n";
+            ss += "\ttexturemiddle = \"" + DECALS[decal.id] + "\";\n";
             ss += "}\n\n";
 
             ss += "linedef {\n";
@@ -242,10 +276,10 @@ class Parser {
         return ss;
     }
 
-    display(lines, count, things) {
+    display(lines, count, things, decals) {
         let ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
 
-        function setColor(color){
+        function setColor(color) {
             ctx.fillStyle = color;
             ctx.strokeStyle = color;
         }
@@ -253,7 +287,7 @@ class Parser {
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
-        function drawLine(x,y,x1,y1){
+        function drawLine(x, y, x1, y1) {
             ctx.beginPath();
             ctx.moveTo(x, y);
             ctx.lineTo(x1, y1)
@@ -262,26 +296,40 @@ class Parser {
         }
 
         function drawCircle(x, y, id) {
-            setColor("red");
+            setColor("darkgreen");
             ctx.beginPath();
-            ctx.arc(x, y, 6, 0, 2*Math.PI, false);
+            ctx.arc(x, y, 6, 0, 2 * Math.PI, false);
             ctx.fill();
             ctx.closePath();
-            setColor("blue");
+            setColor("pink");
             ctx.fillText(id, x, y);
         }
 
-        ctx.font = "8px sans-seri";
-        
+        ctx.font = "8px sans-serif";
+
+        setColor("black");
+
+        ctx.fillRect(0, 0, innerWidth, innerHeight);
+
         setColor("red");
 
         for (let i = 0; i < count; i++) {
             drawLine(lines[i].x0 * 3, lines[i].y0 * 3, lines[i].x1 * 3, lines[i].y1 * 3);
         }
 
-        for(let i = 0; i < things.length; i++) {
-            drawCircle(things[i].x * 3, things[i].y*3, things[i].id);
-            drawCircle(things[i].x * 3, things[i].y*3, things[i].id);
+        // setColor("green");
+
+        for (let i = 0; i < things.length; i++) {
+            drawCircle(things[i].x * 3, things[i].y * 3, things[i].id);
+            drawCircle(things[i].x * 3, things[i].y * 3, things[i].id);
+        }
+
+        setColor("cyan");
+        for (let decal of decals) {
+            drawLine(decal.x0 * 3, 768-(2048-decal.y0), decal.x1 * 3, 768-(2048-decal.y1));
+            drawLine(decal.x0 * 3, 768-(2048-decal.y0*3), decal.x1 * 3, 768-(2048-decal.y1*3));
+            // drawCircle(decal.x0*3,768-decal.y0*3,"X");
+            // drawCircle(decal.x1*3,768-decal.y1*3,"X");
         }
     }
 }
@@ -299,7 +347,7 @@ function main(from, to) {
 }
 
 const a = require("nw.gui").Window.get();
-a.width  = 768;
-a.height = 768;
+a.width = Config.width;
+a.height = Config.height;
 
 main(process.argv[2] || "intro.bsp", process.argv[3] || "out.tm");
