@@ -1,0 +1,73 @@
+<!Doctype HTML>
+<html>
+
+<head>
+    <title>DooM RPG Depack Tools [DRRP]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cover.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">DooM RPG Depack Tools</h3>
+                        <ul class="nav masthead-nav">
+                            <div id="warn" onclick="this.innerHTML='';"></div>
+                            <li class="active"><a href="index.html">Парсер</a></li>
+                            <li><a href="pro.html">Про</a></li>
+                            <li><a href="sprites.html">Спрайты</a></li>
+                            <li><a href="dr2.html">D2RPG</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    <!--<h1 class="cover-heading">Cover your page.</h1>-->
+                    <div class="col-sm-12 text-left">
+                        <label for="palettes">palettes.bin</label>
+                        <input type="file" id="palettes">
+
+                        <label for="wtexels">wtexels.bin</label>
+                        <input type="file" id="wtexels">
+
+                        <label for="save">Куда сохранить</label>
+                        <input type="file" id="save" nwdirectory />
+
+                        <button class="btn-default" onclick="Decomp()">Действовать!</button>
+                    </div>
+                    <div class="col-sm-12 text-left log" id="log">
+                        
+                    </div>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>&copy;DooM RPG Remake Project [DRRP] (<a href="http://vk.com/PROPHESSOR">PROPHESSOR</a>, UsernameAK) 2017</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dom2.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <hide>
+    </hide>
+</body>
+
+</html>

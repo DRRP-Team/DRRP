@@ -1,0 +1,69 @@
+<!Doctype HTML>
+<html>
+
+<head>
+    <title>DooM RPG Depack Tools [DRRP]</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cover.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">DooM RPG Depack Tools</h3>
+                        <ul class="nav masthead-nav">
+                            <div id="warn" onclick="this.innerHTML='';"></div>
+                            <li><a href="index.html">Парсер</a></li>
+                            <li class="active"><a href="pro.html">Про</a></li>
+                            <li><a href="sprites.html">Спрайты</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    <nav class="cover-heading buttons">
+                            <button onclick="$$('#palettes').trigger('click')">palettes.bin</button><button onclick="$$('#wtexels').trigger('click')">wtexels.bin</button><button onclick="$$('#save').trigger('click')">save</button>
+                        </nav>
+                    <div class="col-sm-12 text-left">
+                        <canvas id="c" style="display:none;"></canvas>
+                        <img src="" id="img" width="64" height="64">
+                        <button class="btn-default" onclick="Do()">Действовать!</button>
+                        <button onclick="Control.previousPalette()"><</button><button onclick="Control.nextPalette()">></button><button onclick="Control.previousTexture()"><<</button><button onclick="Control.nextTexture()">>></button>
+                    </div>
+                    <div class="col-sm-12 text-left log" style="display: none;" id="log"></div>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>&copy;DooM RPG Remake Project [DRRP] (<a href="http://vk.com/PROPHESSOR">PROPHESSOR</a>, UsernameAK) 2017</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/dom2.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <hide>
+            <input type="file" id="palettes">
+            <input type="file" id="wtexels">
+            <input type="file" id="save" nwdirectory />
+    </hide>
+</body>
+
+</html>
