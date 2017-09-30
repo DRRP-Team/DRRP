@@ -3,6 +3,10 @@
 /*ACTOR Bed 10702
 {
 	Game Doom
+/*ACTOR Bed 10702
+{
+	Game Doom
+	Radius 49
 	Radius 49
 	Height 27
 	ProjectilePassHeight -16

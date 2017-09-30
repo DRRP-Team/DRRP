@@ -145,6 +145,7 @@ actor DogCollar : CustomInventory 10624 {
 	Inventory.Icon "DOGCA0"
 	Tag "Dog Collar"
 	Inventory.PickupMessage "Got dog collar"
+	+INVENTORY.INVBAR
 	States {
 		Spawn:
 			DOGC A -1
