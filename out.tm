@@ -10085,9 +10085,251 @@ linedef {
 }
 
 thing {
+	type = 10246;
+	x = 480;
+	y = 1120;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 608;
+	y = 1120;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 1120;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10705;
 	x = 96;
 	y = 864;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 96;
+	y = 800;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 160;
+	y = 864;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 224;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 224;
+	y = 1696;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 224;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 224;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 224;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 224;
+	y = 672;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10129,9 +10371,185 @@ thing {
 }
 
 thing {
+	type = 2015;
+	x = 288;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 288;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 288;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 288;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 352;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10250;
 	x = 352;
 	y = 800;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2018;
+	x = 352;
+	y = 672;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 416;
+	y = 1888;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 416;
+	y = 1504;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10198,6 +10616,182 @@ thing {
 	type = 10250;
 	x = 416;
 	y = 672;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 416;
+	y = 352;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 480;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 480;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 480;
+	y = 1248;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10610;
+	x = 480;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 480;
+	y = 1120;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 480;
+	y = 800;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 480;
+	y = 352;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10261,8 +10855,184 @@ thing {
 }
 
 thing {
+	type = 2015;
+	x = 544;
+	y = 864;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10250;
 	x = 544;
+	y = 800;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 544;
+	y = 736;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 608;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 608;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 608;
+	y = 1248;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10610;
+	x = 608;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 608;
+	y = 1120;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 608;
 	y = 800;
     skill1 = true;
     skill2 = true;
@@ -10286,6 +11056,28 @@ thing {
 	type = 10705;
 	x = 608;
 	y = 288;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 672;
+	y = 1504;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10349,9 +11141,185 @@ thing {
 }
 
 thing {
+	type = 2008;
+	x = 736;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2018;
+	x = 736;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2008;
+	x = 736;
+	y = 992;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10250;
 	x = 736;
 	y = 800;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 800;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 800;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 800;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 800;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 800;
+	y = 1440;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10393,9 +11361,207 @@ thing {
 }
 
 thing {
+	type = 2014;
+	x = 800;
+	y = 1248;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 864;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 864;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 864;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 864;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 864;
+	y = 864;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 864;
+	y = 736;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10250;
 	x = 864;
 	y = 608;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 864;
+	y = 544;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 864;
+	y = 480;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10437,9 +11603,163 @@ thing {
 }
 
 thing {
+	type = 2015;
+	x = 928;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 928;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 928;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 928;
+	y = 608;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 928;
+	y = 544;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10610;
+	x = 928;
+	y = 480;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 2028;
 	x = 992;
 	y = 1312;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 992;
+	y = 1184;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10503,9 +11823,251 @@ thing {
 }
 
 thing {
+	type = 10620;
+	x = 992;
+	y = 480;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1056;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 1056;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1056;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1120;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10250;
 	x = 1120;
 	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 1120;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1120;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1184;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 1184;
+	y = 1696;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1184;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 1184;
+	y = 1504;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10547,9 +12109,75 @@ thing {
 }
 
 thing {
+	type = 2014;
+	x = 1184;
+	y = 1248;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1248;
+	y = 1696;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 2001;
 	x = 1248;
 	y = 736;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1312;
+	y = 1696;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10613,6 +12241,28 @@ thing {
 }
 
 thing {
+	type = 2014;
+	x = 1312;
+	y = 672;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 2028;
 	x = 1376;
 	y = 1824;
@@ -10635,9 +12285,207 @@ thing {
 }
 
 thing {
+	type = 10246;
+	x = 1376;
+	y = 1696;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2018;
+	x = 1376;
+	y = 992;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 1376;
+	y = 864;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 1376;
+	y = 800;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1376;
+	y = 736;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1376;
+	y = 672;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1440;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1440;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 10250;
 	x = 1440;
 	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1440;
+	y = 1504;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10679,9 +12527,625 @@ thing {
 }
 
 thing {
+	type = 2014;
+	x = 1568;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1568;
+	y = 1312;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1568;
+	y = 1248;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1568;
+	y = 1056;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1568;
+	y = 992;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2007;
+	x = 1632;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1632;
+	y = 864;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10246;
+	x = 1632;
+	y = 480;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1632;
+	y = 416;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1696;
+	y = 1504;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1696;
+	y = 1312;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1696;
+	y = 1248;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1696;
+	y = 1184;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2015;
+	x = 1696;
+	y = 992;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1824;
+	y = 1888;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1824;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1824;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
 	type = 2028;
 	x = 1824;
 	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1824;
+	y = 1440;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 1824;
+	y = 992;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1888;
+	y = 1888;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 1888;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1888;
+	y = 1760;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2018;
+	x = 1888;
+	y = 1568;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10621;
+	x = 1888;
+	y = 992;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 2014;
+	x = 1888;
+	y = 672;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1952;
+	y = 1888;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1952;
+	y = 1824;
+    skill1 = true;
+    skill2 = true;
+    skill3 = true;
+    skill4 = true;
+    skill5 = true;
+    skill6 = true;
+    skill7 = true;
+    skill8 = true;
+    single = true;
+    coop = true;
+    dm = true;
+    class1 = true;
+    class2 = true;
+    class3 = true;
+    class4 = true;
+    class5 = true;
+}
+
+thing {
+	type = 10620;
+	x = 1952;
+	y = 1760;
     skill1 = true;
     skill2 = true;
     skill3 = true;
@@ -10720,5 +13184,509 @@ thing {
     class3 = true;
     class4 = true;
     class5 = true;
+}
+
+vertex {
+	x = 65;
+	y = 512;
+}
+
+vertex {
+	x = 65;
+	y = 576;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 960;
+	v2 = 961;
+	sidefront = 480;
+}
+
+vertex {
+	x = 128;
+	y = 1599;
+}
+
+vertex {
+	x = 192;
+	y = 1599;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 962;
+	v2 = 963;
+	sidefront = 481;
+}
+
+vertex {
+	x = 193;
+	y = 1152;
+}
+
+vertex {
+	x = 193;
+	y = 1216;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 964;
+	v2 = 965;
+	sidefront = 482;
+}
+
+vertex {
+	x = 255;
+	y = 576;
+}
+
+vertex {
+	x = 255;
+	y = 512;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 966;
+	v2 = 967;
+	sidefront = 483;
+}
+
+vertex {
+	x = 256;
+	y = 1599;
+}
+
+vertex {
+	x = 320;
+	y = 1599;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 968;
+	v2 = 969;
+	sidefront = 484;
+}
+
+vertex {
+	x = 639;
+	y = 448;
+}
+
+vertex {
+	x = 639;
+	y = 384;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 970;
+	v2 = 971;
+	sidefront = 485;
+}
+
+vertex {
+	x = 639;
+	y = 384;
+}
+
+vertex {
+	x = 639;
+	y = 320;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 972;
+	v2 = 973;
+	sidefront = 486;
+}
+
+vertex {
+	x = 639;
+	y = 320;
+}
+
+vertex {
+	x = 639;
+	y = 256;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 974;
+	v2 = 975;
+	sidefront = 487;
+}
+
+vertex {
+	x = 896;
+	y = 1153;
+}
+
+vertex {
+	x = 832;
+	y = 1153;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 976;
+	v2 = 977;
+	sidefront = 488;
+}
+
+vertex {
+	x = 960;
+	y = 1153;
+}
+
+vertex {
+	x = 896;
+	y = 1153;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 978;
+	v2 = 979;
+	sidefront = 489;
+}
+
+vertex {
+	x = 1088;
+	y = 1153;
+}
+
+vertex {
+	x = 1024;
+	y = 1153;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 980;
+	v2 = 981;
+	sidefront = 490;
+}
+
+vertex {
+	x = 1088;
+	y = 1855;
+}
+
+vertex {
+	x = 1152;
+	y = 1855;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 982;
+	v2 = 983;
+	sidefront = 491;
+}
+
+vertex {
+	x = 1152;
+	y = 1153;
+}
+
+vertex {
+	x = 1088;
+	y = 1153;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 984;
+	v2 = 985;
+	sidefront = 492;
+}
+
+vertex {
+	x = 1152;
+	y = 1855;
+}
+
+vertex {
+	x = 1216;
+	y = 1855;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 986;
+	v2 = 987;
+	sidefront = 493;
+}
+
+vertex {
+	x = 1280;
+	y = 1855;
+}
+
+vertex {
+	x = 1344;
+	y = 1855;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 988;
+	v2 = 989;
+	sidefront = 494;
+}
+
+vertex {
+	x = 1344;
+	y = 1855;
+}
+
+vertex {
+	x = 1408;
+	y = 1855;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 990;
+	v2 = 991;
+	sidefront = 495;
+}
+
+vertex {
+	x = 1537;
+	y = 1024;
+}
+
+vertex {
+	x = 1537;
+	y = 1088;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 992;
+	v2 = 993;
+	sidefront = 496;
+}
+
+vertex {
+	x = 1537;
+	y = 896;
+}
+
+vertex {
+	x = 1537;
+	y = 960;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 994;
+	v2 = 995;
+	sidefront = 497;
+}
+
+vertex {
+	x = 1727;
+	y = 1088;
+}
+
+vertex {
+	x = 1727;
+	y = 1024;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 996;
+	v2 = 997;
+	sidefront = 498;
+}
+
+vertex {
+	x = 1727;
+	y = 960;
+}
+
+vertex {
+	x = 1727;
+	y = 896;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 998;
+	v2 = 999;
+	sidefront = 499;
+}
+
+vertex {
+	x = 1793;
+	y = 1856;
+}
+
+vertex {
+	x = 1793;
+	y = 1920;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 1000;
+	v2 = 1001;
+	sidefront = 500;
+}
+
+vertex {
+	x = 1793;
+	y = 1728;
+}
+
+vertex {
+	x = 1793;
+	y = 1792;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 1002;
+	v2 = 1003;
+	sidefront = 501;
+}
+
+vertex {
+	x = 1983;
+	y = 1920;
+}
+
+vertex {
+	x = 1983;
+	y = 1856;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 1004;
+	v2 = 1005;
+	sidefront = 502;
+}
+
+vertex {
+	x = 1983;
+	y = 1792;
+}
+
+vertex {
+	x = 1983;
+	y = 1728;
+}
+
+sidedef {
+	sector = 0;
+	texturemiddle = "DRPGZ002";
+}
+
+linedef {
+	v1 = 1006;
+	v2 = 1007;
+	sidefront = 503;
 }
 

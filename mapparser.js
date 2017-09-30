@@ -2,6 +2,7 @@ const fs = require("fs");
 const struct = require("js-struct");
 
 const THINGS = require("./things");
+const DECALS = require("./decals");
 
 const bspcolor_t = struct.Struct([
     struct.Type.uint8('b'),
@@ -170,6 +171,74 @@ class Parser {
 `;
             ss += "}\n\n";
         }
+        let vertexid = count * 2;
+        let sideid = count;
+        for(let thing of things) {
+            if(!DECALS[thing.id.toString()]) continue;
+
+            let x0, y0, x1, y1;
+            if (thing.flags & 32) { // east
+                x0 = (thing.x * 8 + 1);
+                x0 = (thing.x * 8 + 1);
+                y0 = (thing.y * 8 + 32);
+                y0 = (thing.y * 8 + 32);
+                x1 = (thing.x * 8 + 1);
+                x1 = (thing.x * 8 + 1);
+                y1 = (thing.y * 8 - 32);
+                y1 = (thing.y * 8 - 32);
+            } else if (thing.flags & 64) { // west
+                x0 = (thing.x * 8 - 1);
+                x0 = (thing.x * 8 - 1);
+                y0 = (thing.y * 8 - 32);
+                y0 = (thing.y * 8 - 32);
+                x1 = (thing.x * 8 - 1);
+                x1 = (thing.x * 8 - 1);
+                y1 = (thing.y * 8 + 32);
+                y1 = (thing.y * 8 + 32);
+            } else if (thing.flags & 16) { // south
+                x0 = (thing.x * 8 - 32);
+                x0 = (thing.x * 8 - 32);
+                y0 = (thing.y * 8 + 1);
+                y0 = (thing.y * 8 + 1);
+                x1 = (thing.x * 8 + 32);
+                x1 = (thing.x * 8 + 32);
+                y1 = (thing.y * 8 + 1);
+                y1 = (thing.y * 8 + 1);
+            } else if (thing.flags & 8) { // north
+                x0 = (thing.x * 8 + 32);
+                x0 = (thing.x * 8 + 32);
+                y0 = (thing.y * 8 - 1);
+                y0 = (thing.y * 8 - 1);
+                x1 = (thing.x * 8 - 32);
+                x1 = (thing.x * 8 - 32);
+                y1 = (thing.y * 8 - 1);
+                y1 = (thing.y * 8 - 1);
+            }
+
+            ss += "vertex {\n";
+            ss += "\tx = " + x0 + ";\n";
+            ss += "\ty = " + (2048 - y0) + ";\n";
+            ss += "}\n\n";
+
+            ss += "vertex {\n";
+            ss += "\tx = " + x1 + ";\n";
+            ss += "\ty = " + (2048 - y1) + ";\n";
+            ss += "}\n\n";
+
+            ss += "sidedef {\n"
+            ss += "\tsector = 0;\n";
+            ss += "\ttexturemiddle = \"" + DECALS[thing.id] + "\";\n";
+            ss += "}\n\n";
+
+            ss += "linedef {\n";
+            ss += "\tv1 = " + vertexid + ";\n";
+            ss += "\tv2 = " + (vertexid + 1) + ";\n";
+            ss += "\tsidefront = " + sideid + ";\n";
+            ss += "}\n\n";
+
+            vertexid += 2;
+            sideid++;
+        }
         return ss;
     }
 
@@ -202,7 +271,7 @@ class Parser {
             ctx.fillText(id, x, y);
         }
 
-        ctx.font = "8px sans-serif";
+        ctx.font = "8px sans-seri";
         
         setColor("red");
 
@@ -211,6 +280,7 @@ class Parser {
         }
 
         for(let i = 0; i < things.length; i++) {
+            drawCircle(things[i].x * 3, things[i].y*3, things[i].id);
             drawCircle(things[i].x * 3, things[i].y*3, things[i].id);
         }
     }
