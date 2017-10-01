@@ -360,4 +360,4 @@ const a = require("nw.gui").Window.get();
 a.width = Config.width;
 a.height = Config.height;
 
-main(process.argv[2] || "intro.bsp", process.argv[3] || "out.tm");
+main(process.argv[2] || "level03.bsp", process.argv[3] || "out.tm");
