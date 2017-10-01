@@ -8,6 +8,11 @@ ACTOR MBFHelperDog1 : MBFHelperDog replaces MBFHelperDog 10246 {
 //$Category DMonsters
 	Health 25
 }
+ACTOR RedDog : MBFHelperDog1 10346 {
+//$Category DMonsters
+	Health 50
+	Translation "64:79=32:47"
+}
 
 // Zombies
 
