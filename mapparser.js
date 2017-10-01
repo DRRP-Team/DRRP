@@ -136,43 +136,44 @@ class Parser {
         for (let thing of things) {
             if (!DECALS[thing.id.toString()]) continue;
 
+            let isNotFence = (thing.flags & 2050) ? 0 : 1;
             let x0, y0, x1, y1;
             if (thing.flags & 32) { // east
-                x0 = (thing.x * 8 + 1);
-                x0 = (thing.x * 8 + 1);
+                x0 = (thing.x * 8 + isNotFence);
+                x0 = (thing.x * 8 + isNotFence);
                 y0 = (thing.y * 8 + 32);
                 y0 = (thing.y * 8 + 32);
-                x1 = (thing.x * 8 + 1);
-                x1 = (thing.x * 8 + 1);
+                x1 = (thing.x * 8 + isNotFence);
+                x1 = (thing.x * 8 + isNotFence);
                 y1 = (thing.y * 8 - 32);
                 y1 = (thing.y * 8 - 32);
             } else if (thing.flags & 64) { // west
-                x0 = (thing.x * 8 - 1);
-                x0 = (thing.x * 8 - 1);
+                x0 = (thing.x * 8 - isNotFence);
+                x0 = (thing.x * 8 - isNotFence);
                 y0 = (thing.y * 8 - 32);
                 y0 = (thing.y * 8 - 32);
-                x1 = (thing.x * 8 - 1);
-                x1 = (thing.x * 8 - 1);
+                x1 = (thing.x * 8 - isNotFence);
+                x1 = (thing.x * 8 - isNotFence);
                 y1 = (thing.y * 8 + 32);
                 y1 = (thing.y * 8 + 32);
             } else if (thing.flags & 16) { // south
                 x0 = (thing.x * 8 - 32);
                 x0 = (thing.x * 8 - 32);
-                y0 = (thing.y * 8 + 1);
-                y0 = (thing.y * 8 + 1);
+                y0 = (thing.y * 8 + isNotFence);
+                y0 = (thing.y * 8 + isNotFence);
                 x1 = (thing.x * 8 + 32);
                 x1 = (thing.x * 8 + 32);
-                y1 = (thing.y * 8 + 1);
-                y1 = (thing.y * 8 + 1);
+                y1 = (thing.y * 8 + isNotFence);
+                y1 = (thing.y * 8 + isNotFence);
             } else if (thing.flags & 8) { // north
                 x0 = (thing.x * 8 + 32);
                 x0 = (thing.x * 8 + 32);
-                y0 = (thing.y * 8 - 1);
-                y0 = (thing.y * 8 - 1);
+                y0 = (thing.y * 8 - isNotFence);
+                y0 = (thing.y * 8 - isNotFence);
                 x1 = (thing.x * 8 - 32);
                 x1 = (thing.x * 8 - 32);
-                y1 = (thing.y * 8 - 1);
-                y1 = (thing.y * 8 - 1);
+                y1 = (thing.y * 8 - isNotFence);
+                y1 = (thing.y * 8 - isNotFence);
             }
 
             decals.push({
@@ -195,24 +196,29 @@ class Parser {
         ss += "\ttextureceiling = \"ceiling\";\n";
         ss += "}\n\n";
 
+        let sideid = 0;
+        var vertices = [];
+
+        function findVertex(x, y) {
+            for(var i = 0; i < vertices.length; i++) {
+                if (vertices[i][0] == x && vertices[i][1] == y) return i;
+            }
+            vertices.push([x, y]);
+            return vertices.length - 1;
+        }
+
         //vertexes
         for (let i = 0; i < count; i++) {
-            ss += "vertex {\n";
-            ss += "\tx = " + lines[i].x1 * 8 + ";\n";
-            ss += "\ty = " + (256 - lines[i].y1) * 8 + ";\n";
-            ss += "}\n\n";
-            ss += "vertex {\n";
-            ss += "\tx = " + lines[i].x0 * 8 + ";\n";
-            ss += "\ty = " + (256 - lines[i].y0) * 8 + ";\n";
-            ss += "}\n\n";
+            var v0 = findVertex(lines[i].x1 * 8, (256 - lines[i].y1) * 8);
+            var v1 = findVertex(lines[i].x0 * 8, (256 - lines[i].y0) * 8);
             ss += "sidedef {\n";
             ss += "\tsector = 0;\n";
             ss += "\ttexturemiddle = \"drdc" + texmap[lines[i].walltex] + "\";\n";
             ss += "}\n\n";
             ss += "linedef {\n";
-            ss += "\tv2 = " + (i * 2) + ";\n";
-            ss += "\tv1 = " + (i * 2 + 1) + ";\n";
-            ss += "\tsidefront = " + i + ";\n";
+            ss += "\tv2 = " + v0 + ";\n";
+            ss += "\tv1 = " + v1 + ";\n";
+            ss += "\tsidefront = " + (sideid++) + ";\n";
             ss += "}\n\n";
         }
 
@@ -245,18 +251,14 @@ class Parser {
         }
 
         //decals
-        let vertexid = count * 2;
-        let sideid = count;
 
         for (let decal of decals) {
-            ss += "vertex {\n";
-            ss += "\tx = " + decal.x0 + ";\n";
-            ss += "\ty = " + (2048 - decal.y0) + ";\n";
-            ss += "}\n\n";
+            var v0 = findVertex(decal.x0, (2048 - decal.y0));
+            var v1 = findVertex(decal.x1, (2048 - decal.y1));
 
-            ss += "vertex {\n";
-            ss += "\tx = " + decal.x1 + ";\n";
-            ss += "\ty = " + (2048 - decal.y1) + ";\n";
+            ss += "sidedef {\n"
+            ss += "\tsector = 0;\n";
+            ss += "\ttexturemiddle = \"" + DECALS[decal.id] + "\";\n";
             ss += "}\n\n";
 
             ss += "sidedef {\n"
@@ -265,15 +267,24 @@ class Parser {
             ss += "}\n\n";
 
             ss += "linedef {\n";
-            ss += "\tv1 = " + vertexid + ";\n";
-            ss += "\tv2 = " + (vertexid + 1) + ";\n";
-            ss += "\tsidefront = " + sideid + ";\n";
+            ss += "\tv1 = " + v0 + ";\n";
+            ss += "\tv2 = " + v1 + ";\n";
+            ss += "\tsidefront = " + (sideid++) + ";\n";
+            ss += "\tsideback = " + (sideid++) + ";\n";
+            ss += "\ttwosided = true;\n";
+            ss += "\tblocking = true;\n";
             ss += "}\n\n";
-
-            vertexid += 2;
-            sideid++;
         }
-        return ss;
+
+        var vs = "";
+        for(let vertex of vertices) {
+            vs += "vertex {\n";
+            vs += "\tx = " + vertex[0] + ";\n";
+            vs += "\ty = " + vertex[1] + ";\n";
+            vs += "}\n\n";
+        }
+
+        return vs + ss;
     }
 
     display(lines, count, things, decals) {
@@ -326,8 +337,7 @@ class Parser {
 
         setColor("cyan");
         for (let decal of decals) {
-            drawLine(decal.x0 * 3, 768-(2048-decal.y0), decal.x1 * 3, 768-(2048-decal.y1));
-            drawLine(decal.x0 * 3, 768-(2048-decal.y0*3), decal.x1 * 3, 768-(2048-decal.y1*3));
+            drawLine(decal.x0 / (2048 / Config.width), decal.y0 / (2048 / Config.height), decal.x1 / (2048 / Config.width), decal.y1 / (2048 / Config.height));
             // drawCircle(decal.x0*3,768-decal.y0*3,"X");
             // drawCircle(decal.x1*3,768-decal.y1*3,"X");
         }
