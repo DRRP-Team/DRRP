@@ -130,15 +130,24 @@ actor GoldCredit : CustomInventory 10621 {
 	}
 }
 
-actor Berserker : Berserk replaces Berserk 10623 {
-//$Category Items
-	Translation "193:207=171:191", "240:247=185:191"
-	States
-	{
-		Spawn:
-		SOUL ABCDCB 6 Bright
-		Loop
-	}
+ACTOR Berserker : CustomInventory replaces Berserk 10623
+{
+  Translation "193:207=171:191", "240:247=185:191"
+  +COUNTITEM
+  +INVENTORY.INVBAR
+  Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
+  Inventory.PickupSound "misc/p_pkup"
+  States
+  {
+  Spawn:
+    SOUL ABCDCB 6 Bright
+    loop
+	Use:		
+		TNT1 A 0 A_GiveInventory("PowerStrength")
+		TNT1 A 0 HealThing(100, 0)
+		TNT1 A 0 A_SelectWeapon("Fist")
+	stop
+  }
 }
 
 actor DogCollar : CustomInventory 10624 {
@@ -154,4 +163,16 @@ actor DogCollar : CustomInventory 10624 {
 			TNT1 A 0
 		fail
 	}
+}
+
+actor DRRPHealthBonus : Health replaces HealthBonus
+{
+  Inventory.Amount 1
+  Inventory.PickupMessage "$GOTHTHBONUS" // "Picked up a health bonus."
+  States
+  {
+  Spawn:
+    BON1 ABCDCB 6
+    Loop
+  }
 }
