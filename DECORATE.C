@@ -6,28 +6,32 @@
 #include actors/SPARKS.JAVA
 #include actors/CHARACTERS.JAVA
 
-//Characters 10500-10555
-//Weapons 10556-10599
-//Items 10600-10700
-//Monster
-//1 level = 10259-10299
-//2 level = 10300-10358
-//3 level = 10359-10400
-//Decorations 10701-10800
 
-//HELLO FROM RU AND UA!
+// Characters 10500-10555
+// Weapons 10556-10599
+// Items 10600-10700
+// Monster
+// 1 level = 10259-10299
+// 2 level = 10300-10358
+// 3 level = 10359-10400
+// Decorations 10701-10800
 
-//#############################
-//TODO: Spheres and Berserk - autouse = 0
-//#############################
 
-actor DoomRPGPlayer : DoomPlayer {
+// HELLO FROM RU AND UA!
+
+
+// #############################
+// TODO: Spheres and Berserk - autouse = 0
+// #############################
+
+
+Actor DoomRPGPlayer : DoomPlayer {
 	Player.WeaponSlot 1, Chainsaw, FireExt, DRRPAxe
 	Health 30
 	Player.MaxHealth 30
 	Player.DisplayName "Marine"
 	//DamageType "Fire"
-	/*states {
+	/*States {
 		Burn:
 			
 			BURN A 3 Bright
@@ -47,45 +51,45 @@ actor DoomRPGPlayer : DoomPlayer {
 			BURN OPQPQ 5 Bright
 			BURN RSTU 7 Bright
 			BURN V -1
-		stop
+			Stop
 	}*/
 }
 
-actor DRRPFire 10250 {
-//$Category Damage
-    Health 10
-    Monster
-    -SOLID
-    +NOBLOOD
-    -ISMONSTER
+Actor DRRPFire 10250 {
+	//$Category Damage
+	Health 10
+	Monster
+	-SOLID
+	+NOBLOOD
+	-ISMONSTER
 	+NOTARGET
-    -COUNTKILL
+	-COUNTKILL
 	+NOTRIGGER
 	+SHOOTABLE
     
-    Mass 0x7FFFFFFF
+	Mass 0x7FFFFFFF
 	DamageType "Fire"
 	
-    DamageFactor "Normal", 0
+	DamageFactor "Normal", 0
 	
-    States {
-        Spawn:
-			FIRE A 0 BRIGHT A_PlaySound("fire/loop3", CHAN_7, 1,true,2.5)
-			FIRE A 0
-            FIRE ABCDEFGH 1 BRIGHT A_Explode(3, 32,XF_NOTMISSILE)
-        loop
-        Pain.FireExtDamage:
-            TNT1 A 0
-        goto Spawn
-        Death:
-        XDeath:
-            TNT1 A 0
-        stop
-    }
+	States {
+	Spawn:
+		FIRE A 0 BRIGHT A_PlaySound( "fire/loop3", CHAN_7, 1, true, 2.5 )
+		FIRE A 0
+		FIRE ABCDEFGH 1 BRIGHT A_Explode( 3, 32, XF_NOTMISSILE )
+		Loop
+	Pain.FireExtDamage:
+		TNT1 A 0
+		Goto Spawn
+	Death:
+	XDeath:
+		TNT1 A 0
+		Stop
+	}
 }
 
-ACTOR Explosion : Rocket
+Actor Explosion : Rocket
 {
-    Spawn Parent Death
-    SpawnID 253
+	Spawn Parent Death
+	SpawnID 253
 }
