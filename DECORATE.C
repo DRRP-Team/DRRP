@@ -89,12 +89,3 @@ ACTOR Explosion : Rocket
     Spawn Parent Death
     SpawnID 253
 }
-
-actor Sector1TalkFiller : Inventory 10268 { // TODO: it's unused
-	Inventory.MaxAmount 2
-	states {
-		Spawn:
-			TNT1 A -1
-		stop
-	}
-}
