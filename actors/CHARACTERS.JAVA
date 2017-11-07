@@ -7,6 +7,7 @@ actor Scientist 10500 {
 	Radius 20
 	Height 56
 	+SOLID
+	+USESPECIAL
 	states {
 		Spawn:
 			SCIE A 1
