@@ -6,7 +6,7 @@ Lock 7
     Mapcolor 0 255 0
 }
 
-Lock 2
+Lock 1
 {
     RedCard1
     Message "You need a red card to open this door"
@@ -14,7 +14,7 @@ Lock 2
     Mapcolor 255 0 0
 }
 
-Lock 1
+Lock 3
 {
     YellowCard1
     Message "You need a yellow card to open this door"
@@ -22,7 +22,7 @@ Lock 1
     Mapcolor 255 255 0
 }
 
-Lock 3
+Lock 2
 {
     BlueCard1
     Message "You need a blue card to open this door"
