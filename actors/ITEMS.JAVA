@@ -1,21 +1,17 @@
 //10600-10700
-actor GreenCard : Key 10622
+Actor GreenCard : DoomKey 10622
 {
-//$Category Keys
-  Translation "168:191=112:127", "16:47=112:127", "1:2=126:127"
-  Radius 20
-  Height 16
-  +NOTDMATCH
-  Inventory.PickupMessage "Picked up a green keycard"
-  Inventory.Icon "STKEYS9"
-  Inventory.PickupSound "misc/k_pkup"
-  States
-  {
-  Spawn:
-    RKEY A 10
-    RKEY B 10 Bright
-    Loop
-  }
+	//$Category Keys
+	Inventory.PickupMessage "Picked up a green keycard"
+	Inventory.Icon "STKEYS9"
+	Inventory.PickupSound "misc/k_pkup"
+	States
+	{
+	Spawn:
+		GKEY A 10
+		GKEY B 10 Bright
+		Loop
+	}
 }
 
 actor YellowCard1 : YellowCard replaces YellowCard

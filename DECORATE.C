@@ -30,6 +30,7 @@ Actor DoomRPGPlayer : DoomPlayer {
 	Health 30
 	Player.MaxHealth 30
 	Player.DisplayName "Marine"
+	Player.MugShotMaxHealth 30
 	//DamageType "Fire"
 	/*States {
 		Burn:

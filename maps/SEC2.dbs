@@ -25,9 +25,9 @@ maps
 		}
 		defaulttoptexture = "DRPGA13";
 		overridemiddletexture = false;
-		viewpositionx = -421.0741f;
-		viewpositiony = -605.9006f;
-		viewscale = 0.3597242f;
+		viewpositionx = -1055.776f;
+		viewpositiony = -1338.554f;
+		viewscale = 1.027407f;
 		overridefloortexture = false;
 		customceilheight = 128;
 		customfloorheight = 0;
@@ -76,7 +76,12 @@ maps
 				xpanningceiling = 1;
 				rotationceiling = 1;
 				rotationfloor = 1;
+				yscaleceiling = 1;
+				xscalefloor = 1;
+				xscaleceiling = 1;
+				ypanningceiling = 1;
 				ypanningfloor = 1;
+				yscalefloor = 1;
 			}
 			
 			thing
