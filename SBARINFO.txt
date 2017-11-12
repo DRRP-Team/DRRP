@@ -10,10 +10,14 @@ statusbar normal // Standard Doom Status bar
 	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 221, 171;
 
 	//keys
-	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 239, 169;
-	drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 239, 177;
-	drawswitchableimage keyslot 7, "nullimage", "STKEYS9", 239, 185;
-	drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 239, 193;
+	//drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 239, 169;
+	//drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 239, 177;
+	//drawswitchableimage keyslot 7, "nullimage", "STKEYS9", 239, 185;
+	//drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 239, 193;
+	DrawSwitchableImage KeySlot 1, "nullimage", "graphics/STKEYS9", 239, 193; // Green
+	DrawSwitchableImage KeySlot 2, "nullimage", "STKEYS2", 239, 169; // Red
+	DrawSwitchableImage KeySlot 3, "nullimage", "STKEYS1", 239, 185; // Yellow
+	DrawSwitchableImage KeySlot 4, "nullimage", "STKEYS0", 239, 177; // Blue
 
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Clip), 288, 173;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Shell), 288, 179;
