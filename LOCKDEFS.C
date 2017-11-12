@@ -1,3 +1,5 @@
+ClearLocks
+
 Lock 7
 {
     GreenCard
