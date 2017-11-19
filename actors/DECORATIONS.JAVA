@@ -67,6 +67,7 @@ actor BlueLamp : Column 10703 {
 
 ACTOR Rod : ExplosiveBarrel 10704
 {
+	Scale 0.5
 	Health 666
 	States {
 		Spawn:
