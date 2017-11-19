@@ -1,6 +1,6 @@
 //10500-10555
 
-//Eggheaders
+//Eggheads
 
 actor Scientist 10500 {
 //$Category Characters
@@ -12,29 +12,6 @@ actor Scientist 10500 {
 		Spawn:
 			SCIE A 1
 		Loop
-	}
-}
-
-actor ShootableScientist : Scientist 10503 {
-	
-//$Category Characters
-	+SHOOTABLE
-	Health 20
-	states {
-		Death:
-    POSS H 5
-    POSS I 5 A_Scream
-    POSS J 5 A_NoBlocking
-    POSS K 5
-    POSS L -1
-    Stop
-  XDeath:
-    POSS M 5
-    POSS N 5 A_XScream
-    POSS O 5 A_NoBlocking
-    POSS PQRST 5
-    POSS U -1
-    Stop
 	}
 }
 
