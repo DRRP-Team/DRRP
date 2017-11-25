@@ -69,6 +69,7 @@ ACTOR Rod : ExplosiveBarrel 10704
 {
 	Scale 0.5
 	Health 666
+	Mass 10000000
 	States {
 		Spawn:
 			ROD1 ABCDEF 2
