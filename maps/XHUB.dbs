@@ -31,9 +31,12 @@ maps
 			
 			sector
 			{
+				xpanningceiling = 1;
 				rotationfloor = 1;
+				rotationceiling = 1;
 				xpanningfloor = 1;
 				ypanningfloor = 1;
+				damagetype = 2;
 			}
 			
 			sidedef
@@ -41,12 +44,13 @@ maps
 				offsetx_bottom = 1;
 				offsety_mid = 1;
 				offsetx_top = 1;
+				offsety_bottom = 1;
 				offsetx_mid = 1;
 			}
 		}
-		viewpositionx = -260.3136f;
-		viewpositiony = 453.4072f;
-		viewscale = 0.4352674f;
+		viewpositionx = 424.7286f;
+		viewpositiony = 963.9561f;
+		viewscale = 0.9562802f;
 		overridefloortexture = false;
 		customceilheight = 128;
 		customfloorheight = 0;
