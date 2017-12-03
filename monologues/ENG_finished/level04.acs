@@ -1,0 +1,296 @@
+
+case 0:
+	print(s:"Sector 4");
+break;
+
+case 1:
+	print(s:"/junction.bsp");
+break;
+
+case 2:
+	print(s:"Enter Junction");
+break;
+
+case 3:
+	print(s:"");
+break;
+
+case 4:
+	print(s:"Barrel Storage");
+break;
+
+case 5:
+	print(s:"Medical Lab");
+break;
+
+case 6:
+	print(s:"The sticky note read "5313".");
+break;
+
+case 7:
+	print(s:"System Offline [but there is a sticky note on the monitor that reads: "5313"]");
+break;
+
+case 8:
+	print(s:"Logged in as root");
+break;
+
+case 9:
+	print(s:"# scp /map.dat . Saving... Done. You got the map data.");
+break;
+
+case 10:
+	print(s:"Map data already downloaded.");
+break;
+
+case 11:
+	print(s:"5313");
+break;
+
+case 12:
+	print(s:"Door locked. Enter code:");
+break;
+
+case 13:
+	print(s:"Door opened.");
+break;
+
+case 14:
+	print(s:"[Email] To: Col. Graff From: Kronos Jensen has been troublesome. Fire him! You owe me. -Kronos");
+break;
+
+case 15:
+	print(s:"[Email] To: Kronos From: Col. Graff I'll try. If I do this, that's it, Kronos. Our debt is cleared... we're done. -Col. Graff");
+break;
+
+case 16:
+	print(s:"No more email.");
+break;
+
+case 17:
+	print(s:"Hey! You're not supposed to be here!");
+break;
+
+case 18:
+	print(s:"Walk away now and you won't get hurt.");
+break;
+
+case 19:
+	print(s:"I warned you. Now you die! Cacodemon, kill! [A door opened to your left...]");
+break;
+
+case 20:
+	print(s:"Please, don't hurt me! I'll tell you everything...");
+break;
+
+case 21:
+	print(s:"MUAHAHAHA!");
+break;
+
+case 22:
+	print(s:"Signed on to UAC-IM... [INSTANT MESSAGE] GoodDoc99: Marine, it's Dr. Guerard. You may have stumbled upon a secret research facility inside an old section of the base. We think Dr. Jensen has been storing stolen supplies there.");
+break;
+
+case 23:
+	print(s:"[INSTANT MESSAGE] GoodDoc99: Refrain from looking around the lab. We need to get an investigation team there to search for evidence and I don't want the area contaminated.");
+break;
+
+case 24:
+	print(s:"[INSTANT MESSAGE] GoodDoc99: I've unlocked the door leading out of the old base to Junction. Proceed forward with your mission and we'll take care of recovering the stolen lab supplies. Guerard out.");
+break;
+
+case 25:
+	print(s:"GoodDoc99 has signed off.");
+break;
+
+case 26:
+	print(s:"[E-BOOK] Introduction to Quantum Mechanics and Teleportation *Chapter 1* ...");
+break;
+
+case 27:
+	print(s:"[E-BOOK] Stabilization Techniques for Rifts in the Space/Time Continuum *Chapter 1* ...");
+break;
+
+case 28:
+	print(s:"[E-BOOK] Beginner's Guide to Controlled Hydrocon Catalyzation *Chapter 1* ...");
+break;
+
+case 29:
+	print(s:"[E-BOOK] More Power to You: Energy Strategies for Projects Needing Inordinate Amounts of Power *Chapter 1* ...");
+break;
+
+case 30:
+	print(s:"[E-BOOK] How to Get People to Like You, Even if you are a Crazed, Diabolical Lunatic *Chapter 1* ...");
+break;
+
+case 31:
+	print(s:"Probability that exploding waste barrels will destroy a JC-107 Type-A titanium reinforced door: Calculating...");
+break;
+
+case 32:
+	print(s:"12%");
+break;
+
+case 33:
+	print(s:"System offline.");
+break;
+
+case 34:
+	print(s:"Welcome! This is the oldest part of the base. Built in 2112, the surrounding structures and tunnels made up UAC's first permanent Martian settlement. This area is now only used to store hazardous waste.");
+break;
+
+case 35:
+	print(s:"We've been having computer problems. The latest glitch has locked our main door out of here back to Junction. Maybe you can help us get it open.");
+break;
+
+case 36:
+	print(s:"Go talk to Dr. Kelvin, he's working on the computer trying to get the door open. The door is down the hall on the right.");
+break;
+
+case 37:
+	print(s:"This is stupid! It'll never work.");
+break;
+
+case 38:
+	print(s:"What'd I tell ya?");
+break;
+
+case 39:
+	print(s:"ERROR: PC LOAD LETTER");
+break;
+
+case 40:
+	print(s:"E#RR4R: PC L8AD LET7E@ #&00$@");
+break;
+
+case 41:
+	print(s:"Blip, bleep... BEEWOOOP. WHONK WHONK!");
+break;
+
+case 42:
+	print(s:"HAHAHA! You thought you could blow me up?!?!");
+break;
+
+case 43:
+	print(s:"[Dr. Kelvin] The damn door is locked and this controller is totally borked! I have never, in my 23 years with the UAC, seen this error before.");
+break;
+
+case 44:
+	print(s:"[Dr. Kelvin] PC Load Letter? What on Mars?! Sorry, my name is Dr. Kelvin. I was sent to fix the computer problems when these strange creatures appeared out of nowhere and killed most of my staff. As you can see, I'm a bit on edge.");
+break;
+
+case 45:
+	print(s:"Talk to Jenkins.");
+break;
+
+case 46:
+	print(s:"[Dr. Kelvin] I've had it with this machine! Jenkins's looking for some explosives to blow this sucker open. Why don't you make yourself useful and see if he needs any help.");
+break;
+
+case 47:
+	print(s:"[Jenkins] I love big explosions but, jeez, why do *I* have to move the barrels? Dr. Kelvin never does any of the hard work around here!");
+break;
+
+case 48:
+	print(s:"[Jenkins] I can handle it. Check if Dr. Kelvin needs help.");
+break;
+
+case 49:
+	print(s:"Get medical supplies at the med lab.");
+break;
+
+case 50:
+	print(s:"[Jenkins] Dr. Kelvin says we need to blow open the locked door so I'm to take the explosive barrels from storage and put them in front of the door. Should be cool. Why don't you go to the old med lab to stock up on medical supplies... just in case. I unlocked the lab door a moment ago.");
+break;
+
+case 51:
+	print(s:"[Jenkins] Go to the med lab and stock up on medical supplies! We may need them if the explosion goes bad.");
+break;
+
+case 52:
+	print(s:"[Jenkins] I don't need any help with the barrels. I should have them moved by the time you get back.");
+break;
+
+case 53:
+	print(s:"Welcome to the old Medical Lab. We keep the medical supplies in the back room. I think we have a Flack Jacket and a couple of Medkits.");
+break;
+
+case 54:
+	print(s:"Dr. Kelvin wants to blow up the door with explosives? Why am I not surprised? He's wanted that door open for days.");
+break;
+
+case 55:
+	print(s:"I just hope no one gets hurt when they ignite the explosives.");
+break;
+
+case 56:
+	print(s:"Good luck with the door blasting. Try not to hurt yourself.");
+break;
+
+case 57:
+	print(s:"[Dr. Kelvin] Damn! The explosion didn't even scratch the door.");
+break;
+
+case 58:
+	print(s:"[Dr. Kelvin] Whoa! I just saw someone appear in front of the door controls. Is that Dr. Guerard? I could swear he wasn't here a second ago!");
+break;
+
+case 59:
+	print(s:"[Dr. Kelvin] Hey, go talk to Dr. Guerard.");
+break;
+
+case 60:
+	print(s:"[Dr. Kelvin] Thank goodness for Dr. Guerard! I still don't know where he came from but he unlocked the door and that's all I need to know!");
+break;
+
+case 61:
+	print(s:"[Dr. Guerard] Hello again, Marine. Seems like you need help with this door. I think I've found the problem. There, fixed... the door is unlocked.");
+break;
+
+case 62:
+	print(s:"[Dr. Guerard] No need to thank me. Just doing my job.");
+break;
+
+case 63:
+	print(s:"[Dr. Guerard] Don't concern yourself with how I got the door opened. Just move on with your mission.");
+break;
+
+case 64:
+	print(s:"[Jenkins] Doesn't seem like the explosion did anything, but it was still pretty sweet!");
+break;
+
+case 65:
+	print(s:"[Jenkins] Next time we'll use more barrels.");
+break;
+
+case 66:
+	print(s:"[Jenkins] I don't trust Dr. Guerard. How did he get here and how did he open the door?");
+break;
+
+case 67:
+	print(s:"[Dr. Kelvin] Jenkins lined up the barrels so you can shoot the end barrel. This should cause a chain reaction and blow open the door.");
+break;
+
+case 68:
+	print(s:"[Dr. Kelvin] You have the honors. Fire at one of the barrels on the end and it should blow them all up. Maintain a safe distance so we don't get hurt.");
+break;
+
+case 69:
+	print(s:"[Jenkins] I'm done moving the barrels. I've arranged them so that when the end barrel is shot, they'll all explode and hopefully blow open that door.");
+break;
+
+case 70:
+	print(s:"[Jenkins] You can set them off by shooting the end barrel.");
+break;
+
+case 71:
+	print(s:"[Jenkins] Let 'er rip, man! Shoot those barrels and light up this cave!");
+break;
+
+case 72:
+	print(s:"Super secret passcode: *2**");
+break;
+
+case 73:
+	print(s:"");
+break;
