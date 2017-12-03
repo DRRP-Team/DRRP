@@ -20,3 +20,5 @@ script 777(int spotnum) {
 	exitedLevels[GetLevelInfo(LEVELINFO_LEVELNUM)] = true;
 	Teleport_NewMap(JUNCTION_LEVELNUM, spotnum, 0);
 }
+
+script 

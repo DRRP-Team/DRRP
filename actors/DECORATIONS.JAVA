@@ -65,6 +65,18 @@ actor BlueLamp : Column 10703 {
 	Translation "224:231=192:195", "160:167=196:199"
 }
 
+actor DRRPChair 10750 {
+	Radius 14
+	Height 37
+	+SOLID
+    Mass 0x7FFFFFFF
+	States {
+		Spawn:
+			CHAI A -1
+		Stop
+	}
+}
+
 ACTOR Rod : ExplosiveBarrel 10704
 {
 	Scale 0.5
