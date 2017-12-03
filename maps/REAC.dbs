@@ -1,0 +1,111 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "Zandronum_DoomUDMF.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	MAP01
+	{
+		scriptcompiler = "zandronum_acs.cfg";
+		defaultfloortexture = "RROCK05";
+		overrideceilheight = false;
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 1;
+				location = "C:\\Users\\PROPHESSOR\\Desktop\\DRRP";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+		}
+		defaulttoptexture = "DRPGB041";
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 3323;
+				firstvisibleline = 114;
+				activetab = true;
+			}
+		}
+		overridemiddletexture = false;
+		
+		fieldtypes
+		{
+			
+			sector
+			{
+				ypanningfloor = 1;
+				yscaleceiling = 1;
+				rotationfloor = 1;
+				damagetype = 2;
+				ypanningceiling = 1;
+				damageinterval = 0;
+				xpanningceiling = 1;
+				damageamount = 0;
+				yscalefloor = 1;
+				xpanningfloor = 1;
+				xscalefloor = 1;
+				rotationceiling = 1;
+				xscaleceiling = 1;
+			}
+			
+			sidedef
+			{
+				offsetx_bottom = 1;
+				offsety_mid = 1;
+				offsety_bottom = 1;
+				offsetx_mid = 1;
+			}
+		}
+		viewpositionx = 238.5145f;
+		viewpositiony = -515.7042f;
+		viewscale = 0.7676818f;
+		overridefloortexture = false;
+		customceilheight = 128;
+		customfloorheight = 0;
+		
+		grid
+		{
+			backoffsety = 0;
+			backoffsetx = 0;
+			backscalex = 100;
+			gridsize = 16f;
+			background = "";
+			backsource = 0;
+			backscaley = 100;
+		}
+		defaultceiltexture = "BLOOD1";
+		overridebrightness = false;
+		uselongtexturenames = false;
+		useresourcesinreadonlymode = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overridetoptexture = false;
+		custombrightness = 196;
+		overrideceiltexture = false;
+		defaultwalltexture = "DRPGB041";
+		defaultbottomtexture = "DRPGB041";
+	}
+}

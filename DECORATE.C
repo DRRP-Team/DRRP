@@ -75,13 +75,15 @@ Actor DRRPFire 10250 {
 	
 	States {
 	Spawn:
-		FIRE A 0 BRIGHT A_PlaySound( "fire/loop3", CHAN_7, 1, true, 2.5 )
-		FIRE A 0
-		FIRE ABCDEFGH 1 BRIGHT A_Explode( 3, 32, XF_NOTMISSILE )
+	    FIRE A 0 Bright
+		FIRE A 0 Bright A_PlaySound( "fire/loop3", CHAN_7, 1, true, 2.5 )
+		FIRE A 0 Bright A_Jump( 256, 1, 2, 3, 4, 5, 6, 7, 8 )
+	SpawnLoop:
+		FIRE ABCDEFGH 2 BRIGHT A_Explode( 3, 32, XF_NOTMISSILE )
 		Loop
 	Pain.FireExtDamage:
 		TNT1 A 0
-		Goto Spawn
+		Goto SpawnLoop
 	Death:
 	XDeath:
 		TNT1 A 0
