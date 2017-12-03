@@ -1,0 +1,80 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "Zandronum_DoomUDMF.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	HUB
+	{
+		scriptcompiler = "zandronum_acs.cfg";
+		defaultfloortexture = "FLOOR0_5";
+		overrideceilheight = false;
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 1;
+				location = "C:\\Users\\PROPHESSOR\\Desktop\\DRRP";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+		}
+		defaulttoptexture = "DRPGB012";
+		overridemiddletexture = false;
+		
+		fieldtypes
+		{
+			
+			sector
+			{
+				xpanningceiling = 1;
+				rotationfloor = 1;
+				rotationceiling = 1;
+				xpanningfloor = 1;
+				ypanningfloor = 1;
+				damagetype = 2;
+			}
+			
+			sidedef
+			{
+				offsetx_bottom = 1;
+				offsety_mid = 1;
+				offsetx_top = 1;
+				offsety_bottom = 1;
+				offsetx_mid = 1;
+			}
+		}
+		viewpositionx = 424.7286f;
+		viewpositiony = 963.9561f;
+		viewscale = 0.9562802f;
+		overridefloortexture = false;
+		customceilheight = 128;
+		customfloorheight = 0;
+		
+		grid
+		{
+			backoffsety = 0;
+			backoffsetx = 0;
+			backscalex = 100;
+			gridsize = 16f;
+			background = "";
+			backsource = 0;
+			backscaley = 100;
+		}
+		defaultceiltexture = "FLAT3";
+		overridebrightness = false;
+		uselongtexturenames = false;
+		useresourcesinreadonlymode = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overridetoptexture = false;
+		custombrightness = 196;
+		overrideceiltexture = false;
+		defaultwalltexture = "DRPGB012";
+		defaultbottomtexture = "DRPGB012";
+	}
+}
