@@ -1,0 +1,164 @@
+
+case 0:
+	print(s:"Sector 7");
+break;
+
+case 1:
+	print(s:"/junction.bsp");
+break;
+
+case 2:
+	print(s:"/junction_destroyed.bsp");
+break;
+
+case 3:
+	print(s:"Enter Junction");
+break;
+
+case 4:
+	print(s:"");
+break;
+
+case 5:
+	print(s:"[Dr. Kelvin] Hello again. You here for the red keycard? The passages to the rest of the sector have caved in, but I can help you get through. I'll unlock the door. Come on, I'll show you.");
+break;
+
+case 6:
+	print(s:"[Dr. Kelvin] Come on through the door to your left.");
+break;
+
+case 7:
+	print(s:"[Dr. Kelvin] This is one of the first matter transportation units built on the base. I can send you through to its counterpart at the other end of the lab.");
+break;
+
+case 8:
+	print(s:"[Dr. Kelvin] Step into the unit in the middle of this room and I'll transport you. You'll instantly be sent to its counterpart unit.");
+break;
+
+case 9:
+	print(s:"[Dr. Kelvin] Something seems to have gone very wrong. You didn't rematerialize in the other teleportation unit, and worse, none of your weapons rematerialized with you! I don't have to tell you to use extreme caution. I think I can unlock that door. Yes, try it now.");
+break;
+
+case 10:
+	print(s:"Whoa! I can't talk now... something's coming!");
+break;
+
+case 11:
+	print(s:"...");
+break;
+
+case 12:
+	print(s:"[Email] To: R. Williams From: J. LaGrave Did you go out and check on that sensor array? I'm still getting wacky readings. I think something's busted out there.");
+break;
+
+case 13:
+	print(s:"[Email] To: J. LaGrave From: R. Williams Checked the array. Everything passed my diagnostics. But the readings don't seem to make sense to me either. I'm working with Lloyd to try to find out what's going on.");
+break;
+
+case 14:
+	print(s:"No more email.");
+break;
+
+case 15:
+	print(s:"Error....#$^@%*#^");
+break;
+
+case 16:
+	print(s:"Use passcode 666 for the door ahead.");
+break;
+
+case 17:
+	print(s:"Red keycard in northeast corner of this sector.");
+break;
+
+case 18:
+	print(s:"Ahh... when I saw those weapons come through the teleporter without their owner, I knew something was wrong. Looking at these data, it seems like someone deliberately sabotaged your teleport. Here, I think you'll need these! [You got your weapons back] If you're looking for the red keycard, try the northeast corner of this sector. I've just enabled the cycle operation on the door up ahead. The code is 666.");
+break;
+
+case 19:
+	print(s:"I'm going to stay here and try to make sense of these other sensor readings. It looks to me like the reactor is back online, and there are huge power draws all over the base. I think something big is about to happen.");
+break;
+
+case 20:
+	print(s:"Code 666 should work for the door ahead.");
+break;
+
+case 21:
+	print(s:"New message arriving...");
+break;
+
+case 22:
+	print(s:"Attn. all personnel: If you can use a terminal with access to your local sensor array, check your readings now. We're sensing a rise in the same readings that preceded the attack wave. Report if you can.");
+break;
+
+case 23:
+	print(s:"Too many users... blah blah blah. Probable cause: slashdot.org Try again in a few seconds... -xian");
+break;
+
+case 24:
+	print(s:"Door cycle operation offline.");
+break;
+
+case 25:
+	print(s:"666");
+break;
+
+case 26:
+	print(s:"Enter passcode:");
+break;
+
+case 27:
+	print(s:" Access granted.");
+break;
+
+case 28:
+	print(s:"Door unlocked.");
+break;
+
+case 29:
+	print(s:"Incoming message: RED ALERT! A second attack has started! All personnel to battle positions!");
+break;
+
+case 30:
+	print(s:"Logged in as root. # scp /map.dat . Saving... Done. You got the map data.");
+break;
+
+case 31:
+	print(s:"Map data already downloaded.");
+break;
+
+case 32:
+	print(s:"Incoming audio transmission source unknown: Can anyone hear me?! All hell is breaking loose! They're in Junction...everywhere! Everyone's dead. They're hoarding out of the reactor sector! If anyone can hear this... please help!");
+break;
+
+case 33:
+	print(s:"Connection lost..");
+break;
+
+case 34:
+	print(s:"Oh, man! I thought you were one of those things! I barely made it out of Junction when that second wave hit. The rest of my unit didn't make it.");
+break;
+
+case 35:
+	print(s:"Just before we got hit, someone screamed that the gates of Hell had opened. After seeing all these...demons, or whatever they are, I believe it.");
+break;
+
+case 36:
+	print(s:"Find the red keycard.");
+break;
+
+case 37:
+	print(s:"You're definitely going to need the red keycard if you want to get anywhere up ahead. You'd better go find it.");
+break;
+
+case 38:
+	print(s:"Look, I'm almost out of ammo and armor. I can't do you much good. I'm going to stay here and see what I can scrounge.");
+break;
+
+case 39:
+	print(s:"Super secret passcode: 2***");
+break;
+
+case 40:
+	print(s:"");
+break;
