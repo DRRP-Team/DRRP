@@ -14,22 +14,22 @@ Actor GreenCard : DoomKey 10622
 	}
 }
 
-actor YellowCard1 : YellowCard replaces YellowCard
+ACTOR YellowCard1 : YellowCard replaces YellowCard
 {
   Inventory.PickupSound "misc/k_pkup"
 }
 
-actor BlueCard1 : BlueCard replaces BlueCard
+ACTOR BlueCard1 : BlueCard replaces BlueCard
 {
   Inventory.PickupSound "misc/k_pkup"
 }
 
-actor RedCard1 : RedCard replaces RedCard
+ACTOR RedCard1 : RedCard replaces RedCard
 {
   Inventory.PickupSound "misc/k_pkup"
 }
 
-actor SmallMedikit : HealthPickup replaces Medikit 10600 {
+ACTOR SmallMedikit : HealthPickup replaces Medikit 10600 {
 //$Category Items
 	Health 25
 	Inventory.MaxAmount 99
@@ -47,7 +47,7 @@ actor SmallMedikit : HealthPickup replaces Medikit 10600 {
 	  }
 }
 
-actor LargeMedikit : HealthPickup 10601 {
+ACTOR LargeMedikit : HealthPickup 10601 {
 //$Category Items
 	Health 75
 	Inventory.MaxAmount 99
@@ -65,7 +65,7 @@ actor LargeMedikit : HealthPickup 10601 {
 	  }
 }
 
-actor HealthPowerUp : UpgradeStamina 10603 {
+ACTOR HealthPowerUp : UpgradeStamina 10603 {
 	Inventory.Amount 10
 	Inventory.MaxAmount 70
 }
@@ -90,7 +90,7 @@ ACTOR Balloon : Ammo 10610
 }
 
 //Coins 10620-10629
-actor Credit : Inventory 10620 {
+ACTOR Credit : Inventory 10620 {
 //$Category Items
 	+DROPPED
 	+NOTDMATCH
@@ -107,7 +107,7 @@ actor Credit : Inventory 10620 {
 	}
 }
 
-actor GoldCredit : CustomInventory 10621 {
+ACTOR GoldCredit : CustomInventory 10621 {
 //$Category Items
 	+DROPPED
 	+NOTDMATCH
@@ -146,7 +146,7 @@ ACTOR Berserker : CustomInventory replaces Berserk 10623
   }
 }
 
-actor DogCollar : CustomInventory 10624 {
+ACTOR DogCollar : CustomInventory 10624 {
 	Inventory.Icon "DOGCA0"
 	Tag "Dog Collar"
 	Inventory.PickupMessage "Got dog collar"
@@ -161,7 +161,7 @@ actor DogCollar : CustomInventory 10624 {
 	}
 }
 
-actor DRRPHealthBonus : Health replaces HealthBonus
+ACTOR DRRPHealthBonus : Health replaces HealthBonus
 {
   Inventory.Amount 1
   Inventory.PickupMessage "$GOTHTHBONUS" // "Picked up a health bonus."
