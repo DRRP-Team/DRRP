@@ -15,6 +15,18 @@ map TITLEMAP "Introduction"
  SkyBox = DARK0305
 }
 
+map TITLEMAP2 "Introduction"
+{
+ music = "D_PROTECT"
+ SkyBox = DARK0305
+}
+
+map TITLEMAP3 "Introduction"
+{
+ music = "D_BLIZZ"
+ SkyBox = DARK0305
+}
+
 
 Map INTRO "Intro"
 {
