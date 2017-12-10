@@ -1,27 +1,5 @@
 //10701-10800
 
-/*ACTOR Bed 10702
-{
-	Game Doom
-/*ACTOR Bed 10702
-{
-	Game Doom
-	Radius 49
-	Radius 49
-	Height 27
-	ProjectilePassHeight -16
-	+SOLID
-	+NOBLOODDECALS
-    Mass 0x7FFFFFFF
-    -SHOOTABLE
-	States
-	{
-	Spawn:
-		DRTB A -1
-	Stop
-	}
-}*/
-
 ACTOR DRPGBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 {
 	DamageFactor "FireExtDamage", 0
@@ -102,6 +80,7 @@ ACTOR Rod : ExplosiveBarrel 10704
 }
 
 actor Crate 10705 {
+	DamageFactor "FireExtDamage", 0
 	+SOLID
 	+SHOOTABLE
 	+NOBLOOD

@@ -11,7 +11,7 @@ ACTOR FireExtPuff
   RenderStyle Add
   Alpha 0.85
   Projectile
-  Speed 20
+  Speed 30
   Scale 0.5
   Damage 1
   DamageType FireExtDamage

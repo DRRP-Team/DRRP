@@ -131,7 +131,7 @@ ACTOR Berserker : CustomInventory replaces Berserk 10623
 	Translation "193:207=171:191", "240:247=185:191"
 	+COUNTITEM
 	+INVENTORY.INVBAR
-	Inventory.Icon "SOULA0"
+	Inventory.Icon "BERSH0"
 	Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
 	Inventory.PickupSound "misc/p_pkup"
 	States
