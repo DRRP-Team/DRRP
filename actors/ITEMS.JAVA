@@ -128,22 +128,23 @@ ACTOR GoldCredit : CustomInventory 10621 {
 
 ACTOR Berserker : CustomInventory replaces Berserk 10623
 {
-  Translation "193:207=171:191", "240:247=185:191"
-  +COUNTITEM
-  +INVENTORY.INVBAR
-  Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
-  Inventory.PickupSound "misc/p_pkup"
-  States
-  {
-  Spawn:
-    SOUL ABCDCB 6 Bright
-    loop
+	Translation "193:207=171:191", "240:247=185:191"
+	+COUNTITEM
+	+INVENTORY.INVBAR
+	Inventory.Icon "SOULA0"
+	Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
+	Inventory.PickupSound "misc/p_pkup"
+	States
+	{
+	Spawn:
+		SOUL ABCDCB 6 Bright
+		Loop
 	Use:		
 		TNT1 A 0 A_GiveInventory("PowerStrength")
 		TNT1 A 0 HealThing(100, 0)
 		TNT1 A 0 A_SelectWeapon("Fist")
-	stop
-  }
+		Stop
+	}
 }
 
 ACTOR DogCollar : CustomInventory 10624 {
