@@ -24,6 +24,16 @@ ACTOR FireExt : Weapon 10556
 		FIEX A 1 A_Raise
 		Loop
 	Fire:
+		FIEX B 0 A_Recoil( 4 )
+		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
+	FireLoop:
+		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
+		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
+		FIEX C 0 A_Recoil( 1 )
+		FIEX A 0 A_ReFire( "FireLoop" )
 		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
 		FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
 		FIEX B 0 A_Recoil( 1 )
