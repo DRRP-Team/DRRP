@@ -24,6 +24,7 @@
 
 ACTOR DRPGBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 {
+	DamageFactor "FireExtDamage", 0
 	Health 1
 	States {
 		Spawn:
