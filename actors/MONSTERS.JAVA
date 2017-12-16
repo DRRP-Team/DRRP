@@ -86,7 +86,7 @@ ACTOR ZombieLt : ShotgunGuy 10374 {
 	Translation "0:255=192:207"
 }
 
-ACTOR ZombieCpt 10474 {
+ACTOR ZombieCpt : ZombieMan 10474 {
 	Health 30
 	Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
 }
@@ -103,8 +103,6 @@ ACTOR BullDemon : Demon 10259 {
 ACTOR Pinky : Demon 10459 { //FIXME: id
 //$Category DMonsters
 	Health 75
-	Translation "16:47=128:143", "168:191=144:151"
-	//Translation "16:47=[255,255,255]:[140,130,43]", "168:191=[0,0,0]:[255,255,255]"
 }
 
 ACTOR Belphegor : Demon 10359 {
@@ -124,7 +122,6 @@ ACTOR Impling : DoomImp 10260 {
 ACTOR Imp : DoomImp replaces DoomImp 10261 {
 //$Category DMonsters
 	Health 30
-	Translation "64:79=112:127", "61:63=112:118"
 }
 
 ACTOR ImpLord : DoomImp 10360 {
@@ -163,7 +160,6 @@ ACTOR Phantom : LostSoul 10263 {
 ACTOR LostSoul1: LostSoul replaces LostSoul 10463 { //FIXME: id
 //$Category DMonsters
 	Health 100
-	Translation "128:151=152:159", "64:79=152:159"
 }
 
 ACTOR Nightmare : LostSoul 10363 {
@@ -225,7 +221,7 @@ ACTOR DRRPRevenant : Revenant replaces Revenant {
 
 ACTOR Ghoul : DRRPRevenant 10277 {
 //$Category DMonsters
-	Translation "128:143=112:127", "144:151=120:127", "48:79=112:127", "160:167=114:126", "13:15=126:127", "232:235=124:124", "20:20=116:116", "236:239=125:127", "21:47=160:16
+	Translation "128:143=112:127", "144:151=120:127", "48:79=112:127", "160:167=114:126", "13:15=126:127", "232:235=124:124", "20:20=116:116", "236:239=125:127", "21:47=160:16"
 }
 
 ACTOR Fiend : DRRPRevenant 10377 {
@@ -255,12 +251,6 @@ ACTOR Mancubus : DRRPCubus 10378 {
 }
 
 ACTOR Druj : DRRPCubus 10478 {
-//$Category DMonsters
-	Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
-}
-
-//Pain
-ACTOR Behemoth : PainElemental 10278 {
 //$Category DMonsters
 	Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
 }
