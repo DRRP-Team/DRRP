@@ -142,7 +142,7 @@ ACTOR Berserker : CustomInventory replaces Berserk 10623
 	Use:		
 		TNT1 A 0 A_GiveInventory("PowerStrength")
 		TNT1 A 0 HealThing(100, 0)
-		TNT1 A 0 A_SelectWeapon("Fist")
+		TNT1 A 0 A_SelectWeapon("DRRPAxe") // Fist
 		Stop
 	}
 }
