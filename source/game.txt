@@ -4,7 +4,7 @@
 #define JUNCTION_LEVELNUM 2
 //#define DEBUGSCRIPT
 
-world bool 1:exitedLevels[MAX_LEVELS] = {false};
+world bool 1:exitedLevels[MAX_LEVELS] = {false}; // FIXME: You need only one counter
 
 #ifdef DEBUGSCRIPT
 script CheckLevelExits ENTER {
