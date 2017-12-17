@@ -1,6 +1,6 @@
 module.exports = {
-    "1": 10557,
-    "3": 2001,
+    "1": 10557, //Axe
+    "3": 2001, //Shotgun
     "6": 0, //Rocket Launcher
     "7": 0, //Plasma Gun
 
@@ -10,11 +10,15 @@ module.exports = {
 
     "20": 10246, //Hellhound
     "21": 10346, //Cerberus
-    "22": 0, //Demon Worlf
+    "22": 0, //Demon Wolf
 
     "26": 0, //Impling
     "27": 0, //Imp
     "28": 0, //Imp-Lord
+
+    "29": 0, //Phantom
+    "30": 0, //Lost Soul
+    "31": 0, //Nightmare //FIXME: Nightmare and Pain Elemental
 
     "32": 10259, //Bull Demon
     "33": 0, //Pinky
@@ -28,6 +32,18 @@ module.exports = {
     "45": 0, //Mancubus
     "46": 0, //Druj
 
+    "47": 0, //Infernis
+    "48": 0, //Arch Vile
+    "49": 0, //Apollyon
+
+    "50": 0, //Ogre
+    "51": 0, //Hell Knight
+    "52": 0, //Baron of Hell
+
+    "62": 0, //Explosion? TODO:
+
+    "65": 0, //Red Key
+
     "81": 10610, //Halon Can
     "82": 0, //Halon Cans
 
@@ -38,6 +54,7 @@ module.exports = {
     "86": 0, //Shell Clips
 
     "87": 0, //Rocket
+    "88": 0, //Rockets
 
     "89": 0, //Cell Clip
     "90": 0, //Cell Clips
@@ -57,16 +74,21 @@ module.exports = {
     "102": 0, //Berserker
     "110": 0, //Dog Collar
 
-    "129": 10250,
+    "128": 0, //Lava
+    "129": 10250, //Fire
     "130": 10701, //Barrel
     "132": 0, //Sink
     "133": 0, //Toilet
     "135": 2028, //Yellow Lamp
+    "138": 0, //EXIT
+    "139": 0, //Cabinet
     "140": 0, //Blue Lamp
+    "141": 0, //Table
     "142": 0, //Bed
 
     "145": 0, //Civilian (Yellow)
     "146": 0, //Scientist
+    "147": 0, //Dead Zombies FIXME: ZombieS FIXME: Green Marine???
     "148": 0, //Black Scientist
     "149": 0, //Dr. Guerard
     "150": 0, //Purple Civilian
@@ -74,9 +96,4 @@ module.exports = {
     //"161": 10705, //Yellow Civilian?
 
     "162": 0, //Crate
-
-    "209": 0, //Blood decal
-    "213": 0, //X decal
-    "215": 0, //Top-Bottom decal \/\/
-    "217": 0, // | | decal
 }
