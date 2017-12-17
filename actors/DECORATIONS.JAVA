@@ -151,7 +151,31 @@ actor Exit 10708 {
     Mass 0x7FFFFFFF
 	States {
 		Spawn:
-			EXI T -1
+			EXIT A -1
+		Stop
+	}
+}
+
+actor Sink 10709 {
+	Radius 14
+	Height 64
+	+SOLID
+    Mass 0x7FFFFFFF
+	States {
+		Spawn:
+			EXIT A -1
+		Stop
+	}
+}
+
+actor Toilet 10710 {
+	Radius 14
+	Height 64
+	+SOLID
+    Mass 0x7FFFFFFF
+	States {
+		Spawn:
+			EXIT A -1
 		Stop
 	}
 }
