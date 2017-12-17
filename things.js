@@ -101,8 +101,8 @@ module.exports = {
     "128": 10251, //Lava
     "129": 10250, //Fire
     "130": 10701, //Barrel
-    "132": 10603, //Sink TODO:
-    "133": 10603, //Toilet TODO:
+    "132": 10709, //Sink TODO:
+    "133": 10710, //Toilet TODO:
     "135": 2028, //Yellow Lamp
     "138": 10708, //EXIT
     "139": 10707, //Cabinet
