@@ -200,7 +200,7 @@ class Parser {
         var vertices = [];
 
         function findVertex(x, y) {
-            for(var i = 0; i < vertices.length; i++) {
+            for (var i = 0; i < vertices.length; i++) {
                 if (vertices[i][0] == x && vertices[i][1] == y) return i;
             }
             vertices.push([x, y]);
@@ -277,7 +277,7 @@ class Parser {
         }
 
         var vs = "";
-        for(let vertex of vertices) {
+        for (let vertex of vertices) {
             vs += "vertex {\n";
             vs += "\tx = " + vertex[0] + ";\n";
             vs += "\ty = " + vertex[1] + ";\n";
@@ -360,4 +360,12 @@ const a = require("nw.gui").Window.get();
 a.width = Config.width;
 a.height = Config.height;
 
-main(process.argv[2] || "level03.bsp", process.argv[3] || "out.tm");
+// main(process.argv[2] || "level03.bsp", process.argv[3] || "out.tm");
+{
+    let from = prompt("Введите полное имя .bsd файла");
+    if(from) main(from, from + ".ts");
+}
+document.addEventListener("click", function(){
+    let from = prompt("Введите полное имя .bsd файла");
+    if(from) main(from, from + ".ts");
+})
