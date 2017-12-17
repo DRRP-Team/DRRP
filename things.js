@@ -1,8 +1,13 @@
 module.exports = {
     "1": 10557, //Axe
+    "2": 0, //FireExt?
     "3": 2001, //Shotgun
+    "4": 0, //SSG?
+    "5": 0, //Chaingun?
     "6": 0, //Rocket Launcher
     "7": 0, //Plasma Gun
+    "8": 0, //BFG?
+    "9": 0, //Pistol?
 
     "17": 0, //Zombie Pvt
     "18": 0, // Zombie Lt
@@ -39,6 +44,10 @@ module.exports = {
     "50": 0, //Ogre
     "51": 0, //Hell Knight
     "52": 0, //Baron of Hell
+
+    "53": 0, //Cyberdemon?
+
+    "54": 0, //Kronos?
 
     "62": 0, //Explosion? TODO:
 
