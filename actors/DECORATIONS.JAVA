@@ -131,3 +131,27 @@ ACTOR Wardrobe 10706 {
 	Stop
 	}
 }
+
+actor Bed 10707 {
+	Radius 14
+	Height 57
+	+SOLID
+    Mass 0x7FFFFFFF
+	States {
+		Spawn:
+			CHAI A -1
+		Stop
+	}
+}
+
+actor Exit 10708 {
+	Radius 14
+	Height 64
+	-SOLID
+    Mass 0x7FFFFFFF
+	States {
+		Spawn:
+			EXI T -1
+		Stop
+	}
+}

@@ -91,6 +91,41 @@ Actor DRRPFire 10250 {
 	}
 }
 
+Actor DRRPLava 10251 {
+	//$Category Damage
+	Health 10
+	Monster
+	-SOLID
+	+NOBLOOD
+	-ISMONSTER
+	+NOTARGET
+	-COUNTKILL
+	+NOTRIGGER
+	-SHOOTABLE
+    
+	Mass 0x7FFFFFFF
+	DamageType "Fire"
+	
+	DamageFactor "Normal", 0
+	
+	States {
+	Spawn:
+	    SPKO D 0 Bright
+		SPKO D 0 Bright A_PlaySound( "ICOSCRE", CHAN_7, 1, true, 2.5 )
+		SPKO D 0 Bright A_Jump( 256, 1, 2, 3, 4, 5, 6, 7, 8 )
+	SpawnLoop:
+		SPKO ABCDEFGH 2 BRIGHT A_Explode( 7, 32, XF_NOTMISSILE )
+		Loop
+	Pain.FireExtDamage:
+		TNT1 A 0
+		Goto SpawnLoop
+	Death:
+	XDeath:
+		TNT1 A 0
+		Stop
+	}
+}
+
 Actor Explosion : Rocket
 {
 	Spawn Parent Death
