@@ -52,6 +52,9 @@ module.exports = {
     "62": 0, //Explosion? TODO:
 
     "65": 0, //Red Key
+    "66": 0, //Blue Key?
+    "67": 0, //Green Key?
+    "68": 0, //Yellow Key?
 
     "81": 10610, //Halon Can
     "82": 0, //Halon Cans
