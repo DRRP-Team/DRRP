@@ -163,7 +163,7 @@ actor Sink 10709 {
     Mass 0x7FFFFFFF
 	States {
 		Spawn:
-			EXIT A -1
+			XSIN A -1
 		Stop
 	}
 }
@@ -175,7 +175,7 @@ actor Toilet 10710 {
     Mass 0x7FFFFFFF
 	States {
 		Spawn:
-			EXIT A -1
+			XTOI A -1
 		Stop
 	}
 }
