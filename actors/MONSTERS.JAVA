@@ -216,7 +216,17 @@ ACTOR Apollyon : DRRPVile 10473 {
 
 ACTOR DRRPRevenant : Revenant replaces Revenant {
 //$Category DMonsters
-	Scale 0.95
+	Scale 0.7
+	states{
+		Death:
+			SKEL L 7
+			SKEL M 7 A_SpawnItem("Explosion", 0.0, 0.0, false, false)
+			SKEL N 7 A_Scream
+			SKEL O 7 A_NoBlocking
+			SKEL P 7
+			SKEL Q -1
+		Stop
+	}
 }
 
 ACTOR Ghoul : DRRPRevenant 10277 {
