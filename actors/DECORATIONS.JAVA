@@ -242,7 +242,16 @@ actor Alarm1 10745 {
 	Scale 0.5
 	States {
 		Spawn:
-			ALAR ABCD 3
+			ALAR A 0 A_PlaySound("alarm/alarm3")
+			ALAR ABCDABCDABCDABCDABCD 3
 		loop
+	}
+}
+
+actor Alarm2 : KlaxonWarningLight 10746 {
+	states {
+		spawn:
+		TNT1 A 0
+		goto see
 	}
 }
