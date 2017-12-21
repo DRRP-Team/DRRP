@@ -4,6 +4,7 @@ ACTOR DRPGBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 {
 	DamageFactor "FireExtDamage", 0
 	Health 1
+	BloodColor "FF FF 00"
 	States {
 		Spawn:
 			BAR1 AB 6
@@ -86,6 +87,7 @@ actor Crate 10705 {
 	+NOBLOOD
 	+FLOORCLIP
 	+INCOMBAT
+	BloodColor "AA AA AA"
 	Health 1
 	Height 64
 	Radius 32
@@ -160,11 +162,29 @@ actor Sink 10709 {
 	Radius 14
 	Height 64
 	+SOLID
+	+SHOOTABLE
+	BloodColor "AA AA AA"
+	Health 50
+	Scale 0.8
     Mass 0x7FFFFFFF
 	States {
 		Spawn:
 			XSIN A -1
 		Stop
+		Death:
+			XTOI A 0 A_NoBlocking
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.7)
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.6)
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.5)
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.4)
+		goto Death1
+		Death1:
+			CEFE ABC 5
+		loop
 	}
 }
 
@@ -172,10 +192,57 @@ actor Toilet 10710 {
 	Radius 14
 	Height 64
 	+SOLID
+	+SHOOTABLE
+	BloodColor "AA AA AA"
+	Health 50
+	Scale 0.8
     Mass 0x7FFFFFFF
 	States {
 		Spawn:
 			XTOI A -1
 		Stop
+		Death:
+			XTOI A 0 A_NoBlocking
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.7)
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.6)
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.5)
+			CEFE ABC 5
+			CEFE A 0 A_SetScale(0.4)
+		goto Death1
+		Death1:
+			CEFE ABC 5
+		loop
+	}
+}
+
+actor CEFEcon 10743 {
+	-SOLID
+	Scale 0.4
+	States {
+		Spawn:
+			CEFE ABC 5
+		loop
+	}
+}
+actor CEFRcon : CEFEcon 10744 {
+	States {
+		Spawn:
+			CEFR ABC 5
+		loop
+	}
+}
+
+actor Alarm1 10745 {
+	-SOLID
+	+SPAWNCEILING
+	+NOGRAVITY
+	Scale 0.5
+	States {
+		Spawn:
+			ALAR ABCD 3
+		loop
 	}
 }
