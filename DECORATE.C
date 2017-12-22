@@ -1,5 +1,5 @@
 #include actors/MONSTERS.JAVA
-#include actors/BRAINFUCKERS.JAVA
+//#include actors/BRAINFUCKERS.JAVA
 #include actors/DECORATIONS.JAVA
 #include actors/ITEMS.JAVA
 #include actors/WEAPONS.JAVA

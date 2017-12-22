@@ -1,17 +1,31 @@
 # Russian
 ## Команда DRRP (DRRP Team):
 
- - PROPHESSOR <xentezeATgmailDOTcom> - Создатель проекта, программист, маппер
- - UsenameAK - программист
- - Lolimpire (вышел) - маппер
- - Dsskull1 - работа с графикой
- - Morthimer McMare - Тестер, работа с графикой
+ - PROPHESSOR <xentezeATgmailDOTcom>
+	Создатель проекта, программист, маппер
+	
+ - UsenameAK
+	Программист
+	
+ - Lolimpire (вышел)
+	Маппер
+	
+ - Dsskull1
+	Работа с графикой
+	
+ - JSO_x (a. k. a. Morthimer McMare) 
+	Бета-тестер, работа с графикой, относительно программист
+	
  - shon
- - Nomakh - маппер
+ 
+ - Nomakh
+	Маппер
  
 ## Благодарности
 
  - AáaWaäáàæãā₣§èèì - Благодарность за статью по устройству Doom RPG
+ 
+ - YURA_111 - Благодарность за некоторые спрайты
  
 # English
 ## DRRP Team:
@@ -20,10 +34,12 @@
  - UsenameAK - programmer
  - Lolimpire (left) - mapper
  - Dsskull1 - Tester, graphics
- - Morthimer McMare - Tester, graphics
+ - JSO_x (a. k. a. Morthimer McMare) - beta-tester, graphic, programmer
  - shon
  - Nomakh - mapper
  
 ## Special thanks
 
  - AáaWaäáàæãā₣§èèì - Doom RPG decompilation article
+ 
+ - YURA_111 - Some sprites

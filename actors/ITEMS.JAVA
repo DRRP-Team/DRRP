@@ -16,17 +16,17 @@ Actor GreenCard : DoomKey 10622
 
 ACTOR YellowCard1 : YellowCard replaces YellowCard
 {
-  Inventory.PickupSound "misc/k_pkup"
+	Inventory.PickupSound "misc/k_pkup"
 }
 
 ACTOR BlueCard1 : BlueCard replaces BlueCard
 {
-  Inventory.PickupSound "misc/k_pkup"
+	Inventory.PickupSound "misc/k_pkup"
 }
 
 ACTOR RedCard1 : RedCard replaces RedCard
 {
-  Inventory.PickupSound "misc/k_pkup"
+	Inventory.PickupSound "misc/k_pkup"
 }
 
 ACTOR SmallMedikit : HealthPickup replaces Medikit 10600 {
@@ -98,7 +98,7 @@ ACTOR Credit : Inventory 10620 {
 	Inventory.MaxAmount 0x7fffffff
 	+INVENTORY.INVBAR
 	Tag "Credit"
-	Inventory.Icon "COINA0"
+	Inventory.Icon "CREDH0"
 	Inventory.PickupMessage "Picked up a credit."
 	States {
 		Spawn:
