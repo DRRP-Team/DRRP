@@ -1,0 +1,12 @@
+alias choiceup "puke 201"
+alias choicedown "puke 202"
+alias choiceselect "puke 203"
+
+defaultbind kpright choiceselect
+defaultbind kpup choiceup
+defaultbind kpdown choicedown
+
+addkeysection "Choice Menus" menus
+addmenukey "Menu Select" choiceselect
+addmenukey "Menu Up" choiceup
+addmenukey "Menu Down" choicedown
