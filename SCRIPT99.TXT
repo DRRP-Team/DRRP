@@ -1,0 +1,37 @@
+namespace = "ZDoom";
+
+conversation
+{
+    actor = "DRRPShop"; // Not a number!
+    page
+    {
+		 goodbye = "Close";
+         name = "Shop";
+         dialog = "What do you want to buy?";
+         choice
+         {
+             text = "Small medikit";
+             giveitem = "SmallMedikit";
+         }
+         choice
+         {
+             text = "Large medikit";
+             giveitem = "LargeMedikit";
+         }
+         choice
+         {
+             text = "Soul sphere";
+             giveitem = "SoulSphere";
+         }
+         choice
+         {
+             text = "Berserker";
+             giveitem = "Berserker";
+         }
+         choice
+         {
+             text = "Dog collar";
+             giveitem = "DogCollar";
+         }
+    }
+}

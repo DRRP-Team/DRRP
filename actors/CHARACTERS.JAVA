@@ -201,3 +201,13 @@ actor Marine1KillAble : Marine1 10524 {
 }
 
 
+Actor DRRPShop 10555  {
+	Height 64
+	Radius 32
+	-SOLID
+	states {
+		Spawn:
+			TNT1 A -1
+		stop
+	}
+}
