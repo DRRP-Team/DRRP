@@ -1,0 +1,197 @@
+namespace = "ZDoom";
+
+conversation
+{
+    actor = "DRRPShop"; // Not a number!
+    page
+    {
+		 goodbye = "Close";
+         name = "Shop";
+         dialog = "What do you want to buy?";
+         choice
+         {
+             text = "Small medikit [4 credits]";
+             giveitem = "SmallMedikit";
+             nextpage = 1;
+             nomessage = "Not enough credits!";
+             cost
+             {
+                 item = "Credit";
+                 amount = 4;
+             }
+         }
+         choice
+         {
+             text = "Large medikit [15 credits]";
+             giveitem = "LargeMedikit";
+             nextpage = 1;
+             nomessage = "Not enough credits!";
+             cost
+             {
+                 item = "Credit";
+                 amount = 15;
+             }
+         }
+         choice
+         {
+             text = "Soul sphere [30 credits]";
+             giveitem = "SoulSphere";
+             nextpage = 1;
+             nomessage = "Not enough credits!";
+             cost
+             {
+                 item = "Credit";
+                 amount = 30;
+             }
+         }
+         choice
+         {
+             text = "Berserker [40 credits]";
+             giveitem = "Berserker";
+             nextpage = 1;
+             nomessage = "Not enough credits!";
+             cost
+             {
+                 item = "Credit";
+                 amount = 40;
+             }
+         }
+         choice
+         {
+             text = "Next (Ammo)";
+             nextpage = 2;
+         }
+    }
+
+    page
+    {
+		 goodbye = "Close";
+         name = "Ammo";
+         dialog = "What do you want to buy?";
+         choice
+         {
+             text = "10x Hal. Cans [2 credits]";
+             giveitem = "Balloon";
+             nomessage = "Not enough credits!";
+             nextpage = 2;
+             cost
+             {
+                 item = "Credit";
+                 amount = 2;
+             }
+         }
+         choice
+         {
+             text = "10x Bullets [2 credits]";
+             giveitem = "ClipBox";
+             nomessage = "Not enough credits!";
+             nextpage = 2;
+             cost
+             {
+                 item = "Credit";
+                 amount = 2;
+             }
+         }
+         choice
+         {
+             text = "10x Shells [4 credits]";
+             giveitem = "LargeMedikit";
+             nomessage = "Not enough credits!";
+             nextpage = 2;
+             cost
+             {
+                 item = "Credit";
+                 amount = 4;
+             }
+         }
+         choice
+         {
+             text = "3x Rockets [5 credits]";
+             giveitem = "RocketBox";
+             nomessage = "Not enough credits!";
+             nextpage = 2;
+             cost
+             {
+                 item = "Credit";
+                 amount = 5;
+             }
+         }
+         choice
+         {
+             text = "10x Cells [8 credits]";
+             giveitem = "CellPack";
+             nomessage = "Not enough credits!";
+             nextpage = 2;
+             cost
+             {
+                 item = "Credit";
+                 amount = 8;
+             }
+         }
+         choice
+         {
+             text = "Next (Stats)";
+             nextpage = 3;
+         }
+    }
+
+    page
+    {
+		 goodbye = "Close";
+         name = "Stats";
+         dialog = "What do you want to buy?";
+         choice
+         {
+             text = "+1 Accuracy [8 credits]";
+             giveitem = "HealthPowerUp";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost
+             {
+                 item = "Credit";
+                 amount = 8;
+             }
+         }
+         choice
+         {
+             text = "+1 Agility [8 credits]";
+             giveitem = "HealthPowerUp";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost
+             {
+                 item = "Credit";
+                 amount = 8;
+             }
+         }
+         choice
+         {
+             text = "+1 Strength [10 credits]";
+             giveitem = "HealthPowerUp";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost
+             {
+                 item = "Credit";
+                 amount = 10;
+             }
+         }
+         choice
+         {
+             text = "+1 Defense [10 credits]";
+             giveitem = "HealthPowerUp";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost
+             {
+                 item = "Credit";
+                 amount = 10;
+             }
+         }
+         choice
+         {
+             text = "Back";
+             nextpage = 1;
+         }
+    }
+}
