@@ -203,7 +203,7 @@ actor Marine1KillAble : Marine1 10524 {
 
 Actor DRRPShop 10555  {
 	Height 64
-	Radius 32
+	Radius 32 //32 is Too fat
 	-SOLID
 	states {
 		Spawn:
