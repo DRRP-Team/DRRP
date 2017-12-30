@@ -12,8 +12,8 @@ ACTOR DRPGBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 		Death:
 			BEXP A 5 Bright
 			BEXP B 5 Bright A_Scream
+			BEXP C 0 Bright A_Quake(6, 5, 0, 128, "world/barrelx")
 			BEXP C 5 Bright
-			BEXP D 0 Bright A_Quake(6, 5, 0, 128, "world/barrelx")
 			BEXP D 5 Bright A_Explode
 			BEXP E 10 Bright
 			TNT1 A 1050 Bright A_BarrelDestroy

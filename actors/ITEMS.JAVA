@@ -74,19 +74,19 @@ ACTOR HealthPowerUp : UpgradeStamina 10603 {
 ACTOR Balloon : Ammo 10610
 {
 //$Category DAmmo
-  Inventory.PickupMessage "Picked up a baloon!"
-  Inventory.Amount 20
-  Inventory.MaxAmount 300
-  Ammo.BackpackAmount 20
-  Ammo.BackpackMaxAmount 600
-  Inventory.Icon "BALLA0"
-  Inventory.PickupSound "weapon/gas"
-  States
-  {
-  Spawn:
-    BALL A -1
-    Stop
-  }
+ 	Inventory.PickupMessage "Picked up a baloon!"
+ 	Inventory.Amount 20
+ 	Inventory.MaxAmount 300
+ 	Ammo.BackpackAmount 20
+ 	Ammo.BackpackMaxAmount 600
+	Inventory.Icon "BALLA0"
+	Inventory.PickupSound "weapon/gas"
+	States
+	{
+	Spawn:
+		BALL A -1
+		Stop
+	}
 }
 
 //Coins 10620-10629
@@ -119,18 +119,19 @@ ACTOR GoldCredit : CustomInventory 10621 {
 	States {
 		Spawn:
 			COIN A -1
-		stop
+			Stop
 		Pickup:
 			TNT1 A 0 A_GiveInventory("Credit", 5)
-		stop
+			Stop
 	}
 }
 
-ACTOR Berserker : CustomInventory replaces Berserk 10623
+Actor Berserker : CustomInventory replaces Berserk 10623
 {
 	Translation "193:207=171:191", "240:247=185:191"
 	+COUNTITEM
 	+INVENTORY.INVBAR
+	Inventory.MaxAmount 99
 	Inventory.Icon "BERSH0"
 	Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
 	Inventory.PickupSound "misc/p_pkup"
@@ -147,8 +148,27 @@ ACTOR Berserker : CustomInventory replaces Berserk 10623
 	}
 }
 
-ACTOR DogCollar : CustomInventory 10624 {
-	Inventory.Icon "DOGCA0"
+Actor InventorySoulsphere: CustomInventory replaces Soulsphere
+{
+	+COUNTITEM
+	+INVENTORY.INVBAR
+	Inventory.MaxAmount 99
+	Inventory.Icon "SOULH0"
+	Inventory.PickupMessage "$GOTSUPER"
+	Inventory.PickupSound "misc/p_pkup"
+	States
+	{
+	Spawn:
+		SOUL ABCDCB 6 Bright
+		Loop
+	Use:		
+		TNT1 A 0 A_GiveInventory( "HealthBonus", 100 )
+		Stop
+	}
+}
+
+Actor DogCollar : CustomInventory 10624 {
+	Inventory.Icon "DOGCH0"
 	Tag "Dog Collar"
 	Inventory.PickupMessage "Got dog collar"
 	+INVENTORY.INVBAR
