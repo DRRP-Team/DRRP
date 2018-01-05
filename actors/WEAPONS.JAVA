@@ -25,20 +25,28 @@ ACTOR FireExt : Weapon 10556
 		Loop
 	Fire:
 		FIEX B 0 A_Recoil( 4 )
-		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		TNT1 A 0 A_PlaySound("weapon/fireext/loop", CHAN_WEAPON, 1, 1)
+		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 3/*10*/ ), True )
 		FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
 	FireLoop:
+		TNT1 A 0 A_PlaySound("weapon/fireext/loop", CHAN_WEAPON, 1, 1)
+		TNT1 A 0 A_SetAngle(random(1, -1) + angle)
+		TNT1 A 0 A_SetPitch(random(1, -1) + pitch)
+		FIEX C 0 A_Recoil( 4 )
 		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
 		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
 		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
 		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-		FIEX C 0 A_Recoil( 1 )
+		FIEX C 1 A_SetAngle(random(1, -1) + angle)
+		TNT1 A 0 A_SetPitch(random(1, -1) + pitch)
 		FIEX A 0 A_ReFire( "FireLoop" )
 		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
 		FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-		FIEX B 0 A_Recoil( 1 )
+		FIEX B 0 A_SetAngle(random(1, -1) + angle)
+		TNT1 A 0 A_SetPitch(random(1, -1) + pitch)
 		FIEX A 0 A_ReFire
-		//DW2A AAAAAAAAAAAAAAAAAAAA 1 
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("weapon/fireext/stop", CHAN_WEAPON)
 		Goto Ready
 	Spawn:
 		FEXT I -1
@@ -212,21 +220,19 @@ Actor FireExtPuff
   Damage 1
   DamageType FireExtDamage
   Gravity 10
-  SeeSound "weapons/plasmax"
-  DeathSound "weapons/plasmax"
   States
   {
   Spawn:
-    STEM A 1 A_SetTranslucent(0.6, 1)
-    STEM B 1 A_SetTranslucent(0.55, 1)
-    STEM C 1 A_SetTranslucent(0.5, 1)
-    STEM D 1 A_SetTranslucent(0.45, 1)
-    STEM E 1 A_SetTranslucent(0.4, 1)
-    STEM F 1 A_SetTranslucent(0.35, 1)
-    STEM G 1 A_SetTranslucent(0.3, 1)
-    STEM H 1 A_SetTranslucent(0.25, 1)
-    STEM I 1 A_SetTranslucent(0.2, 1)
-    STEM J 1 A_SetTranslucent(0.15, 1)
+    STEM A 1 A_SetTranslucent(0.7, 1)
+    STEM B 1 A_SetScale(1.3, 1.3)//A_SetTranslucent(0.65, 1)
+    STEM C 1 A_SetTranslucent(0.6, 1)
+    STEM D 1 A_SetScale(1.5, 1.5)//A_SetTranslucent(0.55, 1)
+    STEM E 1 A_SetTranslucent(0.5, 1)
+    STEM F 1 A_SetScale(1.8, 1.8)//A_SetTranslucent(0.45, 1)
+    STEM G 1 A_SetTranslucent(0.4, 1)
+    STEM H 1 A_SetScale(2.0, 2.0)//A_SetTranslucent(0.35, 1)
+    STEM I 1 A_SetTranslucent(0.3, 1)
+    STEM J 1 A_SetTranslucent(0.2, 1)
     STEM K 1 A_SetTranslucent(0.1, 1)
     STEM L 1 A_SetTranslucent(0.05, 1)
   Death:
@@ -237,4 +243,303 @@ Actor FireExtPuff
 
 Actor FireExtPuffNoDamage : FireExtPuff {
 	Damage 0
+}
+
+// Dogs
+
+ACTOR HellHoundGun : Weapon
+{
+	Weapon.AmmoUse 0
+	Weapon.AmmoGive 100
+	Weapon.SelectionOrder 1
+	//Weapon.AmmoType "DogGunHealth"
+	+WEAPON.WIMPY_WEAPON
+	Inventory.Pickupmessage "DOGGY!"
+	Tag "$TAGHDOG"
+	Inventory.PickupSound "weapons/fireext/pick"
+	States
+	{
+	Ready:
+		HDGG AAAAAAAA 1 A_WeaponReady//A_Jump(1, "MeleePunch")//{ A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
+		//"####" BBBBBBBB 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
+		Loop
+	Deselect:
+		//HDGG A 1 
+		//HDGG A 0 A_JumpIf(health <= 0, "DeadDude")
+		//goto AltFire
+		HDGG A 1 A_Lower
+		Loop
+	Select:
+		HDGG A 1 Offset(0,90)
+		HDGG A 0 A_PlaySound("monsters/hellhound/see")
+		HDGG A 1 Offset(0,80)
+		HDGG A 1 Offset(0,70)
+		HDGG A 1 Offset(0,60)
+		HDGG A 1 Offset(0,55)
+		HDGG A 1 Offset(0,49)
+		HDGG A 1 Offset(0,44)
+		HDGG A 1 Offset(0,39)
+		HDGG A 1 Offset(0,35)
+		HDGG A 1 Offset(0,33)
+		HDGG A 1 Offset(0,32) 
+		GoTo Ready
+	Fire:
+		HDGG A 0 A_PlaySound("monsters/hellhound/bite")
+		HDGG CD 2
+		HDGG E 2 A_CustomPunch(random(8, 18), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		HDGG F 2 
+		HDGG DCB 2
+		//HDGG A 0 A_GunFlash
+		Goto Ready
+	AltFire:
+		HDGG A 1 A_PlaySound("monsters/hellhound/die")
+		TNT1 A 0 A_TakeInventory("HellHoundGun", 9999)
+		//TNT1 A 0 
+		Stop
+ 	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR CerberusGun : HellHoundGun
+{
+	States
+	{
+	Select:
+		CDGG A 1 Offset(0,90)
+		CDGG A 0 A_PlaySound("monsters/hellhound/see")
+		CDGG A 1 Offset(0,80)
+		CDGG A 1 Offset(0,70)
+		CDGG A 1 Offset(0,60)
+		CDGG A 1 Offset(0,55)
+		CDGG A 1 Offset(0,49)
+		CDGG A 1 Offset(0,44)
+		CDGG A 1 Offset(0,39)
+		CDGG A 1 Offset(0,35)
+		CDGG A 1 Offset(0,33)
+		CDGG A 1 Offset(0,32) 
+		GoTo Ready
+	Ready:
+		CDGG AAAAAAAA 1 A_WeaponReady
+		Loop
+	Deselect:
+		CDGG A 1 A_Lower
+		Loop
+	Select:
+		CDGG A 1 Offset(0,90)
+		CDGG A 0 A_PlaySound("monsters/cerberus/see")
+		CDGG A 1 Offset(0,80)
+		CDGG A 1 Offset(0,70)
+		CDGG A 1 Offset(0,60)
+		CDGG A 1 Offset(0,55)
+		CDGG A 1 Offset(0,49)
+		CDGG A 1 Offset(0,44)
+		CDGG A 1 Offset(0,39)
+		CDGG A 1 Offset(0,35)
+		CDGG A 1 Offset(0,33)
+		CDGG A 1 Offset(0,32) 
+		GoTo Ready
+	Fire:
+		CDGG A 0 A_PlaySound("monsters/hellhound/bite")
+		CDGG CD 2
+		CDGG E 2 A_CustomPunch(random(10, 25), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		CDGG F 2 
+		CDGG DCB 2
+		//HDGG A 0 A_GunFlash
+		Goto Ready
+	AltFire:
+		CDGG A 1 A_PlaySound("monsters/hellhound/die")
+		TNT1 A 0 A_TakeInventory("CerberusGun", 9999)
+		//TNT1 A 0 
+		Stop
+ 	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR DemonWolfGun : HellHoundGun
+{
+	States
+	{
+	Ready:
+		DDGG AAAAAAAA 1 A_WeaponReady
+		Loop
+	Select:
+		DDGG A 1 Offset(0,90)
+		DDGG A 0 A_PlaySound("monsters/demondog/see")
+		DDGG A 1 Offset(0,80)
+		DDGG A 1 Offset(0,70)
+		DDGG A 1 Offset(0,60)
+		DDGG A 1 Offset(0,55)
+		DDGG A 1 Offset(0,49)
+		DDGG A 1 Offset(0,44)
+		DDGG A 1 Offset(0,39)
+		DDGG A 1 Offset(0,35)
+		DDGG A 1 Offset(0,33)
+		DDGG A 1 Offset(0,32) 
+		GoTo Ready
+	Deselect:
+		DDGG A 1 A_Lower
+		Loop
+	Select:
+		DDGG A 1 Offset(0,90)
+		DDGG A 0 A_PlaySound("monsters/demondog/see")
+		DDGG A 1 Offset(0,80)
+		DDGG A 1 Offset(0,70)
+		DDGG A 1 Offset(0,60)
+		DDGG A 1 Offset(0,55)
+		DDGG A 1 Offset(0,49)
+		DDGG A 1 Offset(0,44)
+		DDGG A 1 Offset(0,39)
+		DDGG A 1 Offset(0,35)
+		DDGG A 1 Offset(0,33)
+		DDGG A 1 Offset(0,32) 
+		GoTo Ready
+	Fire:
+		DDGG A 0 A_PlaySound("monsters/hellhound/bite")
+		DDGG CD 2
+		DDGG E 2 A_CustomPunch(random(15, 50), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		DDGG F 2 
+		DDGG DCB 2
+		//HDGG A 0 A_GunFlash
+		Goto Ready
+	AltFire:
+		DDGG A 1 A_PlaySound("monsters/hellhound/die")
+		TNT1 A 0 A_TakeInventory("DemonWolfGun", 9999)
+		//TNT1 A 0 
+		Stop
+ 	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+/*
+ACTOR DemonWolfGun : HellHoundGun
+{
+	Tag "$TAGDDOG"
+	States
+	{
+	Deselect:
+		DDGG A 1 
+		DDGG A 0 A_JumpIf(health <= 0, "DeadDude")
+		goto AltFire
+	Ready:
+		DDGG AAAAAAAA 1 A_Jump(1, "MeleePunch")//{ A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
+		//"####" BBBBBBBB 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
+		Loop
+	Select:
+		DDGG A 1 Offset(0,90) A_PlaySound("monsters/demondog/see")
+		DDGG A 1 Offset(0,80)
+		DDGG A 1 Offset(0,70)
+		DDGG A 1 Offset(0,60)
+		DDGG A 1 Offset(0,55)
+		DDGG A 1 Offset(0,49)
+		DDGG A 1 Offset(0,44)
+		DDGG A 1 Offset(0,39)
+		DDGG A 1 Offset(0,35)
+		DDGG A 1 Offset(0,33)
+		DDGG A 1 Offset(0,32) 
+		goto Ready
+	Fire:
+		DDGG A 0 A_PlaySound("monsters/hellhound/bite")
+		DDGG CD 2
+		DDGG E 2 A_CustomPunch(7 * random(1, 5), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		DDGG F 2 
+		DDGG DCB 2
+		Goto Ready
+	AltFire:
+		TNT1 A 0 A_TakeInventory("DemonWolfGun", 9999)
+		Stop
+ 	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR CerberusGun : HellHoundGun
+{
+	Tag "$TAGCDOG"
+	States
+	{
+	Deselect:
+		CDGG A 1 
+		CDGG A 0 A_JumpIf(health <= 0, "DeadDude")
+		goto AltFire
+	Ready:
+		CDGG AAAAAAAA 1 A_Jump(1, "MeleePunch")//{ A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
+		//"####" BBBBBBBB 1 { A_WeaponReady; A_JumpIfInventory("MeleePunch", 1, "MeleePunch"); }
+		Loop
+	Select:
+		CDGG A 1 Offset(0,90) A_PlaySound("monsters/demondog/see")
+		CDGG A 1 Offset(0,80)
+		CDGG A 1 Offset(0,70)
+		CDGG A 1 Offset(0,60)
+		CDGG A 1 Offset(0,55)
+		CDGG A 1 Offset(0,49)
+		CDGG A 1 Offset(0,44)
+		CDGG A 1 Offset(0,39)
+		CDGG A 1 Offset(0,35)
+		CDGG A 1 Offset(0,33)
+		CDGG A 1 Offset(0,32) 
+		goto Ready
+	Fire:
+		CDGG A 0 A_PlaySound("monsters/hellhound/bite")
+		CDGG CD 2
+		CDGG E 2 A_CustomPunch(7 * random(1, 5), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		CDGG F 2 
+		CDGG DCB 2
+		Goto Ready
+	AltFire:
+		TNT1 A 0 A_TakeInventory("CerberusGun", 9999)
+		Stop
+ 	Spawn:
+		TNT1 A 1
+		Stop
+	}
+}
+*/
+Actor DogArmorBonus : BasicArmorBonus
+{
+	Radius 20
+	Height 16
+	Inventory.Pickupmessage "$GOTARMBONUS"
+	Inventory.Icon "BON2A0"
+	Armor.Savepercent 33.335
+	Armor.Saveamount 1
+	Armor.Maxsaveamount 100
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	States
+	{
+	Spawn:
+		BON2 ABCDCB 6
+		loop
+	}
+}
+
+ACTOR DogGunPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ALLOWPARTICLES
+	+RANDOMIZE
+	damagetype DogBite
+	RenderStyle Translucent
+	Alpha 0.5
+	VSpeed 1
+	Mass 5
+	AttackSound "weapons/melee/hitwall"
+	SeeSound "weapons/melee/hit"
+	Obituary "$OB_METADOG_BITE"
+	States
+	{
+	Spawn:
+		PUFF A 4 Bright
+		PUFF B 4
+	Melee:
+		PUFF CD 4
+		Stop
+	}
 }

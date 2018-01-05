@@ -87,7 +87,7 @@ ACTOR ZombieLt : ShotgunGuy 10374 {
 }
 
 ACTOR ZombieCpt : ZombieMan 10474 {
-	Health 30
+	Health 60
 	Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
 }
 
