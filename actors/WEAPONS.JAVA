@@ -49,7 +49,7 @@ ACTOR FireExt : Weapon 10556
 Actor DRRPAxeLoad : Inventory {
 	Inventory.MaxAmount 40
 }
-
+/*
 Actor DRRPAxe: Weapon 10557 
 {
 	Obituary "%o was chopped by %k"
@@ -187,7 +187,7 @@ Actor DRRPAxe: Weapon 10557
 			Stop
 	}
 }
-
+*/
 Actor DRRPAxePuff : BulletPuff {
 	SeeSound "DSBLUD03"
 	AttackSound "ROCK"	
