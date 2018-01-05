@@ -12,6 +12,9 @@
 	
  - Dsskull1
 	Работа с графикой
+
+ - DOOMGABR (вышел)
+	Маппер
 	
  - JSO_x (a. k. a. Morthimer McMare) 
 	Бета-тестер, работа с графикой, относительно программист
@@ -34,6 +37,7 @@
  - UsenameAK - programmer
  - Lolimpire (left) - mapper
  - Dsskull1 - Tester, graphics
+ - DOOMGABR - mapper
  - JSO_x (a. k. a. Morthimer McMare) - beta-tester, graphic, programmer
  - shon
  - Nomakh - mapper
