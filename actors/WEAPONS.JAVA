@@ -57,7 +57,7 @@ ACTOR FireExt : Weapon 10556
 Actor DRRPAxeLoad : Inventory {
 	Inventory.MaxAmount 40
 }
-/*
+
 Actor DRRPAxe: Weapon 10557 
 {
 	Obituary "%o was chopped by %k"
@@ -149,7 +149,7 @@ Actor DRRPAxe: Weapon 10557
 			AXEG I 2 A_StopSound( CHAN_WEAPON )
 			AXEG JK 1
 		StopHold:
-			AXEG L 0 A_CustomPunch( 1, TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus", "weapon/axe/hit", "weapon/axe/miss" )
+			AXEG L 0 A_CustomPunch( 1, TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" )
 			AXEG L 0 A_TakeInventory( "DRRPAxeLoad", 1 )
 			AXEG L 0 A_JumpIfInventory( "DRRPAxeLoad", 1, "StopHold" )
 			AXEG LM 1
@@ -195,7 +195,7 @@ Actor DRRPAxe: Weapon 10557
 			Stop
 	}
 }
-*/
+
 Actor DRRPAxePuff : BulletPuff {
 	SeeSound "DSBLUD03"
 	AttackSound "ROCK"	
