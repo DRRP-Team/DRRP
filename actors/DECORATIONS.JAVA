@@ -255,3 +255,161 @@ actor Alarm2 : KlaxonWarningLight 10746 {
 		goto see
 	}
 }
+
+
+ACTOR YardLamp 19690 {
+//$Category DDecorations
+  Radius 5
+  Height 215
+  ProjectilePassHeight -16
+  +SOLID
+  States
+  {
+  Spawn:
+    PSTE A -1
+    Stop
+  }
+}
+
+Actor Lightningactor777 19689 {
+//$Category DDecorations
+	-SOLID
+	States {
+		Spawn:
+			ZOT1 D 0
+			ZOT1 D 0 A_PlaySound("weapons/sigilhit", 7)
+			ZOT1 ABCDEDCBA 3
+		stop
+	}
+}
+
+ACTOR TunnelLights 19691
+{
+//$Category DDecorations
+	+NOGRAVITY
+	+NOCLIP
+	+SPAWNCEILING
+	Radius 8
+	Height 1
+	XScale 0.9
+	YScale 0.9
+	Renderstyle Add
+	Alpha 0.1
+	States
+	{
+	Spawn:
+		LITS A -1 BRIGHT
+		Stop
+	}
+}
+
+Actor RubbleSmall 19692 {
+//$Category DDecorations
+-SOLID
+-SHOOTABLE
++FORCEXYBILLBOARD
+Mass 999999
+Scale 1.0
+Radius 24
+Height 16
+states
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 A 0 A_Jump(255, "Type1", "Type2")
+	Goto Type1
+	
+	Type1:
+	    RUBL A 1
+		RUBL A -1
+		Stop
+		
+	Type2:
+	    RUBL B 1
+		RUBL B -1
+		Stop
+	}
+}
+
+Actor RubbleMedium: RubbleSmall 1332 {
+//$Category DDecorations
++SOLID
++SHOOTABLE
++NOBLOOD
+Radius 32
+Height 32
+Scale 1.0
+states
+	{
+	Spawn:
+	    RUBL C 1
+		RUBL C -1
+		Stop
+	}
+}
+
+
+Actor RubbleLarge: RubbleMedium 1333 {
+//$Category DDecorations
+Radius 64
+Height 56
+Scale 1.3
+states
+	{
+	Spawn:
+	    RUBL D 1
+		RUBL D -1
+		Stop
+	}
+}
+
+Actor CeilLamp1 1316 {
+//$Category DDecorations
+Radius 8
+Height 32
++NOGRAVITY
++NOCLIP
++SOLID
++SPAWNCEILING
+Scale 0.25
+states
+	{
+	Spawn:
+	    ULGT A 1 BRIGHT
+		Loop
+	}
+}
+
+Actor CeilLamp2: CeilLamp1 1317 {
+//$Category DDecorations
++NOGRAVITY
++NOCLIP
++SPAWNCEILING
++SOLID
+Radius 8
+Height 32
+Scale 0.25
+states
+	{
+	Spawn:
+	    ULGT D 1 BRIGHT
+		Loop
+	}
+}
+
+Actor CeilLamp3 1726 {
+//$Category DDecorations
+Radius 8
+Height 24
++NOGRAVITY
++NOCLIP
++SPAWNCEILING
++SOLID
+Scale 0.25
+states
+	{
+	Spawn:
+	    ULGT C 1 BRIGHT
+		Loop
+	}
+}
