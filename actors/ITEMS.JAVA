@@ -184,12 +184,12 @@ Actor DogCollar : CustomInventory 10624 {
 
 ACTOR DRRPHealthBonus : Health replaces HealthBonus
 {
-  Inventory.Amount 1
-  Inventory.PickupMessage "$GOTHTHBONUS" // "Picked up a health bonus."
-  States
-  {
-  Spawn:
-    BON1 ABCDCB 6
-    Loop
-  }
+	Inventory.Amount 1
+	Inventory.PickupMessage "$GOTHTHBONUS" // "Picked up a health bonus."
+	States
+	{
+	Spawn:
+		BON1 ABCDCB 6
+		Loop
+	}
 }
