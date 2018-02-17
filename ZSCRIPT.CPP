@@ -6,6 +6,8 @@ class DoorCodeInputActor : Actor {
 		return 1;
 	}
 }
+
+
 class DoorCodeInputHandler : EventHandler {
 	String codeStr;
 	String realCodeStr;
@@ -15,6 +17,7 @@ class DoorCodeInputHandler : EventHandler {
 	override void OnRegister() {
 		SetOrder(666);
 	}
+
 	override bool UiProcess(UiEvent ev) {
 		if(ev.Type == UiEvent.Type_KeyDown && ((ev.keyChar >= 48 && ev.keyChar <= 57) || ev.keyChar == 8)) {
 			SendNetworkEvent("putcodechar", ev.keyChar);
@@ -23,6 +26,7 @@ class DoorCodeInputHandler : EventHandler {
 		}
 		return true;
 	}
+
 	override void RenderOverlay(RenderEvent e) {
 		if(self.IsUiProcessor) {
 			Font font = Font.FindFont("SMALLFONT");
@@ -32,6 +36,7 @@ class DoorCodeInputHandler : EventHandler {
 				str);
 		}
 	}
+
 	override void NetworkProcess(ConsoleEvent e) {
 		if(e.Name == "closedoorinput") {
 			self.IsUiProcessor = false;

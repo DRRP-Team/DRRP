@@ -76,6 +76,17 @@ ACTOR DemonWolf : MBFHelperDog 10446 {
 
 // Zombies
 
+Actor ZombieManDRRP: ZombieMan replaces ZombieMan
+{
+	DropItem "Clip", 0, 0
+}
+
+Actor ShotgunGuyDRRP: ShotgunGuy replaces ShotgunGuy
+{
+	DropItem "Shotgun", 0, 0
+}
+
+
 ACTOR ZombiePvt : ZombieMan 10274 {
 	Health 10
 	Translation "16:47=152:159"
@@ -166,6 +177,11 @@ ACTOR Nightmare : LostSoul 10363 {
 //$Category DMonsters
 	Health 150
 	Translation "128:151=195:207", "64:79=200:207"
+}
+
+Actor ChaingunGuyDRRP: ChaingunGuy replaces ChaingunGuy
+{
+	DropItem "Chaingun", 0, 0
 }
 
 //Chaingunner

@@ -1,0 +1,1 @@
+C:\Appls\Games\JSOGames\ZDoom\zdoom.exe -file .

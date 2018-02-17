@@ -24,29 +24,37 @@ ACTOR FireExt : Weapon 10556
 		FIEX A 1 A_Raise
 		Loop
 	Fire:
-		FIEX B 0 A_Recoil( 4 )
+		FIEX B 0 A_Recoil( 2 )
 		TNT1 A 0 A_PlaySound("weapon/fireext/loop", CHAN_WEAPON, 1, 1)
 		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 3/*10*/ ), True )
+		FIEX B 0 A_Recoil( 1 )
 		FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
 	FireLoop:
-		TNT1 A 0 A_PlaySound("weapon/fireext/loop", CHAN_WEAPON, 1, 1)
-		TNT1 A 0 A_SetAngle(random(1, -1) + angle)
-		TNT1 A 0 A_SetPitch(random(1, -1) + pitch)
-		FIEX C 0 A_Recoil( 4 )
+		//TNT1 A 0 A_Quake( 1, Random( 1, 4 ), 0, 16 )
+		TNT1 A 0 A_PlaySound( "weapon/fireext/loop", CHAN_WEAPON, 1, 1 )
+		TNT1 A 0 A_SetAngle( FRandom( 0.1, -0.1 ) + Angle )
+		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
+		//FIEX C 0 A_Recoil( 1 )
 		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		TNT1 A 0 A_SetAngle( FRandom( 0.1, -0.1 ) + Angle )
+		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
 		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
+		TNT1 A 0 A_SetAngle( FRandom( 0.1, -0.1 ) + Angle )
+		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
 		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		TNT1 A 0 A_SetAngle( FRandom( 0.1, -0.1 ) + Angle )
+		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
 		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-		FIEX C 1 A_SetAngle(random(1, -1) + angle)
-		TNT1 A 0 A_SetPitch(random(1, -1) + pitch)
+		TNT1 A 0 A_SetAngle( FRandom( 0.1, -0.1 ) + Angle )
+		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
 		FIEX A 0 A_ReFire( "FireLoop" )
 		FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
 		FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-		FIEX B 0 A_SetAngle(random(1, -1) + angle)
-		TNT1 A 0 A_SetPitch(random(1, -1) + pitch)
+		FIEX B 0 A_SetAngle( FRandom( 1, -1 ) + Angle )
+		TNT1 A 0 A_SetPitch( FRandom( 1, -1 ) + Pitch )
 		FIEX A 0 A_ReFire
-		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("weapon/fireext/stop", CHAN_WEAPON)
+		TNT1 A 0 A_StopSound( CHAN_WEAPON )
+		TNT1 A 0 A_PlaySound( "weapon/fireext/stop", CHAN_WEAPON )
 		Goto Ready
 	Spawn:
 		FEXT I -1
@@ -209,35 +217,42 @@ Damagetype FireExtDamage {
 
 Actor FireExtPuff
 {
-  Height 5
-  Radius 5
-  +FORCEXYBILLBOARD
-  RenderStyle Add
-  Alpha 0.85
-  Projectile
-  Speed 30
-  Scale 0.5
-  Damage 1
-  DamageType FireExtDamage
-  Gravity 10
-  States
-  {
-  Spawn:
-    STEM A 1 A_SetTranslucent(0.7, 1)
-    STEM B 1 A_SetScale(1.3, 1.3)//A_SetTranslucent(0.65, 1)
-    STEM C 1 A_SetTranslucent(0.6, 1)
-    STEM D 1 A_SetScale(1.5, 1.5)//A_SetTranslucent(0.55, 1)
-    STEM E 1 A_SetTranslucent(0.5, 1)
-    STEM F 1 A_SetScale(1.8, 1.8)//A_SetTranslucent(0.45, 1)
-    STEM G 1 A_SetTranslucent(0.4, 1)
-    STEM H 1 A_SetScale(2.0, 2.0)//A_SetTranslucent(0.35, 1)
-    STEM I 1 A_SetTranslucent(0.3, 1)
-    STEM J 1 A_SetTranslucent(0.2, 1)
-    STEM K 1 A_SetTranslucent(0.1, 1)
-    STEM L 1 A_SetTranslucent(0.05, 1)
-  Death:
-    STEM L 0
-    Stop
+ 	Height 5
+  	Radius 5
+  	+FORCEXYBILLBOARD
+	RenderStyle Add
+	Alpha 0.85
+	Projectile
+	Speed 30
+	Scale 0.5
+	Damage 1
+	DamageType FireExtDamage
+	Gravity 10
+	States
+	{
+	Spawn:
+	STEM LLLLL 0 A_SpawnParticle( Gray, RandomPick( 0, SPF_FULLBRIGHT ), Random( 3, 35 ), FRandom( 0.75, 4 ), 0, 
+					Random( -5, 5 ), Random( -5, 5 ), Random( -5, 5 ), // Offsets
+					Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ), // Speed
+					Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ) ) // Acceleration
+		STEM A 1 A_SetTranslucent(0.7, 1)
+		STEM B 1 A_SetScale(1.3, 1.3)//A_SetTranslucent(0.65, 1)
+		STEM C 1 A_SetTranslucent(0.6, 1)
+		STEM D 1 A_SetScale(1.5, 1.5)//A_SetTranslucent(0.55, 1)
+		STEM E 1 A_SetTranslucent(0.5, 1)
+		STEM F 1 A_SetScale(1.8, 1.8)//A_SetTranslucent(0.45, 1)
+		STEM G 1 A_SetTranslucent(0.4, 1)
+		STEM H 1 A_SetScale(2.0, 2.0)//A_SetTranslucent(0.35, 1)
+		STEM I 1 A_SetTranslucent(0.3, 1)
+		STEM J 1 A_SetTranslucent(0.2, 1)
+		STEM K 1 A_SetTranslucent(0.1, 1)
+		STEM L 1 A_SetTranslucent(0.05, 1)
+	Death:
+		STEM LLLLLLLLL 0 A_SpawnParticle( Gray, 0, Random( 5, 70 ), FRandom( 0.5, 2 ), 0, 
+					0, Random( -5, 0 ), Random( -5, 5 ), // Offsets
+					Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ), // Speed
+					Random( -5, 5 ), Random( -5, 5 ), Random( -5, 5 ) ) // Acceleration
+		Stop
   }
 }
 
@@ -319,7 +334,7 @@ ACTOR CerberusGun : HellHoundGun
 		CDGG A 1 Offset(0,35)
 		CDGG A 1 Offset(0,33)
 		CDGG A 1 Offset(0,32) 
-		GoTo Ready
+		Goto Ready
 	Ready:
 		CDGG AAAAAAAA 1 A_WeaponReady
 		Loop
