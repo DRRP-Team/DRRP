@@ -37,7 +37,7 @@
  - UsenameAK - programmer
  - Lolimpire (left) - mapper
  - Dsskull1 - Tester, graphics
- - DOOMGABR - mapper
+ - DOOMGABR (left) - mapper
  - JSO_x (a. k. a. Morthimer McMare) - beta-tester, graphic, programmer
  - shon
  - Nomakh - mapper
