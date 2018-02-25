@@ -1,0 +1,109 @@
+// In developing. I want to reduce the amount of strings.
+//
+//												(JSO_x).
+
+class WhiteSparkSpawner: SwitchableDecoration 
+{
+	Default {
+		Height 8
+		Radius 4
+		+NoBlockMap
+		+NoGravity
+		+NoInteraction
+		+ClientSideOnly
+		+NoClip
+	}
+	States {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf( Args[ 2 ] > 0, "Inactive" )
+		TNT1 A 10 A_Jump( Args[ 1 ]/16, "Active" )
+		Loop
+	Active:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("World/Spark")
+		TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
+		TNT1 A 1 A_SpawnItemEx("SparkFlare_W1", 0, 0, 0, 0, 0, 0, 0, 128)
+		Goto SpawnSparks
+		TNT1 A 1 A_SpawnItemEx("SparkFlare_W2", 0, 0, 0, 0, 0, 0, 0, 128)
+		Goto SpawnSparks
+		TNT1 A 1 A_SpawnItemEx("SparkFlare_W3", 0, 0, 0, 0, 0, 0, 0, 128)
+		Goto SpawnSparks
+		TNT1 A 1 A_SpawnItemEx("SparkFlare_W4", 0, 0, 0, 0, 0, 0, 0, 128)
+		Goto SpawnSparks
+		TNT1 A 1 A_SpawnItemEx("SparkFlare_W5", 0, 0, 0, 0, 0, 0, 0, 128)
+		Goto SpawnSparks
+		TNT1 A 1 A_SpawnItemEx("SparkFlare_W6", 0, 0, 0, 0, 0, 0, 0, 128)
+		Goto SpawnSparks
+	SpawnSparks:
+		TNT1 A 0 A_JumpIf(Args[0] == 1, "SpawnDown")
+		TNT1 A 0 A_JumpIf(Args[0] > 1, "SpawnSide")
+		Goto SpawnUp
+	SpawnUp:
+		TNT1 AA 0 A_CustomMissile("Spark_W1", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W2", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W3", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W4", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W5", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W6", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W7", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W8", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W9", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W10", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W11", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W12", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W13", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W14", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W15", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 AA 0 A_CustomMissile("Spark_W16", 0, 0, Random(0, 360), 2, Random(67, 113))
+		TNT1 A 1 A_JumpIf(Args[2] > 0, 1)
+		Goto Spawn
+		TNT1 A 1
+		Goto Inactive
+	SpawnDown:
+		TNT1 AA 0 A_CustomMissile("Spark_W1", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W2", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W3", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W4", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W5", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W6", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W7", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W8", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W9", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W10", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W11", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W12", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W13", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W14", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W15", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 AA 0 A_CustomMissile("Spark_W16", 0, 0, Random(0, 360), 2, Random (-67, -113))
+		TNT1 A 1 A_JumpIf(Args[2] > 0, 1)
+		Goto Spawn
+		TNT1 A 1
+		Goto Inactive
+	SpawnSide:
+		TNT1 AA 0 A_CustomMissile("Spark_W1", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W2", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W3", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W4", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W5", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W6", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W7", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W8", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W9", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W10", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W11", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W12", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W13", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W14", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W15", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 AA 0 A_CustomMissile("Spark_W16", 0, 0, Random(-23, 23), 2, Random(157, 203))
+		TNT1 A 1 A_JumpIf(Args[2] > 0, 1)
+		Goto Spawn
+		TNT1 A 1
+		Goto Inactive
+	Inactive:
+		TNT1 A -1
+		Loop
+	}
+}
