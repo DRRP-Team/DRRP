@@ -36,6 +36,7 @@ ACTOR FireExt : Weapon 10556
 		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
 		//FIEX C 0 A_Recoil( 1 )
 		FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
+		TNT1 A 0 A_SetBlend( "CC CC CC", FRandom( 0.05, 0.15 ), Random( 3, 10 ) )
 		TNT1 A 0 A_SetAngle( FRandom( 0.1, -0.1 ) + Angle )
 		TNT1 A 0 A_SetPitch( FRandom( 0.1, -0.2 ) + Pitch )
 		FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
