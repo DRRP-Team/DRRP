@@ -165,35 +165,35 @@ break;
 
 case 41:
 	print(s:"All right, Marine, I've gone through the access panel and am inside the processor now. Come back to the processor; I may need some help.");
-break;
+break; // Before invasion start;
 
 case 42:
 	print(s:"I'm about done placing the shards... hey, I thought this problem was caused by the invasion but on closer look, it looks like sabota-...");
-break;
+break; // Invasion start;
 
 case 43:
 	print(s:"Ore Processing: Backing up...");
-break;
+break; // ???
 
 case 44:
 	print(s:"No, the other computer.");
-break;
+break; // "Another computer!";
 
 case 45:
 	print(s:"988");
-break;
+break; // Password for panel raise;
 
 case 46:
 	print(s:"[Access panel] Enter code:");
-break;
+break; // Invasion activation (panel raise);
 
 case 47:
 	print(s:"Panel opened.");
-break;
+break; // Invasion activation (panel raise access);
 
 case 48:
 	print(s:"Panel open.");
-break;
+break; // Invasion activation (panel raise deny);
 
 case 49:
 	print(s:"Ore Processing: Terminal offline");

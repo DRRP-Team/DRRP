@@ -3,6 +3,7 @@
 #include actors/DECORATIONS.JAVA
 #include actors/ITEMS.JAVA
 #include actors/WEAPONS.JAVA
+#include actors/WEAP2.java
 #include actors/SPARKS.JAVA
 #include actors/CHARACTERS.JAVA
 
@@ -27,10 +28,19 @@
 
 Actor DoomRPGPlayer : DoomPlayer {
 	Player.WeaponSlot 1, Chainsaw, FireExt, DRRPAxe
+	Player.WeaponSlot 2, DRRPPistol
+	Player.WeaponSlot 3, DRRPShotgun, SuperShotgun
+	//Player.WeaponSlot 4, DRRPChaingun
+	//Player.WeaponSlot 5, DRRPRocketLauncher
+	//Player.WeaponSlot 6, DRRPPlasmagun
+	//Player.WeaponSlot 7, DRRPBFG9000
 	Health 30
 	Player.MaxHealth 30
 	Player.DisplayName "Marine"
 	Player.MugShotMaxHealth 30
+	Player.StartItem "DRRPPistol"
+	Player.StartItem "Fist"
+	Player.StartItem "Clip", 50
 	//DamageType "Fire"
 	/*States {
 		Burn:
