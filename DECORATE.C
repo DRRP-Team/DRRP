@@ -29,7 +29,7 @@
 Actor DoomRPGPlayer : DoomPlayer {
 	Player.WeaponSlot 1, Chainsaw, FireExt, DRRPAxe
 	Player.WeaponSlot 2, DRRPPistol
-	Player.WeaponSlot 3, DRRPShotgun, SuperShotgun
+	Player.WeaponSlot 3, DRRPShotgun, DRRPSuperShotgun
 	//Player.WeaponSlot 4, DRRPChaingun
 	//Player.WeaponSlot 5, DRRPRocketLauncher
 	//Player.WeaponSlot 6, DRRPPlasmagun
