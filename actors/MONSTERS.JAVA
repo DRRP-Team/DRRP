@@ -232,7 +232,7 @@ ACTOR Apollyon : DRRPVile 10473 {
 
 ACTOR DRRPRevenant : Revenant replaces Revenant {
 //$Category DMonsters
-	Scale 0.7
+	Scale 0.75
 	states{
 		Death:
 			SKEL L 7
