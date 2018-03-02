@@ -29,11 +29,12 @@
 Actor DoomRPGPlayer : DoomPlayer {
 	Player.WeaponSlot 1, Chainsaw, FireExt, DRRPAxe
 	Player.WeaponSlot 2, DRRPPistol
-	Player.WeaponSlot 3, DRRPShotgun, SuperShotgun
+	Player.WeaponSlot 3, DRRPShotgun, DRRPSuperShotgun
 	//Player.WeaponSlot 4, DRRPChaingun
 	//Player.WeaponSlot 5, DRRPRocketLauncher
 	//Player.WeaponSlot 6, DRRPPlasmagun
 	//Player.WeaponSlot 7, DRRPBFG9000
+	Player.WeaponSlot 8, HellHoundGun, CerberusGun, DemonWolfGun
 	Health 30
 	Player.MaxHealth 30
 	Player.DisplayName "Marine"

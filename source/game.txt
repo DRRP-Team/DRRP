@@ -21,4 +21,11 @@ script 777(int spotnum) {
 	Teleport_NewMap(JUNCTION_LEVELNUM, spotnum, 0);
 }
 
-script 
+
+script "fireextfade" (int mode) {
+	if(mode) {
+		Sector_SetFade(0, 255, 255, 255);
+	} else {
+		Sector_SetFade(0, 0, 0, 0);
+	}
+}
