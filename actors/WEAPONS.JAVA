@@ -18,6 +18,8 @@ ACTOR FireExt : Weapon 10556
 		FIEX A 1 A_WeaponReady
 		Loop
 	Deselect:
+		FIEX B 0 ACS_NamedExecuteAlways("fireextfade", 0, 0)
+		FIEX B 0 A_StopSound( CHAN_WEAPON )
 		FIEX A 1 A_Lower
 		Loop
 	Select:
