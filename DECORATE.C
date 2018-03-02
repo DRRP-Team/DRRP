@@ -34,6 +34,7 @@ Actor DoomRPGPlayer : DoomPlayer {
 	//Player.WeaponSlot 5, DRRPRocketLauncher
 	//Player.WeaponSlot 6, DRRPPlasmagun
 	//Player.WeaponSlot 7, DRRPBFG9000
+	Player.WeaponSlot 8, HellHoundGun, CerberusGun, DemonWolfGun
 	Health 30
 	Player.MaxHealth 30
 	Player.DisplayName "Marine"

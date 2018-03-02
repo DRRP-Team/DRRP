@@ -306,7 +306,8 @@ ACTOR HellHoundGun : Weapon
 	Fire:
 		HDGG A 0 A_PlaySound("monsters/hellhound/bite")
 		HDGG CD 2
-		HDGG E 2 A_CustomPunch(random(8, 18), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		//HDGG E 2 A_CustomPunch(random(8, 18), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		HDGG E 2 A_CustomPunch(random(8, 18), TRUE, /*CPF_STEALARMOR*/0,"DogGunPuff",80,0/*.5*/,0,/*"DogArmorBonus"*/0,"weapons/doggun/bite")
 		HDGG F 2 
 		HDGG DCB 2
 		//HDGG A 0 A_GunFlash
@@ -363,7 +364,8 @@ ACTOR CerberusGun : HellHoundGun
 	Fire:
 		CDGG A 0 A_PlaySound("monsters/hellhound/bite")
 		CDGG CD 2
-		CDGG E 2 A_CustomPunch(random(10, 25), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		//CDGG E 2 A_CustomPunch(random(10, 25), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		CDGG E 2 A_CustomPunch(random(10, 25), TRUE, /*CPF_STEALARMOR*/0,"DogGunPuff",80,0/*.5*/,0,/*"DogArmorBonus"*/0,"weapons/doggun/bite")
 		CDGG F 2 
 		CDGG DCB 2
 		//HDGG A 0 A_GunFlash
@@ -420,7 +422,7 @@ ACTOR DemonWolfGun : HellHoundGun
 	Fire:
 		DDGG A 0 A_PlaySound("monsters/hellhound/bite")
 		DDGG CD 2
-		DDGG E 2 A_CustomPunch(random(15, 50), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
+		DDGG E 2 A_CustomPunch(random(15, 50), TRUE, /*CPF_STEALARMOR*/0,"DogGunPuff",80,0/*.5*/,0,/*"DogArmorBonus"*/0,"weapons/doggun/bite")
 		DDGG F 2 
 		DDGG DCB 2
 		//HDGG A 0 A_GunFlash
