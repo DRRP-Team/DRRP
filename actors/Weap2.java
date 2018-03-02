@@ -55,6 +55,7 @@ Actor DRRPShotgun: Shotgun replaces Shotgun
 
 Actor DRRPSuperShotgun: SuperShotgun replaces SuperShotgun
 {
+	Decal BulletChip
 	States
 	{
 	Fire:
@@ -79,7 +80,7 @@ Actor DRRPSuperShotgun: SuperShotgun replaces SuperShotgun
 		SHTF A 0 A_Recoil( 1 )
 		SHTF A 0 A_SetAngle( Angle + FRandom( -1.6, 1.6 ) )
 	    SHT2 I 1 Bright A_SetPitch( Pitch - FRandom( -0.45, 1.5 ) )
-		SHTF A 0 A_ZoomFactor( FRandom( 0.9, 0.95 ) )
+		SHTF A 0 A_ZoomFactor( FRandom( 0.92, 0.95 ) )
 		SHT2 I 1 Bright A_SetPitch( Pitch - FRandom( -0.4, 0.8 ) )
 		SHTF A 0 A_SetAngle( Angle + FRandom( -0.4, 0.4 ) )
 	    SHT2 I 1 Bright A_SetPitch( Pitch - FRandom( -0.3, 0.6 ) )
