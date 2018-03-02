@@ -18,8 +18,9 @@ ACTOR FireExt : Weapon 10556
 		FIEX A 1 A_WeaponReady
 		Loop
 	Deselect:
+		FIEX A 0 A_StopSound( CHAN_WEAPON )
 		FIEX A 1 A_Lower
-		Loop
+		Wait
 	Select:
 		FIEX A 1 A_Raise
 		Loop
