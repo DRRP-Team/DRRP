@@ -12,7 +12,7 @@ for(var i in replics){
     var tmp = replics[i].replace(/-\n/g,'');
     tmp = tmp.replace(/\n/g,' ');
     output += "\ncase "+i+":";
-    output += '\n\tprint(s:"'+tmp+'");';
+    output += '\n\tACS_NamedExecute("window", "'+tmp+'");'; //Используем скрипт окна для отображения текста
     output += "\nbreak;\n";
 }
 
