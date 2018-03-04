@@ -1,3 +1,12 @@
+/* Copyright (c) 2017 DRRP Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ * 
+ * Данная утилита позволяет преобразовать строки из сконвертированного (.txt) формата в скриптовый (.acs).
+ * Используйте эту программу после stringparser.cpp
+ */
+
 var fs = require('fs');//Библиотека для работы с файлами
 
 if(process.argv.length !== 4) return console.error("Использовать так: <источник> <выходной файл>");
@@ -9,11 +18,11 @@ var file = fs.readFileSync(fileFrom); //Читаем файл
 var replics = file.toString().split("\n\n"); //Разбиваем по репликам
 var output = ""; //Выходная переменная
 for(var i in replics){
-    var tmp = replics[i].replace(/-\n/g,'');
-    tmp = tmp.replace(/\n/g,' ');
+    var tmp = replics[i];
+    tmp = tmp.replace(/\n/g,'\\n'); //Заменяем фактические переносы строк на теоретические
     output += "\ncase "+i+":";
     output += '\n\tACS_NamedExecute("window", "'+tmp+'");'; //Используем скрипт окна для отображения текста
-    output += "\nbreak;\n";
+    output += "\n\tbreak;\n";
 }
 
 fs.writeFileSync(fileTo, output);// Записываем выхлоп в файл

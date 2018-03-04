@@ -1,3 +1,12 @@
+/* Copyright (c) 2017 DRRP Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ * 
+ * Данная утилита позволяет сконвертировать строки из оригинального DooM RPG формата в текстовый (.txt).
+ * После конвертации используйте stringparser.js
+ */
+
 #include <fstream>
 #include <iostream>
 #include <cstdint>
