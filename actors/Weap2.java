@@ -6,10 +6,10 @@ Actor DRRPPistol: Pistol replaces Pistol
 	Fire:
 		PISG A 4
 		PISG B 1 A_FirePistol
-		//PISG A 0 A_ZoomFactor( FRandom( 0.985, 0.999 ), ZOOM_INSTANT )
+		PISG A 0 A_ZoomFactor( FRandom( 0.995, 0.999 ), ZOOM_INSTANT )
 		PISG B 0 A_SetAngle( Angle + FRandom( -0.3, 0.3 ) )
 		PISG B 2 Bright A_SetPitch( Pitch - FRandom( -0.1, 0.4 ) )
-		//PISG B 0 A_ZoomFactor( 1 )
+		PISG B 0 A_ZoomFactor( 1 )
 		PISG B 0 Bright A_SetPitch( Pitch - FRandom( -0.3, 0.3 ) )
 		PISG B 1
 		PISG B 0 Bright A_SetPitch( Pitch + FRandom( 0.2, 0.4 ) )
@@ -92,5 +92,38 @@ Actor DRRPSuperShotgun: SuperShotgun replaces SuperShotgun
 	    SHT2 J 1 Bright A_Light2
 		SHT2 I 0 Bright A_ZoomFactor( 1 )
 	    Goto LightDone
+	}
+}
+
+Actor DRRPChaingun: Chaingun replaces Chaingun
+{
+	Decal BulletChip
+	States
+	{
+	Fire:
+		CHGG A 0 A_PlaySound( "weapons/chngun", CHAN_WEAPON )
+		CHGG A 0 A_GunFlash
+		CHGG A 4 A_FireBullets( 5.6, 0, 1, 5, "BulletPuff" )
+		CHGG B 0 A_PlaySound( "weapons/chngun", CHAN_WEAPON )
+		CHGG B 0 A_GunFlash( "Flash2" )
+		CHGG B 4 A_FireBullets( 5.6, 0, -1, 5, "BulletPuff" )
+		CHGG B 0 A_ReFire
+		Goto Ready
+	Flash:
+		CHGF A 0 A_ZoomFactor( FRandom( 0.99, 0.999 ), ZOOM_INSTANT )
+		CHGF I 0 A_SetPitch( Pitch - FRandom( -0.2, 0.7 ) ) 
+		CHGF A 0 A_SetAngle( Angle + FRandom( -0.4, 0.2 ) )
+		CHGF A 1 Bright A_Light1
+		CHGF A 0 A_ZoomFactor( 1 )
+		CHGF A 4 Bright A_Light1
+		Goto LightDone
+	Flash2:
+		CHGF A 0 A_ZoomFactor( FRandom( 0.995, 0.999 ), ZOOM_INSTANT )
+		CHGF I 0 A_SetPitch( Pitch - FRandom( -0.2, 0.7 ) ) 
+		CHGF A 0 A_SetAngle( Angle + FRandom( -0.4, 0.2 ) )
+		CHGF B 2 Bright A_Light1
+		CHGF A 0 A_ZoomFactor( 1 )
+		CHGF B 3 Bright A_Light1
+		Goto LightDone
 	}
 }
