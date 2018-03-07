@@ -67,11 +67,12 @@ Actor DoomRPGPlayer : DoomPlayer {
 	}*/
 }
 
-Actor DRRPFire 10250 {
+Actor DRRPFire : DRRPFire_zspatch 10250 {
 	//$Category Damage
 	Health 10
+	Radius 33
 	Monster
-	-SOLID
+	+SOLID
 	+NOBLOOD
 	-ISMONSTER
 	+NOTARGET

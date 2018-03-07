@@ -1,11 +1,32 @@
 version "2.4"
 
+class DRRPFire_zspatch : Actor {
+	override bool CanCollideWith (Actor other, bool passive) {
+		String cn = other.getClassName();
+		if(cn == "DoomRPGPlayer" ||
+		   cn == "Nightmare" ||
+		   cn == "LostSoul1" ||
+		   cn == "Phantom" ||
+		   cn == "Beholder" ||
+		   cn == "Rahovart" ||
+		   cn == "PainElemental1" ||
+		   cn == "PainElemental" ||
+		   cn == "Infernis" ||
+		   cn == "ArchVile1" ||
+	       cn == "Apollyon") {
+				return false;
+		}
+		return true;
+	}
+}
+
 class DoorCodeInputActor : Actor {
 	static int DoorCode(int code, int front, int back) {
 		EventHandler.SendNetworkEvent("opendoorinput", code, front, back);
 		return 1;
 	}
 }
+
 
 
 class DoorCodeInputHandler : EventHandler {
