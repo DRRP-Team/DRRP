@@ -43,7 +43,7 @@ Actor DRRPShotgun: Shotgun replaces Shotgun
 		SHTF A 1 Bright A_SetPitch( Pitch - FRandom( -0.1, 0.4 ) ) 
 		SHTF A 1 Bright 
 		SHTF A 0 A_ZoomFactor( FRandom( 0.985, 0.999 ) )
-		SHTF A 0 A_Recoil( 1 )
+		SHTF A 0 A_Recoil( 0.5 )
 		SHTF A 0 A_SetAngle( Angle + FRandom( -1.5, 1.5 ) )
 		SHTF A 1 Bright A_SetPitch( Pitch - FRandom( -0.1, 0.5 ) ) 
 		SHTF A 0 A_SetAngle( Angle + FRandom( -1, 1 ) )
