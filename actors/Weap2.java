@@ -1,5 +1,6 @@
 Actor DRRPPistol: Pistol replaces Pistol
 {
+	DamageType DRRPClipDmg
 	Decal BulletChip
 	States
 	{
@@ -22,6 +23,7 @@ Actor DRRPPistol: Pistol replaces Pistol
 
 Actor DRRPShotgun: Shotgun replaces Shotgun
 {
+	DamageType DRRPShotgunDmg
 	Decal BulletChip
 	States
 	{
@@ -55,6 +57,7 @@ Actor DRRPShotgun: Shotgun replaces Shotgun
 
 Actor DRRPSuperShotgun: SuperShotgun replaces SuperShotgun
 {
+	DamageType DRRPShotgunDmg
 	Decal BulletChip
 	States
 	{
@@ -97,6 +100,7 @@ Actor DRRPSuperShotgun: SuperShotgun replaces SuperShotgun
 
 Actor DRRPChaingun: Chaingun replaces Chaingun
 {
+	DamageType DRRPClipDmg
 	Decal BulletChip
 	States
 	{

@@ -11,6 +11,7 @@ ACTOR FireExt : Weapon 10556
 	Weapon.AmmoGive 40
 	Weapon.AmmoType "Balloon"
 	Weapon.SelectionOrder 100
+	DamageType DRRPFireExtDmg
 	Inventory.PickupSound "voice/wtf"
 	States
 	{
@@ -80,6 +81,7 @@ Actor DRRPAxe: Weapon 10557
 	Weapon.SelectionOrder 1880
 	Inventory.PickupSound "TAUNT"
 	SeeSound "weapons/plasmax"
+	DamageType DRRPAxeDmg
 	Scale 0.65
 	+WEAPON.MELEEWEAPON
 	States {
@@ -276,6 +278,7 @@ ACTOR HellHoundGun : Weapon
 	+WEAPON.WIMPY_WEAPON
 	Inventory.Pickupmessage "DOGGY!"
 	Tag "$TAGHDOG"
+	DamageType DRRPPhysicalDmg
 	Inventory.PickupSound "weapons/fireext/pick"
 	States
 	{

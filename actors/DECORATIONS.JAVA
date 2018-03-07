@@ -1,8 +1,8 @@
 //10701-10800
 
-ACTOR DRPGBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
+ACTOR DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 {
-	DamageFactor "FireExtDamage", 0
+	DamageFactor DRRPFireExtDmg, 0.0
 	Health 1
 	BloodColor "FF FF 00"
 	States {
@@ -62,6 +62,7 @@ ACTOR Rod : ExplosiveBarrel 10704
 	Scale 0.5
 	Health 666
 	Mass 10000000
+	DamageFactor DRRPFireExtDmg, 0.0
 	States {
 		Spawn:
 			ROD1 ABCDEF 2

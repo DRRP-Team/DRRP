@@ -1,5 +1,4 @@
 #include actors/MONSTERS.JAVA
-//#include actors/BRAINFUCKERS.JAVA
 #include actors/DECORATIONS.JAVA
 #include actors/ITEMS.JAVA
 #include actors/WEAPONS.JAVA
@@ -81,7 +80,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
 	+SHOOTABLE
     
 	Mass 0x7FFFFFFF
-	DamageType "Fire"
+	DamageType DPPRFireDmg
 	
 	DamageFactor "Normal", 0
 	
@@ -116,7 +115,7 @@ Actor DRRPLava 10251 {
 	-SHOOTABLE
     
 	Mass 0x7FFFFFFF
-	DamageType "Fire"
+	DamageType DPPRFireDmg
 	
 	DamageFactor "Normal", 0
 	

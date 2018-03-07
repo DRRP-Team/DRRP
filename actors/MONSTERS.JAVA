@@ -59,33 +59,41 @@
 	//Kronos TODO:
 	//Cyberdemon TODO:
 
+
+
 ACTOR Hellhound : MBFHelperDog replaces MBFHelperDog 10246 {
 //$Category DMonsters
 	Health 25
+	DamageFactor DRRPShotgunDmg, 2.0
+	DamageFactor DRRPPlasmaDmg, 2.0
 }
+
 ACTOR Cerberus : MBFHelperDog 10346 {
 //$Category DMonsters
 	Health 50
 	Translation "64:79=32:47"
 }
+
 ACTOR DemonWolf : MBFHelperDog 10446 {
 //$Category DMonsters
 	Health 50
 	Translation "64:79=32:47"
 }
 
+
 // Zombies
 
 Actor ZombieManDRRP: ZombieMan replaces ZombieMan
 {
 	DropItem "Clip", 0, 0
+	DamageFactor DRRPAxeDmg, 2.0
 }
 
 Actor ShotgunGuyDRRP: ShotgunGuy replaces ShotgunGuy
 {
 	DropItem "Shotgun", 0, 0
+	DamageFactor DRRPAxeDmg, 2.0
 }
-
 
 ACTOR ZombiePvt : ZombieMan 10274 {
 	Health 10
@@ -101,6 +109,7 @@ ACTOR ZombieCpt : ZombieMan 10474 {
 	Health 60
 	Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
 }
+
 
 //Demon
 
@@ -122,6 +131,7 @@ ACTOR Belphegor : Demon 10359 {
 	Translation "16:47=%[0.00,0.09,0.20]:[0.49,1.17,2.00]"
 }
 
+
 //Imp
 
 ACTOR Impling : DoomImp 10260 {
@@ -140,6 +150,7 @@ ACTOR ImpLord : DoomImp 10360 {
 	Health 90
 	Translation "64:79=170:191"
 }
+
 
 // Cacos
 
@@ -160,31 +171,37 @@ ACTOR Wretched : Cacodemon 10462 {
 	Translation "168:191=193:207", "16:47=193:201", "112:127=160:167", "192:207=168:191", "160:167=207:207", "223:223=207:207"
 }
 
+
 //Lost soul
 
-ACTOR Phantom : LostSoul 10263 {
+ACTOR LostSoul1: LostSoul replaces LostSoul 10463 { //FIXME: id
+//$Category DMonsters
+	DamageFactor DRRPFireExtDmg, 2.0
+	DamageFactor DRRPFireDmg, 0.0
+	Health 100
+}
+
+ACTOR Phantom : LostSoul1 10263 {
 //$Category DMonsters
 	Health 50
 	Translation "128:151=152:159", "64:79=152:159"
 }
 
-ACTOR LostSoul1: LostSoul replaces LostSoul 10463 { //FIXME: id
-//$Category DMonsters
-	Health 100
-}
-
-ACTOR Nightmare : LostSoul 10363 {
+ACTOR Nightmare : LostSoul1 10363 {
 //$Category DMonsters
 	Health 150
 	Translation "128:151=195:207", "64:79=200:207"
 }
 
+
+//Chaingunner
+
 Actor ChaingunGuyDRRP: ChaingunGuy replaces ChaingunGuy
 {
 	DropItem "Chaingun", 0, 0
+	DamageFactor DRRPPlasmaDmg, 2.0
 }
 
-//Chaingunner
 ACTOR Troop : ChaingunGuy 10264 {
 //$Category DMonsters
 	Health 35
@@ -204,10 +221,11 @@ ACTOR Assassin : ChaingunGuy replaces ChaingunGuy 10464 {
 }
 
 
+
 //Viles
 
-
 ACTOR DRRPVile : ArchVile replaces ArchVile {
+	DamageFactor DRRPAxeDmg, 2.0
 	Scale 0.95
 }
 
@@ -228,6 +246,7 @@ ACTOR Apollyon : DRRPVile 10473 {
 	Translation "64:79=32:47", "48:63=16:31", "128:143=16:39", "236:239=44:47", "13:15=45:47", "144:151=32:39" // "16:223=%[0.00,0.00,0.00]:[2.00,0.78,0.78]"
 }
 
+
 //Revenant
 
 ACTOR DRRPRevenant : Revenant replaces Revenant {
@@ -236,7 +255,7 @@ ACTOR DRRPRevenant : Revenant replaces Revenant {
 	states{
 		Death:
 			SKEL L 7
-			SKEL M 7 A_SpawnItem("Explosion", 0.0, 0.0, false, false)
+			SKEL M 7 A_SpawnItem( "Explosion", 0.0, 0.0, False, False )
 			SKEL N 7 A_Scream
 			SKEL O 7 A_NoBlocking
 			SKEL P 7
@@ -259,12 +278,14 @@ ACTOR Revenant1 : DRRPRevenant 10477 {
 //$Category DMonsters
 }
 
+
 //Minecraft - Cube world
 
 ACTOR DRRPCubus : Fatso replaces Fatso {
 	Scale 0.92
 	Radius 30
 	Height 62
+	DamageFactor DRRPRocketDmg, 2.0
 }
 
 ACTOR Behemoth : DRRPCubus 10278 {
