@@ -1,5 +1,6 @@
 gameinfo {
     PlayerClasses = "DoomRPGPlayer"
+	AddEventHandlers = "DRRPShaderHandler"
 }
 
 clearepisodes

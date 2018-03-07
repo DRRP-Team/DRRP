@@ -1,4 +1,10 @@
-version "2.4"
+version "2.5"
+
+class DRRPShaderHandler : StaticEventHandler {
+	override void RenderOverlay(RenderEvent e) {
+		Shader.SetEnabled(players[consoleplayer], "drrpshader", true);
+	}
+}
 
 class DRRPFire_zspatch : Actor {
 	override bool CanCollideWith (Actor other, bool passive) {

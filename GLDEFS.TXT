@@ -236,3 +236,8 @@ Object SparkFlare_P3 { Frame SPKP { Light PurpleSparkFlare } }
 Object SparkFlare_P4 { Frame SPKP { Light PurpleSparkFlare } }
 Object SparkFlare_P5 { Frame SPKP { Light PurpleSparkFlare } }
 Object SparkFlare_P6 { Frame SPKP { Light PurpleSparkFlare } }
+hardwareshader postprocess scene
+{
+Name "drrpshader"
+   Shader "shaders/custom/drrptest.fp" 330
+}
