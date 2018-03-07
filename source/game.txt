@@ -1,4 +1,5 @@
 #include "zcommon.acs"
+#library global
 
 #define MAX_LEVELS 16
 #define JUNCTION_LEVELNUM 2
@@ -28,4 +29,62 @@ script "fireextfade" (int mode) {
 	} else {
 		Sector_SetFade(0, 0, 0, 0);
 	}
+}
+
+function int getStringWidth(str String) {
+	int i = 0;
+	while(String[i] != '\0') { i++; }
+	return i;
+}
+
+function int getStringHeight(str String) {
+	int i	   = 0;
+	int height = 0;
+
+	while(String[i] != '\0') {
+		if(String[i++] == '\n') height++;
+	}
+	return height;
+}
+
+// ACS based DRPG Window
+script "window"( str Text ) //s: -> str
+{
+	const int SYM_HEIGHT = 12; // Symbol's height is 12px
+	// TODO: Block downscrolling by bottom of string
+
+    delay(2);
+
+    int ReadedKey;
+    int ScrollY = 0;
+	int height  = getStringHeight(Text);
+
+	Thing_Stop( 0 ); //TID_Player -> 0
+	SetPlayerProperty( 0, True, PROP_TOTALLYFROZEN );
+	
+	While ( ReadedKey != BT_USE ) {
+		if(ReadedKey == BT_FORWARD && ScrollY > 0) {
+			ScrollY -= SYM_HEIGHT;
+			delay(4);
+		}
+		if(ReadedKey == BT_BACK && ScrollY < height * SYM_HEIGHT) {
+			ScrollY += SYM_HEIGHT;
+			delay(4);
+		}
+
+		SetHudSize(640, 480, true);
+		SetHUDClipRect(0, 0, 0, 0, 0);
+		SetFont( "M_WINDOW" );
+		HudMessage( s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1 );
+		SetFont( "SMALLFONT" );
+		SetHudClipRect(320 - 130 / 2 + 1, 320 + 1, 130 - 2, 55 - 2, 0, true);
+		HudMessage( s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, 320.0, 322.1 - (ScrollY << 16), 1 );
+		SetHudSize(0, 0, false);
+		delay(1);
+		ReadedKey = GetPlayerInput( -1, INPUT_BUTTONS );
+	}
+
+	HudMessage( s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1 );
+	HudMessage( s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1 );
+	SetPlayerProperty( 0, False, PROP_TOTALLYFROZEN );
 }
