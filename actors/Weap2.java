@@ -51,7 +51,7 @@ Actor DRRPShotgun: Shotgun replaces Shotgun
 		SHTF B 0 A_ZoomFactor( 1 )
 		SHTF B 0 A_Light2
 		SHTF B 3 Bright 
-		Stop
+		Goto LightDone
 	}
 }
 
