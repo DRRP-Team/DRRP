@@ -161,8 +161,10 @@ Actor InventorySoulsphere: CustomInventory replaces Soulsphere
 	Spawn:
 		SOUL ABCDCB 6 Bright
 		Loop
-	Use:		
-		TNT1 A 0 A_GiveInventory( "HealthBonus", 100 )
+	Use:
+		//TNT1 A 0 A_GiveInventory( "HealthBonus", 100 )
+		TNT1 A 0 A_GiveInventory( "HealthBonus", 999 )
+		TNT1 A 0 A_GiveInventory( "BlueArmor", 1 )
 		Stop
 	}
 }
@@ -170,15 +172,31 @@ Actor InventorySoulsphere: CustomInventory replaces Soulsphere
 Actor DogCollar : CustomInventory 10624 {
 	Inventory.Icon "DOGCH0"
 	Tag "Dog Collar"
-	Inventory.PickupMessage "Got dog collar"
+	Inventory.PickupMessage "Got the dog collar."
 	+INVENTORY.INVBAR
 	States {
 		Spawn:
 			DOGC A -1
-		stop
+			Stop
 		Use:
 			TNT1 A 0
-		fail
+			//TNT1 A 0 A_JumpIf( CheckClass( "Cerberus", AAPTR_LINETARGET ), "CerberusLabel" )
+			TNT1 A 0 A_JumpIf( CheckClass( "Cerberus", AAPTR_PLAYER_GETTARGET ), "CerberusLabel" )
+			TNT1 A 0 A_JumpIf( CheckClass( "Hellhound", AAPTR_PLAYER_GETTARGET ), "HellhoundLabel" )
+			TNT1 A 0 A_JumpIf( CheckClass( "DemonWolf", AAPTR_PLAYER_GETTARGET ), "DemonWolfLabel" )
+			Fail
+		CerberusLabel:
+			TNT1 A 0
+			TNT1 A 0 A_SelectWeapon( "CerberusGun" )
+			Stop
+		HellhoundLabel:
+			TNT1 A 0
+			TNT1 A 0 A_SelectWeapon( "HellhoundGun" )
+			Stop
+		DemonWolf:
+			TNT1 A 0
+			TNT1 A 0 A_SelectWeapon( "DemonWolfGun" )
+			Stop
 	}
 }
 
