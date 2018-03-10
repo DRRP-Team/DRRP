@@ -176,9 +176,18 @@ ACTOR Wretched : Cacodemon 10462 {
 
 ACTOR LostSoul1: LostSoul replaces LostSoul 10463 { //FIXME: id
 //$Category DMonsters
-	DamageFactor DRRPFireExtDmg, 2.0
+	DamageFactor DRRPFireExtDmg, 5.0
 	DamageFactor DRRPFireDmg, 0.0
 	Health 100
+	States
+	{
+	Death.DRRPFireExtDmg:
+	    LSOL F 6 Bright A_Gravity
+	    LSOL G 5 Bright A_Scream
+	    LSOL H 5 Bright A_NoBlocking
+	    LSOL I 5 Bright
+	    Stop	
+	}
 }
 
 ACTOR Phantom : LostSoul1 10263 {
@@ -211,19 +220,19 @@ Actor ChaingunGuyDRRP: ChaingunGuy replaces ChaingunGuy
 	}
 }
 
-ACTOR Troop : ChaingunGuy 10264 {
+ACTOR Troop : ChaingunGuyDRRP 10264 {
 //$Category DMonsters
 	Health 35
 	Translation "32:47=163:167"
 }
 
-ACTOR Commando : ChaingunGuy 10364 {
+ACTOR Commando : ChaingunGuyDRRP 10364 {
 //$Category DMonsters
 	Health 70
 	Translation "16:47=192:207"
 }
 
-ACTOR Assassin : ChaingunGuy replaces ChaingunGuy 10464 {
+ACTOR Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
 //$Category DMonsters
 	Health 70
 	Translation "16:47=192:207" //TODO:
@@ -234,7 +243,8 @@ ACTOR Assassin : ChaingunGuy replaces ChaingunGuy 10464 {
 //Viles
 
 ACTOR DRRPVile : ArchVile replaces ArchVile {
-	DamageFactor DRRPAxeDmg, 2.0
+	DamageFactor DRRPAxeDmg, 7.5
+	DamageFactor DRRPFireDmg, 0.0
 	Scale 0.95
 }
 
