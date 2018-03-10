@@ -218,12 +218,6 @@ Actor DRRPAxePuff : BulletPuff {
 	AttackSound "ROCK"	
 }
 
-
-Damagetype FireExtDamage {
-	Factor 1
-	ReplaceFactor
-}
-
 Actor FireExtPuff
 {
  	Height 5
@@ -235,7 +229,7 @@ Actor FireExtPuff
 	Speed 30
 	Scale 0.5
 	Damage 1
-	DamageType FireExtDamage
+	DamageType DRRPFireExtDmg
 	Gravity 10
 	States
 	{

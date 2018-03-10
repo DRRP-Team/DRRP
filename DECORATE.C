@@ -83,6 +83,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
 	Mass 0x7FFFFFFF
 	DamageType DPPRFireDmg
 	
+	DamageFactor "DRRPFireExtDmg", 1.0
 	DamageFactor "Normal", 0
 	
 	States {
