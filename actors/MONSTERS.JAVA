@@ -200,6 +200,15 @@ Actor ChaingunGuyDRRP: ChaingunGuy replaces ChaingunGuy
 {
 	DropItem "Chaingun", 0, 0
 	DamageFactor DRRPPlasmaDmg, 2.0
+	states {
+		Pain:
+    CPOS G 0 A_Pain
+	CPOS G 0 A_MonsterRefire(40, "PainOut")
+	goto Missile+1
+	PainOut:
+	CPOS G 6
+    Goto See
+	}
 }
 
 ACTOR Troop : ChaingunGuy 10264 {
