@@ -8,7 +8,7 @@ ACTOR DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 	States {
 		Spawn:
 			BAR1 AB 6
-		Loop
+			Loop
 		Death:
 			BEXP A 5 Bright
 			BEXP B 5 Bright A_Scream
@@ -18,8 +18,7 @@ ACTOR DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 			BEXP E 10 Bright
 			TNT1 A 1050 Bright A_BarrelDestroy
 			TNT1 A 5 A_Respawn
-		Wait
-		Wait
+			Wait
 	}
 }
 
@@ -36,7 +35,7 @@ ACTOR Table 10702 {
 	{
 	Spawn:
 		DRTB A -1
-	Stop
+		Stop
 	}
 }
 
