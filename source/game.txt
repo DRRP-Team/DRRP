@@ -78,7 +78,7 @@ script "window"( str Text ) //s: -> str
 		HudMessage( s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1 );
 		SetFont( "SMALLFONT" );
 		SetHudClipRect(320 - 160/ 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
-		HudMessage( s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160/ 2 + 1) << 16) + 0.1, 322.1 - (ScrollY << 16), 1 );
+		HudMessage( s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160/ 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1 );
 		SetHudSize(0, 0, false);
 		delay(1);
 		ReadedKey = GetPlayerInput( -1, INPUT_BUTTONS );
