@@ -19,7 +19,8 @@ class DRRPFire_zspatch : Actor {
 		|| cn == "PainElemental"
 		|| cn == "Infernis"
 		|| cn == "ArchVile1"
-		|| cn == "Apollyon") {
+		|| cn == "Apollyon"
+		|| other.bMISSILE == true) {
 			return false;
 		}
 		return true;
