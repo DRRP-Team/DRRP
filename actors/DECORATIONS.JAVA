@@ -5,20 +5,21 @@ ACTOR DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701
 	DamageFactor DRRPFireExtDmg, 0.0
 	Health 1
 	BloodColor "FF FF 00"
-	States {
-		Spawn:
-			BAR1 AB 6
-			Loop
-		Death:
-			BEXP A 5 Bright
-			BEXP B 5 Bright A_Scream
-			BEXP C 0 Bright A_Quake(6, 5, 0, 128, "world/barrelx")
-			BEXP C 5 Bright
-			BEXP D 5 Bright A_Explode
-			BEXP E 10 Bright
-			TNT1 A 1050 Bright A_BarrelDestroy
-			TNT1 A 5 A_Respawn
-			Wait
+	States 
+	{
+	Spawn:
+		BAR1 AB 6
+		Loop
+	Death:
+		BEXP A 5 Bright
+		BEXP B 5 Bright A_Scream
+		BEXP C 0 Bright A_Quake(6, 5, 0, 128, "world/barrelx")
+		BEXP C 5 Bright
+		BEXP D 5 Bright A_Explode
+		BEXP E 10 Bright
+		TNT1 A 1050 Bright A_BarrelDestroy
+		TNT1 A 5 A_Respawn
+		Wait
 	}
 }
 
@@ -63,19 +64,19 @@ ACTOR Rod : ExplosiveBarrel 10704
 	Mass 10000000
 	DamageFactor DRRPFireExtDmg, 0.0
 	States {
-		Spawn:
-			ROD1 ABCDEF 2
+	Spawn:
+		ROD1 ABCDEF 2
 		Loop
-		Death:
-			BEXP A 5 Bright
-			BEXP B 5 Bright A_Scream
-			BEXP C 5 Bright
-			BEXP D 0 Bright A_Quake(4, 5, 0, 128, "world/barrelx")
-			BEXP D 5 Bright A_Explode
-			BEXP E 10 Bright
-			TNT1 A 5 ACS_Execute(101,0)
-			TNT1 A 1050 Bright A_BarrelDestroy
-			TNT1 A 5 A_Respawn
+	Death:
+		BEXP A 5 Bright
+		BEXP B 5 Bright A_Scream
+		BEXP C 5 Bright
+		BEXP D 0 Bright A_Quake(4, 5, 0, 128, "world/barrelx")
+		BEXP D 5 Bright A_Explode
+		BEXP E 10 Bright
+		TNT1 A 5 ACS_Execute(101,0)
+		TNT1 A 1050 Bright A_BarrelDestroy
+		TNT1 A 5 A_Respawn
 		Wait
 	}
 }
@@ -92,20 +93,21 @@ actor Crate 10705 {
 	Height 64
 	Radius 32
 	Mass 10000000
-	states {
-		Spawn:
-			CRAT A -1
-		stop
-		Death:
-			CRAT A 0 A_Quake(1, 18, 0, 128)
-			CRAT A 18
-			CRAT B 0 A_SpawnItemEx("CrateSpawner")
-			CRAT B 0 A_NoBlocking
-			CRAT B -1
-		stop
+	States {
+	Spawn:
+		CRAT A -1
+		Stop
+	Death:
+		CRAT A 0 A_Quake(1, 18, 0, 128)
+		CRAT A 18
+		CRAT B 0 A_SpawnItemEx("CrateSpawner")
+		CRAT B 0 A_NoBlocking
+		CRAT B -1
+		Stop
 	}
 }
-actor CrateSpawner : RandomSpawner {
+
+Actor CrateSpawner : RandomSpawner {
 	DropItem "HealthBonus"
 	DropItem "ArmorBonus"
 	DropItem "SmallMedikit"
@@ -117,7 +119,7 @@ actor CrateSpawner : RandomSpawner {
 	DropItem "Explosion"
 }
 
-ACTOR Wardrobe 10706 {
+Actor Wardrobe 10706 {
 	Game Doom
 	Radius 20
 	Height 27
@@ -130,7 +132,7 @@ ACTOR Wardrobe 10706 {
 	{
 	Spawn:
 		DCAB A -1
-	Stop
+		Stop
 	}
 }
 
@@ -140,8 +142,8 @@ actor Bed 10707 {
 	+SOLID
     Mass 0x7FFFFFFF
 	States {
-		Spawn:
-			CHAI A -1
+	Spawn:
+		CHAI A -1
 		Stop
 	}
 }
@@ -152,8 +154,8 @@ actor Exit 10708 {
 	-SOLID
     Mass 0x7FFFFFFF
 	States {
-		Spawn:
-			EXIT A -1
+	Spawn:
+		EXIT A -1
 		Stop
 	}
 }
@@ -168,23 +170,23 @@ actor Sink 10709 {
 	Scale 0.8
     Mass 0x7FFFFFFF
 	States {
-		Spawn:
-			XSIN A -1
+	Spawn:
+		XSIN A -1
 		Stop
-		Death:
-			XTOI A 0 A_NoBlocking
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.7)
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.6)
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.5)
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.4)
-		goto Death1
-		Death1:
-			CEFE ABC 5
-		loop
+	Death:
+		XTOI A 0 A_NoBlocking
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.7)
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.6)
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.5)
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.4)
+		Goto Death1
+	Death1:
+		CEFE ABC 5
+		Loop
 	}
 }
 
@@ -198,23 +200,23 @@ actor Toilet 10710 {
 	Scale 0.8
     Mass 0x7FFFFFFF
 	States {
-		Spawn:
-			XTOI A -1
+	Spawn:
+		XTOI A -1
 		Stop
-		Death:
-			XTOI A 0 A_NoBlocking
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.7)
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.6)
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.5)
-			CEFE ABC 5
-			CEFE A 0 A_SetScale(0.4)
-		goto Death1
-		Death1:
-			CEFE ABC 5
-		loop
+	Death:
+		XTOI A 0 A_NoBlocking
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.7)
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.6)
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.5)
+		CEFE ABC 5
+		CEFE A 0 A_SetScale(0.4)
+		Goto Death1
+	Death1:
+		CEFE ABC 5
+		Loop
 	}
 }
 
@@ -222,16 +224,16 @@ actor CEFEcon 10743 {
 	-SOLID
 	Scale 0.4
 	States {
-		Spawn:
-			CEFE ABC 5
-		loop
+	Spawn:
+		CEFE ABC 5
+		Loop
 	}
 }
 actor CEFRcon : CEFEcon 10744 {
 	States {
-		Spawn:
-			CEFR ABC 5
-		loop
+	Spawn:
+		CEFR ABC 5
+		Loop
 	}
 }
 
@@ -241,45 +243,45 @@ actor Alarm1 10745 {
 	+NOGRAVITY
 	Scale 0.5
 	States {
-		Spawn:
-			ALAR A 0 A_PlaySound("alarm/alarm3")
-			ALAR ABCDABCDABCDABCDABCD 3
-		loop
+	Spawn:
+		ALAR A 0 A_PlaySound("alarm/alarm3")
+		ALAR ABCDABCDABCDABCDABCD 3
+		Loop
 	}
 }
 
 actor Alarm2 : KlaxonWarningLight 10746 {
-	states {
-		spawn:
+	States {
+	Spawn:
 		TNT1 A 0
-		goto see
+		Goto See
 	}
 }
 
 
 ACTOR YardLamp 19690 {
 //$Category DDecorations
-  Radius 5
-  Height 215
-  ProjectilePassHeight -16
-  +SOLID
-  States
-  {
-  Spawn:
-    PSTE A -1
-    Stop
-  }
+	Radius 5
+	Height 215
+	ProjectilePassHeight -16
+	+SOLID
+	States
+	{
+	Spawn:
+		PSTE A -1
+		Stop
+	}
 }
 
 Actor Lightningactor777 19689 {
 //$Category DDecorations
 	-SOLID
 	States {
-		Spawn:
-			ZOT1 D 0
-			ZOT1 D 0 A_PlaySound("weapons/sigilhit", 7)
-			ZOT1 ABCDEDCBA 3
-		stop
+	Spawn:
+		ZOT1 D 0
+		ZOT1 D 0 A_PlaySound("weapons/sigilhit", 7)
+		ZOT1 ABCDEDCBA 3
+		Stop
 	}
 }
 
@@ -305,25 +307,22 @@ ACTOR TunnelLights 19691
 
 Actor RubbleSmall 19692 {
 //$Category DDecorations
--SOLID
--SHOOTABLE
-+FORCEXYBILLBOARD
-Mass 999999
-Scale 1.0
-Radius 24
-Height 16
-states
+	-SOLID
+	-SHOOTABLE
+	+FORCEXYBILLBOARD
+	Mass 999999
+	Scale 1.0
+	Radius 24
+	Height 16
+	States
 	{
 	Spawn:
-	TNT1 A 0
-	TNT1 A 0 A_Jump(255, "Type1", "Type2")
-	Goto Type1
-	
+		TNT1 A 0
+		TNT1 A 0 A_Jump( 127, "Type2" )
 	Type1:
 	    RUBL A 1
 		RUBL A -1
 		Stop
-		
 	Type2:
 	    RUBL B 1
 		RUBL B -1
@@ -333,13 +332,13 @@ states
 
 Actor RubbleMedium: RubbleSmall 1332 {
 //$Category DDecorations
-+SOLID
-+SHOOTABLE
-+NOBLOOD
-Radius 32
-Height 32
-Scale 1.0
-states
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	Radius 32
+	Height 32
+	Scale 1.0
+	States
 	{
 	Spawn:
 	    RUBL C 1
@@ -351,10 +350,10 @@ states
 
 Actor RubbleLarge: RubbleMedium 1333 {
 //$Category DDecorations
-Radius 64
-Height 56
-Scale 1.3
-states
+	Radius 64
+	Height 56
+	Scale 1.3
+	States
 	{
 	Spawn:
 	    RUBL D 1
@@ -365,14 +364,14 @@ states
 
 Actor CeilLamp1 1316 {
 //$Category DDecorations
-Radius 8
-Height 32
-+NOGRAVITY
-+NOCLIP
-+SOLID
-+SPAWNCEILING
-Scale 0.25
-states
+	Radius 8
+	Height 32
+	+NOGRAVITY
+	+NOCLIP
+	+SOLID
+	+SPAWNCEILING
+	Scale 0.25
+	States
 	{
 	Spawn:
 	    ULGT A 1 BRIGHT
@@ -382,14 +381,14 @@ states
 
 Actor CeilLamp2: CeilLamp1 1317 {
 //$Category DDecorations
-+NOGRAVITY
-+NOCLIP
-+SPAWNCEILING
-+SOLID
-Radius 8
-Height 32
-Scale 0.25
-states
+	+NOGRAVITY
+	+NOCLIP
+	+SPAWNCEILING
+	+SOLID
+	Radius 8
+	Height 32
+	Scale 0.25
+	States
 	{
 	Spawn:
 	    ULGT D 1 BRIGHT
@@ -399,14 +398,14 @@ states
 
 Actor CeilLamp3 1726 {
 //$Category DDecorations
-Radius 8
-Height 24
-+NOGRAVITY
-+NOCLIP
-+SPAWNCEILING
-+SOLID
-Scale 0.25
-states
+	Radius 8
+	Height 24
+	+NOGRAVITY
+	+NOCLIP
+	+SPAWNCEILING
+	+SOLID
+	Scale 0.25
+	States
 	{
 	Spawn:
 	    ULGT C 1 BRIGHT

@@ -79,24 +79,26 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
 	-COUNTKILL
 	+NOTRIGGER
 	+SHOOTABLE
-    
 	Mass 0x7FFFFFFF
-	DamageType DPPRFireDmg
-	
+	DamageType DRRPFireDmg
 	DamageFactor "DRRPFireExtDmg", 1.0
 	DamageFactor "Normal", 0
-	
 	States {
 	Spawn:
+		FIRE A 0 Bright
+		FIRE A 0 Bright A_JumpIf( Args[ 0 ] != 0, "Spawn.Start" )
+		FIRE A 0 Bright A_SetArg( 0, 255 )
+	Spawn.Start:
 	    FIRE A 0 Bright
-		FIRE A 0 Bright A_PlaySound( "fire/loop3", CHAN_7, 1, true, 2.5 )
-		FIRE A 0 Bright A_Jump( 256, 1, 2, 3, 4, 5, 6, 7, 8 )
-	SpawnLoop:
+		FIRE A 0 Bright A_PlaySound( "fire/loop3", CHAN_7, ( Args[ 0 ] * 1.0 ) / 255, true, 2.5 )
+		//FIRE A 0 Bright A_Jump( 256, 1, 2, 3, 4, 5, 6, 7, 8 )
+		FIRE A 0 Bright A_Jump( 256, Random( 1, 8 ) )
+	Spawn.Loop:
 		FIRE ABCDEFGH 2 BRIGHT A_Explode( 3, 32, XF_NOTMISSILE )
 		Loop
-	Pain.FireExtDamage:
+	Pain.DRRPFireExtDmg:
 		TNT1 A 0
-		Goto SpawnLoop
+		Goto Spawn.Loop
 	Death:
 	XDeath:
 		TNT1 A 0
