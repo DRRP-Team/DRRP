@@ -1,11 +1,14 @@
-DamageType DPPRPhysicalDmg		// Dogs and e. t. c.
+DamageType DRRPPhysicalDmg		// Dogs and e. t. c.
 { }
 
-DamageType DPPRAxeDmg			// Axe (separated from physical damage).
+DamageType DRRPAxeDmg			// Axe (separated from physical damage).
 { }
 
 DamageType DRRPFireExtDmg		// Fire extinguisher.
-{ }
+{ 
+	ReplaceFactor
+//	Factor = 0.5
+}
 
 DamageType DRRPFireDmg			// Fire.
 { }
