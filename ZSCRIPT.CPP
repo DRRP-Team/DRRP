@@ -20,7 +20,7 @@ class DRRPFire_zspatch : Actor {
 		|| cn == "Infernis"
 		|| cn == "ArchVile1"
 		|| cn == "Apollyon"
-		|| other.bMISSILE == true) {
+		|| (other.bMISSILE == true && cn != "FireExtPuff")) {
 			return false;
 		}
 		return true;
