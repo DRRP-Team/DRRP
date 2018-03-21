@@ -1,0 +1,177 @@
+Intermission Inter_Cast
+{
+	Wiper
+	{
+		WipeType = Crossfade
+	}
+	Image
+	{
+		// This is only here to initialize the background and the music
+		Background = "STARS"
+		Time = -1
+		Music = "C_PROT"
+	}
+	Link = Doom2Cast
+}
+
+Intermission Doom2Cast
+{
+	// Cast
+	// {
+		// CastClass = "DRRPFire"
+		// CastName = "Fucking fire (Herodemon's rage)"
+		// AttackSound = "Missile", 1, "fire/loop1"
+	// }
+	Cast
+	{
+		CastClass = "Hellhound"
+		CastName = "Hell Hound (Herodemon's rage)"
+	}
+	Cast
+	{
+		CastClass = "Cerberus"
+		CastName = "Cerberus"
+		// AttackSound = "Missile", 1, "rlmonsters/battlerifle"
+	}
+	Cast
+	{
+		CastClass = "DemonWolf"
+		CastName = "Demon Wolf"
+	}
+	Cast
+	{
+		CastClass = "ZombiePvt"
+		CastName = "Zombie Private"
+	}
+	Cast
+	{
+		CastClass = "ZombieLt"
+		CastName = "Zombie Lt"
+	}
+	Cast
+	{
+		CastClass = "ZombieCpt"
+		CastName = "Zombie Capitan"
+	}
+	Cast
+	{
+		CastClass = "Impling"
+		CastName = "Impling"
+	}
+	Cast
+	{
+		CastClass = "Imp"
+		CastName = "Imp"
+	}
+	Cast
+	{
+		CastClass = "ImpLord"
+		CastName = "Imp Lord"
+	}
+	Cast
+	{
+		CastClass = "BullDemon"
+		CastName = "Bull Demon"
+	}
+	Cast
+	{
+		CastClass = "Pinky"
+		CastName = "Pinky"
+	}
+	Cast
+	{
+		CastClass = "Belphegor"
+		CastName = "Belphegor"
+	}
+	Cast
+	{
+		CastClass = "Malrath"
+		CastName = "Malrath"
+	}
+	Cast
+	{
+		CastClass = "Cacodemon1"
+		CastName = "Cacodemon"
+	}
+	Cast
+	{
+		CastClass = "Wretched"
+		CastName = "Wretched"
+	}
+	Cast
+	{
+		CastClass = "Phantom"
+		CastName = "Phantom"
+	}
+	Cast
+	{
+		CastClass = "LostSoul1"
+		CastName = "Lost Soul"
+	}
+	Cast
+	{
+		CastClass = "Nightmare"
+		CastName = "Nightmare"
+	}
+	Cast
+	{
+		CastClass = "Troop"
+		CastName = "Troop"
+	}
+	Cast
+	{
+		CastClass = "Commando"
+		CastName = "Commando"
+	}
+	Cast
+	{
+		CastClass = "Assassin"
+		CastName = "Assassin"
+	}
+	Cast
+	{
+		CastClass = "Infernis"
+		CastName = "Infernis"
+	}
+	Cast
+	{
+		CastClass = "ArchVile"
+		CastName = "Arch-Vile"
+	}
+	Cast
+	{
+		CastClass = "Apollyon"
+		CastName = "Apollyon"
+	}
+	Cast
+	{
+		CastClass = "Ghoul"
+		CastName = "Ghoul"
+	}
+	Cast
+	{
+		CastClass = "Fiend"
+		CastName = "Fiend"
+	}
+	Cast
+	{
+		CastClass = "Revenant1"
+		CastName = "Revenant"
+	}
+	Cast
+	{
+		CastClass = "Behemoth"
+		CastName = "Behemoth"
+	}
+	Cast
+	{
+		CastClass = "Mancubus"
+		CastName = "Mancubus"
+	}
+	Cast
+	{
+		CastClass = "Druj"
+		CastName = "Druj"
+	}
+	Link = Doom2Cast	// Proceed to Nightmare Cast Call
+}
