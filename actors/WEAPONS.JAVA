@@ -546,7 +546,7 @@ ACTOR DogGunPuff
 	+NOGRAVITY
 	+ALLOWPARTICLES
 	+RANDOMIZE
-	damagetype DogBite
+	DamageType DRRPPhysicalDmg
 	RenderStyle Translucent
 	Alpha 0.5
 	VSpeed 1
