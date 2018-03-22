@@ -16,8 +16,13 @@ DamageType DRRPFireDmg			// Fire.
 DamageType DRRPClipDmg			// Bullets.
 { }
 
-DamageType DRRPShotgunDmg		// Bullets.
+DamageType DRRPShotgunDmg		// Bullets (for dogs).
 { }
+
+DamageType DRRPSSGDmg			// Bullets (for Baron of hell).
+{
+	ReplaceFactor
+}
 
 DamageType DRRPRocketDmg		// Rockets.
 { }

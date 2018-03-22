@@ -57,7 +57,8 @@ Actor DRRPShotgun: Shotgun replaces Shotgun
 
 Actor DRRPSuperShotgun: SuperShotgun replaces SuperShotgun
 {
-	DamageType DRRPShotgunDmg
+	DamageType DRRPSSGDmg
+//	DamageType DRRPFireExtDmg
 	Decal BulletChip
 	States
 	{

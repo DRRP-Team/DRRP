@@ -1,8 +1,5 @@
-// Oh... Why? You did broke all...
-// 1 monster skill = 10259-10299
-// 2 monster skill = 10300-10399
-// 3 monster skill = 10400-10499
-// Ok... Monsters: 10259 - 10499
+//Mask: 10 + <monster_skill + 1> + <ID>: e. g., 2 monster skill = 10300-10399.
+//So, Monsters: 10259-10499.
 
 //Dogs
 	//Hellhound - 10246
@@ -327,6 +324,7 @@ Actor Druj: DRRPCubus 10478 {
 Actor DRRPPainElemental: PainElemental replaces PainElemental 10279
 {
 	//$Category DMonsters
+	DamageFactor DRRPFireDmg, 0.0
 }
 
 Actor Rehovart: DRRPPainElemental 10379
@@ -348,7 +346,9 @@ Actor Beholder: DRRPPainElemental 10479
 
 Actor DRRPBaronOfHell: BaronOfHell replaces BaronOfHell 10280
 {
-	//DamageFactor DRRPSSGDmg, 7.0
+	Scale 0.85
+	DamageFactor DRRPSSGDmg, 5.0
+	//DamageFactor DRRPFireExtDmg, 25.0
 	//$Category DMonsters
 }
 
