@@ -1,0 +1,124 @@
+function str getString (int id) {
+	switch (id) {
+		case 0:
+			return "Sector 1";
+		case 1:
+			return "/junction.bsp";
+		case 2:
+			return "Enter Junction";
+		case 3:
+			return "";
+		case 4:
+			return "[Dr. Jensen]\nI'm just checking\nsome things on\nthis terminal.\nI'm OK; I don't\nneed any help.";
+		case 5:
+			return "[Dr. Jensen]\nLook, I was un-\njustly fired re-\ncently and I have\na hunch it may\nhave something to\ndo with what's\nhappening around\nhere. I'm just\ntrying to find\nsome things\nout.";
+		case 6:
+			return "[Dr. Jensen]\nYou should just\nkeep moving.\nThere's nothing\nyou can do to\nhelp me right\nnow.";
+		case 7:
+			return "I'm Dr. Guerard.\nAre you the Ma-\nrine sent to help\nus? Well, I need\nyou to figure out\na sequence to get\nthe door out of\nthis area un-\nlocked. Things\nare really\nscrewed up and I\nneed to get back\nto my experiments\nto make sure the\npower losses\nhaven't caused\nany problems!";
+		case 8:
+			return "Use trial and\nerror to unlock\nthe doors in the\nmain corridor.";
+		case 9:
+			return "[Dr. Guerard]\nFigure out the\nsequence to get\nthat door un-\nlocked. Use trial\nand error.";
+		case 10:
+			return "D0or..^$#.&~\nu^l0ck3d";
+		case 11:
+			return "...";
+		case 12:
+			return "6oor,##$%^\nunl0cke6";
+		case 13:
+			return "%$#$*&::::\nun10cked";
+		case 14:
+			return "^^)(id_s0f7";
+		case 15:
+			return "Doo$*&::::\nunl***ed";
+		case 16:
+			return "W!dg3+ wa5 h3r3";
+		case 17:
+			return "Do!!!!##23$\nun(0*c3d";
+		case 18:
+			return "..#.#...nl.....d";
+		case 19:
+			return "Ask the civilian\nabout a door\npasscode.";
+		case 20:
+			return "[Dr. Guerard]\nHello again.\nA door north of\nthis position\nleads back to\nJunction, but it\nis locked. Ask\nthat guy if he\nhas the code for\ndoor.";
+		case 21:
+			return "[Dr. Guerard]\nTry to get the\npasscode for the\ndoor out of that\ncivilian worker.";
+		case 22:
+			return "[Dr. Guerard]\nHe said I have\nthe code? I've\nnever even been\ndown here until\nthe invasion! Try\noffering him some\ncredits; he might\nbe more helpful.";
+		case 23:
+			return "Offer the civil-\nian credits for\nthe code.";
+		case 24:
+			return "[Dr. Guerard]\nOffer that man\nsome credits for\nthe passcode.";
+		case 25:
+			return "That guy is sup-\nposedly a high-\nlevel scientist\nbut he doesn't\nhave any pass-\ncodes? BS! If\nhe's so high\nlevel, he must\nhave some codes\nto help us get\nback to Junction.";
+		case 26:
+			return "Ask the scientist\nfor codes.";
+		case 27:
+			return "See if you can...\nuh, see if you\ncan get any codes\nfrom that scien-\ntist. He should\nhave some.";
+		case 28:
+			return "Scientist. Codes.\nGo!";
+		case 29:
+			return "OK, maybe I have\na code that can\nhelp you, but how\nare you going to\nhelp me? How\nabout I give you\nmy passcode for\n10 credits?\n[Engage civilian\nagain to give him\n10 UAC credits]";
+		case 30:
+			return "You don't even\nhave enough\ncredits to talk\nto me, jar head.\nI suggest you\nstart looking\naround for some.";
+		case 31:
+			return "Thanks, uh, skip-\nper or whatever\nyou are. I don't\nwant that scien-\ntist to hear the\ncode so I'll just\nwrite it down in\nyour notebook...\nThere. I... uh...\nwhoa! What the\nhell is happening\nto me?!";
+		case 32:
+			return "Use passcode 225\non north door.";
+		case 33:
+			return "225";
+		case 34:
+			return "Enter door code\n[find someone\nnearby to give it\nto you]:";
+		case 35:
+			return "Enter door code\n[check the note-\nbook in your\ninventory]:";
+		case 36:
+			return "Door unlocked.";
+		case 37:
+			return "Logged in as root";
+		case 38:
+			return "# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.";
+		case 39:
+			return "Map data already\ndownloaded.";
+		case 40:
+			return "[Email]\nTo: D. Kramer\nFrom: T. Brown II\nI changed the se-\ncure room pass-\ncode to the month\nand day of my\nbirthday.\n-Ted";
+		case 41:
+			return "[Email]\nTo: T. Brown II\nFrom: D. Kramer\nI don't know when\nyour birthday is!\n-Dave";
+		case 42:
+			return "Door passcode\nsomehow related\nto October 10th.";
+		case 43:
+			return "[Email]\nTo: D. Kramer\nFrom: T. Brown II\nIs that why I\ndidn't get a gift\nlast year? I'd\nreally like a\nX-Cube 46.\nP.S. - I was born\nOctober 10, 2114.\n-Ted";
+		case 44:
+			return "No more email.";
+		case 45:
+			return "1010";
+		case 46:
+			return "[Door lock\noverride]\nEnter code:";
+		case 47:
+			return "[Dr. Guerard]\nYou look like you\ncould use some\nhelp. Here's some\nextra health to\nget you ready for\nwhatever lies\nahead!";
+		case 48:
+			return "[Dr. Guerard]\nIt's not impor-\ntant how I got\nhere ahead of\nyou. It's best\nyou just keep\nmoving.";
+		case 49:
+			return "[Dr. Guerard]\nPlease, just\nkeep moving.";
+		case 50:
+			return "You'll find use-\nful equipment be-\nhind this door\nbut you need the\ngreen keycard to\nget in. Come back\nhere when you get\nthe green key-\ncard.";
+		case 51:
+			return "Having trouble\nfinding the green\nkeycard? You\nwon't find it in\nthis sector.\nYou'll likely\nfind the green\nkeycard in a\nlater sector.\nYou'll need to\ntravel back here\nto open this\ndoor.";
+		case 52:
+			return "You can re-enter\nthis sector from\nJunction even af-\nter successfully\ncompleting it. By\nrevisiting pre-\nviously completed\nsectors you can\nuncover addition-\nal secrets and\nbuild strength by\nacquiring equip-\nment and fighting\nmonsters.";
+		case 53:
+			return "Super secret\npasscode: **7*";
+		case 54:
+			return "[Combat Guide]\nTip 099: You can\nskip a combat\nturn by pressing\nthe 9 button\nwhile engaging an\nenemy. Use this\nstrategically to\ndraw an enemy\ninto your line of\nfire.";
+		case 55:
+			return "[Combat Guide]\nTip 164: Explod-\ning barrels can\ndamage enemies,\nbut be careful as\nexploding barrels\ncan also hurt\nyou.";
+		case 56:
+			return "Segment Fault:\n&o0r _4s5%0D3 2 25";
+		case 57:
+			return "";
+	}
+} //getString
+
+Script 36 (int id) {
+	ACS_NamedExecuteWait("window", 0, getString(id));
+}

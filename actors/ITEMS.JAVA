@@ -187,14 +187,20 @@ Actor DogCollar : CustomInventory 10624 {
 			Fail
 		CerberusLabel:
 			TNT1 A 0
+			TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+			TNT1 A 0 A_GiveInventory( "CerberusGun" )
 			TNT1 A 0 A_SelectWeapon( "CerberusGun" )
 			Stop
 		HellhoundLabel:
 			TNT1 A 0
+			TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+			TNT1 A 0 A_GiveInventory( "HellhoundGun" )
 			TNT1 A 0 A_SelectWeapon( "HellhoundGun" )
 			Stop
 		DemonWolf:
 			TNT1 A 0
+			TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+			TNT1 A 0 A_GiveInventory( "DemonWolfGun" )
 			TNT1 A 0 A_SelectWeapon( "DemonWolfGun" )
 			Stop
 	}
