@@ -301,16 +301,33 @@ ACTOR HellHoundGun : Weapon
 		HDGG A 1 Offset(0,35)
 		HDGG A 1 Offset(0,33)
 		HDGG A 1 Offset(0,32) 
-		GoTo Ready
+		Goto Ready
 	Fire:
+		TNT1 A 0 A_GunFlash( "Flash", GFF_NOEXTCHANGE )
 		HDGG A 0 A_PlaySound("monsters/hellhound/bite")
 		HDGG CD 2
 		//HDGG E 2 A_CustomPunch(random(8, 18), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
 		HDGG E 2 A_CustomPunch(random(8, 18), TRUE, /*CPF_STEALARMOR*/0,"DogGunPuff",80,0/*.5*/,0,/*"DogArmorBonus"*/"ArmorBonus","weapons/doggun/bite")
 		HDGG F 2 
 		HDGG DCB 2
-		//HDGG A 0 A_GunFlash
 		Goto Ready
+	Flash:
+		TNT1 A 1 A_SetPitch( Pitch + Random( 2, 4 ) )
+		TNT1 A 0 A_SetAngle( Angle + FRandom( -1, 1 ) )
+		TNT1 A 1 A_SetPitch( Pitch + Random( 2, 5 ) )
+		TNT1 A 1 A_SetPitch( Pitch + Random( 1, 4 ) )
+		TNT1 A 1 A_Recoil( Random( -7, -4 ) )
+		TNT1 A 0 A_SetAngle( Angle + FRandom( -1, 1 ) )
+		TNT1 A 1 A_SetPitch( Pitch - FRandom( 5, 8 ) )
+		TNT1 A 0 A_SetAngle( Angle + FRandom( -2, 2 ) )
+		TNT1 A 1 A_SetPitch( Pitch - FRandom( 3, 4 ) )
+		TNT1 A 0 A_SetAngle( Angle + FRandom( -2, 2 ) )
+		TNT1 A 1 A_SetPitch( Pitch - FRandom( 3, 5 ) )
+		TNT1 A 0 A_SetAngle( Angle + FRandom( -3, 3 ) )
+		TNT1 A 1 A_SetPitch( Pitch - 4 )
+		TNT1 A 2
+		TNT1 A 1 A_SetPitch( Pitch + 3 )
+		Stop
 	AltFire:
 		HDGG A 1 A_PlaySound("monsters/hellhound/die")
 		TNT1 A 0 A_TakeInventory("HellHoundGun", 9999)
@@ -361,6 +378,7 @@ ACTOR CerberusGun : HellHoundGun
 		CDGG A 1 Offset(0,32) 
 		GoTo Ready
 	Fire:
+		TNT1 A 0 A_GunFlash( "Flash", GFF_NOEXTCHANGE )
 		CDGG A 0 A_PlaySound("monsters/hellhound/bite")
 		CDGG CD 2
 		//CDGG E 2 A_CustomPunch(random(10, 25), TRUE, CPF_STEALARMOR,"DogGunPuff",80,0.5,0,"DogArmorBonus","weapons/doggun/bite")
@@ -419,12 +437,12 @@ ACTOR DemonWolfGun : HellHoundGun
 		DDGG A 1 Offset(0,32) 
 		GoTo Ready
 	Fire:
+		TNT1 A 0 A_GunFlash( "Flash", GFF_NOEXTCHANGE )
 		DDGG A 0 A_PlaySound("monsters/hellhound/bite")
 		DDGG CD 2
 		DDGG E 2 A_CustomPunch(random(15, 50), TRUE, /*CPF_STEALARMOR*/0,"DogGunPuff",80,0/*.5*/,0,/*"DogArmorBonus"*/"ArmorBonus","weapons/doggun/bite")
 		DDGG F 2 
 		DDGG DCB 2
-		//HDGG A 0 A_GunFlash
 		Goto Ready
 	AltFire:
 		DDGG A 1 A_PlaySound("monsters/hellhound/die")
