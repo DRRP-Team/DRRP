@@ -123,6 +123,8 @@ Actor DRRPLava 10251 {
 	
 	DamageFactor "Normal", 0
 	
+	RenderStyle Add
+	
 	States {
 	Spawn:
 	    SPKO D 0 Bright
