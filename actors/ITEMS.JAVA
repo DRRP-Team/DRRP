@@ -197,7 +197,7 @@ Actor DogCollar : CustomInventory 10624 {
 			TNT1 A 0 A_GiveInventory( "HellhoundGun" )
 			TNT1 A 0 A_SelectWeapon( "HellhoundGun" )
 			Stop
-		DemonWolf:
+		DemonWolfLabel:
 			TNT1 A 0
 			TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
 			TNT1 A 0 A_GiveInventory( "DemonWolfGun" )

@@ -73,7 +73,7 @@ Actor Cerberus : MBFHelperDog 10346 {
 Actor DemonWolf : MBFHelperDog 10446 {
 //$Category DMonsters
 	Health 50
-	Translation "64:79=32:47"
+	Translation "64:79=197:200"
 }
 
 
