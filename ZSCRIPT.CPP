@@ -1,11 +1,5 @@
 version "2.5"
 
-class DRRPShaderHandler : StaticEventHandler {
-	override void RenderOverlay(RenderEvent e) {
-		Shader.SetEnabled(players[consoleplayer], "drrpshader", true);
-	}
-}
-
 class DRRPFire_zspatch : Actor {
 	override bool CanCollideWith (Actor other, bool passive) {
 		String cn = other.getClassName();
@@ -31,6 +25,18 @@ class DoorCodeInputActor : Actor {
 	static int DoorCode(int code, int front, int back) {
 		EventHandler.SendNetworkEvent("opendoorinput", code, front, back);
 		return 1;
+	}
+}
+
+class ShaderControllerActor : Actor {
+	static int SetEnabled(int player, String name, bool enabled) {
+		if(player != 0) {
+			Shader.SetEnabled(players[player - 1], name, enabled);
+			return;
+		}
+		for(int i = 0; i < players.Size(); i++) {
+			Shader.SetEnabled(players[i], name, enabled);
+		}
 	}
 }
 
