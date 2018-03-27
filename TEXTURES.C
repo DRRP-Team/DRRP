@@ -45,7 +45,7 @@ Sprite "RMEDA0", 28, 19
 
 Sprite "YMEDI0", 28, 19
 {
-	Offset -2, -2
+	Offset -3, -5
 	Patch "MEDIA0", 0, 0
 	{
 		Translation "168:185=229:229", "186:191=163:163"
@@ -54,7 +54,7 @@ Sprite "YMEDI0", 28, 19
 
 Sprite "RMEDI0", 28, 19
 {
-	Offset -2, -2
+	Offset -3, -5
 	Patch "MEDIA0", 0, 0
 	{
 		Translation "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
