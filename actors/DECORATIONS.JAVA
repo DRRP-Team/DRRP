@@ -177,24 +177,6 @@ actor Sink 10709 {
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem( "AqueductFountain" )
 		Stop
-/*		XTOI A 0 A_NoBlocking
-		CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 100 * 99 )
-		CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 1000 * 993 )
-		CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 1000 * 995 )
-		CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 1000 * 998 )
-		XTOI A 0 A_NoBlocking
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.7)
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.6)
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.5)
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.4)
-		Goto Death1
-	Death1:
-		CEFE ABC 4
-		Loop */
 	}
 }
 
@@ -215,19 +197,6 @@ Actor Toilet 10710 {
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem( "AqueductFountain" )
 		Stop
-/*		XTOI A 0 A_NoBlocking
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.7)
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.6)
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.5)
-		CEFE ABC 5
-		CEFE A 0 A_SetScale(0.4)
-		Goto Death1
-	Death1:
-		CEFE ABC 5
-		Loop */
 	}
 }
 
