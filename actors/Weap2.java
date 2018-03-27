@@ -138,3 +138,40 @@ Actor DRRPChaingun: Chaingun replaces Chaingun
 		Goto LightDone
 	}
 }
+
+Actor DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle
+{
+	States
+	{
+	Ready:
+		PLSG A 1 A_WeaponReady
+		Loop
+	Deselect:
+		PLSG A 1 A_Lower
+		Loop
+	Select:
+		PLSG A 1 A_Raise
+		Loop
+	Fire:
+		PLSG A 0 A_GunFlash
+		PLSG A 3 A_FireProjectile( "PlasmaBall" )
+		PLSG B 0 A_ReFire
+		PLSG B 0 A_ZoomFactor( 1 )
+		PLSG B 20
+		Goto Ready
+	Flash:
+		PLSF A 0 A_SetPitch( Pitch - FRandom( 0.05, 0.4 ) )
+		PLSF A 0 A_SetAngle( Angle + FRandom( -0.2, 0.2 ) )
+		PLSF A 0 A_Recoil( 0.075 )
+		PLSG B 0 A_ZoomFactor( FRandom( 0.995, 0.999 ) )
+		PLSF A 0 A_Jump( 127, "Flash2" )
+		PLSF A 4 Bright A_Light1
+		Goto LightDone
+	Flash2:
+		PLSF B 4 Bright A_Light1
+		Goto LightDone
+	Spawn:
+		PLAS A -1
+		Stop
+	}
+}
