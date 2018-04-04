@@ -28,15 +28,16 @@ class DoorCodeInputActor : Actor {
 	}
 }
 
-class ShaderControllerActor : Actor {
+class DRRPShaderHandler : EventHandler {
 	static int SetEnabled(int player, String name, bool enabled) {
 		if(player != 0) {
 			Shader.SetEnabled(players[player - 1], name, enabled);
-			return;
+			return 0;
 		}
 		for(int i = 0; i < players.Size(); i++) {
 			Shader.SetEnabled(players[i], name, enabled);
 		}
+		return 0;
 	}
 }
 
