@@ -1,31 +1,31 @@
-DamageType DRRPPhysicalDmg		// Dogs and e. t. c.
+DamageType DRRPPhysicalDmg      // Dogs and e. t. c.
 { }
 
-DamageType DRRPAxeDmg			// Axe (separated from physical damage).
+DamageType DRRPAxeDmg           // Axe (separated from physical damage).
 { }
 
-DamageType DRRPFireExtDmg		// Fire extinguisher.
+DamageType DRRPFireExtDmg       // Fire extinguisher.
 { 
-	ReplaceFactor
-//	Factor = 0.5
+    ReplaceFactor
+//  Factor = 0.5
 }
 
-DamageType DRRPFireDmg			// Fire.
+DamageType DRRPFireDmg          // Fire.
 { }
 
-DamageType DRRPClipDmg			// Bullets.
+DamageType DRRPClipDmg          // Bullets.
 { }
 
-DamageType DRRPShotgunDmg		// Bullets (for dogs).
+DamageType DRRPShotgunDmg       // Bullets (for dogs).
 { }
 
-DamageType DRRPSSGDmg			// Bullets (for Baron of hell).
+DamageType DRRPSSGDmg           // Bullets (for Baron of hell).
 {
-	ReplaceFactor
+    ReplaceFactor
 }
 
-DamageType DRRPRocketDmg		// Rockets.
+DamageType DRRPRocketDmg        // Rockets.
 { }
 
-DamageType DRRPPlasmaDmg		// Plasma.
+DamageType DRRPPlasmaDmg        // Plasma.
 { }

@@ -1,112 +1,125 @@
-clearepisodes
+ClearEpisodes
+
+Cluster 1
+{
+    Hub
+}
+
 Episode INTRO
 {
-    Name = "DOOM RPG"
     NoSkillMenu
+    Name     = "DOOM RPG"
 }
 
-map TITLEMAP "Introduction"
+Map TITLEMAP "Introduction"
 {
- music = "D_TITLE"
- SkyBox = DARK0305
+    Music    = "D_TITLE"
+    SkyBox   = DARK0305
 }
 
-map TITLEMAP2 "Introduction"
+Map TITLEMAP2 "Introduction"
 {
- music = "D_PROTECT"
- SkyBox = DARK0305
+    Music    = "D_PROTECT"
+    SkyBox   = DARK0305
 }
 
-map TITLEMAP3 "Introduction"
+Map TITLEMAP3 "Introduction"
 {
- music = "D_BLIZZ"
- SkyBox = DARK0305
+    Music    = "D_BLIZZ"
+    SkyBox   = DARK0305
 }
-
 
 Map INTRO "Entrance"
 {
+    Music    = D_DEAD
+    SkyBox   = SKY2
+    Cluster  = 1
     LevelNum = 1
-    Cluster = 1
-    SkyBox = SKY2
-    Music = D_DEAD
 }
 
-Map INTRO2 "Titlemap"{
-	Music = "D_TITLE"
+Map INTRO2 "TitleMap"
+{
+	Music    = "D_TITLE"
 }
 
-cluster 1 {
-    hub
+
+Map HUB "Junction"
+{
+    SkyBox   = sky2
+    Music    = D_DEAD
+    Cluster  = 1
+    LevelNum = 2
 }
 
-map HUB "Junction" {
-    levelnum = 2
-    cluster = 1
-    skybox = sky2
-    music = D_DEAD
-}
-
-map SEC1 "Sector 1" {
-    levelnum = 3
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC1 "Sector 1"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 3
 	EventHandlers = "DoorCodeInputHandler"
 }
 
-map SEC2 "Sector 2" {
-    levelnum = 4
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC2 "Sector 2"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 4
 }
 
-map SEC3 "Sector 3" {
-    levelnum = 5
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC3 "Sector 3"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 5
 }
 
-map SEC4 "Sector 4" {
-    levelnum = 6
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC4 "Sector 4"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 6
 }
 
-map SEC5 "Sector 5" {
-    levelnum = 7
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC5 "Sector 5"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 7
 }
 
-map SEC6 "Sector 6" {
-    levelnum = 8
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC6 "Sector 6"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 8
 }
 
-map SEC7 "Sector 7" {
-    levelnum = 9
-    cluster = 1
-    skybox = sky2
-    music = D_DOOM
+Map SEC7 "Sector 7"
+{
+    SkyBox   = sky2
+    Music    = D_DOOM
+    Cluster  = 1
+    LevelNum = 9
 }
 
-map XHUB "Junction" {
-    levelnum = 10
-    cluster = 1
-    skybox = sky2
-    music = D_DEAD
+Map XHUB "Junction"
+{
+    SkyBox   = sky2
+    Music    = D_DEAD
+    Cluster  = 1
+    LevelNum = 10
 }
 
-map REAC "Reactor" {
-    levelnum = 11
-    cluster = 1
-    skybox = sky2
-    music = D_BLIZZ
+Map REAC "Reactor"
+{
+    SkyBox   = sky2
+    Music    = D_BLIZZ
+    Cluster  = 1
+    LevelNum = 11
 }
