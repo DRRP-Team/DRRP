@@ -79,14 +79,12 @@ Actor DemonWolf : MBFHelperDog 10446 {
 
 // Zombies ----------------------------------------------------------------------------
 
-Actor ZombieManDRRP: ZombieMan replaces ZombieMan
-{
+Actor ZombieManDRRP: ZombieMan replaces ZombieMan {
 	DropItem "Clip", 0, 0
 	DamageFactor DRRPAxeDmg, 2.0
 }
 
-Actor ShotgunGuyDRRP: ShotgunGuy replaces ShotgunGuy
-{
+Actor ShotgunGuyDRRP: ShotgunGuy replaces ShotgunGuy {
 	DropItem "Shotgun", 0, 0
 	DamageFactor DRRPAxeDmg, 2.0
 }
@@ -201,8 +199,7 @@ Actor Nightmare: LostSoul1 10363 {
 
 // Chaingunners -----------------------------------------------------------------------
 
-Actor ChaingunGuyDRRP: ChaingunGuy replaces ChaingunGuy
-{
+Actor ChaingunGuyDRRP: ChaingunGuy replaces ChaingunGuy {
 	DropItem "Chaingun", 0, 0
 	DamageFactor DRRPPlasmaDmg, 2.0
 	States {
@@ -321,21 +318,18 @@ Actor Druj: DRRPCubus 10478 {
 
 // Pain Elementals --------------------------------------------------------------------
 
-Actor DRRPPainElemental: PainElemental replaces PainElemental 10279
-{
+Actor DRRPPainElemental: PainElemental replaces PainElemental 10279 {
 	//$Category DMonsters
 	DamageFactor DRRPFireDmg, 0.0
 }
 
-Actor Rehovart: DRRPPainElemental 10379
-{
+Actor Rehovart: DRRPPainElemental 10379 {
 	//$Category DMonsters
 	Health 200
 	//Translation Greenish/Brown:Blue
 }
 
-Actor Beholder: DRRPPainElemental 10479
-{
+Actor Beholder: DRRPPainElemental 10479 {
 	//$Category DMonsters
 	Health 100
 	//Translation Greenish/Brown:Green
@@ -344,23 +338,20 @@ Actor Beholder: DRRPPainElemental 10479
 
 // Barons of Hell ---------------------------------------------------------------------
 
-Actor DRRPBaronOfHell: BaronOfHell replaces BaronOfHell 10280
-{
+Actor DRRPBaronOfHell: BaronOfHell replaces BaronOfHell 10280 {
 	Scale 0.85
 	DamageFactor DRRPSSGDmg, 5.0
 	//DamageFactor DRRPFireExtDmg, 25.0
 	//$Category DMonsters
 }
 
-Actor DRRPHellKnight: DRRPBaronOfHell 10380
-{
+Actor DRRPHellKnight: DRRPBaronOfHell 10380 {
 	//$Category DMonsters
 	Health 500
 	//Translation Baron:HellKnight
 }
 
-Actor Ogre: DRRPHellKnight 10480
-{
+Actor Ogre: DRRPHellKnight 10480 {
 	//$Category DMonsters
 	Health 250
 	//Translation HellKinghtSkin:Green
