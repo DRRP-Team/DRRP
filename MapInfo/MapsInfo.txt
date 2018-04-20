@@ -45,16 +45,16 @@ Map INTRO2 "TitleMap"
 
 Map HUB "Junction"
 {
-    SkyBox   = sky2
     Music    = D_DEAD
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 2
 }
 
 Map SEC1 "Sector 1"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 3
 	EventHandlers = "DoorCodeInputHandler"
@@ -62,64 +62,64 @@ Map SEC1 "Sector 1"
 
 Map SEC2 "Sector 2"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 4
 }
 
 Map SEC3 "Sector 3"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 5
 }
 
 Map SEC4 "Sector 4"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 6
 }
 
 Map SEC5 "Sector 5"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 7
 }
 
 Map SEC6 "Sector 6"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 8
 }
 
 Map SEC7 "Sector 7"
 {
-    SkyBox   = sky2
     Music    = D_DOOM
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 9
 }
 
 Map XHUB "Junction"
 {
-    SkyBox   = sky2
     Music    = D_DEAD
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 10
 }
 
 Map REAC "Reactor"
 {
-    SkyBox   = sky2
     Music    = D_BLIZZ
+    SkyBox   = sky2
     Cluster  = 1
     LevelNum = 11
 }
