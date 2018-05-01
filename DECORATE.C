@@ -5,8 +5,8 @@
  * https://opensource.org/licenses/MIT
  */
 
-#include actors/ITEMS.JAVAZ
-#include actors/WEAP2.java
+#include actors/ITEMS.JAVA
+#include actors/WEAP2.JAVA
 #include actors/SPARKS.JAVA
 #include actors/DAMAGES.JAVA
 #include actors/WEAPONS.JAVA
