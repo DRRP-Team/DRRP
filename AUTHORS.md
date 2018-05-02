@@ -19,9 +19,9 @@
  - JSO_x (a. k. a. Morthimer McMare) 
 	Бета-тестер, работа с графикой, программист
 	
- - shon
+ - shon (вышел)
  
- - Nomakh
+ - Nomakh (вышел)
 	Маппер
  
 ## Благодарности
@@ -39,8 +39,8 @@
  - Dsskull1 - Tester, graphics
  - DOOMGABR (left) - mapper
  - JSO_x (a. k. a. Morthimer McMare) - beta-tester, graphic, programmer
- - shon
- - Nomakh - mapper
+ - shon (left)
+ - Nomakh (left) - mapper
  
 ## Special thanks
 
