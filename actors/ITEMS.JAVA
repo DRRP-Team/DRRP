@@ -176,6 +176,7 @@ Actor InventorySoulsphere: CustomInventory replaces Soulsphere {
 }
 
 Actor DogCollar : CustomInventory 10624 {
+	//$Category Items
     +INVENTORY.INVBAR
 
     Tag                     "Dog Collar"

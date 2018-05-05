@@ -80,26 +80,31 @@ Actor DemonWolf : MBFHelperDog 10446 {
 // Zombies ----------------------------------------------------------------------------
 
 Actor ZombieManDRRP: ZombieMan replaces ZombieMan {
+	//$Category DMonsters
 	DropItem "Clip", 0, 0
 	DamageFactor DRRPAxeDmg, 2.0
 }
 
 Actor ShotgunGuyDRRP: ShotgunGuy replaces ShotgunGuy {
+	//$Category DMonsters
 	DropItem "Shotgun", 0, 0
 	DamageFactor DRRPAxeDmg, 2.0
 }
 
 Actor ZombiePvt : ZombieMan 10274 {
+	//$Category DMonsters
 	Health 10
 	Translation "16:47=152:159"
 }
 
 Actor ZombieLt : ShotgunGuy 10374 {
+	//$Category DMonsters
 	Health 30
 	Translation "128:143=199:205", "144:151=200:207", "16:47=202:207", "152:159=200:207", "112:127=240:247"
 }
 
 Actor ZombieCpt : ZombieMan 10474 {
+	//$Category DMonsters
 	Health 60
 	Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
 }

@@ -84,4 +84,5 @@ Actor DRRPLava 10251 {
 Actor Explosion : Rocket {
     Spawn Parent Death
     SpawnID 253
+    -ROCKETTRAIL
 }

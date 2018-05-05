@@ -5,7 +5,7 @@
  */
 
 Actor Scientist 10500 {
-// $Category Characters
+//$Category Characters
     +SOLID
     +USESPECIAL
 
@@ -20,17 +20,17 @@ Actor Scientist 10500 {
 }
 
 Actor Scientist1 : Scientist 10501 { // black
-// $Category Characters
+//$Category Characters
     Translation "16:79=64:79"
 }
 
 Actor DrGuerard : Scientist 10502 { // gerard
-// $Category Characters
+//$Category Characters
     Translation "80:106=[132,174,165]:[41,73,66]", "192:192=[132,174,165]:[132,174,165]"
 }
 
 Actor ScientistKillable : Scientist 10503 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
     Health 5
     States {
@@ -45,7 +45,7 @@ Actor ScientistKillable : Scientist 10503 {
 }
 
 Actor Scientist1Killable : Scientist1 10504 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
@@ -62,7 +62,7 @@ Actor Scientist1Killable : Scientist1 10504 {
 }
 
 Actor GuerardKillable : DrGuerard 10505 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
@@ -85,7 +85,7 @@ Actor GuerardKillable : DrGuerard 10505 {
  */
 
 Actor Civilan0 10510 {
-// $Category Characters
+//$Category Characters
     +SOLID
 
     Radius 20
@@ -99,17 +99,17 @@ Actor Civilan0 10510 {
 }
 
 Actor Civilan1 : Civilan0 10511 { // purple
-// $Category Characters
+//$Category Characters
     Translation "160:167=250:254"
 }
 
 Actor Civilan2 : Civilan0 10512 { // green
-// $Category Characters
+//$Category Characters
     Translation "160:167=112:127"
 }
 
 Actor CivilanKillable : Civilan0 10513 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
@@ -126,7 +126,7 @@ Actor CivilanKillable : Civilan0 10513 {
 }
 
 Actor Civilan1Killable : Civilan1 10514 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
@@ -143,7 +143,7 @@ Actor Civilan1Killable : Civilan1 10514 {
 }
 
 Actor Civilan2Killable : Civilan2 10515 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
@@ -165,7 +165,7 @@ Actor Civilan2Killable : Civilan2 10515 {
  */
 
 Actor Marine0 10520 {
-// $Category Characters
+//$Category Characters
     +SOLID
 
     Radius 20
@@ -179,12 +179,12 @@ Actor Marine0 10520 {
 }
 
 Actor Marine1 : Marine0 10521 { // blue
-// $Category Characters
+//$Category Characters
     Translation "122:127=240:247", "117:122=204:207"
 }
 
 Actor MarineKillAble : Marine0 10523 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
@@ -202,7 +202,7 @@ Actor MarineKillAble : Marine0 10523 {
 }
 
 Actor Marine1Killable : Marine1 10524 {
-// $Category Characters
+//$Category Characters
     +SHOOTABLE
 
     Health 5
