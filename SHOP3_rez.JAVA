@@ -5,19 +5,9 @@ conversation
     actor = "DRRPShop"; // Not a number!
     page
     {
-		 goodbye = "Return";
+		 goodbye = "Close";
          name = "Shop";
          dialog = "What do you want to buy?";
-         choice
-         {
-             text = "Next (Ammo)";
-             nextpage = 2;
-         }
-         choice
-         {
-             text = "Prev (Stats)";
-             nextpage = 3;
-         }
          choice
          {
              text = "Small medikit [4 credits]";
@@ -66,23 +56,18 @@ conversation
                  amount = 40;
              }
          }
+         choice
+         {
+             text = "Next (Ammo)";
+             nextpage = 2;
+         }
     }
 
     page
     {
-		 goodbye = "Return";
+		 goodbye = "Close";
          name = "Ammo";
          dialog = "What do you want to buy?";
-         choice
-         {
-             text = "Next (Stats)";
-             nextpage = 3;
-         }
-         choice
-         {
-             text = "Prev (Health)";
-             nextpage = 1;
-         }
          choice
          {
              text = "10x Hal. Cans [2 credits]";
@@ -143,23 +128,18 @@ conversation
                  amount = 8;
              }
          }
+         choice
+         {
+             text = "Next (Stats)";
+             nextpage = 3;
+         }
     }
 
     page
     {
-		 goodbye = "Return";
+		 goodbye = "Close";
          name = "Stats";
          dialog = "What do you want to buy?";
-         choice
-         {
-             text = "Next (Health)";
-             nextpage = 1;
-         }
-         choice
-         {
-             text = "Prev (Ammo)";
-             nextpage = 2;
-         }
          choice
          {
              text = "+1 Accuracy [8 credits]";
@@ -207,6 +187,11 @@ conversation
                  item = "Credit";
                  amount = 10;
              }
+         }
+         choice
+         {
+             text = "Back";
+             nextpage = 1;
          }
     }
 }
