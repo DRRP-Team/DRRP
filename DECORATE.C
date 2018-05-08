@@ -26,7 +26,8 @@
 */
 
 
-// HELLO FROM RUSSIA AND UKRAINE!
+// HELLO FROM RUSSIA'N'UKRAINE!
+// Mir, Trud, Maiy!
 
 
 Actor DoomRPGPlayer : DoomPlayer {
@@ -34,7 +35,7 @@ Actor DoomRPGPlayer : DoomPlayer {
     Player.WeaponSlot 2, DRRPPistol
     Player.WeaponSlot 3, DRRPShotgun, DRRPSuperShotgun
     Player.WeaponSlot 4, DRRPChaingun
-    //Player.WeaponSlot 5, DRRPRocketLauncher
+    Player.WeaponSlot 5, DRRPRocketLauncher
     Player.WeaponSlot 6, DRRPPlasmagun
     //Player.WeaponSlot 7, DRRPBFG9000
     Player.WeaponSlot 8, HellHoundGun, CerberusGun, DemonWolfGun

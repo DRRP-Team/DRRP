@@ -139,19 +139,40 @@ Actor DRRPChaingun: Chaingun replaces Chaingun
 	}
 }
 
+Actor DRRPRocketLauncher: RocketLauncher replaces RocketLauncher
+{
+	States
+	{
+	Fire:
+		MISG B 10 A_GunFlash
+		MISG B 10
+		MISG B 0 A_ReFire
+		Goto Ready
+	Flash:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_FireMissile
+		TNT1 A 0 A_Recoil( 0.02 * Height )
+		TNT1 A 0 A_SetPitch( Pitch - 0.1 * Height )
+		TNT1 A 0 A_SetAngle( Angle + FRandom( -2.5, 2.5 ) * 0.02 * Height )
+		TNT1 A 0 A_Light2
+		MISF AAAA 1 Bright A_SetPitch( Pitch + 0.005 * Height )
+		TNT1 C 0 A_Light1
+		MISF BBBB 1 Bright A_SetPitch( Pitch + 0.005 * Height )
+		TNT1 A 0 A_Light0
+		MISF CCCDDD 1 Bright A_SetPitch( Pitch + 0.005 * Height )
+		TNT1 AAAAAAA 1 A_SetPitch( Pitch + 0.005 * Height )
+		Goto LightDone
+		MISF A 3 Bright A_Light1
+		MISF B 4 Bright
+		MISF CD 4 Bright A_Light2
+		Goto LightDone
+	}
+}
+
 Actor DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle
 {
 	States
 	{
-	Ready:
-		PLSG A 1 A_WeaponReady
-		Loop
-	Deselect:
-		PLSG A 1 A_Lower
-		Loop
-	Select:
-		PLSG A 1 A_Raise
-		Loop
 	Fire:
 		PLSG A 0 A_GunFlash
 		PLSG A 3 A_FireProjectile( "PlasmaBall" )
@@ -170,8 +191,5 @@ Actor DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle
 	Flash2:
 		PLSF B 4 Bright A_Light1
 		Goto LightDone
-	Spawn:
-		PLAS A -1
-		Stop
 	}
 }
