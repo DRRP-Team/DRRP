@@ -4,7 +4,8 @@
  * Scientists * -----------------------------------------------------------------
  */
 
-Actor Scientist 10500 {
+Actor Scientist 10500 
+{
 	//$Category Characters
 	+SOLID
 	+USESPECIAL
@@ -29,13 +30,15 @@ Actor Scientist 10500 {
 	}
 }
 
-Actor Scientist1 : Scientist 10501 { // black
-//$Category Characters
+Actor Scientist1 : Scientist 10501 // Black
+{
+	//$Category Characters
     Translation "16:79=64:79"
 }
 
-Actor DrGuerard : Scientist 10502 { // gerard
-//$Category Characters
+Actor DrGuerard: Scientist 10502 // Dr. Gerard
+{
+	//$Category Characters
     Translation "80:106=[132,174,165]:[41,73,66]", "192:192=[132,174,165]:[132,174,165]"
 }
 
@@ -45,7 +48,8 @@ Actor DrGuerard : Scientist 10502 { // gerard
  * FIXME: civil>i<an *
  */
 
-Actor Civilan0 10510 {
+Actor Civilan0 10510 // Orange
+{
 	//$Category Characters
 	+SOLID
 	+USESPECIAL
@@ -70,13 +74,15 @@ Actor Civilan0 10510 {
 	}
 }
 
-Actor Civilan1 : Civilan0 10511 { // purple
-//$Category Characters
+Actor Civilan1 : Civilan0 10511 // Purple
+{
+	//$Category Characters
     Translation "160:167=250:254"
 }
 
-Actor Civilan2 : Civilan0 10512 { // green
-//$Category Characters
+Actor Civilan2 : Civilan0 10512 // Green
+{
+	//$Category Characters
     Translation "160:167=112:127"
 }
 
@@ -85,8 +91,8 @@ Actor Civilan2 : Civilan0 10512 { // green
  * Marines * --------------------------------------------------------------------
  */
 
-Actor Marine0 10520 {
-	//    DPR0 A 1
+Actor Marine0 10520 
+{
 	//$Category Characters
 	+SOLID
 	+USESPECIAL
@@ -111,19 +117,23 @@ Actor Marine0 10520 {
 	}
 }
 
+Actor Marine1: Marine0 10521 { // Blue
+	//$Category Characters
+    Translation "112:122=195:207", "123:127=243:247"
+}
+
+
 /*
  * Other * ----------------------------------------------------------------------
  */
 
 Actor DRRPShop 10555  {
     -SOLID
-
     Height 64
     Radius 32 // 32 is Too fat
-
     States {
-        Spawn:
-            TNT1 A -1
-        stop
+	Spawn:
+		TNT1 A -1
+		Stop
     }
 }
