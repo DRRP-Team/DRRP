@@ -23,6 +23,9 @@
  
  - Nomakh (вышел)
 	Маппер
+
+ - StormCatcher.77
+	Маппер
  
 ## Благодарности
 
@@ -41,7 +44,8 @@
  - JSO_x (a. k. a. Morthimer McMare) - beta-tester, graphic, programmer
  - shon (left)
  - Nomakh (left) - mapper
- 
+ - StormCatcher.77 - mapper
+
 ## Special thanks
 
  - AáaWaäáàæãā₣§èèì - Doom RPG decompilation article
