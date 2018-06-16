@@ -88,43 +88,43 @@ Actor DRRPAxe: Weapon 10557
 	+WEAPON.MELEEWEAPON
 	States {
 		Spawn:
-			AXEI A -1
+			AXED A -1
 			Stop
 		Ready:
-			AXEG A 1 A_WeaponReady
+			AXED A 1 A_WeaponReady
 			Loop
 		Select:
-			AXEG A 1 A_Raise
+			AXED B 1 A_Raise
 			Loop
 		Deselect:
-			AXEG A 1 A_Lower
+			AXED B 1 A_Lower
 			Loop
 		Fire:
 			//AXEF B 0 A_PlaySound("ZBMB1", CHAN_WEAPON)
-			AXEG A 0 A_PlaySound( "ZBMB2", CHAN_WEAPON, 1.0, True )
-			AXEG A 0 A_GunFlash( "Effect1" )
-			AXEH A 2
+			AXED A 0 A_PlaySound( "ZBMB2", CHAN_WEAPON, 1.0, True )
+			AXED A 0 A_GunFlash( "Effect1" )
+			AXED A 2
 		Hold:		// [AXE H]old A-F; [AXE G]un exclude "C" frame
-			AXEH A 0 A_GiveInventory( "DRRPAxeLoad" )
-			AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 0, 6 )
-			AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 31, 6 )
-			AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 21, 6 )
-			AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 12, 6 )
-			AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 6, 6 )
-			AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 2, 6 )
-			AXEH F 1
+			AXED D 0 A_GiveInventory( "DRRPAxeLoad" )
+			AXED D 0 A_JumpIfInventory( "DRRPAxeLoad", 0, 6 )
+			AXED D 0 A_JumpIfInventory( "DRRPAxeLoad", 31, 6 )
+			AXED D 0 A_JumpIfInventory( "DRRPAxeLoad", 21, 6 )
+			AXED D 0 A_JumpIfInventory( "DRRPAxeLoad", 12, 6 )
+			AXED D 0 A_JumpIfInventory( "DRRPAxeLoad", 6, 6 )
+			AXED D 0 A_JumpIfInventory( "DRRPAxeLoad", 2, 6 )
+			AXED C 1
 			Goto HoldRefire
-			AXEH E 1
+			AXED D 1
 			Goto HoldRefire
-			AXEH D 1
+			AXED D 1
 			Goto HoldRefire
-			AXEH C 1
+			AXED D 1
 			Goto HoldRefire
-			AXEH B 1
+			AXED D 1
 			Goto HoldRefire
-			AXEH A 1
+			AXED D 1
 		HoldRefire:
-			AXEG B 0 A_ReFire( "Hold" )
+			AXED B 0 A_ReFire( "Hold" )
 			Goto FireHold
 		Effect1:
 			//TNT1 A 1 A_SetAngle( Angle - ( 40 - CountInv( "DRRPAxeLoad" ) ) / 16 )
@@ -167,23 +167,23 @@ Actor DRRPAxe: Weapon 10557
 			}
 			Stop
 		FireHold:
-			AXEG BD 2
-			AXEG E 1
-			AXEG F 0 A_GunFlash( "Effect2" )
-			AXEG GH 1
-			AXEG I 1 A_StopSound( CHAN_WEAPON )
-			AXEG JK 1
+			AXED D 2
+			AXED D 1
+			AXED D 0 A_GunFlash( "Effect2" )
+			AXED D 1
+			AXED D 1 A_StopSound( CHAN_WEAPON )
+			AXED D 1
 		StopHold:
-			AXEG L 0 {
+			AXED E 2
+			AXED F 0 {
 				A_CustomPunch( CountInv( "DRRPAxeLoad" ), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
 				A_TakeInventory( "DRRPAxeLoad", 0 );
 			}
-			AXEG L 2
-			AXEG MNO 1
+			AXED F 1
 //			AXEG NO 2
 			TNT1 A 9
-			AXEG EBC 2
-			AXEH A 3
+			//AXED  2
+			AXED G 3
 			Goto Ready
 		Effect2:
 			TNT1 A 0 A_SetPitch( Pitch - FRandom( 1, 2 ) )
