@@ -2,6 +2,27 @@ OptionMenuSettings {
 	Linespacing 12
 }
 
+ListMenu "MainMenu" {
+	IfGame (DooM) {
+		STATICPATCH 85,0,"M_DOOM"
+		POSITION 92,72
+		STATICTEXT 125,188,"DRRP"
+	}
+	TEXTITEM "New Game","N","PlayerClassMenu"
+	TEXTITEM "DRRP Settings","D","DRRPSettings"
+	TEXTITEM "Options","O","OptionsMenu"
+	TEXTITEM "Load Game","L","LoadGameMenu"
+	TEXTITEM "Save Game","S","SaveGameMenu"
+	TEXTITEM "Quit Game","Q","QuitMenu"
+}
+
+OPTIONMENU "DRRPSettings" {
+	TITLE "DooM RPG Remake Project Settings"
+	STATICTEXT " "
+	Submenu "Flashlight", "Flashlight"
+	Submenu "Shaders", "Shaders"
+}
+
 OptionValue LocationOptions {
     0, "Helmet"
     1, "Right Shoulder"
@@ -19,9 +40,15 @@ OptionMenu "Flashlight" {
     Slider "Inner Angle", "flashlight_inner", 0, 180, 1, 0
     Slider "Outer Angle", "flashlight_outer", 0, 180, 1, 0
     Option "Location", flashlight_location, LocationOptions
+	StaticText " "
+	Control "Key", "toggleflashlight"
 }
 
-AddOptionMenu "OptionsMenu" {
-    StaticText " "
-    Submenu "Flashlight", "Flashlight"
+OptionMenu "Shaders" {
+	Title "Shaders"
+	StaticText " "
+	Option "Enable shaders","drrp_enable_shaders","ONOFF"
+	StaticText " "
+	Option "Enable helmet shaders","drrp_enable_helmet_shader","ONOFF"
+	Option "Enable cinematic shaders","drrp_enable_cinematic_shader","ONOFF"
 }

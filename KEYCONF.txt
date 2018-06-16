@@ -1,4 +1,4 @@
-addkeysection "Flashlight" SteveFlashlightKeySection
-    addmenukey "Toggle Flashlight" toggleflashlight_bind   
-    alias toggleflashlight_bind "pukename toggleflashlight"
-    defaultbind F toggleflashlight_bind
+addkeysection "Flashlight" DRRPKeySection
+    addmenukey "Toggle Flashlight" toggleflashlight 
+    alias toggleflashlight "pukename toggleflashlight"
+    defaultbind F toggleflashlight
