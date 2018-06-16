@@ -6,19 +6,23 @@ ListMenu "MainMenu" {
 	IfGame (DooM) {
 		STATICPATCH 85,0,"M_DOOM"
 		POSITION 92,72
-		STATICTEXT 125,188,"DRRP"
+		STATICTEXT 187,188,"DRRP v0.1 InDev"
 	}
 	TEXTITEM "New Game","N","PlayerClassMenu"
-	TEXTITEM "DRRP Settings","D","DRRPSettings"
+	TEXTITEM "DRRP Menu","D","DRRPMenu"
 	TEXTITEM "Options","O","OptionsMenu"
 	TEXTITEM "Load Game","L","LoadGameMenu"
 	TEXTITEM "Save Game","S","SaveGameMenu"
 	TEXTITEM "Quit Game","Q","QuitMenu"
 }
 
-OPTIONMENU "DRRPSettings" {
-	TITLE "DooM RPG Remake Project Settings"
+OPTIONMENU "DRRPMenu" {
+	TITLE "DooM RPG Remake Project"
 	STATICTEXT " "
+	StaticText "Inventory"
+	Command "Notepad", "echo \"Notepad will be here\""
+	STATICTEXT " "
+	StaticText "Settings"
 	Submenu "Flashlight", "Flashlight"
 	Submenu "Shaders", "Shaders"
 }
