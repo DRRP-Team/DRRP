@@ -1,0 +1,64 @@
+#library "flashlight"
+
+#include "zcommon.acs"
+
+
+int players [8]; 
+
+int playersFlashID [8];
+
+bool playersFlashOn [8];
+
+
+script"lib-flashlight-enter" ENTER {
+
+	int tid = ActivatorTID();
+	int pN = PlayerNumber();
+
+	if (tid == 0) {		
+		tid =  UniqueTID();	
+	} 
+	
+    players[pN] = tid;
+    Thing_ChangeTID(0, tid);
+
+}
+
+
+script "toggleflashlight" (void) NET {
+
+	int pN = PlayerNumber();
+	    
+	if (playersFlashID[pN] == 0)  { //this player does not have a flashlight
+	
+		playersFlashID[pN] = UniqueTID();
+		
+		ScriptCall("Util", "setupFlashlight", players[pN], playersFlashID[pN]);
+		
+		playersFlashOn[pN] = TRUE;
+		
+		Terminate;
+	
+	}
+	
+	if (playersFlashOn[pN]) {
+		Thing_Deactivate(playersFlashID[pN]);
+		playersFlashOn[pN] = FALSE;
+		
+	} else {	
+		Thing_Activate(playersFlashID[pN]);
+		playersFlashOn[pN] = TRUE;
+	}		
+
+}
+
+
+script "lib-flashlight-disconnect" (int pN) DISCONNECT {
+	
+	Thing_Remove(playersFlashID[pN]);
+	
+	players[pN] = 0;
+	playersFlashID[pN] = 0;
+	playersFlashOn[pN] = FALSE;
+
+}

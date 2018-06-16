@@ -1,4 +1,27 @@
-OptionMenuSettings
-{
+OptionMenuSettings {
 	Linespacing 12
+}
+
+OptionValue LocationOptions {
+    0, "Helmet"
+    1, "Right Shoulder"
+    2, "Left Shoulder"
+    3, "Center View"
+}
+
+OptionMenu "Flashlight" {
+    Title "Flashlight"
+    StaticText " "
+    ColorPicker "Color", "flashlight_color"
+    StaticText " "
+    Slider "Brightness", "flashlight_intensity", 0, 1024, 1, 0
+    StaticText " "
+    Slider "Inner Angle", "flashlight_inner", 0, 180, 1, 0
+    Slider "Outer Angle", "flashlight_outer", 0, 180, 1, 0
+    Option "Location", flashlight_location, LocationOptions
+}
+
+AddOptionMenu "OptionsMenu" {
+    StaticText " "
+    Submenu "Flashlight", "Flashlight"
 }
