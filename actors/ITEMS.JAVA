@@ -1,5 +1,5 @@
 //10600-10700
-Actor GreenCard : DoomKey 10622 {
+Actor GreenCard: DoomKey 10622 {
     //$Category Keys
     Inventory.PickupMessage "Picked up a green keycard"
     Inventory.Icon "STKEYS9"
@@ -13,19 +13,19 @@ Actor GreenCard : DoomKey 10622 {
     }
 }
 
-ACTOR YellowCard1 : YellowCard replaces YellowCard {
+ACTOR YellowCard1: YellowCard replaces YellowCard {
     Inventory.PickupSound "misc/k_pkup"
 }
 
-ACTOR BlueCard1 : BlueCard replaces BlueCard {
+ACTOR BlueCard1: BlueCard replaces BlueCard {
     Inventory.PickupSound "misc/k_pkup"
 }
 
-ACTOR RedCard1 : RedCard replaces RedCard {
+ACTOR RedCard1: RedCard replaces RedCard {
     Inventory.PickupSound "misc/k_pkup"
 }
 
-ACTOR SmallMedikit : HealthPickup replaces Medikit 10600 {
+ACTOR SmallMedikit: HealthPickup replaces Medikit 10600 {
 //$Category Items
     +FLOORCLIP
     +INVENTORY.INVBAR
@@ -44,7 +44,7 @@ ACTOR SmallMedikit : HealthPickup replaces Medikit 10600 {
     }
 }
 
-ACTOR LargeMedikit : HealthPickup 10601 {
+ACTOR LargeMedikit: HealthPickup 10601 {
 //$Category Items
     +FLOORCLIP
     +INVENTORY.INVBAR
@@ -63,7 +63,7 @@ ACTOR LargeMedikit : HealthPickup 10601 {
     }
 }
 
-ACTOR HealthPowerUp : UpgradeStamina 10603 {
+ACTOR HealthPowerUp: UpgradeStamina 10603 {
     Inventory.Amount 10
     Inventory.MaxAmount 70
 }
@@ -87,7 +87,7 @@ ACTOR Balloon : Ammo 10610 {
 }
 
 //Coins 10620-10629
-ACTOR Credit : Inventory 10620 {
+ACTOR Credit: Inventory 10620 {
 //$Category Items
     +DROPPED
     +NOTDMATCH
@@ -106,7 +106,7 @@ ACTOR Credit : Inventory 10620 {
     }
 }
 
-ACTOR GoldCredit : CustomInventory 10621 {
+ACTOR GoldCredit: CustomInventory 10621 {
 //$Category Items
     +DROPPED
     +NOTDMATCH
@@ -128,7 +128,7 @@ ACTOR GoldCredit : CustomInventory 10621 {
     }
 }
 
-Actor Berserker : CustomInventory replaces Berserk 10623
+Actor Berserker: CustomInventory replaces Berserk 10623
 {
     +COUNTITEM
     +INVENTORY.INVBAR
@@ -175,7 +175,7 @@ Actor InventorySoulsphere: CustomInventory replaces Soulsphere {
     }
 }
 
-Actor DogCollar : CustomInventory 10624 {
+Actor DogCollar: CustomInventory 10624 {
 	//$Category Items
     +INVENTORY.INVBAR
 
@@ -189,33 +189,32 @@ Actor DogCollar : CustomInventory 10624 {
             Stop
         Use:
             TNT1 A 0
-            //TNT1 A 0 A_JumpIf( CheckClass( "Cerberus", AAPTR_LINETARGET ), "CerberusLabel" )
             TNT1 A 0 A_JumpIf( CheckClass( "Cerberus", AAPTR_PLAYER_GETTARGET ), "CerberusLabel" )
             TNT1 A 0 A_JumpIf( CheckClass( "Hellhound", AAPTR_PLAYER_GETTARGET ), "HellhoundLabel" )
             TNT1 A 0 A_JumpIf( CheckClass( "DemonWolf", AAPTR_PLAYER_GETTARGET ), "DemonWolfLabel" )
             Fail
         CerberusLabel:
             TNT1 A 0
-            TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+            TNT1 A 0 A_Remove( AAPTR_PLAYER_GETTARGET )
             TNT1 A 0 A_GiveInventory( "CerberusGun" )
             TNT1 A 0 A_SelectWeapon( "CerberusGun" )
             Stop
         HellhoundLabel:
             TNT1 A 0
-            TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+            TNT1 A 0 A_Remove( AAPTR_PLAYER_GETTARGET )
             TNT1 A 0 A_GiveInventory( "HellhoundGun" )
             TNT1 A 0 A_SelectWeapon( "HellhoundGun" )
             Stop
         DemonWolfLabel:
             TNT1 A 0
-            TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+            TNT1 A 0 A_Remove( AAPTR_PLAYER_GETTARGET )
             TNT1 A 0 A_GiveInventory( "DemonWolfGun" )
             TNT1 A 0 A_SelectWeapon( "DemonWolfGun" )
             Stop
     }
 }
 
-ACTOR DRRPHealthBonus : Health replaces HealthBonus {
+ACTOR DRRPHealthBonus: Health replaces HealthBonus {
     Inventory.Amount 1
     Inventory.PickupMessage "$GOTHTHBONUS" // "Picked up a health bonus."
 
