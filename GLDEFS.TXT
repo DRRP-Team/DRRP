@@ -35,7 +35,7 @@
     }
 // end Blue lamp
 
-// Brightmaps
+// Materials
 
     Material Texture DRPGA14 {
         BrightMap "materials/brightmaps/textures/BRPGA14.png"
@@ -196,17 +196,26 @@
  
     Material Texture DRDC24 {
         normal "materials/normalmaps/textures/drdc25.png"
-        specular "materials/specmaps/textures/drdc25.png"
+        metalic "materials/metalicmaps/textures/drdc25.png"
+        roughness "materials/roughnessmaps/textures/drdc25.png"
+        ao "materials/aomaps/textures/drdc25.png"
+        brightmap "materials/metalicmaps/textures/drdc25.png"
     }
 
     Material Texture DRDC25 {
         normal "materials/normalmaps/textures/drdc25.png"
-        specular "materials/specmaps/textures/drdc25.png"
+        metalic "materials/metalicmaps/textures/drdc25.png"
+        roughness "materials/roughnessmaps/textures/drdc25.png"
+        ao "materials/aomaps/textures/drdc25.png"
+        brightmap "materials/metalicmaps/textures/drdc25.png"
     }
 
     Material Texture DRDC26 {
         normal "materials/normalmaps/textures/drdc25.png"
-        specular "materials/specmaps/textures/drdc25.png"
+        metalic "materials/metalicmaps/textures/drdc25.png"
+        roughness "materials/roughnessmaps/textures/drdc25.png"
+        ao "materials/aomaps/textures/drdc25.png"
+        brightmap "materials/metalicmaps/textures/drdc25.png"
     }
 
     Material Texture DRDC28 {
