@@ -265,18 +265,20 @@
 
     Material Texture DRDC35 {
         normal "materials/normalmaps/textures/drdc35.png"
-        metalic "materials/metalicmaps/textures/drdc35.png"
+        metallic "materials/metalicmaps/textures/drdc35.png"
         roughness "materials/roughnessmaps/textures/drdc35.png"
         ao "materials/aomaps/textures/drdc35.png"
         brightmap "materials/black.png"
+        glossiness 1.0
     }
 
     Material Texture DRPGB20 {
         normal "materials/normalmaps/textures/drdc35.png"
-        metalic "materials/metalicmaps/textures/drdc35.png"
+        metallic "materials/metalicmaps/textures/drdc35.png"
         roughness "materials/roughnessmaps/textures/drdc35.png"
         ao "materials/aomaps/textures/drdc35.png"
         brightmap "materials/black.png"
+        glossiness 1.0
     }
 
     Material Texture DRPGC02 {
