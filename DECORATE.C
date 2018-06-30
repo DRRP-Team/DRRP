@@ -37,7 +37,7 @@ Actor DoomRPGPlayer : DoomPlayer {
     Player.WeaponSlot 4, DRRPChaingun
     Player.WeaponSlot 5, DRRPRocketLauncher
     Player.WeaponSlot 6, DRRPPlasmagun
-    //Player.WeaponSlot 7, DRRPBFG9000
+    Player.WeaponSlot 7, DRRPBFG9000
     Player.WeaponSlot 8, HellHoundGun, CerberusGun, DemonWolfGun
     Player.RunHealth 245654
     Health 30

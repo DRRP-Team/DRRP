@@ -193,3 +193,37 @@ Actor DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle
 		Goto LightDone
 	}
 }
+
+Actor DRRPBFG9000: BFG9000 replaces BFG9000
+{
+	States
+	{
+	Fire:
+		BFGG A 20 A_BFGSound
+		BFGG B 10 A_GunFlash
+		BFGG B 10 A_FireBFG
+		BFGG B 20 A_ReFire
+		Goto Ready
+	Flash: // [A]11 + [B]6
+		BFGF A 3 Bright A_Light1
+		BFGF A 1 Bright A_Quake( 1, 6, 0, 0 )
+		BFGF AAAA 2 Bright {
+			A_Recoil( FRandom( 0.02, 0.35 ) );
+			A_SetAngle( Angle + FRandom( -0.5, 0.5 ) );
+			A_SetPitch( Pitch + FRandom( -0.35, 0.35 ) );
+		}
+		BFGF B 0 Bright A_SetPitch( Pitch - FRandom( 2.5, 5 ) )
+		BFGF BBB 1 Bright {
+			A_Light2;
+			A_SetAngle( Angle + FRandom( -1.5, 1.5 ) );
+			A_SetPitch( Pitch + FRandom( -1, 1 ) );
+			A_SetBlend( "44FF44", 0.8, Random( 20, 35 ) );
+		}
+		BFGF BBB 1 Bright {
+			A_Recoil( FRandom( 0.05, 0.5 ) );
+			A_SetAngle( Angle + FRandom( -0.5, 0.5 ) );
+			A_SetPitch( Pitch + FRandom( -0.35, 0.35 ) );
+		}
+		Goto LightDone
+	}
+}
