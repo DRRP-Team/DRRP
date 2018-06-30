@@ -4,7 +4,7 @@ user bool drrp_enable_cinematic_shader = true;
 
 // Flashlight
 server color flashlight_color = "AB AB FF";
-server int flashlight_intensity = 1024;
+server int flashlight_intensity = 192; // Max -- 1024.
 
 server float flashlight_inner = 12.0;
 server float flashlight_outer = 16.0;

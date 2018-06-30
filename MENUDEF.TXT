@@ -17,7 +17,7 @@ ListMenu "MainMenu" {
 }
 
 OPTIONMENU "DRRPMenu" {
-	TITLE "DooM RPG Remake Project"
+	TITLE "Doom RPG Remake Project"
 	STATICTEXT " "
 	StaticText "Inventory"
 	Command "Notepad", "echo \"Notepad will be here\""
@@ -39,10 +39,10 @@ OptionMenu "Flashlight" {
     StaticText " "
     ColorPicker "Color", "flashlight_color"
     StaticText " "
-    Slider "Brightness", "flashlight_intensity", 0, 1024, 1, 0
+    Slider "Brightness", "flashlight_intensity", 0, 1024, 64, 0
     StaticText " "
-    Slider "Inner Angle", "flashlight_inner", 0, 180, 1, 0
-    Slider "Outer Angle", "flashlight_outer", 0, 180, 1, 0
+    Slider "Inner Angle", "flashlight_inner", 0, 180, 10, 0
+    Slider "Outer Angle", "flashlight_outer", 0, 180, 10, 0
     Option "Location", flashlight_location, LocationOptions
 	StaticText " "
 	Control "Key", "toggleflashlight"
