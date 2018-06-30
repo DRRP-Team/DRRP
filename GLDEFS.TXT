@@ -269,7 +269,8 @@
         roughness "materials/roughnessmaps/textures/drdc35.png"
         ao "materials/aomaps/textures/drdc35.png"
         brightmap "materials/black.png"
-        glossiness 1.0
+        glossiness 10
+        specularlevel 0.5
     }
 
     Material Texture DRPGB20 {
@@ -278,7 +279,8 @@
         roughness "materials/roughnessmaps/textures/drdc35.png"
         ao "materials/aomaps/textures/drdc35.png"
         brightmap "materials/black.png"
-        glossiness 1.0
+        glossiness 10
+        specularlevel 0.5
     }
 
     Material Texture DRPGC02 {
