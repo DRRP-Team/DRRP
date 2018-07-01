@@ -273,6 +273,7 @@ class Parser {
             ss += "\tsideback = " + (sideid++) + ";\n";
             ss += "\ttwosided = true;\n";
             ss += "\tblocking = true;\n";
+            ss += "\timpassable = true;\n";
             ss += "}\n\n";
         }
 
