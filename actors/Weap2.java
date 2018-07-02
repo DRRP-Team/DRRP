@@ -213,7 +213,7 @@ Actor DRRPBFG9000: BFG9000 replaces BFG9000
 			A_Recoil( FRandom( 0.02, 0.35 ) );
 		}
 		BFGF B 0 Bright {
-			A_SetBlend( "44FF44", 0.8, Random( 20, 35 ) );
+			A_SetBlend( "44FF44", 0.8, Random( 40, 60 ) );
 			A_SetPitch( Pitch - FRandom( 2.5, 5 ) );
 			A_Recoil( FRandom( 0.5, 1.5 ) );
 			A_Light2;
@@ -223,14 +223,21 @@ Actor DRRPBFG9000: BFG9000 replaces BFG9000
 			A_SetAngle( Angle + FRandom( -1.5, 1.5 ) );
 			A_SetPitch( Pitch + FRandom( -1, 1 ) );
 			A_Recoil( FRandom( 0.1, 0.75 ) );
-			A_ZoomFactor( 0.95 );
+			A_ZoomFactor( 0.885 );
 		}
 		BFGF BBB 1 Bright {
 			A_SetAngle( Angle + FRandom( -0.5, 0.5 ) );
 			A_SetPitch( Pitch + FRandom( -0.35, 0.35 ) );
-			A_ZoomFactor( 0.975 );
+			A_ZoomFactor( 0.91 );
 		}
-		TNT1 A 0 Bright A_ZoomFactor( 1.0 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.935 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.9475 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.955 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.9625 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.97 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.98 )
+		TNT1 A 1 Bright A_ZoomFactor( 0.99 )
+		TNT1 A 0 Bright A_ZoomFactor( 1 )
 		Goto LightDone
 	}
 }
