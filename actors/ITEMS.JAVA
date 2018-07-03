@@ -169,7 +169,7 @@ Actor InventorySoulsphere: CustomInventory replaces Soulsphere {
             Loop
         Use:
             //TNT1 A 0 A_GiveInventory( "HealthBonus", 100 )
-            TNT1 A 0 A_GiveInventory( "HealthBonus", 999 )
+            TNT1 A 0 A_GiveInventory( "Health", 999 )
             TNT1 A 0 A_GiveInventory( "BlueArmor", 1 )
             Stop
     }
