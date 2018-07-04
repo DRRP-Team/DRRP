@@ -1,12 +1,14 @@
 $ambient 1 drone1 World continuous 0.65
 $ambient 5 ambient/mach04 World continuous 0.45
 $ambient 4 ambient/mach04 Point continuous 0.45
+$ambient 6 ambient/lopneon2 Point continuous 0.1
 $random fire/loop { fire/loop1 fire/loop2 fire/loop3 }
 
 
 
 drone1		drone1
 ambient/mach04		mach04
+ambient/lopneon2 lopneon2
 
 misc/alarm ALARM2
 alarm/alarm1		ALARM1
