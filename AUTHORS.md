@@ -29,7 +29,7 @@
  
 ## Благодарности
 
- - AáaWaäáàæãā₣§èèì - Благодарность за статью по устройству Doom RPG
+ - Recompile - Благодарность за статью по устройству Doom RPG (http://www.neocomputer.org/projects/doomrpg/)
  
  - YURA_111 - Благодарность за некоторые спрайты
  
@@ -48,6 +48,6 @@
 
 ## Special thanks
 
- - AáaWaäáàæãā₣§èèì - Doom RPG decompilation article
+ - Recompile - Doom RPG decompilation article (http://www.neocomputer.org/projects/doomrpg/)
  
  - YURA_111 - Some sprites
