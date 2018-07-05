@@ -202,13 +202,21 @@
         brightmap "materials/metalicmaps/textures/drdc25.png"
     }
 
-    Material Texture DRDC25 {
+    /*Material Texture DRDC25 {
         normal "materials/normalmaps/textures/drdc25.png"
         metalic "materials/metalicmaps/textures/drdc25.png"
         roughness "materials/roughnessmaps/textures/drdc25.png"
         ao "materials/aomaps/textures/drdc25.png"
         brightmap "materials/metalicmaps/textures/drdc25.png"
-    }
+    }*/
+	
+	hardwareshader texture RPWAL13 {
+		Shader "shaders/texture/parallax.fp"
+		Material "shaders/material_drrp/material_specular.fp"
+		Texture "materials/heightmaps/textures/drdc25.png"
+		Texture "materials/normalmaps/textures/drdc25.png"
+		Texture "materials/white.png"
+	}
 
     Material Texture DRDC26 {
         normal "materials/normalmaps/textures/drdc25.png"
