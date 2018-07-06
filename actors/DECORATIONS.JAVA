@@ -253,7 +253,7 @@ Actor Alarm1 10745 {
     Scale 0.5
     States {
         Spawn:
-            ALAR A 0 A_PlaySound("alarm/alarm3")
+            ALAR A 0 A_PlaySound("alarm/alarm3", CHAN_5, 1.0, false, ATTN_NONE)
             ALAR ABCDABCDABCDABCDABCD 3
             Loop
     }
