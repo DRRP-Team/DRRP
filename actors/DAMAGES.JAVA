@@ -14,7 +14,8 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
-    +SHOOTABLE
+	+SPECTRAL
+//  -SHOOTABLE
     -ISMONSTER
     -COUNTKILL
 

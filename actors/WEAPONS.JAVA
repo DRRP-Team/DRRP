@@ -228,6 +228,7 @@ Actor FireExtPuff
  	Height 5
   	Radius 5
   	+FORCEXYBILLBOARD
+	+SPECTRAL
 	RenderStyle Add
 	Alpha 0.85
 	Projectile
@@ -239,7 +240,7 @@ Actor FireExtPuff
 	States
 	{
 	Spawn:
-	STEM LLLLL 0 A_SpawnParticle( Gray, RandomPick( 0, SPF_FULLBRIGHT ), Random( 3, 35 ), FRandom( 0.75, 4 ), 0, 
+	STEM AAAAA 0 A_SpawnParticle( Gray, RandomPick( 0, SPF_FULLBRIGHT ), Random( 3, 35 ), FRandom( 0.75, 4 ), 0, 
 					Random( -5, 5 ), Random( -5, 5 ), Random( -5, 5 ), // Offsets
 					Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ), // Speed
 					Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ) ) // Acceleration
@@ -264,7 +265,7 @@ Actor FireExtPuff
   }
 }
 
-Actor FireExtPuffNoDamage : FireExtPuff {
+Actor FireExtPuffNoDamage: FireExtPuff {
 	Damage 0
 }
 
