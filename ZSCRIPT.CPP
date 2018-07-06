@@ -108,14 +108,23 @@ class DoorCodeInputHandler : EventHandler {
 				players[e.Player].mo.A_PlaySound("acess/deny1");
 			}
 		} else if(e.Name == "opendoorinput") {
+			self.doorfront = e.Args[1];
+			self.doorback = e.Args[2];
+			LineIdIterator it = LineIdIterator.Create(doorfront);
+			int lineid = it.Next();
+			if(lineid > 0) {
+				Line line = level.Lines[lineid];
+				if(line.special == 12) {
+					Console.Printf("Door is already open.");
+					return;
+				}
+			}
 			self.realCodeStr = String.format("%d", e.Args[0]);
 			self.codeStr = "";
 			for(int i = 0; i < self.realCodeStr.Length(); i++) {
 				self.codeStr.AppendFormat("_");
 			}
 			self.IsUiProcessor = true;
-			self.doorfront = e.Args[1];
-			self.doorback = e.Args[2];
 			
 		} else if(e.Name == "putcodechar") {
 			for(int i = 0; i < self.codeStr.Length(); i++) {
