@@ -18,7 +18,7 @@ Actor WhiteSparkSpawner : SwitchableDecoration
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_W1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
@@ -123,7 +123,7 @@ Actor RedSparkSpawner : SwitchableDecoration
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_R1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
@@ -228,7 +228,7 @@ Actor OrangeSparkSpawner : SwitchableDecoration 10265
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_O1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
@@ -333,7 +333,7 @@ Actor YellowSparkSpawner : SwitchableDecoration
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_Y1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
@@ -438,7 +438,7 @@ Actor GreenSparkSpawner : SwitchableDecoration
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_G1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
@@ -543,7 +543,7 @@ Actor BlueSparkSpawner : SwitchableDecoration
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_B1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
@@ -648,7 +648,7 @@ Actor PurpleSparkSpawner : SwitchableDecoration
     Loop
   Active:
     TNT1 A 0
-    TNT1 A 0 A_PlaySound("World/Spark")
+    TNT1 A 0 A_PlaySound("World/Spark", CHAN_AUTO, 1.0, false, ATTN_STATIC)
     TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
     TNT1 A 1 A_SpawnItemEx("SparkFlare_P1", 0, 0, 0, 0, 0, 0, 0, 128)
     Goto SpawnSparks
