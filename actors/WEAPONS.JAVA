@@ -3,7 +3,7 @@
 ACTOR FireExt : Weapon 10556
 {
 //  Weapon.SelectionOrder 1900
-	Obituary "LOL, %o was extinguished by %k"
+	Obituary "%o was extinguished by %k"
 	Inventory.Pickupmessage "Got Fire Extinguisher"
 	Tag "Fire Extinguisher"
 	Inventory.Icon "FEXTI0"
