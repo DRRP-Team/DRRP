@@ -182,6 +182,7 @@ Actor DogCollar: CustomInventory 10624 {
     Tag                     "Dog Collar"
     Inventory.Icon          "DOGCH0"
     Inventory.PickupMessage "Got the dog collar."
+    Inventory.MaxAmount     99
 
     States {
         Spawn:
