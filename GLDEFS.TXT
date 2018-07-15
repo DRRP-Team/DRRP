@@ -146,8 +146,9 @@
     }
 
      Material Texture DRDC4 {
-        normal "materials/normalmaps/textures/drdc5.png"
-        specular "materials/specmaps/textures/drdc5.png"
+        normal "materials/normalmaps/textures/drdc4.png"
+        specular "materials/specmaps/textures/drdc4.png"
+        brightmap "materials/brightmaps/textures/drdc4.png"
     }
     Material Texture DRDC5 {
         normal "materials/normalmaps/textures/drdc5.png"
