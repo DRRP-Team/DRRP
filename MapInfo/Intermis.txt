@@ -1,12 +1,9 @@
-Intermission Inter_Cast
-{
-    Wiper
-    {
+Intermission Inter_Cast {
+    Wiper {
         WipeType = Crossfade
     }
 
-    Image
-    {
+    Image {
         // This is only here to initialize the background and the music
         Time        = -1
         Music       = "C_PROT"
@@ -17,184 +14,153 @@ Intermission Inter_Cast
 }
 
 
-Intermission Doom2Cast
-{
-    Cast
-    {
+Intermission Doom2Cast {
+    Cast {
         CastClass = "Hellhound"
         CastName  = "Hell Hound (Herodemon's rage)"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Cerberus"
         CastName  = "Cerberus"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "DemonWolf"
         CastName  = "Demon Wolf"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "ZombiePvt"
         CastName  = "Zombie Private"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "ZombieLt"
         CastName  = "Zombie Lt"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "ZombieCpt"
         CastName  = "Zombie Capitan"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Impling"
         CastName  = "Impling"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Imp"
         CastName  = "Imp"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "ImpLord"
         CastName  = "Imp Lord"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "BullDemon"
         CastName  = "Bull Demon"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Pinky"
         CastName  = "Pinky"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Belphegor"
         CastName  = "Belphegor"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Malrath"
         CastName  = "Malrath"
     }
 
-    Cast
-    {
-        CastClass = "Cacodemon1"
+    Cast {
+        CastClass = "DRRPCacodemon"
         CastName  = "Cacodemon"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Wretched"
         CastName  = "Wretched"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Phantom"
         CastName  = "Phantom"
     }
 
-    Cast
-    {
-        CastClass = "LostSoul1"
+    Cast {
+        CastClass = "DRRPLostSoul"
         CastName  = "Lost Soul"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Nightmare"
         CastName  = "Nightmare"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Troop"
         CastName  = "Troop"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Commando"
         CastName  = "Commando"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Assassin"
         CastName  = "Assassin"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Infernis"
         CastName  = "Infernis"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "ArchVile"
         CastName  = "Arch-Vile"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Apollyon"
         CastName  = "Apollyon"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Ghoul"
         CastName  = "Ghoul"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Fiend"
         CastName  = "Fiend"
     }
 
-    Cast
-    {
-        CastClass = "Revenant1"
+    Cast {
+        CastClass = "DRRPRevenant"
         CastName  = "Revenant"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Behemoth"
         CastName  = "Behemoth"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Mancubus"
         CastName  = "Mancubus"
     }
 
-    Cast
-    {
+    Cast {
         CastClass = "Druj"
         CastName  = "Druj"
     }

@@ -380,8 +380,8 @@
 
 // Shaders
     HardwareShader PostProcess Scene {
-        Name "drrpshader"
-        Shader "shaders/custom/drrptest.fp" 330
+        Name "HelmetShader"
+        Shader "shaders/custom/Helmet.fp" 330
         enabled
     }
 // end Shaders

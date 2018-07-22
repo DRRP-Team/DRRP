@@ -1,35 +1,28 @@
 namespace = "ZDoom";
 
-conversation
-{
+conversation {
     actor = "DRRPShop"; // Not a number!
-    page
-    {
+    page {
 		 goodbye = "Close";
          name = "Shop";
          dialog = "What do you want to buy?";
-         choice
-         {
+         choice {
              text = "Small medikit";
              giveitem = "SmallMedikit";
          }
-         choice
-         {
+         choice {
              text = "Large medikit";
              giveitem = "LargeMedikit";
          }
-         choice
-         {
+         choice {
              text = "Soul sphere";
              giveitem = "SoulSphere";
          }
-         choice
-         {
+         choice {
              text = "Berserker";
              giveitem = "Berserker";
          }
-         choice
-         {
+         choice {
              text = "Dog collar";
              giveitem = "DogCollar";
          }
