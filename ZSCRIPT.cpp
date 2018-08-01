@@ -31,7 +31,6 @@ class DoorCodeInputActor : Actor {
 
 class ShaderControllerActor : EventHandler {
     static int SetEnabled(int player, String name, bool enabled) {
-        if(!CVar.FindCVar("drrp_enable_shaders").GetBool()) return 1;
         if(player != 0) {
             Shader.SetEnabled(players[player - 1], name, enabled);
         } else {
