@@ -391,7 +391,7 @@
     }
 
     HardwareShader PostProcess Scene {
-        Name "TestShader"
-        Shader "shaders/custom/test.fp" 330
+        Name "DoubleVisionShader"
+        Shader "shaders/custom/DoubleVision.fp" 330
     }
 // end Shaders
