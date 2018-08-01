@@ -389,4 +389,9 @@
         Name "RadialBlurShader"
         Shader "shaders/custom/RadialBlur.fp" 330
     }
+
+    HardwareShader PostProcess Scene {
+        Name "TestShader"
+        Shader "shaders/custom/test.fp" 330
+    }
 // end Shaders
