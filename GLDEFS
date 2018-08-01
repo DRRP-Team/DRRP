@@ -7,13 +7,13 @@
 
 // Fire
 
-    flickerlight FIRELIGHT {
+    FlickerLight FIRELIGHT {
         color 255 128 0
         size 32
         secondarySize 48
         chance 1
     }
-    object DRRPFire {
+    Object DRRPFire {
         frame FIRE {
             light FIRELIGHT
         }
@@ -21,14 +21,14 @@
 // end Fire
 
 // Blue lamp
-    flickerlight BLAMP
+    FlickerLight BLAMP
     {
         color 64 64 255
         size 32
         secondarySize 48
         chance 1
     }
-    object BlueLamp {
+    Object BlueLamp {
         frame COLU {
             light BLAMP
         }
@@ -383,5 +383,10 @@
         Name "HelmetShader"
         Shader "shaders/custom/Helmet.fp" 330
         enabled
+    }
+
+    HardwareShader PostProcess Scene {
+        Name "RadialBlurShader"
+        Shader "shaders/custom/RadialBlur.fp" 330
     }
 // end Shaders
