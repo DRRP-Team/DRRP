@@ -5,6 +5,11 @@
  * https://opensource.org/licenses/MIT
  */
 
+
 void main() {
-	FragColor = vec4(255, 0, 0, 1);
+	#ifdef DYNLIGHT
+		FragColor = vec4(0, 255, 0, 1);
+	#else
+		FragColor = vec4(255, 0, 0, 1);
+	#endif
 }
