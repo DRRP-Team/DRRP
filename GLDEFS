@@ -389,4 +389,19 @@
         Name "RadialBlurShader"
         Shader "shaders/custom/RadialBlur.fp" 330
     }
+
+    HardwareShader PostProcess Scene {
+        Name "DoubleVisionShader"
+        Shader "shaders/custom/DoubleVision.fp" 330
+    }
+
+    HardwareShader PostProcess Scene {
+        Name "BCFilter"
+        Shader "shaders/custom/BCFilter.fp" 330
+    }
+
+    HardwareShader PostProcess Scene {
+        Name "TestShader"
+        Shader "shaders/custom/test.fp" 330
+    }
 // end Shaders

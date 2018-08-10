@@ -1,4 +1,30 @@
-//====Spawners
+/**
+ * Copyright (c) 2017-2018 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+Actor BlackHole 10666 {
+    +NOBLOCKMAP
+    +DONTHARMSPECIES
+    +NODAMAGETHRUST
+    +NOGRAVITY
+    -SOLID
+
+    States {
+        Spawn:
+            TNT1 A 1 A_RadiusThrust(-500, 2000, RTF_NOIMPACTDAMAGE)
+            TNT1 A 0 Radius_Quake(3, 60, 0, 11, 0)
+            TNT1 A 0 A_PlaySound("teleport/loop", CHAN_6, 1.0, 1.0, ATTN_NONE)
+            Loop
+        Death:
+            TNT1 A 1000
+            Loop
+    }
+}
+
+// Environment spawners
 
 Actor AbstractSpark : SwitchableDecoration {
     +NoBlockMap
