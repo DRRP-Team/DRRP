@@ -31,6 +31,9 @@ acess/deny1			acden
 acess/grant2		ACGRA2
 acess/deny2			ACDEN2
 acess/orange		ACORAN
+access/grantb1      ACGRAB
+access/grantb2      ACGRAB2
+$random access/grantb { access/grantb1 access/grantb2 }
 
 techno/lightsof		lightsof
 techno/lightson		lightson
