@@ -1,4 +1,3 @@
-user bool drrp_enable_shaders = true;
 user bool drrp_enable_helmet_shader = true;
 user bool drrp_enable_cinematic_shader = true;
 

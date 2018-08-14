@@ -1,5 +1,5 @@
 /**
- *Copyright (c) 2018 DRRP-Team
+ * Copyright (c) 2017-2018 DRRP-Team
  *
  *This software is released under the MIT License.
  *https://opensource.org/licenses/MIT
@@ -7,18 +7,18 @@
 
 Actor DRRPFire : DRRPFire_zspatch 10250 {
     //$Category Damage
-    Health 10
-    Radius 33
-    Monster
+
+    MONSTER
     +SOLID
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
-	+SPECTRAL
-//  -SHOOTABLE
+    +SPECTRAL
     -ISMONSTER
     -COUNTKILL
 
+    Health 10
+    Radius 33
     Mass 0x7FFFFFFF
     DamageType DRRPFireDmg
     DamageFactor "DRRPFireExtDmg", 1.0
@@ -36,9 +36,6 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
         Spawn.Loop:
             FIRE ABCDEFGH 2 BRIGHT A_Explode( 3, 32, XF_NOTMISSILE )
             Loop
-        /*Pain.DRRPFireExtDmg:
-            TNT1 A 0
-            Goto Spawn.Loop*/
         Death:
         XDeath:
             TNT1 A 0
@@ -48,8 +45,8 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
 
 Actor DRRPLava 10251 {
     //$Category Damage
-    Health 10
-    Monster
+
+    MONSTER
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
@@ -57,11 +54,12 @@ Actor DRRPLava 10251 {
     -ISMONSTER
     -COUNTKILL
     -SHOOTABLE
-    
+
+    Health 10
     Mass 0x7FFFFFFF
+    RenderStyle Add
     DamageType DPPRFireDmg    
     DamageFactor "Normal", 0
-    RenderStyle Add
 
     States {
         Spawn:
@@ -81,8 +79,11 @@ Actor DRRPLava 10251 {
     }
 }
 
+// Scripted
+
 Actor Explosion : Rocket {
+    -ROCKETTRAIL
+
     Spawn Parent Death
     SpawnID 253
-    -ROCKETTRAIL
 }

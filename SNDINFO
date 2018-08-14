@@ -1,7 +1,8 @@
 $ambient 1 drone1 World continuous 0.65
 $ambient 5 ambient/mach04 World continuous 0.45
 $ambient 4 ambient/mach04 Point continuous 0.45
-$ambient 6 ambient/lopneon2 Point continuous 0.1
+$ambient 6 ambient/lopneon2 Point 3.0 continuous 0.1
+
 $random fire/loop { fire/loop1 fire/loop2 fire/loop3 }
 
 
@@ -30,6 +31,11 @@ acess/deny1			acden
 acess/grant2		ACGRA2
 acess/deny2			ACDEN2
 acess/orange		ACORAN
+access/grantb1      ACGRAB
+$volume access/grantb1 16.0
+access/grantb2      ACGRAB2
+$volume access/grantb2 16.0
+$random access/grantb { access/grantb1 access/grantb2 }
 
 techno/lightsof		lightsof
 techno/lightson		lightson

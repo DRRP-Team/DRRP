@@ -51,7 +51,7 @@ OptionMenu "Flashlight" {
 OptionMenu "Shaders" {
 	Title "Shaders"
 	StaticText " "
-	Option "Enable shaders","drrp_enable_shaders","ONOFF"
+	Option "Enable shaders","gl_custompost","ONOFF"
 	StaticText " "
 	Option "Enable helmet shaders","drrp_enable_helmet_shader","ONOFF"
 	Option "Enable cinematic shaders","drrp_enable_cinematic_shader","ONOFF"
