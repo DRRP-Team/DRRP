@@ -279,7 +279,8 @@ Actor Wretched : Cacodemon 10462 {
 Actor DRRPRevenant : Revenant replaces Revenant 10477 {
 	//$Category DMonsters
 
-	Scale 0.75
+	Scale 0.74
+    Obituary "%o was slayed by the revenant."
 
 	States {
 		Death:
