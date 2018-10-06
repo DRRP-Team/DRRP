@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2017-2018 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
 user bool drrp_enable_helmet_shader = true;
 user bool drrp_enable_cinematic_shader = true;
 

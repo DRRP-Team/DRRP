@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 DRRP-Team
+ * Copyright (c) 2017-2018 DRRP-Team
  * 
  * https://stackoverflow.com/questions/4579020/how-do-i-use-a-glsl-shader-to-apply-a-radial-blur-to-an-entire-scene
  * 

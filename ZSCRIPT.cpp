@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) 2017-2018 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
 version "2.5"
 
 class DRRPFire_zspatch : Actor {
