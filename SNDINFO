@@ -1,130 +1,197 @@
+/**
+ *Copyright (c) 2018 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+drone1                  DRONE1  // FIXME: Remove
+ambient/drone1          DRONE1
+ambient/mach04          MACH04
+ambient/lopneon2        LOPNEON2
+
+misc/alarm              ALARM2
+alarm/alarm1            ALARM1
+alarm/alarm2            ALARM2
+alarm/alarm3            ALARM3
+
+fire/start              FIRESTRT
+fire/loop1              FIRELOP1
+fire/loop2              FIRELOP2
+fire/loop3              FIRELOP3
+fire/die                FIREDIE
+
+$random fire/loop { // FIXME: Remove
+    fire/loop1
+    fire/loop2
+    fire/loop3
+}
+
+$random env/fire/loop {
+    fire/loop
+}
+
+acess/grant1            ACGRA  // FIXME: Remove
+acess/deny1             ACDEN  // FIXME: Remove
+acess/grant2            ACGRA2 // FIXME: Remove
+acess/deny2             ACDEN2 // FIXME: Remove
+acess/orange            ACORAN // FIXME: Remove
+access/grant1           ACGRA
+access/grant2           ACGRA2
+access/grantb1          ACGRAB
+access/grantb2          ACGRAB2
+access/deny1            ACDEN
+access/deny2            ACDEN2
+access/orange           ACORAN
+
+$random access/grantb {
+    access/grantb1
+    access/grantb2
+}
+
+techno/lightsof     LIGHTSOF // FIXME: Remove
+techno/poweroff     LIGHTSOF
+techno/lighton      LIGHTSON // FIXME: Remove
+techno/poweron      LIGHTSON
+
+voice/reac01        REAC01
+voice/reacon        REACON
+voice/hireactemp    HITEMP
+voice/wtf           WTF
+voice/god           GOD
+voice/only          ONLY
+voice/powerback     PWBACK
+voice/powershake    PWSH
+voice/teleport321   TP
+voice/systemsoff    SYSOFF
+voice/nofire        NOFIRE
+voice/c2            C2
+voice/uac           FUCK
+
+bet/destroy         BDEST
+bet/made            BMADE
+bet/earth           BEAR
+
+core/c1             C1
+core/c2             C2
+core/c3             C3
+core/c4             C4
+
+ms/doctor           MSDOC
+ms/psy              MSPSY
+ms/safe             MSSAFE
+
+teleport/tohell     sounds/Teleport/teleport_to_hell
+teleport/loop       sounds/Teleport/teleport_loop
+
+
+misc/k_pkup         DSKEYUP
+
+DSPLDETH            DSPLDETH  // TODO: Is it needless?
+DSPLPAIN            DSPLPAIN  // TODO: Is it needless?
+DSPOPAIN            DSPOPAIN  // TODO: Is it needless?
+DSRADIO             DSRADIO   // TODO: Is it needless?
+CYBRSIGH            CYBRSIGH  // FIXME: Remove
+CYBRSIGH2           CYBRSIGH2 // FIXME: Remove
+CYBRDTH             CYBRDTH   // FIXME: Remove
+DSBDCLS             DSBDCLS   // TODO: Is it needless?
+TAUNT               TAUNT     // FIXME: Remove
+ZBMB1               ZBMB1
+ZBMB2               ZBMB2
+DSBLUD03            DSBLUD03
+ROCK                ROCK
+ICOSCRE             ICOSCRE
+
+DOGSONG             DOGSONG
+
+// === Weapons ===
+weapon/gas          GAS
+weapon/axe/hit      AXEBLOOD
+weapon/axe/miss     AXEMISS
+weapon/fireext/loop FIREELOP
+weapon/fireext/stop FIREESTP
+weapon/fireext/pick WTF
+
+// === Player ===
+
+player/taunt                TAUNT
+
+// === Monsters ===
+
+monster/cyberdemon/sigh1    CYBRSIGH
+monster/cyberdemon/sigh2    CYBRSIGH2
+monster/cyberdemon/death    CYBRDTH
+
+//Drugs
+// dag
+
+monsters/hellhound/see      DOG1RECO // FIXME: Remove
+monsters/hellhound/pain     DOG1PAIN // FIXME: Remove
+monsters/hellhound/bite     DOG1BITE // FIXME: Remove
+monsters/hellhound/die      DOG1DIE  // FIXME: Remove
+
+monster/hellhound/see       DOG1RECO
+monster/hellhound/pain      DOG1PAIN
+monster/hellhound/bite      DOG1BITE
+monster/hellhound/death     DOG1DIE
+
+monster/hellhound/bark1     DOG1BRK1
+monster/hellhound/bark2     DOG1BRK2
+monster/hellhound/bark3     DOG1BRK3
+
+
+$random monster/hellhound/bark {
+    monster/hellhound/bark1
+    monster/hellhound/bark2
+    monster/hellhound/bark3
+}
+
+$random monsters/hellhound/bark { // FIXME: Remove
+    monster/hellhound/bark
+}
+
+
+// FIXME: demonWOLF
+monsters/demondog/see      DOG2RECO
+
+monsters/demondog/bark1    DOG2BRK1
+monsters/demondog/bark2    DOG2BRK2
+monsters/demondog/bark3    DOG2BRK3
+
+$random monsters/demondog/bark {
+    monsters/demondog/bark1
+    monsters/demondog/bark2
+    monsters/demondog/bark3
+}
+
+monsters/cerberus/see       DOG3RECO
+monsters/cerberus/jump      DOG3JUMP
+monsters/cerberus/land      DOG3LAND
+
+monsters/cerberus/bark1     DOG3BRK1
+monsters/cerberus/bark2     DOG3BRK2
+monsters/cerberus/bark3     DOG3BRK3
+
+$random monsters/cerberus/bark {
+    monsters/cerberus/bark1
+    monsters/cerberus/bark2
+    monsters/cerberus/bark3
+}
+
+// === Volume ===
+$volume             TAUNT               0.4 // FIXME: Remove
+$volume             player/taunt        0.4
+$volume             weapon/gas          0.4
+$volume             access/grantb1      16.0
+$volume             access/grantb2      16.0
+
+// === Ambients ===
 $ambient 1 drone1 World continuous 0.65
 $ambient 5 ambient/mach04 World continuous 0.45
 $ambient 4 ambient/mach04 Point continuous 0.45
 $ambient 6 ambient/lopneon2 Point 3.0 continuous 0.1
 
-$random fire/loop { fire/loop1 fire/loop2 fire/loop3 }
-
-
-
-drone1		drone1
-ambient/mach04		mach04
-ambient/lopneon2 lopneon2
-
-misc/alarm ALARM2
-alarm/alarm1		ALARM1
-alarm/alarm2		ALARM2
-alarm/alarm3		ALARM3
-
-fire/start	FIRESTRT
-fire/loop1	FIRELOP1
-fire/loop2	FIRELOP2
-fire/loop3	FIRELOP3
-fire/die	FIREDIE
-
-$Limit SFX/FireStart	0
-$Limit SFX/FireLoop	0
-$Limit SFX/FireDie	0
-
-acess/grant1		ACGRA
-acess/deny1			acden
-acess/grant2		ACGRA2
-acess/deny2			ACDEN2
-acess/orange		ACORAN
-access/grantb1      ACGRAB
-$volume access/grantb1 16.0
-access/grantb2      ACGRAB2
-$volume access/grantb2 16.0
-$random access/grantb { access/grantb1 access/grantb2 }
-
-techno/lightsof		lightsof
-techno/lightson		lightson
-
-voice/reac01		reac01
-voice/reacon		REACON
-voice/hireactemp	HITEMP
-voice/wtf			WTF
-voice/god			GOD
-voice/only			ONLY
-voice/powerback		PWBACK
-voice/powershake	PWSH
-voice/teleport321	TP
-voice/systemsoff	SYSOFF
-voice/nofire		NOFIRE
-voice/c2			C2
-voice/uac			FUCK
-
-bet/destroy			BDEST
-bet/made			BMADE
-bet/earth			BEAR
-
-core/c1				C1
-core/c2				C2
-core/c3				C3
-core/c4				C4
-
-ms/doctor			MSDOC
-ms/psy				MSPSY
-ms/safe				MSSAFE
-
-weapon/gas			GAS
-weapon/axe/hit		AXEBLOOD
-weapon/axe/miss		AXEMISS
-weapon/fireext/loop FIREELOP
-weapon/fireext/stop FIREESTP
-weapon/fireext/pick WTF
-
-teleport/tohell        sounds/Teleport/teleport_to_hell
-teleport/loop          sounds/Teleport/teleport_loop
-
-
-$volume weapon/gas 0.4
-
-//Drugs
-// dag
-monsters/hellhound/see		dog1reco
-monsters/hellhound/pain		dog1pain
-monsters/hellhound/bite		dog1bite
-monsters/hellhound/die		dog1die
-
-$random monsters/hellhound/bark { monsters/hellhound/bark1 monsters/hellhound/bark2 monsters/hellhound/bark3 }
-monsters/hellhound/bark1	dog1brk1
-monsters/hellhound/bark2	dog1brk2
-monsters/hellhound/bark3	dog1brk3
-
-monsters/demondog/see		dog2reco
-
-$random monsters/demondog/bark { monsters/demondog/bark1 monsters/demondog/bark2 monsters/demondog/bark3 }
-monsters/demondog/bark1	dog2brk1
-monsters/demondog/bark2	dog2brk2
-monsters/demondog/bark3	dog2brk3
-
-monsters/cerberus/see		dog3reco
-monsters/cerberus/jump		dog3jump
-monsters/cerberus/land		dog3land
-
-$random monsters/cerberus/bark { monsters/cerberus/bark1 monsters/cerberus/bark2 monsters/cerberus/bark3 }
-monsters/cerberus/bark1	dog3brk1
-monsters/cerberus/bark2	dog3brk2
-monsters/cerberus/bark3	dog3brk3
-
-
-misc/k_pkup			dskeyup
-
-DSPLDETH			DSPLDETH
-DSPLPAIN			DSPLPAIN
-DSPOPAIN			DSPOPAIN
-DSRADIO				DSRADIO
-CYBRSIGH			CYBRSIGH
-CYBRSIGH2			CYBRSIGH2
-CYBRDTH				CYBRDTH
-DSBDCLS				DSBDCLS
-TAUNT				TAUNT
-ZBMB1				ZBMB1
-ZBMB2				ZBMB2
-DSBLUD03			DSBLUD03
-ROCK				ROCK
-DOGSONG				DOGSONG
-ICOSCRE				ICOSCRE
-
-$volume 			TAUNT 0.4
+// === Unlimiting ===
+$Limit              SFX/FireStart       0
+$Limit              SFX/FireLoop        0
+$Limit              SFX/FireDie         0
