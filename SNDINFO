@@ -197,6 +197,54 @@ $random dog/sight {
     monster/cerberus/bark
 }
 
+// Characters
+
+generic/char/pain1          NAZIPN1
+generic/char/pain2          NAZIPN2
+generic/char/pain3          NAZIPN3
+generic/char/pain4          NAZIPN4
+generic/char/pain5          NAZIPN5
+generic/char/pain6          NAZIPN6
+generic/char/pain7          NAZIPN7
+generic/char/pain8          NAZIPN8
+
+$random generic/char/pain {
+    generic/char/pain1
+    generic/char/pain2
+    generic/char/pain3
+    generic/char/pain4
+    generic/char/pain5
+    generic/char/pain6
+    generic/char/pain7
+    generic/char/pain8
+}
+
+generic/char/death1         NAZIDTH1
+generic/char/death2         NAZIDTH2
+generic/char/death3         NAZIDTH3
+generic/char/death4         NAZIDTH4
+generic/char/death5         NAZIDTH5
+generic/char/death6         NAZIDTH6
+generic/char/death7         NAZIDTH7
+generic/char/death8         NAZIDTH8
+generic/char/death9         NAZIDTH9
+generic/char/death10        NAZIDTH10
+generic/char/death11        NAZIDTH11
+
+$random generic/char/death {
+    generic/char/death1
+    generic/char/death2
+    generic/char/death3
+    generic/char/death4
+    generic/char/death5
+    generic/char/death6
+    generic/char/death7
+    generic/char/death8
+    generic/char/death9
+    generic/char/death10
+    generic/char/death11
+}
+
 // === Volume ===
 $volume             TAUNT               0.4 // FIXME: Remove
 $volume             player/taunt        0.4
