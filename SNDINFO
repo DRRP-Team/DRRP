@@ -245,6 +245,33 @@ $random generic/char/death {
     generic/char/death11
 }
 
+// Misc
+generic/expl/barrel1        DSBAREX1
+generic/expl/barrel2        DSBAREX2
+generic/expl/barrel3        DSBAREX3
+generic/expl/barrel4        DSBAREX4
+generic/expl/barrel5        DSBAREX5
+generic/expl/barrel6        DSBAREX6
+generic/expl/barrel7        DSBAREX7
+
+$random generic/expl/barrel {
+    generic/expl/barrel1
+    generic/expl/barrel2
+    generic/expl/barrel3
+    generic/expl/barrel4
+    generic/expl/barrel5
+    generic/expl/barrel6
+    generic/expl/barrel7
+}
+
+generic/expl/explode1       EXPLODE1
+generic/expl/explode2       EXPLODE2
+
+$random generic/expl/explode {
+    generic/expl/explode1
+    generic/expl/explode2
+}
+
 // === Volume ===
 $volume             TAUNT               0.4 // FIXME: Remove
 $volume             player/taunt        0.4
