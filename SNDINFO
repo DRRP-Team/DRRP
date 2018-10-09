@@ -113,11 +113,9 @@ weapon/fireext/stop FIREESTP
 weapon/fireext/pick WTF
 
 // === Player ===
-
 player/taunt                TAUNT
 
 // === Monsters ===
-
 monster/cyberdemon/sigh1    CYBRSIGH
 monster/cyberdemon/sigh2    CYBRSIGH2
 monster/cyberdemon/death    CYBRDTH
@@ -138,7 +136,6 @@ monster/hellhound/death     DOG1DIE
 monster/hellhound/bark1     DOG1BRK1
 monster/hellhound/bark2     DOG1BRK2
 monster/hellhound/bark3     DOG1BRK3
-
 
 $random monster/hellhound/bark {
     monster/hellhound/bark1
@@ -176,6 +173,28 @@ $random monsters/cerberus/bark {
     monsters/cerberus/bark1
     monsters/cerberus/bark2
     monsters/cerberus/bark3
+}
+
+dog/active			DOG1RECO
+dog/attack			DOG1BITE
+dog/death			DOG1DIE
+dog/pain			DOG1PAIN
+dog/sight			DOG1BRK1
+
+$random dog/active {
+    monster/hellhound/see
+    monster/demondog/see
+}
+
+$random dog/attack {
+    monster/hellhound/bite
+    monster/hellhound/bark
+    monster/cerberus/bark
+}
+
+$random dog/sight {
+    monster/hellhound/bark
+    monster/cerberus/bark
 }
 
 // === Volume ===
