@@ -113,11 +113,9 @@ weapon/fireext/stop FIREESTP
 weapon/fireext/pick WTF
 
 // === Player ===
-
 player/taunt                TAUNT
 
 // === Monsters ===
-
 monster/cyberdemon/sigh1    CYBRSIGH
 monster/cyberdemon/sigh2    CYBRSIGH2
 monster/cyberdemon/death    CYBRDTH
@@ -138,7 +136,6 @@ monster/hellhound/death     DOG1DIE
 monster/hellhound/bark1     DOG1BRK1
 monster/hellhound/bark2     DOG1BRK2
 monster/hellhound/bark3     DOG1BRK3
-
 
 $random monster/hellhound/bark {
     monster/hellhound/bark1
@@ -176,6 +173,103 @@ $random monsters/cerberus/bark {
     monsters/cerberus/bark1
     monsters/cerberus/bark2
     monsters/cerberus/bark3
+}
+
+dog/active			DOG1RECO
+dog/attack			DOG1BITE
+dog/death			DOG1DIE
+dog/pain			DOG1PAIN
+dog/sight			DOG1BRK1
+
+$random dog/active {
+    monster/hellhound/see
+    monster/demondog/see
+}
+
+$random dog/attack {
+    monster/hellhound/bite
+    monster/hellhound/bark
+    monster/cerberus/bark
+}
+
+$random dog/sight {
+    monster/hellhound/bark
+    monster/cerberus/bark
+}
+
+// Characters
+
+generic/char/pain1          NAZIPN1
+generic/char/pain2          NAZIPN2
+generic/char/pain3          NAZIPN3
+generic/char/pain4          NAZIPN4
+generic/char/pain5          NAZIPN5
+generic/char/pain6          NAZIPN6
+generic/char/pain7          NAZIPN7
+generic/char/pain8          NAZIPN8
+
+$random generic/char/pain {
+    generic/char/pain1
+    generic/char/pain2
+    generic/char/pain3
+    generic/char/pain4
+    generic/char/pain5
+    generic/char/pain6
+    generic/char/pain7
+    generic/char/pain8
+}
+
+generic/char/death1         NAZIDTH1
+generic/char/death2         NAZIDTH2
+generic/char/death3         NAZIDTH3
+generic/char/death4         NAZIDTH4
+generic/char/death5         NAZIDTH5
+generic/char/death6         NAZIDTH6
+generic/char/death7         NAZIDTH7
+generic/char/death8         NAZIDTH8
+generic/char/death9         NAZIDTH9
+generic/char/death10        NAZIDTH10
+generic/char/death11        NAZIDTH11
+
+$random generic/char/death {
+    generic/char/death1
+    generic/char/death2
+    generic/char/death3
+    generic/char/death4
+    generic/char/death5
+    generic/char/death6
+    generic/char/death7
+    generic/char/death8
+    generic/char/death9
+    generic/char/death10
+    generic/char/death11
+}
+
+// Misc
+generic/expl/barrel1        DSBAREX1
+generic/expl/barrel2        DSBAREX2
+generic/expl/barrel3        DSBAREX3
+generic/expl/barrel4        DSBAREX4
+generic/expl/barrel5        DSBAREX5
+generic/expl/barrel6        DSBAREX6
+generic/expl/barrel7        DSBAREX7
+
+$random generic/expl/barrel {
+    generic/expl/barrel1
+    generic/expl/barrel2
+    generic/expl/barrel3
+    generic/expl/barrel4
+    generic/expl/barrel5
+    generic/expl/barrel6
+    generic/expl/barrel7
+}
+
+generic/expl/explode1       EXPLODE1
+generic/expl/explode2       EXPLODE2
+
+$random generic/expl/explode {
+    generic/expl/explode1
+    generic/expl/explode2
 }
 
 // === Volume ===
