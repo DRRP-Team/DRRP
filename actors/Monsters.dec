@@ -285,7 +285,7 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 {
 	States {
 		Death:
 			SKEL L 7
-			SKEL M 7 A_SpawnItem( "Explosion", 0.0, 0.0, False, False )
+			SKEL M 7 A_SpawnItem("Explosion", 0, 38.)
 			SKEL N 7 A_Scream
 			SKEL O 7 A_NoBlocking
 			SKEL P 7
