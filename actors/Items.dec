@@ -126,14 +126,14 @@ Actor GoldCredit : CustomInventory 10621 {
     +FLOORCLIP
 
     Tag                     "5 credits"
-    Inventory.Icon          "COINA0"
+    Inventory.Icon          "COINC0"
     Inventory.PickupMessage "Picked up 5 credits."
 
-    Translation "112:127=%[0.00,0.00,0.00]:[2.00,1.01,0.00]"
+    // Translation "112:127=%[0.00,0.00,0.00]:[2.00,1.01,0.00]"
 
     States {
         Spawn:
-            COIN A -1
+            COIN C -1
             Stop
         Pickup:
             TNT1 A 0 A_GiveInventory("Credit", 5)
