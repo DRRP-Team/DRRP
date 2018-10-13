@@ -37,38 +37,44 @@ class DoorCodeInputActor : Actor {
 }
 
 
+/* 
+ * ConversationLineController
+ *
+ * ScriptCall("ConversationLineController", "GetArgument", lineid);
+ * ScriptCall("ConversationLineController", "SetArgument", lineid, value);
+ *
+ */
 class ConversationLineController play {
 
-// Example: ScriptCall( "ConversationLineController", "GetArgument", currLine );
+	static int GetArgument(uint lineID) {
+	    LineIdIterator it = LineIdIterator.Create(lineID);
+	    int itLineID      = it.Next();
 
-	static int GetArgument( uint lineID ) {
-	    LineIdIterator it = LineIdIterator.Create( lineID );
-	    int itLineID = it.Next();
+		if (itLineID > 0) {
+			Line convLine = level.Lines[itLineID];
 
-		if ( itLineID > 0 ) {
-			Line convLine = level.Lines[ itLineID ];
-			return convLine.args[ 4 ];
-		} else
+			return convLine.args[4];
+		} else {
 			return -1;
+        }
+	}
 
-	} // of static uint GetArgument( uint lineID )
+	static bool SetArgument(uint lineID, uint lineArg) {
+	    LineIdIterator it = LineIdIterator.Create(lineID);
+	    int itLineID      = it.Next();
 
+		if (itLineID > 0) {
+			Line convLine    = level.Lines[itLineID];
+			convLine.args[4] = lineArg;
 
-	static bool SetArgument( uint lineID, uint lineArg ) {
-	    LineIdIterator it = LineIdIterator.Create( lineID );
-	    int itLineID = it.Next();
-
-		if ( itLineID > 0 ) {
-			Line convLine = level.Lines[ itLineID ];
-			convLine.args[ 4 ] = lineArg;
 			return true;
-		} // of if ( itLineID > 0 )
+		}
 
 		return false;
-
-	} // of static bool SetArgument( uint lineID, uint lineArg )
+	}
 
 }
+
 
 
 class ShaderControllerActor : EventHandler {
