@@ -73,6 +73,28 @@ class ConversationLineController play {
 		return false;
 	}
 
+	static int GetActorArgument(int actorID) {
+	    ActorIterator it = ActorIterator.Create(actorID);
+	    Actor actor      = it.Next();
+
+		if (actor) {
+			return actor.args[4];
+		} else {
+			return -1;
+        }
+	}
+
+	static bool SetActorArgument(int actorID, int lineArg) {
+	    ActorIterator it = ActorIterator.Create(actorID);
+	    Actor actor      = it.Next();
+
+		if (actor) {
+			actor.args[4] = lineArg;
+			return true;
+		}
+
+		return false;
+	}
 }
 
 
