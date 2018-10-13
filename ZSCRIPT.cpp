@@ -36,6 +36,41 @@ class DoorCodeInputActor : Actor {
     }
 }
 
+
+class ConversationLineController play {
+
+// Example: ScriptCall( "ConversationLineController", "GetArgument", currLine );
+
+	static int GetArgument( uint lineID ) {
+	    LineIdIterator it = LineIdIterator.Create( lineID );
+	    int itLineID = it.Next();
+
+		if ( itLineID > 0 ) {
+			Line convLine = level.Lines[ itLineID ];
+			return convLine.args[ 4 ];
+		} else
+			return -1;
+
+	} // of static uint GetArgument( uint lineID )
+
+
+	static bool SetArgument( uint lineID, uint lineArg ) {
+	    LineIdIterator it = LineIdIterator.Create( lineID );
+	    int itLineID = it.Next();
+
+		if ( itLineID > 0 ) {
+			Line convLine = level.Lines[ itLineID ];
+			convLine.args[ 4 ] = lineArg;
+			return true;
+		} // of if ( itLineID > 0 )
+
+		return false;
+
+	} // of static bool SetArgument( uint lineID, uint lineArg )
+
+}
+
+
 class ShaderControllerActor : EventHandler {
     static int SetEnabled(int player, String name, bool enabled) {
         if(player != 0) {
