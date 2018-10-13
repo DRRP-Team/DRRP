@@ -46,7 +46,7 @@ class DoorCodeInputActor : Actor {
  */
 class ConversationLineController play {
 
-	static int GetArgument(uint lineID) {
+	static int GetArgument(int lineID) {
 	    LineIdIterator it = LineIdIterator.Create(lineID);
 	    int itLineID      = it.Next();
 
@@ -59,7 +59,7 @@ class ConversationLineController play {
         }
 	}
 
-	static bool SetArgument(uint lineID, uint lineArg) {
+	static bool SetArgument(int lineID, int lineArg) {
 	    LineIdIterator it = LineIdIterator.Create(lineID);
 	    int itLineID      = it.Next();
 
