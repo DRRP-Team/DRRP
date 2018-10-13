@@ -38,34 +38,34 @@ class DoorCodeInputActor : Actor {
 
 
 /* 
- * ConversationLineController
+ * ConversationController
  *
- * ScriptCall("ConversationLineController", "GetArgument", lineid);
- * ScriptCall("ConversationLineController", "SetArgument", lineid, value);
+ * ScriptCall("ConversationController", "GetArgument", lineid);
+ * ScriptCall("ConversationController", "SetArgument", lineid, value);
  *
  */
-class ConversationLineController play {
+class ConversationController play {
 
-	static int GetArgument(int lineID) {
-	    LineIdIterator it = LineIdIterator.Create(lineID);
+	static int GetArgument( int lineID ) {
+	    LineIdIterator it = LineIdIterator.Create( lineID );
 	    int itLineID      = it.Next();
 
-		if (itLineID > 0) {
-			Line convLine = level.Lines[itLineID];
+		if ( itLineID > 0 ) {
+			Line convLine = level.Lines[ itLineID ];
 
-			return convLine.args[4];
+			return convLine.args[ 4 ];
 		} else {
 			return -1;
         }
 	}
 
-	static bool SetArgument(int lineID, int lineArg) {
-	    LineIdIterator it = LineIdIterator.Create(lineID);
-	    int itLineID      = it.Next();
+	static bool SetArgument( int lineID, int lineArg ) {
+	    LineIdIterator it = LineIdIterator.Create( lineID );
+	    int itLineID = it.Next();
 
-		if (itLineID > 0) {
-			Line convLine    = level.Lines[itLineID];
-			convLine.args[4] = lineArg;
+		if ( itLineID > 0 ) {
+			Line convLine = level.Lines[ itLineID ];
+			convLine.args[ 4 ] = lineArg;
 
 			return true;
 		}
@@ -95,8 +95,7 @@ class ConversationLineController play {
 
 		return false;
 	}
-}
-
+} // of class ConversationController play {
 
 
 class ShaderControllerActor : EventHandler {
