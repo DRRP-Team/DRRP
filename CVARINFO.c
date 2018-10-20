@@ -9,6 +9,7 @@ user bool drrp_enable_helmet_shader = true;
 user bool drrp_enable_cinematic_shader = true;
 
 user bool drrp_enable_infobar = true;
+user bool drrp_enable_dynamicalnamesuppose = false;
 
 // Flashlight
 server color flashlight_color = "AB AB FF";

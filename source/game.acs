@@ -7,8 +7,6 @@
 
 #include "zcommon.acs"
 #library global
-#include "flashlight.acs"
-#include "infobar.acs"
 
 #define MAX_LEVELS 16
 #define JUNCTION_LEVELNUM 2
@@ -19,7 +17,7 @@ world bool 1:exitedLevels[MAX_LEVELS] = {false}; // FIXME: You need only one cou
 // Useful functions
 
 function bool isLocalized(str string) {
-	return !!strcmp(StrParam(l:string), string);
+    return !!strcmp(StrParam(l:string), string);
 }
 
 function int getStringWidth(str String) {
@@ -64,10 +62,6 @@ script "fireextfade" (int mode) {
     }
 }
 
-Script "ChangeActorName" (str name) {
-	print(s:"ChangeActorName(", s:name, s:");");
-}
-
 // ACS based DRPG Window
 
 Script "window"( str Text ) { //s: -> str
@@ -109,3 +103,6 @@ Script "window"( str Text ) { //s: -> str
     HudMessage( s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1 );
     SetPlayerProperty( 0, False, PROP_TOTALLYFROZEN );
 }
+
+#include "flashlight.acs"
+#include "infobar.acs"
