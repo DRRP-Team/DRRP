@@ -253,14 +253,14 @@ Actor BullDemon : Demon 10259 {
     Translation "16:47=128:143", "168:191=144:151"
 }
 
-Actor Pinky : Demon 10359 { //FIXME: id
+Actor Pinky : Demon 10459 { //FIXME: id
     //$Category DMonsters
 
     Tag "$DRRP_M_PINKY"
     Health 100
 }
 
-Actor Belphegor : Demon 10459 {
+Actor Belphegor : Demon 10359 {
     //$Category DMonsters
 
     Tag "$DRRP_M_BELPHEGOR"
