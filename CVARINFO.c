@@ -8,6 +8,8 @@
 user bool drrp_enable_helmet_shader = true;
 user bool drrp_enable_cinematic_shader = true;
 
+user bool drrp_enable_infobar = true;
+
 // Flashlight
 server color flashlight_color = "AB AB FF";
 server int flashlight_intensity = 320; // Max -- 1024.
