@@ -16,6 +16,30 @@
 
 world bool 1:exitedLevels[MAX_LEVELS] = {false}; // FIXME: You need only one counter
 
+// Useful functions
+
+function bool isLocalized(str string) {
+	return !!strcmp(StrParam(l:string), string);
+}
+
+function int getStringWidth(str String) {
+    int i = 0;
+    while(String[i] != '\0') { i++; }
+    return i;
+}
+
+function int getStringHeight(str String) {
+    int i	   = 0;
+    int height = 0;
+
+    while(String[i] != '\0') {
+        if(String[i++] == '\n') height++;
+    }
+    return height;
+}
+
+//\\ Useful functions
+
 #ifdef DEBUGSCRIPT
 script CheckLevelExits ENTER {
     ACS_BeginPrint();
@@ -40,25 +64,13 @@ script "fireextfade" (int mode) {
     }
 }
 
-function int getStringWidth(str String) {
-    int i = 0;
-    while(String[i] != '\0') { i++; }
-    return i;
-}
-
-function int getStringHeight(str String) {
-    int i	   = 0;
-    int height = 0;
-
-    while(String[i] != '\0') {
-        if(String[i++] == '\n') height++;
-    }
-    return height;
+Script "ChangeActorName" (str name) {
+	print(s:"ChangeActorName(", s:name, s:");");
 }
 
 // ACS based DRPG Window
-script "window"( str Text ) //s: -> str
-{
+
+Script "window"( str Text ) { //s: -> str
     const int SYM_HEIGHT = 12; // Symbol's height is 12px
     // TODO: Block downscrolling by bottom of string
 
