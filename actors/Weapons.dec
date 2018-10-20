@@ -8,6 +8,7 @@
 Actor DRRPPistol : Pistol replaces Pistol {
     DamageType DRRPClipDmg
     Decal BulletChip
+    Tag "$DRRP_W_PISTOL"
 
     States {
         Fire:
@@ -32,6 +33,7 @@ Actor DRRPPistol : Pistol replaces Pistol {
 Actor DRRPShotgun : Shotgun replaces Shotgun {
     DamageType DRRPShotgunDmg
     Decal BulletChip
+    Tag "$DRRP_W_SHOTGUN"
 
     States {
         Fire:
@@ -65,6 +67,7 @@ Actor DRRPShotgun : Shotgun replaces Shotgun {
 Actor DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
     DamageType DRRPSSGDmg
     Decal BulletChip
+    Tag "$DRRP_W_SUPERSHOTGN"
 
     States {
         Fire:
@@ -107,6 +110,7 @@ Actor DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
 Actor DRRPChaingun : Chaingun replaces Chaingun {
     DamageType DRRPClipDmg
     Decal BulletChip
+    Tag "$DRRP_W_CHAINGUN"
 
     States {
         Fire:
@@ -144,6 +148,8 @@ Actor DRRPChaingun : Chaingun replaces Chaingun {
 }
 
 Actor DRRPRocketLauncher : RocketLauncher replaces RocketLauncher {
+    Tag "$DRRP_W_ROCKETLNCHR"
+
     States {
         Fire:
             MISG B 10 A_GunFlash
@@ -172,6 +178,8 @@ Actor DRRPRocketLauncher : RocketLauncher replaces RocketLauncher {
 }
 
 Actor DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
+    Tag "$DRRP_W_PLASMAGUN"
+
     States {
         Fire:
             PLSG A 0 A_GunFlash
@@ -195,6 +203,8 @@ Actor DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
 }
 
 Actor DRRPBFG9000 : BFG9000 replaces BFG9000 {
+    Tag "$DRRP_W_BFG"
+
     States {
         Fire:
             BFGG A 20 A_BFGSound

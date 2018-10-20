@@ -9,6 +9,7 @@
 Actor DRRPGreenCard : DoomKey 10622 {
     //$Category Keys
 
+    Tag "$DRRP_I_GREENKEY"
     Inventory.PickupMessage "Picked up a green keycard"
     Inventory.Icon "STKEYS9"
     Inventory.PickupSound "misc/k_pkup"
@@ -22,14 +23,17 @@ Actor DRRPGreenCard : DoomKey 10622 {
 }
 
 Actor DRRPYellowCard : YellowCard replaces YellowCard {
+    Tag "$DRRP_I_YELLOWKEY"
     Inventory.PickupSound "misc/k_pkup"
 }
 
 Actor DRRPBlueCard : BlueCard replaces BlueCard {
+    Tag "$DRRP_I_BLUEKEY"
     Inventory.PickupSound "misc/k_pkup"
 }
 
 Actor DRRPRedCard : RedCard replaces RedCard {
+    Tag "$DRRP_I_REDKEY"
     Inventory.PickupSound "misc/k_pkup"
 }
 
@@ -39,7 +43,7 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
     +FLOORCLIP
     +INVENTORY.INVBAR
 
-    Tag                     "Small medikit"
+    Tag                     "$DRRP_I_SMMEDKIT"
     Health                  25
     HealthPickup.AutoUse    0
     Inventory.Icon          "YMEDI0"
@@ -59,7 +63,7 @@ Actor LargeMedikit : HealthPickup 10601 {
     +FLOORCLIP
     +INVENTORY.INVBAR
 
-    Tag                     "Large medikit"
+    Tag                     "$DRRP_I_LGMEDKIT"
     Health                  75
     HealthPickup.AutoUse    0
     Inventory.MaxAmount     99
@@ -82,6 +86,7 @@ Actor HealthPowerUp : UpgradeStamina 10603 {
 Actor Balloon : Ammo 10610 {
     //$Category DAmmo
 
+    Tag "$DRRP_I_HALONCAN"
     Ammo.BackpackAmount     20
     Ammo.BackpackMaxAmount  600
     Inventory.Amount        20
@@ -106,7 +111,7 @@ Actor Credit : Inventory 10620 {
     +FLOORCLIP
     +INVENTORY.INVBAR
 
-    Tag                     "Credit"
+    Tag                     "$DRRP_I_1CREDIT"
     Inventory.MaxAmount     0x7fffffff
     Inventory.Icon          "CREDH0"
     Inventory.PickupMessage "Picked up a credit."
@@ -125,7 +130,7 @@ Actor GoldCredit : CustomInventory 10621 {
     +NOTDMATCH
     +FLOORCLIP
 
-    Tag                     "5 credits"
+    Tag                     "$DRRP_I_5CREDITS"
     Inventory.Icon          "COINC0"
     Inventory.PickupMessage "Picked up 5 credits."
 
@@ -147,6 +152,7 @@ Actor Berserker : CustomInventory replaces Berserk 10623 {
     +COUNTITEM
     +INVENTORY.INVBAR
 
+    Tag "$DRRP_I_BERSERKER"
     Inventory.MaxAmount     99
     Inventory.Icon          "BERSH0"
     Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
@@ -170,6 +176,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
     +COUNTITEM
     +INVENTORY.INVBAR
 
+    Tag "$DRRP_I_SOULSPHERE"
     Inventory.MaxAmount     99
     Inventory.Icon          "SOULH0"
     Inventory.PickupSound   "misc/p_pkup"
@@ -191,7 +198,7 @@ Actor DogCollar : CustomInventory 10624 {
 
     +INVENTORY.INVBAR
 
-    Tag                     "Dog Collar"
+    Tag                     "$DRRP_I_DOGCOLLAR"
     Inventory.Icon          "DOGCH0"
     Inventory.PickupMessage "Got the dog collar."
     Inventory.MaxAmount     99

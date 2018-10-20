@@ -10,6 +10,7 @@
 Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
     //$Category DDecorations
 
+    Tag "$DRRP_E_BARREL"
     Health 1
     BloodColor "FF FF 00"
     DamageFactor DRRPFireExtDmg, 0.0
@@ -37,6 +38,7 @@ Actor Table 10702 {
     +NOBLOODDECALS
     -SHOOTABLE
 
+    Tag "$DRRP_E_TABLE"
     Radius 20
     Height 27
     Mass 0x7FFFFFFF
@@ -52,6 +54,7 @@ Actor Table 10702 {
 Actor BlueLamp : Column 10703 {
     //$Category DDecorations
 
+    Tag "$DRRP_E_BLUELAMP"
     Radius 20
     Translation "224:231=192:195", "160:167=196:199"
 }
@@ -61,6 +64,7 @@ Actor DRRPChair 10750 {
 
     +SOLID
 
+    Tag "$DRRP_E_CHAIR"
     Radius 14
     Height 37
     Mass 0x7FFFFFFF
@@ -75,6 +79,7 @@ Actor DRRPChair 10750 {
 Actor Rod : ExplosiveBarrel 10704 {
     //$Category DDecorations
 
+    Tag "$DRRP_E_POWERCOUPLING"
     Scale 0.5
     Health 666
     Mass 10000000
@@ -106,6 +111,7 @@ Actor Crate 10705 {
     +FLOORCLIP
     +INCOMBAT
 
+    Tag "$DRRP_E_CRATE"
     Health 1
     Height 64
     Radius 32
@@ -146,6 +152,7 @@ Actor Wardrobe 10706 {
     +NOBLOODDECALS
     -SHOOTABLE
 
+    Tag "$DRRP_E_CABINET"
     Radius 20
     Height 27
     Mass 0x7FFFFFFF
@@ -163,6 +170,7 @@ Actor Bed 10707 {
 
     +SOLID
 
+    Tag "$DRRP_E_BUNKBEDS"
     Radius 14
     Height 57
     Mass 0x7FFFFFFF
@@ -178,7 +186,8 @@ Actor Exit 10708 {
     //$Category DDecorations
 
     -SOLID
-    
+
+    Tag "$DRRP_E_EXITDOOR"
     Radius 14
     Height 64
     Mass 0x7FFFFFFF
@@ -195,7 +204,8 @@ Actor Sink 10709 {
 
     +SOLID
     +SHOOTABLE
-    
+
+    Tag "$DRRP_E_SINK"
     Radius 14
     Height 64
     Health 50
@@ -219,7 +229,8 @@ Actor Toilet 10710 {
 
     +SOLID
     +SHOOTABLE
-    
+
+    Tag "$DRRP_E_TOILET"
     Radius 14
     Height 64
     Health 50
@@ -242,9 +253,10 @@ Actor AqueductFountain {
     //$Category DDecorations
 
     -SOLID
-    
+
+    Tag "DRRP_D_FOUNTAIN"
     Scale 0.7
-    
+
     States {
         Spawn:
             CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 100 * 99 )
@@ -261,9 +273,10 @@ Actor CEFEcon 10743 {
     //$Category DDecorations
 
     -SOLID
-    
+
+    Tag "$DRRP_D_ALARM"
     Scale 0.4
-    
+
     States {
         Spawn:
             CEFE ABC 5
@@ -272,6 +285,8 @@ Actor CEFEcon 10743 {
 }
 Actor CEFRcon : CEFEcon 10744 {
     //$Category DDecorations
+
+    Tag "$DRRP_D_ALARM"
 
     States {
         Spawn:
@@ -287,6 +302,7 @@ Actor Alarm1 10745 {
     +NOGRAVITY
     -SOLID
     
+    Tag "$DRRP_D_ALARM"
     Scale 0.5
     
     States {
@@ -300,6 +316,8 @@ Actor Alarm1 10745 {
 Actor Alarm2 : KlaxonWarningLight 10746 {
     //$Category DDecorations
 
+    Tag "$DRRP_D_ALARM"
+
     States {
         Spawn:
             TNT1 A 0
@@ -307,6 +325,7 @@ Actor Alarm2 : KlaxonWarningLight 10746 {
     }
 }
 
+// TODO: Remove
 Actor YardLamp 19690 {
     //$Category DDecorations
     

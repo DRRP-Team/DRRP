@@ -17,6 +17,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     -ISMONSTER
     -COUNTKILL
 
+    Tag "$DRRP_E_FIRE"
     Health 10
     Radius 33
     Mass 0x7FFFFFFF
@@ -55,6 +56,7 @@ Actor DRRPLava 10251 {
     -COUNTKILL
     -SHOOTABLE
 
+    Tag "$DRRP_E_LAVAPOOL"
     Health 10
     Mass 0x7FFFFFFF
     RenderStyle Add
@@ -83,6 +85,8 @@ Actor DRRPLava 10251 {
 
 Actor Explosion : Rocket {
     -ROCKETTRAIL
+
+    Tag "$DRRP_D_EXPLOSION"
 
     Spawn Parent Death
     SpawnID 253

@@ -12,9 +12,10 @@ Actor DRRPCharacter {
     +USESPECIAL
     +FRIENDLY
 
-    Radius 20
-    Height 56
-    Health 5
+    Radius  20
+    Height  56
+    Health  5
+    Tag     "$DRRP_D_CHARACTER"
 
     States {
         Spawn:
@@ -42,32 +43,13 @@ Actor DRRPCharacter {
 
 Actor Scientist : DRRPCharacter 10500  {
     //$Category Characters
-    
-    +SOLID
-    +USESPECIAL
-    +FRIENDLY
 
-    Radius 20
-    Height 56
-    Health 5
+    Tag     "$DRRP_E_SCIENTIST"
 
     States {
         Spawn:
             SCIE A 0
             Goto MainLoop
-        MainLoop:
-            "####" A 0
-            "####" A 0 A_JumpIf( Args[ 4 ] == 0, 2 )
-            "####" A 0 A_ChangeFlag( "SHOOTABLE", True )
-            "####" A 1
-            Wait
-        Death:
-            POSS H 5
-            POSS I 5 A_Scream
-            POSS J 5 A_NoBlocking
-            POSS K 5
-            POSS L -1
-            Stop
     }
 }
 
@@ -85,7 +67,7 @@ Actor DrGuerard : Scientist 10502 { // Dr. Gerard
     //$Category Characters
 
     // Translation "80:106=[132,174,165]:[41,73,66]", "192:192=[132,174,165]:[132,174,165]"
-    
+    Tag     "$DRRP_E_DRGUERARD"
     
     States {
         Spawn:
@@ -101,6 +83,8 @@ Actor DrGuerard : Scientist 10502 { // Dr. Gerard
 
 Actor Civilian : DRRPCharacter 10510 { // Orange
     //$Category Characters
+
+    Tag     "$DRRP_E_CIVILIAN"
 
     States {
         Spawn:
@@ -140,6 +124,8 @@ Actor Civilian2 : Civilian 10512 { // Green
 
 Actor Marine : DRRPCharacter 10520  {
     //$Category Characters
+
+    Tag     "$DRRP_E_MARINE"
 
     States {
         Spawn:
