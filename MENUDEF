@@ -11,55 +11,65 @@ OptionMenuSettings {
 
 ListMenu "MainMenu" {
 	IfGame (DooM) {
-		STATICPATCH 85,0,"M_DOOM"
-		POSITION 92,72
-		STATICTEXT 187,188,"DRRP v0.1 InDev"
+		STATICPATCH 85, 0, "M_DOOM"
+		POSITION 92, 72
+		STATICTEXT 187, 188, "DRRP v0.1 InDev"
+		// TODO: $DRRP_D_DRRPVERSION
 	}
-	TEXTITEM "New Game","N","PlayerClassMenu"
-	TEXTITEM "DRRP Menu","D","DRRPMenu"
-	TEXTITEM "Options","O","OptionsMenu"
-	TEXTITEM "Load Game","L","LoadGameMenu"
-	TEXTITEM "Save Game","S","SaveGameMenu"
-	TEXTITEM "Quit Game","Q","QuitMenu"
+
+	TEXTITEM "$DRRP_D_MENU_NEWGAME", "N", "PlayerClassMenu"
+	TEXTITEM "$DRRP_D_MENU_DRRPMENU", "D", "DRRPMenu"
+	TEXTITEM "$DRRP_D_MENU_OPTIONS", "O", "OptionsMenu"
+	TEXTITEM "$DRRP_D_MENU_LOADGAME", "L", "LoadGameMenu"
+	TEXTITEM "$DRRP_D_MENU_SAVEGAME", "S", "SaveGameMenu"
+	TEXTITEM "$DRRP_D_MENU_QUITGAME", "Q", "QuitMenu"
 }
 
 OPTIONMENU "DRRPMenu" {
 	TITLE "Doom RPG Remake Project"
 	STATICTEXT " "
-	StaticText "Inventory"
-	Command "Notepad", "echo \"Notepad will be here\""
+	StaticText "$DRRP_D_MENU_DRRPMENU_INVENTORY"
+	Command "$DRRP_D_MENU_DRRPMENU_NOTEPAD", "echo \"Notepad will be here\""
 	STATICTEXT " "
-	StaticText "Settings"
-	Submenu "Flashlight", "Flashlight"
-	Submenu "Shaders", "Shaders"
+	StaticText "$DRRP_D_MENU_DRRPMENU_SETTINGS"
+	Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
+	Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
+	Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
+}
+
+OptionMenu "Language" {
+	Title "$DRRP_D_MENU_DRRPMENU_LANGUAGET"
+	StaticText " "
+	Command "English US", "language enu"
+	Command "Russian", "language rus"
 }
 
 OptionValue LocationOptions {
-    0, "Helmet"
-    1, "Right Shoulder"
-    2, "Left Shoulder"
-    3, "Center View"
+    0, "$DRRP_D_MENU_FLASHLIGHT_HELMET"
+    1, "$DRRP_D_MENU_FLASHLIGHT_RSHOULDER"
+    2, "$DRRP_D_MENU_FLASHLIGHT_LSHOULDER"
+    3, "$DRRP_D_MENU_FLASHLIGHT_CENTER"
 }
 
 OptionMenu "Flashlight" {
-    Title "Flashlight"
+    Title "$DRRP_D_MENU_FLASHLIGHT_TITLE"
     StaticText " "
-    ColorPicker "Color", "flashlight_color"
+    ColorPicker "$DRRP_D_MENU_FLASHLIGHT_COLOR", "flashlight_color"
     StaticText " "
-    Slider "Brightness", "flashlight_intensity", 0, 1024, 64, 0
+    Slider "$DRRP_D_MENU_FLASHLIGHT_BRIGHNESS", "flashlight_intensity", 0, 1024, 64, 0
     StaticText " "
-    Slider "Inner Angle", "flashlight_inner", 0, 180, 10, 0
-    Slider "Outer Angle", "flashlight_outer", 0, 180, 10, 0
-    Option "Location", flashlight_location, LocationOptions
+    Slider "$DRRP_D_MENU_FLASHLIGHT_IANGLE", "flashlight_inner", 0, 180, 10, 0
+    Slider "$DRRP_D_MENU_FLASHLIGHT_OANGLE", "flashlight_outer", 0, 180, 10, 0
+    Option "$DRRP_D_MENU_FLASHLIGHT_LOCATION", flashlight_location, LocationOptions
 	StaticText " "
-	Control "Key", "toggleflashlight"
+	Control "$DRRP_D_MENU_FLASHLIGHT_KEY", "toggleflashlight"
 }
 
 OptionMenu "Shaders" {
-	Title "Shaders"
+	Title "$DRRP_D_MENU_SHADERS_TITLE"
 	StaticText " "
-	Option "Enable shaders","gl_custompost","ONOFF"
+	Option "$DRRP_D_MENU_SHADERS_ENABLE","gl_custompost","ONOFF"
 	StaticText " "
-	Option "Enable helmet shaders","drrp_enable_helmet_shader","ONOFF"
+	Option "$DRRP_D_MENU_SHADERS_HELMET","drrp_enable_helmet_shader","ONOFF"
 	Option "Enable cinematic shaders","drrp_enable_cinematic_shader","ONOFF"
 }
