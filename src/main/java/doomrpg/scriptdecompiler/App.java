@@ -6,6 +6,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class App {
 	public static short getUnsignedByte(ByteBuffer bb) {
@@ -26,14 +29,17 @@ public class App {
 		bb.position(bb.getShort() * 8 + bb.position());
 
 		bb.position(bb.getShort() * 5 + bb.position());
+		
+		List<EventDef> events = new LinkedList<>();
+		ByteCode bc = new ByteCode();
 
 		{
 			int count = bb.getShort();
 
-			System.out.println("# " + count + " events found");
+			/*System.out.println("# " + count + " events found");
 			System.out.println("# offset=" + (bb.position() - 2));
 
-			System.out.println("[EVENTS]");
+			System.out.println("[EVENTS]");*/
 			for (int i = 0; i < count; i++) {
 				int packedInt = bb.getInt();
 				int x = (packedInt & 0x1F);
@@ -42,14 +48,41 @@ public class App {
 				int length = ((packedInt & 0x1F80000) >> 19);
 				int unkn = packedInt & 33030144;
 				int unkn2 = packedInt & 0xFE000000;
-				System.out
+				/*System.out
 						.println("X=" + x + " Y=" + y + " START=L_" + start + " END=L_" + (start + length - 1)
-								+ " UNKN=" + unkn + " UNKN2=" + unkn2);
+								+ " UNKN=" + unkn + " UNKN2=" + unkn2);*/
+				
+				EventDef edef = new EventDef();
+				edef.x = x;
+				edef.y = y;
+				edef.start = bc.ref(start);
+				edef.end = bc.ref(start + length - 1);
+				edef.unkn = unkn;
+				edef.unkn2 = unkn2;
+				events.add(edef);
 			}
-			System.out.println();
+			// System.out.println();
+		}
+		
+		bc.readFromByteBuffer(bb);
+		
+		int sn = 1;
+		for(EventDef event : events) {
+			System.out.println("script " + sn + " (void) { //" + event.toIR());
+			
+			Iterator<ByteCodeElement> it = bc.iterator(event.start, event.end);
+			
+			while(it.hasNext()) {
+				ByteCodeElement bce = it.next();
+				System.out.println("    // " + bce.toIR(0));
+			}
+			
+			System.out.println("}");
+			
+			sn++;
 		}
 
-		System.out.println("[COMMANDS]");
+		/*System.out.println("[COMMANDS]");
 
 		int count = bb.getShort();
 
@@ -256,7 +289,9 @@ public class App {
 				break;
 			}
 			System.out.println("L_" + i + ": " + cmdopts + " " + cmdname + " " + cmdparams);
-		}
+		}*/
+		
+		//
 		
 		fis.close();
 	}
