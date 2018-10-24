@@ -7,6 +7,9 @@
 
 version "2.5"
 
+//#include "Actors/Weapons.zsc"
+
+
 class DRRPFire_zspatch : Actor {
     override bool CanCollideWith (Actor other, bool passive) {
         String cn = other.getClassName();
