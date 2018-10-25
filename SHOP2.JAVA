@@ -75,7 +75,7 @@ conversation {
          }
          choice {
              text = "10x Shells [8 credits]";
-             giveitem = "LargeMedikit";
+             giveitem = "ShellBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
