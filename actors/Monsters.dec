@@ -338,6 +338,22 @@ Actor DRRPPainElemental : PainElemental replaces PainElemental 10279 {
 
     Tag "$DRRP_M_PAINELEMENTAL"
     DamageFactor DRRPFireDmg, 0.0
+
+    States {
+        Missile:
+            PAIN D 5 A_FaceTarget
+            PAIN E 5 A_FaceTarget
+            PAIN F 5 Bright A_FaceTarget
+            PAIN F 0 Bright A_CustomComboAttack("FatShot", 32, 2 * random(1, 6))
+            Goto See
+        Death:
+            PAIN H  8 Bright
+            PAIN I  8 Bright A_Scream
+            PAIN JK 8 Bright
+            PAIN L  8 Bright A_PainDie("Nightmare")
+            PAIN M  8 Bright
+            Stop
+    }
 }
 
 Actor Rahovart : DRRPPainElemental 10379 {
@@ -346,6 +362,16 @@ Actor Rahovart : DRRPPainElemental 10379 {
     Tag "$DRRP_M_RAHOVART"
     Health 200
     //Translation Greenish/Brown:Blue
+
+    States {
+        Death:
+            PAIN H  8 Bright
+            PAIN I  8 Bright A_Scream
+            PAIN JK 8 Bright
+            PAIN L  8 Bright A_PainDie("DRRPLostSoul")
+            PAIN M  8 Bright
+            Stop
+    }
 }
 
 Actor Beholder : DRRPPainElemental 10479 {
@@ -354,6 +380,16 @@ Actor Beholder : DRRPPainElemental 10479 {
     Tag "$DRRP_M_BEHOLDER"
     Health 100
     //Translation Greenish/Brown:Green
+
+    States {
+        Death:
+            PAIN H  8 Bright
+            PAIN I  8 Bright A_Scream
+            PAIN JK 8 Bright
+            PAIN L  8 Bright A_PainDie("Phantom")
+            PAIN M  8 Bright
+            Stop            
+    }
 }
 
 
