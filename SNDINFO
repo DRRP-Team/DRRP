@@ -254,6 +254,8 @@ $ambient 4 ambient/mach04 Point continuous 0.45
 $ambient 6 ambient/lopneon2 Point 3.0 continuous 0.1
 
 // === Unlimiting ===
-$Limit              SFX/FireStart       0
-$Limit              SFX/FireLoop        0
-$Limit              SFX/FireDie         0
+$Limit              SFX/FireStart           0
+$Limit              SFX/FireLoop            0
+$Limit              SFX/FireDie             0
+$Limit              generic/expl/explode    0
+$Limit              generic/expl/barrel     0

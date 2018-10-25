@@ -12,7 +12,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
 
     Tag "$DRRP_E_BARREL"
     Health 1
-    BloodColor "FF FF 00"
+    BloodColor "00 FF 00"
     DamageFactor DRRPFireExtDmg, 0.0
 
     States  {
@@ -22,7 +22,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
         Death:
             BEXP A 5 Bright
             BEXP B 5 Bright A_Scream
-            BEXP C 0 Bright A_Quake(6, 5, 0, 128, "world/barrelx")
+            BEXP C 0 Bright A_Quake(6, 5, 0, 128, "generic/expl/barrel")
             BEXP C 5 Bright
             BEXP D 5 Bright A_Explode
             BEXP E 10 Bright
@@ -80,7 +80,7 @@ Actor Rod : ExplosiveBarrel 10704 {
     //$Category DDecorations
 
     Tag "$DRRP_E_POWERCOUPLING"
-    Scale 0.5
+    Scale 0.6
     Health 666
     Mass 10000000
     DamageFactor DRRPFireExtDmg, 0.0
@@ -90,12 +90,12 @@ Actor Rod : ExplosiveBarrel 10704 {
             ROD1 ABCDEF 2
             Loop
         Death:
-            BEXP A 5 Bright
-            BEXP B 5 Bright A_Scream
-            BEXP C 5 Bright
-            BEXP D 0 Bright A_Quake(4, 5, 0, 128, "world/barrelx")
-            BEXP D 5 Bright A_Explode
-            BEXP E 10 Bright
+            MISL B 5 Bright
+            MISL C 5 Bright A_Scream
+            MISL B 5 Bright
+            MISL C 0 Bright A_Quake(4, 5, 0, 128, "generic/expl/barrel")
+            MISL B 5 Bright A_Explode
+            MISL D 10 Bright
             TNT1 A 5 ACS_Execute(101,0)
             TNT1 A 1050 Bright A_BarrelDestroy
             Stop

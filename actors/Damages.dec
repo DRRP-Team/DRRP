@@ -83,11 +83,22 @@ Actor DRRPLava 10251 {
 
 // Scripted
 
-Actor Explosion : Rocket {
-    -ROCKETTRAIL
+Actor Explosion {
+    +NOGRAVITY
+    +DONTFALL
 
     Tag "$DRRP_D_EXPLOSION"
 
-    Spawn Parent Death
     SpawnID 253
+    
+    SeeSound "generic/expl/explode"
+
+    States {
+        Spawn:
+            MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_ITEM, 1.0) // FIXME: This sound doesn't play... :(
+            MISL B 8 Bright A_Explode
+            MISL C 6 Bright
+            MISL D 4 Bright
+            Stop
+    }
 }
