@@ -123,51 +123,27 @@ monster/cyberdemon/death    CYBRDTH
 //Drugs
 // dag
 
-monsters/hellhound/see      DOG1RECO // FIXME: Remove
-monsters/hellhound/pain     DOG1PAIN // FIXME: Remove
-monsters/hellhound/bite     DOG1BITE // FIXME: Remove
-monsters/hellhound/die      DOG1DIE  // FIXME: Remove
+monsters/hellhound/see       DOG1RECO
+monsters/hellhound/pain      DOG1PAIN
+monsters/hellhound/bite      DOG1BITE
+monsters/hellhound/death     DOG1DIE
 
-monster/hellhound/see       DOG1RECO
-monster/hellhound/pain      DOG1PAIN
-monster/hellhound/bite      DOG1BITE
-monster/hellhound/death     DOG1DIE
+monsters/hellhound/bark1     DOG1BRK1
+monsters/hellhound/bark2     DOG1BRK2
+monsters/hellhound/bark3     DOG1BRK3
 
-monster/hellhound/bark1     DOG1BRK1
-monster/hellhound/bark2     DOG1BRK2
-monster/hellhound/bark3     DOG1BRK3
-
-$random monster/hellhound/bark {
-    monster/hellhound/bark1
-    monster/hellhound/bark2
-    monster/hellhound/bark3
+$random monsters/hellhound/bark {
+    monsters/hellhound/bite
+    monsters/hellhound/bark1
+    monsters/hellhound/bark2
+    monsters/hellhound/bark3
 }
 
-$random monsters/hellhound/bark { // FIXME: Remove
-    monster/hellhound/bark
-}
+monsters/cerberus/see       DOG2RECO
 
-
-// FIXME: demonWOLF
-monsters/demondog/see      DOG2RECO
-
-monsters/demondog/bark1    DOG2BRK1
-monsters/demondog/bark2    DOG2BRK2
-monsters/demondog/bark3    DOG2BRK3
-
-$random monsters/demondog/bark {
-    monsters/demondog/bark1
-    monsters/demondog/bark2
-    monsters/demondog/bark3
-}
-
-monsters/cerberus/see       DOG3RECO
-monsters/cerberus/jump      DOG3JUMP
-monsters/cerberus/land      DOG3LAND
-
-monsters/cerberus/bark1     DOG3BRK1
-monsters/cerberus/bark2     DOG3BRK2
-monsters/cerberus/bark3     DOG3BRK3
+monsters/cerberus/bark1     DOG2BRK1
+monsters/cerberus/bark2     DOG2BRK2
+monsters/cerberus/bark3     DOG2BRK3
 
 $random monsters/cerberus/bark {
     monsters/cerberus/bark1
@@ -175,26 +151,18 @@ $random monsters/cerberus/bark {
     monsters/cerberus/bark3
 }
 
-dog/active			DOG1RECO
-dog/attack			DOG1BITE
-dog/death			DOG1DIE
-dog/pain			DOG1PAIN
-dog/sight			DOG1BRK1
+monsters/demonwolf/see      DOG3RECO
+monsters/demonwolf/jump     DOG3JUMP
+monsters/demonwolf/land     DOG3LAND
 
-$random dog/active {
-    monster/hellhound/see
-    monster/demondog/see
-}
+monsters/demonwolf/bark1    DOG3BRK1
+monsters/demonwolf/bark2    DOG3BRK2
+monsters/demonwolf/bark3    DOG3BRK3
 
-$random dog/attack {
-    monster/hellhound/bite
-    monster/hellhound/bark
-    monster/cerberus/bark
-}
-
-$random dog/sight {
-    monster/hellhound/bark
-    monster/cerberus/bark
+$random monsters/demonwolf/bark {
+    monsters/demonwolf/bark1
+    monsters/demonwolf/bark2
+    monsters/demonwolf/bark3
 }
 
 // Characters

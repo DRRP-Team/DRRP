@@ -68,33 +68,46 @@
 
 // Dogs -------------------------------------------------------------------------------
 
-Actor Hellhound : MBFHelperDog replaces MBFHelperDog 10246 {
+Actor DRRPDog : MBFHelperDog replaces MBFHelperDog {
+    DamageFactor DRRPShotgunDmg, 2.0
+    DamageFactor DRRPPlasmaDmg, 2.0
+
+    ActiveSound  "monsters/hellhound/see"
+    PainSound    "monsters/hellhound/pain"
+    DeathSound   "monsters/hellhound/death"
+    SeeSound     "monsters/hellhound/bark"
+    AttackSound  "monsters/hellhound/bark"
+}
+
+Actor Hellhound : DRRPDog 10246 {
     //$Category DMonsters
 
     Tag "$DRRP_M_HELLHOUND"
     Health 25
-    DamageFactor DRRPShotgunDmg, 2.0
-    DamageFactor DRRPPlasmaDmg, 2.0
 }
 
-Actor Cerberus : MBFHelperDog 10346 {
+Actor Cerberus : DRRPDog 10346 {
     //$Category DMonsters
 
     Tag "$DRRP_M_CERBERUS"
     Health 50
     Translation "64:79=32:47"
-    DamageFactor DRRPShotgunDmg, 2.0
-    DamageFactor DRRPPlasmaDmg, 2.0
+
+    ActiveSound  "monsters/cerberus/see"
+    SeeSound     "monsters/cerberus/bark"
+    AttackSound  "monsters/cerberus/bark"
 }
 
-Actor DemonWolf : MBFHelperDog 10446 {
+Actor DemonWolf : DRRPDog 10446 {
     //$Category DMonsters
 
     Tag "$DRRP_M_DEMONWOLF"
     Health 50
     Translation "64:79=197:200"
-    DamageFactor DRRPShotgunDmg, 2.0
-    DamageFactor DRRPPlasmaDmg, 2.0
+
+    ActiveSound "monsters/demonwolf/see"
+    SeeSound    "monsters/demonwolf/bark"
+    AttackSound "monsters/demonwolf/bark"
 }
 
 
