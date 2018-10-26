@@ -91,13 +91,12 @@ Actor Explosion {
 
     SpawnID 253
     
-    SeeSound "generic/expl/explode"
-
     States {
         Spawn:
-            MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_ITEM, 1.0) // FIXME: This sound doesn't play... :(
-            MISL B 8 Bright A_Explode
-            MISL C 6 Bright
+			MISL B 0 Bright
+            MISL B 1 Bright A_PlaySound( "generic/expl/explode", CHAN_AUTO )
+            MISL B 5 Bright A_Explode
+            MISL C 5 Bright
             MISL D 4 Bright
             Stop
     }
