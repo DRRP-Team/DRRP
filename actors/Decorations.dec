@@ -51,11 +51,17 @@ Actor Table 10702 {
     }
 }
 
-Actor BlueLamp : Column 10703 {
+Actor YellowLamp : Column replaces Column {
+    //$Category DDecorations
+    
+    Tag "$DRRP_E_YELLOWLAMP"
+    Radius 20
+}
+
+Actor BlueLamp : YellowLamp 10703 {
     //$Category DDecorations
 
     Tag "$DRRP_E_BLUELAMP"
-    Radius 20
     Translation "224:231=192:195", "160:167=196:199"
 }
 
