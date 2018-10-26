@@ -4,25 +4,33 @@
 Sprite "YMEDA0", 28, 19
 {
 	Offset 13, 19
-	Patch "MEDIA0", 0, 0
+	Patch "MEDIA0", 0, 0 {
+		Translation "168:185=229:229", "186:191=163:163"
+	}
 }
 
 Sprite "RMEDA0", 28, 19
 {
 	Offset 13, 19
-	Patch "MEDIA0", 0, 0
+	Patch "MEDIA0", 0, 0 {
+		Translation "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
+	}
 }
 
 Sprite "YMEDI0", 28, 19
 {
 	Offset -3, -5
-	Patch "MEDIA0", 0, 0
+	Patch "MEDIA0", 0, 0 {
+		Translation "168:185=229:229", "186:191=163:163"
+	}
 }
 
 Sprite "RMEDI0", 28, 19
 {
 	Offset -3, -5
-	Patch "MEDIA0", 0, 0
+	Patch "MEDIA0", 0, 0 {
+		Translation "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
+	}
 }
 
 Sprite "SMOKA0", 100, 100
@@ -44,7 +52,9 @@ Sprite "BALLA0", 55, 20
 Sprite "STKEYS9", 7, 5
 {
 	Offset 0, -1
-	Patch "STKEYS2", 0, 0
+	Patch "STKEYS2", 0, 0 {
+		Translation "168:191=112:127", "16:47=112:127", "1:2=126:127"
+	}
 }
 
 Sprite "EXITA0", 64, 64
