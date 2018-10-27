@@ -69,6 +69,7 @@
 // Dogs -------------------------------------------------------------------------------
 
 Actor DRRPDog : MBFHelperDog replaces MBFHelperDog {
+    Health       25
     DamageFactor DRRPShotgunDmg, 2.0
     DamageFactor DRRPPlasmaDmg, 2.0
 
