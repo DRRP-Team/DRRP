@@ -110,35 +110,28 @@ Actor Credit : Inventory 10620 {
     +NOTDMATCH
     +FLOORCLIP
     +INVENTORY.INVBAR
-
     Tag                     "$DRRP_I_1CREDIT"
-    Inventory.MaxAmount     0x7fffffff
     Inventory.Icon          "CREDH0"
     Inventory.PickupMessage "Picked up a credit."
-
+    Inventory.MaxAmount     0x7FFFFFFF
     States {
         Spawn:
-            COIN A -1
+            CRED A -1
             Stop
     }
 }
 
 Actor GoldCredit : CustomInventory 10621 {
     //$Category Items
-
     +DROPPED
     +NOTDMATCH
     +FLOORCLIP
-
     Tag                     "$DRRP_I_5CREDITS"
-    Inventory.Icon          "COINC0"
     Inventory.PickupMessage "Picked up 5 credits."
-
     // Translation "112:127=%[0.00,0.00,0.00]:[2.00,1.01,0.00]"
-
     States {
         Spawn:
-            COIN C -1
+            CRED B -1
             Stop
         Pickup:
             TNT1 A 0 A_GiveInventory("Credit", 5)
