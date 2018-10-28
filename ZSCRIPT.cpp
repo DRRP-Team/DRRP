@@ -8,9 +8,14 @@
 version "2.5"
 
 #include "zscript/weapons.zs"
-
+#include "zscript/doorcode.zs"
+#include "zscript/conversation.zs"
+#include "zscript/shaders.zs"
+#include "zscript/flashlight.zs"
+#include "zscript/hud.zs"
 
 class DRRPFire_zspatch : Actor {
+
     override bool CanCollideWith (Actor other, bool passive) {
         String cn = other.getClassName();
         if(cn == "DoomRPGPlayer"
@@ -31,8 +36,3 @@ class DRRPFire_zspatch : Actor {
         return true;
     }
 }
-
-#include "zscript/doorcode.zs"
-#include "zscript/conversation.zs"
-#include "zscript/flashlight.zs"
-#include "zscript/hud.zs"
