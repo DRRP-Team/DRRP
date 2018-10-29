@@ -7,12 +7,14 @@
 
 version "2.5"
 
+#include "DRRPZForms/Include.zs"
 #include "zscript/weapons.zs"
 #include "zscript/doorcode.zs"
 #include "zscript/conversation.zs"
 #include "zscript/shaders.zs"
 #include "zscript/flashlight.zs"
 #include "zscript/hud.zs"
+#include "zscript/notebook.zs"
 
 class DRRPFire_zspatch : Actor {
 

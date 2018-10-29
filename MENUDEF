@@ -73,3 +73,9 @@ OptionMenu "Shaders" {
 	Option "$DRRP_D_MENU_SHADERS_HELMET","drrp_enable_helmet_shader","ONOFF"
 	Option "Enable cinematic shaders","drrp_enable_cinematic_shader","ONOFF"
 }
+
+OptionMenu "NotebookMenu" protected {
+	Class "NotebookMenu"
+	Title "$DRRP_B_ID117"
+	// filled in by code
+}

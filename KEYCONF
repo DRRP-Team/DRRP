@@ -7,3 +7,8 @@ addkeysection "Flashlight" DRRPKeySection
     addmenukey "Toggle Flashlight" toggleflashlight 
     alias toggleflashlight "pukename toggleflashlight"
     defaultbind F toggleflashlight
+	
+addkeysection "DRRP" DRRPNotebookSection
+	addmenukey "Open Notebook" opennotebook
+	alias opennotebook "openmenu NotebookMenu"
+	defaultbind N opennotebook
