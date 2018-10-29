@@ -21,7 +21,7 @@ public class ByteCodeElement {
 		switch(cmdid) {
 		case 26:
 		case 8:
-			return theIf + "ACS_NamedExecuteWait(\"window\", 0, getString(" + (arg1 + 1) + "));";
+			return theIf + "ACS_NamedExecuteWait(\"window\", 0, getString(" + arg1 + "));";
 		case 9:
 			return theIf + "GiveInventory(\"MapRevealer\", 1);";
 		case 22:
@@ -45,7 +45,7 @@ public class ByteCodeElement {
 			case 21:
 				return theIf + (cmdid == 22 ? "Take" : "Give") + "Inventory(\"" + statType + "\", " + ((arg1 >> 8) & 0xFF) + ");";
 			case 23:
-				return theIf + "if(CheckInventory(\"" + statType + "\") < " + ((arg1 >> 8) & 0xFF) + ") { ACS_NamedExecuteWait(\"window\", 0, getString(" + (((arg1 >> 16) & 0xFFFF) + 1) + ")); terminate; }";
+				return theIf + "if(CheckInventory(\"" + statType + "\") < " + ((arg1 >> 8) & 0xFF) + ") { ACS_NamedExecuteWait(\"window\", 0, getString(" + (((arg1 >> 16) & 0xFFFF)) + ")); terminate; }";
 			}
 		}
 		case 19: 
@@ -58,6 +58,8 @@ public class ByteCodeElement {
 			return theIf + "Thing_Remove(# fill me #);";
 		case 7:
 			return theIf + "SpawnSpot(# fill me #);";
+		case 40:
+			return theIf + "ScriptCall(\"NotebookAPI\", \"AddNotebookEntry\", getString(" + (arg1) + "));";
 		}
 		
 		return "/* Not Implemented */";
