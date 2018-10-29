@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) 2017-2018 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+
+Actor PlayerFeature : Inventory {
+    Inventory.MaxAmount 999    
+}
+
+Actor PlayerAccuracy    : PlayerFeature {}
+Actor PlayerAgility     : PlayerFeature {}
+Actor PlayerStrength    : PlayerFeature {}
+Actor PlayerDefence     : PlayerFeature {}
+Actor PlayerLevel       : PlayerFeature {}
+Actor PlayerStamina     : PlayerFeature {}

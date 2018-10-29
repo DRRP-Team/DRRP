@@ -13,6 +13,7 @@
 #include actors/Monsters.dec
 #include actors/Characters.dec
 #include actors/Decorations.dec
+#include actors/System.dec
 
 /** Manifest
  * Items        10600-10700
@@ -49,6 +50,5 @@ Actor DoomRPGPlayer : DoomPlayer {
     Player.WeaponSlot 8, HellHoundGun, CerberusGun, DemonWolfGun
 
     Player.StartItem "DRRPPistol"
-    Player.StartItem "Fist"
-    Player.StartItem "Clip", 50
+    Player.StartItem "Clip", 8
 }
