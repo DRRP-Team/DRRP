@@ -24,152 +24,192 @@ Intermission Inter_Cast {
 Intermission Doom2Cast {
     Cast {
         CastClass = "Hellhound"
-        CastName  = "Hell Hound (Herodemon's rage)"
+        CastName  = "$DRRP_M_HELLHOUND"
     }
 
     Cast {
         CastClass = "Cerberus"
-        CastName  = "Cerberus"
+        CastName  = "$DRRP_M_CERBERUS"
     }
 
     Cast {
         CastClass = "DemonWolf"
-        CastName  = "Demon Wolf"
+        CastName  = "$DRRP_M_DEMONWOLF"
     }
 
     Cast {
         CastClass = "ZombiePvt"
-        CastName  = "Zombie Private"
+        CastName  = "$DRRP_M_ZOMBIEPVT"
     }
 
     Cast {
         CastClass = "ZombieLt"
-        CastName  = "Zombie Lt"
+        CastName  = "$DRRP_M_ZOMBIELT"
     }
 
     Cast {
         CastClass = "ZombieCpt"
-        CastName  = "Zombie Capitan"
+        CastName  = "$DRRP_M_ZOMBIECPT"
     }
 
     Cast {
         CastClass = "Impling"
-        CastName  = "Impling"
+        CastName  = "$DRRP_M_IMPLING"
     }
 
     Cast {
         CastClass = "Imp"
-        CastName  = "Imp"
+        CastName  = "$DRRP_M_IMP"
     }
 
     Cast {
         CastClass = "ImpLord"
-        CastName  = "Imp Lord"
+        CastName  = "$DRRP_M_IMPLORD"
     }
 
     Cast {
         CastClass = "BullDemon"
-        CastName  = "Bull Demon"
+        CastName  = "$DRRP_M_BULLDEMON"
     }
 
     Cast {
         CastClass = "Pinky"
-        CastName  = "Pinky"
+        CastName  = "$DRRP_M_PINKY"
     }
 
     Cast {
         CastClass = "Belphegor"
-        CastName  = "Belphegor"
+        CastName  = "$DRRP_M_BELPHEGOR"
     }
 
     Cast {
         CastClass = "Malrath"
-        CastName  = "Malrath"
+        CastName  = "$DRRP_M_MALWRATH"
     }
 
     Cast {
         CastClass = "DRRPCacodemon"
-        CastName  = "Cacodemon"
+        CastName  = "$DRRP_M_CACODEMON"
     }
 
     Cast {
         CastClass = "Wretched"
-        CastName  = "Wretched"
+        CastName  = "$DRRP_M_WRETCHED"
     }
 
     Cast {
         CastClass = "Phantom"
-        CastName  = "Phantom"
+        CastName  = "$DRRP_M_PHANTOM"
     }
 
     Cast {
         CastClass = "DRRPLostSoul"
-        CastName  = "Lost Soul"
+        CastName  = "$DRRP_M_LOSTSOUL"
     }
 
     Cast {
         CastClass = "Nightmare"
-        CastName  = "Nightmare"
+        CastName  = "$DRRP_M_NIGHTMARE"
     }
 
     Cast {
         CastClass = "Troop"
-        CastName  = "Troop"
+        CastName  = "$DRRP_M_TROOP"
     }
 
     Cast {
         CastClass = "Commando"
-        CastName  = "Commando"
+        CastName  = "$DRRP_M_COMMANDO"
     }
 
     Cast {
         CastClass = "Assassin"
-        CastName  = "Assassin"
+        CastName  = "$DRRP_M_ASSASSIN"
     }
 
     Cast {
         CastClass = "Infernis"
-        CastName  = "Infernis"
+        CastName  = "$DRRP_M_INFERNIS"
     }
 
     Cast {
         CastClass = "ArchVile"
-        CastName  = "Arch-Vile"
+        CastName  = "$DRRP_M_ARCHVILE"
     }
 
     Cast {
         CastClass = "Apollyon"
-        CastName  = "Apollyon"
+        CastName  = "$DRRP_M_APOLLYON"
     }
 
     Cast {
         CastClass = "Ghoul"
-        CastName  = "Ghoul"
+        CastName  = "$DRRP_M_GHOUL"
     }
 
     Cast {
         CastClass = "Fiend"
-        CastName  = "Fiend"
+        CastName  = "$DRRP_M_FIEND"
     }
 
     Cast {
         CastClass = "DRRPRevenant"
-        CastName  = "Revenant"
+        CastName  = "$DRRP_M_REVENANT"
     }
 
     Cast {
         CastClass = "Behemoth"
-        CastName  = "Behemoth"
+        CastName  = "$DRRP_M_BEHEMOTH"
     }
 
     Cast {
         CastClass = "Mancubus"
-        CastName  = "Mancubus"
+        CastName  = "$DRRP_M_MANCUBUS"
+    }
+    
+    Cast {
+        CastClass = "Druj"
+        CastName  = "$DRRP_M_DRUJ"
     }
 
     Cast {
-        CastClass = "Druj"
-        CastName  = "Druj"
+        CastClass = "Beholder"
+        CastName  = "$DRRP_M_BEHOLDER"
+    }
+
+    Cast {
+        CastClass = "Rahovart"
+        CastName  = "$DRRP_M_RAHOVART"
+    }
+
+    Cast {
+        CastClass = "DRRPPainElemental"
+        CastName  = "$DRRP_M_PAINELEMENTAL"
+    }
+
+    Cast {
+        CastClass = "Ogre"
+        CastName  = "$DRRP_M_OGRE"
+    }
+
+    Cast {
+        CastClass = "DRRPHellKnight"
+        CastName  = "$DRRP_M_HELLKNIGHT"
+    }
+
+    Cast {
+        CastClass = "DRRPBaronOfHell"
+        CastName  = "$DRRP_M_BARON"
+    }
+
+    Cast {
+        CastClass = "DrGuerard"
+        CastName  = "$DRRP_M_KRONOS"
+    }
+
+    Cast {
+        CastClass = "Cyberdemon"
+        CastName  = "$DRRP_M_CYBERDEMON"
     }
 
     Link = Doom2Cast
