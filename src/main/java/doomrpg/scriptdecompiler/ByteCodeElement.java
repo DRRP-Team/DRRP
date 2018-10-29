@@ -1,9 +1,67 @@
 package doomrpg.scriptdecompiler;
 
+import java.util.List;
+
 public class ByteCodeElement {
 	int cmdid;
 	int arg1;
 	int arg2;
+	
+	private int lookupEventVar() {
+		int in = (((short) ((arg2 & 0xFFFF0000) >> 16)) & 0xFFFF);
+		if(in == 0) return 0;
+		int i = 0;
+		while((1 << (i++)) != in && i < 31);
+		return i;
+	}
+	
+	public String toACS(List<EventDef> lookupList) {
+		String theIf = "";
+		theIf += "if(arg2 == " + lookupEventVar() + ") ";
+		switch(cmdid) {
+		case 26:
+		case 8:
+			return theIf + "ACS_NamedExecuteWait(\"window\", 0, getString(" + (arg1 + 1) + "));";
+		case 9:
+			return theIf + "GiveInventory(\"MapRevealer\", 1);";
+		case 22:
+		case 21:
+		case 23:
+		{
+			String statType = "ERROR";
+			switch (arg1 & 0xFF) {
+			case 0:
+				statType = "Health";
+			break;
+			case 1:
+				statType = "Armor";
+			break;
+			case 2:
+				statType = "Credit";
+				break;
+			}
+			switch(cmdid) {
+			case 22:
+			case 21:
+				return theIf + (cmdid == 22 ? "Take" : "Give") + "Inventory(\"" + statType + "\", " + ((arg1 >> 8) & 0xFF) + ");";
+			case 23:
+				return theIf + "if(CheckInventory(\"" + statType + "\") < " + ((arg1 >> 8) & 0xFF) + ") { ACS_NamedExecuteWait(\"window\", 0, getString(" + (((arg1 >> 16) & 0xFFFF) + 1) + ")); terminate; }";
+			}
+		}
+		case 19: 
+			return theIf + "ScriptCall(\"ConversationController\", \"SetArgument\", # fill me with id #, arg2 + 1);";
+		case 11: 
+			return theIf + "ScriptCall(\"ConversationController\", \"SetArgument\", # fill me with id #, " + ((arg1 >> 16) & 0xFFFF) + ");";
+		case 37:
+			return theIf + "Delay(" + arg1 * 35 / 1000 + ");";
+		case 18:
+			return theIf + "Thing_Remove(# fill me #);";
+		case 7:
+			return theIf + "SpawnSpot(# fill me #);";
+		}
+		
+		return "/* Not Implemented */";
+	}
 	
 	public String toIR(int pos) {
 		String cmdname = "UNKNOWN_" + cmdid;
