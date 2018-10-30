@@ -7,8 +7,14 @@ class NotebookMenu : OptionMenu {
 	void Init(Menu parent, OptionMenuDescriptor desc) {
 		super.Init(parent, desc);
 		playerinfo player = players[consoleplayer];
-		NotebookItem nbitem = NotebookItem(player.mo.FindInventory("NotebookItem"));
 		desc.mItems.clear();
+		if(player == null || player.mo == null) {
+			OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+			item.Init("You should be in game to use notebook");
+			desc.mItems.push(item);
+			return;
+		}
+		NotebookItem nbitem = NotebookItem(player.mo.FindInventory("NotebookItem"));
 		if(nbitem == null || nbitem.languageStrings.size() == 0) {
 			OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 			item.Init("Notebook is empty");
