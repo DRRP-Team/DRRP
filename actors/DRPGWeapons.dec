@@ -10,6 +10,8 @@
 Actor DRRPAxe: Weapon 10557  {
     //$Category DWeapons
 
+    +NOALERT
+    +NOAUTOFIRE
     +WEAPON.MELEEWEAPON
 
     Tag "$DRRP_W_AXE"
@@ -17,7 +19,7 @@ Actor DRRPAxe: Weapon 10557  {
     Obituary "%o was chopped by %k"
     SeeSound "weapons/plasmax"
 
-    Inventory.PickupMessage "Picked up an axe."
+    Inventory.PickupMessage "$DRRP_W_AXE"
     Inventory.Icon "AXEIA0"
     Inventory.PickupSound "TAUNT"
     Weapon.SelectionOrder 1880
@@ -28,134 +30,21 @@ Actor DRRPAxe: Weapon 10557  {
             AXEI A -1
             Stop
         Ready:
-            AXEG A 1 A_WeaponReady
+            AXEF A 1 A_WeaponReady
             Loop
         Select:
-            AXEG A 1 A_Raise
+            AXEF A 1 A_Raise
             Loop
         Deselect:
-            AXEG A 1 A_Lower
+            AXEF A 1 A_Lower
             Loop
         Fire:
-            //AXEF B 0 A_PlaySound("ZBMB1", CHAN_WEAPON)
-            AXEG A 0 A_PlaySound( "ZBMB2", CHAN_WEAPON, 1.0, True )
-            AXEG A 0 A_GunFlash( "Effect1" )
-            AXEH A 2
-        Hold:        // [AXE H]old A-F; [AXE G]un exclude "C" frame
-            AXEH A 0 A_GiveInventory( "DRRPAxeLoad" )
-            AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 0, 6 )
-            AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 31, 6 )
-            AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 21, 6 )
-            AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 12, 6 )
-            AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 6, 6 )
-            AXEH A 0 A_JumpIfInventory( "DRRPAxeLoad", 2, 6 )
-            AXEH F 1
-            Goto HoldRefire
-            AXEH E 1
-            Goto HoldRefire
-            AXEH D 1
-            Goto HoldRefire
-            AXEH C 1
-            Goto HoldRefire
-            AXEH B 1
-            Goto HoldRefire
-            AXEH A 1
-        HoldRefire:
-            AXEG B 0 A_ReFire( "Hold" )
-            Goto FireHold
-        Effect1:
-            //TNT1 A 1 A_SetAngle( Angle - ( 40 - CountInv( "DRRPAxeLoad" ) ) / 16 )
-            //TNT1 A 0 A_SetPitch( Pitch - ( 2 - CountInv( "DRRPAxeLoad" ) / 20 ) )
-            //Loop                        // Alas, with this piece of code turns was very ugly...
-            TNT1 A 0 A_SetPitch( Pitch - 3 )
-            TNT1 A 1 A_SetAngle( Angle - 1 )
-            TNT1 A 0 A_SetPitch( Pitch - 2.5 )
-            TNT1 A 1 A_SetAngle( Angle - 1 )
-            TNT1 A 0 A_SetPitch( Pitch - 2 )
-            TNT1 A 1 A_SetAngle( Angle - 1.1 )
-            TNT1 A 0 A_SetPitch( Pitch - 1.7 )
-            TNT1 A 1 A_SetAngle( Angle - 1 )
-            TNT1 A 0 A_SetPitch( Pitch - 1.4 )
-            TNT1 A 1 A_SetAngle( Angle - 1 )
-            TNT1 A 0 A_SetPitch( Pitch - 1.1 )
-            TNT1 A 2 A_SetAngle( Angle - 0.9 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.8 )
-            TNT1 A 2 A_SetAngle( Angle - 0.9 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.45 )
-            TNT1 A 2 A_SetAngle( Angle - 0.7 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.5 )
-            TNT1 A 2 A_SetAngle( Angle - 0.55 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.4 )
-            TNT1 A 2 A_SetAngle( Angle - 0.45 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.35 )
-            TNT1 A 2 A_SetAngle( Angle - 0.35 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.3 )
-            TNT1 A 2 A_SetAngle( Angle - 0.23 )
-            TNT1 A 0 A_SetPitch( Pitch - 0.2 )
-            TNT1 A 2 A_SetAngle( Angle - 0.15 )
-            TNT1 AAAAAAAAAA 2 {
-                A_SetAngle( Angle - FRandom( 0.03, 0.07 ) );
-                A_SetPitch( Pitch - FRandom( 0.04, 0.15 ) );
-            }
-            TNT1 AAAAA 3 {
-                A_SetAngle( Angle - FRandom( 0.015, 0.045 ) );
-                A_SetPitch( Pitch - FRandom( 0.02, 0.075 ) );
-            }
-            Stop
-        FireHold:
-            AXEG BD 2
-            AXEG E 1
-            AXEG F 0 A_GunFlash( "Effect2" )
-            AXEG GH 1
-            AXEG I 1 A_StopSound( CHAN_WEAPON )
-            AXEG JK 1
-        StopHold:
-            AXEG L 0 {
-                A_CustomPunch( CountInv( "DRRPAxeLoad" ), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
-                A_TakeInventory( "DRRPAxeLoad", 0 );
-            }
-            AXEG L 2
-            AXEG MNO 1
-            //AXEG NO 2
-            TNT1 A 9
-            AXEG EBC 2
-            AXEH A 3
+            AXEF B 3
+            AXEF C 3
+            AXEF D 4 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus")
+            AXEF E 5
             Goto Ready
-        Effect2:
-            TNT1 A 0 A_SetPitch( Pitch - FRandom( 1, 2 ) )
-            TNT1 A 1 A_SetAngle( Angle - FRandom( 3, 5 ) )
-            TNT1 A 0 A_SetPitch( Pitch - FRandom( 0.8, 1.8 ) )
-            TNT1 A 1 A_SetAngle( Angle - FRandom( 1.3, 4.3 ) )
-            TNT1 A 0 A_SetPitch( Pitch - FRandom( 0.7, 1.7 ) )
-
-            TNT1 AAAA 1 {
-                A_SetAngle( Angle + FRandom( 1.2, 3 ) );
-                A_SetPitch( Pitch + FRandom( 2.5, 5.2 ) );
-            }
-            TNT1 AAAA 1 {
-                A_SetAngle( Angle + FRandom( 0.4, 1.7 ) );
-                A_SetPitch( Pitch + FRandom( 1.1, 3.5 ) );
-            }
-            TNT1 A 1 A_SetAngle( Angle + 1.5 )
-            TNT1 A 0 A_SetPitch( Pitch + FRandom( 0.35, 0.75 ) )
-            TNT1 A 2 A_SetAngle( Angle + 0.975 )
-            TNT1 A 3
-            TNT1 A 0 A_SetPitch( Pitch - FRandom( 0.13, 0.35 ) )
-            TNT1 A 2 A_SetAngle( Angle + 0.45 )
-            TNT1 A 0 A_SetPitch( Pitch - FRandom( 0.48, 1 ) )
-            TNT1 A 2 A_SetAngle( Angle - FRandom( 0.2, 0.4 ) )
-            TNT1 A 0 A_SetPitch( Pitch - FRandom( 0.7, 1.5 ) )
-            TNT1 AAA 1 {
-                A_SetAngle( Angle - FRandom( 0.2, 0.675 ) );
-                A_SetPitch( Pitch - FRandom( 0.5, 0.9 ) );
-            }
-            TNT1 AAA 1 A_SetAngle( Angle - 0.55 )
-            Stop
     }
-}
-
-Actor DRRPAxeLoad : Inventory {
-    Inventory.MaxAmount 40
 }
 
 Actor DRRPAxePuff : BulletPuff {
@@ -171,7 +60,7 @@ Actor FireExt : Weapon 10556 {
 
     Inventory.Icon "FEXTI0"
     Inventory.PickupSound "voice/wtf"
-    Inventory.Pickupmessage "Got $DRRP_W_FIREEXT"
+    Inventory.Pickupmessage "$DRRP_W_FIREEXT"
     Weapon.AmmoUse 1
     Weapon.AmmoGive 40
     Weapon.AmmoType "Balloon"
@@ -184,48 +73,48 @@ Actor FireExt : Weapon 10556 {
             Loop
         Deselect:
             FIEX B 0 ACS_NamedExecuteAlways("fireextfade", 0, 0)
-            FIEX B 0 A_StopSound( CHAN_WEAPON )
+            FIEX B 0 A_StopSound(CHAN_WEAPON)
             FIEX A 1 A_Lower
             Loop
         Select:
             FIEX A 1 A_Raise
             Loop
         Fire:
-            FIEX B 0 A_Recoil( 1.7 )
+            FIEX B 0 A_Recoil(1.7)
             TNT1 A 0 A_PlaySound("weapon/fireext/loop", CHAN_WEAPON, 1, 1)
-            FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 3/*10*/ ), True )
-            FIEX B 0 A_Recoil( 0.7 )
-            FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
+            FIEX B 1 A_FireCustomMissile("FireExtPuff", Random(0, 3/*10*/), True)
+            FIEX B 0 A_Recoil(0.7)
+            FIEX BB 1 A_FireCustomMissile("FireExtPuffNoDamage" , Random(0, 10), False)
             FIEX B 0 ACS_NamedExecuteAlways("fireextfade", 0, 1)
         FireLoop:
-            //TNT1 A 0 A_Quake( 1, Random( 4, 8 ), 0, 4 )
-            TNT1 A 0 A_PlaySound( "weapon/fireext/loop", CHAN_WEAPON, 1, 1 )
-            TNT1 A 0 A_SetAngle( FRandom( 0.2, -0.2 ) + Angle )
-            TNT1 A 0 A_SetPitch( FRandom( 0.2, -0.5 ) + Pitch )
-            FIEX C 0 A_Recoil( 0.01 )
-            FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
-            TNT1 A 0 A_SetBlend( "CC CC CC", FRandom( 0.05, 0.15 ), Random( 3, 10 ) )
-            TNT1 A 0 A_SetAngle( FRandom( 0.2, -0.2 ) + Angle )
-            TNT1 A 0 A_SetPitch( FRandom( 0.2, -0.5 ) + Pitch )
-            FIEX C 0 A_Recoil( 0.02 )
-            FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-            TNT1 A 0 A_SetAngle( FRandom( 0.2, -0.2 ) + Angle )
-            TNT1 A 0 A_SetPitch( FRandom( 0.2, -0.5 ) + Pitch )
-            FIEX C 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
-            TNT1 A 0 A_SetAngle( FRandom( 0.2, -0.2 ) + Angle )
-            TNT1 A 0 A_SetPitch( FRandom( 0.2, -0.5 ) + Pitch )
-            FIEX C 0 A_Recoil( 0.02 )
-            FIEX CC 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-            TNT1 A 0 A_SetAngle( FRandom( 0.2, -0.2 ) + Angle )
-            TNT1 A 0 A_SetPitch( FRandom( 0.2, -0.5 ) + Pitch )
-            FIEX A 0 A_ReFire( "FireLoop" )
-            FIEX B 1 A_FireCustomMissile( "FireExtPuff", Random( 0, 10 ), True )
-            FIEX BB 1 A_FireCustomMissile( "FireExtPuffNoDamage" , Random( 0, 10 ), False )
-            FIEX B 0 A_SetAngle( FRandom( 1, -1 ) + Angle )
-            TNT1 A 0 A_SetPitch( FRandom( 1, -1 ) + Pitch )
+            //TNT1 A 0 A_Quake(1, Random(4, 8), 0, 4)
+            TNT1 A 0 A_PlaySound("weapon/fireext/loop", CHAN_WEAPON, 1, 1)
+            TNT1 A 0 A_SetAngle(FRandom(0.2, -0.2) + Angle)
+            TNT1 A 0 A_SetPitch(FRandom(0.2, -0.5) + Pitch)
+            FIEX C 0 A_Recoil(0.01)
+            FIEX C 1 A_FireCustomMissile("FireExtPuff", Random(0, 10), True)
+            TNT1 A 0 A_SetBlend("CC CC CC", FRandom(0.05, 0.15), Random(3, 10))
+            TNT1 A 0 A_SetAngle(FRandom(0.2, -0.2) + Angle)
+            TNT1 A 0 A_SetPitch(FRandom(0.2, -0.5) + Pitch)
+            FIEX C 0 A_Recoil(0.02)
+            FIEX CC 1 A_FireCustomMissile("FireExtPuffNoDamage" , Random(0, 10), False)
+            TNT1 A 0 A_SetAngle(FRandom(0.2, -0.2) + Angle)
+            TNT1 A 0 A_SetPitch(FRandom(0.2, -0.5) + Pitch)
+            FIEX C 1 A_FireCustomMissile("FireExtPuff", Random(0, 10), True)
+            TNT1 A 0 A_SetAngle(FRandom(0.2, -0.2) + Angle)
+            TNT1 A 0 A_SetPitch(FRandom(0.2, -0.5) + Pitch)
+            FIEX C 0 A_Recoil(0.02)
+            FIEX CC 1 A_FireCustomMissile("FireExtPuffNoDamage" , Random(0, 10), False)
+            TNT1 A 0 A_SetAngle(FRandom(0.2, -0.2) + Angle)
+            TNT1 A 0 A_SetPitch(FRandom(0.2, -0.5) + Pitch)
+            FIEX A 0 A_ReFire("FireLoop")
+            FIEX B 1 A_FireCustomMissile("FireExtPuff", Random(0, 10), True)
+            FIEX BB 1 A_FireCustomMissile("FireExtPuffNoDamage" , Random(0, 10), False)
+            FIEX B 0 A_SetAngle(FRandom(1, -1) + Angle)
+            TNT1 A 0 A_SetPitch(FRandom(1, -1) + Pitch)
             FIEX A 0 A_ReFire
-            TNT1 A 0 A_StopSound( CHAN_WEAPON )
-            TNT1 A 0 A_PlaySound( "weapon/fireext/stop", CHAN_WEAPON )
+            TNT1 A 0 A_StopSound(CHAN_WEAPON)
+            TNT1 A 0 A_PlaySound("weapon/fireext/stop", CHAN_WEAPON)
             FIEX B 0 ACS_NamedExecuteAlways("fireextfade", 0, 0)
             Goto Ready
         Spawn:
@@ -251,10 +140,10 @@ Actor FireExtPuff {
 
     States {
         Spawn:
-            STEM AAAAA 0 A_SpawnParticle( Gray, RandomPick( 0, SPF_FULLBRIGHT ), Random( 3, 35 ), FRandom( 0.75, 4 ), 0, 
-                            Random( -5, 5 ), Random( -5, 5 ), Random( -5, 5 ), // Offsets
-                            Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ), // Speed
-                            Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ) ) // Acceleration
+            STEM AAAAA 0 A_SpawnParticle(Gray, RandomPick(0, SPF_FULLBRIGHT), Random(3, 35), FRandom(0.75, 4), 0, 
+                            Random(-5, 5), Random(-5, 5), Random(-5, 5), // Offsets
+                            Random(-10, 10), Random(-10, 10), Random(-10, 10), // Speed
+                            Random(-10, 10), Random(-10, 10), Random(-10, 10)) // Acceleration
             STEM A 1 A_SetTranslucent(0.7, 1)
             STEM B 1 A_SetScale(1.3, 1.3)//A_SetTranslucent(0.65, 1)
             STEM C 1 A_SetTranslucent(0.6, 1)
@@ -268,10 +157,10 @@ Actor FireExtPuff {
             STEM K 1 A_SetTranslucent(0.1, 1)
             STEM L 1 A_SetTranslucent(0.05, 1)
         Death:
-            STEM LLLLLLLLL 0 A_SpawnParticle( Gray, 0, Random( 5, 70 ), FRandom( 0.5, 2 ), 0, 
-                            0, Random( -5, 0 ), Random( -5, 5 ), // Offsets
-                            Random( -10, 10 ), Random( -10, 10 ), Random( -10, 10 ), // Speed
-                            Random( -5, 5 ), Random( -5, 5 ), Random( -5, 5 ) ) // Acceleration
+            STEM LLLLLLLLL 0 A_SpawnParticle(Gray, 0, Random(5, 70), FRandom(0.5, 2), 0, 
+                            0, Random(-5, 0), Random(-5, 5), // Offsets
+                            Random(-10, 10), Random(-10, 10), Random(-10, 10), // Speed
+                            Random(-5, 5), Random(-5, 5), Random(-5, 5)) // Acceleration
             Stop
     }
 }
@@ -317,7 +206,7 @@ Actor HellHoundGun : Weapon {
             HDGG A 1 A_Lower
             Loop
         Fire:
-            TNT1 A 0 A_GunFlash( "Flash", GFF_NOEXTCHANGE )
+            TNT1 A 0 A_GunFlash("Flash", GFF_NOEXTCHANGE)
             HDGG A 0 A_PlaySound("monsters/hellhound/bark")
             HDGG CD 2
             HDGG E 2 A_CustomPunch(random(8, 18), TRUE, 0, "DogGunPuff", 80, 0, 0, "ArmorBonus", "monsters/hellhound/bark")
@@ -325,21 +214,21 @@ Actor HellHoundGun : Weapon {
             HDGG DCB 2
             Goto Ready
         Flash:
-            TNT1 A 1 A_SetPitch( Pitch + Random( 2, 4 ) )
-            TNT1 A 0 A_SetAngle( Angle + FRandom( -1, 1 ) )
-            TNT1 A 1 A_SetPitch( Pitch + Random( 2, 5 ) )
-            TNT1 A 1 A_SetPitch( Pitch + Random( 1, 4 ) )
-            TNT1 A 1 A_Recoil( Random( -7, -4 ) )
-            TNT1 A 0 A_SetAngle( Angle + FRandom( -1, 1 ) )
-            TNT1 A 1 A_SetPitch( Pitch - FRandom( 5, 8 ) )
-            TNT1 A 0 A_SetAngle( Angle + FRandom( -2, 2 ) )
-            TNT1 A 1 A_SetPitch( Pitch - FRandom( 3, 4 ) )
-            TNT1 A 0 A_SetAngle( Angle + FRandom( -2, 2 ) )
-            TNT1 A 1 A_SetPitch( Pitch - FRandom( 3, 5 ) )
-            TNT1 A 0 A_SetAngle( Angle + FRandom( -3, 3 ) )
-            TNT1 A 1 A_SetPitch( Pitch - 4 )
+            TNT1 A 1 A_SetPitch(Pitch + Random(2, 4))
+            TNT1 A 0 A_SetAngle(Angle + FRandom(-1, 1))
+            TNT1 A 1 A_SetPitch(Pitch + Random(2, 5))
+            TNT1 A 1 A_SetPitch(Pitch + Random(1, 4))
+            TNT1 A 1 A_Recoil(Random(-7, -4))
+            TNT1 A 0 A_SetAngle(Angle + FRandom(-1, 1))
+            TNT1 A 1 A_SetPitch(Pitch - FRandom(5, 8))
+            TNT1 A 0 A_SetAngle(Angle + FRandom(-2, 2))
+            TNT1 A 1 A_SetPitch(Pitch - FRandom(3, 4))
+            TNT1 A 0 A_SetAngle(Angle + FRandom(-2, 2))
+            TNT1 A 1 A_SetPitch(Pitch - FRandom(3, 5))
+            TNT1 A 0 A_SetAngle(Angle + FRandom(-3, 3))
+            TNT1 A 1 A_SetPitch(Pitch - 4)
             TNT1 A 2
-            TNT1 A 1 A_SetPitch( Pitch + 3 )
+            TNT1 A 1 A_SetPitch(Pitch + 3)
             Stop
         Spawn:
             TNT1 A 1
@@ -372,7 +261,7 @@ Actor CerberusGun : HellHoundGun {
             CDGG A 1 A_Lower
             Loop
         Fire:
-            TNT1 A 0 A_GunFlash( "Flash", GFF_NOEXTCHANGE )
+            TNT1 A 0 A_GunFlash("Flash", GFF_NOEXTCHANGE)
             CDGG A 0 A_PlaySound("monsters/cerberus/bark")
             CDGG CD 2
             CDGG E 2 A_CustomPunch(random(10, 25), TRUE, 0, "DogGunPuff", 80, 0, 0, "ArmorBonus", "monsters/cerberus/bark")
@@ -410,7 +299,7 @@ Actor DemonWolfGun : HellHoundGun {
             DDGG A 1 A_Lower
             Loop
         Fire:
-            TNT1 A 0 A_GunFlash( "Flash", GFF_NOEXTCHANGE )
+            TNT1 A 0 A_GunFlash("Flash", GFF_NOEXTCHANGE)
             DDGG A 0 A_PlaySound("monsters/demonwolf/bark")
             DDGG CD 2
             DDGG E 2 A_CustomPunch(random(15, 50), TRUE, 0, "DogGunPuff", 80, 0, 0, "ArmorBonus", "monsters/demonwolf/bark")
