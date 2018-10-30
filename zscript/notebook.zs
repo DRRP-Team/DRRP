@@ -14,17 +14,28 @@ class NotebookMenu : OptionMenu {
 			item.Init("Notebook is empty");
 			desc.mItems.push(item);
 		} else {
-			for(int i = 0; i < nbitem.languageStrings.size(); i++) {
-				OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
-				item.Init(nbitem.languageStrings[i]);
-				desc.mItems.push(item);
+			for(int i = nbitem.languageStrings.size() - 1; i >= 0; i--) {
+				String langstring = nbitem.languageStrings[i];
+				Array<String> langstring_spl;
+				langstring_spl.clear();
+				langstring.split(langstring_spl, "\n");
+				for(int j = 0; j < langstring_spl.size(); j++) {
+					OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+					item.Init(langstring_spl[j]);
+					desc.mItems.push(item);
+				}
+				{
+					OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+					item.Init("");
+					desc.mItems.push(item);
+				}
 			}
 		}
 	}
 }
 
 class NotebookAPI {
-	play static void AddNotebookEntry(Actor activator, string entry) {
+	play static void AddNotebookEntry(Actor activator, String entry) {
 		if(activator.CountInv("NotebookItem") <= 0) {
 			activator.A_GiveInventory("NotebookItem");
 		}
