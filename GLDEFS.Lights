@@ -35,6 +35,18 @@ Object BlueLamp {
 }
 // end Blue lamp
 
+// Alarm1
+    Pointlight Alarm1Light {
+        Color 1.0 0.0 0.0
+        Size 16
+    }
+	Object Alarm1 {
+		frame ALAR {
+			light Alarm1Light
+		}
+	}
+// end Alarm1
+
 // Spark lights
     Pointlight WhiteSparkFlare {
         Color 1.0 1.0 1.0
