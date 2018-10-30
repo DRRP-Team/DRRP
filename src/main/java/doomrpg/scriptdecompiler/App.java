@@ -69,11 +69,21 @@ public class App {
 			System.out.println("script " + sn + " (int arg0, int arg1, int arg2) { //" + event.toIR());
 
 			Iterator<ByteCodeElement> it = bc.iterator(event.start, event.end);
+			
+			CoordList cl = new CoordList();
+			
+			String script = "";
 
 			while (it.hasNext()) {
 				ByteCodeElement bce = it.next();
-				System.out.println("    " + bce.toACS(events) + " // " + bce.toIR(0));
+				script += ("    " + bce.toACS(events, cl) + " // " + bce.toIR(0) + "\n");
 			}
+			
+			for(int i = 0; i < cl.l.size(); i++) {
+				System.out.println("    int sgenid" + i + " = #fill me with id#; // " + cl.l.get(i).toString());
+			}
+			
+			System.out.print(script);
 
 			System.out.println("}");
 

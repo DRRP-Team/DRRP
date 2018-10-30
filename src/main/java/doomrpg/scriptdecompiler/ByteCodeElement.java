@@ -15,7 +15,7 @@ public class ByteCodeElement {
 		return i;
 	}
 	
-	public String toACS(List<EventDef> lookupList) {
+	public String toACS(List<EventDef> lookupList, CoordList clist) {
 		String theIf = "";
 		theIf += "if(arg2 == " + lookupEventVar() + ") ";
 		switch(cmdid) {
@@ -49,9 +49,9 @@ public class ByteCodeElement {
 			}
 		}
 		case 19: 
-			return theIf + "ScriptCall(\"ConversationController\", \"SetArgument\", # fill me with id #, arg2 + 1);";
+			return theIf + "ScriptCall(\"ConversationController\", \"SetArgument\", sgenid" + (clist.getPos((arg1 & 0xFF), (arg1 >> 8 & 0xFF))) + ", arg2 + 1);";
 		case 11: 
-			return theIf + "ScriptCall(\"ConversationController\", \"SetArgument\", # fill me with id #, " + ((arg1 >> 16) & 0xFFFF) + ");";
+			return theIf + "ScriptCall(\"ConversationController\", \"SetArgument\", sgenid" + (clist.getPos((arg1 & 0xFF), (arg1 >> 8 & 0xFF))) + ", " + ((arg1 >> 16) & 0xFFFF) + ");";
 		case 37:
 			return theIf + "Delay(" + arg1 * 35 / 1000 + ");";
 		case 18:
