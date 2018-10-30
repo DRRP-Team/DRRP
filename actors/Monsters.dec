@@ -9,56 +9,56 @@
 //So, Monsters: 10259-10499.
 
 //Dogs
-    //Hellhound		10246
-    //Cerberus		10346
-    //DemonWolf		10446
+    //Hellhound     10246
+    //Cerberus      10346
+    //DemonWolf     10446
 //Zombies
-    //ZombieManDRRP	<same as original>
-    //ShotgunGuyDRRP	<same as original>
-    //ZombiePvt		10274
-    //ZombieLt		10374
-    //ZombieCpt		10474
+    //ZombieManDRRP <same as original>
+    //ShotgunGuyDRRP    <same as original>
+    //ZombiePvt     10274
+    //ZombieLt      10374
+    //ZombieCpt     10474
 //Chaingunners
-    //ChaingunGuyDRRP	<same as original>
-    //Troop			10264
-    //Commando		10364
-    //Assassin		10464
+    //ChaingunGuyDRRP   <same as original>
+    //Troop         10264
+    //Commando      10364
+    //Assassin      10464
 //Imps
-    //Impling		10260
-    //Imp			10360
-    //ImpLord		10460
+    //Impling       10260
+    //Imp           10360
+    //ImpLord       10460
 //Lost souls
-    //Phantom		10263
-    //LostSoul1		10463 FIXME:
-    //Nightmare		10363
+    //Phantom       10263
+    //LostSoul1     10463 FIXME:
+    //Nightmare     10363
 //Demons
-    //BullDemon		10259
-    //Pinky			10459 FIXME:
-    //Belphegor		10359
+    //BullDemon     10259
+    //Pinky         10459 FIXME:
+    //Belphegor     10359
 //Cacodemons
-    //Malrath		10262
-    //Cacodemon1	10362
-    //Wretched		10462
+    //Malrath       10262
+    //Cacodemon1    10362
+    //Wretched      10462
 //Revenants
-    //Ghoul			10277
-    //Fiend			10377
-    //RevenantDRRP	10477
+    //Ghoul         10277
+    //Fiend         10377
+    //RevenantDRRP  10477
 //Pain Elementals
-    //Rahovart		10379
-    //Beholder		10479
-    //DRRPPainElemental	10279 FIXME:
+    //Rahovart      10379
+    //Beholder      10479
+    //DRRPPainElemental 10279 FIXME:
 //Mancubuses
-    //Behemoth		10278
-    //Mancubus		10378
-    //Druj			10478
+    //Behemoth      10278
+    //Mancubus      10378
+    //Druj          10478
 //Viles
-    //Infernis		10273
-    //ArchVile1		10373
-    //Apollyon		10473
+    //Infernis      10273
+    //ArchVile1     10373
+    //Apollyon      10473
 //BaronsOfHellKnights
-    //Ogre			10480 FIXME:
-    //HellKnight1	10380 FIXME:
-    //BaronOfHell	10280
+    //Ogre          10480 FIXME:
+    //HellKnight1   10380 FIXME:
+    //BaronOfHell   10280
 
 //Bosses
     //Kronos TODO:
@@ -236,7 +236,7 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
             LSOL G 5 Bright A_Scream
             LSOL H 5 Bright A_NoBlocking
             LSOL I 5 Bright
-            Stop	
+            Stop    
     }
 }
 
@@ -509,5 +509,39 @@ Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
 Actor Kronos 10391 {
     //$Category DMonsters
 
+    Monster
+    +LOOKALLAROUND
+    +BOSS
+    Radius 24
+    Height 56
+    Health 3000 // Original: 344..572
+    Speed 14
+    Scale 0.9
     Tag "$DRRP_M_KRONOS"
+    //SeeSound "DRRPMonsters/Kronos/sight"
+    //PainSound "DRRPMonsters/Kronos/pain"
+    //DeathSound "DRRPMonsters/Kronos/death"
+    //ActiveSound "DRRPMonsters/Kronos/active"
+    States
+    {
+    Spawn:
+        KRON A 5 A_Look
+        Wait
+    See:
+        KRON A 3 A_Chase
+        Loop
+    Melee:
+        KRON A 0
+        KRON A 0 A_CustomMeleeAttack( Random( 15, 30 ) )
+        KRON A 5 A_SetScale( -1 )
+        KRON A 5 A_SetScale( 1 )
+        Goto See
+    Death:
+        KRON A 1 {
+            A_Fall;
+            A_NoBlocking;
+        }
+        KRON A 2 A_FadeOut( 0.02 )
+        Wait
+    }    
 }
