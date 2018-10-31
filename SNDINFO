@@ -240,6 +240,9 @@ $random generic/expl/explode {
     generic/expl/explode2
 }
 
+Steam/Loop                  STEMLOOP
+Steam/Fire                  STEMFIRE
+
 // === Volume ===
 $volume             TAUNT               0.4 // FIXME: Remove
 $volume             player/taunt        0.4
