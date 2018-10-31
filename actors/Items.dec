@@ -148,7 +148,7 @@ Actor Berserker : CustomInventory replaces Berserk 10623 {
     Tag "$DRRP_I_BERSERKER"
     Inventory.MaxAmount     99
     Inventory.Icon          "BERSH0"
-    Inventory.PickupMessage "$GOTBERSERK" // "Berserk!"
+    Inventory.PickupMessage "$DRRP_I_BERSERKER"
     Inventory.PickupSound   "misc/p_pkup"
 
     Translation "193:207=171:191", "240:247=185:191"
