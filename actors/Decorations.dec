@@ -540,3 +540,17 @@ Actor CeilLamp3: CeilLamp1 1726
             Loop
     }
 }
+
+Actor ShittyFog 10765 {
+	RenderStyle Add
+	-SOLID
+	+NOBLOCKMAP
+	+FORCEXYBILLBOARD
+	Scale 0.5
+	Alpha 0.1
+	states {
+		Spawn:
+			FOGI A 10 BRIGHT
+			Loop
+	}
+}
