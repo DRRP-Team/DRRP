@@ -231,11 +231,21 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     DamageFactor DRRPFireDmg, 0.0
 
     States {
+        Death:
+            SKUL F 6 Bright
+            SKUL G 6 Bright A_Scream
+            SKUL H 6 Bright
+            SKUL I 6 Bright A_NoBlocking
+            SKUL J 6
+            SKUL K 6
+            SOUL Z -1
+            Stop
         Death.DRRPFireExtDmg:
             LSOL F 6 Bright A_Gravity
             LSOL G 5 Bright A_Scream
             LSOL H 5 Bright A_NoBlocking
             LSOL I 5 Bright
+            SOUL Z -1
             Stop    
     }
 }
@@ -366,6 +376,7 @@ Actor DRRPPainElemental : PainElemental replaces PainElemental 10279 {
             PAIN JK 8 Bright
             PAIN L  8 Bright A_PainDie("Nightmare")
             PAIN M  8 Bright
+            PAIN Z -1
             Stop
     }
 }
@@ -384,6 +395,7 @@ Actor Rahovart : DRRPPainElemental 10379 {
             PAIN JK 8 Bright
             PAIN L  8 Bright A_PainDie("DRRPLostSoul")
             PAIN M  8 Bright
+            PAIN Z -1
             Stop
     }
 }
@@ -402,6 +414,7 @@ Actor Beholder : DRRPPainElemental 10479 {
             PAIN JK 8 Bright
             PAIN L  8 Bright A_PainDie("Phantom")
             PAIN M  8 Bright
+            PAIN Z -1
             Stop            
     }
 }
