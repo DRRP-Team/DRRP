@@ -25,16 +25,14 @@ class ConversationController play {
     static bool SetArgument(int lineID, int lineArg) {
 		if(lineID < 0) return SetActorArgument(-lineID, lineArg);
         LineIdIterator it = LineIdIterator.Create(lineID);
-        int itLineID = it.Next();
+        int itLineID = -1;
 
-        if (itLineID > 0) {
+        while ((itLineID = it.Next()) > 0) {
             Line convLine = level.Lines[itLineID];
             convLine.args[4] = lineArg;
-
-            return true;
         }
-
-        return false;
+		
+		return true;
     }
 
     static int GetActorArgument(int actorID) {
