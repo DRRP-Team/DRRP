@@ -95,14 +95,42 @@ Actor Rod : ExplosiveBarrel 10704 {
             ROD1 ABCDEF 2
             Loop
         Death:
-            MISL B 5 Bright
-            MISL C 5 Bright A_Scream
-            MISL B 5 Bright
-            MISL C 0 Bright A_Quake(4, 5, 0, 128, "generic/expl/barrel")
-            MISL B 5 Bright A_Explode
-            MISL D 10 Bright
-            TNT1 A 5 ACS_Execute(101,0)
-            TNT1 A 1050 Bright A_BarrelDestroy
+            ROD2 AB 1
+            ROD2 C  1  Bright A_SpawnItem("Explosion", 0, 38)
+            ROD2 DEFGHIJKLMNOPQRSTUVWXYZ 1 Bright
+            ROD3 A  1  Bright
+            ROD3 B  1  Bright A_Quake(6, 10, 0, 256, "generic/expl/barrel")
+            ROD3 C  2  Bright A_Scream
+            ROD3 D  1  Bright
+            ROD3 E  1  Bright A_Quake(6, 10, 0, 256, "generic/expl/barrel")
+            ROD3 F  5  Bright A_Explode
+            ROD3 D  10 Bright
+            ROD3 G  1  Bright
+            ROD3 H  1  Bright A_Quake(6, 10, 0, 256)
+            ROD3 IJKLM 1
+            ROD3 N  1 ACS_Execute(101,0)
+            ROD3 N  1 A_SpawnItem("RodTrash")
+            Stop
+    }
+}
+
+Actor RodTrash {
+    +SOLID
+    +SHOOTABLE
+
+    Tag "$DRRP_E_POWERCOUPLING"
+    Scale 0.6
+    Health 10
+    Mass 10000000
+    DamageFactor DRRPFireExtDmg, 0.0
+
+    States {
+        Spawn:
+            ROD3 N 5
+            Loop
+        Death:
+            ROD3 N 5 Bright A_SpawnItem("Explosion", 0, 20)
+            TNT1 A 0 A_ChangeFlag("SOLID", FALSE)
             Stop
     }
 }
