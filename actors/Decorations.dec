@@ -15,6 +15,8 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
     BloodColor "00 FF 00"
     DamageFactor DRRPFireExtDmg, 0.0
 
+    DeathSound "generic/expl/barrel"
+
     States  {
         Spawn:
             BAR1 AB 6
@@ -22,7 +24,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
         Death:
             BEXP A 5 Bright
             BEXP B 5 Bright A_Scream
-            BEXP C 0 Bright A_Quake(6, 5, 0, 128, "generic/expl/barrel")
+            BEXP C 0 Bright A_Quake(6, 5, 0, 128)
             BEXP C 5 Bright
             BEXP D 5 Bright A_Explode
             BEXP E 10 Bright
