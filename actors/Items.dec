@@ -231,12 +231,28 @@ Actor DogCollar : CustomInventory 10624 {
 }
 
 Actor DRRPHealthBonus : Health replaces HealthBonus {
+    Tag "$DRRP_I_HEALTHVIAL"
     Inventory.Amount 1
-    Inventory.PickupMessage "$GOTHTHBONUS" // "Picked up a health bonus."
+    Inventory.PickupMessage "$DRRP_I_HEALTHVIAL"
 
     States {
         Spawn:
             BON1 ABCDCB 6
             Loop
     }
+}
+
+Actor DRRPArmorBonus : ArmorBonus replaces ArmorBonus {
+    Tag "$DRRP_I_ARMORSHARD"    
+    Inventory.PickupMessage "$DRRP_I_ARMORSHARD"    
+}
+
+Actor DRRPGreenArmor : GreenArmor replaces GreenArmor {
+    Tag "$DRRP_I_FLAKJACKET"
+    Inventory.PickupMessage "$DRRP_I_FLAKJACKET"
+}
+
+Actor DRRPBlueArmor : BlueArmor replaces BlueArmor {
+    Tag "$DRRP_I_COMBATSUIT"
+    Inventory.PickupMessage "$DRRP_I_COMBATSUIT"
 }
