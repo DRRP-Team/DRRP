@@ -10,9 +10,10 @@ Actor DRRPGreenCard : DoomKey 10622 {
     //$Category Keys
 
     Tag "$DRRP_I_GREENKEY"
-    Inventory.PickupMessage "Picked up a green keycard"
-    Inventory.Icon "STKEYS9"
-    Inventory.PickupSound "misc/k_pkup"
+    Inventory.PickupMessage "$DRRP_I_GREENKEY"
+    Inventory.Icon          "STKEYS2"
+    Inventory.PickupSound   "misc/k_pkup"
+    Translation             "168:191=112:127", "16:47=112:127", "1:2=126:127"
 
     States {
         Spawn:
@@ -46,13 +47,14 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
     Tag                     "$DRRP_I_SMMEDKIT"
     Health                  25
     HealthPickup.AutoUse    0
-    Inventory.Icon          "YMEDI0"
+    Inventory.Icon          "MEDIA0"
     Inventory.MaxAmount     99
     Inventory.PickupMessage "Picked up a small medikit"
+    Translation             "168:185=229:229", "186:191=163:163"
 
     States {
         Spawn:
-            YMED A -1
+            MEDI A -1
             Stop
     }
 }
@@ -67,12 +69,13 @@ Actor LargeMedikit : HealthPickup 10601 {
     Health                  75
     HealthPickup.AutoUse    0
     Inventory.MaxAmount     99
-    Inventory.Icon          "RMEDI0"
+    Inventory.Icon          "MEDIA0"
     Inventory.PickupMessage "Picked up a large medikit"
+    Translation             "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
 
     States {
         Spawn:
-            RMED A -1
+            MEDI A -1
             Stop
     }
 }

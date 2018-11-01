@@ -35,6 +35,13 @@ Object BlueLamp {
 }
 // end Blue lamp
 
+// Yellow lamp
+Object YellowLamp {
+    Frame COLU {
+        Light LAMP
+    }
+}
+// end Yellow lamp
 // Alarm1
     Pointlight Alarm1Light {
         Color 1.0 0.0 0.0
