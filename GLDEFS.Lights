@@ -21,15 +21,15 @@ Object DRRPFire {
 // end Fire
 
 // Blue lamp
-FlickerLight BLAMP {
+PointLight BLAMP {
     color 64 64 255
     size 32
-    secondarySize 48
-    chance 1
+    offset 0 44 0
+    attenuate 1
 }
 
 Object BlueLamp {
-    frame COLU {
+    Frame COLU {
         light BLAMP
     }
 }
@@ -38,7 +38,7 @@ Object BlueLamp {
 // Yellow lamp
 Object YellowLamp {
     Frame COLU {
-        Light LAMP
+        light LAMP
     }
 }
 // end Yellow lamp
