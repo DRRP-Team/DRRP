@@ -408,7 +408,7 @@ Actor Beholder : DRRPPainElemental 10479 {
     //$Category DMonsters
 
     Tag "$DRRP_M_BEHOLDER"
-    Health 100
+    Health 17
     Translation "13:15=124:127", "64:70=120:127", "128:143=112:127", "236:239=122:127", "71:79=127:127"
 
     States {
@@ -461,7 +461,7 @@ Actor Druj : DRRPCubus 10478 {
 // Arch-Viles -------------------------------------------------------------------------
 
 Actor DRRPVile : ArchVile replaces ArchVile {
-    DamageFactor DRRPAxeDmg, 7.5
+    DamageFactor DRRPAxeDmg, 8.0
     DamageFactor DRRPFireDmg, 0.0
     Scale 0.95
 }
