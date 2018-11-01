@@ -9,37 +9,37 @@
 // on Fri Jul  6 17:02:22 2018
 
 Texture "DRPGA00", 64, 64 {
-	Patch "DRPGA01", 0, 0 {
+	Patch "DRDC4", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "DRPGA03", 64, 64 {
-	Patch "DRPGA02", 0, 0 {
+	Patch "DRDC2", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "DRPGA04", 64, 64 {
-	Patch "DRPGA05", 0, 0 {
+	Patch "DRDC3", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "DRPGA06", 64, 64 {
-	Patch "DRPGA07", 0, 0 {
+	Patch "DRDC5", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "DSUP07", 64, 64 {
-	Patch "DSUP7", 0, 0 {
+	Patch "DRDC48", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "SUP05", 64, 64 {
-	Patch "DSUP5", 0, 0 {
+	Patch "DRDC46", 0, 0 {
 		FlipX
 	}
 }
@@ -51,31 +51,39 @@ Texture "DSUP01", 64, 64 {
 }
 
 Texture "DRPGA08B", 64, 64 {
-	Patch "DRPGA08", 0, 0 {
+	Patch "DRDC1", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "DRPGA09B", 64, 64 {
-	Patch "DRPGA09", 0, 0 {
+	Patch "DRDC9", 0, 0 {
 		FlipX
 	}
 }
 
 Texture "DRPGA10B", 64, 64 {
-	Patch "DRPGA10", 0, 0 {
+	Patch "DRDC8", 0, 0 {
 		FlipX
 	}
+}
+
+Texture "DRPGA11B", 64, 64 {
+	Patch "DRDC0", 0, 0 {}
 }
 
 Texture "DRPGA11", 64, 64 {
-	Patch "DRPGA11B", 0, 0 {
+	Patch "DRDC0", 0, 0 {
 		FlipX
 	}
 }
 
+Texture "DRPGA12B", 64, 64 {
+	Patch "DRDC6", 0, 0 {}
+}
+
 Texture "DRPGA12", 64, 64 {
-	Patch "DRPGA12B", 0, 0 {
+	Patch "DRDC6", 0, 0 {
 		FlipX
 	}
 }
@@ -87,7 +95,7 @@ Texture "REAC3", 64, 64 {
 }
 
 Texture "DSUP03", 64, 64 {
-	Patch "DSUP3", 0, 0 {
+	Patch "DRDC44", 0, 0 {
 		FlipX
 	}
 }
