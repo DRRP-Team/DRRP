@@ -26,15 +26,15 @@ ListMenu "MainMenu" {
 }
 
 OPTIONMENU "DRRPMenu" {
-    TITLE "Doom RPG Remake Project"
-    STATICTEXT " "
-    StaticText "$DRRP_D_MENU_DRRPMENU_INVENTORY"
-    Command "$DRRP_D_MENU_DRRPMENU_NOTEPAD", "echo \"Notepad will be here\""
-    STATICTEXT " "
-    StaticText "$DRRP_D_MENU_DRRPMENU_SETTINGS"
-    Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
-    Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
-    Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
+	TITLE "Doom RPG Remake Project"
+	STATICTEXT " "
+	StaticText "$DRRP_D_MENU_DRRPMENU_INVENTORY"
+	Command "$DRRP_D_MENU_DRRPMENU_NOTEPAD", "openmenu NotebookMenu"
+	STATICTEXT " "
+	StaticText "$DRRP_D_MENU_DRRPMENU_SETTINGS"
+	Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
+	Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
+	Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
 }
 
 OptionMenu "Language" {
