@@ -109,6 +109,7 @@ class DoorCodeInputHandler : EventHandler {
                 }
             } else if (e.Args[0] == 2) {
                 players[e.Player].mo.A_PlaySound("access/deny1");
+				players[e.Player].mo.A_Print("Wrong password");
             }
         }
     }
@@ -154,27 +155,17 @@ class DoorCodeInputMenu : GenericMenu {
 	Override
 	bool OnUIEvent(UIEvent ev) { 
 		super.OnUIEvent(ev);
-        if (ev.Type == UiEvent.Type_KeyDown && ((ev.keyChar >= 48 && ev.keyChar <= 57) || ev.keyChar == 8)) {
+        if (ev.Type == UiEvent.Type_KeyDown && (ev.keyChar >= 48 && ev.keyChar <= 57)) {
             for(int i = 0; i < self.codeStr.Length(); i++) {
                 if (self.codeStr.CharAt(i) != '_') continue;
+				
+				self.codeStr = String.format("%s%c", self.codeStr.Left(i), ev.keyChar);
 
-                if (ev.keyChar != 8) {
-                    self.codeStr = String.format("%s%c", self.codeStr.Left(i), ev.keyChar);
+				for(int j = self.codeStr.Length(); j < self.realCodeStr.Length(); j++) {
+					self.codeStr.AppendFormat("_");
+				}
 
-                    for(int j = self.codeStr.Length(); j < self.realCodeStr.Length(); j++) {
-                        self.codeStr.AppendFormat("_");
-                    }
-
-                    break;
-                } else {
-                    self.codeStr = self.codeStr.Left(max(i-1, 0));
-
-                    for(int j = self.codeStr.Length(); j < self.realCodeStr.Length(); j++) {
-                        self.codeStr.AppendFormat("_");
-                    }
-
-                    break;
-                }
+				break;
             }
  
             for(int i = 0; i < self.codeStr.Length(); i++) {
@@ -183,10 +174,8 @@ class DoorCodeInputMenu : GenericMenu {
                 }
             }
 			
-			if(codeStr == realCodeStr) {
-				EventHandler.SendNetworkEvent("closedoorinput", codeStr == realCodeStr ? 1 : 0);
-				Close();
-			}
+			EventHandler.SendNetworkEvent("closedoorinput", codeStr == realCodeStr ? 1 : 2);
+			Close();
         } else if (ev.Type == UiEvent.Type_KeyDown && ev.keyChar == 27) {
             Close();
         }
