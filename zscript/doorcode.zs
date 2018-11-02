@@ -83,7 +83,7 @@ class DoorCodeInputHandler : EventHandler {
                     Line line = level.Lines[lineid];
                     Side myside = line.sidedef[0];
 
-                    myside.SetTexture(Side.top, TexMan.CheckForTexture("drpga09", TexMan.Type_Any));
+                    myside.SetTexture(Side.top, TexMan.CheckForTexture("drdc9", TexMan.Type_Any));
                     line.special = 12;
                     line.args[0] = 0;
                     line.args[1] = 16;
