@@ -40,18 +40,22 @@ class DRRPShotgun : Shotgun {
     States {
         Fire:
             SHTG A 3;
-            SHTG A 0 A_PlaySound("weapons/shotgf", CHAN_WEAPON);
-            SHTG A 0 A_GunFlash;
-            SHTG A 0 A_FireBullets(5.6, 0, 3, Random(1, 2), "BulletPuff", FBF_NORANDOM);
-            SHTG A 2 A_FireBullets(5.6, 0, 4, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
-            SHTG A 2 Bright;
-            SHTG A 3;
-            SHTG BC 5;
-            SHTG D 4;
-            SHTG CB 5;
-            SHTG A 3;
-            SHTG A 7 A_ReFire;
-            Goto Ready;
+            SHTG A 2 {
+				A_FireBullets( 5.6, 0, 4, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
+				A_FireBullets( 5.6, 0, 3, Random( 1, 2 ), "BulletPuff", FBF_NORANDOM );
+				A_GunFlash();
+				A_PlaySound( "weapons/shotgf", CHAN_WEAPON );
+			}
+			SHTG A 5;
+			SHTG B 1;
+			SHTG CD 2;
+			SHTG E 1;
+			SHTG FG 2;
+			SHTG HI 3;
+			SHTG JIH 2;
+			SHTG GFE 1;
+			SHTG DCB 2;
+			Goto Ready;
         Flash:
             TNT1 A 0 A_Light1;
             SHTF A 1 Bright A_SetPitch(Pitch - FRandom(-0.1, 0.4));
@@ -77,22 +81,29 @@ class DRRPSuperShotgun : SuperShotgun {
 
     States {
         Fire:
-            SHT2 A 3;
-            SHT2 A 0 A_PlaySound("weapons/sshotf", CHAN_WEAPON);
-            SHT2 A 0 A_GunFlash;
-            SHT2 A 0 A_FireBullets(11.2, 7.1, 4, Random(2, 5), "BulletPuff", FBF_NORANDOM);
-            SHT2 A 1 A_FireBullets(11.2, 7.1, 16, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
-            SHT2 A 2 Bright;
-            SHT2 A 4;
-            SHT2 B 7;
-            SHT2 C 7 A_CheckReload;
-            SHT2 D 7 A_OpenShotgun2;
-            SHT2 E 7;
-            SHT2 F 7 A_LoadShotgun2;
-            SHT2 G 6;
-            SHT2 H 6 A_CloseShotgun2;
-            SHT2 A 5 A_ReFire;
-            Goto Ready;
+            SHT2 A 0 A_FireBullets( 11.2, 7.1, 4, Random(2, 5), "BulletPuff", FBF_NORANDOM );
+            SHT2 A 1 A_FireBullets( 11.2, 7.1, 16, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
+            SHT2 A 0 A_PlaySound( "weapons/sshotf" );
+			SHT2 A 2 A_GunFlash;
+			SHT2 A 4;
+			SHT2 A 3 A_CheckReload;
+			SHTD BC 2;
+			SHTD D 3;
+			SHT2 A 0 A_PlaySound( "weapons/sshoto", CHAN_WEAPON );
+			SHTD EF 3;
+			SHTD G 6 A_GunFlash( "DoubleShellFallFlash" );
+			SHTD H 2;
+			SHTD IJ 3;
+			SHTD K 3 A_LoadShotgun2;
+			SHTD LMNO 3;
+			SHTD P 2 A_PlaySound( "weapons/sshotc", CHAN_WEAPON );
+			SHTD Q 3;
+			SHTD RS 3;
+			SHT2 A 2;
+			Goto Ready;
+		DoubleShellFallFlash:
+			CAS1 ABCD 2;
+			Stop;
         Flash:
             SHT2 I 0 A_SetPitch(Pitch - FRandom(-0.9, 1.9));
             SHTF A 0 A_SetAngle(Angle + FRandom(-1.0, 1.0));
@@ -126,11 +137,13 @@ class DRRPChaingun : Chaingun {
         Fire:
             CHGG A 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG A 0 A_GunFlash;
-            CHGG A 4 A_FireBullets(5.6, 0, 1, Random(4, 10), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
-            CHGG B 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
-            CHGG B 0 A_GunFlash("Flash2");
-            CHGG B 4 A_FireBullets(5.6, 0, -1, Random(5, 8), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
-            CHGG B 0 A_ReFire;
+            CHGG A 2 A_FireBullets(5.6, 0, 1, Random(4, 10), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+			CHGG B 2;
+            CHGG C 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
+            CHGG C 0 A_GunFlash("Flash2");
+            CHGG C 2 A_FireBullets(5.6, 0, -1, Random(5, 8), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+			CHGG D 2;
+            CHGG C 0 A_ReFire;
             Goto Ready;
         Flash:
             CHGF A 0 Bright A_ZoomFactor(FRandom(0.99, 0.999), ZOOM_INSTANT);
@@ -141,18 +154,18 @@ class DRRPChaingun : Chaingun {
             CHGF A 0 A_SetPitch(Pitch - FRandom(-0.2, 0.4));
             CHGF A 0 A_SetAngle(Angle + FRandom(-0.2, 0.1));
             CHGF A 0 A_ZoomFactor(1);
-            CHGF A 4 Bright A_Light1;
+            CHGF A 2 Bright A_Light1;
             Goto LightDone;
         Flash2:
             CHGF B 0 Bright A_ZoomFactor(FRandom(0.995, 0.999), ZOOM_INSTANT);
             CHGF B 0 Bright A_SetPitch(Pitch - FRandom(-0.2, 0.7));
             CHGF B 0 Bright A_SetAngle(Angle + FRandom(-0.4, 0.2));
-            CHGF B 2 Bright A_Light1;
+            CHGF B 1 Bright A_Light1;
             CHGF B 0 A_ZoomFactor(1);
             CHGF B 0 A_Recoil(0.03);
             CHGF B 0 A_SetPitch(Pitch - FRandom(-0.2, 0.4));
             CHGF B 0 A_SetAngle(Angle + FRandom(-0.2, 0.1));
-            CHGF B 3 Bright A_Light1;
+            CHGF B 2 Bright A_Light1;
             Goto LightDone;
     }
 }
@@ -199,10 +212,17 @@ class DRRPPlasmagun : PlasmaRifle {
     States {
         Fire:
             PLSG A 0 A_GunFlash;
-            PLSG A 3 A_FireProjectile("PlasmaBall");
+            PLSG A 3 A_FireProjectile( "PlasmaBall" );
             PLSG B 0 A_ReFire;
-            PLSG B 0 A_ZoomFactor(1);
-            PLSG B 20;
+            PLSG B 0 A_ZoomFactor( 1 );
+			PLSG A 2;
+			PLSG B 1;
+			PLSG DEF 2;
+			PLSG G 4;
+			PLSG H 9;
+			PLSG G 2;
+			PLSG FED 1;
+			PLSG CBA 2;
             Goto Ready;
         Flash:
             PLSF A 0 A_SetPitch(Pitch - FRandom(0.05, 0.4));

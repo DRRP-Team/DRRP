@@ -41,7 +41,8 @@ Actor DRRPAxe: Weapon 10557  {
         Fire:
             AXEF B 3
             AXEF C 3
-            AXEF D 4 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus")
+            AXEF D 3
+			AXEF D 1 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus")
             AXEF E 5
             Goto Ready
     }
