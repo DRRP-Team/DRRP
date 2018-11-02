@@ -6,253 +6,385 @@
  */
 
 Material Texture DRPGA14 {
-    BrightMap "materials/brightmaps/textures/BRPGA14.png"
+    BrightMap "materials/brightmaps/textures/BRPGA14"
 }
 
 Material Texture DRPGA00 {
-    BrightMap "materials/brightmaps/textures/BRPGA00.png"
+    BrightMap "materials/brightmaps/textures/BRPGA00"
 }
 
-Material Texture DRPGA01 {
-    BrightMap "materials/brightmaps/textures/BRPGA01.png"
+Material Texture DRDC4 {
+    BrightMap "materials/brightmaps/textures/BRPGA01"
 }
 
-Material Texture DRPGA02 {
-    BrightMap "materials/brightmaps/textures/BRPGA02.png"
+Material Texture DRDC2 {
+    BrightMap "materials/brightmaps/textures/BRPGA02"
 }
 
 Material Texture DRPGA03 {
-    BrightMap "materials/brightmaps/textures/BRPGA03.png"
+    BrightMap "materials/brightmaps/textures/BRPGA03"
 }
 
 Material Texture DRPGA04 {
-    BrightMap "materials/brightmaps/textures/BRPGA00.png"
-}
-
-Material Texture DRPGA05 {
-    BrightMap "materials/brightmaps/textures/BRPGA01.png"
+    BrightMap "materials/brightmaps/textures/BRPGA00"
 }
 
 Material Texture DRPGA06 {
-    BrightMap "materials/brightmaps/textures/BRPGA00.png"
-}
-
-Material Texture DRPGA07 {
-    BrightMap "materials/brightmaps/textures/BRPGA01.png"
-}
-
-Material Texture DRPGA09 {
-    BrightMap "materials/brightmaps/textures/BRPGA09.png"
-}
-
-Material Texture DRPGA10 {
-    BrightMap "materials/brightmaps/textures/BRPGA10.png"
+    BrightMap "materials/brightmaps/textures/BRPGA00"
 }
 
 Material Texture DRPGA09B {
-    BrightMap "materials/brightmaps/textures/BRPGA09B.png"
+    BrightMap "materials/brightmaps/textures/BRPGA09B"
 }
 
 Material Texture DRPGA10B {
-    BrightMap "materials/brightmaps/textures/BRPGA10B.png"
+    BrightMap "materials/brightmaps/textures/BRPGA10B"
 }
 
-Material Texture DRPGA13 {
-    BrightMap "materials/brightmaps/textures/BRPGA13.png"
+Material Texture DRDC10 {
+    BrightMap "materials/brightmaps/textures/BRPGA13"
 }
 
-Material Texture DRPGA13B {
-    BrightMap "materials/brightmaps/textures/BRPGA13.png"
+Material Texture DRDC10 {
+    BrightMap "materials/brightmaps/textures/BRPGA13"
 }
 
-Material Texture DRPGA13C {
-    BrightMap "materials/brightmaps/textures/BRPGA13.png"
+Material Texture DRDC10 {
+    BrightMap "materials/brightmaps/textures/BRPGA13"
 }
 
-Material Texture DRPGB013 {
-    BrightMap "materials/brightmaps/textures/BRPGB013.png"
+Material Texture DRDC29 {
+    BrightMap "materials/brightmaps/textures/BRPGB013"
 }
 
 Material Texture DRPGB02 {
-    BrightMap "materials/brightmaps/textures/BRPGB02.png"
+    BrightMap "materials/brightmaps/textures/BRPGB02"
 }
 
-Material Texture DRPGB030 {
-    BrightMap "materials/brightmaps/textures/BRPGB030.png"
+Material Texture DRDC30 {
+    BrightMap "materials/brightmaps/textures/BRPGB030"
 }
 
-Material Texture DRPGB031 {
-    BrightMap "materials/brightmaps/textures/BRPGB030.png"
+Material Texture DRDC31 {
+    BrightMap "materials/brightmaps/textures/BRPGB030"
 }
 
-Material Texture DRPGB10 {
-    BrightMap "materials/brightmaps/textures/BRPGB10.png"
+Material Texture DRDC47 {
+    BrightMap "materials/brightmaps/textures/BRPGB10"
 }
 
-Material Texture DRPGB11 {
-    BrightMap "materials/brightmaps/textures/BRPGB10.png"
+Material Texture DRDC45 {
+    BrightMap "materials/brightmaps/textures/BRPGB10"
 }
 
-Material Texture DRPGB12 {
-    BrightMap "materials/brightmaps/textures/BRPGB10.png"
+Material Texture DRDC43 {
+    BrightMap "materials/brightmaps/textures/BRPGB10"
 }
 
-Material Texture DRPGB13 {
-    BrightMap "materials/brightmaps/textures/BRPGB10.png"
+Material Texture DRDC41 {
+    BrightMap "materials/brightmaps/textures/BRPGB10"
 }
 
 // D2R0R1P8
 
-Material Texture DRDC2 {
-    normal "materials/normalmaps/textures/drdc5.png"
-    specular "materials/specmaps/textures/drdc5.png"
-}
-
-Material Texture DRDC3 {
-    normal "materials/normalmaps/textures/drdc5.png"
-    specular "materials/specmaps/textures/drdc5.png"
-}
-
-    Material Texture DRDC4 {
-    normal "materials/normalmaps/textures/drdc4.png"
-    specular "materials/specmaps/textures/drdc4.png"
-    brightmap "materials/brightmaps/textures/drdc4.png"
-}
-Material Texture DRDC5 {
-    normal "materials/normalmaps/textures/drdc5.png"
-    specular "materials/specmaps/textures/drdc5.png"
-}
-
 Material Texture DRDC06 {
-    normal "materials/normalmaps/textures/drdc6.png"
-    specular "materials/specmaps/textures/drdc6.png"
+    normal "materials/normalmaps/textures/drdc6"
+    specular "materials/specmaps/textures/drdc6"
 }
 
 Material Texture DRDC11 {
-    normal "materials/normalmaps/textures/drdc11.png"
-    specular "materials/specmaps/textures/drdc11.png"
+    normal "materials/normalmaps/textures/drdc11"
+    specular "materials/specmaps/textures/drdc11"
 }
 
 Material Texture DRDC12 {
-    normal "materials/normalmaps/textures/drdc11.png"
-    specular "materials/specmaps/textures/drdc11.png"
+    normal "materials/normalmaps/textures/drdc11"
+    specular "materials/specmaps/textures/drdc11"
 }
 
 Material Texture DRDC13 {
-    normal "materials/normalmaps/textures/drdc13.png"
-    specular "materials/specmaps/textures/drdc13.png"
+    normal "materials/normalmaps/textures/drdc13"
+    specular "materials/specmaps/textures/drdc13"
 }
 
 Material Texture DRDC14 {
-    normal "materials/normalmaps/textures/drdc13.png"
-    specular "materials/specmaps/textures/drdc13.png"
+    normal "materials/normalmaps/textures/drdc13"
+    specular "materials/specmaps/textures/drdc13"
 }
 
 Material Texture DRDC15 {
-    normal "materials/normalmaps/textures/drdc13.png"
-    specular "materials/specmaps/textures/drdc13.png"
+    normal "materials/normalmaps/textures/drdc13"
+    specular "materials/specmaps/textures/drdc13"
 }
 
 Material Texture DRDC16 {
-    normal "materials/normalmaps/textures/drdc13.png"
-    specular "materials/specmaps/textures/drdc13.png"
+    normal "materials/normalmaps/textures/drdc13"
+    specular "materials/specmaps/textures/drdc13"
 }
 
 Material Texture DRDC21 {
-    normal "materials/normalmaps/textures/drdc21.png"
-    specular "materials/specmaps/textures/drdc21.png"
+    normal "materials/normalmaps/textures/drdc21"
+    specular "materials/specmaps/textures/drdc21"
 }
 
 Material Texture DRDC24 {
-    normal "materials/normalmaps/textures/drdc25.png"
-    metalic "materials/metalicmaps/textures/drdc25.png"
-    roughness "materials/roughnessmaps/textures/drdc25.png"
-    ao "materials/aomaps/textures/drdc25.png"
-    brightmap "materials/metalicmaps/textures/drdc25.png"
+    normal "materials/normalmaps/textures/drdc25"
+    metalic "materials/metalicmaps/textures/drdc25"
+    roughness "materials/roughnessmaps/textures/drdc25"
+    ao "materials/aomaps/textures/drdc25"
+    brightmap "materials/metalicmaps/textures/drdc25"
 }
 
 Material Texture DRDC25 {
-    normal "materials/normalmaps/textures/drdc25.png"
-    metalic "materials/metalicmaps/textures/drdc25.png"
-    roughness "materials/roughnessmaps/textures/drdc25.png"
-    ao "materials/aomaps/textures/drdc25.png"
-    brightmap "materials/metalicmaps/textures/drdc25.png"
+    normal "materials/normalmaps/textures/drdc25"
+    metalic "materials/metalicmaps/textures/drdc25"
+    roughness "materials/roughnessmaps/textures/drdc25"
+    ao "materials/aomaps/textures/drdc25"
+    brightmap "materials/metalicmaps/textures/drdc25"
 }
 
 Material Texture DRDC26 {
-    normal "materials/normalmaps/textures/drdc25.png"
-    metalic "materials/metalicmaps/textures/drdc25.png"
-    roughness "materials/roughnessmaps/textures/drdc25.png"
-    ao "materials/aomaps/textures/drdc25.png"
-    brightmap "materials/metalicmaps/textures/drdc25.png"
+    normal "materials/normalmaps/textures/drdc25"
+    metalic "materials/metalicmaps/textures/drdc25"
+    roughness "materials/roughnessmaps/textures/drdc25"
+    ao "materials/aomaps/textures/drdc25"
+    brightmap "materials/metalicmaps/textures/drdc25"
 }
 
 Material Texture DRDC28 {
-    normal "materials/normalmaps/textures/drdc28.png"
-    specular "materials/specmaps/textures/drdc28.png"
+    normal "materials/normalmaps/textures/drdc28"
+    specular "materials/specmaps/textures/drdc28"
 }
 
 Material Texture DRDC37 {
-    normal "materials/normalmaps/textures/drdc37.png"
-    specular "materials/specmaps/textures/drdc37.png"
+    normal "materials/normalmaps/textures/drdc37"
+    specular "materials/specmaps/textures/drdc37"
 }
 
 Material Texture DRDC38 {
-    normal "materials/normalmaps/textures/drdc38.png"
-    specular "materials/specmaps/textures/drdc38.png"
+    normal "materials/normalmaps/textures/drdc38"
+    specular "materials/specmaps/textures/drdc38"
 }
 
 Material Texture DRDC39 {
-    normal "materials/normalmaps/textures/drdc39.png"
-    specular "materials/specmaps/textures/drdc39.png"
+    normal "materials/normalmaps/textures/drdc39"
+    specular "materials/specmaps/textures/drdc39"
 }
 
 Material Texture DRDC40 {
-    normal "materials/normalmaps/textures/drdc40.png"
-    specular "materials/specmaps/textures/drdc40.png"
-}
-
-Material Texture DRDC41 {
-    normal "materials/normalmaps/textures/drdc47.png"
-    specular "materials/specmaps/textures/drdc47.png"
-}
-
-Material Texture DRDC43 {
-    normal "materials/normalmaps/textures/drdc47.png"
-    specular "materials/specmaps/textures/drdc47.png"
-}
-
-Material Texture DRDC45 {
-    normal "materials/normalmaps/textures/drdc47.png"
-    specular "materials/specmaps/textures/drdc47.png"
-}
-
-Material Texture DRDC47 {
-    normal "materials/normalmaps/textures/drdc47.png"
-    specular "materials/specmaps/textures/drdc47.png"
+    normal "materials/normalmaps/textures/drdc40"
+    specular "materials/specmaps/textures/drdc40"
 }
 
 Material Texture DRDC35 {
-    normal "materials/normalmaps/textures/drdc35.png"
-    metallic "materials/metalicmaps/textures/drdc35.png"
-    roughness "materials/roughnessmaps/textures/drdc35.png"
-    ao "materials/aomaps/textures/drdc35.png"
-    brightmap "materials/black.png"
+    normal "materials/normalmaps/textures/drdc35"
+    metallic "materials/metalicmaps/textures/drdc35"
+    roughness "materials/roughnessmaps/textures/drdc35"
+    ao "materials/aomaps/textures/drdc35"
+    brightmap "materials/black"
     glossiness 10
     specularlevel 0.5
 }
 
-Material Texture DRPGB20 {
-    normal "materials/normalmaps/textures/drdc35.png"
-    metallic "materials/metalicmaps/textures/drdc35.png"
-    roughness "materials/roughnessmaps/textures/drdc35.png"
-    ao "materials/aomaps/textures/drdc35.png"
-    brightmap "materials/black.png"
+Material Texture DRDC35 {
+    normal "materials/normalmaps/textures/drdc35"
+    metallic "materials/metalicmaps/textures/drdc35"
+    roughness "materials/roughnessmaps/textures/drdc35"
+    ao "materials/aomaps/textures/drdc35"
+    brightmap "materials/black"
     glossiness 10
     specularlevel 0.5
 }
 
-Material Texture DRPGC02 {
-    Normal "materials/normalmaps/textures/drdc40.png"
-    Specular "materials/specmaps/textures/drdc40.png"
+Material Texture DRDC40 {
+    Normal "materials/normalmaps/textures/drdc40"
+    Specular "materials/specmaps/textures/drdc40"
 }
+
+// Reactor portal animation
+Material Texture REAC1 {
+    BrightMap "materials/brightmaps/textures/REAC1_BRT"
+}
+
+Material Texture REAC2 {
+    BrightMap "textures/custom/white"
+}
+
+Material Texture REAC2B {
+    BrightMap "textures/custom/white"
+}
+
+Material Texture REAC2C {
+    BrightMap "textures/custom/white"
+}
+
+Material Texture REAC2D {
+    BrightMap "textures/custom/white"
+}
+
+// Doorsups
+
+Material Texture DRDC42 {
+    BrightMap "materials/brightmaps/textures/brpga14"
+}
+
+Material Texture DRDC44 {
+    BrightMap "materials/brightmaps/textures/brpga14"
+}
+
+Material Texture DRDC46 {
+    BrightMap "materials/brightmaps/textures/brpga14"
+}
+
+Material Texture DRDC48 {
+    BrightMap "materials/brightmaps/textures/brpga14"
+}
+
+// Colorful doors
+
+Material Texture DRDC2 {
+    BrightMap "materials/brightmaps/textures/DRDC5_BRT"
+    normal "materials/normalmaps/textures/drdc5"
+    specular "materials/specmaps/textures/drdc5"
+}
+
+Material Texture DRDC3 {
+    BrightMap "materials/brightmaps/textures/DRDC5_BRT"
+    normal "materials/normalmaps/textures/drdc5"
+    specular "materials/specmaps/textures/drdc5"
+}
+
+Material Texture DRDC4 {
+    BrightMap "materials/brightmaps/textures/DRDC5_BRT"
+    normal "materials/normalmaps/textures/drdc4"
+    specular "materials/specmaps/textures/drdc4"
+    brightmap "materials/brightmaps/textures/drdc4"
+}
+
+Material Texture DRDC5 {
+    BrightMap "materials/brightmaps/textures/DRDC5_BRT"
+    normal "materials/normalmaps/textures/drdc5"
+    specular "materials/specmaps/textures/drdc5"
+}
+
+// Opened/closed doors
+
+Material Texture DRDC9 {
+    BrightMap "materials/brightmaps/textures/DRDC9_BRT"
+}
+
+Material Texture DRDC8 {
+    BrightMap "materials/brightmaps/textures/DRDC8_BRT"
+}
+
+// Morthimer's computers
+    Material Texture CGR_CAPT {
+        BrightMap "materials/brightmaps/textures/CGR_CAPT_BRT"
+    }
+
+    Material Texture CGR_CRSR {
+        BrightMap "materials/brightmaps/textures/CGR_CRSR_BRT"
+    }
+
+    Material Texture CGR_EMPT {
+        BrightMap "materials/brightmaps/textures/CGR_EMPT_BRT"
+    }
+
+    Material Texture CGR_LC1 {
+        BrightMap "materials/brightmaps/textures/CGR_LC1_BRT"
+    }
+
+    Material Texture CGR_LC2 {
+        BrightMap "materials/brightmaps/textures/CGR_LC2_BRT"
+    }
+
+    Material Texture CGR_LC3 {
+        BrightMap "materials/brightmaps/textures/CGR_LC3_BRT"
+    }
+
+    Material Texture CGR_LC4 {
+        BrightMap "materials/brightmaps/textures/CGR_LC4_BRT"
+    }
+
+    Material Texture CGR_LC5 {
+        BrightMap "materials/brightmaps/textures/CGR_LC5_BRT"
+    }
+
+    Material Texture CGR_LC6 {
+        BrightMap "materials/brightmaps/textures/CGR_LC6_BRT"
+    }
+
+    Material Texture CGR_LC7 {
+        BrightMap "materials/brightmaps/textures/CGR_LC7_BRT"
+    }
+
+    Material Texture CGR_LC8 {
+        BrightMap "materials/brightmaps/textures/CGR_LC8_BRT"
+    }
+
+    Material Texture CGR_LC9 {
+        BrightMap "materials/brightmaps/textures/CGR_LC9_BRT"
+    }
+
+    Material Texture CGR_LC10 {
+        BrightMap "materials/brightmaps/textures/CGR_LC10_BRT"
+    }
+
+    Material Texture CGR_LC11 {
+        BrightMap "materials/brightmaps/textures/CGR_LC11_BRT"
+    }
+
+    Material Texture CGR_LC12 {
+        BrightMap "materials/brightmaps/textures/CGR_LC12_BRT"
+    }
+
+    Material Texture CGR_MSG {
+        BrightMap "materials/brightmaps/textures/CGR_MSG_BRT"
+    }
+
+    Material Texture CGR_OFF {
+        BrightMap "materials/brightmaps/textures/CGR_OFF_BRT"
+    }
+
+    Material Texture CGR_TXT1 {
+        BrightMap "materials/brightmaps/textures/CGR_TXT1_BRT"
+    }
+
+    Material Texture CGR_TXT2 {
+        BrightMap "materials/brightmaps/textures/CGR_TXT2_BRT"
+    }
+
+    Material Texture CGR_TXT3 {
+        BrightMap "materials/brightmaps/textures/CGR_TXT3_BRT"
+    }
+
+    Material Texture CGR_UAC {
+        BrightMap "materials/brightmaps/textures/CGR_UAC_BRT"
+    }
+//\\ Morthimer's computers
+
+// Door tunels
+Material Texture DRDC41 {
+    BrightMap "materials/brightmaps/textures/DRDC45_BRT"
+    normal "materials/normalmaps/textures/drdc47"
+    specular "materials/specmaps/textures/drdc47"
+}
+
+Material Texture DRDC43 {
+    BrightMap "materials/brightmaps/textures/DRDC45_BRT"
+    normal "materials/normalmaps/textures/drdc47"
+    specular "materials/specmaps/textures/drdc47"
+}
+
+Material Texture DRDC45 {
+    BrightMap "materials/brightmaps/textures/DRDC45_BRT"
+    normal "materials/normalmaps/textures/drdc47"
+    specular "materials/specmaps/textures/drdc47"
+}
+
+Material Texture DRDC47 {
+    BrightMap "materials/brightmaps/textures/DRDC45_BRT"
+    normal "materials/normalmaps/textures/drdc47"
+    specular "materials/specmaps/textures/drdc47"
+}
+
