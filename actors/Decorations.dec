@@ -141,14 +141,14 @@ Actor Crate 10705 {
     +SOLID
     +SHOOTABLE
     +NOBLOOD
-	+NOBLOODDECALS
+    +NOBLOODDECALS
     +FLOORCLIP
     +INCOMBAT
     Tag "$DRRP_E_CRATE"
     Health 20
     Height 64
     Radius 32
-	PainChance 255
+    PainChance 255
     Mass 0x7FFFFFFF
     DamageFactor "DRRPFireExtDmg", 0
     //BloodColor "AA AA AA"
@@ -156,83 +156,81 @@ Actor Crate 10705 {
         Spawn:
             CRAT A -1
             Stop
-		Pain:
-			CRAT A 0
-			//CRAT A 0 A_JumpIfHealthLower( Health / 100 * 75, 1 )
-			CRAT AA 0 A_SpawnItemEx( "CrateShard", FRandom( -5, 5 ), FRandom( -5, 5 ), Random( 3, 7 ), Random( -5, 5 ), Random( -5, 5 ), Random( 1, 5 ) )
-			Goto Spawn
+        Pain:
+            CRAT A 0
+            //CRAT A 0 A_JumpIfHealthLower(Health / 100 * 75, 1)
+            CRAT AA 0 A_SpawnItemEx("CrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(3, 7), Random(-5, 5), Random(-5, 5), Random(1, 5))
+            Goto Spawn
         Death:
-			CRAT A 0
-			CRAT AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx( "CrateShard", FRandom( -5, 5 ), FRandom( -5, 5 ), Random( 1, 6 ), Random( -4, 4 ), Random( -4, 4 ), Random( 1, 4 ) )
-            CRAT A 0 A_Quake( 1, 18, 0, 128 )
+            CRAT A 0
+            CRAT AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("CrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(1, 6), Random(-4, 4), Random(-4, 4), Random(1, 4))
+            CRAT A 0 A_Quake(1, 18, 0, 128)
             CRT2 B 4
-			CRT2 C 3 A_SpawnItemEx( "CrateSpawner" )
+            CRT2 C 3 A_SpawnItemEx("CrateSpawner")
             CRT2 D 3
             CRT2 E 3 A_NoBlocking
-			CRT2 FG 4
+            CRT2 FG 4
             CRT2 H -1
             Stop
     }
 }
 
-Actor CrateShard
-{
-	-SOLID
-	-NOGRAVITY
-	-BLOCKEDBYSOLIDACTORS
-	//+NOCLIP
-	+NOBLOCKMAP
-	+BOUNCEONFLOORS
-	+BOUNCEONWALLS
-	Radius 2
-	Height 3
-	BounceFactor 0.3
-//	Var int user_ShardStopped;
-	States {
-	Spawn:
-		BPRT A 0
-		BPRT A 0 {
-			A_SetScale( FRandomPick( -0.75, -0.5, 0.5, 0.75 ), FRandomPick( -0.75, -0.5, 0.5, 0.75 ) );
-//			A_SetUserVar( "user_ShardStopped", 0 );
-		}
-		BPRT A 0 A_Jump( 255, "Type1", "Type2", "Type3", "Type4", "Type5", "Type6" )
-/*	Type1a:
-		BPRT ABCDEFGHABCDEFGH 2 {
-			if ( user_ShardStopped == 1 ) {
-				return;
-			}
-			if ( !random( 0, 7 ) ) {
-				A_SetUserVar( "user_ShardStopped", 1 );
-			}
-		}
-		Goto Death /* */
-	Type1:
-		BPRT ABCDEFGHABCDEFGH 2
-		Goto Death
-	Type2:
-		BPRT ABCDEFGHABCD 2
-		Goto Death
-	Type3:
-		BPRT ABCDE 3
-		Goto Death
-	Type4:
-		BPRT ABCDEFG 3
-		Goto Death
-	Type5:
-		BPRT ABC 5
-		Goto Death
-	Type6:
-		BPRT ABCDEFGHABCDEF 2
-		Goto Death
-	Death:
-		"####" "#" 300
-		"####" "#" 2 A_FadeOut( 0.02 )
-		Wait
-	}
+Actor CrateShard {
+    -SOLID
+    -NOGRAVITY
+    -BLOCKEDBYSOLIDACTORS
+    //+NOCLIP
+    +NOBLOCKMAP
+    +BOUNCEONFLOORS
+    +BOUNCEONWALLS
+    Radius 2
+    Height 3
+    BounceFactor 0.3
+//    Var int user_ShardStopped;
+    States {
+    Spawn:
+        BPRT A 0
+        BPRT A 0 {
+            A_SetScale(FRandomPick(-0.75, -0.5, 0.5, 0.75), FRandomPick(-0.75, -0.5, 0.5, 0.75));
+//            A_SetUserVar("user_ShardStopped", 0);
+        }
+        BPRT A 0 A_Jump(255, "Type1", "Type2", "Type3", "Type4", "Type5", "Type6")
+/*    Type1a:
+        BPRT ABCDEFGHABCDEFGH 2 {
+            if (user_ShardStopped == 1) {
+                return;
+            }
+            if (!random(0, 7)) {
+                A_SetUserVar("user_ShardStopped", 1);
+            }
+        }
+        Goto Death /* */
+    Type1:
+        BPRT ABCDEFGHABCDEFGH 2
+        Goto Death
+    Type2:
+        BPRT ABCDEFGHABCD 2
+        Goto Death
+    Type3:
+        BPRT ABCDE 3
+        Goto Death
+    Type4:
+        BPRT ABCDEFG 3
+        Goto Death
+    Type5:
+        BPRT ABC 5
+        Goto Death
+    Type6:
+        BPRT ABCDEFGHABCDEF 2
+        Goto Death
+    Death:
+        "####" "#" 300
+        "####" "#" 2 A_FadeOut(0.02)
+        Wait
+    }
 }
 
-Actor CrateSpawner: RandomSpawner
-{
+Actor CrateSpawner: RandomSpawner {
     DropItem "HealthBonus"
     DropItem "ArmorBonus"
     DropItem "SmallMedikit"
@@ -244,8 +242,7 @@ Actor CrateSpawner: RandomSpawner
     DropItem "Explosion"
 }
 
-Actor Wardrobe 10706 
-{
+Actor Wardrobe 10706  {
     //$Category DDecorations
 
     +SOLID
@@ -263,8 +260,7 @@ Actor Wardrobe 10706
     }
 }
 
-Actor Bed 10707 
-{
+Actor Bed 10707  {
     //$Category DDecorations
 
     +SOLID
@@ -279,8 +275,7 @@ Actor Bed 10707
     }
 }
 
-Actor Exit 10708 
-{
+Actor Exit 10708  {
     //$Category DDecorations
 
     -SOLID
@@ -295,8 +290,7 @@ Actor Exit 10708
     }
 }
 
-Actor Sink 10709 
-{
+Actor Sink 10709  {
     //$Category DDecorations
 
     +SOLID
@@ -314,13 +308,12 @@ Actor Sink 10709
             Stop
         Death:
             TNT1 A 0
-            TNT1 A 0 A_SpawnItem( "AqueductFountain" )
+            TNT1 A 0 A_SpawnItem("AqueductFountain")
             Stop
     }
 }
 
-Actor Toilet 10710
-{
+Actor Toilet 10710 {
     //$Category DDecorations
 
     +SOLID
@@ -338,13 +331,12 @@ Actor Toilet 10710
             Stop
         Death:
             TNT1 A 0
-            TNT1 A 0 A_SpawnItem( "AqueductFountain" )
+            TNT1 A 0 A_SpawnItem("AqueductFountain")
             Stop
     }
 }
 
-Actor AqueductFountain
-{
+Actor AqueductFountain {
     //$Category DDecorations
 
     -SOLID
@@ -352,18 +344,17 @@ Actor AqueductFountain
     Scale 0.7
     States {
         Spawn:
-            CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 100 * 99 )
-            CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 1000 * 993 )
-            CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 1000 * 995 )
-            CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale( ScaleX / 1000 * 998 )
+            CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 100 * 99)
+            CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 1000 * 993)
+            CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 1000 * 995)
+            CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 1000 * 998)
         SpawnLoop:
             CEFE ABC 4
             Loop
     }
 }
 
-Actor CEFEcon 10743 
-{
+Actor CEFEcon 10743  {
     //$Category DDecorations
 
     -SOLID
@@ -375,8 +366,7 @@ Actor CEFEcon 10743
             Loop
     }
 }
-Actor CEFRcon: CEFEcon 10744
-{
+Actor CEFRcon: CEFEcon 10744 {
     //$Category DDecorations
 
     Tag "$DRRP_D_ALARM"
@@ -387,15 +377,14 @@ Actor CEFRcon: CEFEcon 10744
     }
 }
 
-Actor Alarm1 10745 
-{
+Actor Alarm1 10745  {
     //$Category DDecorations
 
     +SPAWNCEILING
     +NOGRAVITY
     -SOLID
-	+NOBLOCKMAP
-	+NOCLIP
+    +NOBLOCKMAP
+    +NOCLIP
     Tag "$DRRP_D_ALARM"
     Scale 1.0
     States {
@@ -406,8 +395,7 @@ Actor Alarm1 10745
     }
 }
 
-Actor Alarm2: KlaxonWarningLight 10746 
-{
+Actor Alarm2: KlaxonWarningLight 10746  {
     //$Category DDecorations
 
     Tag "$DRRP_D_ALARM"
@@ -485,7 +473,7 @@ Actor RubbleSmall 19692 {
     States {
         Spawn:
             TNT1 A 0
-            TNT1 A 0 A_Jump( 127, "Type2" )
+            TNT1 A 0 A_Jump(127, "Type2")
         Type1:
             RUBL A 1
             RUBL A -1
@@ -531,8 +519,7 @@ Actor RubbleLarge : RubbleMedium 1333 {
     }
 }
 
-Actor CeilLamp1 1316
-{
+Actor CeilLamp1 1316 {
     //$Category DDecorations
 
     +NOGRAVITY
@@ -549,8 +536,7 @@ Actor CeilLamp1 1316
     }
 }
 
-Actor CeilLamp2: CeilLamp1 1317 
-{
+Actor CeilLamp2: CeilLamp1 1317  {
     //$Category DDecorations
 
     States {
@@ -560,8 +546,7 @@ Actor CeilLamp2: CeilLamp1 1317
     }
 }
 
-Actor CeilLamp3: CeilLamp1 1726 
-{
+Actor CeilLamp3: CeilLamp1 1726  {
     //$Category DDecorations
 
     States {
@@ -572,15 +557,15 @@ Actor CeilLamp3: CeilLamp1 1726
 }
 
 Actor ShittyFog 10765 {
-	RenderStyle Add
-	-SOLID
-	+NOBLOCKMAP
-	+FORCEXYBILLBOARD
-	Scale 0.5
-	Alpha 0.1
-	states {
-		Spawn:
-			FOGI A 10 BRIGHT
-			Loop
-	}
+    RenderStyle Add
+    -SOLID
+    +NOBLOCKMAP
+    +FORCEXYBILLBOARD
+    Scale 0.5
+    Alpha 0.1
+    states {
+        Spawn:
+            FOGI A 10 BRIGHT
+            Loop
+    }
 }

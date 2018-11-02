@@ -39,7 +39,7 @@ Map INTRO "Entrance" {
 }
 
 Map INTRO2 "TitleMap" {
-	Music    = "D_TITLE"
+    Music    = "D_TITLE"
 }
 
 
@@ -55,7 +55,7 @@ Map SEC1 "Sector 1" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 3
-	EventHandlers = "DoorCodeInputHandler"
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map SEC2 "Sector 2" {

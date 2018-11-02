@@ -1,43 +1,6 @@
 #library "EnemyScouterThing"
 #include "zcommon.acs"
 
-function str getActorName(str nametag) {
-    if(!GetCVar("drrp_enable_dynamicalnamesuppose"))
-        return nametag;
-
-    str supposedName = nametag;
-    if(isLocalized(supposedName)) {
-        return StrParam(l: supposedName, s:"[LOC]");
-    }
-    
-    supposedName = StrParam(s:"DRRP_M_", s:nametag);
-    if(isLocalized(supposedName)) {
-        return StrParam(l: supposedName, s:"[LOC]");
-    }
-    
-    supposedName = StrParam(s:"DRRP_I_", s:nametag);
-    if(isLocalized(supposedName)) {
-        return StrParam(l: supposedName, s:"[LOC]");
-    }
-    
-    supposedName = StrParam(s:"DRRP_E_", s:nametag);
-    if(isLocalized(supposedName)) {
-        return StrParam(l: supposedName, s:"[LOC]");
-    }
-    
-    supposedName = StrParam(s:"DRRP_B_", s:nametag);
-    if(isLocalized(supposedName)) {
-        return StrParam(l: supposedName, s:"[LOC]");
-    }
-    
-    supposedName = StrParam(s:"DRRP_D_", s:nametag);
-    if(isLocalized(supposedName)) {
-        return StrParam(l: supposedName, s:"[LOC]");
-    }
-    
-    return nametag;
-}
-
 Script "InfoBar" ENTER {
     if(!GetCVar("drrp_enable_infobar")) Terminate;
     
@@ -45,14 +8,14 @@ Script "InfoBar" ENTER {
         int old_tid = PickActor(0, GetActorAngle(0), GetActorPitch(0), 2048.0, 0, 0xFF, ML_BLOCKEVERYTHING | ML_BLOCKHITSCAN, PICKAF_RETURNTID);
         int new_tid = UniqueTID();
     
-        if(PickActor(0, GetActorAngle(0), GetActorPitch(0), 2048.0, new_tid, 0xFF, ML_BLOCKEVERYTHING | ML_BLOCKHITSCAN, PICKAF_FORCETID)) {	
+        if(PickActor(0, GetActorAngle(0), GetActorPitch(0), 2048.0, new_tid, 0xFF, ML_BLOCKEVERYTHING | ML_BLOCKHITSCAN, PICKAF_FORCETID)) {    
             
             int color = CR_GRAY;
 
             if(GetActorProperty(new_tid, APROP_Friendly))
                 color = CR_GREEN;
 
-            HudMessage(s:getActorName(GetActorProperty(new_tid, APROP_NameTag)); HUDMSG_FADEOUT, 112223, color, 0.5, 0.02, 0.6, 0.2);
+            HudMessage(s:GetActorProperty(new_tid, APROP_NameTag); HUDMSG_FADEOUT, 112223, color, 0.5, 0.02, 0.6, 0.2);
         
             Thing_ChangeTID(new_tid, old_tid);
         }

@@ -28,14 +28,14 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     States {
         Spawn:
             FIRE A 0 Bright
-            FIRE A 0 Bright A_JumpIf( Args[ 0 ] != 0, "Spawn.Start" )
-            FIRE A 0 Bright A_SetArg( 0, 255 )
+            FIRE A 0 Bright A_JumpIf(Args[ 0 ] != 0, "Spawn.Start")
+            FIRE A 0 Bright A_SetArg(0, 255)
         Spawn.Start:
             FIRE A 0 Bright
-            FIRE A 0 Bright A_PlaySound( "fire/loop3", CHAN_7, ( Args[ 0 ] * 1.0 ) / 255, true, 2.5 )
-            FIRE A 0 Bright A_Jump( 256, Random( 1, 8 ) )
+            FIRE A 0 Bright A_PlaySound("fire/loop3", CHAN_7, (Args[ 0 ] * 1.0) / 255, true, 2.5)
+            FIRE A 0 Bright A_Jump(256, Random(1, 8))
         Spawn.Loop:
-            FIRE ABCDEFGH 2 BRIGHT A_Explode( 3, 32, XF_NOTMISSILE )
+            FIRE ABCDEFGH 2 BRIGHT A_Explode(3, 32, XF_NOTMISSILE)
             Loop
         Death:
         XDeath:
@@ -66,10 +66,10 @@ Actor DRRPLava 10251 {
     States {
         Spawn:
             SPKO D 0 Bright
-            SPKO D 0 Bright A_PlaySound( "ICOSCRE", CHAN_7, 1, true, 2.5 )
-            SPKO D 0 Bright A_Jump( 256, 1, 2, 3, 4, 5, 6, 7, 8 )
+            SPKO D 0 Bright A_PlaySound("ICOSCRE", CHAN_7, 1, true, 2.5)
+            SPKO D 0 Bright A_Jump(256, 1, 2, 3, 4, 5, 6, 7, 8)
         SpawnLoop:
-            SPKO ABCDEFGH 2 BRIGHT A_Explode( 7, 32, XF_NOTMISSILE )
+            SPKO ABCDEFGH 2 BRIGHT A_Explode(7, 32, XF_NOTMISSILE)
             Loop
         Pain.FireExtDamage:
             TNT1 A 0
@@ -94,7 +94,7 @@ Actor Explosion {
     States {
         Spawn:
 			MISL B 0 Bright
-            MISL B 1 Bright A_PlaySound( "generic/expl/explode", CHAN_AUTO )
+            MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_AUTO)
             MISL B 5 Bright A_Explode
             MISL C 5 Bright
             MISL D 4 Bright

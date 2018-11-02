@@ -10,7 +10,7 @@ namespace = "ZDoom";
 conversation {
     actor = "DRRPShop"; // Not a number!
     page {
-		 goodbye = "Close";
+         goodbye = "Close";
          name = "Shop";
          dialog = "What do you want to buy?";
          choice {

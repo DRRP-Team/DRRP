@@ -6,10 +6,9 @@
  */
 
 class ConversationController play {
-
     static int GetArgument(int lineID) {
-		if(lineID < 0) return GetActorArgument(-lineID);
-	
+        if(lineID < 0) return GetActorArgument(-lineID);
+    
         LineIdIterator it = LineIdIterator.Create(lineID);
         int itLineID      = it.Next();
 
@@ -23,7 +22,7 @@ class ConversationController play {
     }
 
     static bool SetArgument(int lineID, int lineArg) {
-		if(lineID < 0) return SetActorArgument(-lineID, lineArg);
+        if(lineID < 0) return SetActorArgument(-lineID, lineArg);
         LineIdIterator it = LineIdIterator.Create(lineID);
         int itLineID = -1;
 
@@ -31,8 +30,8 @@ class ConversationController play {
             Line convLine = level.Lines[itLineID];
             convLine.args[4] = lineArg;
         }
-		
-		return true;
+        
+        return true;
     }
 
     static int GetActorArgument(int actorID) {

@@ -8,7 +8,6 @@
 // Flashlight mod: https://forum.zdoom.org/viewtopic.php?t=59429
 
 class Util {
-
     play static void setupFlashlight (int playerID, int flashID) {
         PlayerPawn act = PlayerPawn(ActorIterator.Create(playerID).Next());
 

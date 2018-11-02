@@ -17,19 +17,19 @@ version "2.5"
 #include "zscript/monsters.zs"
 
 class DRRPFire_zspatch : Actor {
-
     override bool CanCollideWith (Actor other, bool passive) {
         String cn = other.getClassName();
         if(cn == "DoomRPGPlayer"
-                || cn == "Nightmare"
-                || cn == "LostSoul1"
                 || cn == "Phantom"
+                || cn == "DRRPLostSoul"
+                || cn == "Nightmare"
+
                 || cn == "Beholder"
                 || cn == "Rahovart"
-                || cn == "PainElemental1"
-                || cn == "PainElemental"
+                || cn == "DRRPPainElemental"
+
                 || cn == "Infernis"
-                || cn == "ArchVile1"
+                || cn == "DRRPArchVile"
                 || cn == "Apollyon"
                 //      || cn == "FireExtPuff"
                 || (other.bMISSILE == true && cn != "FireExtPuff")) {

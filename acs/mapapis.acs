@@ -8,7 +8,7 @@
 // Map APIs 3000 - 3999
 
 Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
-	if(!nosound) SectorSound("access/grant1", 255);
+    if(!nosound) SectorSound("access/grant1", 255);
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
     SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga09b");
@@ -17,24 +17,24 @@ Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
 }
 
 Script 3001 (void) { // Door Closed
-	ActivatorSound("acess/deny1", 255);
-	print(s:"\cgDoor closed!");
-	delay(34);
+    ActivatorSound("acess/deny1", 255);
+    print(s:"\cgDoor closed!");
+    delay(34);
 }
 
 Script 3002 (int sectorid) { // Generic Door
-	Door_Raise(sectorid, 16, 105);
+    Door_Raise(sectorid, 16, 105);
 }
 
 Script 3003 (int sectorid) { // Secret Door
-	Door_Open(sectorid, 128);
+    Door_Open(sectorid, 128);
 }
 
 Script 3004 (void) { // Give Automap
-	GiveInventory("MapRevealer", 1);
+    GiveInventory("MapRevealer", 1);
 }
 
 Script 3005 (void) { // WIP Level
-	SetFont("bigfont");
-	print(s:"Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!");
+    SetFont("bigfont");
+    print(s:"Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!");
 }

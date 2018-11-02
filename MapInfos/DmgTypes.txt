@@ -5,34 +5,20 @@
  * https://opensource.org/licenses/MIT
  */
 
-DamageType DRRPPhysicalDmg      // Dogs and e. t. c.
-{ }
+DamageType DRRPAxeDmg       {}      // Axe (separated from physical damage).
+DamageType DRRPFireDmg      {}      // Fire.
+DamageType DRRPClipDmg      {}      // Bullets.
+DamageType DRRPRocketDmg    {}      // Rockets.
+DamageType DRRPPlasmaDmg    {}      // Plasma.
+DamageType DRRPShotgunDmg   {}      // Bullets (for dogs).
+DamageType DRRPPhysicalDmg  {}      // Dogs and e. t. c.
 
-DamageType DRRPAxeDmg           // Axe (separated from physical damage).
-{ }
-
-DamageType DRRPFireExtDmg       // Fire extinguisher.
-{ 
-    ReplaceFactor
-//  Factor = 0.5
-}
-
-DamageType DRRPFireDmg          // Fire.
-{ }
-
-DamageType DRRPClipDmg          // Bullets.
-{ }
-
-DamageType DRRPShotgunDmg       // Bullets (for dogs).
-{ }
-
-DamageType DRRPSSGDmg           // Bullets (for Baron of hell).
-{
+DamageType DRRPFireExtDmg {         // Fire extinguisher.
     ReplaceFactor
 }
 
-DamageType DRRPRocketDmg        // Rockets.
-{ }
 
-DamageType DRRPPlasmaDmg        // Plasma.
-{ }
+DamageType DRRPSSGDmg {             // Bullets (for Baron of hell).
+    ReplaceFactor
+}
+

@@ -16,7 +16,6 @@ class NullHUD : BaseStatusBar {
 }
 
 class HUDController {
-
     static ui void SwitchHUD(bool is_enable) {
         if (!is_enable) {
             if (StatusBar is 'NullHUD') return;

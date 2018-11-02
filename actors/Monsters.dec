@@ -162,7 +162,7 @@ Actor ChaingunGuyDRRP : ChaingunGuy replaces ChaingunGuy {
     States {
         Pain:
             CPOS G 0 A_Pain
-            CPOS G 4 A_MonsterRefire( 40, "PainOut" )
+            CPOS G 4 A_MonsterRefire(40, "PainOut")
             Goto Missile + 1
         PainOut:
             CPOS G 2
@@ -555,16 +555,16 @@ Actor Kronos 10391 {
             Loop
         Melee:
             KRON A 0
-            KRON A 0 A_CustomMeleeAttack( Random( 15, 30 ) )
-            KRON A 5 A_SetScale( -1 )
-            KRON A 5 A_SetScale( 1 )
+            KRON A 0 A_CustomMeleeAttack(Random(15, 30))
+            KRON A 5 A_SetScale(-1)
+            KRON A 5 A_SetScale(1)
             Goto See
         Death:
             KRON A 1 {
                 A_Fall;
                 A_NoBlocking;
             }
-            KRON A 2 A_FadeOut( 0.02 )
+            KRON A 2 A_FadeOut(0.02)
             Wait
     }    
 }

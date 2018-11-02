@@ -24,19 +24,20 @@ void main() {
     samples[9] =  0.08;
 
 
-    vec2 dir = 0.5 - TexCoord; 
-    float dist = sqrt(dir.x*dir.x + dir.y*dir.y); 
-    dir = dir/dist; 
+    vec2 dir    = 0.5 - TexCoord; 
+    float dist  = sqrt((dir.x * dir.x) + (dir.y * dir.y)); 
+    dir         = dir / dist; 
 
-    vec4 color = texture(InputTexture, TexCoord);
-    vec4 sum = color;
+    vec4 color  = texture(InputTexture, TexCoord);
+    vec4 sum    = color;
 
-    for (int i = 0; i < 10; i++)
-        sum += texture(InputTexture, TexCoord + dir * samples[i] * sampleDist );
+    for (int i = 0; i < 10; i++) {
+        sum += texture(InputTexture, TexCoord + dir * samples[i] * sampleDist);
+    }
 
-    sum *= 1.0/11.0;
-    float t = dist * sampleStrength;
-    t = clamp( t , 0.0, 1.0);
+    sum *= 1.0 / 11.0;
 
-    FragColor = mix( color, sum, t );
+    float t = clamp(dist * sampleStrength, 0.0, 1.0);
+
+    FragColor = mix(color, sum, t);
 }

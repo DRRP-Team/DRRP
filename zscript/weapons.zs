@@ -5,8 +5,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-class DRRPPistol  : Pistol {
-
+class DRRPPistol : Pistol {
     Default {
         DamageType "DRRPClipDmg";
         Decal "BulletChip";
@@ -33,7 +32,6 @@ class DRRPPistol  : Pistol {
 }
 
 class DRRPShotgun : Shotgun {
-
     Default {
         DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
@@ -72,7 +70,6 @@ class DRRPShotgun : Shotgun {
 }
 
 class DRRPSuperShotgun : SuperShotgun {
-
     Default {
         DamageType "DRRPSSGDmg";
         Decal "BulletChip";
@@ -120,7 +117,6 @@ class DRRPSuperShotgun : SuperShotgun {
 }
 
 class DRRPChaingun : Chaingun {
-
     Default {
         DamageType "DRRPClipDmg";
         Decal "BulletChip";

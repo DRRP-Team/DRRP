@@ -9,7 +9,7 @@
 Actor DRRPGreenCard : DoomKey 10622 {
     //$Category Keys
 
-    Tag "$DRRP_I_GREENKEY"
+    Tag                     "$DRRP_I_GREENKEY"
     Inventory.PickupMessage "$DRRP_I_GREENKEY"
     Inventory.Icon          "STKEYS2"
     Inventory.PickupSound   "misc/k_pkup"
@@ -24,20 +24,20 @@ Actor DRRPGreenCard : DoomKey 10622 {
 }
 
 Actor DRRPYellowCard : YellowCard replaces YellowCard {
-    Tag "$DRRP_I_YELLOWKEY"
-    Inventory.PickupSound "misc/k_pkup"
+    Tag                     "$DRRP_I_YELLOWKEY"
+    Inventory.PickupSound   "misc/k_pkup"
     Inventory.PickupMessage "$DRRP_I_YELLOWKEY"
 }
 
 Actor DRRPBlueCard : BlueCard replaces BlueCard {
-    Tag "$DRRP_I_BLUEKEY"
-    Inventory.PickupSound "misc/k_pkup"
+    Tag                     "$DRRP_I_BLUEKEY"
+    Inventory.PickupSound   "misc/k_pkup"
     Inventory.PickupMessage "$DRRP_I_BLUEKEY"
 }
 
 Actor DRRPRedCard : RedCard replaces RedCard {
-    Tag "$DRRP_I_REDKEY"
-    Inventory.PickupSound "misc/k_pkup"
+    Tag                     "$DRRP_I_REDKEY"
+    Inventory.PickupSound   "misc/k_pkup"
     Inventory.PickupMessage "$DRRP_I_REDKEY"
 }
 
@@ -49,9 +49,9 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
 
     Tag                     "$DRRP_I_SMMEDKIT"
     Health                  25
-    HealthPickup.AutoUse    0
     Inventory.Icon          "MEDIA0"
     Inventory.MaxAmount     99
+    HealthPickup.AutoUse    0
     Inventory.PickupMessage "$DRRP_I_SMMEDKIT"
     Translation             "168:185=229:229", "186:191=163:163"
 
@@ -70,9 +70,9 @@ Actor LargeMedikit : HealthPickup 10601 {
 
     Tag                     "$DRRP_I_LGMEDKIT"
     Health                  75
-    HealthPickup.AutoUse    0
-    Inventory.MaxAmount     99
     Inventory.Icon          "MEDIA0"
+    Inventory.MaxAmount     99
+    HealthPickup.AutoUse    0
     Inventory.PickupMessage "$DRRP_I_LGMEDKIT"
     Translation             "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
 
@@ -92,7 +92,7 @@ Actor HealthPowerUp : UpgradeStamina 10603 {
 Actor Balloon : Ammo 10610 {
     //$Category DAmmo
 
-    Tag "$DRRP_I_HALONCAN"
+    Tag                     "$DRRP_I_HALONCAN"
     Ammo.BackpackAmount     20
     Ammo.BackpackMaxAmount  600
     Inventory.Amount        20
@@ -116,10 +116,12 @@ Actor Credit : Inventory 10620 {
     +NOTDMATCH
     +FLOORCLIP
     +INVENTORY.INVBAR
+    
     Tag                     "$DRRP_I_1CREDIT"
     Inventory.Icon          "CREDH0"
-    Inventory.PickupMessage "$DRRP_I_1CREDIT"
     Inventory.MaxAmount     0x7FFFFFFF
+    Inventory.PickupMessage "$DRRP_I_1CREDIT"
+    
     States {
         Spawn:
             CRED A -1
@@ -132,9 +134,11 @@ Actor GoldCredit : CustomInventory 10621 {
     +DROPPED
     +NOTDMATCH
     +FLOORCLIP
+    
     Tag                     "$DRRP_I_5CREDITS"
     Inventory.PickupMessage "$DRRP_I_5CREDITS"
     // Translation "112:127=%[0.00,0.00,0.00]:[2.00,1.01,0.00]"
+
     States {
         Spawn:
             CRED B -1
@@ -151,7 +155,7 @@ Actor Berserker : CustomInventory replaces Berserk 10623 {
     +COUNTITEM
     +INVENTORY.INVBAR
 
-    Tag "$DRRP_I_BERSERKER"
+    Tag                     "$DRRP_I_BERSERKER"
     Inventory.MaxAmount     99
     Inventory.Icon          "BERSH0"
     Inventory.PickupMessage "$DRRP_I_BERSERKER"
@@ -163,7 +167,7 @@ Actor Berserker : CustomInventory replaces Berserk 10623 {
         Spawn:
             SOUL ABCDCB 6 Bright
             Loop
-        Use:		
+        Use:        
             TNT1 A 0 A_GiveInventory("PowerStrength")
             TNT1 A 0 HealThing(100, 0)
             TNT1 A 0 A_SelectWeapon("DRRPAxe") // Fist
@@ -175,7 +179,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
     +COUNTITEM
     +INVENTORY.INVBAR
 
-    Tag "$DRRP_I_SOULSPHERE"
+    Tag                     "$DRRP_I_SOULSPHERE"
     Inventory.MaxAmount     99
     Inventory.Icon          "SOULH0"
     Inventory.PickupSound   "misc/p_pkup"
@@ -186,8 +190,8 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
             SOUL ABCDCB 6 Bright
             Loop
         Use:
-            TNT1 A 0 A_GiveInventory( "Health", 999 )
-            TNT1 A 0 A_GiveInventory( "BlueArmor", 1 )
+            TNT1 A 0 A_GiveInventory("Health", 999)
+            TNT1 A 0 A_GiveInventory("BlueArmor", 1)
             Stop
     }
 }
@@ -208,27 +212,27 @@ Actor DogCollar : CustomInventory 10624 {
             Stop
         Use:
             TNT1 A 0
-            TNT1 A 0 A_JumpIf( CheckClass( "Cerberus", AAPTR_PLAYER_GETTARGET ), "CerberusLabel" )
-            TNT1 A 0 A_JumpIf( CheckClass( "Hellhound", AAPTR_PLAYER_GETTARGET ), "HellhoundLabel" )
-            TNT1 A 0 A_JumpIf( CheckClass( "DemonWolf", AAPTR_PLAYER_GETTARGET ), "DemonWolfLabel" )
+            TNT1 A 0 A_JumpIf(CheckClass("Cerberus", AAPTR_PLAYER_GETTARGET), "CerberusLabel")
+            TNT1 A 0 A_JumpIf(CheckClass("Hellhound", AAPTR_PLAYER_GETTARGET), "HellhoundLabel")
+            TNT1 A 0 A_JumpIf(CheckClass("DemonWolf", AAPTR_PLAYER_GETTARGET), "DemonWolfLabel")
             Fail
         CerberusLabel:
             TNT1 A 0
-            TNT1 A 0 A_Remove( AAPTR_PLAYER_GETTARGET )
-            TNT1 A 0 A_GiveInventory( "CerberusGun" )
-            TNT1 A 0 A_SelectWeapon( "CerberusGun" )
+            TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+            TNT1 A 0 A_GiveInventory("CerberusGun")
+            TNT1 A 0 A_SelectWeapon("CerberusGun")
             Stop
         HellhoundLabel:
             TNT1 A 0
-            TNT1 A 0 A_Remove( AAPTR_PLAYER_GETTARGET )
-            TNT1 A 0 A_GiveInventory( "HellhoundGun" )
-            TNT1 A 0 A_SelectWeapon( "HellhoundGun" )
+            TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+            TNT1 A 0 A_GiveInventory("HellhoundGun")
+            TNT1 A 0 A_SelectWeapon("HellhoundGun")
             Stop
         DemonWolfLabel:
             TNT1 A 0
-            TNT1 A 0 A_Remove( AAPTR_PLAYER_GETTARGET )
-            TNT1 A 0 A_GiveInventory( "DemonWolfGun" )
-            TNT1 A 0 A_SelectWeapon( "DemonWolfGun" )
+            TNT1 A 0 A_Remove(AAPTR_PLAYER_GETTARGET)
+            TNT1 A 0 A_GiveInventory("DemonWolfGun")
+            TNT1 A 0 A_SelectWeapon("DemonWolfGun")
             Stop
     }
 }

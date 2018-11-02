@@ -12,7 +12,7 @@
 #define JUNCTION_LEVELNUM 2
 //#define DEBUGSCRIPT
 
-world bool 1:exitedLevels[MAX_LEVELS] = {false}; // FIXME: You need only one counter
+world bool 1:exitedLevels[MAX_LEVELS] = {false}; // FIXME: You need just one counter. Or Actor.
 
 // Useful functions
 
@@ -27,7 +27,7 @@ function int getStringWidth(str String) {
 }
 
 function int getStringHeight(str String) {
-    int i	   = 0;
+    int i       = 0;
     int height = 0;
 
     while(String[i] != '\0') {
@@ -55,6 +55,7 @@ script 777(int spotnum) {
 
 
 script "fireextfade" (int mode) {
+    // TODO: Use additive point light
     if(mode) {
         Sector_SetFade(0, 255, 255, 255);
     } else {
@@ -66,7 +67,6 @@ script "fireextfade" (int mode) {
 
 Script "window"( str Text ) { //s: -> str
     const int SYM_HEIGHT = 12; // Symbol's height is 12px
-    // TODO: Block downscrolling by bottom of string
 
     delay(2);
 
