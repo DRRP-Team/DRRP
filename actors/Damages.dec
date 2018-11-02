@@ -13,6 +13,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
+    +NOTAUTOAIMED
     +SPECTRAL
     -ISMONSTER
     -COUNTKILL
@@ -28,11 +29,11 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     States {
         Spawn:
             FIRE A 0 Bright
-            FIRE A 0 Bright A_JumpIf(Args[ 0 ] != 0, "Spawn.Start")
+            FIRE A 0 Bright A_JumpIf(Args[0] != 0, "Spawn.Start")
             FIRE A 0 Bright A_SetArg(0, 255)
         Spawn.Start:
             FIRE A 0 Bright
-            FIRE A 0 Bright A_PlaySound("fire/loop3", CHAN_7, (Args[ 0 ] * 1.0) / 255, true, 2.5)
+            FIRE A 0 Bright A_PlaySound("fire/loop3", CHAN_7, (Args[0] * 1.0) / 255, true, 2.5)
             FIRE A 0 Bright A_Jump(256, Random(1, 8))
         Spawn.Loop:
             FIRE ABCDEFGH 2 BRIGHT A_Explode(3, 32, XF_NOTMISSILE)
@@ -51,6 +52,7 @@ Actor DRRPLava 10251 {
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
+    +NOTAUTOAIMED
     -SOLID
     -ISMONSTER
     -COUNTKILL
