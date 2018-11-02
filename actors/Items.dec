@@ -26,16 +26,19 @@ Actor DRRPGreenCard : DoomKey 10622 {
 Actor DRRPYellowCard : YellowCard replaces YellowCard {
     Tag "$DRRP_I_YELLOWKEY"
     Inventory.PickupSound "misc/k_pkup"
+    Inventory.PickupMessage "$DRRP_I_YELLOWKEY"
 }
 
 Actor DRRPBlueCard : BlueCard replaces BlueCard {
     Tag "$DRRP_I_BLUEKEY"
     Inventory.PickupSound "misc/k_pkup"
+    Inventory.PickupMessage "$DRRP_I_BLUEKEY"
 }
 
 Actor DRRPRedCard : RedCard replaces RedCard {
     Tag "$DRRP_I_REDKEY"
     Inventory.PickupSound "misc/k_pkup"
+    Inventory.PickupMessage "$DRRP_I_REDKEY"
 }
 
 Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
@@ -49,7 +52,7 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
     HealthPickup.AutoUse    0
     Inventory.Icon          "MEDIA0"
     Inventory.MaxAmount     99
-    Inventory.PickupMessage "Picked up a small medikit"
+    Inventory.PickupMessage "$DRRP_I_SMMEDKIT"
     Translation             "168:185=229:229", "186:191=163:163"
 
     States {
@@ -70,7 +73,7 @@ Actor LargeMedikit : HealthPickup 10601 {
     HealthPickup.AutoUse    0
     Inventory.MaxAmount     99
     Inventory.Icon          "MEDIA0"
-    Inventory.PickupMessage "Picked up a large medikit"
+    Inventory.PickupMessage "$DRRP_I_LGMEDKIT"
     Translation             "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
 
     States {
@@ -96,7 +99,7 @@ Actor Balloon : Ammo 10610 {
     Inventory.MaxAmount     300
     Inventory.Icon          "BALLA0"
     Inventory.PickupSound   "weapon/gas"
-    Inventory.PickupMessage "Picked up a baloon!"
+    Inventory.PickupMessage "$DRRP_I_HALONCAN"
 
     States {
         Spawn:
@@ -115,7 +118,7 @@ Actor Credit : Inventory 10620 {
     +INVENTORY.INVBAR
     Tag                     "$DRRP_I_1CREDIT"
     Inventory.Icon          "CREDH0"
-    Inventory.PickupMessage "Picked up a credit."
+    Inventory.PickupMessage "$DRRP_I_1CREDIT"
     Inventory.MaxAmount     0x7FFFFFFF
     States {
         Spawn:
@@ -130,7 +133,7 @@ Actor GoldCredit : CustomInventory 10621 {
     +NOTDMATCH
     +FLOORCLIP
     Tag                     "$DRRP_I_5CREDITS"
-    Inventory.PickupMessage "Picked up 5 credits."
+    Inventory.PickupMessage "$DRRP_I_5CREDITS"
     // Translation "112:127=%[0.00,0.00,0.00]:[2.00,1.01,0.00]"
     States {
         Spawn:
@@ -176,7 +179,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
     Inventory.MaxAmount     99
     Inventory.Icon          "SOULH0"
     Inventory.PickupSound   "misc/p_pkup"
-    Inventory.PickupMessage "$GOTSUPER"
+    Inventory.PickupMessage "$DRRP_I_SOULSPHERE"
 
     States {
         Spawn:
@@ -196,7 +199,7 @@ Actor DogCollar : CustomInventory 10624 {
 
     Tag                     "$DRRP_I_DOGCOLLAR"
     Inventory.Icon          "DOGCH0"
-    Inventory.PickupMessage "Got the dog collar."
+    Inventory.PickupMessage "$DRRP_I_DOGCOLLAR"
     Inventory.MaxAmount     99
 
     States {
