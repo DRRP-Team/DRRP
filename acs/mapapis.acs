@@ -10,7 +10,7 @@
 Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
 	if(!nosound) SectorSound("access/grant1", 255);
 
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "drpga09");
+    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
     SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga09b");
     SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
     SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
