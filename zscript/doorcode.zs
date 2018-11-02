@@ -5,26 +5,31 @@
  *https://opensource.org/licenses/MIT
  */
 
-class DoorCodeInputActor : Actor {
+class DoorCodeInputActor {
 
-    static int DoorCode(int code, int front, int back) {
-        EventHandler.SendNetworkEvent("opendoorinput", code, front, back);
+    static int DoorCode(Actor activator, string info, int code, int front, int back) {
+        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info, code, front, back);
+		
+			
  
         return 1;
     }
 }
 
-class DoorCodeInputHandler : EventHandler {
+class DoorCodeInputStubItem : Inventory {
+    String code;
+    String displayTooltip;
     int doorfront;
     int doorback;
-    String codeStr;
-    String realCodeStr;
+}
+
+class DoorCodeInputHandler : EventHandler {
 
     override void OnRegister() {
         SetOrder(666);
     }
 
-    override bool UiProcess(UiEvent ev) {
+    /*override bool UiProcess(UiEvent ev) {
         if (ev.Type == UiEvent.Type_KeyDown && ((ev.keyChar >= 48 && ev.keyChar <= 57) || ev.keyChar == 8)) {
             SendNetworkEvent("putcodechar", ev.keyChar);
         } else if (ev.Type == UiEvent.Type_KeyDown && ev.keyChar == 27) {
@@ -47,16 +52,31 @@ class DoorCodeInputHandler : EventHandler {
                 screen.GetHeight() / 2 - font.GetHeight() / 2,
                 str
         );
-    }
+    }*/
 
     override void NetworkProcess(ConsoleEvent e) {
-        if (e.Name == "closedoorinput") {
-            self.IsUiProcessor = false;
+		Array<string> command;
+		e.Name.Split(command, "@@@@");
+		if(command[0] == "opendoorinput") {
+			if(command.size() == 2) {
+				players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
+				DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
+				item.code = String.format("%d", e.args[0]);
+				item.displayTooltip = command[1];
+				item.doorfront = e.args[1];
+				item.doorback = e.args[2];
+				Menu.SetMenu("DoorCodeInputMenu");
+			}
+        } else if (command[0] == "closedoorinput") {
+            // self.IsUiProcessor = false;
+			
+			DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
+			if(item == null) return;
 
             if (e.Args[0] == 1) {
                 players[e.Player].mo.A_PlaySound("access/grant1");
 
-                LineIdIterator it = LineIdIterator.Create(doorfront);
+                LineIdIterator it = LineIdIterator.Create(item.doorfront);
                 int lineid = it.Next();
 
                 if (lineid > 0) {
@@ -71,7 +91,7 @@ class DoorCodeInputHandler : EventHandler {
                     line.args[3] = 0;
                     line.args[4] = 0;
                 }
-                it = LineIdIterator.Create(doorback);
+                it = LineIdIterator.Create(item.doorback);
                 lineid = it.Next();
 
                 if (lineid > 0) {
@@ -90,36 +110,56 @@ class DoorCodeInputHandler : EventHandler {
             } else if (e.Args[0] == 2) {
                 players[e.Player].mo.A_PlaySound("access/deny1");
             }
-        } else if (e.Name == "opendoorinput") {
-            self.doorfront = e.Args[1];
-            self.doorback = e.Args[2];
+        }
+    }
+}
 
-            LineIdIterator it = LineIdIterator.Create(doorfront);
-            int lineid = it.Next();
-
-            if (lineid > 0) {
-                Line line = level.Lines[lineid];
-
-                if (line.special == 12) {
-                    Console.Printf("Door is already open.");
-                    return;
-                }
-            }
- 
-            self.realCodeStr = String.format("%d", e.Args[0]);
-            self.codeStr = "";
+class DoorCodeInputMenu : GenericMenu {
+    String codeStr;
+    String realCodeStr;
+	String displayTooltip;
+	
+	Override
+	void init(Menu parent) {
+		DoorCodeInputStubItem item = DoorCodeInputStubItem(players[consoleplayer].mo.findInventory("DoorCodeInputStubItem"));
+		if(item == null) {
+			codeStr = "____";
+			realCodeStr = "0000";
+			displayTooltip = "you shouldn't see this\n";
+		} else {
+			realCodeStr = item.code;
+			codeStr = "";
+			displayTooltip = item.displayTooltip;
 
             for(int i = 0; i < self.realCodeStr.Length(); i++) {
-                self.codeStr.AppendFormat("_");
+                codeStr.AppendFormat("_");
             }
-
-            self.IsUiProcessor = true;
-        } else if (e.Name == "putcodechar") {
+		}
+	}
+	
+	Override
+	void drawer() {
+		super.drawer();
+		let tex = TexMan.CheckForTexture("M_WINDOW", TexMan.Type_MiscPatch);
+		if (tex.IsValid()) {
+			Vector2 v = TexMan.GetScaledSize(tex);
+			int x = 320;
+			int y = 320;
+			screen.DrawTexture(tex, false, x, y, DTA_LeftOffset, int(v.x / 2), DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);				
+			Font font = Font.FindFont("SMALLFONT");
+			screen.DrawText(font, Font.CR_WHITE, 244, 322, displayTooltip .. " " .. self.codeStr, DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);
+		}
+	}
+	
+	Override
+	bool OnUIEvent(UIEvent ev) { 
+		super.OnUIEvent(ev);
+        if (ev.Type == UiEvent.Type_KeyDown && ((ev.keyChar >= 48 && ev.keyChar <= 57) || ev.keyChar == 8)) {
             for(int i = 0; i < self.codeStr.Length(); i++) {
                 if (self.codeStr.CharAt(i) != '_') continue;
 
-                if (e.Args[0] != 8) {
-                    self.codeStr = String.format("%s%c", self.codeStr.Left(i), e.Args[0]);
+                if (ev.keyChar != 8) {
+                    self.codeStr = String.format("%s%c", self.codeStr.Left(i), ev.keyChar);
 
                     for(int j = self.codeStr.Length(); j < self.realCodeStr.Length(); j++) {
                         self.codeStr.AppendFormat("_");
@@ -139,11 +179,18 @@ class DoorCodeInputHandler : EventHandler {
  
             for(int i = 0; i < self.codeStr.Length(); i++) {
                 if (self.codeStr.CharAt(i) == '_') {
-                    return;
+                    return true;
                 }
             }
-
-            SendNetworkEvent("closedoorinput", 2 - (self.codeStr == self.realCodeStr));
+			
+			if(codeStr == realCodeStr) {
+				EventHandler.SendNetworkEvent("closedoorinput", codeStr == realCodeStr ? 1 : 0);
+				Close();
+			}
+        } else if (ev.Type == UiEvent.Type_KeyDown && ev.keyChar == 27) {
+            Close();
         }
-    }
+
+        return true;
+	}
 }
