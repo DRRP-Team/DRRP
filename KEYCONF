@@ -3,6 +3,9 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+ClearPlayerClasses
+AddPlayerClass DoomRPGPlayer
+
 addkeysection "Flashlight" DRRPKeySection
     addmenukey "Toggle Flashlight" toggleflashlight
     alias toggleflashlight "pukename toggleflashlight"
