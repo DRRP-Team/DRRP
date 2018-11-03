@@ -15,7 +15,7 @@ public class ByteCodeElement {
 		return i;
 	}
 	
-	public String toACS(List<EventDef> lookupList, CoordList clist) {
+	public String toACS(List<EventDef> lookupList, CoordList clist, List<Thing> things) {
 		String theIf = "";
 		theIf += "if(arg2 == " + lookupEventVar() + ") ";
 		switch(cmdid) {
@@ -55,9 +55,12 @@ public class ByteCodeElement {
 		case 37:
 			return theIf + "Delay(" + arg1 * 35 / 1000 + ");";
 		case 18:
-			return theIf + "Thing_Remove(# fill me #);";
+			return theIf + "Thing_Remove(" + ((arg1 & 0xFF) << 5 | ((arg1 >> 8) & 0xFF)) + ");";
 		case 7:
-			return theIf + "SpawnSpot(# fill me #);";
+		{
+			Thing thing = things.get(arg1 & 0xFF);
+			return theIf + "SpawnForced(getThingName(" + thing.type + ":" + ((arg1 >> 8) & 0xFF) + "), getMediumX(" + thing.x + "), getMediumY(" + thing.y + "));";
+		}
 		case 40:
 			return theIf + "ScriptCall(\"NotebookAPI\", \"AddNotebookEntry\", getString(" + (arg1) + "));";
 		}

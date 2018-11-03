@@ -2,20 +2,28 @@ package doomrpg.scriptdecompiler;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class App {
 	public static short getUnsignedByte(ByteBuffer bb) {
 		return ((short) (bb.get() & 0xff));
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		if (args.length != 1) {
 			System.out.println("Usage: <path/to/file.bsp>");
 			System.exit(1);
@@ -33,7 +41,20 @@ public class App {
 
 		bb.position(bb.getShort() * 8 + bb.position());
 
-		bb.position(bb.getShort() * 5 + bb.position());
+		List<Thing> things = new ArrayList<>();
+		
+		{
+			int count = bb.getShort();
+			for(int i = 0; i < count; i++) {
+				Thing thing = new Thing();
+				thing.x = bb.get() & 0xff;
+				thing.y = bb.get() & 0xff;
+				thing.type = bb.get() & 0xff;
+				thing.flags = bb.getShort();
+				things.add(thing);
+			}
+		}
+		
 
 		List<EventDef> events = new LinkedList<>();
 		ByteCode bc = new ByteCode();
@@ -65,6 +86,11 @@ public class App {
 		bc.readFromByteBuffer(bb);
 
 		int sn = 1;
+		
+		/*Map<Integer, Integer> json = new HashMap<>();
+		JSONParser parser = new JSONParser();
+		Map<String, Integer> obj = (JSONObject) parser.parse(new InputStreamReader(new FileInputStream("things.json")));*/
+		
 		for (EventDef event : events) {
 			System.out.println("script " + sn + " (int arg0, int arg1, int arg2) { //" + event.toIR());
 
@@ -76,11 +102,11 @@ public class App {
 
 			while (it.hasNext()) {
 				ByteCodeElement bce = it.next();
-				script += ("    " + bce.toACS(events, cl) + " // " + bce.toIR(0) + "\n");
+				script += ("    " + bce.toACS(events, cl, things) + " // " + bce.toIR(0) + "\n");
 			}
 			
 			for(int i = 0; i < cl.l.size(); i++) {
-				System.out.println("    int sgenid" + i + " = #fill me with id#; // " + cl.l.get(i).toString());
+				System.out.println("    int sgenid" + i + " = " + ((cl.l.get(i).x << 5) | (cl.l.get(i).y)) + " // " + cl.l.get(i).toString());
 			}
 			
 			System.out.print(script);
