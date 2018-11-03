@@ -58,6 +58,7 @@ Actor FireExt : Weapon 10556 {
 
     Tag "$DRRP_W_FIREEXT"
     Obituary "%o was extinguished by %k"
+    Scale 0.5
 
     Inventory.Icon "FEXTI0"
     Inventory.PickupSound "voice/wtf"
