@@ -91,6 +91,8 @@ public class App {
 		JSONParser parser = new JSONParser();
 		Map<String, Integer> obj = (JSONObject) parser.parse(new InputStreamReader(new FileInputStream("things.json")));*/
 		
+		System.out.println("#include \"zcommon.acs\"");
+		
 		for (EventDef event : events) {
 			System.out.println("script " + sn + " (int arg0, int arg1, int arg2) { //" + event.toIR());
 
