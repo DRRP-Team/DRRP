@@ -59,7 +59,7 @@ public class ByteCodeElement {
 		case 7:
 		{
 			Thing thing = things.get(arg1 & 0xFF);
-			return theIf + "SpawnForced(getThingName(" + thing.type + ":" + ((arg1 >> 8) & 0xFF) + "), getMediumX(" + thing.x + "), getMediumY(" + thing.y + "));";
+			return theIf + "SpawnForced(getThingName(" + thing.type + ", " + ((arg1 >> 8) & 0xFF) + "), getMediumX(" + thing.x + "), getMediumY(" + thing.y + "));";
 		}
 		case 40:
 			return theIf + "ScriptCall(\"NotebookAPI\", \"AddNotebookEntry\", getString(" + (arg1) + "));";

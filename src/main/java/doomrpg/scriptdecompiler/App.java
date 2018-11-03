@@ -106,7 +106,7 @@ public class App {
 			}
 			
 			for(int i = 0; i < cl.l.size(); i++) {
-				System.out.println("    int sgenid" + i + " = " + ((cl.l.get(i).x << 5) | (cl.l.get(i).y)) + " // " + cl.l.get(i).toString());
+				System.out.println("    int sgenid" + i + " = " + ((cl.l.get(i).x << 5) | (cl.l.get(i).y)) + "; // " + cl.l.get(i).toString());
 			}
 			
 			System.out.print(script);
