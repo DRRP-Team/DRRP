@@ -470,6 +470,14 @@ Actor DRRPVile : ArchVile replaces ArchVile {
     DamageFactor DRRPAxeDmg, 8.0
     DamageFactor DRRPFireDmg, 0.0
     Scale 0.95
+	
+	States {
+		
+		See:
+			TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
+			VILE AABBCCDDEEFF 2 A_VileChase
+		Loop
+	}
 }
 
 Actor Infernis : DRRPVile 10273 {
