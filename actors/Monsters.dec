@@ -233,6 +233,10 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
 	-DONTFALL
 
     States {
+		See:
+			TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
+			SKUL AB 6 Bright A_Chase
+		Loop
         Death:
             SKUL F 6 Bright
             SKUL G 6 Bright A_Scream
