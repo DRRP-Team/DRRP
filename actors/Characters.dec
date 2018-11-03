@@ -38,6 +38,8 @@ Actor DRRPCharacter {
 }
 
 Actor DRRPComputer : DRRPCharacter 10554 {
+    -SOLID
+
     Tag "$DRRP_E_COMPUTER"
 }
 
