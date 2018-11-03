@@ -9,30 +9,30 @@
 <a name="contents"></a>
 
 ## Оглавление
-- [Что это?](#about)
-  - [Скриншоты](#screenshots)
-  - [Полезные ссылки](#links)
-- [Как скачать и установить?](#install)
+- [What is it?](#about)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+- [How to downloand and install?](#install)
 - [WIKI](https://gitlab.com/prophessor/DRRP/wikis)
-- [Частые вопросы](#)
-- [Я желаю помочь!](https://github.com/DRRP-Team/DRRP/wiki/rus-interactive-iwannahelp)
+- [FAQ](#)
+- [I want to help!](https://github.com/DRRP-Team/DRRP/wiki/rus-interactive-iwannahelp)
 
 <a name="about"></a>
 
-## Что это?
+## What is it?
 
-**Doom RPG Remake Project** - это ремейк игры от idSoftware и Jamdat Mobile для телефонов на платформе J2ME на движок GZDoom.
-Проект включает в себя 2 версии:
-- DRRP - Содержит ремейки карт и игровых механик, которые больше подходят в реалиях GZDoom;
-- DRRP: Classic - Версия для ценителей оригинала. Содержит оригинальные карты, пошаговый геймплей и является портом игры Doom RPG.
+**Doom RPG Remake Project** - this is remake game from idSoftware and Jamdat Mobile for mobile phones on platform J2ME to engine GZDoom.
+Project included 2 versions:
+- DRRP - Contains remake maps and game mechanic, which are more suitable in reality GZdoom;
+- DRRP: Classic - Version for connoisseurs original game. Contains original maps, step-by-stem gameplay, and is port game Doom RPG.
 
-А так же, инструменты для разработки.
+As well as development tools.
 
-В данный момент, проект находится в стадии раннего доступа, на которой недоступна версия `DRRP: Classic`, а так же, содержится большое количество недоработок.
+In this moment project in the early access stage, on which is not avaliable version `DRRP: CLASSIC`, and contains large number flaws.
 
 <a name="screenshots"></a>
 
-### Скриншоты
+### Screenshots
 
 [<img alt="DRRP Doom RPG Remake Project Sector 4" src="http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg)
 [<img alt="DRRP Doom RPG Remake Project Sector 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg)
@@ -43,40 +43,40 @@
 
 <a name="links"></a>
 
-### Полезные ссылки:
-- [Официальный сайт](http://drrpofficial.tk)
-- [Страница на ModDB](https://www.moddb.com/mods/drrp-doom-rpg-remake-project)
-- [Тема на Doom Power](http://i.iddqd.ru/viewtopic.php?p=98116) (на русском)
-- [Тема на Doom World](https://www.doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/) (на английском)
-- [GitLab репозиторий](https://gitlab.com/PROPHESSOR/DRRP)
-- [GitHub репозиторий](https://github.com/DRRP-Team/DRRP)
-- [Доска на Trello](https://trello.com/b/OGA3JkEH/drrp-doom-rpg-remake-project)
-- [Руководство разработчика](https://gitlab.com/prophessor/DRRP/blob/master/CONTRIBUTING.md)
+### Links:
+- [Official site](http://drrpofficial.tk)
+- [Page on ModDb](https://www.moddb.com/mods/drrp-doom-rpg-remake-project)
+- [Topic on Doom Power](http://i.iddqd.ru/viewtopic.php?p=98116) (on russian)
+- [Topic on Doom World](https://www.doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/) (on english)
+- [GitLab repository](https://gitlab.com/PROPHESSOR/DRRP)
+- [GitHub repository](https://github.com/DRRP-Team/DRRP)
+- [Board on Trello](https://trello.com/b/OGA3JkEH/drrp-doom-rpg-remake-project)
+- [Developer guide](https://gitlab.com/prophessor/DRRP/blob/master/CONTRIBUTING.md)
 
 <a name="install"></a>
 
-## Как скачать и установить?
+## How to download and install?
 
-1. Для начала, перейдите на <a href="https://github.com/DRRP-Team/DRRP/releases" target="_blank">страницу релизов</a>
-2. Выберите нужный релиз (рекомендуем брать первый в списке)
-3. Скачайте нужную версию
+1. To start, go to <a href="https://github.com/DRRP-Team/DRRP/releases" target="_blank">release page</a>
+2. Select release (recommenden first on the list)
+3. Download it
 
 <a name="buildfiles"></a>
 
-### Комплекты "скачай и играй":
+### Kits "download and play":
 
-Данные комплекты представляют из себя проект DRRP, движок GZDoom, файлы настроек и дополнительные ресурсы для комфортной игры.
-Рекомендованы для новичков.
-Для запуска нужно просто распаковать архив и запустить **gzdoom.exe**
-Варианты комплектов:
-- Windows 64 - Комплект для Windows x64 (рекомендовано)
-- Windows 32 - Vintage комплект для Windows x86
+This kits are project DRRP, engine GZDoom, settings files and resourses for a comfortable game.
+Recommended for beginners.
+For star you must unpack archive and launch **gzdoom.exe**
+Kits variants:
+- Windows 64 - Kit for Windows x64 (recommended)
+- Windows 32 - Vintage kit for Windows x86
 
 <a name="pkfiles"></a>
 
-### Файлы для GZDoom:
+### Files for GZDoom:
 
-Представляют из себя .pk3 *(zip)* и .pk7 *(7z)* файлы, которые можно запустить с помощью GZDoom.
-Подходят для бывалых думеров и владельцев других операционных систем.
-- PK7 - Рекомендовано для людей с ограниченным трафиком
-- PK3 - Рекомендовано для быстрого запуска
+This is .pk3 *(zip)* and .pk7 *(7z)* files, which can be run using GZDoom.
+Suitable for experienced and owners other OS.
+- PK7 - Recommended for peoples with limited traffic для людей с ограниченным трафиком
+- PK3 - Recommended for quick lauch
