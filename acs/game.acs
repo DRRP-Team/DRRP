@@ -62,9 +62,9 @@ script 777(int spotnum) {
 script "fireextfade" (int mode) {
     // TODO: Use additive point light
     if(mode) {
-        Sector_SetFade(0, 255, 255, 255);
+       // Sector_SetFade(0, 255, 255, 255);
     } else {
-        Sector_SetFade(0, 0, 0, 0);
+        //Sector_SetFade(0, 0, 0, 0);
     }
 }
 
