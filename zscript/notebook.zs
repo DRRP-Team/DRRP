@@ -9,10 +9,36 @@ class NotebookItem : Inventory {
     Array<String> languageStrings;
 }
 
+class NotebookTooltipItem : Inventory {}
+
+class NotebookHandler : EventHandler {
+	Override
+	void RenderOverlay(RenderEvent e) {
+		if(players[consoleplayer].mo.CountInv("NotebookTooltipItem") >= 1) {
+			Font font = Font.FindFont("SMALLFONT");
+			int key1, key2;
+			[key1, key2] = Bindings.GetKeysForCommand("opennotebook");
+			if(key1 == 0 && key2 == 0) return;
+			String s = KeyBindings.NameKeys(key1, key2);
+			s.ToUpper();
+			String ss = "Press " .. s .. " to open notebook";
+			Screen.drawText(font, Font.CR_GOLD, Screen.GetWidth() - font.StringWidth(ss), 0, ss);
+		}
+	}
+	
+	Override
+	void NetworkProcess(ConsoleEvent e) {
+		if(e.name == "killnotebook") {
+			players[e.player].mo.A_TakeInventory("NotebookTooltipItem", 0);
+		}
+	}
+}
+
 class NotebookMenu : OptionMenu {
     Override
     void Init(Menu parent, OptionMenuDescriptor desc) {
         super.Init(parent, desc);
+		EventHandler.SendNetworkEvent("killnotebook");
         playerinfo player = players[consoleplayer];
         desc.mItems.clear();
         if(player == null || player.mo == null) {
@@ -56,5 +82,7 @@ class NotebookAPI {
         NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
         
         nbitem.languageStrings.push(entry);
+		
+		activator.A_GiveInventory("NotebookTooltipItem");
     }
 }
