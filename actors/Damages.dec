@@ -14,7 +14,8 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     +NOTARGET
     +NOTRIGGER
     +NOTAUTOAIMED
-    +SPECTRAL
+	+NOCLIP
+    // +SPECTRAL
     -ISMONSTER
     -COUNTKILL
 
@@ -53,7 +54,8 @@ Actor DRRPLava 10251 {
     +NOTARGET
     +NOTRIGGER
     +NOTAUTOAIMED
-    -SOLID
+    +SOLID
+	+NOCLIP
     -ISMONSTER
     -COUNTKILL
     -SHOOTABLE
