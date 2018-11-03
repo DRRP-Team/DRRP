@@ -49,7 +49,7 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
 
     Tag                     "$DRRP_I_SMMEDKIT"
     Health                  25
-    Inventory.Icon          "MEDIA0"
+    Inventory.Icon          "YMEDI0"
     Inventory.MaxAmount     99
     HealthPickup.AutoUse    0
     Inventory.PickupMessage "$DRRP_I_SMMEDKIT"
@@ -70,7 +70,7 @@ Actor LargeMedikit : HealthPickup 10601 {
 
     Tag                     "$DRRP_I_LGMEDKIT"
     Health                  75
-    Inventory.Icon          "MEDIA0"
+    Inventory.Icon          "RMEDI0"
     Inventory.MaxAmount     99
     HealthPickup.AutoUse    0
     Inventory.PickupMessage "$DRRP_I_LGMEDKIT"
