@@ -1,7 +1,7 @@
 # [DRRP] Doom RPG Remake Project
 
 ## Select your language
-- [English](README.md)
+- [English](README_ENG.md)
 - [Russian](#contents)
 
 ![DRRP Doom RPG Remake Project logo](https://i.postimg.cc/RhfMwJyH/doom-rpg-remake-project.png)
@@ -15,7 +15,7 @@
 - [Как скачать и установить?](#install)
 - [WIKI](https://gitlab.com/prophessor/DRRP/wikis)
 - [Частые вопросы](#)
-- [Я желаю помочь!](#iwannahelp)
+- [Я желаю помочь!](https://github.com/DRRP-Team/DRRP/wiki/rus-interactive-iwannahelp)
 
 <a name="about"></a>
 
@@ -30,9 +30,16 @@
 
 В данный момент, проект находится в стадии раннего доступа, на которой недоступна версия `DRRP: Classic`, а так же, содержится большое количество недоработок.
 
-<a name=""
+<a name="screenshots"></a>
 
 ### Скриншоты
+
+[<img alt="DRRP Doom RPG Remake Project Sector 4" src="http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 2" src="http://drrpofficial.tk/img/screenshots/thumbnails/3.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/3.jpg)
+[<img alt="DRRP Doom RPG Remake Project Reactor" src="http://drrpofficial.tk/img/screenshots/thumbnails/4.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/4.jpg)
+[<img alt="DRRP Doom RPG Remake Project Reactor" src="http://drrpofficial.tk/img/screenshots/thumbnails/5.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/5.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/6.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/6.jpg)
 
 <a name="links"></a>
 
@@ -73,11 +80,3 @@
 Подходят для бывалых думеров и владельцев других операционных систем.
 - PK7 - Рекомендовано для людей с ограниченным трафиком
 - PK3 - Рекомендовано для быстрого запуска
-
-<a name="iwannahelp"></a>
-
-## Я желаю помочь!
-
-Рады слышать =D
-
-Ответьте на [несколько вопросов](IWANNAHELP.md)
