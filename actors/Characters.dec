@@ -37,6 +37,10 @@ Actor DRRPCharacter {
     }
 }
 
+Actor DRRPComputer : DRRPCharacter 10554 {
+    Tag "$DRRP_E_COMPUTER"
+}
+
 /*
  * Scientists * -----------------------------------------------------------------
  */
