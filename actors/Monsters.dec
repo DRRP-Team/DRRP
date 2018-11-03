@@ -229,6 +229,8 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     Health 11
     DamageFactor DRRPFireExtDmg, 5.0
     DamageFactor DRRPFireDmg, 0.0
+	
+	-DONTFALL
 
     States {
         Death:
