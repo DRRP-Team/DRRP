@@ -5,7 +5,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-class DRRPPistol : Pistol {
+class DRRPPistol : Pistol replaces Pistol {
     Default {
         DamageType "DRRPClipDmg";
         Decal "BulletChip";
@@ -31,7 +31,7 @@ class DRRPPistol : Pistol {
     }
 }
 
-class DRRPShotgun : Shotgun {
+class DRRPShotgun : Shotgun replaces Shotgun {
     Default {
         DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
@@ -73,7 +73,7 @@ class DRRPShotgun : Shotgun {
     }
 }
 
-class DRRPSuperShotgun : SuperShotgun {
+class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
     Default {
         DamageType "DRRPSSGDmg";
         Decal "BulletChip";
@@ -127,7 +127,7 @@ class DRRPSuperShotgun : SuperShotgun {
     }
 }
 
-class DRRPChaingun : Chaingun {
+class DRRPChaingun : Chaingun replaces Chaingun {
     Default {
         DamageType "DRRPClipDmg";
         Decal "BulletChip";
@@ -170,7 +170,7 @@ class DRRPChaingun : Chaingun {
     }
 }
 
-class DRRPRocketLauncher  : RocketLauncher {
+class DRRPRocketLauncher : RocketLauncher replaces RocketLauncher {
     States {
         Fire:
             MISG B 10 A_GunFlash;
@@ -198,7 +198,7 @@ class DRRPRocketLauncher  : RocketLauncher {
     }
 }
 
-class DRRPRocket : Rocket {
+class DRRPRocket : Rocket replaces Rocket {
     States {
     Death:
         MISL B 8 Bright A_Explode(15 + Random(0, 21), 128);
@@ -208,7 +208,7 @@ class DRRPRocket : Rocket {
     }
 }
 
-class DRRPPlasmagun : PlasmaRifle {
+class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
     States {
         Fire:
             PLSG A 0 A_GunFlash;
@@ -238,7 +238,7 @@ class DRRPPlasmagun : PlasmaRifle {
     }
 }
 
-class DRRPBFG9000 : BFG9000 {
+class DRRPBFG9000 : BFG9000 replaces BFG9000 {
     States {
         Fire:
             BFGG A 20 A_BFGSound;
