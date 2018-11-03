@@ -34,7 +34,7 @@ Script 3004 (void) { // Give Automap
     GiveInventory("MapRevealer", 1);
 }
 
-Script 3005 (void) { // WIP Level
+Script 3005 ENTER { // WIP Level
     SetFont("bigfont");
     print(s:"Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!");
 }

@@ -5,8 +5,8 @@
  * https://opensource.org/licenses/MIT
  */
 
+#library game
 #include "zcommon.acs"
-#library global
 
 #define MAX_LEVELS 16
 #define JUNCTION_LEVELNUM 2
@@ -34,6 +34,11 @@ function int getStringHeight(str String) {
         if(String[i++] == '\n') height++;
     }
     return height;
+}
+
+function global str getThingName(int id, int state) {
+	print(s:"getThingName(", i:id, s:", ", i:state, s:")");
+	return "DRRPTODO";
 }
 
 //\\ Useful functions
