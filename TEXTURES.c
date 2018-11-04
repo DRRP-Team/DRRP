@@ -50,7 +50,9 @@ Sprite "BALLA0", 55, 20
 Sprite "STKEYS9", 7, 5
 {
 	Offset 0, -1
-	Patch "STKEYS2", 0, 0
+	Patch "STKEYS2", 0, 0 {
+        Translation "168:191=112:127", "16:47=112:127", "1:2=126:127"
+    }
 }
 
 Sprite "ALARA0", 16, 16
