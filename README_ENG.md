@@ -24,7 +24,7 @@
 **Doom RPG Remake Project** - this is remake game from idSoftware and Jamdat Mobile for mobile phones on platform J2ME to engine GZDoom.
 Project included 2 versions:
 - DRRP - Contains remake maps and game mechanic, which are more suitable in reality GZdoom;
-- DRRP: Classic - Version for connoisseurs original game. Contains original maps, step-by-stem gameplay, and is port game Doom RPG.
+- DRRP: Classic - Version for connoisseurs original game. Contains original maps, step-by-step gameplay, and is port game Doom RPG.
 
 As well as development tools.
 
