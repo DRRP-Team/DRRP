@@ -1,7 +1,7 @@
 # [DRRP] Doom RPG Remake Project
 
 ## Select your language
-- [English](README_ENG.md)
+- [English](README.md)
 - [Russian](#contents)
 
 ![DRRP Doom RPG Remake Project logo](https://i.postimg.cc/RhfMwJyH/doom-rpg-remake-project.png)
