@@ -18,7 +18,7 @@ Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
 
 Script 3001 (void) { // Door Closed
     ActivatorSound("acess/deny1", 255);
-    print(s:"\cgDoor closed!");
+    print(l:"DRRP_D_DOORCLOSED");
     delay(34);
 }
 
@@ -36,5 +36,5 @@ Script 3004 (void) { // Give Automap
 
 Script 3005 ENTER { // WIP Level
     SetFont("bigfont");
-    print(s:"Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!");
+    print(l:"DRRP_D_WIPLEVEL"); // TODO: Localize
 }
