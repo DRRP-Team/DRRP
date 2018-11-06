@@ -8,6 +8,7 @@
 //10600-10700
 Actor DRRPGreenCard : DoomKey 10622 {
     //$Category Keys
+    //$Sprite GKEYB0
 
     Tag                     "$DRRP_I_GREENKEY"
     Inventory.PickupMessage "$DRRP_I_GREENKEY"
@@ -43,6 +44,7 @@ Actor DRRPRedCard : RedCard replaces RedCard {
 
 Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
     //$Category Items
+    //$Sprite MEDIA0
 
     +FLOORCLIP
     +INVENTORY.INVBAR
@@ -64,6 +66,7 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
 
 Actor LargeMedikit : HealthPickup 10601 {
     //$Category Items
+    //$Sprite MEDIA0
 
     +FLOORCLIP
     +INVENTORY.INVBAR
@@ -91,6 +94,7 @@ Actor HealthPowerUp : UpgradeStamina 10603 {
 //Ammo 10610-10619
 Actor Balloon : Ammo 10610 {
     //$Category DAmmo
+    //$Sprite BALLA0
 
     Tag                     "$DRRP_I_HALONCAN"
     Scale                   2.0
@@ -112,6 +116,7 @@ Actor Balloon : Ammo 10610 {
 //Coins 10620-10629
 Actor Credit : Inventory 10620 {
     //$Category Items
+    //$Sprite CREDA0
 
     +DROPPED
     +NOTDMATCH
@@ -132,6 +137,8 @@ Actor Credit : Inventory 10620 {
 
 Actor GoldCredit : CustomInventory 10621 {
     //$Category Items
+    //$Sprite CREDB0
+
     +DROPPED
     +NOTDMATCH
     +FLOORCLIP
@@ -152,6 +159,7 @@ Actor GoldCredit : CustomInventory 10621 {
 
 Actor Berserker : CustomInventory replaces Berserk 10623 {
     //$Category Items
+    //$Sprite BERSH0
 
     +COUNTITEM
     +INVENTORY.INVBAR
@@ -199,6 +207,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
 
 Actor DogCollar : CustomInventory 10624 {
     //$Category Items
+    //$Sprite DOGCA0
 
     +INVENTORY.INVBAR
 

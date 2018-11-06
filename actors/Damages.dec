@@ -7,6 +7,7 @@
 
 Actor DRRPFire : DRRPFire_zspatch 10250 {
     //$Category Damage
+    //$Sprite FIREA0
 
     MONSTER
     +SOLID
@@ -15,7 +16,6 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     +NOTRIGGER
     +NOTAUTOAIMED
 	+NOCLIP
-    // +SPECTRAL
     -ISMONSTER
     -COUNTKILL
 
@@ -48,6 +48,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
 
 Actor DRRPLava 10251 {
     //$Category Damage
+    //$Sprite LAVAA0
 
     MONSTER
     +NOBLOOD

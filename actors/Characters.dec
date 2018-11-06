@@ -38,6 +38,9 @@ Actor DRRPCharacter {
 }
 
 Actor DRRPTrigger : DRRPCharacter 10554 {
+    //$Category Characters
+    //$Sprite STEMA0
+
     -SOLID
 
     Tag "$DRRP_E_COMPUTER"
@@ -50,6 +53,7 @@ Actor DRRPTrigger : DRRPCharacter 10554 {
 
 Actor Scientist : DRRPCharacter 10500  {
     //$Category Characters
+    //$Sprite SCIEA0
 
     Tag     "$DRRP_E_SCIENTIST"
 
@@ -62,6 +66,7 @@ Actor Scientist : DRRPCharacter 10500  {
 
 Actor Scientist1 : Scientist 10501 { // Black
     //$Category Characters
+    //$Sprite SCI1A0
     
     States {
         Spawn:
@@ -72,6 +77,7 @@ Actor Scientist1 : Scientist 10501 { // Black
 
 Actor DrGuerard : Scientist 10502 { // Dr. Gerard
     //$Category Characters
+    //$Sprite SCI2A0
 
     // Translation "80:106=[132,174,165]:[41,73,66]", "192:192=[132,174,165]:[132,174,165]"
     Tag     "$DRRP_E_DRGUERARD"
@@ -90,6 +96,7 @@ Actor DrGuerard : Scientist 10502 { // Dr. Gerard
 
 Actor Civilian : DRRPCharacter 10510 { // Orange
     //$Category Characters
+    //$Sprite CIV0A0
 
     Tag     "$DRRP_E_CIVILIAN"
 
@@ -102,6 +109,7 @@ Actor Civilian : DRRPCharacter 10510 { // Orange
 
 Actor Civilian1 : Civilian 10511 { // Purple
     //$Category Characters
+    //$Sprite CIV1A0
 
     // Translation "160:167=250:254"
     
@@ -114,6 +122,7 @@ Actor Civilian1 : Civilian 10511 { // Purple
 
 Actor Civilian2 : Civilian 10512 { // Green
     //$Category Characters
+    //$Sprite CIV2A0
 
     // Translation "160:167=112:127"
     
@@ -131,6 +140,7 @@ Actor Civilian2 : Civilian 10512 { // Green
 
 Actor Marine : DRRPCharacter 10520  {
     //$Category Characters
+    //$Sprite DPR0A0
 
     Tag     "$DRRP_E_MARINE"
 
@@ -143,6 +153,7 @@ Actor Marine : DRRPCharacter 10520  {
 
 Actor Marine1: Marine 10521 { // Blue
     //$Category Characters
+    //$Sprite DPR1A0
 
     Translation "112:122=195:207", "123:127=243:247"
 }
@@ -153,6 +164,9 @@ Actor Marine1: Marine 10521 { // Blue
  */
 
 Actor DRRPShop 10555 {
+    //$Category Characters
+    //$Sprite STEMA0
+
     -SOLID
 
     Height 64

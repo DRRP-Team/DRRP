@@ -84,6 +84,7 @@ Actor DRRPDog : MBFHelperDog {
 
 Actor Hellhound : DRRPDog replaces MBFHelperDog 10246 {
     //$Category DMonsters
+    //$Sprite DOGSA1
 
     Tag "$DRRP_M_HELLHOUND"
     Health 8
@@ -91,6 +92,7 @@ Actor Hellhound : DRRPDog replaces MBFHelperDog 10246 {
 
 Actor Cerberus : DRRPDog 10346 {
     //$Category DMonsters
+    //$Sprite DOGSA1
 
     Tag "$DRRP_M_CERBERUS"
     Health 12
@@ -103,6 +105,7 @@ Actor Cerberus : DRRPDog 10346 {
 
 Actor DemonWolf : DRRPDog 10446 {
     //$Category DMonsters
+    //$Sprite DOGSA1
 
     Tag "$DRRP_M_DEMONWOLF"
     Health 17
@@ -117,8 +120,6 @@ Actor DemonWolf : DRRPDog 10446 {
 // Zombies ----------------------------------------------------------------------------
 
 Actor ZombieManDRRP : ZombieMan {
-    //$Category DMonsters
-
     +LOOKALLAROUND
 
     DropItem "Clip", 0, 0
@@ -126,8 +127,6 @@ Actor ZombieManDRRP : ZombieMan {
 }
 
 Actor ShotgunGuyDRRP : ShotgunGuy {
-    //$Category DMonsters
-
     +LOOKALLAROUND
 
     DropItem "Shells", 0, 0
@@ -136,6 +135,7 @@ Actor ShotgunGuyDRRP : ShotgunGuy {
 
 Actor ZombiePvt : ZombieManDRRP replaces ZombieMan 10274 {
     //$Category DMonsters
+    //$Sprite POSSA1
 
     Tag "$DRRP_M_ZOMBIEPVT"
     Health 6
@@ -144,6 +144,7 @@ Actor ZombiePvt : ZombieManDRRP replaces ZombieMan 10274 {
 
 Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
     //$Category DMonsters
+    //$Sprite POSSA1
 
     Tag "$DRRP_M_ZOMBIELT"
     Health 9
@@ -152,6 +153,7 @@ Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
 
 Actor ZombieCpt : ZombieManDRRP 10474 {
     //$Category DMonsters
+    //$Sprite POSSA1
 
     Tag "$DRRP_M_ZOMBIECPT"
     Health 12
@@ -180,6 +182,7 @@ Actor ChaingunGuyDRRP : ChaingunGuy {
 
 Actor Troop : ChaingunGuyDRRP 10264 {
     //$Category DMonsters
+    //$Sprite CPOSA1
 
     Tag "$DRRP_M_TROOP"
     Health 11
@@ -188,6 +191,7 @@ Actor Troop : ChaingunGuyDRRP 10264 {
 
 Actor Commando : ChaingunGuyDRRP 10364 {
     //$Category DMonsters
+    //$Sprite CPOSA1
 
     Tag "$DRRP_M_COMMANDO"
     Health 18
@@ -196,6 +200,7 @@ Actor Commando : ChaingunGuyDRRP 10364 {
 
 Actor Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
     //$Category DMonsters
+    //$Sprite CPOSA1
 
     Tag "$DRRP_M_ASSASSIN"
     Health 25
@@ -206,6 +211,7 @@ Actor Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
 
 Actor Impling : DoomImp 10260 {
     //$Category DMonsters
+    //$Sprite TROOA1
 
     +LOOKALLAROUND
 
@@ -216,6 +222,7 @@ Actor Impling : DoomImp 10260 {
 
 Actor DRRPImp : DoomImp replaces DoomImp 10360 {
     //$Category DMonsters
+    //$Sprite TROOA1
 
     +LOOKALLAROUND
 
@@ -225,6 +232,7 @@ Actor DRRPImp : DoomImp replaces DoomImp 10360 {
 
 Actor ImpLord : DoomImp 10460 {
     //$Category DMonsters
+    //$Sprite TROOA1
 
     +LOOKALLAROUND
 
@@ -238,6 +246,7 @@ Actor ImpLord : DoomImp 10460 {
 
 Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     //$Category DMonsters
+    //$Sprite SKULA1
 
     +LOOKALLAROUND
 	-DONTFALL
@@ -273,6 +282,7 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
 
 Actor Phantom : DRRPLostSoul 10263 {
     //$Category DMonsters
+    //$Sprite SKULA1
 
     Tag "$DRRP_M_PHANTOM"
     Health 7
@@ -281,6 +291,7 @@ Actor Phantom : DRRPLostSoul 10263 {
 
 Actor Nightmare : DRRPLostSoul 10463 {
     //$Category DMonsters
+    //$Sprite SKULA1
 
     Tag "$DRRP_M_NIGHTMARE"
     Health 15
@@ -292,6 +303,7 @@ Actor Nightmare : DRRPLostSoul 10463 {
 
 Actor BullDemon : Demon 10259 {
     //$Category DMonsters
+    //$Sprite SARGA1
 
     +LOOKALLAROUND
 
@@ -302,6 +314,7 @@ Actor BullDemon : Demon 10259 {
 
 Actor Pinky : Demon replaces Demon 10459 { //FIXME: id
     //$Category DMonsters
+    //$Sprite SARGA1
 
     +LOOKALLAROUND
 
@@ -311,6 +324,7 @@ Actor Pinky : Demon replaces Demon 10459 { //FIXME: id
 
 Actor Belphegor : Demon 10359 {
     //$Category DMonsters
+    //$Sprite SARGA1
 
     +LOOKALLAROUND
 
@@ -324,6 +338,7 @@ Actor Belphegor : Demon 10359 {
 
 Actor Malwrath : Cacodemon 10262 {
     //$Category DMonsters
+    //$Sprite HEADA1
 
     +LOOKALLAROUND
 
@@ -334,6 +349,7 @@ Actor Malwrath : Cacodemon 10262 {
 
 Actor DRRPCacodemon : Cacodemon replaces Cacodemon 10362 {
     //$Category DMonsters
+    //$Sprite HEADA1
 
     +LOOKALLAROUND
 
@@ -343,6 +359,7 @@ Actor DRRPCacodemon : Cacodemon replaces Cacodemon 10362 {
 
 Actor Wretched : Cacodemon 10462 {
     //$Category DMonsters
+    //$Sprite HEADA1
 
     +LOOKALLAROUND
 
@@ -356,6 +373,7 @@ Actor Wretched : Cacodemon 10462 {
 
 Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
     //$Category DMonsters
+    //$Sprite SKELA1D1
 
     +LOOKALLAROUND
 
@@ -378,6 +396,7 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
 
 Actor Ghoul : DRRPRevenant 10277 {
     //$Category DMonsters
+    //$Sprite SKELA1D1
 
     Tag "$DRRP_M_GHOUL"
     Health 15
@@ -386,6 +405,7 @@ Actor Ghoul : DRRPRevenant 10277 {
 
 Actor Fiend : DRRPRevenant 10377 {
     //$Category DMonsters
+    //$Sprite SKELA1D1
 
     Tag "$DRRP_M_FIEND"
     Health 23
@@ -397,6 +417,7 @@ Actor Fiend : DRRPRevenant 10377 {
 
 Actor DRRPPainElemental : PainElemental replaces PainElemental 10279 {
     //$Category DMonsters
+    //$Sprite PAINA1
 
     +LOOKALLAROUND
 
@@ -424,6 +445,7 @@ Actor DRRPPainElemental : PainElemental replaces PainElemental 10279 {
 
 Actor Rahovart : DRRPPainElemental 10379 {
     //$Category DMonsters
+    //$Sprite PAINA1
 
     Tag "$DRRP_M_RAHOVART"
     Health 27
@@ -443,6 +465,7 @@ Actor Rahovart : DRRPPainElemental 10379 {
 
 Actor Beholder : DRRPPainElemental 10479 {
     //$Category DMonsters
+    //$Sprite PAINA1
 
     Tag "$DRRP_M_BEHOLDER"
     Health 17
@@ -476,6 +499,7 @@ Actor DRRPCubus : Fatso {
 
 Actor Behemoth : DRRPCubus 10278 {
     //$Category DMonsters
+    //$Sprite FATTA1
 
     Tag "$DRRP_M_BEHEMOTH"
     Health 23
@@ -484,6 +508,7 @@ Actor Behemoth : DRRPCubus 10278 {
 
 Actor Mancubus : DRRPCubus replaces Fatso 10378 {
     //$Category DMonsters
+    //$Sprite FATTA1
 
     Tag "$DRRP_M_MANCUBUS"
     Health 36
@@ -491,6 +516,7 @@ Actor Mancubus : DRRPCubus replaces Fatso 10378 {
 
 Actor Druj : DRRPCubus 10478 {
     //$Category DMonsters
+    //$Sprite FATTA1
 
     Tag "$DRRP_M_DRUJ"
     Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
@@ -517,6 +543,7 @@ Actor DRRPVile : ArchVile {
 
 Actor Infernis : DRRPVile 10273 {
     //$Category DMonsters
+    //$Sprite VILEA1D1
 
     Tag "$DRRP_M_INFERNIS"
     Health 20
@@ -525,6 +552,7 @@ Actor Infernis : DRRPVile 10273 {
 
 Actor DRRPArchVile : DRRPVile replaces ArchVile 10373 {
     //$Category DMonsters
+    //$Sprite VILEA1D1
 
     Tag "$DRRP_M_ARCHVILE"
     Health 32
@@ -532,6 +560,7 @@ Actor DRRPArchVile : DRRPVile replaces ArchVile 10373 {
 
 Actor Apollyon : DRRPVile 10473 {
     //$Category DMonsters
+    //$Sprite VILEA1D1
 
     Tag "$DRRP_M_APOLLYON"
     Health 45
@@ -543,6 +572,7 @@ Actor Apollyon : DRRPVile 10473 {
 
 Actor DRRPBaronOfHell : BaronOfHell replaces BaronOfHell 10280 {
     //$Category DMonsters
+    //$Sprite BOSSA1
 
     +LOOKALLAROUND
 
@@ -554,6 +584,7 @@ Actor DRRPBaronOfHell : BaronOfHell replaces BaronOfHell 10280 {
 
 Actor DRRPHellKnight : HellKnight replaces HellKnight 10380 {
     //$Category DMonsters
+    //$Sprite BOS2A1
 
     +LOOKALLAROUND
 
@@ -566,6 +597,7 @@ Actor DRRPHellKnight : HellKnight replaces HellKnight 10380 {
 
 Actor Ogre : DRRPHellKnight 10480 {
     //$Category DMonsters
+    //$Sprite BOS2A1
 
     Tag "$DRRP_M_OGRE"
     Health 28
@@ -575,6 +607,7 @@ Actor Ogre : DRRPHellKnight 10480 {
 // TODO:
 Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
     //$Category DMonsters
+    //$Sprite CYBRA1
 
     +LOOKALLAROUND
 
@@ -584,6 +617,7 @@ Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
 
 Actor Kronos 10391 {
     //$Category DMonsters
+    //$Sprite KRONA1
 
     MONSTER
     +LOOKALLAROUND
