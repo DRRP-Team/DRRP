@@ -68,7 +68,9 @@
 
 // Dogs -------------------------------------------------------------------------------
 
-Actor DRRPDog : MBFHelperDog replaces MBFHelperDog {
+Actor DRRPDog : MBFHelperDog {
+    +LOOKALLAROUND
+
     Health       8
     DamageFactor DRRPShotgunDmg, 2.0
     DamageFactor DRRPPlasmaDmg, 2.0
@@ -80,7 +82,7 @@ Actor DRRPDog : MBFHelperDog replaces MBFHelperDog {
     AttackSound  "monsters/hellhound/bark"
 }
 
-Actor Hellhound : DRRPDog 10246 {
+Actor Hellhound : DRRPDog replaces MBFHelperDog 10246 {
     //$Category DMonsters
 
     Tag "$DRRP_M_HELLHOUND"
@@ -114,21 +116,25 @@ Actor DemonWolf : DRRPDog 10446 {
 
 // Zombies ----------------------------------------------------------------------------
 
-Actor ZombieManDRRP : ZombieMan replaces ZombieMan {
+Actor ZombieManDRRP : ZombieMan {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     DropItem "Clip", 0, 0
     DamageFactor DRRPAxeDmg, 2.0
 }
 
-Actor ShotgunGuyDRRP : ShotgunGuy replaces ShotgunGuy {
+Actor ShotgunGuyDRRP : ShotgunGuy {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     DropItem "Shells", 0, 0
     DamageFactor DRRPAxeDmg, 2.0
 }
 
-Actor ZombiePvt : ZombieManDRRP 10274 {
+Actor ZombiePvt : ZombieManDRRP replaces ZombieMan 10274 {
     //$Category DMonsters
 
     Tag "$DRRP_M_ZOMBIEPVT"
@@ -136,7 +142,7 @@ Actor ZombiePvt : ZombieManDRRP 10274 {
     Translation "16:47=152:159"
 }
 
-Actor ZombieLt : ShotgunGuyDRRP 10374 {
+Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
     //$Category DMonsters
 
     Tag "$DRRP_M_ZOMBIELT"
@@ -155,7 +161,9 @@ Actor ZombieCpt : ZombieManDRRP 10474 {
 
 // Chaingunners -----------------------------------------------------------------------
 
-Actor ChaingunGuyDRRP : ChaingunGuy replaces ChaingunGuy {
+Actor ChaingunGuyDRRP : ChaingunGuy {
+    +LOOKALLAROUND
+
     DropItem "Chaingun", 0, 0
     DamageFactor DRRPPlasmaDmg, 2.0
 
@@ -199,6 +207,8 @@ Actor Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
 Actor Impling : DoomImp 10260 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+
     Tag "$DRRP_M_IMPLING"
     Health 10
     Translation "64:79=112:127", "61:63=112:118"
@@ -207,12 +217,16 @@ Actor Impling : DoomImp 10260 {
 Actor DRRPImp : DoomImp replaces DoomImp 10360 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+
     Tag "$DRRP_M_IMP"
     Health 16
 }
 
 Actor ImpLord : DoomImp 10460 {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_IMPLORD"
     Health 22
@@ -225,12 +239,13 @@ Actor ImpLord : DoomImp 10460 {
 Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+	-DONTFALL
+
     Tag "$DRRP_M_LOSTSOUL"
     Health 11
     DamageFactor DRRPFireExtDmg, 5.0
     DamageFactor DRRPFireDmg, 0.0
-	
-	-DONTFALL
 
     States {
 		See:
@@ -278,13 +293,17 @@ Actor Nightmare : DRRPLostSoul 10463 {
 Actor BullDemon : Demon 10259 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+
     Tag "$DRRP_M_BULLDEMON"
     Health 11
     Translation "16:47=128:143", "168:191=144:151"
 }
 
-Actor Pinky : Demon 10459 { //FIXME: id
+Actor Pinky : Demon replaces Demon 10459 { //FIXME: id
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_PINKY"
     Health 18
@@ -292,6 +311,8 @@ Actor Pinky : Demon 10459 { //FIXME: id
 
 Actor Belphegor : Demon 10359 {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_BELPHEGOR"
     Health 25
@@ -304,6 +325,8 @@ Actor Belphegor : Demon 10359 {
 Actor Malwrath : Cacodemon 10262 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+
     Tag "$DRRP_M_MALWRATH"
     Health 15
     Translation "168:191=160:167", "16:47=160:166", "112:127=176:191", "192:207=176:191", "240:247=191:191" //"173:191=[215,222,0]:[107,65,0]", "16:47=[214,190,123]:[107,81,0]", "167:167=164:164", "192:207=32:39", "240:247=40:47", "112:127=16:47"
@@ -312,12 +335,16 @@ Actor Malwrath : Cacodemon 10262 {
 Actor DRRPCacodemon : Cacodemon replaces Cacodemon 10362 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+
     Tag "$DRRP_M_CACODEMON"
     Health 23
 }
 
 Actor Wretched : Cacodemon 10462 {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_WRETCHED"
     Health 32
@@ -327,8 +354,10 @@ Actor Wretched : Cacodemon 10462 {
 
 // Revenants --------------------------------------------------------------------------
 
-Actor DRRPRevenant : Revenant replaces Revenant 10477 {
+Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_REVENANT"
     Health 32
@@ -368,6 +397,8 @@ Actor Fiend : DRRPRevenant 10377 {
 
 Actor DRRPPainElemental : PainElemental replaces PainElemental 10279 {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_PAINELEMENTAL"
     Health 37
@@ -432,9 +463,11 @@ Actor Beholder : DRRPPainElemental 10479 {
 
 // Mancubuses -------------------------------------------------------------------------
 // Dull joke by UsernameAK: "Minecraft -- cube world".
-// - PROPHESSOR laugh
+// - PROPHESSOR laughs
 
-Actor DRRPCubus : Fatso replaces Fatso {
+Actor DRRPCubus : Fatso {
+    +LOOKALLAROUND
+
     Scale 0.92
     Radius 30
     Height 62
@@ -449,7 +482,7 @@ Actor Behemoth : DRRPCubus 10278 {
     Translation "48:79=192:202", "112:127=176:191", "128:143=192:198", "160:167=194:199", "144:151=192:207", "13:15=240:247", "236:239=240:247", "16:47=176:191"
 }
 
-Actor Mancubus : DRRPCubus 10378 {
+Actor Mancubus : DRRPCubus replaces Fatso 10378 {
     //$Category DMonsters
 
     Tag "$DRRP_M_MANCUBUS"
@@ -466,10 +499,12 @@ Actor Druj : DRRPCubus 10478 {
 
 // Arch-Viles -------------------------------------------------------------------------
 
-Actor DRRPVile : ArchVile replaces ArchVile {
+Actor DRRPVile : ArchVile {
+    +LOOKALLAROUND
+
+    Scale 0.95
     DamageFactor DRRPAxeDmg, 8.0
     DamageFactor DRRPFireDmg, 0.0
-    Scale 0.95
 	
 	States {
 		
@@ -488,7 +523,7 @@ Actor Infernis : DRRPVile 10273 {
     Translation  "48:79=192:207", "128:143=192:207", "13:15=240:247", "144:151=240:247", "236:239=240:247", "144:151=240:247", "208:223=192:207", "0:2=247:247"
 }
 
-Actor DRRPArchVile : DRRPVile 10373 {
+Actor DRRPArchVile : DRRPVile replaces ArchVile 10373 {
     //$Category DMonsters
 
     Tag "$DRRP_M_ARCHVILE"
@@ -509,6 +544,8 @@ Actor Apollyon : DRRPVile 10473 {
 Actor DRRPBaronOfHell : BaronOfHell replaces BaronOfHell 10280 {
     //$Category DMonsters
 
+    +LOOKALLAROUND
+
     Tag "$DRRP_M_BARON"
     Scale 0.85
     Health 62
@@ -517,6 +554,8 @@ Actor DRRPBaronOfHell : BaronOfHell replaces BaronOfHell 10280 {
 
 Actor DRRPHellKnight : HellKnight replaces HellKnight 10380 {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_HELLKNIGHT"
     Scale 0.85
@@ -536,6 +575,8 @@ Actor Ogre : DRRPHellKnight 10480 {
 // TODO:
 Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
     //$Category DMonsters
+
+    +LOOKALLAROUND
 
     Tag "$DRRP_M_CYBERDEMON"
     Health 687
