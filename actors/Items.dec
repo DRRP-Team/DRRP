@@ -11,9 +11,9 @@ Actor DRRPGreenCard : DoomKey 10622 {
 
     Tag                     "$DRRP_I_GREENKEY"
     Inventory.PickupMessage "$DRRP_I_GREENKEY"
-    Inventory.Icon          "STKEYS2"
+    Inventory.Icon          "STKEYS9"
     Inventory.PickupSound   "misc/k_pkup"
-    Translation             "168:191=112:127", "16:47=112:127", "1:2=126:127"
+    // Translation             "168:191=112:127", "16:47=112:127", "1:2=126:127"
 
     States {
         Spawn:
