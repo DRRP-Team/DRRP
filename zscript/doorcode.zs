@@ -115,7 +115,7 @@ class DoorCodeInputMenu : GenericMenu {
             Vector2 v = TexMan.GetScaledSize(tex);
             int x = 320;
             int y = 320;
-            screen.DrawTexture(tex, false, x, y, DTA_LeftOffset, int(v.x / 2), DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);                
+            screen.DrawTexture(tex, false, x, y, DTA_LeftOffset, int(v.x / 2), DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);
             Font font = Font.FindFont("SMALLFONT");
             screen.DrawText(font, Font.CR_WHITE, 244, 322, displayTooltip .. " " .. self.codeStr, DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);
         }
