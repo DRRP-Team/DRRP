@@ -155,7 +155,13 @@ Actor Marine1: Marine 10521 { // Blue
     //$Category Characters
     //$Sprite DPR1A0
 
-    Translation "112:122=195:207", "123:127=243:247"
+    // Translation "112:122=195:207", "123:127=243:247"
+
+    States {
+        Spawn:
+            DPR1 A 0
+            Goto MainLoop
+    }
 }
 
 
