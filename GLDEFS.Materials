@@ -158,27 +158,30 @@ Material Texture REAC2D {
 // Doorsups
 
 Material Texture DRDC42 {
-    BrightMap "materials/emission/brpga14"
+    BrightMap   "materials/emission/brpga14"
     normal      "materials/normal/drdc48"
     specular    "materials/specular/drdc48"
 }
 
 Material Texture DRDC44 {
-    BrightMap "materials/emission/brpga14"
+    BrightMap   "materials/emission/brpga14"
     normal      "materials/normal/drdc48"
     specular    "materials/specular/drdc48"
 }
 
 Material Texture DRDC46 {
-    BrightMap "materials/emission/brpga14"
+    BrightMap   "materials/emission/brpga14"
     normal      "materials/normal/drdc48"
     specular    "materials/specular/drdc48"
 }
 
 Material Texture DRDC48 {
-    BrightMap "materials/emission/brpga14"
-    normal      "materials/normal/drdc48"
-    specular    "materials/specular/drdc48"
+    BrightMap               "materials/emission/brpga14"
+    normal                  "materials/normal/drdc48"
+    specular                "materials/specular/drdc48"
+    ao                      "materials/white"
+    Texture tex_heightmap   "materials/height/drdc48"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // 
