@@ -16,6 +16,19 @@ Material Texture DRDC06 {
     specular "materials/specular/drdc6"
 }
 
+// Jammed door
+Material Texture DRDC1 {
+    normal      "materials/normal/drdc1"
+    specular    "materials/specular/drdc1"
+}
+
+// Default door
+Material Texture DRDC0 {
+    normal      "materials/normal/drdc0"
+    specular    "materials/specular/drdc0"
+}
+
+
 // Brown ground
 Material Texture DRDC11 {
     normal "materials/normal/drdc11"
@@ -52,6 +65,7 @@ Material Texture DRDC16 {
     specular "materials/specular/drdc13"
 }
 
+// Reactor tubes
 Material Texture DRDC21 {
     normal "materials/normal/drdc21"
     specular "materials/specular/drdc21"
@@ -145,18 +159,26 @@ Material Texture REAC2D {
 
 Material Texture DRDC42 {
     BrightMap "materials/emission/brpga14"
+    normal      "materials/normal/drdc48"
+    specular    "materials/specular/drdc48"
 }
 
 Material Texture DRDC44 {
     BrightMap "materials/emission/brpga14"
+    normal      "materials/normal/drdc48"
+    specular    "materials/specular/drdc48"
 }
 
 Material Texture DRDC46 {
     BrightMap "materials/emission/brpga14"
+    normal      "materials/normal/drdc48"
+    specular    "materials/specular/drdc48"
 }
 
 Material Texture DRDC48 {
     BrightMap "materials/emission/brpga14"
+    normal      "materials/normal/drdc48"
+    specular    "materials/specular/drdc48"
 }
 
 // 
@@ -196,11 +218,15 @@ Material Texture DRDC5 {
 // Opened/closed doors
 
 Material Texture DRDC9 {
-    BrightMap "materials/emission/DRDC9_BRT"
+    BrightMap   "materials/emission/DRDC9_BRT"
+    normal      "materials/normal/drdc0"
+    specular    "materials/specular/drdc0"
 }
 
 Material Texture DRDC8 {
-    BrightMap "materials/emission/DRDC8_BRT"
+    BrightMap   "materials/emission/DRDC8_BRT"
+    normal      "materials/normal/drdc0"
+    specular    "materials/specular/drdc0"
 }
 
 // Computers
