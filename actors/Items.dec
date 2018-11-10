@@ -113,6 +113,8 @@ Actor Balloon : Ammo 10610 {
     }
 }
 
+Actor Balloons : Balloon 10611 {} // TODO:
+
 //Coins 10620-10629
 Actor Credit : Inventory 10620 {
     //$Category Items

@@ -175,6 +175,8 @@ Actor Crate 10705 {
     }
 }
 
+Actor YellowCrate : Crate 10766 {}
+
 Actor CrateShard {
     -SOLID
     -NOGRAVITY
@@ -423,23 +425,6 @@ Actor Alarm2: KlaxonWarningLight 10746  {
         Spawn:
             TNT1 A 0
             Goto See
-    }
-}
-
-// TODO: Remove
-Actor YardLamp 19690 {
-    //$Category DDecorations
-    
-    +SOLID
-
-    Radius 5
-    Height 215
-    ProjectilePassHeight -16
-    
-    States {
-        Spawn:
-            PSTE A -1
-            Stop
     }
 }
 

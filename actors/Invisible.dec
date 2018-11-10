@@ -1,0 +1,89 @@
+/**
+ * Copyright (c) 2017-2018 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+// 10801 - 10900
+
+Actor DRRPShop 10555 {
+    //$Category Characters
+    //$Sprite STEMA0
+
+    -SOLID
+
+    Height 64
+    Radius 32 // FIXME: 32 is Too fat
+
+    States {
+        Spawn:
+            TNT1 A -1
+            Stop
+    }
+}
+
+Actor DRRPTrigger : DRRPCharacter 10554 {
+    //$Category Characters
+    //$Sprite STEMA0
+
+    -SOLID
+
+    Tag "$DRRP_E_COMPUTER"
+    Radius 33
+}
+
+Actor DRRPInfo : DRRPTrigger {}
+
+Actor DRRPWall : DRRPInfo 10801 {
+    Tag "Steel wall"
+}
+
+Actor DRRPSplat : DRRPInfo 10802 {
+    Tag "Splat"    
+}
+
+Actor DRRPSplatPentagram : DRRPSplat 10803 {
+    Tag "Splat Pentagram"
+}
+
+Actor DRRPSplatDie : DRRPSplat 10804 {
+    Tag "Splat Die"
+}
+
+Actor DRRPWallXBrace : DRRPInfo 10805 {
+    Tag "X-brace"
+}
+
+Actor DRRPWallTech : DRRPInfo 10806 {
+    Tag "Wall Tech"
+}
+
+Actor DRRPDamagedStucco : DRRPInfo 10807 {
+    Tag "Damaged Stucco"
+}
+
+Actor DRRPBars : DRRPInfo 10808 {
+    Tag "Bars"
+}
+
+Actor DRRPWallSideSupports : DRRPInfo 10809 {
+    Tag "Wall Side Supports"    
+}
+
+Actor DRRPDamagedSteelWall : DRRPInfo 10810 {
+    Tag "Damaged Steel Wall"    
+}
+
+Actor DRRPBurnedSteelWall : DRRPInfo 10811 {
+    Tag "Burned Steel Wall"
+}
+
+Actor DRRPBrokenTubeWall : DRRPInfo 10812 {
+    Tag "Broken Tube Wall"
+}
+
+Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
+    -SOLID
+    -SHOOTABLE
+}

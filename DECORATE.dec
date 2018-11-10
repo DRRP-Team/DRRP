@@ -12,6 +12,7 @@
 #include actors/DRPGWeapons.dec
 #include actors/Monsters.dec
 #include actors/Characters.dec
+#include actors/Invisible.dec
 #include actors/Decorations.dec
 #include actors/System.dec
 
@@ -19,7 +20,8 @@
  * Items        10600-10700
  * Weapons      10556-10599
  * Characters   10500-10555
- * Decorations  10701-10800 
+ * Decorations  10701-10800
+ * Invisible    10801-10900
  * Monsters
  *  1 level  =  10259-10299
  *  2 level  =  10300-10358

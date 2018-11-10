@@ -37,16 +37,6 @@ Actor DRRPCharacter {
     }
 }
 
-Actor DRRPTrigger : DRRPCharacter 10554 {
-    //$Category Characters
-    //$Sprite STEMA0
-
-    -SOLID
-
-    Tag "$DRRP_E_COMPUTER"
-    Radius 33
-}
-
 /*
  * Scientists * -----------------------------------------------------------------
  */
@@ -161,26 +151,5 @@ Actor Marine1: Marine 10521 { // Blue
         Spawn:
             DPR1 A 0
             Goto MainLoop
-    }
-}
-
-
-/*
- * Other * ----------------------------------------------------------------------
- */
-
-Actor DRRPShop 10555 {
-    //$Category Characters
-    //$Sprite STEMA0
-
-    -SOLID
-
-    Height 64
-    Radius 32 // FIXME: 32 is Too fat
-
-    States {
-        Spawn:
-            TNT1 A -1
-            Stop
     }
 }
