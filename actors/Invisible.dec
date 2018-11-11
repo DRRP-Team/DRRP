@@ -8,7 +8,7 @@
 // 10801 - 10900
 
 Actor DRRPShop 10555 {
-    //$Category Characters
+    //$Category Invisible
     //$Sprite STEMA0
 
     -SOLID
@@ -24,66 +24,126 @@ Actor DRRPShop 10555 {
 }
 
 Actor DRRPTrigger : DRRPCharacter 10554 {
-    //$Category Characters
+    //$Category Invisible
     //$Sprite STEMA0
 
     -SOLID
 
-    Tag "$DRRP_E_COMPUTER"
+    Tag "Trigger"
     Radius 33
 }
 
-Actor DRRPInfo : DRRPTrigger {}
+Actor DRRPInfo : DRRPTrigger {
+    //$Category Invisible
+
+    -USESPECIAL
+}
 
 Actor DRRPWall : DRRPInfo 10801 {
+    //$Category Invisible
+
     Tag "Steel wall"
 }
 
 Actor DRRPSplat : DRRPInfo 10802 {
+    //$Category Invisible
+
     Tag "Splat"    
 }
 
 Actor DRRPSplatPentagram : DRRPSplat 10803 {
+    //$Category Invisible
+
     Tag "Splat Pentagram"
 }
 
 Actor DRRPSplatDie : DRRPSplat 10804 {
+    //$Category Invisible
+
     Tag "Splat Die"
 }
 
 Actor DRRPWallXBrace : DRRPInfo 10805 {
+    //$Category Invisible
+
     Tag "X-brace"
 }
 
 Actor DRRPWallTech : DRRPInfo 10806 {
+    //$Category Invisible
+
     Tag "Wall Tech"
 }
 
 Actor DRRPDamagedStucco : DRRPInfo 10807 {
+    //$Category Invisible
+
     Tag "Damaged Stucco"
 }
 
 Actor DRRPBars : DRRPInfo 10808 {
+    //$Category Invisible
+
     Tag "Bars"
 }
 
 Actor DRRPWallSideSupports : DRRPInfo 10809 {
+    //$Category Invisible
+
     Tag "Wall Side Supports"    
 }
 
 Actor DRRPDamagedSteelWall : DRRPInfo 10810 {
+    //$Category Invisible
+
     Tag "Damaged Steel Wall"    
 }
 
 Actor DRRPBurnedSteelWall : DRRPInfo 10811 {
+    //$Category Invisible
+
     Tag "Burned Steel Wall"
 }
 
 Actor DRRPBrokenTubeWall : DRRPInfo 10812 {
+    //$Category Invisible
+
     Tag "Broken Tube Wall"
 }
 
+
+Actor DRRPNull : DRRPTrigger 10814 {
+    //$Category Invisible
+
+    +SPECTRAL
+    -USESPECIAL
+
+    Tag "[NULL] Unknown actor"
+}
+
+Actor DRRPStatusBar : DRRPInfo 10813 {
+    //$Category Invisible
+    
+    -USESPECIAL
+    Tag "Status bar message"
+}
+
+Actor DRRPComputer : DRRPTrigger 10816 {
+    //$Category Invisible
+
+    Tag "$DRRP_E_COMPUTER"
+}
+
+Actor DRRPDoor : DRRPInfo 10815 {
+    //$Category Invisible
+
+    Tag "Door"
+}
+
 Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
+    //$Category Invisible
+
+    +SPECTRAL
     -SOLID
     -SHOOTABLE
 }
