@@ -86,7 +86,12 @@ Material ProcessMaterial() {
     vec2 texCoord = ParallaxMap(tbn);
 
     Material material;
+#if defined(PBR)
     material.Base = getTexel(texCoord) * texture(aotexture, texCoord).r;
+#else
+	material.Base = getTexel(texCoord);
+#endif
+	
     material.Normal = GetBumpedNormal(tbn, texCoord);
 #if defined(SPECULAR)
     material.Specular = texture(speculartexture, texCoord).rgb;
