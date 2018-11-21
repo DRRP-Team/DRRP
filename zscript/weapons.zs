@@ -35,27 +35,28 @@ class DRRPShotgun : Shotgun replaces Shotgun {
     Default {
         DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
+//        Weapon.AmmoType "DRRPShell";
     }
 
     States {
         Fire:
             SHTG A 3;
             SHTG A 2 {
-				A_FireBullets( 5.6, 0, 4, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
-				A_FireBullets( 5.6, 0, 3, Random( 1, 2 ), "BulletPuff", FBF_NORANDOM );
-				A_GunFlash();
-				A_PlaySound( "weapons/shotgf", CHAN_WEAPON );
-			}
-			SHTG A 5;
-			SHTG B 1;
-			SHTG CD 2;
-			SHTG E 1;
-			SHTG FG 2;
-			SHTG HI 3;
-			SHTG JIH 2;
-			SHTG GFE 1;
-			SHTG DCB 2;
-			Goto Ready;
+                A_FireBullets( 5.6, 0, 4, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
+                A_FireBullets( 5.6, 0, 3, Random( 1, 2 ), "BulletPuff", FBF_NORANDOM );
+                A_GunFlash();
+                A_PlaySound( "weapons/shotgf", CHAN_WEAPON );
+            }
+            SHTG A 5;
+            SHTG B 1;
+            SHTG CD 2;
+            SHTG E 1;
+            SHTG FG 2;
+            SHTG HI 3;
+            SHTG JIH 2;
+            SHTG GFE 1;
+            SHTG DCB 2;
+            Goto Ready;
         Flash:
             TNT1 A 0 A_Light1;
             SHTF A 1 Bright A_SetPitch(Pitch - FRandom(-0.1, 0.4));
@@ -73,10 +74,17 @@ class DRRPShotgun : Shotgun replaces Shotgun {
     }
 }
 
+//class DRRPShell: Shell {
+//    Default {
+//        Inventory.MaxAmount 99;
+//    }
+//}
+
 class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
     Default {
         DamageType "DRRPSSGDmg";
         Decal "BulletChip";
+//        Weapon.AmmoType "DRRPShell";
     }
 
     States {
@@ -84,26 +92,26 @@ class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
             SHT2 A 0 A_FireBullets( 11.2, 7.1, 4, Random(2, 5), "BulletPuff", FBF_NORANDOM );
             SHT2 A 1 A_FireBullets( 11.2, 7.1, 16, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
             SHT2 A 0 A_PlaySound( "weapons/sshotf" );
-			SHT2 A 2 A_GunFlash;
-			SHT2 A 4;
-			SHT2 A 3 A_CheckReload;
-			SHTD BC 2;
-			SHTD D 3;
-			SHT2 A 0 A_PlaySound( "weapons/sshoto", CHAN_WEAPON );
-			SHTD EF 3;
-			SHTD G 6 A_GunFlash( "DoubleShellFallFlash" );
-			SHTD H 2;
-			SHTD IJ 3;
-			SHTD K 3 A_LoadShotgun2;
-			SHTD LMNO 3;
-			SHTD P 2 A_PlaySound( "weapons/sshotc", CHAN_WEAPON );
-			SHTD Q 3;
-			SHTD RS 3;
-			SHT2 A 2;
-			Goto Ready;
-		DoubleShellFallFlash:
-			CAS1 ABCD 2;
-			Stop;
+            SHT2 A 2 A_GunFlash;
+            SHT2 A 4;
+            SHT2 A 3 A_CheckReload;
+            SHTD BC 2;
+            SHTD D 3;
+            SHT2 A 0 A_PlaySound( "weapons/sshoto", CHAN_WEAPON );
+            SHTD EF 3;
+            SHTD G 6 A_GunFlash( "DoubleShellFallFlash" );
+            SHTD H 2;
+            SHTD IJ 3;
+            SHTD K 3 A_LoadShotgun2;
+            SHTD LMNO 3;
+            SHTD P 2 A_PlaySound( "weapons/sshotc", CHAN_WEAPON );
+            SHTD Q 3;
+            SHTD RS 3;
+            SHT2 A 2;
+            Goto Ready;
+        DoubleShellFallFlash:
+            CAS1 ABCD 2;
+            Stop;
         Flash:
             SHT2 I 0 A_SetPitch(Pitch - FRandom(-0.9, 1.9));
             SHTF A 0 A_SetAngle(Angle + FRandom(-1.0, 1.0));
@@ -138,11 +146,11 @@ class DRRPChaingun : Chaingun replaces Chaingun {
             CHGG A 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG A 0 A_GunFlash;
             CHGG A 2 A_FireBullets(5.6, 0, 1, Random(4, 10), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
-			CHGG B 2;
+            CHGG B 2;
             CHGG C 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG C 0 A_GunFlash("Flash2");
             CHGG C 2 A_FireBullets(5.6, 0, -1, Random(5, 8), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
-			CHGG D 2;
+            CHGG D 2;
             CHGG C 0 A_ReFire;
             Goto Ready;
         Flash:
@@ -215,14 +223,14 @@ class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
             PLSG A 3 A_FireProjectile( "PlasmaBall" );
             PLSG B 0 A_ReFire;
             PLSG B 0 A_ZoomFactor( 1 );
-			PLSG A 2;
-			PLSG B 1;
-			PLSG DEF 2;
-			PLSG G 4;
-			PLSG H 9;
-			PLSG G 2;
-			PLSG FED 1;
-			PLSG CBA 2;
+            PLSG A 2;
+            PLSG B 1;
+            PLSG DEF 2;
+            PLSG G 4;
+            PLSG H 9;
+            PLSG G 2;
+            PLSG FED 1;
+            PLSG CBA 2;
             Goto Ready;
         Flash:
             PLSF A 0 A_SetPitch(Pitch - FRandom(0.05, 0.4));
