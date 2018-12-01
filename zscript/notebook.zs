@@ -81,7 +81,9 @@ class NotebookAPI {
         
         NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
         
-        nbitem.languageStrings.push(entry);
+		if(nbitem.languageStrings.find(entry) == nbitem.languageStrings.size()) {
+			nbitem.languageStrings.push(entry);
+		}
 		
 		activator.A_GiveInventory("NotebookTooltipItem");
     }
