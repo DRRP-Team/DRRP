@@ -43,15 +43,18 @@ Object YellowLamp {
 }
 // end Yellow lamp
 // Alarm1
-    Pointlight Alarm1Light {
-        Color 1.0 0.0 0.0
-        Size 16
+PulseLight Alarm1Light {
+    Color 1.0 0.0 0.0
+    Size 8
+    SecondarySize 16
+    Interval 0.5
+}
+
+Object Alarm1 {
+    Frame ALAR {
+        Light Alarm1Light
     }
-    Object Alarm1 {
-        frame ALAR {
-            light Alarm1Light
-        }
-    }
+}
 // end Alarm1
 
 // Spark lights
