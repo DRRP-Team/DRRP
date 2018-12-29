@@ -77,7 +77,7 @@ class DRRPShotgun : Shotgun replaces Shotgun {
 class DRRPShell : Shell replaces Shell {
     Default {
         Inventory.MaxAmount 99;
-		Ammo.BackpackMaxAmount 99;
+        Ammo.BackpackMaxAmount 99;
     }
 }
 
@@ -209,11 +209,11 @@ class DRRPRocketLauncher : RocketLauncher replaces RocketLauncher {
 
 class DRRPRocket : Rocket replaces Rocket {
     States {
-    Death:
-        MISL B 8 Bright A_Explode(15 + Random(0, 21), 128);
-        MISL C 6 Bright;
-        MISL D 4 Bright;
-        Stop;
+        Death:
+            MISL B 8 Bright A_Explode(15 + Random(0, 21), 128);
+            MISL C 6 Bright;
+            MISL D 4 Bright;
+            Stop;
     }
 }
 

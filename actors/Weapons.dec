@@ -30,16 +30,16 @@ Actor DRRPPistol : Pistol replaces Pistol {
     }
 }
 
-ACTOR DRRPShell : Shell replaces Shell {
-	Inventory.MaxAmount 99
-	Ammo.BackpackMaxAmount 99
+Actor DRRPShell : Shell replaces Shell {
+    Inventory.MaxAmount 99
+    Ammo.BackpackMaxAmount 99
 }
 
 Actor DRRPShotgun : Shotgun replaces Shotgun {
     DamageType DRRPShotgunDmg
     Decal BulletChip
     Tag "$DRRP_W_SHOTGUN"
-	Weapon.AmmoType "DRRPShell"
+    Weapon.AmmoType "DRRPShell"
 
     States {
         Fire:
