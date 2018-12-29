@@ -6,8 +6,8 @@
  */
 
 class DoorCodeInputActor {
-    static int DoorCode(Actor activator, string info, int code, int front, int back) {
-        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info, code, front, back);
+    static int DoorCode(Actor activator, string info, int code, int linetag) {
+        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info, code, linetag);
  
         return 1;
     }
@@ -16,8 +16,10 @@ class DoorCodeInputActor {
 class DoorCodeInputStubItem : Inventory {
     String code;
     String displayTooltip;
-    int doorfront;
-    int doorback;
+    int linetag;
+}
+
+class DoorCodeOkayStubItem : Inventory {
 }
 
 class DoorCodeInputHandler : EventHandler {
@@ -31,11 +33,13 @@ class DoorCodeInputHandler : EventHandler {
         if(command[0] == "opendoorinput") {
             if(command.size() == 2) {
                 players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
+				LineIdIterator it = LineIdIterator.Create(e.args[1]);
+                int lineid = it.Next();
+				/*players[e.player].mo.*/ACS_Suspend(level.Lines[lineid].args[0], level.Lines[lineid].args[1]);
                 DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
                 item.code = String.format("%d", e.args[0]);
                 item.displayTooltip = command[1];
-                item.doorfront = e.args[1];
-                item.doorback = e.args[2];
+                item.linetag = e.args[1];
                 Menu.SetMenu("DoorCodeInputMenu");
             }
         } else if (command[0] == "closedoorinput") {
@@ -44,8 +48,16 @@ class DoorCodeInputHandler : EventHandler {
 
             if (e.Args[0] == 1) {
                 players[e.Player].mo.A_PlaySound("access/grant1");
-
-                LineIdIterator it = LineIdIterator.Create(item.doorfront);
+				LineIdIterator it = LineIdIterator.Create(item.linetag);
+                int lineid = it.Next();
+				players[e.player].mo.A_GiveInventory("DoorCodeOkayStubItem");
+				ACS_Execute(level.Lines[lineid].args[0],
+				                                 level.Lines[lineid].args[1],
+												 level.Lines[lineid].args[2],
+												 level.Lines[lineid].args[3],
+												 level.Lines[lineid].args[4]);
+				
+                /*LineIdIterator it = LineIdIterator.Create(item.doorfront);
                 int lineid = it.Next();
 
                 if (lineid > 0) {
@@ -60,7 +72,7 @@ class DoorCodeInputHandler : EventHandler {
                     line.args[3] = 0;
                     line.args[4] = 0;
                 }
-                it = LineIdIterator.Create(item.doorback);
+                /*it = LineIdIterator.Create(item.doorback);
                 lineid = it.Next();
 
                 if (lineid > 0) {
@@ -75,10 +87,13 @@ class DoorCodeInputHandler : EventHandler {
                     line.args[4] = 0;
 
                     myside.SetTexture(Side.top, TexMan.CheckForTexture("drpga09b", TexMan.Type_Any));
-                }
+                }*/
             } else if (e.Args[0] == 2) {
                 players[e.Player].mo.A_PlaySound("access/deny1");
                 players[e.Player].mo.A_Print("Wrong password");
+				LineIdIterator it = LineIdIterator.Create(item.linetag);
+                int lineid = it.Next();
+				ACS_Terminate(level.Lines[lineid].args[0], level.Lines[lineid].args[1]);
             }
         }
     }
