@@ -35,7 +35,7 @@ class DRRPShotgun : Shotgun replaces Shotgun {
     Default {
         DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
-//        Weapon.AmmoType "DRRPShell";
+        Weapon.AmmoType "DRRPShell";
     }
 
     States {
@@ -74,17 +74,18 @@ class DRRPShotgun : Shotgun replaces Shotgun {
     }
 }
 
-//class DRRPShell: Shell {
-//    Default {
-//        Inventory.MaxAmount 99;
-//    }
-//}
+class DRRPShell : Shell replaces Shell {
+    Default {
+        Inventory.MaxAmount 99;
+		Ammo.BackpackMaxAmount 99;
+    }
+}
 
 class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
     Default {
         DamageType "DRRPSSGDmg";
         Decal "BulletChip";
-//        Weapon.AmmoType "DRRPShell";
+        Weapon.AmmoType "DRRPShell";
     }
 
     States {
