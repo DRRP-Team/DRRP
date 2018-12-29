@@ -1,5 +1,6 @@
 #library "flashlight"
-#include "zcommon.acs"
+
+// Compile game.acs!
 
 int players [8]; 
 int playersFlashID [8];

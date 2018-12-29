@@ -5,10 +5,12 @@
  * https://opensource.org/licenses/MIT
  */
 
+// Compile game.acs!
+
 // Map APIs 3000 - 3999
 
 Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3000");
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3000");
     if(!nosound) SectorSound("access/grant1", 255);
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
@@ -18,24 +20,24 @@ Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
 }
 
 Script 3001 (void) { // Door Closed
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3001");
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3001");
     ActivatorSound("acess/deny1", 255);
     print(l:"DRRP_D_DOORCLOSED");
     delay(34);
 }
 
 Script 3002 (int sectorid) { // Generic Door
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3002");
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3002");
     Door_Raise(sectorid, 16, 105);
 }
 
 Script 3003 (int sectorid) { // Secret Door
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3003");
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3003");
     Door_Open(sectorid, 128);
 }
 
 Script 3004 (void) { // Give Automap
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3004");
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3004");
     GiveInventory("MapRevealer", 1);
 }
 
@@ -45,16 +47,16 @@ Script 3005 ENTER { // WIP Level
 }
 
 Script 3006 (void) { // Jammed door
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3006");
-	if((ClassifyActor(0) & ACTOR_PLAYER) && stricmp(GetWeapon(), "DRRPAxe") == 0) {
-		Radius_Quake2(0, 1, 17, 0, 128, "");
-		Delay(17);
-		Ceiling_RaiseToNearest(0, 4096);
-	}
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3006");
+    if((ClassifyActor(0) & ACTOR_PLAYER) && stricmp(GetWeapon(), "DRRPAxe") == 0) {
+        Radius_Quake2(0, 1, 17, 0, 128, "");
+        Delay(17);
+        Ceiling_RaiseToNearest(0, 4096);
+    }
 }
 
 Script 3007 (int doorf, int doorb) { // Door Unlocker
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3000");
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3000");
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
     SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");

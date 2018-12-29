@@ -1,18 +1,12 @@
 /**
  * Copyright (c) 2017-2018 DRRP-Team
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
 
 #library game
 #include "zcommon.acs"
-
-#define MAX_LEVELS 16
-#define JUNCTION_LEVELNUM 2
-//#define DEBUGSCRIPT
-
-world bool 1:exitedLevels[MAX_LEVELS] = {false}; // FIXME: You need just one counter. Or Actor.
 
 // Useful functions
 
@@ -37,40 +31,24 @@ function int getStringHeight(str String) {
 }
 
 function global str getThingName(int id, int state) {
-	print(s:"getThingName(", i:id, s:", ", i:state, s:")");
-	return "DRRPTODO";
+    print(s:"getThingName(", i:id, s:", ", i:state, s:")");
+    return "DRRPTODO";
 }
 
-//\\ Useful functions
-
-#ifdef DEBUGSCRIPT
-script CheckLevelExits ENTER {
-    ACS_BeginPrint();
-    for(int i = 0; i < MAX_LEVELS; i++) {
-        __nprintf("%d ", exitedLevels[i]);
-    }
-    ACS_EndPrint();
-}
-#endif
-
-script 777(int spotnum) {
-    exitedLevels[GetLevelInfo(LEVELINFO_LEVELNUM)] = true;
-    Teleport_NewMap(JUNCTION_LEVELNUM, spotnum, 0);
-}
-
+// \\ Useful functions
 
 script "fireextfade" (int mode) {
     // TODO: Use additive point light
     if(mode) {
-       // Sector_SetFade(0, 255, 255, 255);
+        // Sector_SetFade(0, 255, 255, 255);
     } else {
-        //Sector_SetFade(0, 0, 0, 0);
+        // Sector_SetFade(0, 0, 0, 0);
     }
 }
 
 // ACS based DRPG Window
 
-Script "window"( str Text ) { //s: -> str
+Script "window"(str Text) { // s: -> str
     const int SYM_HEIGHT = 12; // Symbol's height is 12px
 
     delay(2);
@@ -79,10 +57,10 @@ Script "window"( str Text ) { //s: -> str
     int ScrollY = 0;
     int height  = getStringHeight(Text);
 
-    Thing_Stop( 0 ); //TID_Player -> 0
-    SetPlayerProperty( 0, True, PROP_TOTALLYFROZEN );
-    
-    While ( ReadedKey != BT_USE ) {
+    Thing_Stop(0); // TID_Player -> 0
+    SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
+
+    While (ReadedKey != BT_USE) {
         if(ReadedKey == BT_FORWARD && ScrollY > 0) {
             ScrollY -= SYM_HEIGHT;
             delay(4);
@@ -94,19 +72,19 @@ Script "window"( str Text ) { //s: -> str
 
         SetHudSize(640, 480, true);
         SetHUDClipRect(0, 0, 0, 0, 0);
-        SetFont( "M_WINDOW" );
-        HudMessage( s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1 );
-        SetFont( "SMALLFONT" );
-        SetHudClipRect(320 - 160/ 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
-        HudMessage( s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160/ 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1 );
+        SetFont("M_WINDOW");
+        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1);
+        SetFont("SMALLFONT");
+        SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
+        HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
         SetHudSize(0, 0, false);
         delay(1);
-        ReadedKey = GetPlayerInput( -1, INPUT_BUTTONS );
+        ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
     }
 
-    HudMessage( s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1 );
-    HudMessage( s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1 );
-    SetPlayerProperty( 0, False, PROP_TOTALLYFROZEN );
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+    SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
 }
 
 #include "flashlight.acs"
