@@ -90,7 +90,7 @@ class DoorCodeInputHandler : EventHandler {
                 }*/
             } else if (e.Args[0] == 2) {
                 players[e.Player].mo.A_PlaySound("access/deny1");
-                players[e.Player].mo.A_Print("Wrong password");
+                players[e.Player].mo.A_Print(StringTable.Localize("$DRRP_D_MENU_PASSCODE_WRONG"));
 				LineIdIterator it = LineIdIterator.Create(item.linetag);
                 int lineid = it.Next();
 				ACS_Terminate(level.Lines[lineid].args[0], level.Lines[lineid].args[1]);
