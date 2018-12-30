@@ -87,5 +87,39 @@ Script "window"(str Text) { // s: -> str
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
 }
 
+// ACS based DRPG Lock Window
+
+Script "lockwindow"(str Text, str Password, int ScriptNumber, int ConversationArg) {
+    const int SYM_HEIGHT = 12; // Symbol's height is 12px
+
+    delay(2);
+
+    int ReadedKey;
+    int height  = getStringHeight(Text);
+
+    Thing_Stop(0);
+    SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
+
+    While (ReadedKey != BT_USE) {
+        SetHudSize(640, 480, true);
+        SetHUDClipRect(0, 0, 0, 0, 0);
+        SetFont("M_WINDOW");
+        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1);
+        SetFont("SMALLFONT");
+        SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
+        HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (0 << 16), 1);
+		HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 + 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (10 << 16), 1);
+        SetHudSize(0, 0, false);
+        delay(1);
+        ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
+    }
+
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+    SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
+	
+	ACS_ExecuteAlways(ScriptNumber, 0, 1, ConversationArg);
+}
+
 #include "flashlight.acs"
 #include "mapapis.acs"
