@@ -619,6 +619,8 @@ Actor Kronos 10391 {
     //$Category DMonsters
     //$Sprite KRONA1
 
+	//const int KronosScale = 0.43;
+
     MONSTER
     +LOOKALLAROUND
     +BOSS
@@ -627,7 +629,7 @@ Actor Kronos 10391 {
     Height  56
     Health  458 // Original: 344..572
     Speed   14
-    Scale   0.9
+    Scale   0.43
     Tag     "$DRRP_M_KRONOS"
 
     //SeeSound "DRRPMonsters/Kronos/sight"
@@ -640,20 +642,25 @@ Actor Kronos 10391 {
             KRON A 5 A_Look
             Wait
         See:
-            KRON A 3 A_Chase
+            KRON AAA 3 A_Chase
+			KRON A 0 A_SetScale( -0.43, 0.43 )
+			KRON AAA 3 A_Chase
+			KRON A 0 A_SetScale( 0.43, 0.43 )
             Loop
         Melee:
-            KRON A 0
-            KRON A 0 A_CustomMeleeAttack(Random(15, 30))
-            KRON A 5 A_SetScale(-1)
-            KRON A 5 A_SetScale(1)
+            KRON A 5
+            KRON A 7 A_CustomMeleeAttack( Random( 15, 30 ) )
             Goto See
         Death:
-            KRON A 1 {
+            KRON M 3 {
                 A_Fall;
                 A_NoBlocking;
             }
-            KRON A 2 A_FadeOut(0.02)
-            Wait
+            KRON NOP 2
+			KRON QRST 3
+			KRON UVWX 2
+			KRON Y 15
+			KRON Z -1
+            Stop
     }    
 }
