@@ -6,8 +6,8 @@
  */
 
 class DoorCodeInputActor {
-    static int DoorCode(Actor activator, string info, int code, int linetag) {
-        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info, code, linetag);
+    static int DoorCode(Actor activator, string info, string code, int scriptnum) {
+        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info, code.ToInt(), scriptnum);
  
         return 1;
     }
@@ -16,10 +16,7 @@ class DoorCodeInputActor {
 class DoorCodeInputStubItem : Inventory {
     String code;
     String displayTooltip;
-    int linetag;
-}
-
-class DoorCodeOkayStubItem : Inventory {
+    int scriptnum;
 }
 
 class DoorCodeInputHandler : EventHandler {
@@ -32,14 +29,13 @@ class DoorCodeInputHandler : EventHandler {
         e.Name.Split(command, "@@@@");
         if(command[0] == "opendoorinput") {
             if(command.size() == 2) {
+			    players[e.player].mo.A_Log(String.format("%d", e.args[0]));
                 players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
-				LineIdIterator it = LineIdIterator.Create(e.args[1]);
-                int lineid = it.Next();
-				/*players[e.player].mo.*/ACS_Suspend(level.Lines[lineid].args[0], level.Lines[lineid].args[1]);
+				ACS_Suspend(-int(name("lockwindow")), 0);
                 DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
                 item.code = String.format("%d", e.args[0]);
                 item.displayTooltip = command[1];
-                item.linetag = e.args[1];
+                item.scriptnum = e.args[1];
                 Menu.SetMenu("DoorCodeInputMenu");
             }
         } else if (command[0] == "closedoorinput") {
@@ -48,52 +44,12 @@ class DoorCodeInputHandler : EventHandler {
 
             if (e.Args[0] == 1) {
                 players[e.Player].mo.A_PlaySound("access/grant1");
-				LineIdIterator it = LineIdIterator.Create(item.linetag);
-                int lineid = it.Next();
-				players[e.player].mo.A_GiveInventory("DoorCodeOkayStubItem");
-				ACS_Execute(level.Lines[lineid].args[0],
-				                                 level.Lines[lineid].args[1],
-												 level.Lines[lineid].args[2],
-												 level.Lines[lineid].args[3],
-												 level.Lines[lineid].args[4]);
-				
-                /*LineIdIterator it = LineIdIterator.Create(item.doorfront);
-                int lineid = it.Next();
-
-                if (lineid > 0) {
-                    Line line = level.Lines[lineid];
-                    Side myside = line.sidedef[0];
-
-                    myside.SetTexture(Side.top, TexMan.CheckForTexture("drdc9", TexMan.Type_Any));
-                    line.special = 12;
-                    line.args[0] = 0;
-                    line.args[1] = 16;
-                    line.args[2] = 105;
-                    line.args[3] = 0;
-                    line.args[4] = 0;
-                }
-                /*it = LineIdIterator.Create(item.doorback);
-                lineid = it.Next();
-
-                if (lineid > 0) {
-                    Line line = level.Lines[lineid];
-                    Side myside = line.sidedef[0];
-
-                    line.special = 12;
-                    line.args[0] = 0;
-                    line.args[1] = 16;
-                    line.args[2] = 105;
-                    line.args[3] = 0;
-                    line.args[4] = 0;
-
-                    myside.SetTexture(Side.top, TexMan.CheckForTexture("drpga09b", TexMan.Type_Any));
-                }*/
+				ACS_Execute(-int(name("lockwindow")), 0, 0, 0, 0);
             } else if (e.Args[0] == 2) {
                 players[e.Player].mo.A_PlaySound("access/deny1");
                 players[e.Player].mo.A_Print(StringTable.Localize("$DRRP_D_MENU_PASSCODE_WRONG"));
-				LineIdIterator it = LineIdIterator.Create(item.linetag);
-                int lineid = it.Next();
-				ACS_Terminate(level.Lines[lineid].args[0], level.Lines[lineid].args[1]);
+				ACS_Terminate(-int(name("lockwindow")), 0);
+				ACS_Terminate(item.scriptnum, 0);
             }
         }
     }
