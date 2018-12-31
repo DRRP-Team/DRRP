@@ -401,6 +401,8 @@ Material Texture DRDC47 {
 
 // Default wall
 Material Texture DRDC27 {
+    normal   "materials/normal/drdc27"
+    specular "materials/black"
     Texture tex_heightmap   "materials/height/drdc27"
     shader                  "shaders/parallax_pbr.fp"
 }
