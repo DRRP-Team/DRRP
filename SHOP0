@@ -103,6 +103,16 @@ conversation {
          goodbye = "Close";
          name = "Stats";
          dialog = "What do you want to buy?";
+		 choice {
+             text = "+4 Hp [15 credits]";
+             giveitem = "DRRPPlayerLevel";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost {
+                 item = "Credit";
+                 amount = 15;
+             }
+         }/*
          choice {
              text = "+1 Accuracy [15 credits]";
              giveitem = "HealthPowerUp";
@@ -142,7 +152,7 @@ conversation {
                  item = "Credit";
                  amount = 20;
              }
-         }
+         }*/
          choice {
              text = "Back";
              nextpage = 1;

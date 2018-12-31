@@ -123,6 +123,17 @@ conversation {
                  amount = 15;
              }
          }
+		 choice {
+             text = "+4 Hp [15 credits]";
+             giveitem = "DRRPPlayerLevel";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost {
+                 item = "Credit";
+                 amount = 15;
+             }
+         }
+		 /*
          choice {
              text = "+1 Agility [15 credits]";
              giveitem = "HealthPowerUp";
@@ -152,7 +163,7 @@ conversation {
                  item = "Credit";
                  amount = 20;
              }
-         }
+         }*/
          choice {
              text = "Back";
              nextpage = 1;
