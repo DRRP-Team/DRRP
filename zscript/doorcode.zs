@@ -29,7 +29,6 @@ class DoorCodeInputHandler : EventHandler {
         e.Name.Split(command, "@@@@");
         if(command[0] == "opendoorinput") {
             if(command.size() == 2) {
-			    players[e.player].mo.A_Log(String.format("%d", e.args[0]));
                 players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
 				ACS_Suspend(-int(name("lockwindow")), 0);
                 DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
