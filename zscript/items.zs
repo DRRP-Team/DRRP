@@ -5,7 +5,7 @@
  *https://opensource.org/licenses/MIT
  */
 
-
+/*
 class MaxHealthIncreaser: Inventory {
 
 	override void PostBeginPlay() {
@@ -14,4 +14,4 @@ class MaxHealthIncreaser: Inventory {
 		}
 	}
 
-}
+}*/
