@@ -249,7 +249,7 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     //$Sprite SKULA1
 
     +LOOKALLAROUND
-	-DONTFALL
+    -DONTFALL
 
     Tag "$DRRP_M_LOSTSOUL"
     Health 11
@@ -257,10 +257,10 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     DamageFactor DRRPFireDmg, 0.0
 
     States {
-		See:
-			TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
-			SKUL AB 6 Bright A_Chase
-		Loop
+        See:
+            TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
+            SKUL AB 6 Bright A_Chase
+        Loop
         Death:
             SKUL F 6 Bright
             SKUL G 6 Bright A_Scream
@@ -531,14 +531,14 @@ Actor DRRPVile : ArchVile {
     Scale 0.7
     DamageFactor DRRPAxeDmg, 8.0
     DamageFactor DRRPFireDmg, 0.0
-	
-	States {
-		
-		See:
-			TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
-			VILE AABBCCDDEEFF 2 A_VileChase
-		Loop
-	}
+    
+    States {
+        
+        See:
+            TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
+            VILE AABBCCDDEEFF 2 A_VileChase
+        Loop
+    }
 }
 
 Actor Infernis : DRRPVile 10273 {
@@ -619,48 +619,53 @@ Actor Kronos 10391 {
     //$Category DMonsters
     //$Sprite KRONA1
 
-	//const int KronosScale = 0.43;
-
     MONSTER
     +LOOKALLAROUND
     +BOSS
-
-    Radius  24
-    Height  56
-    Health  458 // Original: 344..572
-    Speed   14
-    Scale   0.43
-    Tag     "$DRRP_M_KRONOS"
-
+    +NOGRAVITY
+    +FLOAT
+    Radius   24
+    Height   56
+    Health   458 // Original: 344..572
+    Speed    20
+    Scale    0.43
+    Tag      "$DRRP_M_KRONOS"
+    Obituary "%o was killed by a Kronos." // Tmp.
     //SeeSound "DRRPMonsters/Kronos/sight"
     //PainSound "DRRPMonsters/Kronos/pain"
     //DeathSound "DRRPMonsters/Kronos/death"
     //ActiveSound "DRRPMonsters/Kronos/active"
-
+    //AttackSound "DRRPMonsters/Kronos/attack"
+    SeeSound "demon/sight"
+    PainSound "skull/pain"
+    ActiveSound "demon/active"
     States {
         Spawn:
-            KRON A 5 A_Look
+            KRON A 2 A_Look
             Wait
         See:
-            KRON AAA 3 A_Chase
-			KRON A 0 A_SetScale( -0.43, 0.43 )
-			KRON AAA 3 A_Chase
-			KRON A 0 A_SetScale( 0.43, 0.43 )
+            KRON AAA 2 A_Chase
+            KRON A 0 A_SetScale( -0.43, 0.43 )
+            KRON AAA 2 A_Chase
+            KRON A 0 A_SetScale( 0.43, 0.43 )
             Loop
         Melee:
-            KRON A 5
-            KRON A 7 A_CustomMeleeAttack( Random( 15, 30 ) )
+            KRON A 2
+            KRON A 5 A_CustomMeleeAttack( Random( 15, 30 ), "skeleton/melee", "skeleton/whoosh" )
+            KRON A 3
             Goto See
         Death:
             KRON M 3 {
                 A_Fall;
                 A_NoBlocking;
+                A_PlaySound( "demon/death", CHAN_AUTO );
+                A_PlaySound( "cyber/death", CHAN_AUTO );
             }
             KRON NOP 2
-			KRON QRST 3
-			KRON UVWX 2
-			KRON Y 15
-			KRON Z -1
+            KRON QRST 3
+            KRON UVWX 2
+            KRON Y 15
+            KRON Z -1
             Stop
     }    
 }
