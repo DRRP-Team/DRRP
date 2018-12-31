@@ -14,9 +14,11 @@ Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
     if(!nosound) SectorSound("access/grant1", 255);
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
-    SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga09b");
     SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
-    SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
+	if(doorb != 0) {
+		SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
+		SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
+	}
 }
 
 Script 3001 (void) { // Door Closed
@@ -59,7 +61,10 @@ Script 3007 (int doorf, int doorb) { // Door Unlocker
     if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3000");
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
-    SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");
     SetLineSpecial(doorf, ACS_Execute, 3001);
-    SetLineSpecial(doorb, ACS_Execute, 3001);
+	
+	if(doorb != 0) {
+		SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");
+		SetLineSpecial(doorb, ACS_Execute, 3001);
+	}
 }
