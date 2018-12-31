@@ -155,7 +155,7 @@ class DRRPChaingun : Chaingun replaces Chaingun {
             CHGG C 0 A_ReFire;
             Goto Ready;
         Flash:
-            CHGF A 0 Bright A_ZoomFactor(FRandom(0.99, 0.999), ZOOM_INSTANT);
+            CHGF A 0 Bright A_ZoomFactor(FRandom(0.994, 1), ZOOM_INSTANT);
             CHGF A 0 Bright A_SetPitch(Pitch - FRandom(-0.2, 0.7));
             CHGF A 0 Bright A_SetAngle(Angle + FRandom(-0.4, 0.2));
             CHGF A 1 Bright A_Light1;
@@ -163,7 +163,9 @@ class DRRPChaingun : Chaingun replaces Chaingun {
             CHGF A 0 A_SetPitch(Pitch - FRandom(-0.2, 0.4));
             CHGF A 0 A_SetAngle(Angle + FRandom(-0.2, 0.1));
             CHGF A 0 A_ZoomFactor(1);
-            CHGF A 2 Bright A_Light1;
+			CHGF A 0 A_Jump( 95, 1 );
+            Goto LightDone;
+            CHGF A 1 Bright A_Light1;
             Goto LightDone;
         Flash2:
             CHGF B 0 Bright A_ZoomFactor(FRandom(0.995, 0.999), ZOOM_INSTANT);
@@ -174,7 +176,9 @@ class DRRPChaingun : Chaingun replaces Chaingun {
             CHGF B 0 A_Recoil(0.03);
             CHGF B 0 A_SetPitch(Pitch - FRandom(-0.2, 0.4));
             CHGF B 0 A_SetAngle(Angle + FRandom(-0.2, 0.1));
-            CHGF B 2 Bright A_Light1;
+			CHGF B 0 A_Jump( 95, 1 );
+            Goto LightDone;
+            CHGF B 1 Bright A_Light2;
             Goto LightDone;
     }
 }
