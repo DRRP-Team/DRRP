@@ -36,6 +36,7 @@ Map INTRO "Entrance" {
     SkyBox   = "SKY2"
     Cluster  = 1
     LevelNum = 1
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map INTRO2 "TitleMap" {
@@ -63,6 +64,7 @@ Map SEC2 "Sector 2" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 4
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map SEC3 "Sector 3" {
@@ -70,6 +72,7 @@ Map SEC3 "Sector 3" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 5
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map SEC4 "Sector 4" {
@@ -77,6 +80,7 @@ Map SEC4 "Sector 4" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 6
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map SEC5 "Sector 5" {
@@ -84,6 +88,7 @@ Map SEC5 "Sector 5" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 7
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map SEC6 "Sector 6" {
@@ -91,6 +96,7 @@ Map SEC6 "Sector 6" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 8
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map SEC7 "Sector 7" {
@@ -98,6 +104,7 @@ Map SEC7 "Sector 7" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 9
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map XHUB "Junction" {
@@ -105,6 +112,7 @@ Map XHUB "Junction" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 10
+    EventHandlers = "DoorCodeInputHandler"
 }
 
 Map REAC "Reactor" {
