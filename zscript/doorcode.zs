@@ -49,6 +49,9 @@ class DoorCodeInputHandler : EventHandler {
                 players[e.Player].mo.A_Print(StringTable.Localize("$DRRP_D_MENU_PASSCODE_WRONG"));
 				ACS_Terminate(-int(name("lockwindow")), 0);
 				ACS_Terminate(item.scriptnum, 0);
+            } else if (e.Args[0] == 3) {
+				ACS_Terminate(-int(name("lockwindow")), 0);
+				ACS_Terminate(item.scriptnum, 0);
             }
         }
     }
@@ -121,4 +124,12 @@ class DoorCodeInputMenu : GenericMenu {
 
         return true;
     }
+	
+	Override
+	bool MenuEvent (int mkey, bool fromcontroller) {
+		if(mkey == Menu.MKEY_Back) {
+			EventHandler.SendNetworkEvent("closedoorinput", 3);
+		}
+		return super.MenuEvent(mkey, fromcontroller);
+	}
 }
