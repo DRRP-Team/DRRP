@@ -651,7 +651,7 @@ Actor Kronos 10391 {
             Loop
         Melee:
             KRON A 2
-            KRON A 5 A_CustomMeleeAttack( Random( 15, 30 ), "imp/melee", "skeleton/whoosh" )
+            KRON A 5 A_CustomMeleeAttack( Random( 1, 10 ), "imp/melee", "skeleton/whoosh" )
             KRON A 3
             Goto See
         Death:
