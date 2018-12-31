@@ -43,7 +43,7 @@ Script 3004 (void) { // Give Automap
     GiveInventory("MapRevealer", 1);
 }
 
-Script 3005 ENTER { // WIP Level
+Script 3005 (void) { // WIP Level
     SetFont("bigfont");
     print(l:"DRRP_D_WIPLEVEL");
 }
