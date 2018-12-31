@@ -113,6 +113,14 @@ Material Texture DRDC28 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
+// Black metalic wall
+Material Texture DRDC34 {
+    normal "materials/normal/drdc34"
+    specular "materials/white"
+    Texture tex_heightmap   "materials/height/drdc34"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
 // Cyan scute 1
 Material Texture DRDC37 {
     normal "materials/normal/drdc37"
