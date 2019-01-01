@@ -87,8 +87,8 @@ Actor LargeMedikit : HealthPickup 10601 {
 }
 
 Actor HealthPowerUp : UpgradeStamina 10603 {
-    Inventory.Amount 10
-    Inventory.MaxAmount 70
+    Inventory.Amount 4
+    Inventory.MaxAmount 999
 }
 
 //Ammo 10610-10619
@@ -275,3 +275,5 @@ Actor DRRPBlueArmor : BlueArmor replaces BlueArmor {
     Tag "$DRRP_I_COMBATSUIT"
     Inventory.PickupMessage "$DRRP_I_COMBATSUIT"
 }
+
+Actor DRRPPlayerLevel : HealthPowerUp {}
