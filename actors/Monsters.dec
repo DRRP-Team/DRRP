@@ -87,6 +87,7 @@ Actor Hellhound : DRRPDog replaces MBFHelperDog 10246 {
     //$Sprite DOGSA1
 
     Tag "$DRRP_M_HELLHOUND"
+    Obituary "$DRRP_OB_HELLHOUND"
     Health 8
 }
 
@@ -95,6 +96,7 @@ Actor Cerberus : DRRPDog 10346 {
     //$Sprite DOGSA1
 
     Tag "$DRRP_M_CERBERUS"
+    Obituary "$DRRP_OB_CEREBRUS"
     Health 12
     Translation "64:79=32:47"
 
@@ -108,6 +110,7 @@ Actor DemonWolf : DRRPDog 10446 {
     //$Sprite DOGSA1
 
     Tag "$DRRP_M_DEMONWOLF"
+    Obituary "$DRRP_OB_DEMONWOLF"
     Health 17
     Translation "64:79=197:200"
 
@@ -137,6 +140,7 @@ Actor ZombiePvt : ZombieManDRRP replaces ZombieMan 10274 {
     //$Category DMonsters
     //$Sprite POSSA1
 
+    Obituary "$DRRP_OB_ZOMBIEPVT"
     Tag "$DRRP_M_ZOMBIEPVT"
     Health 6
     Translation "16:47=152:159"
@@ -146,6 +150,7 @@ Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
     //$Category DMonsters
     //$Sprite POSSA1
 
+    Obituary "$DRRP_OB_ZOMBIELT"
     Tag "$DRRP_M_ZOMBIELT"
     Health 9
     Translation "96:111=192:207", "0:8=246:246" 
@@ -155,6 +160,7 @@ Actor ZombieCpt : ZombieManDRRP 10474 {
     //$Category DMonsters
     //$Sprite POSSA1
 
+    Obituary "$DRRP_OB_ZOMBIECPT"
     Tag "$DRRP_M_ZOMBIECPT"
     Health 12
     Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
@@ -184,6 +190,7 @@ Actor Troop : ChaingunGuyDRRP 10264 {
     //$Category DMonsters
     //$Sprite CPOSA1
 
+    Obituary "$DRRP_OB_TROOP"
     Tag "$DRRP_M_TROOP"
     Health 11
     Translation "32:47=163:167"
@@ -193,6 +200,7 @@ Actor Commando : ChaingunGuyDRRP 10364 {
     //$Category DMonsters
     //$Sprite CPOSA1
 
+    Obituary "$DRRP_OB_COMMANDO"
     Tag "$DRRP_M_COMMANDO"
     Health 18
     Translation "16:47=192:207"
@@ -202,6 +210,7 @@ Actor Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
     //$Category DMonsters
     //$Sprite CPOSA1
 
+    Obituary "$DRRP_OB_ASSASIN"
     Tag "$DRRP_M_ASSASSIN"
     Health 25
 }
@@ -215,6 +224,8 @@ Actor Impling : DoomImp 10260 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_IMPLING"
+    HitObituary "$DRRP_OBM_IMPLING"
     Tag "$DRRP_M_IMPLING"
     Health 10
     Translation "64:79=112:127", "61:63=112:118"
@@ -226,6 +237,8 @@ Actor DRRPImp : DoomImp replaces DoomImp 10360 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_IMP"
+    HitObituary "$DRRP_OBM_IMPLING"
     Tag "$DRRP_M_IMP"
     Health 16
 }
@@ -236,6 +249,8 @@ Actor ImpLord : DoomImp 10460 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_IMPLORD"
+    HitObituary "$DRRP_OBM_IMPLORD"
     Tag "$DRRP_M_IMPLORD"
     Health 22
     Translation "64:79=170:191"
@@ -251,6 +266,7 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     +LOOKALLAROUND
     -DONTFALL
 
+    Obituary "$DRRP_OB_LOSTSOUL"
     Tag "$DRRP_M_LOSTSOUL"
     Health 11
     DamageFactor DRRPFireExtDmg, 5.0
@@ -284,6 +300,7 @@ Actor Phantom : DRRPLostSoul 10263 {
     //$Category DMonsters
     //$Sprite SKULA1
 
+    Obituary "$DRRP_OB_PHANTOM"
     Tag "$DRRP_M_PHANTOM"
     Health 7
     Translation "128:151=152:159", "64:79=152:159"
@@ -293,6 +310,7 @@ Actor Nightmare : DRRPLostSoul 10463 {
     //$Category DMonsters
     //$Sprite SKULA1
 
+    Obituary "$DRRP_OB_NIGHTMARE"
     Tag "$DRRP_M_NIGHTMARE"
     Health 15
     Translation "128:151=195:207", "64:79=200:207"
@@ -307,6 +325,7 @@ Actor BullDemon : Demon 10259 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_BULLDEMON"
     Tag "$DRRP_M_BULLDEMON"
     Health 11
     Translation "16:47=128:143", "168:191=144:151"
@@ -318,6 +337,7 @@ Actor Pinky : Demon replaces Demon 10459 { //FIXME: id
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_PINKY"
     Tag "$DRRP_M_PINKY"
     Health 18
 }
@@ -328,6 +348,7 @@ Actor Belphegor : Demon 10359 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_BEPHELGOR"
     Tag "$DRRP_M_BELPHEGOR"
     Health 25
     Translation "16:47=%[0.00,0.09,0.20]:[0.49,1.17,2.00]"
@@ -342,6 +363,7 @@ Actor Malwrath : Cacodemon 10262 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_MALWRATH"
     Tag "$DRRP_M_MALWRATH"
     Health 15
     Translation "168:191=160:167", "16:47=160:166", "112:127=176:191", "192:207=176:191", "240:247=191:191" //"173:191=[215,222,0]:[107,65,0]", "16:47=[214,190,123]:[107,81,0]", "167:167=164:164", "192:207=32:39", "240:247=40:47", "112:127=16:47"
@@ -353,6 +375,7 @@ Actor DRRPCacodemon : Cacodemon replaces Cacodemon 10362 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_CACODEMON"
     Tag "$DRRP_M_CACODEMON"
     Health 23
 }
@@ -363,6 +386,7 @@ Actor Wretched : Cacodemon 10462 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_WRETCHED"
     Tag "$DRRP_M_WRETCHED"
     Health 32
     Translation "168:191=193:207", "16:47=193:201", "112:127=160:167", "192:207=168:191", "160:167=207:207", "223:223=207:207"
@@ -377,6 +401,8 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_REVENANT"
+    HitObituary "$DRRP_OBM_REVENANT"
     Tag "$DRRP_M_REVENANT"
     Health 32
     Scale 0.74
@@ -398,6 +424,8 @@ Actor Ghoul : DRRPRevenant 10277 {
     //$Category DMonsters
     //$Sprite SKELA1D1
 
+    Obituary "$DRRP_OB_GHOUL"
+    HitObituary "$DRRP_OBM_GHOUL"
     Tag "$DRRP_M_GHOUL"
     Health 15
     Translation "128:143=112:127", "144:151=120:127", "48:79=112:127", "160:167=114:126", "13:15=126:127", "232:235=124:124", "20:20=116:116", "236:239=125:127", "21:47=160:16"
@@ -407,6 +435,8 @@ Actor Fiend : DRRPRevenant 10377 {
     //$Category DMonsters
     //$Sprite SKELA1D1
 
+    Obituary "$DRRP_OB_FIEND"
+    HitObituary "$DRRP_OBM_FIEND"
     Tag "$DRRP_M_FIEND"
     Health 23
     Translation "128:159=192:207", "48:79=192:207", "160:167=240:240", "236:239=243:243", "170:170=240:240", "21:47=176:191", "20:20=207:207", "168:191=176:191", "184:184=242:242", "9:9=207:207", "144:151=192:207", "13:15=241:241"
@@ -501,6 +531,7 @@ Actor Behemoth : DRRPCubus 10278 {
     //$Category DMonsters
     //$Sprite FATTA1
 
+    Obituary "$DRRP_OB_BEHEMOTH"
     Tag "$DRRP_M_BEHEMOTH"
     Health 23
     Translation "48:79=192:202", "112:127=176:191", "128:143=192:198", "160:167=194:199", "144:151=192:207", "13:15=240:247", "236:239=240:247", "16:47=176:191"
@@ -510,6 +541,7 @@ Actor Mancubus : DRRPCubus replaces Fatso 10378 {
     //$Category DMonsters
     //$Sprite FATTA1
 
+    Obituary "$DRRP_OB_MANCUBUS"
     Tag "$DRRP_M_MANCUBUS"
     Health 36
 }
@@ -519,6 +551,7 @@ Actor Druj : DRRPCubus 10478 {
     //$Sprite FATTA1
 
     Tag "$DRRP_M_DRUJ"
+    Obituary "$DRRP_OB_DRUJ"
     Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
 }
 
@@ -545,6 +578,7 @@ Actor Infernis : DRRPVile 10273 {
     //$Category DMonsters
     //$Sprite VILEA1D1
 
+    Obituary "$DRRP_OB_INFERNIS"
     Tag "$DRRP_M_INFERNIS"
     Health 20
     Translation  "48:79=192:207", "128:143=192:207", "13:15=240:247", "144:151=240:247", "236:239=240:247", "144:151=240:247", "208:223=192:207", "0:2=247:247"
@@ -554,6 +588,7 @@ Actor DRRPArchVile : DRRPVile replaces ArchVile 10373 {
     //$Category DMonsters
     //$Sprite VILEA1D1
 
+    Obituary "$DRRP_OB_ARCHVILE"
     Tag "$DRRP_M_ARCHVILE"
     Health 32
 }
@@ -562,6 +597,7 @@ Actor Apollyon : DRRPVile 10473 {
     //$Category DMonsters
     //$Sprite VILEA1D1
 
+    Obituary "$DRRP_OB_APOLLYON"
     Tag "$DRRP_M_APOLLYON"
     Health 45
     Translation "64:79=32:47", "48:63=16:31", "128:143=16:39", "236:239=44:47", "13:15=45:47", "144:151=32:39" // "16:223=%[0.00,0.00,0.00]:[2.00,0.78,0.78]"
@@ -576,6 +612,8 @@ Actor DRRPBaronOfHell : BaronOfHell replaces BaronOfHell 10280 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_BARON"
+    HitObituary "$DRRP_OBM_BARON"
     Tag "$DRRP_M_BARON"
     Scale 0.85
     Health 62
@@ -588,6 +626,8 @@ Actor DRRPHellKnight : HellKnight replaces HellKnight 10380 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_HELLKNIGHT"
+    HitObituary "$DRRP_OBM_HELLKNIGHT"
     Tag "$DRRP_M_HELLKNIGHT"
     Scale 0.85
     Health 45
@@ -599,6 +639,8 @@ Actor Ogre : DRRPHellKnight 10480 {
     //$Category DMonsters
     //$Sprite BOS2A1
 
+    Obituary "$DRRP_OB_OGRE"
+    HitObituary "$DRRP_OBM_OGRE"
     Tag "$DRRP_M_OGRE"
     Health 28
     Translation "144:151=123:127", "64:79=122:127", "55:63=116:126", "48:55=112:116", "128:143=121:127", "13:15=127:127"
@@ -611,6 +653,7 @@ Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
 
     +LOOKALLAROUND
 
+    Obituary "$DRRP_OB_CYBERDEMON"
     Tag "$DRRP_M_CYBERDEMON"
     Health 687
 }
@@ -629,6 +672,7 @@ Actor Kronos 10391 {
     Health   458 // Original: 344..572
     Speed    20
     Scale    0.43
+    Obituary "$DRRP_OB_KRONOS"
     Tag      "$DRRP_M_KRONOS"
     Obituary "%o was killed by a Kronos." // Tmp.
     //SeeSound "DRRPMonsters/Kronos/sight"

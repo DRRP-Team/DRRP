@@ -418,6 +418,57 @@
     DRRP_M_CORPSE       = "corpse";
 //\\ Monsters
 
+// Obituarities
+    DRRP_OB_ZOMBIEPVT        = "%o was shot by a Soldier.";
+    DRRP_OB_ZOMBIELT         = "%o was shot by a Sergeant.";
+    DRRP_OB_ZOMBIECPT        = "%o was shot by a Capitan.";
+    DRRP_OB_HELLHOUND        = "%o passed away from bites of Hellhound.";
+    DRRP_OB_CERBERUS         = "%o was bitten by a Cerberus.";
+    DRRP_OB_DEMONWOLF        = "%o was torned to pieces by a Demon wolf.";
+    DRRP_OB_TROOP            = "%o was perforated by a Troop.";
+    DRRP_OB_COMMANDO         = "%o was caugth off guard by the Commando.";
+    DRRP_OB_ASSASSIN         = "%o didn't notice the Assasin.";
+    DRRP_OB_IMPLING          = "%o got a III degree burn from Impling.";
+    DRRP_OBM_IMPLING         = "%o was torned to pieces by an Impling.";
+    DRRP_OB_IMP              = "%o didn't notice an Imp's fireball.";
+    DRRP_OBM_IMP             = "%o was torned to pieces by an Imp.";
+    DRRP_OB_IMPLORD          = "%o got a hot hole in himself from Imp Lord.";
+    DRRP_OBM_IMPLORD         = "%o died of paws of Imp Lord.";
+    DRRP_OB_PHANTOM          = "%o was broken through by a Phantom.";
+    DRRP_OB_LOSTSOUL         = "%o was spooked by a lost soul.";
+    DRRP_OB_NIGHTMARE        = "%o was eaten by a Nightmare";
+    DRRP_OB_BULLDEMON        = "%o was bitten by a Bull demon.";
+    DRRP_OB_PINKY            = "%o was eaten alive by a Pinky.";
+    DRRP_OB_BELPHEGOR        = "%o was eaten alive by a Bephelgor.";
+    DRRP_OB_MALWRATH         = "%o was smitten by a Malwrath.";
+    DRRP_OBM_MALWRATH        = "%o was bitten by a Malwrath.";
+    DRRP_OB_CACODEMON        = "%o was smitten by a Cacodemon.";
+    DRRP_OBM_CACODEMON       = "%o was bitten by a Cacodemon.";
+    DRRP_OB_WRETCHED         = "%o couldn't evade a Wretched's plasma.";
+    DRRP_OBM_WRETCHED        = "%o was brutally bitten by a Wretched.";
+    DRRP_OB_GHOUL            = "%o couldn't evade a Ghoul's rocket.";
+    DRRP_OBM_GHOUL           = "%o was punched by a Ghoul.";
+    DRRP_OB_FIEND            = "%o couldn't evade a Fiend's rocket.";
+    DRRP_OBM_GHOUL           = "%o couldn't evade a Fiend's fist.";
+    DRRP_OB_REVENANT         = "%o couldn't evade a Revenant's rocket.";
+    DRRP_OBM_GHOUL           = "%o couldn't evade a Revenant's fist.";
+    DRRP_OB_BEHEMOTH         = "%o was sqashed by a Behemoth.";
+    DRRP_OB_MANCUBUS         = "%o was sqashed by a Mancubus.";
+    DRRP_OB_DRUJ             = "%o was sqashed by a Druj.";
+    DRRP_OB_INFERNIS         = "%o was roasted after meeting with Infernis.";
+    DRRP_OB_ARCHVILE         = "%o was incinerated by an Archvile.";
+    DRRP_OB_APOLLYON         = "%o was charred due to Apollyon.";
+    DRRP_OB_OGRE             = "%o was killed by an Ogre.";
+    DRRP_OBM_OGRE            = "%o was eaten by an Ogre.";
+    DRRP_OB_HELLKNIGHT       = "%o couldn't get away from Hell Knight.";
+    DRRP_OBM_HELLKNIGHT      = "%o was torned to pieces by a Hell Knight.";
+    DRRP_OB_BARON            = "%o couldn't get away from Baron.";
+    DRRP_OBM_BARON           = "%o was torned to pieces by a Baron.";
+    DRRP_OB_CYBERDEMON       = "%o was splattered on a wall by a Cyberdemon.";
+    DRRP_OB_KRONOS           = "%o couldn't stand against Kronos.";
+//\\ Obituarities
+
+
 // Weapons
     DRRP_W_AXE          = "Axe";
     DRRP_W_FIREEXT      = "Fire Ext";
