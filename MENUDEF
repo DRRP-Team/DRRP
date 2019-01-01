@@ -13,7 +13,7 @@ ListMenu "MainMenu" {
     IfGame (DooM) {
         STATICPATCH 85, 0, "M_DOOM"
         POSITION 92, 72
-        STATICTEXT 187, 188, "DRRP v0.1.x EAB"
+        STATICTEXT 187, 188, "DRRP v0.2.0 EAB"
         // TODO: $DRRP_D_DRRPVERSION
     }
 
