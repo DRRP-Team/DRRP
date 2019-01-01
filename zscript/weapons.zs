@@ -74,11 +74,27 @@ class DRRPShotgun : Shotgun replaces Shotgun {
     }
 }
 
-class DRRPShell : Shell replaces Shell {
+class DRRPShell : Ammo replaces Shell {
     Default {
-        Inventory.MaxAmount 99;
-        Ammo.BackpackMaxAmount 99;
+        Inventory.PickupMessage "$GOTSHELLS"; // "Picked up 4 shotgun shells."
+		Inventory.Amount 4;
+		Inventory.MaxAmount 99;
+		Ammo.BackpackAmount 4;
+		Ammo.BackpackMaxAmount 99;
+		Inventory.Icon "SHELA0";
     }
+    States {
+    Spawn:
+        SHEL A -1;
+        Stop;
+    }
+}
+
+class DRRPShellBox : DRRPShell replaces ShellBox {
+	Default {
+		Inventory.PickupMessage "$GOTSHELLBOX";
+		Inventory.Amount 16;
+	}
 }
 
 class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
