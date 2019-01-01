@@ -315,7 +315,7 @@
     DRRP_D_MENU_QUITGAME    = "Quit Game";
 
     DRRP_D_MENU_DRRPMENU_INVENTORY  = "Inventory";
-    DRRP_D_MENU_DRRPMENU_NOTEPAD    = "Notepad";
+    DRRP_D_MENU_DRRPMENU_NOTEPAD    = "Notepad";	
     DRRP_D_MENU_DRRPMENU_SETTINGS   = "Settings";
     DRRP_D_MENU_DRRPMENU_FLASHLIGHT = "Flashlight";
     DRRP_D_MENU_DRRPMENU_SHADERS    = "Shaders";
@@ -341,6 +341,11 @@
     DRRP_D_MENU_SHADERS_CINEMATIC   = "Enable cinematic shaders";
 	
 	DRRP_D_MENU_PASSCODE_WRONG      = "Wrong passcode";
+
+	DRRP_D_NOTEBOOK_EMPTY			= "Notebook is empty.";
+	DRRP_D_NOTEBOOK_NOTINGAME		= "You should be in game to use notebook.";
+	DRRP_D_NOTEBOOK_TIP_PART1		= "Press ";
+	DRRP_D_NOTEBOOK_TIP_PART2		= " to open notebook.";
 
     DRRP_D_CHARACTER                = "Character";
     DRRP_D_EXPLOSION                = "Explosion";

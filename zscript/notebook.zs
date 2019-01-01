@@ -21,7 +21,8 @@ class NotebookHandler : EventHandler {
 			if(key1 == 0 && key2 == 0) return;
 			String s = KeyBindings.NameKeys(key1, key2);
 			s.ToUpper();
-			String ss = "Press " .. s .. " to open notebook";
+			String ss = StringTable.Localize( "$DRRP_D_NOTEBOOK_TIP_PART1" ) 
+					.. s .. StringTable.Localize( "$DRRP_D_NOTEBOOK_TIP_PART2" );
 			Screen.drawText(font, Font.CR_GOLD, Screen.GetWidth() - font.StringWidth(ss), 0, ss);
 		}
 	}
@@ -43,14 +44,14 @@ class NotebookMenu : OptionMenu {
         desc.mItems.clear();
         if(player == null || player.mo == null) {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
-            item.Init("You should be in game to use notebook");
+            item.Init( StringTable.Localize( "$DRRP_D_NOTEBOOK_NOTINGAME" ) );
             desc.mItems.push(item);
             return;
         }
         NotebookItem nbitem = NotebookItem(player.mo.FindInventory("NotebookItem"));
         if(nbitem == null || nbitem.languageStrings.size() == 0) {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
-            item.Init("Notebook is empty");
+            item.Init( StringTable.Localize( "$DRRP_D_NOTEBOOK_EMPTY" ) );
             desc.mItems.push(item);
         } else {
             for(int i = nbitem.languageStrings.size() - 1; i >= 0; i--) {
