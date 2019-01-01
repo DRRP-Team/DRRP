@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2018 DRRP-Team
+ * Copyright (c) 2017-2019 DRRP-Team
  * 
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -12,7 +12,6 @@ version "2.5"
 #include "zscript/conversation.zs"
 #include "zscript/shaders.zs"
 #include "zscript/flashlight.zs"
-#include "zscript/items.zs"
 #include "zscript/hud.zs"
 #include "zscript/infobar.zs"
 #include "zscript/notebook.zs"

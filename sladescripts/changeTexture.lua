@@ -2,7 +2,7 @@
 
 	Texture changer
 	by PROPHESSOR
-	(c) Copyright 2018
+	(c) Copyright 2018-2019
 
 --]]
 
