@@ -10,17 +10,9 @@ namespace = "ZDoom";
 conversation {
     actor = "DRRPShop"; // Not a number!
     page {
-         goodbye = "Return";
+         goodbye = "Close";
          name = "Shop";
          dialog = "What do you want to buy?";
-         choice {
-             text = "Next (Ammo)";
-             nextpage = 2;
-         }
-         choice {
-             text = "Prev (Stats)";
-             nextpage = 3;
-         }
          choice {
              text = "Small medikit [4 credits]";
              giveitem = "SmallMedikit";
@@ -61,20 +53,16 @@ conversation {
                  amount = 40;
              }
          }
+		 choice {
+             text = "Next (Ammo)";
+             nextpage = 2;
+         }
     }
 
     page {
-         goodbye = "Return";
+         goodbye = "Close";
          name = "Ammo";
          dialog = "What do you want to buy?";
-         choice {
-             text = "Next (Stats)";
-             nextpage = 3;
-         }
-         choice {
-             text = "Prev (Health)";
-             nextpage = 1;
-         }
          choice {
              text = "10x Hal. Cans [2 credits]";
              giveitem = "Balloon";
@@ -125,20 +113,27 @@ conversation {
                  amount = 8;
              }
          }
+		 choice {
+             text = "Next (Stats)";
+             nextpage = 3;
+         }
     }
 
     page {
-         goodbye = "Return";
+         goodbye = "Close";
          name = "Stats";
          dialog = "What do you want to buy?";
-         choice {
-             text = "Next (Health)";
-             nextpage = 1;
+		 choice {
+             text = "+4 Hp [15 credits]";
+             giveitem = "DRRPPlayerLevel";
+             nomessage = "Not enough credits!";
+             nextpage = 3;
+             cost {
+                 item = "Credit";
+                 amount = 15;
+             }
          }
-         choice {
-             text = "Prev (Ammo)";
-             nextpage = 2;
-         }
+		 /*
          choice {
              text = "+1 Accuracy [8 credits]";
              giveitem = "HealthPowerUp";
@@ -178,6 +173,10 @@ conversation {
                  item = "Credit";
                  amount = 10;
              }
+         }*/
+		 choice {
+             text = "Back";
+             nextpage = 1;
          }
     }
 }
