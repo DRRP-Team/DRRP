@@ -83,7 +83,7 @@ Intermission Doom2Cast {
     }
 
     Cast {
-        CastClass = "Malrath"
+        CastClass = "Malwrath"
         CastName  = "$DRRP_M_MALWRATH"
     }
 
@@ -133,7 +133,7 @@ Intermission Doom2Cast {
     }
 
     Cast {
-        CastClass = "ArchVile"
+        CastClass = "DRRPArchVile"
         CastName  = "$DRRP_M_ARCHVILE"
     }
 
@@ -210,6 +210,10 @@ Intermission Doom2Cast {
     Cast {
         CastClass = "Cyberdemon"
         CastName  = "$DRRP_M_CYBERDEMON"
+    }
+    Cast {
+        CastClass = "Kronos"
+        CastName  = "$DRRP_M_KRONOS"
     }
 
     Link = Doom2Cast
