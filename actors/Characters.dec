@@ -23,8 +23,8 @@ Actor DRRPCharacter {
             Goto MainLoop
         MainLoop:
             "####" A 0
-            "####" A 0 A_JumpIf(Args[4] == 0, 2)
-            "####" A 0 A_ChangeFlag("SHOOTABLE", True)
+            //"####" A 0 A_JumpIf(Args[4] == 0, 2)
+            //"####" A 0 A_ChangeFlag("SHOOTABLE", True)
             "####" A 1
             Wait
         Death:
