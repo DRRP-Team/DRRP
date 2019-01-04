@@ -12,6 +12,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
 
     Tag "$DRRP_E_BARREL"
     Health 1
+    Radius 32
     BloodColor "00 FF 00"
     DamageFactor DRRPFireExtDmg, 0.0
 
