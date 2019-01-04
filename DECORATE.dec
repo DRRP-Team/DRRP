@@ -42,7 +42,8 @@ Actor DoomRPGPlayer : DoomPlayer {
     Player.DisplayName "Marine"
     Player.MugShotMaxHealth 30
 
-    Player.WeaponSlot 1, FireExt, DRRPAxe
+    Player.WeaponSlot 0, FireExt
+    Player.WeaponSlot 1, DRRPAxe
     Player.WeaponSlot 2, DRRPPistol
     Player.WeaponSlot 3, DRRPShotgun, DRRPSuperShotgun
     Player.WeaponSlot 4, DRRPChaingun
