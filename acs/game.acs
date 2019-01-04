@@ -54,13 +54,14 @@ Script "window"(str Text) { // s: -> str
     delay(2);
 
     int ReadedKey;
-    int ScrollY = 0;
-    int height  = getStringHeight(Text);
+    int FirstRun = 1;
+    int ScrollY  = 0;
+    int height   = getStringHeight(Text);
 
     Thing_Stop(0); // TID_Player -> 0
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
 
-    While (ReadedKey != BT_USE) {
+    While(TRUE) {
         if(ReadedKey == BT_FORWARD && ScrollY > 0) {
             ScrollY -= SYM_HEIGHT;
             delay(4);
@@ -79,7 +80,13 @@ Script "window"(str Text) { // s: -> str
         HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
         SetHudSize(0, 0, false);
         delay(1);
+
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
+
+        if((FirstRun == 0) && (ReadedKey == BT_USE))
+            Break;
+        if((FirstRun == 1) && (ReadedKey != BT_USE))
+            FirstRun = 0;
     }
 
     HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
@@ -90,8 +97,8 @@ Script "window"(str Text) { // s: -> str
 // ACS based DRPG Lock Window
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
-	ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
-	Delay(2);
+    ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
+    Delay(2);
 }
 
 #include "flashlight.acs"
