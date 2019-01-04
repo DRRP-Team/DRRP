@@ -22,13 +22,9 @@ class DRRPFire_zspatch : Actor {
 
     override void Tick() {
         for ( int i = 0; i < MAXPLAYERS; i++ ) {
-            if ( PlayerInGame[ i ] ) {
-
-                if ( Distance3D( players[ i ].mo ) < 32 ) {
-                    Players[ i ].mo.DamageMobj( self, self, 1, 'DRRPFireExtDmg' );
-                } // of if ( Distance3D( players[ i ].mo )
-
-            } // of if ( PlayerInGame[ i ] )
+            if ( PlayerInGame[ i ] && Distance3D( players[ i ].mo ) < 32 ) {
+                Players[ i ].mo.DamageMobj( self, self, 1, 'DRRPFireDmg' );
+            }
         } // of for ( uint8 i = 0; i < MAXPLAYERS; i++ )
 
         Super.Tick();
