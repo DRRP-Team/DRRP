@@ -53,7 +53,7 @@ Actor DRRPAxePuff : BulletPuff {
     AttackSound "ROCK"    
 }
 
-Actor FireExt : Weapon 10556 {
+Actor DRRPFireExt : Weapon 10556 {
     //$Category DWeapons
 
     Tag "$DRRP_W_FIREEXT"
