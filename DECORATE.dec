@@ -42,8 +42,7 @@ Actor DoomRPGPlayer : DoomPlayer {
     Player.DisplayName "Marine"
     Player.MugShotMaxHealth 30
 
-    Player.WeaponSlot 0, FireExt
-    Player.WeaponSlot 1, DRRPAxe
+    Player.WeaponSlot 1, DRRPFireExt, DRRPAxe
     Player.WeaponSlot 2, DRRPPistol
     Player.WeaponSlot 3, DRRPShotgun, DRRPSuperShotgun
     Player.WeaponSlot 4, DRRPChaingun
@@ -51,6 +50,7 @@ Actor DoomRPGPlayer : DoomPlayer {
     Player.WeaponSlot 6, DRRPPlasmagun
     Player.WeaponSlot 7, DRRPBFG9000
     Player.WeaponSlot 8, HellHoundGun, CerberusGun, DemonWolfGun
+    Player.WeaponSlot 0, DRRPFireExt
 
     Player.StartItem "DRRPPistol"
     Player.StartItem "Clip", 8
