@@ -284,6 +284,23 @@ Actor Bed 10707  {
     }
 }
 
+Actor BedNosprite 10711 {
+    //$Category DDecorations
+
+    +SOLID
+
+    Tag "$DRRP_E_BUNKBEDS"
+    Radius 14
+    Height 57
+    Mass 0x7FFFFFFF
+
+    States {
+        Spawn:
+            TNT1 A -1
+            Stop
+    }
+}
+
 Actor Exit 10708  {
     //$Category DDecorations
 
