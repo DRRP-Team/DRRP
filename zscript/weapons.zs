@@ -77,11 +77,11 @@ class DRRPShotgun : Shotgun replaces Shotgun {
 class DRRPShell : Ammo replaces Shell {
     Default {
         Inventory.PickupMessage "$GOTSHELLS"; // "Picked up 4 shotgun shells."
-		Inventory.Amount 4;
-		Inventory.MaxAmount 99;
-		Ammo.BackpackAmount 4;
-		Ammo.BackpackMaxAmount 99;
-		Inventory.Icon "SHELA0";
+        Inventory.Amount 4;
+        Inventory.MaxAmount 99;
+        Ammo.BackpackAmount 4;
+        Ammo.BackpackMaxAmount 99;
+        Inventory.Icon "SHELA0";
     }
     States {
     Spawn:
@@ -91,10 +91,10 @@ class DRRPShell : Ammo replaces Shell {
 }
 
 class DRRPShellBox : DRRPShell replaces ShellBox {
-	Default {
-		Inventory.PickupMessage "$GOTSHELLBOX";
-		Inventory.Amount 16;
-	}
+    Default {
+        Inventory.PickupMessage "$GOTSHELLBOX";
+        Inventory.Amount 16;
+    }
 }
 
 class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
@@ -179,7 +179,7 @@ class DRRPChaingun : Chaingun replaces Chaingun {
             CHGF A 0 A_SetPitch(Pitch - FRandom(-0.2, 0.4));
             CHGF A 0 A_SetAngle(Angle + FRandom(-0.2, 0.1));
             CHGF A 0 A_ZoomFactor(1);
-			CHGF A 0 A_Jump( 95, 1 );
+            CHGF A 0 A_Jump( 95, 1 );
             Goto LightDone;
             CHGF A 1 Bright A_Light1;
             Goto LightDone;
@@ -192,7 +192,7 @@ class DRRPChaingun : Chaingun replaces Chaingun {
             CHGF B 0 A_Recoil(0.03);
             CHGF B 0 A_SetPitch(Pitch - FRandom(-0.2, 0.4));
             CHGF B 0 A_SetAngle(Angle + FRandom(-0.2, 0.1));
-			CHGF B 0 A_Jump( 95, 1 );
+            CHGF B 0 A_Jump( 95, 1 );
             Goto LightDone;
             CHGF B 1 Bright A_Light2;
             Goto LightDone;
@@ -268,6 +268,11 @@ class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
 }
 
 class DRRPBFG9000 : BFG9000 replaces BFG9000 {
+
+    Default {
+        Weapon.AmmoUse 30;
+    }
+
     States {
         Fire:
             BFGG A 20 A_BFGSound;

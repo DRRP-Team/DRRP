@@ -5,6 +5,12 @@
  * https://opensource.org/licenses/MIT
  */
 
+
+//
+// This file isn't used! See paths "zscript\weapons.zs" and "actors\DRPGWeapon.dec" instead.
+// 
+
+
 Actor DRRPPistol : Pistol replaces Pistol {
     DamageType DRRPClipDmg
     Decal BulletChip
