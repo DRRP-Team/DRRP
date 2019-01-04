@@ -19,7 +19,7 @@ Actor DRRPAxe: Weapon 10557  {
     Obituary "%o was chopped by %k"
     SeeSound "weapons/plasmax"
 
-    Inventory.PickupMessage "$DRRP_W_AXE"
+    Inventory.PickupMessage "$DRRP_W_AXEPICKUP"
     Inventory.Icon "AXEIA0"
     Inventory.PickupSound "TAUNT"
     Weapon.SelectionOrder 1880
@@ -62,7 +62,7 @@ Actor DRRPFireExt : Weapon 10556 {
 
     Inventory.Icon "FEXTI0"
     Inventory.PickupSound "voice/wtf"
-    Inventory.Pickupmessage "$DRRP_W_FIREEXT"
+    Inventory.Pickupmessage "$DRRP_W_FIREEXTPICKUP"
     Weapon.AmmoUse 1
     Weapon.AmmoGive 40
     Weapon.AmmoType "Balloon"
@@ -177,6 +177,7 @@ Actor HellHoundGun : Weapon {
     +WEAPON.WIMPY_WEAPON
 
     Tag "$DRRP_W_HELLHOUND"
+    Inventory.PickupMessage "$DRRP_W_HELLHOUNDPICKUP"
     DamageType DRRPPhysicalDmg
 
     Weapon.AmmoUse 0
@@ -240,6 +241,7 @@ Actor HellHoundGun : Weapon {
 
 Actor CerberusGun : HellHoundGun {
     Tag "$DRRP_W_CERBERUS"
+    Inventory.PickupMessage "$DRRP_W_CEREBRUSPICKUP"
 
     States {
         Ready:
@@ -278,6 +280,7 @@ Actor CerberusGun : HellHoundGun {
 
 Actor DemonWolfGun : HellHoundGun {
     Tag "$DRRP_W_DEMONWOLF"
+    Inventory.PickupMessage "$DRRP_W_DEMONWOLFPICKUP"
 
     States {
         Ready:

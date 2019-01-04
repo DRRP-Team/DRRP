@@ -472,7 +472,7 @@
 
 // Weapons
     DRRP_W_AXE          = "Axe";
-    DRRP_W_FIREEXT      = "Fire Ext";
+    DRRP_W_FIREEXT      = "Fire Extinguisher";
     DRRP_W_SHOTGUN      = "Shotgun";
     DRRP_W_SUPERSHOTGN  = "Super Shotgun";
     DRRP_W_CHAINGUN     = "Chaingun";
@@ -483,6 +483,12 @@
     DRRP_W_HELLHOUND    = "Hellhound";
     DRRP_W_CERBERUS     = "Cerberus";
     DRRP_W_DEMONWOLF    = "Demon Wolf";
+
+    DRRP_W_AXEPICKUP        = "You got an axe!";
+    DRRP_W_FIREEXTPICKUP    = "You got a fire extinguisher!";
+    DRRP_W_HELLHOUNDPICKUP  = "Hellhound!";
+    DRRP_W_CERBERUSPICKUP   = "Cerberus!";
+    DRRP_W_DEMONWOLFPICKUP  = "Demon wolf!";
 //\\ Weapons
 
 // Items
