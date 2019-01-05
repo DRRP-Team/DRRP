@@ -20,7 +20,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
 
     Tag "$DRRP_E_FIRE"
     Obituary "$DRRP_OB_FIRE"
-    Health 10
+    Health 6
     Radius 33
     Mass 0x7FFFFFFF
     DamageType DRRPFireDmg

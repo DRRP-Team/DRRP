@@ -14,7 +14,7 @@ class DRRPPistol : Pistol replaces Pistol {
     States {
         Fire:
             PISG A 4;
-            PISG B 0 A_FireBullets(5.6, 0, 1, Random(6, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+            PISG B 0 A_FireBullets(5.6, 0, 1, Random(5, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
             PISG B 0 A_PlaySound("weapons/pistol", CHAN_WEAPON);
             PISG B 1 A_GunFlash;
             PISG A 0 A_ZoomFactor(FRandom(0.995, 0.999), ZOOM_INSTANT);
@@ -43,7 +43,7 @@ class DRRPShotgun : Shotgun replaces Shotgun {
             SHTG A 3;
             SHTG A 2 {
                 A_FireBullets( 5.6, 0, 4, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
-                A_FireBullets( 5.6, 0, 3, Random( 1, 2 ), "BulletPuff", FBF_NORANDOM );
+                A_FireBullets( 5.6, 0, 3, Random( 1, 3 ), "BulletPuff", FBF_NORANDOM );
                 A_GunFlash();
                 A_PlaySound( "weapons/shotgf", CHAN_WEAPON );
             }
@@ -53,9 +53,10 @@ class DRRPShotgun : Shotgun replaces Shotgun {
             SHTG E 1;
             SHTG FG 2;
             SHTG HI 3;
-            SHTG JIH 2;
-            SHTG GFE 1;
-            SHTG DCB 2;
+            SHTG JI 2;
+            SHTG HGFE 1;
+            SHTG DC 2;
+            SHTG B 1;
             Goto Ready;
         Flash:
             TNT1 A 0 A_Light1;
@@ -106,8 +107,8 @@ class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
 
     States {
         Fire:
-            SHT2 A 0 A_FireBullets( 11.2, 7.1, 4, Random(2, 5), "BulletPuff", FBF_NORANDOM );
-            SHT2 A 1 A_FireBullets( 11.2, 7.1, 16, 1, "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
+            SHT2 A 0 A_FireBullets( 11.2, 7.1, 4, Random(2, 4), "BulletPuff", FBF_NORANDOM );
+            SHT2 A 1 A_FireBullets( 11.2, 7.1, 16, Random(1, 3), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
             SHT2 A 0 A_PlaySound( "weapons/sshotf" );
             SHT2 A 2 A_GunFlash;
             SHT2 A 4;
@@ -162,11 +163,11 @@ class DRRPChaingun : Chaingun replaces Chaingun {
         Fire:
             CHGG A 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG A 0 A_GunFlash;
-            CHGG A 2 A_FireBullets(5.6, 0, 1, Random(4, 10), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+            CHGG A 2 A_FireBullets(5.6, 0, 1, Random(5, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
             CHGG B 2;
             CHGG C 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG C 0 A_GunFlash("Flash2");
-            CHGG C 2 A_FireBullets(5.6, 0, -1, Random(5, 8), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+            CHGG C 2 A_FireBullets(5.6, 0, -1, Random(5, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
             CHGG D 2;
             CHGG C 0 A_ReFire;
             Goto Ready;
@@ -228,9 +229,14 @@ class DRRPRocketLauncher : RocketLauncher replaces RocketLauncher {
 }
 
 class DRRPRocket : Rocket replaces Rocket {
+
+    Default {
+        Decal "Scorch";
+    }
+
     States {
         Death:
-            MISL B 8 Bright A_Explode(15 + Random(0, 21), 128);
+            MISL B 8 Bright A_Explode(15 + Random(0, 21), 96);
             MISL C 6 Bright;
             MISL D 4 Bright;
             Stop;
@@ -241,7 +247,7 @@ class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
     States {
         Fire:
             PLSG A 0 A_GunFlash;
-            PLSG A 3 A_FireProjectile( "PlasmaBall" );
+            PLSG A 3 A_FireProjectile( "DRRPPlasmaBall" );
             PLSG B 0 A_ReFire;
             PLSG B 0 A_ZoomFactor( 1 );
             PLSG A 2;
@@ -264,6 +270,14 @@ class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
         Flash2:
             PLSF B 4 Bright A_Light1;
             Goto LightDone;
+    }
+}
+
+class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
+
+    Default {
+        DamageFunction Random( 1, 3 );
+        Decal "PlasmaScorch";
     }
 }
 
@@ -315,5 +329,13 @@ class DRRPBFG9000 : BFG9000 replaces BFG9000 {
             TNT1 A 1 Bright A_ZoomFactor(0.99);
             TNT1 A 0 Bright A_ZoomFactor(1);
             Goto LightDone;
+    }
+}
+
+class DRRPBFG9000Ball: BFGBall replaces BFGBall {
+
+    Default {
+        Damage 30;
+        Decal "BFGScorch";
     }
 }
