@@ -11,7 +11,6 @@ Intermission Inter_Cast {
     }
 
     Image {
-        // This is only here to initialize the background and the music
         Time        = -1
         Music       = "C_PROT"
         Background  = "STARS"
@@ -25,195 +24,248 @@ Intermission Doom2Cast {
     Cast {
         CastClass = "Hellhound"
         CastName  = "$DRRP_M_HELLHOUND"
+        AttackSound = "Melee", 1, "monsters/hellhound/bark"
     }
 
     Cast {
         CastClass = "Cerberus"
         CastName  = "$DRRP_M_CERBERUS"
+        AttackSound = "Melee", 1, "monsters/cerberus/bark"
     }
 
     Cast {
         CastClass = "DemonWolf"
         CastName  = "$DRRP_M_DEMONWOLF"
+        AttackSound = "Melee", 1, "monsters/demonwolf/bark"
     }
 
     Cast {
         CastClass = "ZombiePvt"
         CastName  = "$DRRP_M_ZOMBIEPVT"
+        AttackSound = "Missile", 1, "grunt/attack"
     }
 
     Cast {
         CastClass = "ZombieLt"
         CastName  = "$DRRP_M_ZOMBIELT"
+        AttackSound = "Missile", 1, "grunt/attack"
     }
 
     Cast {
         CastClass = "ZombieCpt"
         CastName  = "$DRRP_M_ZOMBIECPT"
+        AttackSound = "Missile", 1, "grunt/attack"
     }
 
     Cast {
         CastClass = "Impling"
         CastName  = "$DRRP_M_IMPLING"
+        AttackSound = "Missile", 2, "imp/attack"
     }
 
     Cast {
         CastClass = "DRRPImp"
         CastName  = "$DRRP_M_IMP"
+        AttackSound = "Missile", 2, "imp/attack"
     }
 
     Cast {
         CastClass = "ImpLord"
         CastName  = "$DRRP_M_IMPLORD"
+        AttackSound = "Missile", 2, "imp/attack"
     }
 
     Cast {
         CastClass = "BullDemon"
         CastName  = "$DRRP_M_BULLDEMON"
+        AttackSound = "Melee", 1, "demon/melee"
     }
 
     Cast {
         CastClass = "Pinky"
         CastName  = "$DRRP_M_PINKY"
+        AttackSound = "Melee", 1, "demon/melee"
     }
 
     Cast {
         CastClass = "Belphegor"
         CastName  = "$DRRP_M_BELPHEGOR"
+        AttackSound = "Melee", 1, "demon/melee"
     }
 
     Cast {
         CastClass = "Malwrath"
         CastName  = "$DRRP_M_MALWRATH"
+        AttackSound = "Missile", 1, "caco/attack"
     }
 
     Cast {
         CastClass = "DRRPCacodemon"
         CastName  = "$DRRP_M_CACODEMON"
+        AttackSound = "Missile", 1, "caco/attack"
     }
 
     Cast {
         CastClass = "Wretched"
         CastName  = "$DRRP_M_WRETCHED"
+        AttackSound = "Missile", 1, "caco/attack"
     }
 
     Cast {
         CastClass = "Phantom"
         CastName  = "$DRRP_M_PHANTOM"
+        AttackSound = "Missile", 1, "skull/melee"
     }
 
     Cast {
         CastClass = "DRRPLostSoul"
         CastName  = "$DRRP_M_LOSTSOUL"
+        AttackSound = "Missile", 1, "skull/melee"
     }
 
     Cast {
         CastClass = "Nightmare"
         CastName  = "$DRRP_M_NIGHTMARE"
+        AttackSound = "Missile", 1, "skull/melee"
     }
 
     Cast {
         CastClass = "Troop"
         CastName  = "$DRRP_M_TROOP"
+        AttackSound = "Missile", 1, "chainguy/attack"
+        AttackSound = "Missile", 2, "chainguy/attack"
+        AttackSound = "Missile", 3, "chainguy/attack"
     }
 
     Cast {
         CastClass = "Commando"
         CastName  = "$DRRP_M_COMMANDO"
+        AttackSound = "Missile", 1, "chainguy/attack"
+        AttackSound = "Missile", 2, "chainguy/attack"
+        AttackSound = "Missile", 3, "chainguy/attack"
     }
 
     Cast {
         CastClass = "Assassin"
         CastName  = "$DRRP_M_ASSASSIN"
+        AttackSound = "Missile", 1, "chainguy/attack"
+        AttackSound = "Missile", 2, "chainguy/attack"
+        AttackSound = "Missile", 3, "chainguy/attack"
     }
 
     Cast {
         CastClass = "Infernis"
         CastName  = "$DRRP_M_INFERNIS"
+        AttackSound = "Missile", 1, "vile/start"
     }
 
     Cast {
         CastClass = "DRRPArchVile"
         CastName  = "$DRRP_M_ARCHVILE"
+        AttackSound = "Missile", 1, "vile/start"
     }
 
     Cast {
         CastClass = "Apollyon"
         CastName  = "$DRRP_M_APOLLYON"
+        AttackSound = "Missile", 1, "vile/start"
     }
 
     Cast {
         CastClass = "Ghoul"
         CastName  = "$DRRP_M_GHOUL"
+        AttackSound = "Missile", 1, "skeleton/attack"
+        AttackSound = "Melee", 1, "skeleton/swing"
+        AttackSound = "Melee", 3, "skeleton/melee"
     }
 
     Cast {
         CastClass = "Fiend"
         CastName  = "$DRRP_M_FIEND"
+        AttackSound = "Missile", 1, "skeleton/attack"
+        AttackSound = "Melee", 1, "skeleton/swing"
+        AttackSound = "Melee", 3, "skeleton/melee"
     }
 
     Cast {
         CastClass = "DRRPRevenant"
         CastName  = "$DRRP_M_REVENANT"
+        AttackSound = "Missile", 1, "skeleton/attack"
+        AttackSound = "Melee", 1, "skeleton/swing"
+        AttackSound = "Melee", 3, "skeleton/melee"
     }
 
     Cast {
         CastClass = "Behemoth"
         CastName  = "$DRRP_M_BEHEMOTH"
+        AttackSound = "Missile", 1, "fatso/attack"
+        AttackSound = "Missile", 4, "fatso/attack"
+        AttackSound = "Missile", 7, "fatso/attack"
     }
 
     Cast {
         CastClass = "Mancubus"
         CastName  = "$DRRP_M_MANCUBUS"
+        AttackSound = "Missile", 1, "fatso/attack"
+        AttackSound = "Missile", 4, "fatso/attack"
+        AttackSound = "Missile", 7, "fatso/attack"
     }
     
     Cast {
         CastClass = "Druj"
         CastName  = "$DRRP_M_DRUJ"
+        AttackSound = "Missile", 1, "fatso/attack"
+        AttackSound = "Missile", 4, "fatso/attack"
+        AttackSound = "Missile", 7, "fatso/attack"
     }
 
     Cast {
         CastClass = "Beholder"
         CastName  = "$DRRP_M_BEHOLDER"
+        AttackSound = "Missile", 2, "skull/melee"
     }
 
     Cast {
         CastClass = "Rahovart"
         CastName  = "$DRRP_M_RAHOVART"
+        AttackSound = "Missile", 2, "skull/melee"
     }
 
     Cast {
         CastClass = "DRRPPainElemental"
         CastName  = "$DRRP_M_PAINELEMENTAL"
+        AttackSound = "Missile", 2, "skull/melee"
     }
 
     Cast {
         CastClass = "Ogre"
         CastName  = "$DRRP_M_OGRE"
+        AttackSound = "Missile", 1, "baron/attack"
     }
 
     Cast {
         CastClass = "DRRPHellKnight"
         CastName  = "$DRRP_M_HELLKNIGHT"
+        AttackSound = "Missile", 1, "baron/attack"
     }
 
     Cast {
         CastClass = "DRRPBaronOfHell"
         CastName  = "$DRRP_M_BARON"
+        AttackSound = "Missile", 1, "baron/attack"
     }
 
     Cast {
-        CastClass = "DrGuerard"
+        CastClass = "Kronos"
         CastName  = "$DRRP_M_KRONOS"
     }
 
     Cast {
         CastClass = "Cyberdemon"
         CastName  = "$DRRP_M_CYBERDEMON"
-    }
-    Cast {
-        CastClass = "Kronos"
-        CastName  = "$DRRP_M_KRONOS"
+        AttackSound = "Missile", 1, "weapons/rocklf"
+        AttackSound = "Missile", 3, "weapons/rocklf"
+        AttackSound = "Missile", 5, "weapons/rocklf"
     }
 
     Link = Doom2Cast
