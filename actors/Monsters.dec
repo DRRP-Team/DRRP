@@ -88,7 +88,7 @@ Actor Hellhound : DRRPDog replaces MBFHelperDog 10246 {
 
     Tag "$DRRP_M_HELLHOUND"
     Obituary "$DRRP_OB_HELLHOUND"
-    Health 8
+    Health 10
 }
 
 Actor Cerberus : DRRPDog 10346 {
@@ -97,7 +97,7 @@ Actor Cerberus : DRRPDog 10346 {
 
     Tag "$DRRP_M_CERBERUS"
     Obituary "$DRRP_OB_CEREBRUS"
-    Health 12
+    Health 14
     Translation "64:79=32:47"
 
     ActiveSound  "monsters/cerberus/see"
@@ -142,7 +142,7 @@ Actor ZombiePvt : ZombieManDRRP replaces ZombieMan 10274 {
 
     Obituary "$DRRP_OB_ZOMBIEPVT"
     Tag "$DRRP_M_ZOMBIEPVT"
-    Health 6
+    Health 7
     Translation "16:47=152:159"
 }
 
@@ -152,7 +152,7 @@ Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
 
     Obituary "$DRRP_OB_ZOMBIELT"
     Tag "$DRRP_M_ZOMBIELT"
-    Health 9
+    Health 10
     Translation "96:111=192:207", "0:8=246:246" 
 }
 
@@ -162,7 +162,7 @@ Actor ZombieCpt : ZombieManDRRP 10474 {
 
     Obituary "$DRRP_OB_ZOMBIECPT"
     Tag "$DRRP_M_ZOMBIECPT"
-    Health 12
+    Health 13
     Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
 }
 
@@ -202,7 +202,7 @@ Actor Commando : ChaingunGuyDRRP 10364 {
 
     Obituary "$DRRP_OB_COMMANDO"
     Tag "$DRRP_M_COMMANDO"
-    Health 18
+    Health 17
     Translation "16:47=192:207"
 }
 
@@ -268,7 +268,7 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
 
     Obituary "$DRRP_OB_LOSTSOUL"
     Tag "$DRRP_M_LOSTSOUL"
-    Health 11
+    Health 12
     DamageFactor DRRPFireExtDmg, 5.0
     DamageFactor DRRPFireDmg, 0.0
 
@@ -312,7 +312,7 @@ Actor Nightmare : DRRPLostSoul 10463 {
 
     Obituary "$DRRP_OB_NIGHTMARE"
     Tag "$DRRP_M_NIGHTMARE"
-    Health 15
+    Health 17
     Translation "128:151=195:207", "64:79=200:207"
 }
 
@@ -327,7 +327,7 @@ Actor BullDemon : Demon 10259 {
 
     Obituary "$DRRP_OB_BULLDEMON"
     Tag "$DRRP_M_BULLDEMON"
-    Health 11
+    Health 15
     Translation "16:47=128:143", "168:191=144:151"
 }
 
@@ -339,7 +339,7 @@ Actor Pinky : Demon replaces Demon 10459 { //FIXME: id
 
     Obituary "$DRRP_OB_PINKY"
     Tag "$DRRP_M_PINKY"
-    Health 18
+    Health 20
 }
 
 Actor Belphegor : Demon 10359 {
@@ -350,7 +350,7 @@ Actor Belphegor : Demon 10359 {
 
     Obituary "$DRRP_OB_BEPHELGOR"
     Tag "$DRRP_M_BELPHEGOR"
-    Health 25
+    Health 27
     Translation "16:47=%[0.00,0.09,0.20]:[0.49,1.17,2.00]"
 }
 
@@ -365,7 +365,7 @@ Actor Malwrath : Cacodemon 10262 {
 
     Obituary "$DRRP_OB_MALWRATH"
     Tag "$DRRP_M_MALWRATH"
-    Health 15
+    Health 18
     Translation "168:191=160:167", "16:47=160:166", "112:127=176:191", "192:207=176:191", "240:247=191:191" //"173:191=[215,222,0]:[107,65,0]", "16:47=[214,190,123]:[107,81,0]", "167:167=164:164", "192:207=32:39", "240:247=40:47", "112:127=16:47"
 }
 
@@ -377,7 +377,7 @@ Actor DRRPCacodemon : Cacodemon replaces Cacodemon 10362 {
 
     Obituary "$DRRP_OB_CACODEMON"
     Tag "$DRRP_M_CACODEMON"
-    Health 23
+    Health 25
 }
 
 Actor Wretched : Cacodemon 10462 {
@@ -427,7 +427,7 @@ Actor Ghoul : DRRPRevenant 10277 {
     Obituary "$DRRP_OB_GHOUL"
     HitObituary "$DRRP_OBM_GHOUL"
     Tag "$DRRP_M_GHOUL"
-    Health 15
+    Health 18
     Translation "128:143=112:127", "144:151=120:127", "48:79=112:127", "160:167=114:126", "13:15=126:127", "232:235=124:124", "20:20=116:116", "236:239=125:127", "21:47=160:16"
 }
 
@@ -438,7 +438,7 @@ Actor Fiend : DRRPRevenant 10377 {
     Obituary "$DRRP_OB_FIEND"
     HitObituary "$DRRP_OBM_FIEND"
     Tag "$DRRP_M_FIEND"
-    Health 23
+    Health 26
     Translation "128:159=192:207", "48:79=192:207", "160:167=240:240", "236:239=243:243", "170:170=240:240", "21:47=176:191", "20:20=207:207", "168:191=176:191", "184:184=242:242", "9:9=207:207", "144:151=192:207", "13:15=241:241"
 }
 
@@ -523,7 +523,7 @@ Actor DRRPCubus : Fatso {
 
     Scale 0.92
     Radius 30
-    Height 62
+    Height 52
     DamageFactor DRRPRocketDmg, 2.0
 }
 
@@ -533,7 +533,7 @@ Actor Behemoth : DRRPCubus 10278 {
 
     Obituary "$DRRP_OB_BEHEMOTH"
     Tag "$DRRP_M_BEHEMOTH"
-    Health 23
+    Health 25
     Translation "48:79=192:202", "112:127=176:191", "128:143=192:198", "160:167=194:199", "144:151=192:207", "13:15=240:247", "236:239=240:247", "16:47=176:191"
 }
 
@@ -580,7 +580,7 @@ Actor Infernis : DRRPVile 10273 {
 
     Obituary "$DRRP_OB_INFERNIS"
     Tag "$DRRP_M_INFERNIS"
-    Health 20
+    Health 27
     Translation  "48:79=192:207", "128:143=192:207", "13:15=240:247", "144:151=240:247", "236:239=240:247", "144:151=240:247", "208:223=192:207", "0:2=247:247"
 }
 
@@ -590,7 +590,7 @@ Actor DRRPArchVile : DRRPVile replaces ArchVile 10373 {
 
     Obituary "$DRRP_OB_ARCHVILE"
     Tag "$DRRP_M_ARCHVILE"
-    Health 32
+    Health 39
 }
 
 Actor Apollyon : DRRPVile 10473 {
