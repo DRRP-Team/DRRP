@@ -273,10 +273,6 @@ Actor DRRPLostSoul : LostSoul replaces LostSoul 10363 {
     DamageFactor DRRPFireDmg, 0.0
 
     States {
-        See:
-            TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
-            SKUL AB 6 Bright A_Chase
-        Loop
         Death:
             SKUL F 6 Bright
             SKUL G 6 Bright A_Scream
@@ -674,7 +670,6 @@ Actor Kronos 10391 {
     Scale    0.43
     Obituary "$DRRP_OB_KRONOS"
     Tag      "$DRRP_M_KRONOS"
-    Obituary "%o was killed by a Kronos." // Tmp.
     //SeeSound "DRRPMonsters/Kronos/sight"
     //PainSound "DRRPMonsters/Kronos/pain"
     //DeathSound "DRRPMonsters/Kronos/death"
