@@ -322,6 +322,11 @@
     DRRP_D_MENU_DRRPMENU_LANGUAGE   = "Language";
     DRRP_D_MENU_DRRPMENU_LANGUAGET  = "Language"; // Language title
 
+    DRRP_D_MENU_COMPASS_ENABLE      = "Enable compass";
+    DRRP_HUD_COMPASSVISUAL          = "N-----E-----S-----W-----";
+
+    DRRP_D_MENU_INFOBAR_ENABLE      = "Show actor's names";
+
     DRRP_D_MENU_FLASHLIGHT_HELMET   = "Helmet";
     DRRP_D_MENU_FLASHLIGHT_RSHOULDER= "Right Shoulder";
     DRRP_D_MENU_FLASHLIGHT_LSHOULDER= "Left Shoulder";
@@ -339,8 +344,6 @@
     DRRP_D_MENU_SHADERS_ENABLE      = "Enable shaders";
     DRRP_D_MENU_SHADERS_HELMET      = "Enable helmet shaders";
     DRRP_D_MENU_SHADERS_CINEMATIC   = "Enable cinematic shaders";
-
-    DRRP_D_MENU_COMPASS_ENABLE      = "Enable compass";
     
     DRRP_D_MENU_PASSCODE_WRONG      = "Wrong passcode"; // FIXME: Usernameak! It doen't DRRP_D_MENU_!
 
@@ -348,8 +351,6 @@
     DRRP_D_NOTEBOOK_NOTINGAME       = "You should be in game to use notebook.";
     DRRP_D_NOTEBOOK_TIP_PART1       = "Press ";
     DRRP_D_NOTEBOOK_TIP_PART2       = " to open notebook.";
-
-    DRRP_HUD_COMPASSVISUAL          = "N-----E-----S-----W-----";
 
     DRRP_D_CHARACTER                = "Character";
     DRRP_D_EXPLOSION                = "Explosion";

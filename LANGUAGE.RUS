@@ -300,6 +300,13 @@
     DRRP_D_MENU_DRRPMENU_LANGUAGE   = "Язык";
     DRRP_D_MENU_DRRPMENU_LANGUAGET  = "Выбор языка"; // Language title
 
+    DRRP_D_MENU_COMPASS_ENABLE      = "Включить компас";
+    DRRP_HUD_COMPASSVISUAL          = "С-----В-----Ю-----З-----";
+    // DRRP_HUD_COMPASSVISUAL       = "С---В---Ю---З---"; // 4test.
+    // DRRP_HUD_COMPASSVISUAL       = "С----св----В----юв----Ю----юз----З----сз----";
+
+    DRRP_D_MENU_INFOBAR_ENABLE      = "Отображать названия акторов";
+
     DRRP_D_MENU_FLASHLIGHT_HELMET   = "Шлем";
     DRRP_D_MENU_FLASHLIGHT_RSHOULDER= "Правое плечо";
     DRRP_D_MENU_FLASHLIGHT_LSHOULDER= "Левое плечо";
@@ -318,19 +325,12 @@
     DRRP_D_MENU_SHADERS_HELMET      = "Включить шейдер шлема";
     DRRP_D_MENU_SHADERS_CINEMATIC   = "Включить кинематографические шейдеры";
 
-    DRRP_D_MENU_COMPASS_ENABLE      = "Включить компас";
-
     DRRP_D_MENU_PASSCODE_WRONG      = "Неверный пароль";
 
     DRRP_D_NOTEBOOK_EMPTY           = "Записей пока нет.";
     DRRP_D_NOTEBOOK_NOTINGAME       = "Вы должны быть в игре для просмотра блокнота.";
     DRRP_D_NOTEBOOK_TIP_PART1       = "Нажмите ";
     DRRP_D_NOTEBOOK_TIP_PART2       = " для открытия блокнота.";
-
-    DRRP_HUD_COMPASSVISUAL          = "С-----В-----Ю-----З-----";
-
-    // DRRP_HUD_COMPASSVISUAL          = "С---В---Ю---З---"; // 4test.
-    // DRRP_HUD_COMPASSVISUAL          = "С----св----В----юв----Ю----юз----З----сз----";
 
     DRRP_D_CHARACTER                = "Персонаж";
     DRRP_D_EXPLOSION                = "Взрыв";
