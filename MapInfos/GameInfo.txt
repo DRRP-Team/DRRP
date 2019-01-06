@@ -7,5 +7,5 @@
 
 GameInfo {
     PlayerClasses = "DoomRPGPlayer"
-    AddEventHandlers = "NotebookHandler", "InfobarHandler"
+    AddEventHandlers = "NotebookHandler", "InfobarHandler", "CompassHandler"
 }

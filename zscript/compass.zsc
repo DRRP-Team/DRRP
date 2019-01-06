@@ -1,0 +1,36 @@
+/**
+ *Copyright (c) 2018-2019 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+
+class CompassHandler: EventHandler {
+
+    override void RenderOverlay( RenderEvent e ) {
+
+        String VisualStr;
+        int CompassStrPos;
+        int StrVisibleLen = 13;
+
+        for ( int i = 0; i < MAXPLAYERS; i++ ) {
+            if ( !PlayerInGame[ i ] ) continue;
+
+            //CVar CompassCVar = CVar.GetCVar( "drrp_enable_compass", Players[ i ] );
+            //if ( ( CompassCVar == null ) || !( CompassCVar.GetBool() ) ) return;
+
+            VisualStr = StringTable.Localize( "$DRRP_HUD_COMPASSVISUAL" );
+
+            CompassStrPos = floor( ( Players[ i ].mo.Angle - 90 ) % 360 / 360 * VisualStr.Length() ) + VisualStr.Length();
+            VisualStr = VisualStr .. VisualStr .. VisualStr.Left( StrVisibleLen / 2 );
+            // (North in DRRP) = (Top on the automap) = (90 degree in ZDoom).
+            VisualStr = "<" .. VisualStr.Mid( CompassStrPos - StrVisibleLen / 2, StrVisibleLen ) .. ">";
+
+            Font CompassFont = Font.FindFont( "SMALLFONT" );
+            screen.DrawText( CompassFont, Font.CR_GRAY, 
+                             320 - ( StrVisibleLen * 4 ), 50, VisualStr, 
+                             DTA_VirtualWidth, 640, DTA_VirtualHeight, 480 ); /* */
+        }
+    }
+}
