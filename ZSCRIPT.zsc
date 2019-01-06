@@ -7,16 +7,17 @@
 
 version "2.5"
 
-#include "zscript/weapons.zs"
-#include "zscript/doorcode.zs"
-#include "zscript/conversation.zs"
-#include "zscript/shaders.zs"
-#include "zscript/flashlight.zs"
-#include "zscript/hud.zs"
-#include "zscript/infobar.zs"
-#include "zscript/notebook.zs"
-#include "zscript/system.zs"
-#include "zscript/monsters.zs"
+#include "zscript/weapons.zsc"
+#include "zscript/doorcode.zsc"
+#include "zscript/conversation.zsc"
+#include "zscript/shaders.zsc"
+#include "zscript/flashlight.zsc"
+#include "zscript/hud.zsc"
+#include "zscript/infobar.zsc"
+#include "zscript/compass.zsc"
+#include "zscript/notebook.zsc"
+#include "zscript/system.zsc"
+#include "zscript/monsters.zsc"
 
 class DRRPFire_zspatch : Actor {
 
