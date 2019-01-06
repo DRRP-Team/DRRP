@@ -35,6 +35,8 @@ OPTIONMENU "DRRPMenu" {
 	Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
 	Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
 	Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
+    STATICTEXT " "
+    Option "$DRRP_D_MENU_COMPASS_ENABLE","drrp_enable_compass","ONOFF"
 }
 
 OptionMenu "Language" {

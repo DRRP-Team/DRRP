@@ -17,8 +17,8 @@ class CompassHandler: EventHandler {
         for ( int i = 0; i < MAXPLAYERS; i++ ) {
             if ( !PlayerInGame[ i ] ) continue;
 
-            //CVar CompassCVar = CVar.GetCVar( "drrp_enable_compass", Players[ i ] );
-            //if ( ( CompassCVar == null ) || !( CompassCVar.GetBool() ) ) return;
+            CVar CompassCVar = CVar.GetCVar( "drrp_enable_compass", Players[ i ] );
+            if ( ( CompassCVar == null ) || !( CompassCVar.GetBool() ) ) return;
 
             VisualStr = StringTable.Localize( "$DRRP_HUD_COMPASSVISUAL" );
 
@@ -28,8 +28,8 @@ class CompassHandler: EventHandler {
             VisualStr = "<" .. VisualStr.Mid( CompassStrPos - StrVisibleLen / 2, StrVisibleLen ) .. ">";
 
             Font CompassFont = Font.FindFont( "SMALLFONT" );
-            screen.DrawText( CompassFont, Font.CR_GRAY, 
-                             320 - ( StrVisibleLen * 4 ), 50, VisualStr, 
+            screen.DrawText( CompassFont, Font.CR_DARKGRAY, 
+                             320 - ( StrVisibleLen * 4 ), 0, VisualStr, 
                              DTA_VirtualWidth, 640, DTA_VirtualHeight, 480 ); /* */
         }
     }
