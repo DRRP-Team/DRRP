@@ -107,8 +107,8 @@ class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
 
     States {
         Fire:
-            SHT2 A 0 A_FireBullets( 11.2, 7.1, 4, Random(2, 4), "BulletPuff", FBF_NORANDOM );
-            SHT2 A 1 A_FireBullets( 11.2, 7.1, 16, Random(1, 3), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
+            SHT2 A 0 A_FireBullets( 11.2, 7.1, 4, Random( 2, 4 ), "BulletPuff", FBF_NORANDOM );
+            SHT2 A 1 A_FireBullets( 11.2, 7.1, 16, Random( 1, 3 ), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
             SHT2 A 0 A_PlaySound( "weapons/sshotf" );
             SHT2 A 2 A_GunFlash;
             SHT2 A 4;
@@ -163,11 +163,11 @@ class DRRPChaingun : Chaingun replaces Chaingun {
         Fire:
             CHGG A 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG A 0 A_GunFlash;
-            CHGG A 2 A_FireBullets(5.6, 0, 1, Random(5, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+            CHGG A 2 A_FireBullets(5.6, 0, 1, Random(5, 6), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
             CHGG B 2;
             CHGG C 0 A_PlaySound("weapons/chngun", CHAN_WEAPON);
             CHGG C 0 A_GunFlash("Flash2");
-            CHGG C 2 A_FireBullets(5.6, 0, -1, Random(5, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
+            CHGG C 2 A_FireBullets(5.6, 0, -1, Random(4, 7), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO);
             CHGG D 2;
             CHGG C 0 A_ReFire;
             Goto Ready;
@@ -276,7 +276,7 @@ class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
 class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
 
     Default {
-        DamageFunction Random( 1, 3 );
+        DamageFunction Random( 1, 4 );
         Decal "PlasmaScorch";
     }
 }
@@ -335,7 +335,7 @@ class DRRPBFG9000 : BFG9000 replaces BFG9000 {
 class DRRPBFG9000Ball: BFGBall replaces BFGBall {
 
     Default {
-        Damage 30;
+        Damage 35;
         Decal "BFGScorch";
     }
 }
