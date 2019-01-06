@@ -15,7 +15,7 @@ class CompassHandler: EventHandler {
         int StrVisibleLen = 13;
 
         for ( int i = 0; i < MAXPLAYERS; i++ ) {
-            if ( !PlayerInGame[ i ] ) continue;
+            if ( !PlayerInGame[ i ] || ( GameState != GS_LEVEL ) ) continue;
 
             CVar CompassCVar = CVar.GetCVar( "drrp_enable_compass", Players[ i ] );
             if ( ( CompassCVar == null ) || !( CompassCVar.GetBool() ) ) return;
