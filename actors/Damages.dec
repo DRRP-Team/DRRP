@@ -14,9 +14,11 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
+    +DONTTHRUST
     +NOTAUTOAIMED
     -ISMONSTER
     -COUNTKILL
+    -PUSHABLE
 
     Tag "$DRRP_E_FIRE"
     Obituary "$DRRP_OB_FIRE"
@@ -54,12 +56,14 @@ Actor DRRPLava 10251 {
     +NOBLOOD
     +NOTARGET
     +NOTRIGGER
+    +DONTTHRUST
     +NOTAUTOAIMED
     +SOLID
 	+NOCLIP
     -ISMONSTER
     -COUNTKILL
     -SHOOTABLE
+    -PUSHABLE
 
     Tag "$DRRP_E_LAVAPOOL"
     Health 10
