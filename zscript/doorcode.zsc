@@ -7,7 +7,7 @@
 
 class DoorCodeInputActor {
     static int DoorCode(Actor activator, string info, string code, int scriptnum) {
-        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info, code.ToInt(), scriptnum);
+        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info .. "@@@@" .. code, 666, scriptnum);
  
         return 1;
     }
@@ -27,12 +27,12 @@ class DoorCodeInputHandler : EventHandler {
     override void NetworkProcess(ConsoleEvent e) {
         Array<string> command;
         e.Name.Split(command, "@@@@");
-        if(command[0] == "opendoorinput") {
-            if(command.size() == 2) {
+        if(command[0] == "opendoorinput") { // ["opendoorinput", message, code]
+            if(command.size() == 3) {
                 players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
 				ACS_Suspend(-int(name("lockwindow")), 0);
                 DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
-                item.code = String.format("%d", e.args[0]);
+                item.code = command[2];
                 item.displayTooltip = command[1];
                 item.scriptnum = e.args[1];
                 Menu.SetMenu("DoorCodeInputMenu");
