@@ -30,7 +30,7 @@ class DoorCodeInputHandler : EventHandler {
         if(command[0] == "opendoorinput") { // ["opendoorinput", message, code]
             if(command.size() == 3) {
                 players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
-				ACS_Suspend(-int(name("lockwindow")), 0);
+                ACS_Suspend(-int(name("lockwindow")), 0);
                 DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
                 item.code = command[2];
                 item.displayTooltip = command[1];
@@ -43,15 +43,15 @@ class DoorCodeInputHandler : EventHandler {
 
             if (e.Args[0] == 1) {
                 players[e.Player].mo.A_PlaySound("access/grant1");
-				ACS_Execute(-int(name("lockwindow")), 0, 0, 0, 0);
+                ACS_Execute(-int(name("lockwindow")), 0, 0, 0, 0);
             } else if (e.Args[0] == 2) {
                 players[e.Player].mo.A_PlaySound("access/deny1");
                 players[e.Player].mo.A_Print(StringTable.Localize("$DRRP_D_MENU_PASSCODE_WRONG"));
-				ACS_Terminate(-int(name("lockwindow")), 0);
-				ACS_Terminate(item.scriptnum, 0);
+                ACS_Terminate(-int(name("lockwindow")), 0);
+                ACS_Terminate(item.scriptnum, 0);
             } else if (e.Args[0] == 3) {
-				ACS_Terminate(-int(name("lockwindow")), 0);
-				ACS_Terminate(item.scriptnum, 0);
+                ACS_Terminate(-int(name("lockwindow")), 0);
+                ACS_Terminate(item.scriptnum, 0);
             }
         }
     }
@@ -124,12 +124,12 @@ class DoorCodeInputMenu : GenericMenu {
 
         return true;
     }
-	
-	Override
-	bool MenuEvent (int mkey, bool fromcontroller) {
-		if(mkey == Menu.MKEY_Back) {
-			EventHandler.SendNetworkEvent("closedoorinput", 3);
-		}
-		return super.MenuEvent(mkey, fromcontroller);
-	}
+    
+    Override
+    bool MenuEvent (int mkey, bool fromcontroller) {
+        if(mkey == Menu.MKEY_Back) {
+            EventHandler.SendNetworkEvent("closedoorinput", 3);
+        }
+        return super.MenuEvent(mkey, fromcontroller);
+    }
 }

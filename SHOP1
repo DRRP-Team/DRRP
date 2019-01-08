@@ -73,7 +73,7 @@ conversation {
          goodbye = "Close";
          name = "Stats";
          dialog = "What do you want to buy?";
-		 choice {
+         choice {
              text = "+4 Hp [15 credits]";
              giveitem = "DRRPPlayerLevel";
              nomessage = "Not enough credits!";

@@ -7,9 +7,9 @@
 
 
 class PlayerFeature : Inventory {
-	Default {
-	    Inventory.MaxAmount 999;
-	}
+    Default {
+        Inventory.MaxAmount 999;
+    }
 }
 
 class PlayerAccuracy    : PlayerFeature {}

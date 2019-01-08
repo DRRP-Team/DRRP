@@ -15,10 +15,10 @@ Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
     SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
-	if(doorb != 0) {
-		SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
-		SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
-	}
+    if(doorb != 0) {
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
+        SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
+    }
 }
 
 Script 3001 (void) { // Door Closed
@@ -62,9 +62,9 @@ Script 3007 (int doorf, int doorb) { // Door Unlocker
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
     SetLineSpecial(doorf, ACS_Execute, 3001);
-	
-	if(doorb != 0) {
-		SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");
-		SetLineSpecial(doorb, ACS_Execute, 3001);
-	}
+    
+    if(doorb != 0) {
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");
+        SetLineSpecial(doorb, ACS_Execute, 3001);
+    }
 }
