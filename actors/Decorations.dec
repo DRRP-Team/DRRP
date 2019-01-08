@@ -145,11 +145,11 @@ Actor Crate 10705 {
     +NOBLOODDECALS
     +FLOORCLIP
     +INCOMBAT
+
     Tag "$DRRP_E_CRATE"
-//    Health 20
-    Health 15
+    Health 15 // 20
     Height 32
-    Radius 32
+    Radius 25
     PainChance 255
     Mass 0x7FFFFFFF
     DamageFactor "DRRPFireExtDmg", 0
