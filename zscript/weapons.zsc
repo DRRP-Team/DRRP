@@ -77,6 +77,8 @@ class DRRPShotgun : Shotgun replaces Shotgun {
 
 class DRRPShell : Ammo replaces Shell {
     Default {
+        Tag "$DRRP_I_SHELLCLIP";
+
         Inventory.PickupMessage "$GOTSHELLS"; // "Picked up 4 shotgun shells."
         Inventory.Amount 4;
         Inventory.MaxAmount 99;

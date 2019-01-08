@@ -37,6 +37,8 @@ Actor DRRPPistol : Pistol replaces Pistol {
 }
 
 Actor DRRPShell : Shell replaces Shell {
+    Tag "$DRRP_I_SHELLCLIP"
+
     Inventory.MaxAmount 99
     Ammo.BackpackMaxAmount 99
 }
