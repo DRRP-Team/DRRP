@@ -6,6 +6,10 @@
  */
 
 class NotebookItem : Inventory {
+	Default {
+		+INVENTORY.UNDROPPABLE;
+		Inventory.InterHubAmount 0;
+	}
     Array<String> languageStrings;
 }
 
