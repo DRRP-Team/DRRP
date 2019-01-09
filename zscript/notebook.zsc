@@ -6,11 +6,7 @@
  */
 
 class NotebookItem : Inventory {
-	Default {
-		+INVENTORY.UNDROPPABLE;
-		Inventory.InterHubAmount 0;
-	}
-    Array<String> languageStrings;
+    DRRPIntToStringBruteforceMultiMap languageStrings;
 }
 
 class NotebookTooltipItem : Inventory {}
@@ -62,15 +58,22 @@ class NotebookMenu : OptionMenu {
         }
 
         NotebookItem nbitem = NotebookItem(player.mo.FindInventory("NotebookItem"));
+	
+		
+		DRRPIntToStringBruteforceMultiMapArrayWrapper ls = null;
+		if(nbitem != null) {
+			ls = nbitem.languageStrings.get(level.levelnum);
+		}
+		
 
-        if(nbitem == null || nbitem.languageStrings.size() == 0) {
+        if(nbitem == null || ls.TheStringArray.size() == 0) {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 
             item.Init(StringTable.Localize("$DRRP_D_NOTEBOOK_EMPTY"));
             desc.mItems.push(item);
         } else {
-            for(int i = nbitem.languageStrings.size() - 1; i >= 0; i--) {
-                String langstring = nbitem.languageStrings[i];
+            for(int i = ls.TheStringArray.size() - 1; i >= 0; i--) {
+                String langstring = ls.TheStringArray[i];
                 Array<String> langstring_spl;
 
                 langstring_spl.clear();
@@ -97,13 +100,13 @@ class NotebookAPI {
     play static void AddNotebookEntry(Actor activator, String entry) {
         if(activator.CountInv("NotebookItem") <= 0) {
             activator.A_GiveInventory("NotebookItem");
+			NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
+			nbitem.languageStrings = new("DRRPIntToStringBruteforceMultiMap");
         }
         
         NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
         
-        if(nbitem.languageStrings.find(entry) == nbitem.languageStrings.size()) {
-            nbitem.languageStrings.push(entry);
-            activator.A_GiveInventory("NotebookTooltipItem");
-        }
+		nbitem.languageStrings.put(level.levelnum, entry);
+		activator.A_GiveInventory("NotebookTooltipItem");
     }
 }

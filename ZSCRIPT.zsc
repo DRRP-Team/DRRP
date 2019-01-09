@@ -18,6 +18,7 @@ version "2.5"
 #include "zscript/notebook.zsc"
 #include "zscript/system.zsc"
 #include "zscript/monsters.zsc"
+#include "zscript/utils.zsc"
 
 class DRRPFire_zspatch : Actor {
 
