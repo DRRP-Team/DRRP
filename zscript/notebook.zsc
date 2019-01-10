@@ -58,13 +58,13 @@ class NotebookMenu : OptionMenu {
         }
 
         NotebookItem nbitem = NotebookItem(player.mo.FindInventory("NotebookItem"));
-	
-		
-		DRRPIntToStringBruteforceMultiMapArrayWrapper ls = null;
-		if(nbitem != null) {
-			ls = nbitem.languageStrings.get(level.levelnum);
-		}
-		
+    
+        
+        DRRPIntToStringBruteforceMultiMapArrayWrapper ls = null;
+        if(nbitem != null) {
+            ls = nbitem.languageStrings.get(level.levelnum);
+        }
+        
 
         if(nbitem == null || ls.TheStringArray.size() == 0) {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
@@ -100,13 +100,13 @@ class NotebookAPI {
     play static void AddNotebookEntry(Actor activator, String entry) {
         if(activator.CountInv("NotebookItem") <= 0) {
             activator.A_GiveInventory("NotebookItem");
-			NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
-			nbitem.languageStrings = new("DRRPIntToStringBruteforceMultiMap");
+            NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
+            nbitem.languageStrings = new("DRRPIntToStringBruteforceMultiMap");
         }
         
         NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
         
-		nbitem.languageStrings.put(level.levelnum, entry);
-		activator.A_GiveInventory("NotebookTooltipItem");
+        nbitem.languageStrings.put(level.levelnum, entry);
+        activator.A_GiveInventory("NotebookTooltipItem");
     }
 }

@@ -102,9 +102,9 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
 }
 
 Script "drpgquake"(int time, int intensivity) {
-	if(intensivity <= 0) intensivity = 1;
-	if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script drpgquake");
-	Radius_Quake(4 * intensivity, time / 29, 0, 5, 0);
+    if(intensivity <= 0) intensivity = 1;
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script drpgquake");
+    Radius_Quake(4 * intensivity, time / 29, 0, 5, 0);
 }
 
 #include "flashlight.acs"

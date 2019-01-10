@@ -6,35 +6,35 @@
  */
  
 class DRRPIntToStringBruteforceMultiMapArrayWrapper {
-	Array<String> TheStringArray;
+    Array<String> TheStringArray;
 }
 
 class DRRPIntToStringBruteforceMultiMap {
-	private Array<int> TheIntArray;
-	private Array<DRRPIntToStringBruteforceMultiMapArrayWrapper> TheStringArrayArray;
-	
-	void Put(int key, String value) {
-		for(int i = 0; i < TheIntArray.Size(); i++) {
-			if(key == TheIntArray[i]) {
-				if(TheStringArrayArray[i].TheStringArray.Find(value) == TheStringArrayArray[i].TheStringArray.Size()) {
-					TheStringArrayArray[i].TheStringArray.Push(value);
-				}
-				return;
-			}
-		}
-		TheIntArray.Push(key);
-		DRRPIntToStringBruteforceMultiMapArrayWrapper TheWrapper = new("DRRPIntToStringBruteforceMultiMapArrayWrapper");
-		TheWrapper.TheStringArray.Push(value);
-		TheStringArrayArray.Push(TheWrapper);
-	}
-	
-	DRRPIntToStringBruteforceMultiMapArrayWrapper Get(int key) {
-		for(int i = 0; i < TheIntArray.Size(); i++) {
-			if(key == TheIntArray[i]) {
-				return TheStringArrayArray[i];
-			}
-		}
-		DRRPIntToStringBruteforceMultiMapArrayWrapper TheWrapper = new("DRRPIntToStringBruteforceMultiMapArrayWrapper");
-		return TheWrapper;
-	}
+    private Array<int> TheIntArray;
+    private Array<DRRPIntToStringBruteforceMultiMapArrayWrapper> TheStringArrayArray;
+    
+    void Put(int key, String value) {
+        for(int i = 0; i < TheIntArray.Size(); i++) {
+            if(key == TheIntArray[i]) {
+                if(TheStringArrayArray[i].TheStringArray.Find(value) == TheStringArrayArray[i].TheStringArray.Size()) {
+                    TheStringArrayArray[i].TheStringArray.Push(value);
+                }
+                return;
+            }
+        }
+        TheIntArray.Push(key);
+        DRRPIntToStringBruteforceMultiMapArrayWrapper TheWrapper = new("DRRPIntToStringBruteforceMultiMapArrayWrapper");
+        TheWrapper.TheStringArray.Push(value);
+        TheStringArrayArray.Push(TheWrapper);
+    }
+    
+    DRRPIntToStringBruteforceMultiMapArrayWrapper Get(int key) {
+        for(int i = 0; i < TheIntArray.Size(); i++) {
+            if(key == TheIntArray[i]) {
+                return TheStringArrayArray[i];
+            }
+        }
+        DRRPIntToStringBruteforceMultiMapArrayWrapper TheWrapper = new("DRRPIntToStringBruteforceMultiMapArrayWrapper");
+        return TheWrapper;
+    }
 }
