@@ -48,7 +48,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     }
 }
 
-Actor DRRPLava 10251 {
+Actor DRRPLava: DRRPLava_zspatch 10251 {
     //$Category Damage
     //$Sprite LAVAA0
 
@@ -58,8 +58,6 @@ Actor DRRPLava 10251 {
     +NOTRIGGER
     +DONTTHRUST
     +NOTAUTOAIMED
-    +SOLID
-    +NOCLIP
     -ISMONSTER
     -COUNTKILL
     -SHOOTABLE
@@ -69,7 +67,6 @@ Actor DRRPLava 10251 {
     Health 10
     Mass 0x7FFFFFFF
     RenderStyle Add
-    DamageType DPPRFireDmg    
     DamageFactor "Normal", 0
 
     States {
@@ -78,7 +75,7 @@ Actor DRRPLava 10251 {
             SPKO D 0 Bright A_PlaySound("ICOSCRE", CHAN_7, 1, true, 2.5)
             SPKO D 0 Bright A_Jump(256, 1, 2, 3, 4, 5, 6, 7, 8)
         SpawnLoop:
-            SPKO ABCDEFGH 2 BRIGHT A_Explode(7, 32, XF_NOTMISSILE)
+            SPKO ABCDEFGH 2 BRIGHT
             Loop
         Pain.FireExtDamage:
             TNT1 A 0
@@ -95,6 +92,7 @@ Actor DRRPLava 10251 {
 Actor Explosion: DRRPExplosion_zspatch {
     +NOGRAVITY
     +DONTFALL
+    +FLOORCLIP
 
     Tag "$DRRP_D_EXPLOSION"
 
