@@ -344,6 +344,8 @@
     DRRP_D_MENU_SHADERS_ENABLE      = "Enable shaders";
     DRRP_D_MENU_SHADERS_HELMET      = "Enable helmet shaders";
     DRRP_D_MENU_SHADERS_CINEMATIC   = "Enable cinematic shaders";
+    DRRP_D_MENU_SHADERS_POM         = "Enable parallax occlusion mapping";
+    DRRP_D_MENU_SHADERS_UPDATEPOM   = "Apply POM shader changes";
     
     DRRP_D_MENU_PASSCODE_WRONG      = "Wrong passcode"; // FIXME: Usernameak! It doen't DRRP_D_MENU_!
 
@@ -365,8 +367,8 @@
     DRRP_D_TMAP_RUSERNAMEAK         = "Coder, Mapper";
     DRRP_D_TMAP_RMORTHIMER          = "Coder";
     DRRP_D_TMAP_RSTORMCATCHER       = "Mapper";
-    DRRP_D_TMAP_RDSSKULL             = "Graphics";
-    DRRP_D_TMAP_RLOLIMPIRE           = "Mapper";
+    DRRP_D_TMAP_RDSSKULL            = "Graphics";
+    DRRP_D_TMAP_RLOLIMPIRE          = "Mapper";
 
     DRRP_D_USEFLASHLIGHT            = "You can use your flashlight";
     DRRP_D_WIPLEVEL                 = "Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!";

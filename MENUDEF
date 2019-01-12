@@ -36,8 +36,8 @@ OPTIONMENU "DRRPMenu" {
     Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
     Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
     STATICTEXT " "
-    Option "$DRRP_D_MENU_INFOBAR_ENABLE","drrp_enable_infobar","ONOFF"
-    Option "$DRRP_D_MENU_COMPASS_ENABLE","drrp_enable_compass","ONOFF"
+    Option "$DRRP_D_MENU_INFOBAR_ENABLE", "drrp_enable_infobar", "ONOFF"
+    Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
 }
 
 OptionMenu "Language" {
@@ -71,10 +71,12 @@ OptionMenu "Flashlight" {
 OptionMenu "Shaders" {
     Title "$DRRP_D_MENU_SHADERS_TITLE"
     StaticText " "
-    Option "$DRRP_D_MENU_SHADERS_ENABLE","gl_custompost","ONOFF"
+    Option "$DRRP_D_MENU_SHADERS_ENABLE", "gl_custompost", "ONOFF"
     StaticText " "
-    Option "$DRRP_D_MENU_SHADERS_HELMET","drrp_enable_helmet_shader","ONOFF"
-    Option "$DRRP_D_MENU_SHADERS_CINEMATIC","drrp_enable_cinematic_shader","ONOFF"
+    Option "$DRRP_D_MENU_SHADERS_HELMET", "drrp_enable_helmet_shader", "ONOFF"
+    Option "$DRRP_D_MENU_SHADERS_CINEMATIC", "drrp_enable_cinematic_shader", "ONOFF"
+    Option "$DRRP_D_MENU_SHADERS_POM", "drrp_enable_pom_shader", "ONOFF"
+    Command "$DRRP_D_MENU_SHADERS_UPDATEPOM", "pukename updatepom 1"
 }
 
 OptionMenu "NotebookMenu" protected {
