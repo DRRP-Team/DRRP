@@ -55,3 +55,12 @@ class DRRPFire_zspatch : Actor {
         return true;
     }
 }
+
+
+class DRRPExplosion_zspatch: Actor {
+
+    override void PostBeginPlay() {
+		if ( pos.z <= ( FloorZ + self.height ) ) SetZ( FloorZ + ( self.height * 1.5 ) );
+    }
+
+}

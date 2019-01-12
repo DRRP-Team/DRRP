@@ -92,7 +92,7 @@ Actor DRRPLava 10251 {
 
 // Scripted
 
-Actor Explosion {
+Actor Explosion: DRRPExplosion_zspatch {
     +NOGRAVITY
     +DONTFALL
 
