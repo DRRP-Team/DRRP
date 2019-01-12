@@ -101,6 +101,7 @@ Actor Explosion: DRRPExplosion_zspatch {
     States {
         Spawn:
             MISL B 0 Bright
+            MISL B 0 Bright A_Quake(7, 7, 0, 256)
             MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_AUTO)
             MISL B 5 Bright A_Explode
             MISL C 5 Bright

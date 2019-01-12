@@ -31,7 +31,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
             BEXP E 10 Bright
             TNT1 A 1050 Bright A_BarrelDestroy
             Stop
-        }
+    }
 }
 
 Actor Table 10702 {
