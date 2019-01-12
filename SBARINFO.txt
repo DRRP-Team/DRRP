@@ -17,22 +17,17 @@ statusbar normal { // Standard Doom Status bar
     drawnumber 3, HUDFONT_DOOM, untranslated, health, 90, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, armor, 221, 171;
 
-    //DrawSwitchableImage KeySlot 1, "nullimage", "graphics/STKEYS9", 239, 193; // Green
-    //DrawSwitchableImage KeySlot 2, "nullimage", "STKEYS2", 239, 169; // Red
-    //DrawSwitchableImage KeySlot 3, "nullimage", "STKEYS1", 239, 185; // Yellow
-    //DrawSwitchableImage KeySlot 4, "nullimage", "STKEYS0", 239, 177; // Blue
-
     DrawSwitchableImage KeySlot 1, "nullimage", "STKEYS2", 239, 169; // Red
     DrawSwitchableImage KeySlot 2, "nullimage", "STKEYS0", 239, 177; // Blue
     DrawSwitchableImage KeySlot 3, "nullimage", "STKEYS1", 239, 185; // Yellow
     DrawSwitchableImage KeySlot 4, "nullimage", "graphics/STKEYS9", 239, 193; // Green
 
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Clip), 288, 173;
-    drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Shell), 288, 179;
+    drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(DRRPShell), 288, 179;
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(RocketAmmo), 288, 185;
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Cell), 288, 191;
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Clip), 314, 173;
-    drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Shell), 314, 179;
+    drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(DRRPShell), 314, 179;
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(RocketAmmo), 314, 185;
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Cell), 314, 191;
     gamemode deathmatch, teamgame {
