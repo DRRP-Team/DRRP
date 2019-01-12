@@ -28,14 +28,15 @@ Actor DRRPTrigger : DRRPCharacter 10554 {
     //$Sprite STEMA0
 
     -SOLID
+    +NOSECTOR
 
     Tag "Trigger"
     Radius 33
+    Height 0
 }
 
 Actor DRRPInfo : DRRPTrigger {
     //$Category Invisible
-
     -USESPECIAL
 }
 
