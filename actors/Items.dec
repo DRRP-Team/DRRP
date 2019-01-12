@@ -201,8 +201,8 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
             SOUL ABCDCB 6 Bright
             Loop
         Use:
-            TNT1 A 0 A_GiveInventory("Health", 999)
-            TNT1 A 0 A_GiveInventory("BlueArmor", 1)
+            TNT1 A 0 A_GiveInventory("DRRPHealthBonus", 999)
+            TNT1 A 0 A_GiveInventory("DRRPBlueArmor", 1)
             Stop
     }
 }
@@ -277,3 +277,25 @@ Actor DRRPBlueArmor : BlueArmor replaces BlueArmor {
 }
 
 Actor DRRPPlayerLevel : HealthPowerUp {}
+
+
+// For shops.
+Actor DRRPShopBalloon: Balloon {
+    Inventory.Amount 10
+}
+
+Actor DRRPShopClipBox: ClipBox {
+    Inventory.Amount 10
+}
+
+Actor DRRPShopShellBox: DRRPShell {
+    Inventory.Amount 10
+}
+
+Actor DRRPShopRocketBox: RocketBox {
+    Inventory.Amount 3
+}
+
+Actor DRRPShopCellPack: CellPack {
+    Inventory.Amount 10
+}

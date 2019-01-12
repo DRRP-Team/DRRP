@@ -45,7 +45,7 @@ conversation {
          dialog = "What do you want to buy?";
          choice {
              text = "10x Hal. Cans [5 credits]";
-             giveitem = "Balloon";
+             giveitem = "DRRPShopBalloon";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -55,7 +55,7 @@ conversation {
          }
          choice {
              text = "10x Bullets [5 credits]";
-             giveitem = "ClipBox";
+             giveitem = "DRRPShopClipBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -65,7 +65,7 @@ conversation {
          }
          choice {
              text = "10x Shells [10 credits]";
-             giveitem = "ShellBox";
+             giveitem = "DRRPShopShellBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -75,7 +75,7 @@ conversation {
          }
          choice {
              text = "3x Rockets [10 credits]";
-             giveitem = "RocketBox";
+             giveitem = "DRRPShopRocketBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -85,7 +85,7 @@ conversation {
          }
          choice {
              text = "10x Cells [15 credits]";
-             giveitem = "CellPack";
+             giveitem = "DRRPShopCellPack";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
