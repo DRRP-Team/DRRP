@@ -102,7 +102,7 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
 }
 
 Script "drpgquake"(int time, int intensivity) {
-    ACS_Execute(3008, time, intensivity);
+    ACS_Execute(3008, 0, time, intensivity);
     if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using DEPRECATED Script drpgquake");
 }
 

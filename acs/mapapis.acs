@@ -73,7 +73,7 @@ Script 3008 (int time, int intensivity) { // DRPG Quake
     if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3008");
     if(intensivity <= 0) intensivity = 1;
 
-    Radius_Quake(4 * intensivity, time / 29, 0, 5, 0);
+    Radius_Quake(4 * intensivity, time / 29, 0, 1024, 0);
 }
 
 Script 3009 (int tid, bool fatal) { // Damage character
