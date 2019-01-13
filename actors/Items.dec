@@ -159,7 +159,7 @@ Actor GoldCredit : CustomInventory 10621 {
     }
 }
 
-Actor Berserker : CustomInventory replaces Berserk 10623 {
+Actor DRRPBerserkItem : CustomInventory replaces Berserk 10623 {
     //$Category Items
     //$Sprite BERSH0
 
@@ -179,11 +179,23 @@ Actor Berserker : CustomInventory replaces Berserk 10623 {
             SOUL ABCDCB 6 Bright
             Loop
         Use:        
-            TNT1 A 0 A_GiveInventory("PowerStrength")
+            TNT1 A 0 A_GiveInventory("DRRPBerserkGiver")
             TNT1 A 0 HealThing(100, 0)
-            TNT1 A 0 A_SelectWeapon("DRRPAxe") // Fist
+            //TNT1 A 0 A_SelectWeapon("DRRPAxe") // Fist
             Stop
     }
+}
+
+Actor DRRPPowerTripleDamage: PowerDamage {
+    DamageFactor "Normal", 3
+}
+
+Actor DRRPBerserkGiver: PowerupGiver {
+    Powerup.Type DRRPPowerTripleDamage
+    Powerup.Duration -60
+    Powerup.Color 127, 0, 0, 0.33
+    +INVENTORY.AUTOACTIVATE
+    Inventory.MaxAmount 1
 }
 
 Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
@@ -201,7 +213,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
             SOUL ABCDCB 6 Bright
             Loop
         Use:
-            TNT1 A 0 A_GiveInventory("DRRPHealthBonus", 999)
+            TNT1 A 0 HealThing(0, 999)
             TNT1 A 0 A_GiveInventory("DRRPBlueArmor", 1)
             Stop
     }
