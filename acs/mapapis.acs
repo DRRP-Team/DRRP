@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2017-2019 DRRP-Team
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
@@ -62,9 +62,23 @@ Script 3007 (int doorf, int doorb) { // Door Unlocker
 
     SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
     SetLineSpecial(doorf, ACS_Execute, 3001);
-    
+
     if(doorb != 0) {
         SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");
         SetLineSpecial(doorb, ACS_Execute, 3001);
     }
+}
+
+Script 3008 (int time, int intensivity) { // DRPG Quake
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3008");
+    if(intensivity <= 0) intensivity = 1;
+
+    Radius_Quake(4 * intensivity, time / 29, 0, 5, 0);
+}
+
+Script 3009 (int tid, bool fatal) { // Damage character
+    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3009");
+    if(tid < 0) tid *= -1;
+
+    SetActorState(tid, fatal ? "Death" : "Pain");
 }
