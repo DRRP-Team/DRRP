@@ -24,6 +24,12 @@ Actor BlackHole 10666 {
     }
 }
 
+Actor DRRPParticle : Blood {}
+Actor DRRPBlood : DRRPParticle {}
+Actor DRRPTransformationParticle : DRRPParticle {
+    BloodColor 255, 128, 0 // TODO: Orange color
+}
+
 // Environment spawners
 
 Actor AbstractSpark : SwitchableDecoration {
