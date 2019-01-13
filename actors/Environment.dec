@@ -27,7 +27,7 @@ Actor BlackHole 10666 {
 Actor DRRPParticle : Blood {}
 Actor DRRPBlood : DRRPParticle {}
 Actor DRRPTransformationParticle : DRRPParticle {
-    BloodColor 255, 128, 0 // TODO: Orange color
+    Translation "177:191=213:223"
 }
 
 // Environment spawners
