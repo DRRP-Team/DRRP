@@ -13,7 +13,7 @@ ListMenu "MainMenu" {
     IfGame (DooM) {
         STATICPATCH 85, 0, "M_DOOM"
         POSITION 92, 72
-        STATICTEXT 187, 188, "DRRP v0.2.1x EAB"
+        StaticText 187, 188, "DRRP v0.2.1x EAB"
         // TODO: $DRRP_D_DRRPVERSION
     }
 
@@ -25,29 +25,37 @@ ListMenu "MainMenu" {
     TEXTITEM "$DRRP_D_MENU_QUITGAME", "Q", "QuitMenu"
 }
 
-OPTIONMENU "DRRPMenu" {
-    TITLE "Doom RPG Remake Project"
-    STATICTEXT " "
+OptionMenu "DRRPMenu" {
+    Title "Doom RPG Remake Project"
+    StaticText " "
     StaticText "$DRRP_D_MENU_DRRPMENU_INVENTORY"
     Command "$DRRP_D_MENU_DRRPMENU_NOTEPAD", "openmenu NotebookMenu"
-    STATICTEXT " "
+    StaticText " "
     StaticText "$DRRP_D_MENU_DRRPMENU_SETTINGS"
     Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
     Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
     Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
-    STATICTEXT " "
-    Option "$DRRP_D_MENU_INFOBAR_ENABLE", "drrp_enable_infobar", "ONOFF"
-    Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
+    Submenu "$DRRP_D_MENU_DRRPMENU_MISC", "Misc"
 }
 
 OptionMenu "Language" {
-    Title "$DRRP_D_MENU_DRRPMENU_LANGUAGET"
+    Title "$DRRP_D_MENU_LANGUAGE_TITLE"
     StaticText " "
     Command "English US", "language enu"
     Command "Russian", "language rus"
 }
 
-OptionValue LocationOptions {
+OptionMenu "Misc" {
+    Title "$DRRP_D_MENU_DRRPMENU_MISC"
+    StaticText " "
+    Option "$DRRP_D_MENU_INFOBAR_ENABLE", "drrp_enable_infobar", "ONOFF"
+    Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
+    StaticText " "
+    Option "$DRRP_D_MENU_MISC_FREELOOK", "sv_freelook", "YesNo"
+    Option "$DRRP_D_MENU_MISC_DEBUGMODE", "drrp_debug_mode", "OnOff"
+}
+
+OptionValue "LocationOptions" {
     0, "$DRRP_D_MENU_FLASHLIGHT_HELMET"
     1, "$DRRP_D_MENU_FLASHLIGHT_RSHOULDER"
     2, "$DRRP_D_MENU_FLASHLIGHT_LSHOULDER"
@@ -55,7 +63,7 @@ OptionValue LocationOptions {
 }
 
 OptionMenu "Flashlight" {
-    Title "$DRRP_D_MENU_FLASHLIGHT_TITLE"
+    Title "$DRRP_D_MENU_FLASHLIGHT_Title"
     StaticText " "
     ColorPicker "$DRRP_D_MENU_FLASHLIGHT_COLOR", "flashlight_color"
     StaticText " "
@@ -69,7 +77,7 @@ OptionMenu "Flashlight" {
 }
 
 OptionMenu "Shaders" {
-    Title "$DRRP_D_MENU_SHADERS_TITLE"
+    Title "$DRRP_D_MENU_SHADERS_Title"
     StaticText " "
     Option "$DRRP_D_MENU_SHADERS_ENABLE", "gl_custompost", "ONOFF"
     StaticText " "
@@ -82,5 +90,5 @@ OptionMenu "Shaders" {
 OptionMenu "NotebookMenu" protected {
     Class "NotebookMenu"
     Title "$DRRP_B_ID117"
-    // filled in by code
+    // Filled in by ZScript
 }
