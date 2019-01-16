@@ -97,3 +97,8 @@ Script 3010 (int sectorid, int keyid, bool mute) { // Colorful door
     }
     Generic_Door(sectorid, 16, 0, 120, keyid);
 }
+
+Script 3011 (fixed x, fixed y, int direction) { // DRPG Teleport
+    // TODO: Make some particles
+    SetActorPosition(0, x, y, 0, 0);
+}
