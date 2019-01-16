@@ -83,7 +83,17 @@ Script 3009 (int tid, bool fatal) { // Damage character
     SetActorState(tid, fatal ? "Death" : "Pain");
 }
 
-Script 3010 (int sectorid, int keyid) { // Colorful door
+str SCRIPT_3010_KEYS[] = { "NULL", "DRRPRedCard", "DRRPBlueCard", "DRRPYellowCard", "NULL", "NULL", "NULL", "DRRPGreenCard" };
+
+Script 3010 (int sectorid, int keyid, bool mute) { // Colorful door
     if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script 3010");
+    if(!mute) {
+        if(keyid && CheckInventory(SCRIPT_3010_KEYS[keyid])) {
+            ActivatorSound("acess/grant2", 255);
+        } else if(keyid) {
+            ActivatorSound("acess/deny2", 255);
+        }
+        Delay(60);
+    }
     Generic_Door(sectorid, 16, 0, 120, keyid);
 }
