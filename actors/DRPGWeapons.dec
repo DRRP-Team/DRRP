@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2017-2019 DRRP-Team
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
@@ -26,31 +26,80 @@ Actor DRRPAxe: DRRPAxe_zspatch 10557  {
     DamageType DRRPAxeDmg
 
     States {
-        Spawn:
-            AXEI A -1
-            Stop
-        Ready:
-            AXEF A 1 A_WeaponReady
-            Loop
-        Select:
-            AXEF A 1 A_Raise
-            Loop
-        Deselect:
-            AXEF A 1 A_Lower
-            Loop
-        Fire:
-            AXEF B 3
-            AXEF C 3
-            AXEF D 3
-            AXEF D 1 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus")
-            AXEF E 5
-            Goto Ready
+      Ready:
+        AXXA BCDEFGHIJK 1
+      Ready1:
+      AXXA L 1 A_WeaponReady
+        Loop
+      Deselect:
+        AXXA L 1 A_Lower
+        Loop
+      Select:
+        TNT1 AAAAAAAAAAA 0 A_Raise
+        Loop
+      Fire:
+        AXXA LMN 2
+    Fire2:
+    AXXA OPQR 2
+        AXXA STUV 2
+        AXXA WXYZ 1
+        AXXB A 1
+
+        AXXB BCD 2
+        AXXB E 1 A_REFIRE("FireWait")
+
+        FireWait:
+        AXXB E 1
+        AXXB E 1 A_REFIRE("FireWait")
+
+        TNT1 A 0 A_FireProjectile("DoomAxxBall")
+        AXXB FGH 1
+        AXXB I 2
+        TNT1 A 2
+        TNT1 AAA 2
+        TNT1 A 2
+        TNT1 AAAAA 2
+        AXXA BCDEF 2
+        TNT1 A 0 A_REFIRE("Fire2")
+        AXXA GHIJ 2
+
+        AXXA K 2
+        Goto Ready1
+      Spawn:
+        PIST A -1
+        Stop
     }
+}
+
+
+ACTOR DoomAxxBall {
+  -RANDOMIZE
+
+  Radius 10
+  Height 8
+  Speed 15
+  FastSpeed 20
+  Damage 15
+  Projectile
+  RenderStyle Add
+  Alpha 1
+  SeeSound ""
+  DeathSound "plspnch3"
+
+  States {
+      Spawn:
+        TNT1 A 5
+        TNT1 A 0 A_playsound("fstatk1")
+        Stop
+      Death:
+        TNT1 A 1
+        Stop
+  }
 }
 
 Actor DRRPAxePuff : BulletPuff {
     SeeSound "DSBLUD03"
-    AttackSound "ROCK"    
+    AttackSound "ROCK"
 }
 
 Actor DRRPFireExt : DRRPFireExt_zspatch 10556 {
@@ -142,7 +191,7 @@ Actor FireExtPuff {
 
     States {
         Spawn:
-            STEM AAAAA 0 A_SpawnParticle(Gray, RandomPick(0, SPF_FULLBRIGHT), Random(3, 35), FRandom(0.75, 4), 0, 
+            STEM AAAAA 0 A_SpawnParticle(Gray, RandomPick(0, SPF_FULLBRIGHT), Random(3, 35), FRandom(0.75, 4), 0,
                             Random(-5, 5), Random(-5, 5), Random(-5, 5), // Offsets
                             Random(-10, 10), Random(-10, 10), Random(-10, 10), // Speed
                             Random(-10, 10), Random(-10, 10), Random(-10, 10)) // Acceleration
@@ -159,7 +208,7 @@ Actor FireExtPuff {
             STEM K 1 A_SetTranslucent(0.1, 1)
             STEM L 1 A_SetTranslucent(0.05, 1)
         Death:
-            STEM LLLLLLLLL 0 A_SpawnParticle(Gray, 0, Random(5, 70), FRandom(0.5, 2), 0, 
+            STEM LLLLLLLLL 0 A_SpawnParticle(Gray, 0, Random(5, 70), FRandom(0.5, 2), 0,
                             0, Random(-5, 0), Random(-5, 5), // Offsets
                             Random(-10, 10), Random(-10, 10), Random(-10, 10), // Speed
                             Random(-5, 5), Random(-5, 5), Random(-5, 5)) // Acceleration
@@ -203,7 +252,7 @@ Actor HellHoundGun : Weapon {
             HDGG A 1 Offset(0, 39)
             HDGG A 1 Offset(0, 35)
             HDGG A 1 Offset(0, 33)
-            HDGG A 1 Offset(0, 32) 
+            HDGG A 1 Offset(0, 32)
             Goto Ready
         Deselect:
             HDGG A 1 A_Lower
@@ -213,7 +262,7 @@ Actor HellHoundGun : Weapon {
             HDGG A 0 A_PlaySound("monsters/hellhound/bark")
             HDGG CD 2
             HDGG E 2 A_CustomPunch(random(6, 12), TRUE, 0, "DogGunPuff", 80, 0, 0, "ArmorBonus", "monsters/hellhound/bark")
-            HDGG F 2 
+            HDGG F 2
             HDGG DCB 2
             Goto Ready
         Flash:
@@ -259,7 +308,7 @@ Actor CerberusGun : HellHoundGun {
             CDGG A 1 Offset(0, 39)
             CDGG A 1 Offset(0, 35)
             CDGG A 1 Offset(0, 33)
-            CDGG A 1 Offset(0, 32) 
+            CDGG A 1 Offset(0, 32)
             GoTo Ready
         Deselect:
             CDGG A 1 A_Lower
@@ -269,7 +318,7 @@ Actor CerberusGun : HellHoundGun {
             CDGG A 0 A_PlaySound("monsters/cerberus/bark")
             CDGG CD 2
             CDGG E 2 A_CustomPunch(random(7, 20), TRUE, 0, "DogGunPuff", 80, 0, 0, "ArmorBonus", "monsters/cerberus/bark")
-            CDGG F 2 
+            CDGG F 2
             CDGG DCB 2
             Goto Ready
          Spawn:
@@ -298,7 +347,7 @@ Actor DemonWolfGun : HellHoundGun {
             DDGG A 1 Offset(0, 39)
             DDGG A 1 Offset(0, 35)
             DDGG A 1 Offset(0, 33)
-            DDGG A 1 Offset(0, 32) 
+            DDGG A 1 Offset(0, 32)
             GoTo Ready
         Deselect:
             DDGG A 1 A_Lower
@@ -308,7 +357,7 @@ Actor DemonWolfGun : HellHoundGun {
             DDGG A 0 A_PlaySound("monsters/demonwolf/bark")
             DDGG CD 2
             DDGG E 2 A_CustomPunch(random(10, 35), TRUE, 0, "DogGunPuff", 80, 0, 0, "ArmorBonus", "monsters/demonwolf/bark")
-            DDGG F 2 
+            DDGG F 2
             DDGG DCB 2
             Goto Ready
         Spawn:
