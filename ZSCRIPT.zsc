@@ -7,17 +7,23 @@
 
 version "2.5"
 
-#include "zscript/_patches.zsc"
-#include "zscript/weapons.zsc"
-#include "zscript/doorcode.zsc"
-#include "zscript/conversation.zsc"
-#include "zscript/shaders.zsc"
-#include "zscript/flashlight.zsc"
-#include "zscript/hud.zsc"
-#include "zscript/infobar.zsc"
-#include "zscript/compass.zsc"
-#include "zscript/notebook.zsc"
-#include "zscript/system.zsc"
-#include "zscript/monsters.zsc"
-#include "zscript/utils.zsc"
+#include "zscript/Patches.zsc"
+#include "zscript/Weapons.zsc"
 
+// APIs
+#include "zscript/APIWeapons.zsc"
+#include "zscript/APIConversation.zsc"
+#include "zscript/APIShaders.zsc"
+#include "zscript/APINotebook.zsc"
+
+// Visual
+#include "zscript/Infobar.zsc"
+#include "zscript/Compass.zsc"
+#include "zscript/Flashlight.zsc"
+#include "zscript/HUD.zsc"
+#include "zscript/Doorcode.zsc"
+
+// Tools
+#include "zscript/System.zsc"
+#include "zscript/Utils.zsc"
+#include "zscript/Monsters.zsc"
