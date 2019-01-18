@@ -1,0 +1,43 @@
+/**
+ *Copyright (c) 2019 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+class WeaponController play {
+
+	static const class<Weapon> WeaponsToCheck[] = {
+//		"DRRPFireExt_zspatch", "DRRPAxe_zspatch",
+		"DRRPPistol", 
+		"DRRPShotgun", "DRRPSuperShotgun",
+		"DRRPChaingun",
+		"DRRPRocketLauncher",
+		"DRRPPlasmagun",
+		"DRRPBFG9000"
+	};
+
+    static int TakeAllWeapons( int playerNum ) {
+		if ( playerNum < 0 || playerNum > MAXPLAYERS || !playeringame[ playerNum ] ) return -1;
+
+		int returnMask = 0;
+
+		for ( int i = 0; i < WeaponController.WeaponsToCheck.Size(); i++ ) 
+			if ( Players[ playerNum ].mo.FindInventory( WeaponController.WeaponsToCheck[ i ] ) ) {
+				Players[ playerNum ].mo.TakeInventory( WeaponController.WeaponsToCheck[ i ], 1 );
+				returnMask |= 1 << i;
+			}
+
+		return returnMask;
+    } // of static int32 TakeAllWeapons( int8 playerNum )
+
+    static void ReturnWeapons( int playerNum, int returnWeaponsMask ) {
+		if ( playerNum < 0 || playerNum > MAXPLAYERS || !playeringame[ playerNum ] ) return;
+
+		for ( int i = 0; i < WeaponController.WeaponsToCheck.Size(); i++ ) 
+			if ( returnWeaponsMask & ( 1 << i ) )
+				Players[ playerNum ].mo.GiveInventory( WeaponController.WeaponsToCheck[ i ], 1 );
+
+    } // of static void ReturnWeapons( int playerNum, int returnWeaponsMask )
+
+} // of class ConversationController play
