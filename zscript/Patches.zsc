@@ -1,0 +1,89 @@
+/**
+ *Copyright (c) 2018-2019 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+class DRRPLava_zspatch: Actor {
+
+    int fireActorDamageMin, fireActorDamageMax, fireActorDamageTicks;
+
+    void damageNearestPlayers( void ) {
+        for ( int i = 0; i < MAXPLAYERS; i++ ) {
+            if ( !( level.maptime % fireActorDamageTicks ) && PlayerInGame[ i ] && Distance3D( players[ i ].mo ) < 32 )
+                Players[ i ].mo.DamageMobj( self, self, random( fireActorDamageMin, fireActorDamageMax ), "DRRPFireDmg" );
+        } // of for ( uint8 i = 0; i < MAXPLAYERS; i++ )
+    } // of void damagePlayers( void )
+
+    override void BeginPlay() {
+        fireActorDamageMin = 3;
+        fireActorDamageMax = 6;
+        fireActorDamageTicks = 2;
+    } // of override void BeginPlay()
+
+    override void Tick() {
+        damageNearestPlayers();
+        Super.Tick();
+    } // of override void Tick()
+
+    override bool CanCollideWith( Actor other, bool passive ) {
+
+        String cn = other.getClassName();
+        if ( cn ~== "DoomRPGPlayer"
+                || cn ~== "Phantom"
+                || cn ~== "DRRPLostSoul"
+                || cn ~== "Nightmare"
+
+                || cn ~== "Beholder"
+                || cn ~== "Rahovart"
+                || cn ~== "DRRPPainElemental"
+
+                || cn ~== "Infernis"
+                || cn ~== "DRRPArchVile"
+                || cn ~== "Apollyon"
+
+                || cn ~== "BulletPuff"
+
+                || ( ( other.bMISSILE == true ) && ( cn != "FireExtPuff") ) ) {
+            return false;
+        }
+
+        return true;
+    } // of override bool CanCollideWith( Actor other, bool passive )
+}
+
+class DRRPFire_zspatch: DRRPLava_zspatch {
+
+    override void BeginPlay() {
+        fireActorDamageMin = 1;
+        fireActorDamageMax = 2;
+        fireActorDamageTicks = 3;
+    } // of override void BeginPlay()
+
+    override void Tick() {
+        damageNearestPlayers();
+
+        //float ScaleTo = -0.5 * exp( 1 - ( float( health / SpawnHealth() ) ) ) + 1.5;
+        //float ScaleTo = 1 / ( 0.66 + ( 1 - float( health ) / float( SpawnHealth() ) ) ) - 0.5;
+        float ScaleTo = float( health ) / float( SpawnHealth() );
+        float ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
+        self.Scale = ( ScaleNow, ScaleNow );
+
+        Super.Tick();
+    } // of override void Tick()
+
+}
+
+class DRRPExplosion_zspatch: Actor {
+
+    override void PostBeginPlay() {
+        if ( pos.z <= ( FloorZ + self.height ) ) SetZ( FloorZ + ( self.height * 1.5 ) );
+    }
+
+}
+
+class DRRPFireExt_zspatch: Weapon { }
+
+class DRRPAxe_zspatch: Weapon { }
+
