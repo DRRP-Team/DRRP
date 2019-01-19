@@ -281,7 +281,7 @@ class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
 class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
 
     Default {
-        DamageFunction Random( 1, 4 );
+        DamageFunction Random( 2, 5 );
         Decal "PlasmaScorch";
     }
 }
