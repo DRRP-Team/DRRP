@@ -246,6 +246,9 @@ class DRRPRocket : Rocket replaces Rocket {
 }
 
 class DRRPPlasmagun : PlasmaRifle replaces PlasmaRifle {
+    Default {
+        +INVENTORY.ALWAYSPICKUP;
+    }
     States {
         Fire:
             PLSG A 0 A_GunFlash;
