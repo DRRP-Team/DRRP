@@ -213,7 +213,8 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
             SOUL ABCDCB 6 Bright
             Loop
         Use:
-            TNT1 A 0 HealThing(0, 999)
+            TNT1 A 0
+            TNT1 A 0 HealThing(999)
             TNT1 A 0 A_GiveInventory("DRRPBlueArmor", 1)
             Stop
     }
