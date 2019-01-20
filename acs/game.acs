@@ -36,11 +36,8 @@ function global str getThingName(int id, int state) {
 }
 
 function str localizeSound(str sound) {
-    str export = strcmp(GetCVar("language"), "rus")
-            ? StrParam(s:sound, s:"/en")
-            : StrParam(s:sound, s:"/ru");
-    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") => ", s:export);
-    return export;
+    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
+    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 // \\ Useful functions
