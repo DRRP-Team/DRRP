@@ -12,8 +12,8 @@ int maxchoices = 0;
 
 
 function void DRPGMessage (str Message){
-    print(s:"Not implemented!");
-    print(s:Message);
+    Print(s:"Not implemented!");
+    Print(s:Message);
 }
 
 Script 11 (void) {
@@ -47,13 +47,13 @@ bool testshader = false;
 
 Script 13 (void) {
     testshader = !testshader;
-    print(s:testshader?"Enable":"Disable");
+    Print(s:testshader?"Enable":"Disable");
     ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "TestShader", testshader);
     // AmbientSound("grunt/pain", 255);
-    // delay(15);
+    // Delay(15);
     // for(float c = 0; c < 8.0; c+=1.0) {
         // ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "TestShader", "coeff", c);testshader);
-        // delay(5);
+        // Delay(5);
     // }
     // ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);!testshader);
 }
@@ -88,16 +88,16 @@ Script 15 (int comp) { // About the computer
     
     SetHudSize(640, 480, false);
     SetFont("bigfont");
-    HudMessage(s:"Computer ", i:comp; HUDMSG_PLAIN, COMP_NUMB_ID, CR_RED,    310.0, 032.0, 15.0);
-    HudMessage(s:name;                HUDMSG_PLAIN, COMP_NAME_ID, CR_YELLOW, 320.0 - (strlen(name) * BIGFNT_WIDTH),        100.0, 15.0);
-    HudMessage(s:description;         HUDMSG_PLAIN, COMP_DESC_ID, CR_GREEN,  120.0 - (strlen(description) * BIGFNT_WIDTH), 240.0, 15.0);    
+    HudMessage(s:"Computer ", i:comp; HUDMSG_PLAIN, COMP_NUMB_ID, CR_RED, 310.0, 032.0, 15.0);
+    HudMessage(s:name;                HUDMSG_PLAIN, COMP_NAME_ID, CR_YELLOW, 320.0 - (strlen(name) * BIGFNT_WIDTH), 100.0, 15.0);
+    HudMessage(s:description;         HUDMSG_PLAIN, COMP_DESC_ID, CR_GREEN, 120.0 - (strlen(description) * BIGFNT_WIDTH), 240.0, 15.0);    
 }
 
 Script 16 (int comp) { // Activate the computer
     // TODO:
     switch(comp) {
         case 1: // Monologue API testing
-            print(s:"Switched");
+            Print(s:"Switched");
             ScriptCall("ConversationLineController", "SetArgument", 1, 
                 ScriptCall("ConversationLineController", "GetArgument", 1) + 1
             );
@@ -109,21 +109,21 @@ Script 16 (int comp) { // Activate the computer
             ACS_Execute(301, 0, 0, 2); // Typical generated script
             break;
         default:
-            print(s:"Computer ", i:comp, s:" is inactive");
+            Print(s:"Computer ", i:comp, s:" is inactive");
     }
 }
 
 Script 300 (int arg1, int arg2, int arg3, int arg4) {
-    print(s:"Arg1: ", i:arg1, s:"\nArg2: ", i:arg2, s:"\nArg3: ", i:arg3, s:"\nArg4: ", i:arg4);
+    Print(s:"Arg1: ", i:arg1, s:"\nArg2: ", i:arg2, s:"\nArg3: ", i:arg3, s:"\nArg4: ", i:arg4);
 }
 
 Script 301 (int larg, int carg, int arg3) {
     // PROPHESSOR:
     // Using ACS_NamedExecuteWithResult because of 4 available arguments instead of 3 in ACS_NamedExecute
     //                                                                     Message               Password  Script
-    if(carg == 2 && larg == 0) ACS_NamedExecuteWithResult("lockwindow", "The password is 1234",   "1234",   301,    carg);
+    if(carg == 2 && larg == 0) ACS_NamedExecuteWithResult("lockwindow", "The password is 1234", "1234", 301, carg);
     if(carg == 2 && larg == 0) Terminate;
-    if(carg == 2) print(s:"La pasvorto estas korekta");
+    if(carg == 2) Print(s:"La pasvorto estas korekta");
 }
 
 // Shop
@@ -168,7 +168,7 @@ script CURSOR ( void )
   SetHudSize(384,256,0);;
   HudMessage(s:"\cj*";
   HUDMSG_PLAIN,id_cursor,-1,52.1,170.1+(currentchoice*8.0),0.12);
-  delay(5);
+  Delay(5);
   restart;
 }
 
@@ -196,7 +196,7 @@ script 203 ( void ) NET // MENU SELECT.
   {
     ClearMsg(id_cursor);
     ACS_Execute(ThisScript,0);
-    delay(1); // Don't ask me why this needs to be here; it just... does.
+    Delay(1); // Don't ask me why this needs to be here; it just... does.
     currentchoice = 0;
   }
 }
@@ -308,10 +308,10 @@ script 53 ( void )
 }
 
 Script 684(int code, int front, int back) {
-    print(s:"Password is 1234");
+    Print(s:"Password is 1234");
     if(ScriptCall("DoorCodeInputActor", "DoorCode", code, front, back) == 0) {
-        print(s:"\c*Success");
+        Print(s:"\c*Success");
     } else {
-        print(s:"\cGFail");
+        Print(s:"\cGFail");
     }
 }

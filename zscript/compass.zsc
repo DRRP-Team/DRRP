@@ -27,7 +27,7 @@ class CompassHandler: EventHandler {
             // (North in DRRP) = (Top on the automap) = (90 degree in ZDoom).
             VisualStr = "<" .. VisualStr.Mid( CompassStrPos - StrVisibleLen / 2, StrVisibleLen ) .. ">";
 
-            Font CompassFont = Font.FindFont( "SMALLFONT" );
+            Font CompassFont = Font.FindFont( "smallfont" );
             screen.DrawText( CompassFont, Font.CR_DARKGRAY, 
                              320 - ( StrVisibleLen * 4 ), 0, VisualStr, 
                              DTA_VirtualWidth, 640, DTA_VirtualHeight, 480 ); /* */

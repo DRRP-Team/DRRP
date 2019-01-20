@@ -17,7 +17,7 @@ mat3 GetTBN() {
     vec3 b = dp2perp * duv1.y + dp1perp * duv2.y;
 
     // construct a scale-invariant frame
-    float invmax = inversesqrt(max(dot(t,t), dot(b,b)));
+    float invmax = inversesqrt(max(dot(t, t), dot(b, b)));
     return mat3(t * invmax, b * invmax, n);
 }
 

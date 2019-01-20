@@ -31,7 +31,7 @@ function int getStringHeight(str String) {
 }
 
 function global str getThingName(int id, int state) {
-    print(s:"getThingName(", i:id, s:", ", i:state, s:")");
+    Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
     return "DRRPTODO";
 }
 `
@@ -39,7 +39,7 @@ function global str localizeSound(str sound) {
     str export = strcmp(GetCVar("language"), "rus")
             ? StrParam(s:sound, s:"/en")
             : StrParam(s:sound, s:"/ru");
-    print(s:"localizeSound(", s:sound, s:") => ", s:export);
+    Print(s:"localizeSound(", s:sound, s:") => ", s:export);
     return export;
 }
 
@@ -59,7 +59,7 @@ script "fireextfade" (int mode) {
 Script "window"(str Text) { // s: -> str
     const int SYM_HEIGHT = 12; // Symbol's height is 12px
 
-    delay(2);
+    Delay(2);
 
     int ReadedKey;
     int FirstRun = 1;
@@ -72,22 +72,22 @@ Script "window"(str Text) { // s: -> str
     While(TRUE) {
         if(ReadedKey == BT_FORWARD && ScrollY > 0) {
             ScrollY -= SYM_HEIGHT;
-            delay(4);
+            Delay(4);
         }
         if(ReadedKey == BT_BACK && ScrollY < height * SYM_HEIGHT) {
             ScrollY += SYM_HEIGHT;
-            delay(4);
+            Delay(4);
         }
 
         SetHudSize(640, 480, true);
         SetHUDClipRect(0, 0, 0, 0, 0);
         SetFont("M_WINDOW");
         HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1);
-        SetFont("SMALLFONT");
+        SetFont("smallfont");
         SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
         HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
         SetHudSize(0, 0, false);
-        delay(1);
+        Delay(1);
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
@@ -111,11 +111,11 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
 
 Script "drpgquake"(int time, int intensivity) {
     ACS_Execute(3008, 0, time, intensivity);
-    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using DEPRECATED Script drpgquake");
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEPRECATED Script drpgquake");
 }
 
 Script "transformation"(int tid) {
-    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG]: Using correct Script transformation");
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script transformation");
     if(tid < 0) tid *= -1;
 
     SetActorState(tid, "Turn");

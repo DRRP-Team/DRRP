@@ -39,9 +39,9 @@ class ActorHeadLight : Spotlight {
     }
 
     enum ELocation {
-        HELMET          = 0,
-        RIGHT_SHOULDER  = 1,
-        LEFT_SHOULDER   = 2,
+        HELMET          = 0, 
+        RIGHT_SHOULDER  = 1, 
+        LEFT_SHOULDER   = 2, 
         CAMERA          = 3
     };
 

@@ -15,7 +15,7 @@ class NotebookHandler : EventHandler {
     Override
     void RenderOverlay(RenderEvent e) {
         if(players[consoleplayer].mo.CountInv("NotebookTooltipItem") >= 1) {
-            Font font = Font.FindFont("SMALLFONT");
+            Font font = Font.FindFont("smallfont");
             int key1, key2;
             [key1, key2] = Bindings.GetKeysForCommand("opennotebook");
 

@@ -5,7 +5,7 @@ Script 1 ENTER {
     SetHudSize(1024, 768, false);
     SetFont("DISC");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 1, CR_BLACK, 512.0, 384.0, 3.0, 3.0, 6.0);
-    delay(35 * 9);
+    Delay(35 * 9);
     SetMusic("D_TITLE");
     ChangeCamera(4, 1, 0);
     Thing_Activate(4);
@@ -14,66 +14,66 @@ Script 1 ENTER {
 }
 
 script 1000 (void) {
-    AmbientSound("ambient/drone1",127);
+    AmbientSound("ambient/drone1", 127);
     Delay(34 * 3);
     Restart;
 }
 
 script 13 (void){ //Logo
     Delay(35 * 2);
-    SetHudSize(640,400,0);
-    Setfont("bigfont");
-    Hudmessage(l:"DRRP_D_TMAP_PRESENTS";HUDMSG_FADEOUT, 0, CR_YELLOW, 320.4, 190.0, 3.5, 1.0);
+    SetHudSize(640, 400, 0);
+    SetFont("bigfont");
+    HudMessage(l:"DRRP_D_TMAP_PRESENTS";HUDMSG_FADEOUT, 0, CR_YELLOW, 320.4, 190.0, 3.5, 1.0);
     Delay(40 * 5);
-    Radius_Quake(6,12,0,10,0);
+    Radius_Quake(6, 12, 0, 10, 0);
     FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.3);
-    Hudmessage(l:"DRRP_D_TMAP_DRRP";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_DRPGRP"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    HudMessage(l:"DRRP_D_TMAP_DRRP";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_DRPGRP"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     
     Radius_Quake(6, 12, 0, 10, 0);
     Delay(44 * 5);
     
     FadeRange(255, 128, 0, 1.0, 0, 0, 0, 0.0, 0.3);
-    Setfont("bigfont");
-    Hudmessage(s:"PROPHESSOR";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_RPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    SetFont("bigfont");
+    HudMessage(s:"PROPHESSOR";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_RPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     Delay(42 * 5);
 
     FadeRange(0, 255, 255, 1.0, 0, 0, 0, 0.0, 0.3);
-    Setfont("bigfont");
-    Hudmessage(s:"UsernameAK";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_RUSERNAMEAK"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    SetFont("bigfont");
+    HudMessage(s:"UsernameAK";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_RUSERNAMEAK"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     Delay(42 * 5);
 
     FadeRange(0, 64, 0, 1.0, 0, 0, 0, 0.0, 0.3);
-    Setfont("bigfont");
-    Hudmessage(s:"Morthimer McMare";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_RMORTHIMER"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    SetFont("bigfont");
+    HudMessage(s:"Morthimer McMare";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_RMORTHIMER"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     Delay(42 * 5);
     
     FadeRange(128, 128, 255, 1.0, 0, 0, 0, 0.0, 0.3);
-    Setfont("bigfont");
-    Hudmessage(s:"StormCatcher.77";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_RSTORMCATCHER"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    SetFont("bigfont");
+    HudMessage(s:"StormCatcher.77";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_RSTORMCATCHER"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     Delay(42 * 5);
     
     FadeRange(255, 255, 0, 1.0, 0, 0, 0, 0.0, 0.3);
-    Setfont("bigfont");
-    Hudmessage(s:"DSSKULL1";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_RDSSKULL"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    SetFont("bigfont");
+    HudMessage(s:"DSSKULL1";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_RDSSKULL"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     Delay(42 * 5);
     
     FadeRange(255, 0, 255, 1.0, 0, 0, 0, 0.0, 0.3);
-    Setfont("bigfont");
-    Hudmessage(s:"Lolimpire";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    Hudmessage(l:"DRRP_D_TMAP_RLOLIMPIRE"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    SetFont("bigfont");
+    HudMessage(s:"Lolimpire";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    HudMessage(l:"DRRP_D_TMAP_RLOLIMPIRE"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     Delay(42 * 5);
     
     SetHudSize(640, 480, false);

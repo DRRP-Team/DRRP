@@ -7,7 +7,7 @@ script 10 ENTER { //Activate cut-scene
     ChangeCamera(1, 1, 0);
     FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.5, 30.0);
     SetMusic("D_DELTA");
-    delay(43 * 5);
+    Delay(43 * 5);
     ACS_NamedExecuteAlways("Credits", 0);
 }
 
@@ -21,7 +21,7 @@ Script "Credits" {
     
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
     
-    SetFont("SMALLFONT");
+    SetFont("smallfont");
     SetHudSize(320, 200);
     HudMessage(s:"You can move!"; HUDMSG_FADEINOUT, 2, CR_GOLD, 0.5, 0.5, 1);
     SetPlayerProperty(0, false, PROP_TOTALLYFROZEN);

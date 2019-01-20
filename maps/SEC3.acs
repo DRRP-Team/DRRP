@@ -15,17 +15,17 @@ function fixed getMediumY(int y) {
 }
 
 Script 666 ENTER{
-    SetHudSize(640,400,0);
-    Setfont("bigfont");
-    Hudmessage(l:"DRRP_B_ID61";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    //Setfont("smallfont");
-    //Hudmessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
-    ACS_Execute(1000,0);
+    SetHudSize(640, 400, 0);
+    SetFont("bigfont");
+    HudMessage(l:"DRRP_B_ID61";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    //SetFont("smallfont");
+    //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    ACS_Execute(1000, 0);
     ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
-    AmbientSound("ambient/drone1",127);
+    AmbientSound("ambient/drone1", 127);
     Delay(34*3);
     Restart;
 }

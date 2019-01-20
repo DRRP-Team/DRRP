@@ -8,7 +8,7 @@ str doorunlocked[7] = {"DRRP_SEC1_10", "DRRP_SEC1_12", "DRRP_SEC1_13", "DRRP_SEC
 script 5 (int doorf, int doorb, int textid) {
     ACS_Execute(3000, 0, doorf, doorb, 1);
     SectorSound("access/grantb1", 255);
-    print(l:doorunlocked[textid]);
+    Print(l:doorunlocked[textid]);
 
     switch (i++) {
         case 2:
@@ -32,13 +32,13 @@ script 5 (int doorf, int doorb, int textid) {
 
 script 2 (void) {
     ACS_Execute(3001, 0);
-    if(GetCVar("drrp_debug_mode")) print(s:"[DEBUG] Using DEPRECATED Script 2");
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG] Using DEPRECATED Script 2");
 }
 
 
 script 3 (void) {
     GiveInventory("MapRevealer", 1);
-    print(s:"Automap acquired.");
+    Print(s:"Automap acquired.");
 }
 function str getString (int id) {
     return StrParam(l:StrParam(s:"DRRP_SEC1_", i:id));
@@ -196,10 +196,10 @@ script 52 (int arg0, int arg1, int arg2) { // FIXME: Hardcoded script
 }
 
 script 777 ENTER {
-    //delay(35 * 5);
+    //Delay(35 * 5);
     SetHudSize(640, 400, false);
     SetFont("bigfont");
-    Hudmessage(l:"DRRP_B_ID59";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    HudMessage(l:"DRRP_B_ID59";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
     SetFont("smallfont");
     SetHudSize(640, 400, false);
     HudMessage(l:"DRRP_D_USEFLASHLIGHT"; HUDMSG_PLAIN, 6, CR_YELLOW, 0.5, 370.0, 7.0);
