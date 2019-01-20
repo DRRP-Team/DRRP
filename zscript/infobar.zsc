@@ -77,10 +77,10 @@ class InfobarHandler: EventHandler {
                 if ( ( InfobarCVar == null ) || !( InfobarCVar.GetBool() ) ) return;
 
                 InfobarItem InfobarInv = InfobarItem( Players[ i ].mo.FindInventory( "InfobarItem" ) );
-                Font InfobarFont = Font.FindFont( "SMALLFONT" );
+                Font InfobarFont = Font.FindFont( "smallfont" );
 
                 screen.DrawText( InfobarFont, InfobarInv.FontColor, 
-                                 320 - ( InfobarInv.InfoString.Length() * 4 ), 30,
+                                 320 - ( InfobarInv.InfoString.Length() * 4 ), 30, 
                                  InfobarInv.InfoString, 
                                  DTA_VirtualWidth, 640, DTA_VirtualHeight, 480 ); /* */
 

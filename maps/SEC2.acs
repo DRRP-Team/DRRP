@@ -16,17 +16,17 @@ function fixed getMediumY(int y) {
 
 
 Script 666 ENTER{
-    SetHudSize(640,400,0);
-    Setfont("bigfont");
-    Hudmessage(l:"DRRP_B_ID60";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    //Setfont("smallfont");
-    //Hudmessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
-    ACS_Execute(1000,0);
+    SetHudSize(640, 400, 0);
+    SetFont("bigfont");
+    HudMessage(l:"DRRP_B_ID60";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    //SetFont("smallfont");
+    //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    ACS_Execute(1000, 0);
     ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
-    AmbientSound("ambient/drone1",127);
+    AmbientSound("ambient/drone1", 127);
     Delay(34*3);
     Restart;
 }
@@ -259,7 +259,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.7);
         AmbientSound(localizeSound("voice/powershake"), 255);
         Delay(43*2);
-        Radius_Quake(4,20,0,15,0);
+        Radius_Quake(4, 20, 0, 15, 0);
         AmbientSound("alarm/alarm1", 255);
         FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
         SetThingSpecial(464, 0, 255, 64, 64, 64); // Dynamic light
@@ -290,15 +290,15 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         SetLineTexture(12, SIDE_FRONT, TEXTURE_MIDDLE, "-");
         SetLineTexture(12, SIDE_BACK, TEXTURE_MIDDLE, "-");
         SpawnForced("DRRPFire", getMediumX(116), getMediumY(124), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=6 STATE=0
-        Radius_Quake(12,20,0,5,0);
+        Radius_Quake(12, 20, 0, 5, 0);
         FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.3);
         Thing_Remove(463); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=14 Y=15
-        Sector_SetColor(666,128,0,0,0);
-        Sector_SetColor(668,128,0,0,0);
-        Sector_SetColor(100,128,0,0,0);
-        Sector_SetColor(13, 128,0,0,0);
+        Sector_SetColor(666, 128, 0, 0, 0);
+        Sector_SetColor(668, 128, 0, 0, 0);
+        Sector_SetColor(100, 128, 0, 0, 0);
+        Sector_SetColor(13, 128, 0, 0, 0);
         Sector_SetFade(13, 255, 0, 0);
-        Sector_SetColor(30,128,0,0,0);
+        Sector_SetColor(30, 128, 0, 0, 0);
         SpawnSpot("Explosion", 526);
         SpawnSpot("Explosion", 559);
         SpawnSpot("Explosion", 561);
@@ -339,7 +339,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         Delay(43*3);
         AmbientSound(localizeSound("voice/only"), 200);
         Delay(43*2);
-        ACS_Execute(1001,0);
+        ACS_Execute(1001, 0);
     }
 }
 
@@ -601,18 +601,18 @@ bool invasion      = false;
 int preinvasion  = 0; //2 comps
 
 Script 666 ENTER{
-    SetHudSize(640,400,0);
-    Setfont("dbigfont");
-    Hudmessage(l:"DRRP_B_ID60";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    ACS_Execute(1000,0);
+    SetHudSize(640, 400, 0);
+    SetFont("dbigfont");
+    HudMessage(l:"DRRP_B_ID60";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    ACS_Execute(1000, 0);
 }
 
 script 1000 (void) {
     if(invasion){
         AmbientSound("ambient/mach04", 127);
     }else{
-        AmbientSound("ambient/drone1",127);
+        AmbientSound("ambient/drone1", 127);
     }
     Delay(34*3);
     Restart;
@@ -621,53 +621,53 @@ script 1000 (void) {
 script 9 (void){//Invasion line
     if(preinvasion == 2 && !invasion){
             invasion = true;
-            //print(s:"Are you serious?");
+            //Print(s:"Are you serious?");
             FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.7);
             ACS_ExecuteWait(11, 0, 42);
             AmbientSound(localizeSound("voice/powershake"), 255);
             Delay(43*2);
-            //print(s:"Are you \cgIDIOT?!!!");
-            Radius_Quake(4,43*2,0,10,0);
+            //Print(s:"Are you \cgIDIOT?!!!");
+            Radius_Quake(4, 43*2, 0, 10, 0);
             AmbientSound("alarm/alarm1", 255);
             FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
             SetThingSpecial(24, 0, 255, 100, 100);
             Delay(43);
             AmbientSound("alarm/alarm1", 255);
             FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
-            SpawnSpot("Explosion",23);
+            SpawnSpot("Explosion", 23);
             Delay(43);
             AmbientSound("alarm/alarm1", 255);
             FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
-            SpawnSpot("Explosion",23);
+            SpawnSpot("Explosion", 23);
             Delay(43*2);
-            SpawnSpot("Explosion",23);
-            SpawnSpot("Explosion",16);
-            SpawnSpot("DRRPFire",16);
-            Radius_Quake(12,43,1,10,0);
+            SpawnSpot("Explosion", 23);
+            SpawnSpot("Explosion", 16);
+            SpawnSpot("DRRPFire", 16);
+            Radius_Quake(12, 43, 1, 10, 0);
             FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.3);
-            Sector_SetColor(666,128,0,0,0);
-            Sector_SetColor(668,128,0,0,0);
-            Sector_SetColor(100,128,0,0,0);
-            Sector_SetColor(13, 128,0,0,0);
+            Sector_SetColor(666, 128, 0, 0, 0);
+            Sector_SetColor(668, 128, 0, 0, 0);
+            Sector_SetColor(100, 128, 0, 0, 0);
+            Sector_SetColor(13, 128, 0, 0, 0);
             Sector_SetFade(13, 255, 0, 0);
-            Sector_SetColor(30,128,0,0,0);
+            Sector_SetColor(30, 128, 0, 0, 0);
             Floor_LowerByValue(100, 999, 64);
             ActivatorSound("DSPLDETH", 196);
             Thing_Remove(17);
             Delay(43 / 2);
-            SpawnSpot("DRRPFire",18);
+            SpawnSpot("DRRPFire", 18);
             Delay(43 / 2);
             Delay(43*3);
-            //SpawnSpot("DRRPFire",18);
+            //SpawnSpot("DRRPFire", 18);
             AmbientSound(localizeSound("voice/only"), 200);
             Delay(43*2);
-            ACS_Execute(1001,0);
+            ACS_Execute(1001, 0);
     }
 }
 
 script 10 (void) { //quake
-    Radius_Quake(9,12,0,10,0);
-    Door_Open(2,128,0);
+    Radius_Quake(9, 12, 0, 10, 0);
+    Door_Open(2, 128, 0);
 }
 
 script 42 (void) { // Behind the door 42

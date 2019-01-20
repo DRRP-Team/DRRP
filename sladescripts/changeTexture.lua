@@ -52,7 +52,7 @@ function execute(map)
     local sides = map.sidedefs
     
     -- Loop through all sidedefs
-    for i,side in ipairs(sides) do
+    for i, side in ipairs(sides) do
         -- Replace the middle texture
         if P_textureType == 'texturemiddle' and side.textureMiddle == P_textureFrom then
             side:setStringProperty('texturemiddle', P_textureTo)
@@ -73,7 +73,7 @@ function execute(map)
     local sectors = map.sectors
 
     -- Loop through all sectors
-    for i,sector in ipairs(sectors) do
+    for i, sector in ipairs(sectors) do
         -- Set ceiling texture
         if P_textureType == 'textureceiling' and sector.textureCeiling == P_textureFrom then
             sector:setStringProperty('textureceiling', P_textureEnd)

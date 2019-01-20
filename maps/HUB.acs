@@ -18,13 +18,13 @@ function fixed getMediumY(int y) {
 }
 
 Script 666 ENTER {
-    SetHudSize(640,400,0);
-    Setfont("bigfont");
-    Hudmessage(l:"DRRP_B_ID57";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    //Setfont("smallfont");
-    //Hudmessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
-    ACS_Execute(1000,0);
-    ACS_Execute(1001,0);
+    SetHudSize(640, 400, 0);
+    SetFont("bigfont");
+    HudMessage(l:"DRRP_B_ID57";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    //SetFont("smallfont");
+    //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    ACS_Execute(1000, 0);
+    ACS_Execute(1001, 0);
     ACS_Execute(3005, 0); // WIP level
     ACS_Execute(3004, 0); // Give automap
 }
@@ -36,24 +36,24 @@ Script 667 RETURN {
 }
 
 script 1000 (void) {
-    AmbientSound("ambient/drone1",127);
+    AmbientSound("ambient/drone1", 127);
     Delay(34*3);
     Restart;
 }
 
 script 1001 (void){
-    int her = random(0,3);
+    int her = random(0, 3);
     switch(her){
         case 0:
         break;
         case 1:
-        AmbientSound(localizeSound("ms/doctor"),127);
+        AmbientSound(localizeSound("ms/doctor"), 127);
         break;
         case 2:
-        AmbientSound(localizeSound("ms/psy"),127);
+        AmbientSound(localizeSound("ms/psy"), 127);
         break;
         case 3:
-        AmbientSound(localizeSound("ms/safe"),127);
+        AmbientSound(localizeSound("ms/safe"), 127);
     }
     Delay(34*15);
     Restart;
@@ -530,66 +530,66 @@ script 66 (int arg0, int arg1, int arg2) { //X=15 Y=31 START=L_317 END=L_317 UNK
 /*
 script 1 (void)
 {//Comp
-ACTIVATORSOUND("misc/chat2", 255);
-print(s:"Hello.\nWelcome to Mars.");
-  DELAY(34);
+ActivatorSound("misc/chat2", 255);
+Print(s:"Hello.\nWelcome to Mars.");
+  Delay(34);
 }
 
 script 2 (void)
 {//Shop
-ACTIVATORSOUND(localizeSound("voice/only"), 255);
-print(s:"\cgShop is offline!");
-  DELAY(34*2);
+ActivatorSound(localizeSound("voice/only"), 255);
+Print(s:"\cgShop is offline!");
+  Delay(34*2);
 }
 
 script 3 (int id)
 {//Dialog
-ACTIVATORSOUND("misc/chat2", 255);
+ActivatorSound("misc/chat2", 255);
     switch (id) {
         case 0:
-        print(s:"\cdHi, Marine!");
+        Print(s:"\cdHi, Marine!");
         break;
 
         case 1:
-        print(s:"\cdI'll just heal you!");
+        Print(s:"\cdI'll just heal you!");
         HealThing(100);
         break;
 
         case 666:
-        print(s:"\cgFuck you, cheater!");
-        ACTIVATORSOUND(localizeSound("voice/wtf"), 255);
+        Print(s:"\cgFuck you, cheater!");
+        ActivatorSound(localizeSound("voice/wtf"), 255);
         break;
     }
-DELAY(34);
+Delay(34);
 }
 /*
         Thing_Stop(0);
         SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
 while(true) {
 if(GetPlayerInput(INPUT_BUTTONS) != 0) {break;}
-delay(1);
+Delay(1);
 }
 
 
 script 4 (void)
 { //Map
-ACTIVATORSOUND("misc/chat2", 255);
+ActivatorSound("misc/chat2", 255);
 GiveInventory("MapRevealer", 1);
-print(s:"\cgAutomap data was loaded!");
-DELAY(34*3);
+Print(s:"\cgAutomap data was loaded!");
+Delay(34*3);
 }
 
 script 5 (void)
 {//Closed
-ACTIVATORSOUND("acess/deny1", 255);
-print(s:"\cgDoor closed!");
-DELAY(34);
+ActivatorSound("acess/deny1", 255);
+Print(s:"\cgDoor closed!");
+Delay(34);
 }
 
 script 6 (int sector)
 {//Opener
-    ACTIVATORSOUND("acess/GRANT1", 255);
-    Door_Open(sector,128,0);
+    ActivatorSound("acess/GRANT1", 255);
+    Door_Open(sector, 128, 0);
 }
 
 script 7 (int doorf, int doorb, int nosound) {//DoorOpener
@@ -603,8 +603,8 @@ script 7 (int doorf, int doorb, int nosound) {//DoorOpener
 }
 
 script 10 (void) { //quake
-    Radius_Quake(9,12,0,10,0);
-    Door_Open(2,128,0);
+    Radius_Quake(9, 12, 0, 10, 0);
+    Door_Open(2, 128, 0);
 }
 
 //#define MAX_LEVELS 16
@@ -616,7 +616,7 @@ script 778(int levelnum) {
     if(exitedLevels[levelnum-1]) {
         Teleport_NewMap(levelnum, 0, 0);
     } else {
-        print(s:"You need to complete previous level at first.");
+        Print(s:"You need to complete previous level at first.");
         Teleport_NewMap(levelnum, 0, 0); //FIXME: Cincrement
     }
 }*/

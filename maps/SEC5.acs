@@ -15,16 +15,16 @@ function fixed getMediumY(int y) {
 }
 
 Script 666 ENTER{
-    SetHudSize(640,400,0);
-    Setfont("bigfont");
-    Hudmessage(l:"DRRP_B_ID63";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    Setfont("smallfont");
-    ACS_Execute(1000,0);
+    SetHudSize(640, 400, 0);
+    SetFont("bigfont");
+    HudMessage(l:"DRRP_B_ID63";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    SetFont("smallfont");
+    ACS_Execute(1000, 0);
     ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
-    AmbientSound("ambient/drone1",127);
+    AmbientSound("ambient/drone1", 127);
     Delay(34*3);
     Restart;
 }
@@ -633,60 +633,60 @@ script 99 (int arg0, int arg1, int arg2) { //X=25 Y=29 START=L_347 END=L_363 UNK
 
 
 script 669 (void) {
-    print(s:"You found the easter egg by Lolimpire");
+    Print(s:"You found the easter egg by Lolimpire");
     AmbientSound("DOGSONG", 127);    
 }
 
 script 670 (void) {
-    print(s:"You found the easter egg by PROPHESSOR");
+    Print(s:"You found the easter egg by PROPHESSOR");
     AmbientSound("HODSONG", 127);    
 }
 /*
 script 1 (void) 
 {//Comp
-ACTIVATORSOUND("misc/chat2", 255);
-print(s:"Hello.\nWelcome to Mars.");
-  DELAY(34);
+ActivatorSound("misc/chat2", 255);
+Print(s:"Hello.\nWelcome to Mars.");
+  Delay(34);
 }
 
 script 3 (int id) 
 {//Dialog
-ACTIVATORSOUND("misc/chat2", 255);
+ActivatorSound("misc/chat2", 255);
     switch (id) {
         case 0:
-        print(s:"\cdHi, Marine!");
+        Print(s:"\cdHi, Marine!");
         break;
         
         case 1:
-        print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
+        Print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
         break;
         
         case 2:
-        print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
+        Print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
         break;
     }
-DELAY(34);
+Delay(34);
 }
 
 script 4 (void)
 { //Map
-ACTIVATORSOUND("misc/chat2", 255);
+ActivatorSound("misc/chat2", 255);
 GiveInventory("MapRevealer", 1);
-print(s:"\cgAutomap data was loaded!");
-DELAY(34*3);
+Print(s:"\cgAutomap data was loaded!");
+Delay(34*3);
 }
 
 script 5 (void) 
 {//Closed
-ACTIVATORSOUND("acess/deny1", 255);
-print(s:"\cgDoor closed!");
-DELAY(34);
+ActivatorSound("acess/deny1", 255);
+Print(s:"\cgDoor closed!");
+Delay(34);
 }
 
 script 6 (int sector)
 {//Opener
-    ACTIVATORSOUND("acess/GRANT1", 255);
-    Door_Open(sector,128,0);
+    ActivatorSound("acess/GRANT1", 255);
+    Door_Open(sector, 128, 0);
 }
 
 script 7 (int doorf, int doorb, int nosound) {//DoorOpener
@@ -707,7 +707,7 @@ script 8 (int doorf, int doorb, int nosound) {//DoorCloser
     }
 
 script 10 (void) { //quake
-    Radius_Quake(9,12,0,10,0);
-    Door_Open(2,128,0);
+    Radius_Quake(9, 12, 0, 10, 0);
+    Door_Open(2, 128, 0);
 }*/
 

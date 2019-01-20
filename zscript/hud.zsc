@@ -11,7 +11,7 @@ class NullHUD : BaseStatusBar {
     Override
     void Init() {
         Super.Init();
-        SetSize(0,320,200);
+        SetSize(0, 320, 200);
     }
 }
 
