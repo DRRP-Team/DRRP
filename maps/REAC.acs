@@ -1,0 +1,264 @@
+#include "zcommon.acs"
+
+const int MONSTER_COUNT = 12;
+
+str monsters[MONSTER_COUNT] = {
+    "DemonWolf",
+    "ZombieCpt",
+    "Assassin",
+    "ImpLord",
+    "Nightmare",
+    "Belphegor",
+    "Wretched",
+    "DRRPRevenant",
+    "DRRPPainElemental",
+    "Druj",
+    "Apollyon",
+    "BaronOfHell"
+};
+
+function str getString(int id) {
+    return StrParam(l:StrParam(s:"DRRP_REAC_", i:id));
+}
+
+int state = 0;
+
+Script 666 ENTER {
+    FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 15.0);
+    SetHudSize(640,400,0);
+    Setfont("bigfont");
+    Hudmessage(l:"DRRP_B_ID58";HUDMSG_FADEOUT, 0,CR_RED, 320.4, 190.0, 3.5, 1.0);
+    //Setfont("smallfont");
+    //Hudmessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    ACS_Execute(1000,0);
+    ACS_Execute(3005, 0);
+}
+
+script 1000 (void) {
+    AmbientSound("ambient/drone1",127);
+    AmbientSound("ambient/mach04",127);
+    Delay(34*3);
+    Restart;
+}
+
+script 1001 (void) {
+    AmbientSound("alarm/alarm2",127);
+    Delay(87);
+    Restart;
+}
+
+script 100 (void){//Gate
+
+}
+
+script 101 (void){//Core
+    switch (state) {
+        case 0:
+            AmbientSound("core/c1",127);
+            state++;
+            break;
+        case 1:
+            AmbientSound("core/c2",127);
+            state++;
+            break;
+        case 2:
+            AmbientSound("core/c3",127);
+            state++;
+            break;
+        case 3:
+            AmbientSound("core/c4",127);
+            ACS_Terminate(667,0);
+            Radius_Quake(12,43,0,10,0);
+            ACS_Execute(1001,0);
+            Delay(43);
+            AmbientSound(localizeSound("voice/hireactemp"),127);
+            Delay(43*2);
+            SpawnSpot("Explosion",666);
+            Delay(5);
+            SpawnSpot("Explosion",666);
+            ACTIVATORSOUND(localizeSound("voice/god"), 255);
+            SpawnSpot("Explosion",666);
+            Delay(43);
+            SpawnSpot("Explosion",666);
+            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
+            Radius_Quake(12,24,0,10,0);
+            AmbientSound("techno/poweron",127);
+            //Too many explosions
+            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
+            SetLineTexture(664, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            SetLineTexture(665, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            SetLineTexture(666, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            SetLineTexture(667, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            Radius_Quake(12,64,50,10,667);
+            FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
+            Thing_Remove(32);
+            Floor_LowerByValue(666,128,128);
+            Floor_LowerByValue(667,128,128);
+            //Ceiling_RaiseByValue(666,128,64);
+            Radius_Quake(12,43,0,10,0);
+            SpawnSpot("Explosion",666);
+            AmbientSound("techno/poweron",127);
+            Delay(15);
+            Radius_Quake(12,43,0,5,0);
+            SpawnSpot("Explosion",666);
+            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
+            AmbientSound("monster/cyberdemon/sigh1",127); //Activate cut-scene
+            Ceiling_LowerByValue(667,128,128); //Replace with 3D floor
+            Delay(43*2);
+            SpawnSpot("Explosion",666);
+            AmbientSound("monster/cyberdemon/sigh2",200);
+            Radius_Quake(12,43,5,10,0);
+            SpawnSpot("Explosion",666);
+            SpawnSpot("Explosion",667);
+            SpawnSpotForced("Cyberdemon",667,696, 192);
+            SetThingSpecial(696, 80, 102);
+            SetLineTexture(665, LINE_FRONT, TEXTURE_TOP, "DRDC49");
+            SetLineTexture(666, LINE_FRONT, TEXTURE_TOP, "DRDC50");
+            SetLineTexture(667, LINE_FRONT, TEXTURE_TOP, "RCOFA00");
+            ACS_Terminate(1001,0);
+            Delay(43);
+            ACTIVATORSOUND(localizeSound("voice/wtf"), 255);
+            break;
+    }
+}
+
+Script 102 (void) { // End
+    AmbientSound("monster/cyberdemon/death", 255);
+    SpawnSpot("Explosion",666);
+    SetLineTexture(665, LINE_FRONT, TEXTURE_TOP, "REAC1");
+    SetLineTexture(666, LINE_FRONT, TEXTURE_TOP, "REAC2");
+    SetLineTexture(667, LINE_FRONT, TEXTURE_TOP, "REAC1");
+    AmbientSound("teleport/tohell", 255);
+    delay(15);
+    FadeRange(0, 0, 0, 0.0, 255, 128, 0, 1.0, 0.5);
+    delay(15);
+    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", true);
+    FadeRange(255, 128, 0, 1.0, 255, 128, 0, 0.0, 0.5);
+    Radius_Quake(12, 43, 0, 10, 0);
+    FadeRange(0, 0, 0, 0.0, 255, 128, 0, 0.8, 7.9);
+    Radius_Quake(6, 35 * 8, 0, 10, 0);
+    Delay(35 * 7);
+    SpawnSpot("BlackHole", 666, 666);
+    SpawnSpot("BlackHole", 444, 666);
+    SetLineBlocking(343, OFF);
+    PlaySound(434, "teleport/loop", CHAN_VOICE, 255, true);
+    Delay(35 * 4);
+    Teleport(673, 0, 1);
+}
+
+Script 2 (void) {
+    PlaySound(0, "teleport/loop", CHAN_VOICE, 255, true);
+}
+
+script 103 (void){//Pregate
+    Radius_Quake(9,43,0,10,0);
+    AmbientSound("DSBDCLS",127);
+    AmbientSound(localizeSound("bet/made"),200);
+}
+
+script 104 (void){//Kronos
+    ACS_NamedExecuteWait("window", 0, getString(11));
+    AmbientSound(localizeSound("bet/destroy"),200);
+    Delay(50);
+    ACS_NamedExecute("transformation", 0, 10);
+    Delay(5);
+    Radius_Quake(8,43,0,20,0);
+    ThrustThing(192, 30, 1, 0);
+    Thing_Remove(10);
+    SpawnSpotForced("Kronos", 555, 0, 0);
+}
+
+int lavacomputercounter = 0;
+int mapcomputercounter = 0;
+
+Script 1 (int id)  {//Comp
+    ACTIVATORSOUND("misc/chat2", 255);
+    switch (id) {
+        case 0:
+            print(s:"Hello.\nWelcome to Mars.");
+            break;
+        case 1:
+            ACS_Execute(7,0,3,4);
+            SpawnSpot("ImpLord", 9, 0, 3);
+            Door_Open(1,16,0);
+            break;
+        case 2:
+            if(mapcomputercounter == 0) {
+                ACS_NamedExecuteWait("window", 0, getString(18)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=18
+                GiveInventory("MapRevealer", 1); // ( USE IF_VAR( 0 ) ) AUTOMAP
+                mapcomputercounter++;
+                break;
+            }
+            ACS_NamedExecuteWait("window", 0, getString(19)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=19
+            break;
+        case 3:
+            if(lavacomputercounter > 1) {
+                ACS_NamedExecuteWait("window", 0, getString(8)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=8
+                break;
+            } else if(lavacomputercounter == 0) {
+                ACS_NamedExecuteWait("window", 0, getString(6));
+                lavacomputercounter++;
+                break;
+            }
+            ACS_NamedExecuteWait("window", 0, getString(7)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=7
+            lavacomputercounter++;
+            break;
+        case 4:
+            AmbientSound(localizeSound("bet/earth"),200);
+            Delay(45*2);
+            SetLineBlocking(664, OFF);
+            Line_SetBlocking(664, OFF, BLOCKF_PROJECTILES | BLOCKF_HITSCAN);
+            SetLineTexture(664, SIDE_FRONT, TEXTURE_MIDDLE, "");
+            SetLineTexture(664, SIDE_BACK, TEXTURE_MIDDLE, "");
+            Radius_Quake(12,22,0,10,0);
+            AmbientSound(localizeSound("voice/reacon"),127);
+            Delay(75);
+            ACS_Execute(667,0);
+            break;
+    }
+    DELAY(34);
+}
+
+script 332 (void) { // Lava trigger
+    if(lavacomputercounter != 2) Terminate;
+    lavacomputercounter++;
+    ACS_NamedExecuteWait("window", 0, getString(9)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
+    Delay(10); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=300
+    ACS_NamedExecuteWait("window", 0, getString(10)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
+    SetMusic("D_EVIL");
+    FadeRange(255, 128, 0, 1.0, 0, 0, 0, 0.0, 5.0);
+    //lava
+    Radius_Quake(10,43*2,0,10,0);
+    //Floor_RaiseToHighest(8,16);
+    Floor_RaiseByValue(8, 8, 128);
+    SetSectorDamage(8, 0, "None", 65535, 65535);
+    Sector_SetDamage(8, 0, 0);
+    ChangeFloor(8, "RROCK05");
+    Delay(35 * 4);
+    //Floor
+    ACS_Execute(7, 0, 9, 5, 1);
+}
+
+script 5 (void)
+{//Closed
+ACS_ExecuteAlways(3001, 0);
+}
+
+script 6 (int sector)
+{//Opener
+    ACTIVATORSOUND("acess/GRANT1", 255);
+    Door_Open(sector,128,0);
+}
+
+script 7 (int doorf, int doorb, int nosound) {//DoorOpener
+    ACS_ExecuteAlways(3000, 0, doorf, doorb, nosound);
+}
+
+script 667 (void){
+    int rnd = random(0,MONSTER_COUNT);
+    //print(s:monsters[rnd]);
+    SpawnSpot(monsters[rnd], 666, 0, 192);
+    SpawnSpot("TeleportFog", 666);
+    Delay(43*5);
+    Restart;
+}
