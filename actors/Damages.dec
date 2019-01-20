@@ -5,7 +5,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-Actor DRRPFire : DRRPFire_zspatch 10250 {
+Actor DRRPFire : DRRPFire_ZSPatch 10250 {
     //$Category Damage
     //$Sprite FIREA0
 
@@ -48,7 +48,7 @@ Actor DRRPFire : DRRPFire_zspatch 10250 {
     }
 }
 
-Actor DRRPLava: DRRPLava_zspatch 10251 {
+Actor DRRPLava: DRRPLava_ZSPatch 10251 {
     //$Category Damage
     //$Sprite LAVAA0
 
@@ -89,7 +89,7 @@ Actor DRRPLava: DRRPLava_zspatch 10251 {
 
 // Scripted
 
-Actor Explosion: DRRPExplosion_zspatch {
+Actor Explosion: DRRPExplosion_ZSPatch {
     +NOGRAVITY
     +DONTFALL
     +FLOORCLIP
