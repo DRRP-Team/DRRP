@@ -8,7 +8,7 @@
 class WeaponController play {
 
     static const class<Weapon> WeaponsToCheck[] = {
-        "DRRPFireExt_zspatch" /*"DRRPFireExt"*/, "DRRPAxe_zspatch",
+        "DRRPAxe_zspatch", "DRRPFireExt_zspatch" /*"DRRPFireExt"*/,
         "DRRPPistol", 
         "DRRPShotgun", "DRRPSuperShotgun",
         "DRRPChaingun",
