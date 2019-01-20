@@ -42,10 +42,10 @@ class DoorCodeInputHandler : EventHandler {
             if(item == null) return;
 
             if (e.Args[0] == 1) {
-                players[e.Player].mo.A_PlaySound("access/grant1");
+                players[e.Player].mo.A_PlaySound("access/grant1" .. StringTable.Localize("$DRRP_D_SOUND_SUFFIX"));;
                 ACS_Execute(-int(name("lockwindow")), 0, 0, 0, 0);
             } else if (e.Args[0] == 2) {
-                players[e.Player].mo.A_PlaySound("access/deny1");
+                players[e.Player].mo.A_PlaySound("access/deny1" .. StringTable.Localize("$DRRP_D_SOUND_SUFFIX"));;
                 players[e.Player].mo.A_Print(StringTable.Localize("$DRRP_D_MENU_PASSCODE_WRONG"));
                 ACS_Terminate(-int(name("lockwindow")), 0);
                 ACS_Terminate(item.scriptnum, 0);
