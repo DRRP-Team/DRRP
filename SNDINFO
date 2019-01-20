@@ -27,8 +27,8 @@ $random fire/loop { // FIXME: Remove?
     fire/loop3
 }
 
-acess/grant1            sounds/DEPRECATED  // FIXME: Remove OK
-acess/deny1             sounds/DEPRECATED  // FIXME: Remove OK
+acess/grant1            sounds/DEPRECATED // FIXME: Remove OK
+acess/deny1             sounds/DEPRECATED // FIXME: Remove OK
 acess/grant2            sounds/DEPRECATED // FIXME: Remove OK
 acess/deny2             sounds/DEPRECATED // FIXME: Remove OK
 acess/orange            sounds/DEPRECATED // FIXME: Remove OK
@@ -53,51 +53,51 @@ $random access/grantb {
     access/grantb2
 }
 
-techno/lightsof     DEPRECATED // FIXME: Remove OK
+techno/lightsof     DEPRECATED  // FIXME: Remove OK
 techno/poweroff     LIGHTSOF
-techno/lighton      DEPRECATED // FIXME: Remove OK
-techno/lightson     DEPRECATED// FIXME: Remove OK
+techno/lighton      DEPRECATED  // FIXME: Remove OK
+techno/lightson     DEPRECATED  // FIXME: Remove OK
 techno/poweron      LIGHTSON
 
-voice/reac01        DEPRECATED // FIXME: Remove OK
+voice/reac01        DEPRECATED  // FIXME: Remove OK
 voice/reac01/ru     REAC01_RU
 voice/reac01/en     REAC01_EN
-voice/reacon        DEPRECATED // FIXME: Remove OK
+voice/reacon        DEPRECATED  // FIXME: Remove OK
 voice/reacon/ru     REACON_RU
 voice/reacon/en     REACON_EN
-voice/hireactemp    DEPRECATED // FIXME: Remove OK
+voice/hireactemp    DEPRECATED  // FIXME: Remove OK
 voice/hireactemp/ru HITEMP_RU
 voice/hireactemp/en HITEMP_EN
-voice/wtf           DEPRECATED // FIXME: Remove FIREEXT
+voice/wtf           DEPRECATED  // FIXME: Remove FIREEXT
 voice/wtf/ru        WTF_RU
 voice/wtf/en        WTF_EN
-voice/god           DEPRECATED // FIXME: Remove OK
+voice/god           DEPRECATED  // FIXME: Remove OK
 voice/god/ru        GOD_RU
 voice/god/en        GOD_EN
-voice/only          DEPRECATED // FIXME: Remove OK
+voice/only          DEPRECATED  // FIXME: Remove OK
 voice/only/ru       ONLY_RU
 voice/only/en       ONLY_EN
 voice/powerback     PWBACK
-voice/powershake    PWSH_RU // FIXME: Remove OK
+voice/powershake    DEPRECATED  // FIXME: Remove OK
 voice/powershake/ru PWSH_RU
 voice/powershake/en PWSH_EN
 voice/teleport321   TP
-voice/systemsoff    DEPRECATED // FIXME: Remove NONE
+voice/systemsoff    DEPRECATED  // FIXME: Remove NONE
 voice/systemsoff/ru SYSOFF_RU
 voice/systemsoff/en SYSOFF_EN
 voice/nofire        NOFIRE
 voice/c2            C2
-voice/uac           DEPRECATED // FIXME: Remove OK
+voice/uac           DEPRECATED  // FIXME: Remove OK
 voice/uac/ru        FUCK_RU
 voice/uac/en        FUCK_EN
 
-bet/destroy         BDEST_RU // FIXME: Remove OK
+bet/destroy         DEPRECATED    // FIXME: Remove OK
 bet/destroy/ru      BDEST_RU
 bet/destroy/en      BDEST_EN
-bet/made            BMADE_RU // FIXME: Remove OK
+bet/made            DEPRECATED    // FIXME: Remove OK
 bet/made/ru         BMADE_RU
 bet/made/en         BMADE_EN
-bet/earth           BEAR_RU // FIXME: Remove OK
+bet/earth           DEPRECATED     // FIXME: Remove OK
 bet/earth/ru        BEAR_RU
 bet/earth/en        BEAR_EN
 
@@ -122,15 +122,15 @@ teleport/loop       sounds/Teleport/teleport_loop
 
 misc/k_pkup         DSKEYUP
 
-// DSPLDETH         DSPLDETH  // TODO: Is it needless?
-// DSPLPAIN         DSPLPAIN  // TODO: Is it needless?
-// DSPOPAIN         DSPOPAIN  // TODO: Is it needless?
-// DSRADIO          DSRADIO   // TODO: Is it needless?
+DSPLDETH            DSPLDETH
+DSPLPAIN            DSPLPAIN
+DSPOPAIN            DSPOPAIN
+DSRADIO             DSRADIO
 CYBRSIGH            DEPRECATED  // FIXME: Remove OK
-CYBRSIGH2           DEPRECATED // FIXME: Remove OK
-CYBRDTH             DEPRECATED   // FIXME: Remove OK
-// DSBDCLS          DSBDCLS   // TODO: Is it needless?
-TAUNT               DEPRECATED     // FIXME: Remove OK
+CYBRSIGH2           DEPRECATED  // FIXME: Remove OK
+CYBRDTH             DEPRECATED  // FIXME: Remove OK
+DSBDCLS             DSBDCLS
+TAUNT               DEPRECATED  // FIXME: Remove OK
 ZBMB1               ZBMB1
 ZBMB2               ZBMB2
 DSBLUD03            DSBLUD03
