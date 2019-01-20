@@ -3,15 +3,15 @@
 // Coordinate offset is: (0;0)
 
 function str getString(int id) {
-	return StrParam(l:StrParam(s:"DRRP_SEC3_", i:id));
+    return StrParam(l:StrParam(s:"DRRP_SEC3_", i:id));
 }
 
 function fixed getMediumX(int x) {
-	return (x * 8) << 16;
+    return (x * 8) << 16;
 }
 
 function fixed getMediumY(int y) {
-	return (2048 - y * 8) << 16;
+    return (2048 - y * 8) << 16;
 }
 
 Script 666 ENTER{
@@ -20,14 +20,14 @@ Script 666 ENTER{
     Hudmessage(l:"DRRP_B_ID61";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
     //Setfont("smallfont");
     //Hudmessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
-	ACS_Execute(1000,0);
-	ACS_Execute(3005, 0);
+    ACS_Execute(1000,0);
+    ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
-	AmbientSound("ambient/drone1",127);
-	Delay(34*3);
-	Restart;
+    AmbientSound("ambient/drone1",127);
+    Delay(34*3);
+    Restart;
 }
 
 script 1 (int arg0, int arg1, int arg2) { //X=13 Y=1 START=L_0 END=L_1 UNKN=1048576 UNKN2=0
@@ -195,9 +195,9 @@ script 40 (int arg0, int arg1, int arg2) { //X=9 Y=14 START=L_75 END=L_85 UNKN=5
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(58), getString(57), 40); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=57 MSG=58
     if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 1500, 1); // ( USE IF_VAR( 0 ) ) EARTHQUAKE TIME=1500 INTENSITY=1
     if(arg2 == 0) Delay(52); // ( USE IF_VAR( 0 ) ) SLEEP MSEC=1500
-	if(arg2 == 0) SetLineBlocking(1, BLOCK_NOTHING);
-	if(arg2 == 0) SetLineTexture(1, SIDE_FRONT, TEXTURE_MIDDLE, "-");
-	if(arg2 == 0) SetLineTexture(1, SIDE_BACK, TEXTURE_MIDDLE, "-");
+    if(arg2 == 0) SetLineBlocking(1, BLOCK_NOTHING);
+    if(arg2 == 0) SetLineTexture(1, SIDE_FRONT, TEXTURE_MIDDLE, "-");
+    if(arg2 == 0) SetLineTexture(1, SIDE_BACK, TEXTURE_MIDDLE, "-");
     if(arg2 == 0) Thing_Remove(461); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=14 Y=13
     if(arg2 == 0) Thing_Remove(494); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=15 Y=14
     if(arg2 == 0) Thing_Remove(463); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=14 Y=15
@@ -213,12 +213,12 @@ script 41 (int arg0, int arg1, int arg2) { //X=14 Y=14 START=L_86 END=L_94 UNKN=
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(60)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=60
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=13 Y=18 VAL=4
     if(arg2 == 0) Thing_Remove(434); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=13 Y=18
-	if(arg2 == 0) Thing_Remove(435);
-	if(arg2 == 0) ACS_Execute(3000, 0, 13, 14); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=181
+    if(arg2 == 0) Thing_Remove(435);
+    if(arg2 == 0) ACS_Execute(3000, 0, 13, 14); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=181
     if(arg2 == 0) SetLineBlocking(12, BLOCK_NOTHING);
-	if(arg2 == 0) SetLineTexture(12, SIDE_FRONT, TEXTURE_MIDDLE, "-");
-	if(arg2 == 0) SetLineTexture(12, SIDE_BACK, TEXTURE_MIDDLE, "-");
-	if(arg2 == 0) Thing_Remove(492); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=15 Y=12
+    if(arg2 == 0) SetLineTexture(12, SIDE_FRONT, TEXTURE_MIDDLE, "-");
+    if(arg2 == 0) SetLineTexture(12, SIDE_BACK, TEXTURE_MIDDLE, "-");
+    if(arg2 == 0) Thing_Remove(492); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=15 Y=12
     if(arg2 == 0) Thing_Remove(496); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=15 Y=16
     if(arg2 == 0) Thing_Remove(428); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=13 Y=12
     if(arg2 == 0) Thing_Remove(432); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=13 Y=16
@@ -454,7 +454,7 @@ script 83 (int arg0, int arg1, int arg2) { //X=28 Y=25 START=L_218 END=L_218 UNK
 }
 script 84 (int arg0, int arg1, int arg2) { //X=29 Y=25 START=L_219 END=L_223 UNKN=2621440 UNKN2=0
     int sgenid0 = -953; // [x=29, y=25]
-	if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(32), getString(31), 84); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=31 MSG=32
+    if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(32), getString(31), 84); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=31 MSG=32
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(33)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=33
     if(arg2 == 0) ACS_Execute(3000, 0, 10, 11); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=23
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=29 Y=25
