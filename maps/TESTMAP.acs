@@ -2,8 +2,8 @@
 
 #define CURSOR 200
 
-#define id_cursor		9970
-#define id_choices		9980
+#define id_cursor        9970
+#define id_choices        9980
 
 int ThisScript = 0;
 int menu = OFF;
@@ -12,15 +12,15 @@ int maxchoices = 0;
 
 
 function void DRPGMessage (str Message){
-	print(s:"Not implemented!");
-	print(s:Message);
+    print(s:"Not implemented!");
+    print(s:Message);
 }
 
 Script 11 (void) {
-	SetFont("HELP");
-	hudmessage(s:"A"; HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.5, 0.5, 1.0);
-	SetFont("SmallFont");
-	hudmessage(s:"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; HUDMSG_FADEOUT, 1, CR_UNTRANSLATED, 0.5, 0.6, 1.0, 1.0);
+    SetFont("HELP");
+    hudmessage(s:"A"; HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.5, 0.5, 1.0);
+    SetFont("SmallFont");
+    hudmessage(s:"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; HUDMSG_FADEOUT, 1, CR_UNTRANSLATED, 0.5, 0.6, 1.0, 1.0);
 }
 
 function void DRRPPrint(str Text) { //s: -> str
@@ -30,7 +30,7 @@ function void DRRPPrint(str Text) { //s: -> str
     //While ( ReadedKey != BT_USE ) {
         SetFont( "M_MENU" );
         HudMessage( s: "A"; HUDMSG_PLAIN, 5, 0, 0.5, 5.5, 1.0 );
-		hudmessage(s:"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; HUDMSG_FADEOUT, 6, CR_UNTRANSLATED, 0.5, 5.6, 5.0, 1.0);
+        hudmessage(s:"123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; HUDMSG_FADEOUT, 6, CR_UNTRANSLATED, 0.5, 5.6, 5.0, 1.0);
         //Print( s: Text );
         //Delay( 1 ); //Latent functions cannot be used inside functions.
         //ReadedKey = GetPlayerInput( 0, INPUT_BUTTONS );//-1
@@ -40,22 +40,22 @@ function void DRRPPrint(str Text) { //s: -> str
 }
 
 script 12 (void) {
-	DRRPPrint("Hello, Marine!");
+    DRRPPrint("Hello, Marine!");
 }
 
 bool testshader = false;
 
 Script 13 (void) {
-	testshader = !testshader;
-	print(s:testshader?"Enable":"Disable");
-	ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "TestShader", testshader);
-	// AmbientSound("grunt/pain", 255);
-	// delay(15);
-	// for(float c = 0; c < 8.0; c+=1.0) {
-		// ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "TestShader", "coeff", c);testshader);
-		// delay(5);
-	// }
-	// ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);!testshader);
+    testshader = !testshader;
+    print(s:testshader?"Enable":"Disable");
+    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "TestShader", testshader);
+    // AmbientSound("grunt/pain", 255);
+    // delay(15);
+    // for(float c = 0; c < 8.0; c+=1.0) {
+        // ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "TestShader", "coeff", c);testshader);
+        // delay(5);
+    // }
+    // ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);!testshader);
 }
 
 // Computer room
@@ -66,64 +66,64 @@ const int COMP_NUMB_ID = 44;
 const int BIGFNT_WIDTH = 5;
 
 Script 15 (int comp) { // About the computer
-	str name        = "";	
-	str description = "";
-	
-	switch(comp) {
-		case 1:
-			name        = "Monologue API testing";
-			description = "This computer switches scientist's phrases";
-			break;
-		case 2:
-			name		= "WIP Level notificator";
-			description	= "Notificates user this level is work-in-progress";
-			break;
-		case 3:
-			name		= "Door code API";
-			description	= "A test for PROPHESSOR's door code API";
-			break;
-		default:
-			Terminate;
-	}
-	
-	SetHudSize(640, 480, false);
-	SetFont("bigfont");
-	HudMessage(s:"Computer ", i:comp; HUDMSG_PLAIN, COMP_NUMB_ID, CR_RED,    310.0, 032.0, 15.0);
-	HudMessage(s:name;                HUDMSG_PLAIN, COMP_NAME_ID, CR_YELLOW, 320.0 - (strlen(name) * BIGFNT_WIDTH),        100.0, 15.0);
-	HudMessage(s:description;         HUDMSG_PLAIN, COMP_DESC_ID, CR_GREEN,  120.0 - (strlen(description) * BIGFNT_WIDTH), 240.0, 15.0);	
+    str name        = "";    
+    str description = "";
+    
+    switch(comp) {
+        case 1:
+            name        = "Monologue API testing";
+            description = "This computer switches scientist's phrases";
+            break;
+        case 2:
+            name        = "WIP Level notificator";
+            description    = "Notificates user this level is work-in-progress";
+            break;
+        case 3:
+            name        = "Door code API";
+            description    = "A test for PROPHESSOR's door code API";
+            break;
+        default:
+            Terminate;
+    }
+    
+    SetHudSize(640, 480, false);
+    SetFont("bigfont");
+    HudMessage(s:"Computer ", i:comp; HUDMSG_PLAIN, COMP_NUMB_ID, CR_RED,    310.0, 032.0, 15.0);
+    HudMessage(s:name;                HUDMSG_PLAIN, COMP_NAME_ID, CR_YELLOW, 320.0 - (strlen(name) * BIGFNT_WIDTH),        100.0, 15.0);
+    HudMessage(s:description;         HUDMSG_PLAIN, COMP_DESC_ID, CR_GREEN,  120.0 - (strlen(description) * BIGFNT_WIDTH), 240.0, 15.0);    
 }
 
 Script 16 (int comp) { // Activate the computer
-	// TODO:
-	switch(comp) {
-		case 1: // Monologue API testing
-			print(s:"Switched");
-			ScriptCall("ConversationLineController", "SetArgument", 1, 
-				ScriptCall("ConversationLineController", "GetArgument", 1) + 1
-			);
-			break;
-		case 2:
-			ACS_ExecuteAlways(3003, 0);
-			break;
-		case 3:
-			ACS_Execute(301, 0, 0, 2); // Typical generated script
-			break;
-		default:
-			print(s:"Computer ", i:comp, s:" is inactive");
-	}
+    // TODO:
+    switch(comp) {
+        case 1: // Monologue API testing
+            print(s:"Switched");
+            ScriptCall("ConversationLineController", "SetArgument", 1, 
+                ScriptCall("ConversationLineController", "GetArgument", 1) + 1
+            );
+            break;
+        case 2:
+            ACS_ExecuteAlways(3003, 0);
+            break;
+        case 3:
+            ACS_Execute(301, 0, 0, 2); // Typical generated script
+            break;
+        default:
+            print(s:"Computer ", i:comp, s:" is inactive");
+    }
 }
 
 Script 300 (int arg1, int arg2, int arg3, int arg4) {
-	print(s:"Arg1: ", i:arg1, s:"\nArg2: ", i:arg2, s:"\nArg3: ", i:arg3, s:"\nArg4: ", i:arg4);
+    print(s:"Arg1: ", i:arg1, s:"\nArg2: ", i:arg2, s:"\nArg3: ", i:arg3, s:"\nArg4: ", i:arg4);
 }
 
 Script 301 (int larg, int carg, int arg3) {
-	// PROPHESSOR:
-	// Using ACS_NamedExecuteWithResult because of 4 available arguments instead of 3 in ACS_NamedExecute
-	//                                                                     Message               Password  Script
-	if(carg == 2 && larg == 0) ACS_NamedExecuteWithResult("lockwindow", "The password is 1234",   "1234",   301,    carg);
-	if(carg == 2 && larg == 0) Terminate;
-	if(carg == 2) print(s:"La pasvorto estas korekta");
+    // PROPHESSOR:
+    // Using ACS_NamedExecuteWithResult because of 4 available arguments instead of 3 in ACS_NamedExecute
+    //                                                                     Message               Password  Script
+    if(carg == 2 && larg == 0) ACS_NamedExecuteWithResult("lockwindow", "The password is 1234",   "1234",   301,    carg);
+    if(carg == 2 && larg == 0) Terminate;
+    if(carg == 2) print(s:"La pasvorto estas korekta");
 }
 
 // Shop
@@ -279,14 +279,14 @@ script 53 ( void )
     GiveInventory("LargeMedkit",1);
     break;
   case 2:
-	GiveInventory("SoulSphere",1);
-	break;
+    GiveInventory("SoulSphere",1);
+    break;
   case 3:
     GiveInventory("Berserker",1);
-	break;
+    break;
   case 4:
-	GiveInventory("DogCollar",1);
-	break;
+    GiveInventory("DogCollar",1);
+    break;
   default:
     // A menu within a menu! Feel free to have as many branches as you wish.
     // (The masochistic types may want to do a full dialog tree for an NPC.) :P
@@ -308,10 +308,10 @@ script 53 ( void )
 }
 
 Script 684(int code, int front, int back) {
-	print(s:"Password is 1234");
-	if(ScriptCall("DoorCodeInputActor", "DoorCode", code, front, back) == 0) {
-		print(s:"\c*Success");
-	} else {
-		print(s:"\cGFail");
-	}
+    print(s:"Password is 1234");
+    if(ScriptCall("DoorCodeInputActor", "DoorCode", code, front, back) == 0) {
+        print(s:"\c*Success");
+    } else {
+        print(s:"\cGFail");
+    }
 }

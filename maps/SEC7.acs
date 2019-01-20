@@ -3,15 +3,15 @@
 // Coordinate offset is: (0;0)
 
 function str getString(int id) {
-	return StrParam(l:StrParam(s:"DRRP_SEC7_", i:id));
+    return StrParam(l:StrParam(s:"DRRP_SEC7_", i:id));
 }
 
 function fixed getMediumX(int x) {
-	return (x * 8) << 16;
+    return (x * 8) << 16;
 }
 
 function fixed getMediumY(int y) {
-	return (2048 - y * 8) << 16;
+    return (2048 - y * 8) << 16;
 }
 
 Script 666 ENTER{
@@ -19,15 +19,15 @@ Script 666 ENTER{
     Setfont("bigfont");
     Hudmessage(l:"DRRP_B_ID65";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
     Setfont("smallfont");
-	ACS_Execute(1000,0);
-	ACS_Execute(11, 0); //Spawn first scientist-marine
-	ACS_Execute(3005, 0);
+    ACS_Execute(1000,0);
+    ACS_Execute(11, 0); //Spawn first scientist-marine
+    ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
-	AmbientSound("ambient/drone1",127);
-	Delay(34*3);
-	Restart;
+    AmbientSound("ambient/drone1",127);
+    Delay(34*3);
+    Restart;
 }
 
 int weaponMask = 0;
@@ -132,9 +132,9 @@ script 10 (int arg0, int arg1, int arg2) { //X=10 Y=5 START=L_73 END=L_73 UNKN=5
 }
 script 11 (int arg0, int arg1, int arg2) { //X=27 Y=5 START=L_74 END=L_77 UNKN=2097152 UNKN2=0
     int sgenid0 = 869; // [x=27, y=5]
-	if(arg2 == 1) SetLineBlocking(667, BLOCK_NOTHING);
-	if(arg2 == 1) SetLineTexture(667, SIDE_FRONT, TEXTURE_MIDDLE, "-");
-	if(arg2 == 1) SetLineTexture(667, SIDE_BACK, TEXTURE_MIDDLE, "-");
+    if(arg2 == 1) SetLineBlocking(667, BLOCK_NOTHING);
+    if(arg2 == 1) SetLineTexture(667, SIDE_FRONT, TEXTURE_MIDDLE, "-");
+    if(arg2 == 1) SetLineTexture(667, SIDE_BACK, TEXTURE_MIDDLE, "-");
     if(arg2 == 1) Thing_Remove(899); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=28 Y=3
     if(arg2 == 1) SpawnForced("Explosion", getMediumX(28), getMediumY(4), 32); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) EXPLODE X=28 Y=4 TYPE=0
     if(arg2 == 1) SpawnSpotForced("Explosion", 1321, 0, 0);
@@ -175,9 +175,9 @@ script 15 (int arg0, int arg1, int arg2) { //X=15 Y=6 START=L_97 END=L_118 UNKN=
     if(arg2 == 0) ACS_Execute(3000, 0, 1); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=260
     if(arg2 == 0) SpawnSpotForced("Explosion", 488, 0, 0);
     if(arg2 == 0) Delay(15);
-	if(arg2 == 0) SetLineBlocking(666, BLOCK_NOTHING);
-	if(arg2 == 0) SetLineTexture(666, SIDE_FRONT, TEXTURE_MIDDLE, "-");
-	if(arg2 == 0) SetLineTexture(666, SIDE_BACK, TEXTURE_MIDDLE, "-");
+    if(arg2 == 0) SetLineBlocking(666, BLOCK_NOTHING);
+    if(arg2 == 0) SetLineTexture(666, SIDE_FRONT, TEXTURE_MIDDLE, "-");
+    if(arg2 == 0) SetLineTexture(666, SIDE_BACK, TEXTURE_MIDDLE, "-");
     if(arg2 == 0) Thing_Remove(423); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=13 Y=7
     if(arg2 == 0) Thing_Remove(455); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=14 Y=7
     if(arg2 == 0) Thing_Remove(421); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=13 Y=5
@@ -397,7 +397,7 @@ script 59 (int arg0, int arg1, int arg2) { //X=22 Y=26 START=L_213 END=L_217 UNK
     int sgenid0 = 603; // [x=18, y=27]
     int sgenid1 = -730; // [x=22, y=26]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(6)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=6
-	if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(7)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=7
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(7)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=7
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 1 ) ) SET_VAR X=18 Y=27 VAL=1
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=22 Y=26
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(8)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=8
@@ -405,7 +405,7 @@ script 59 (int arg0, int arg1, int arg2) { //X=22 Y=26 START=L_213 END=L_217 UNK
 script 60 (int arg0, int arg1, int arg2) { //X=23 Y=26 START=L_218 END=L_220 UNKN=1572864 UNKN2=0
     //int sgenid0 = -762; // [x=23, y=26]
     /*if(arg2 == 16)*/ ACS_NamedExecuteWait("window", 0, getString(5)); // ( IF_VAR( -32768 ) ) SHOW_MONOLOG_WITH_SOUND STR=5
-	ACS_Execute(3000, 0, 2); // ( IF_VAR( -32768 ) ) DOOR_UNLOCK LINE=37
+    ACS_Execute(3000, 0, 2); // ( IF_VAR( -32768 ) ) DOOR_UNLOCK LINE=37
     //if(arg2 == 16) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( IF_VAR( -32768 ) ) INC_VAR X=23 Y=26
 }
 script 61 (int arg0, int arg1, int arg2) { //X=6 Y=27 START=L_221 END=L_221 UNKN=524288 UNKN2=0
@@ -423,7 +423,7 @@ script 62 (int arg0, int arg1, int arg2) { //X=18 Y=27 START=L_222 END=L_232 UNK
     if(arg2 == 1) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=100
     if(arg2 == 1) Teleport(0, 666, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TELEPORT X=7 Y=28 DIR=8
     if(arg2 == 1) weaponMask = ScriptCall("WeaponController", "TakeAllWeapons", PlayerNumber()); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TAKE_OR_RETURN_WEAPONS ACTION=0
-	if(arg2 == 1) ACS_Execute(65, 0);
+    if(arg2 == 1) ACS_Execute(65, 0);
 }
 script 63 (int arg0, int arg1, int arg2) { //X=3 Y=28 START=L_233 END=L_238 UNKN=3145728 UNKN2=0
     int sgenid0 = -124; // [x=3, y=28]
@@ -444,7 +444,7 @@ script 65 (int arg0, int arg1, int arg2) { //X=7 Y=28 START=L_240 END=L_250 UNKN
     if(arg2 == 0) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SLEEP MSEC=100
     if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 100, 8); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) EARTHQUAKE TIME=100 INTENSITY=8
     if(arg2 == 0) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SLEEP MSEC=100
-	if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 100, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) EARTHQUAKE TIME=100 INTENSITY=4
+    if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 100, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) EARTHQUAKE TIME=100 INTENSITY=4
     if(arg2 == 0) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SLEEP MSEC=100
     if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 100, 2); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) EARTHQUAKE TIME=100 INTENSITY=2
     if(arg2 == 0) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SLEEP MSEC=100

@@ -1,20 +1,20 @@
 #include "zcommon.acs"
 
 function str getString(int id) {
-	return StrParam(l:StrParam(s:"DRRP_INTRO_", i:id));
+    return StrParam(l:StrParam(s:"DRRP_INTRO_", i:id));
 }
 
 // Offset: -576; 448
 
 function fixed getMediumX(int x) {
-	return (576 + x * 8) << 16;
+    return (576 + x * 8) << 16;
 }
 
 function fixed getMediumY(int y) {
-	return (2048 - 448 - y * 8) << 16;
+    return (2048 - 448 - y * 8) << 16;
 }
 function str getThingName(int id, int dead) {
-	return "DRRPNull";
+    return "DRRPNull";
 }
 
 Script 666 ENTER{
@@ -32,7 +32,7 @@ Script 1000 (void) {
 
 script 1 (int arg0, int arg1, int arg2) { //X=4 Y=2 START=L_0 END=L_0 UNKN=524288 UNKN2=0
     /* Not Implemented */
-	// ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=459
+    // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=459
 }
 script 2 (int arg0, int arg1, int arg2) { //X=5 Y=2 START=L_1 END=L_3 UNKN=1572864 UNKN2=0
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=1075646209 X=15 Y=29
@@ -334,7 +334,7 @@ script 59 (int arg0, int arg1, int arg2) { //X=2 Y=17 START=L_155 END=L_162 UNKN
 script 60 (int arg0, int arg1, int arg2) { //X=25 Y=17 START=L_163 END=L_163 UNKN=524288 UNKN2=0
     int sgenid0 = -847; // [x=26, y=15]
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=26 Y=15 VAL=2
-	Radius_Quake(9,12,0,10,0);
+    Radius_Quake(9,12,0,10,0);
     Door_Open(2,128,0);
 }
 script 61 (int arg0, int arg1, int arg2) { //X=3 Y=18 START=L_164 END=L_177 UNKN=7340032 UNKN2=0
@@ -342,7 +342,7 @@ script 61 (int arg0, int arg1, int arg2) { //X=3 Y=18 START=L_164 END=L_177 UNKN
     int sgenid1 = -114; // [x=3, y=18]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(34)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=34
     if(arg2 == 0) SpawnForced("Civilian", getMediumX(20), getMediumY(180), 0, 86); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
-	if(arg2 == 0) SetThingSpecial(86, 80, 77);
+    if(arg2 == 0) SetThingSpecial(86, 80, 77);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=2 Y=22 VAL=1
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=3 Y=18
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(35)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=35
@@ -421,7 +421,7 @@ script 75 (int arg0, int arg1, int arg2) { //X=25 Y=21 START=L_203 END=L_216 UNK
     if(arg2 == 0) SpawnForced("ZombiePvt", getMediumX(116), getMediumY(68), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=9 STATE=0
     if(arg2 == 0) SpawnForced("Troop", getMediumX(204), getMediumY(92), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=10 STATE=0
 
-	ACS_Execute(3003, 0, 1);
+    ACS_Execute(3003, 0, 1);
 }
 script 76 (int arg0, int arg1, int arg2) { //X=27 Y=21 START=L_217 END=L_217 UNKN=524288 UNKN2=536870912
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=19
@@ -527,56 +527,56 @@ Script 666 ENTER{
     SetHudSize(640,400,0);
     Setfont("dbigfont");
     Hudmessage(l:"DRRP_B_ID56";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-	ACS_Execute(1000,0);
+    ACS_Execute(1000,0);
 }
 
 script 1000 (void) {
-	AmbientSound("ambient/drone1",127);
-	Delay(34*3);
-	Restart;
+    AmbientSound("ambient/drone1",127);
+    Delay(34*3);
+    Restart;
 }
 
 script 1 (void) { // Comp
-	ActivatorSound("misc/chat2", 255);
-	print(s:"Hello.\nWelcome to Mars.");
-	Delay(34);
+    ActivatorSound("misc/chat2", 255);
+    print(s:"Hello.\nWelcome to Mars.");
+    Delay(34);
 }
 
 script 3 (int id) 
 {//Dialog
-	ActivatorSound("misc/chat2", 255);
-	switch (id) {
-		case 0:
-		print(s:"\cdHi, Marine!");
-		break;
-		
-		case 1:
-		print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
-		break;
-		
-		case 2:
-		print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
-		break;
-		
-		case 6:
-		ACS_Execute(3000,0,6,5,1);
-		print(s:"\cdI've open this door!");
-		Delay(43);
-	}
-	Delay(34);
+    ActivatorSound("misc/chat2", 255);
+    switch (id) {
+        case 0:
+        print(s:"\cdHi, Marine!");
+        break;
+        
+        case 1:
+        print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
+        break;
+        
+        case 2:
+        print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
+        break;
+        
+        case 6:
+        ACS_Execute(3000,0,6,5,1);
+        print(s:"\cdI've open this door!");
+        Delay(43);
+    }
+    Delay(34);
 }
 
 script 4 (void) { //Map
-	ActivatorSound("misc/chat2", 255);
-	GiveInventory("MapRevealer", 1);
-	print(s:"\cgAutomap data was loaded!");
-	Delay(34*3);
+    ActivatorSound("misc/chat2", 255);
+    GiveInventory("MapRevealer", 1);
+    print(s:"\cgAutomap data was loaded!");
+    Delay(34*3);
 }
 
 script 6 (int sector)
 {//Opener
-	ACTIVATORSOUND("acess/GRANT1", 255);
-	Door_Open(sector,128,0);
+    ACTIVATORSOUND("acess/GRANT1", 255);
+    Door_Open(sector,128,0);
 }
 
 script 7 (int doorf, int doorb, int nosound) {//DoorOpener
@@ -584,25 +584,25 @@ script 7 (int doorf, int doorb, int nosound) {//DoorOpener
 }
 
 script 10 (void) { //quake
-	Radius_Quake(9,12,0,10,0);
-	Door_Open(2,128,0);
+    Radius_Quake(9,12,0,10,0);
+    Door_Open(2,128,0);
 }
 
 script 11 (void){//spawner
-	Door_Open(1,128,0);
-	SpawnSpotFacing("ZombiePvt", 20);
-	SpawnSpotFacing("Troop", 21, 0);
-	SpawnSpotFacing("Phantom", 22);
-	SpawnSpotFacing("Hellhound", 23);
-	SpawnSpotFacing("BullDemon", 24);
+    Door_Open(1,128,0);
+    SpawnSpotFacing("ZombiePvt", 20);
+    SpawnSpotFacing("Troop", 21, 0);
+    SpawnSpotFacing("Phantom", 22);
+    SpawnSpotFacing("Hellhound", 23);
+    SpawnSpotFacing("BullDemon", 24);
 }
 
 script 667 (void) {
-	if((ClassifyActor(0) & ACTOR_PLAYER) && stricmp(GetWeapon(), "DRRPAxe") == 0) {
-		Radius_Quake2(0, 1, 17, 0, 128, "");
-		Delay(17);
-		Ceiling_RaiseToNearest(0, 4096);
-	}
+    if((ClassifyActor(0) & ACTOR_PLAYER) && stricmp(GetWeapon(), "DRRPAxe") == 0) {
+        Radius_Quake2(0, 1, 17, 0, 128, "");
+        Delay(17);
+        Ceiling_RaiseToNearest(0, 4096);
+    }
 }
 
 */

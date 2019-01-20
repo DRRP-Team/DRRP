@@ -3,15 +3,15 @@
 // Coordinate offset is: (0;0)
 
 function str getString(int id) {
-	return StrParam(l:StrParam(s:"DRRP_SEC4_", i:id));
+    return StrParam(l:StrParam(s:"DRRP_SEC4_", i:id));
 }
 
 function fixed getMediumX(int x) {
-	return (x * 8) << 16;
+    return (x * 8) << 16;
 }
 
 function fixed getMediumY(int y) {
-	return (2048 - y * 8) << 16;
+    return (2048 - y * 8) << 16;
 }
 
 Script 666 ENTER{
@@ -20,13 +20,13 @@ Script 666 ENTER{
     Hudmessage(l:"DRRP_B_ID62";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
     //Setfont("smallfont");
     //Hudmessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
-	ACS_Execute(1000,0);
+    ACS_Execute(1000,0);
 }
 
 script 1000 (void) {
-	AmbientSound("ambient/drone1",127);
-	Delay(34*3);
-	Restart;
+    AmbientSound("ambient/drone1",127);
+    Delay(34*3);
+    Restart;
 }
 
 script 1 (int arg0, int arg1, int arg2) { //X=13 Y=2 START=L_0 END=L_1 UNKN=1048576 UNKN2=0
@@ -132,7 +132,7 @@ script 24 (int arg0, int arg1, int arg2) { //X=25 Y=7 START=L_40 END=L_56 UNKN=8
     if(arg2 == 3) Delay(12); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=350
     if(arg2 == 3) Thing_Remove(807); // ( USE MODIFYWORLD IF_VAR( 4 ) ) HIDE_THINGS_AT X=25 Y=7
     if(arg2 == 3) SpawnForced("DRRPImp", getMediumX(204), getMediumY(60), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
-	if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=25 Y=7
     if(arg2 == 3) Delay(7); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=200
@@ -140,18 +140,18 @@ script 24 (int arg0, int arg1, int arg2) { //X=25 Y=7 START=L_40 END=L_56 UNKN=8
 }
 script 25 (int arg0, int arg1, int arg2) { //X=26 Y=7 START=L_57 END=L_64 UNKN=4194304 UNKN2=0
     int sgenid0 = -839; // [x=26, y=7]
-	if(ScriptCall("ConversationController", "GetArgument", -808) != 1) Terminate; // You must transform the Civilian before access GoodDoc
+    if(ScriptCall("ConversationController", "GetArgument", -808) != 1) Terminate; // You must transform the Civilian before access GoodDoc
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(21)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=21
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=26 Y=7
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(22)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=22
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=26 Y=7
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(23)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG_WITH_SOUND STR=23
     if(arg2 == 2) ACS_Execute(3000, 0, 12, 11); // ( USE IF_VAR( 2 ) ) DOOR_UNLOCK LINE=301
-	if(arg2 == 2) { // Remove blocking characters
-		Thing_Remove(499);
-		Thing_Remove(531);
-		Thing_Remove(495);
-	}
+    if(arg2 == 2) { // Remove blocking characters
+        Thing_Remove(499);
+        Thing_Remove(531);
+        Thing_Remove(495);
+    }
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=26 Y=7
     if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(24)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=24
 }
@@ -181,8 +181,8 @@ script 33 (int arg0, int arg1, int arg2) { //X=3 Y=9 START=L_72 END=L_72 UNKN=52
 }
 script 34 (int arg0, int arg1, int arg2) { //X=16 Y=9 START=L_73 END=L_81 UNKN=4718592 UNKN2=0
     int sgenid0 = -521; // [x=16, y=9]
-	if(arg2 == 0) ACS_Execute(3002, 0, 1);
-	if(arg2 == 0) ACS_Execute(3000, 0, 6, 5);
+    if(arg2 == 0) ACS_Execute(3002, 0, 1);
+    if(arg2 == 0) ACS_Execute(3000, 0, 6, 5);
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=521
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_OPEN LINE=521
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=455
@@ -303,18 +303,18 @@ script 54 (int arg0, int arg1, int arg02) { //X=16 Y=17 START=L_137 END=L_147 UN
     int sgenid4 = -499; // [x=15, y=19]
     int sgenid5 = -531; // [x=16, y=19]
     int sgenid6 = -560;//529; // [x=16, y=17]
-	int arg2 = ScriptCall("ConversationController", "GetArgument", sgenid6);
+    int arg2 = ScriptCall("ConversationController", "GetArgument", sgenid6);
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SET_VAR X=20 Y=19 VAL=4
     if(arg2 == 1) Thing_Remove(660); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=20 Y=20
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid1, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SET_VAR X=20 Y=20 VAL=0
     if(arg2 == 1) Thing_Remove(595); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=18 Y=19
-	if(arg2 == 1) Thing_Remove(436); // Purple civilian
+    if(arg2 == 1) Thing_Remove(436); // Purple civilian
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid2, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SET_VAR X=18 Y=19 VAL=0
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid3, 3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SET_VAR X=15 Y=14 VAL=3
     if(arg2 == 1) SpawnForced("Scientist1", getMediumX(124), getMediumY(156), 0, 499); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=10 STATE=0
-	if(arg2 == 1) SetThingSpecial(499, 80, 58);
+    if(arg2 == 1) SetThingSpecial(499, 80, 58);
     if(arg2 == 1) SpawnForced("Civilian1", getMediumX(132), getMediumY(156), 0, 531); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=11 STATE=0
-	if(arg2 == 1) SetThingSpecial(531, 80, 59);
+    if(arg2 == 1) SetThingSpecial(531, 80, 59);
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid4, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SET_VAR X=15 Y=19 VAL=1
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid5, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SET_VAR X=16 Y=19 VAL=1
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid6, arg2 + 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) INC_VAR X=16 Y=17
@@ -340,7 +340,7 @@ script 58 (int arg0, int arg1, int arg2) { //X=15 Y=19 START=L_156 END=L_163 UNK
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=15 Y=19
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG_WITH_SOUND STR=57
     if(arg2 == 2) SpawnForced("DrGuerard", getMediumX(124), getMediumY(124), 0, 495); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=12 STATE=0
-	if(arg2 == 2) SetThingSpecial(495, 80, 52);
+    if(arg2 == 2) SetThingSpecial(495, 80, 52);
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid1, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=15 Y=15 VAL=1
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=15 Y=19
     if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(58)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=58
@@ -463,10 +463,10 @@ script 76 (int arg0, int arg1, int arg2) { //X=23 Y=23 START=L_225 END=L_244 UNK
     if(arg2 == 0) Thing_Remove(463); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=14 Y=15
     if(arg2 == 0) ACS_Execute(3000, 0, 10, 9, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=367
     if(arg2 == 0) SpawnForced("Scientist1", getMediumX(164), getMediumY(164), 0, 660); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
-	if(arg2 == 0) SetThingSpecial(660, 80, 65);
+    if(arg2 == 0) SetThingSpecial(660, 80, 65);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid3, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=20 Y=20 VAL=1
     if(arg2 == 0) SpawnForced("Civilian1", getMediumX(148), getMediumY(156), 0, 595); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
-	if(arg2 == 0) SetThingSpecial(595, 80, 60);
+    if(arg2 == 0) SetThingSpecial(595, 80, 60);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid4, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=18 Y=19 VAL=1
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid5, 3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=20 Y=19 VAL=3
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid6, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=16 Y=17 VAL=1
@@ -478,7 +478,7 @@ script 76 (int arg0, int arg1, int arg2) { //X=23 Y=23 START=L_225 END=L_244 UNK
     if(arg2 == 0) SpawnForced("DRRPBarrel", getMediumX(124), getMediumY(124), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=8 STATE=0
     if(arg2 == 0) SpawnForced("DRRPBarrel", getMediumX(132), getMediumY(124), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=9 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid7, arg2 + 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) INC_VAR X=23 Y=23
-	// if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", -494, 3); // Change computer message
+    // if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", -494, 3); // Change computer message
 }
 script 77 (int arg0, int arg1, int arg2) { //X=2 Y=24 START=L_245 END=L_245 UNKN=524288 UNKN2=0
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(71)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=71

@@ -1,17 +1,17 @@
 #include "zcommon.acs"
 
 function str getString(int id) {
-	return StrParam(l:StrParam(s:"DRRP_SEC5_", i:id));
+    return StrParam(l:StrParam(s:"DRRP_SEC5_", i:id));
 }
 
 // 1600x320
 
 function fixed getMediumX(int x) {
-	return (-1600 + x * 8) << 16;
+    return (-1600 + x * 8) << 16;
 }
 
 function fixed getMediumY(int y) {
-	return (2048 - 320 - y * 8) << 16;
+    return (2048 - 320 - y * 8) << 16;
 }
 
 Script 666 ENTER{
@@ -19,14 +19,14 @@ Script 666 ENTER{
     Setfont("bigfont");
     Hudmessage(l:"DRRP_B_ID63";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
     Setfont("smallfont");
-	ACS_Execute(1000,0);
-	ACS_Execute(3005, 0);
+    ACS_Execute(1000,0);
+    ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
-	AmbientSound("ambient/drone1",127);
-	Delay(34*3);
-	Restart;
+    AmbientSound("ambient/drone1",127);
+    Delay(34*3);
+    Restart;
 }
 
 script 1 (int arg0, int arg1, int arg2) { //X=22 Y=1 START=L_0 END=L_0 UNKN=524288 UNKN2=0
@@ -299,7 +299,7 @@ script 50 (int arg0, int arg1, int arg2) { //X=30 Y=18 START=L_151 END=L_159 UNK
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(98)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=98
     if(arg2 == 0) ACS_Execute(3000, 0, 13); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=276
     if(arg2 == 0) SpawnForced("Scientist", getMediumX(228), getMediumY(100), 0, 908); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=24 STATE=0
-	if(arg2 == 0) SetThingSpecial(908, 80, 29);
+    if(arg2 == 0) SetThingSpecial(908, 80, 29);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=28 Y=12 VAL=1
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, 3); // ( USE IF_VAR( 0 ) ) SET_VAR X=27 Y=10 VAL=3
     if(arg2 == 0) Thing_Remove(874); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=27 Y=10
@@ -327,7 +327,7 @@ script 54 (int arg0, int arg1, int arg2) { //X=25 Y=19 START=L_164 END=L_171 UNK
     if(arg2 == 0) Thing_Remove(908); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=28 Y=12
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=28 Y=12 VAL=0
     if(arg2 == 0) SpawnForced("Scientist", getMediumX(228), getMediumY(156), 0, 915); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=26 STATE=0
-	if(arg2 == 0) SetThingSpecial(915, 80, 55);
+    if(arg2 == 0) SetThingSpecial(915, 80, 55);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid2, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=28 Y=19 VAL=1
 }
 script 55 (int arg0, int arg1, int arg2) { //X=28 Y=19 START=L_172 END=L_185 UNKN=7340032 UNKN2=0
@@ -633,13 +633,13 @@ script 99 (int arg0, int arg1, int arg2) { //X=25 Y=29 START=L_347 END=L_363 UNK
 
 
 script 669 (void) {
-	print(s:"You found the easter egg by Lolimpire");
-	AmbientSound("DOGSONG", 127);	
+    print(s:"You found the easter egg by Lolimpire");
+    AmbientSound("DOGSONG", 127);    
 }
 
 script 670 (void) {
-	print(s:"You found the easter egg by PROPHESSOR");
-	AmbientSound("HODSONG", 127);	
+    print(s:"You found the easter egg by PROPHESSOR");
+    AmbientSound("HODSONG", 127);    
 }
 /*
 script 1 (void) 
@@ -652,19 +652,19 @@ print(s:"Hello.\nWelcome to Mars.");
 script 3 (int id) 
 {//Dialog
 ACTIVATORSOUND("misc/chat2", 255);
-	switch (id) {
-		case 0:
-		print(s:"\cdHi, Marine!");
-		break;
-		
-		case 1:
-		print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
-		break;
-		
-		case 2:
-		print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
-		break;
-	}
+    switch (id) {
+        case 0:
+        print(s:"\cdHi, Marine!");
+        break;
+        
+        case 1:
+        print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
+        break;
+        
+        case 2:
+        print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
+        break;
+    }
 DELAY(34);
 }
 
@@ -685,8 +685,8 @@ DELAY(34);
 
 script 6 (int sector)
 {//Opener
-	ACTIVATORSOUND("acess/GRANT1", 255);
-	Door_Open(sector,128,0);
+    ACTIVATORSOUND("acess/GRANT1", 255);
+    Door_Open(sector,128,0);
 }
 
 script 7 (int doorf, int doorb, int nosound) {//DoorOpener
@@ -695,8 +695,8 @@ script 7 (int doorf, int doorb, int nosound) {//DoorOpener
     SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
     SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
     if(nosound == 0){
-		SectorSound("acess/grant1", 255);
-	}
+        SectorSound("acess/grant1", 255);
+    }
 }
 
 script 8 (int doorf, int doorb, int nosound) {//DoorCloser
@@ -704,10 +704,10 @@ script 8 (int doorf, int doorb, int nosound) {//DoorCloser
     SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga10b");
     SetLineSpecial(doorf, Door_Close, 0, 16, 105);
     SetLineSpecial(doorb, Door_Close, 0, 16, 105);
-	}
+    }
 
 script 10 (void) { //quake
-	Radius_Quake(9,12,0,10,0);
-	Door_Open(2,128,0);
+    Radius_Quake(9,12,0,10,0);
+    Door_Open(2,128,0);
 }*/
 
