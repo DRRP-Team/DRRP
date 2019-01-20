@@ -21,7 +21,7 @@ class DRRPAxe_ZSPatch: Weapon {
 
         Inventory.PickupMessage "$DRRP_W_AXEPICKUP";
         Inventory.Icon "AXEIA0";
-        Inventory.PickupSound "TAUNT";
+        Inventory.PickupSound "player/taunt";
         Weapon.SelectionOrder 1880;
         DamageType "DRRPAxeDmg";
     }
