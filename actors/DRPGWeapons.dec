@@ -7,51 +7,13 @@
 
 //10556-10600
 
-Actor DRRPAxe: DRRPAxe_zspatch 10557  {
-    //$Category DWeapons
-
-    +NOALERT
-    +NOAUTOFIRE
-    +WEAPON.MELEEWEAPON
-
-    Tag "$DRRP_W_AXE"
-    Scale 0.65
-    Obituary "%o was chopped by %k"
-    SeeSound "weapons/plasmax"
-
-    Inventory.PickupMessage "$DRRP_W_AXEPICKUP"
-    Inventory.Icon "AXEIA0"
-    Inventory.PickupSound "TAUNT"
-    Weapon.SelectionOrder 1880
-    DamageType DRRPAxeDmg
-
-    States {
-        Spawn:
-            AXEI A -1
-            Stop
-        Ready:
-            AXEF A 1 A_WeaponReady
-            Loop
-        Select:
-            AXEF A 1 A_Raise
-            Loop
-        Deselect:
-            AXEF A 1 A_Lower
-            Loop
-        Fire:
-            AXEF B 3
-            AXEF C 3
-            AXEF D 3
-            AXEF D 1 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus")
-            AXEF E 5
-            Goto Ready
-    }
-}
+Actor DRRPAxe: DRRPAxe_ZSPatch 10557 {}
 
 Actor DRRPAxePuff : BulletPuff {
     SeeSound "DSBLUD03"
     AttackSound "ROCK"    
 }
+
 
 Actor DRRPFireExt : DRRPFireExt_zspatch 10556 {
     //$Category DWeapons
