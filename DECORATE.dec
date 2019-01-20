@@ -36,8 +36,8 @@
 
 Actor DoomRPGPlayer : DoomPlayer {
     Health 30
+    Speed  0.3
 
-    Player.RunHealth 245654
     Player.MaxHealth 30
     Player.DisplayName "Marine"
     Player.MugShotMaxHealth 30
