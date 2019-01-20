@@ -36,11 +36,13 @@
 
 Actor DoomRPGPlayer : DoomPlayer {
     Health 30
-    Speed  0.3
-
     Player.MaxHealth 30
-    Player.DisplayName "Marine"
     Player.MugShotMaxHealth 30
+
+	Player.ForwardMove 0.6, 0.35
+	Player.SideMove 0.55, 0.3
+	Player.ViewBob 0.75
+    Player.DisplayName "Marine"
 
     Player.WeaponSlot 1, DRRPFireExt, DRRPAxe
     Player.WeaponSlot 2, DRRPPistol
