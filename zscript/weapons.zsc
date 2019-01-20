@@ -7,24 +7,24 @@
 
 class DRRPAxe_ZSPatch: Weapon {
 
-	Default {
-	    //$Category DWeapons
+    Default {
+        //$Category DWeapons
 
-	    +WEAPON.NOALERT;
-	    +WEAPON.NOAUTOFIRE;
-	    +WEAPON.MELEEWEAPON;
+        +WEAPON.NOALERT;
+        +WEAPON.NOAUTOFIRE;
+        +WEAPON.MELEEWEAPON;
 
-	    Tag "$DRRP_W_AXE";
-	    Scale 0.65;
-	    Obituary "%o was chopped by %k";
-	    SeeSound "weapons/plasmax";
+        Tag "$DRRP_W_AXE";
+        Scale 0.65;
+        Obituary "%o was chopped by %k";
+        SeeSound "weapons/plasmax";
 
-	    Inventory.PickupMessage "$DRRP_W_AXEPICKUP";
-	    Inventory.Icon "AXEIA0";
-	    Inventory.PickupSound "TAUNT";
-	    Weapon.SelectionOrder 1880;
-	    DamageType "DRRPAxeDmg";
-	}
+        Inventory.PickupMessage "$DRRP_W_AXEPICKUP";
+        Inventory.Icon "AXEIA0";
+        Inventory.PickupSound "TAUNT";
+        Weapon.SelectionOrder 1880;
+        DamageType "DRRPAxeDmg";
+    }
 
     States {
         Spawn:

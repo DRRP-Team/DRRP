@@ -117,17 +117,17 @@ Script "transformation"(int tid) {
 str POM_TEXTURES[NUM_POM_TEXTURES] = { "DRDC1", "DRDC0", "DRDC24", "DRDC25", "DRDC26", "DRDC28", "DRDC34", "DRDC35", "DRDC42", "DRDC44", "DRDC46", "DRDC48", "DRDC2", "DRDC3", "DRDC4", "DRDC5", "DRDC9", "DRDC8", "DRDC41", "DRDC43", "DRDC45", "DRDC27", "DRDC32"};
 
 Script "updatepom" (int forced) ENTER {
-	bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
+    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
 
-	if(!isPomEnabled) {
-		for(int i = 0; i < NUM_POM_TEXTURES; i++) {
-			ReplaceTextures(POM_TEXTURES[i], StrParam(s:"NP_", s:POM_TEXTURES[i]));
-		}
-	} else if(forced) { // Only if called from menudef
-		for(int i = 0; i < NUM_POM_TEXTURES; i++) {
-			ReplaceTextures(StrParam(s:"NP_", s:POM_TEXTURES[i]), POM_TEXTURES[i]);
-		}
-	}
+    if(!isPomEnabled) {
+        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
+            ReplaceTextures(POM_TEXTURES[i], StrParam(s:"NP_", s:POM_TEXTURES[i]));
+        }
+    } else if(forced) { // Only if called from menudef
+        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
+            ReplaceTextures(StrParam(s:"NP_", s:POM_TEXTURES[i]), POM_TEXTURES[i]);
+        }
+    }
 }
 
 #include "flashlight.acs"

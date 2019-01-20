@@ -1,1006 +1,1006 @@
 <!DOCTYPE html>
 <!-- saved from url=(0044)http://www.neocomputer.org/projects/doomrpg/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Decoding Doom RPG</title>
-		
-	<style></style></head>
-	<body>
-		<h1>Decoding Doom RPG</h1>
-		
-		<p>I first played Doom RPG on a Sony Ericsson j300a in late 2006.  I wasn't expecting much more than a functional Doom-themed Wolfenstein port with finicky controls. (I clearly didn't know much about it before buying it!) What I got was so much more than I thought possible from a feature phone game.</p>
+        <title>Decoding Doom RPG</title>
+        
+    <style></style></head>
+    <body>
+        <h1>Decoding Doom RPG</h1>
+        
+        <p>I first played Doom RPG on a Sony Ericsson j300a in late 2006.  I wasn't expecting much more than a functional Doom-themed Wolfenstein port with finicky controls. (I clearly didn't know much about it before buying it!) What I got was so much more than I thought possible from a feature phone game.</p>
 
-		<p>Unfortunately, Doom RPG never found its way to smartphones, or any other platform.  EA Mobile doesn't even seem to have it listed in their 'Legacy' section.  There aren't many games in the Doom franchise, so it's surprising to see this one get so little attention.</p>
+        <p>Unfortunately, Doom RPG never found its way to smartphones, or any other platform.  EA Mobile doesn't even seem to have it listed in their 'Legacy' section.  There aren't many games in the Doom franchise, so it's surprising to see this one get so little attention.</p>
 
-		<p>Actually playing the game today is a bit tricky.  I've had success running it on KEmulat0r, configuring it as a Sony Ericsson k800. Of course, KEmulat0r appears to be a dead project, nearly 9 years without an update.  I couldn't get it to  run at all in Microemulator (an open source project), but that hardly matters as it also appears to be dead.</p>
+        <p>Actually playing the game today is a bit tricky.  I've had success running it on KEmulat0r, configuring it as a Sony Ericsson k800. Of course, KEmulat0r appears to be a dead project, nearly 9 years without an update.  I couldn't get it to  run at all in Microemulator (an open source project), but that hardly matters as it also appears to be dead.</p>
 
-		<p>Doom RPG isn't nearly as popular as its older siblings, Doom and Doom II, but there does seem to be some interest. Kyle873 and Kate Fox (Pink Silver) developed a <a href="https://github.com/Kyle873/DoomRPG/">GZDoom Mod</a> inspired by the game.  While they're not the same type of game, DoomRL (now just <a href="https://drl.chaosforge.org/">DRL</a>) and <a href="https://jupiterhell.com/">Jupiter Hell</a> both offer turn-based gameplay in a Doom-like setting.</p>
+        <p>Doom RPG isn't nearly as popular as its older siblings, Doom and Doom II, but there does seem to be some interest. Kyle873 and Kate Fox (Pink Silver) developed a <a href="https://github.com/Kyle873/DoomRPG/">GZDoom Mod</a> inspired by the game.  While they're not the same type of game, DoomRL (now just <a href="https://drl.chaosforge.org/">DRL</a>) and <a href="https://jupiterhell.com/">Jupiter Hell</a> both offer turn-based gameplay in a Doom-like setting.</p>
 
-		<p>The goal here is to puzzle-out and document as much of Doom RPG as possible to empower interested modders and other developers looking to get Doom RPG running on modern systems.  There's a lot of stuff here, so I won't say much, if anything, about the disovery process.</p>
+        <p>The goal here is to puzzle-out and document as much of Doom RPG as possible to empower interested modders and other developers looking to get Doom RPG running on modern systems.  There's a lot of stuff here, so I won't say much, if anything, about the disovery process.</p>
 
-		<h2>Contents</h2>
-		<ul>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#intro">Before we begin</a></li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#textures">Wall Textures</a> (wtexel.bin)</li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#sprites">Sprites</a> (stexel.bin, bitshapes.bin)</li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#palettes">Palettes</a> (palettes.bin)</li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#entities">Entities</a> (entities.db, entities.str)</li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#mappings">Mappings (Complete textures and sprites)</a> (mappings.bin)</li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#levels">Levels, Maps, Commands and Scripts</a> (*.bsp)</li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a></li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#thingdata">Thing Data Appendix</a></li>
-			<li><a href="http://www.neocomputer.org/projects/doomrpg/#entdata">Entities Data Appendix</a></li>
-		</ul>
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#intro">Before we begin</a></li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#textures">Wall Textures</a> (wtexel.bin)</li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#sprites">Sprites</a> (stexel.bin, bitshapes.bin)</li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#palettes">Palettes</a> (palettes.bin)</li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#entities">Entities</a> (entities.db, entities.str)</li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#mappings">Mappings (Complete textures and sprites)</a> (mappings.bin)</li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#levels">Levels, Maps, Commands and Scripts</a> (*.bsp)</li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a></li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#thingdata">Thing Data Appendix</a></li>
+            <li><a href="http://www.neocomputer.org/projects/doomrpg/#entdata">Entities Data Appendix</a></li>
+        </ul>
 
-		<a name="intro"></a>
-		<h2>Before we begin</h2>
+        <a name="intro"></a>
+        <h2>Before we begin</h2>
 
-		<p>Some important things to remember before we get started:</p>
-		<ul>
-			<li>I'm using version 1.0.92 for everything here.  There may be differences between older and new versions.</li>
-			<li>All numbers are unsigned integers.</li>
-			<li>All integers are little-endian.</li>
-		</ul>
+        <p>Some important things to remember before we get started:</p>
+        <ul>
+            <li>I'm using version 1.0.92 for everything here.  There may be differences between older and new versions.</li>
+            <li>All numbers are unsigned integers.</li>
+            <li>All integers are little-endian.</li>
+        </ul>
 
-		<p>Doom RPG uses three coordinate systems.  If you're familiar with raycasting engines like the one used in Wolfenstein 3D and other early first-person games, you'll likely be familiar with the "course grid" and "fine grid" they employ. The course grid represents the "blocks" or "grid squares" that compose the level.  In Doom RPG, the course grid is 32x32.  The fine grid divides each course grid square in to smaller blocks, typically matching our texture width. In Doom RPG, the fine grid divides course grid blocks in to 64x64 blocks and, consequently, the map in to 2048x2048 blocks.</p>
-		
-		<p>Doom RPG places objects and enemies (things) on a third grid we'll call the "medium grid", which is somewhere between the course grid and fine grid. This divides the map in to 256x256 blocks. You can convert medium grid coordinates to fine grid coordinates by multiplying them by 8.</p>
+        <p>Doom RPG uses three coordinate systems.  If you're familiar with raycasting engines like the one used in Wolfenstein 3D and other early first-person games, you'll likely be familiar with the "course grid" and "fine grid" they employ. The course grid represents the "blocks" or "grid squares" that compose the level.  In Doom RPG, the course grid is 32x32.  The fine grid divides each course grid square in to smaller blocks, typically matching our texture width. In Doom RPG, the fine grid divides course grid blocks in to 64x64 blocks and, consequently, the map in to 2048x2048 blocks.</p>
+        
+        <p>Doom RPG places objects and enemies (things) on a third grid we'll call the "medium grid", which is somewhere between the course grid and fine grid. This divides the map in to 256x256 blocks. You can convert medium grid coordinates to fine grid coordinates by multiplying them by 8.</p>
 
-		<a name="textures"></a>
-		<h2>Wall Textures (wtexels.bin)</h2>
+        <a name="textures"></a>
+        <h2>Wall Textures (wtexels.bin)</h2>
 
-		<p>All the wall textures are stored in <code>wtexels.bin</code> Textures are all 64x64 pixels in size. Each pixel is represented by a 4-bit index in to a color palette. </p>
+        <p>All the wall textures are stored in <code>wtexels.bin</code> Textures are all 64x64 pixels in size. Each pixel is represented by a 4-bit index in to a color palette. </p>
 
-		<p>The first four bytes in <code>wtexels.bin</code> represent a uInt32 that tells us the remaining length of the file. As each texture is 2048 bytes in size, dividing 53248 by 2048 tells us that there are 26 textures in the file.</p>
+        <p>The first four bytes in <code>wtexels.bin</code> represent a uInt32 that tells us the remaining length of the file. As each texture is 2048 bytes in size, dividing 53248 by 2048 tells us that there are 26 textures in the file.</p>
 
-		<p>There is no palette information associated with the textures in this file.</p>
+        <p>There is no palette information associated with the textures in this file.</p>
 
-		<p>Doom RPG renders textures in vertical strips, from left to right, just like old raycasters like Wolfenstein 3D and Doom. It would be convenient, then, to store the textures on their side, beginning with the left-most strip, so that each strip could be read sequentially, which is precisely how they're laid out.  A naive rendering (each pixel in sequence from left-to-right, top-to-bottom) will produce a mirror image of the texture, rotated 90-degrees to the left.</p>
+        <p>Doom RPG renders textures in vertical strips, from left to right, just like old raycasters like Wolfenstein 3D and Doom. It would be convenient, then, to store the textures on their side, beginning with the left-most strip, so that each strip could be read sequentially, which is precisely how they're laid out.  A naive rendering (each pixel in sequence from left-to-right, top-to-bottom) will produce a mirror image of the texture, rotated 90-degrees to the left.</p>
 
-		<p>One additional quirk: While each pixel is represented by 4-bits, meaning each byte contains the color index for two pixels, they're reversed from what you'd expect.  The least significant nybble represents the left-most pixel in the group and the most significant nybble represents the right-most pixel.</p>
+        <p>One additional quirk: While each pixel is represented by 4-bits, meaning each byte contains the color index for two pixels, they're reversed from what you'd expect.  The least significant nybble represents the left-most pixel in the group and the most significant nybble represents the right-most pixel.</p>
 
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140">
-			<path d="M60,20 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z" fill="#CCFFCC" stroke="#000000"></path>
-			<path d="M80,20 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z" fill="#CCCCFF" stroke="#000000"></path>
-			<path d="M10,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M40,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M70,40 l-15,60 M90,40 c10,40,-60,20,-65,60" stroke="#000000" fill="transparent"></path>
-			<path d="M70,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M100,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M115,40 l0,60 M135,40 c10,40,-50,20,-50,60" stroke="#000000" fill="transparent"></path>
-			<path d="M130,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M160,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M160,40 l15,60 M180,40 c10,40,-35,20,-35,60" stroke="#000000" fill="transparent"></path>
-			<path d="M190,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M220,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M205,40 l30,60 M225,40 c10,40,-20,20,-20,60" stroke="#000000" fill="transparent"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140">
+            <path d="M60,20 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z" fill="#CCFFCC" stroke="#000000"></path>
+            <path d="M80,20 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z m45,0 h20v20h-20z" fill="#CCCCFF" stroke="#000000"></path>
+            <path d="M10,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M40,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M70,40 l-15,60 M90,40 c10,40,-60,20,-65,60" stroke="#000000" fill="transparent"></path>
+            <path d="M70,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M100,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M115,40 l0,60 M135,40 c10,40,-50,20,-50,60" stroke="#000000" fill="transparent"></path>
+            <path d="M130,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M160,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M160,40 l15,60 M180,40 c10,40,-35,20,-35,60" stroke="#000000" fill="transparent"></path>
+            <path d="M190,100 h30v30h-30z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M220,100 h30v30h-30z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M205,40 l30,60 M225,40 c10,40,-20,20,-20,60" stroke="#000000" fill="transparent"></path>
 
-			<g font-family="monospace" font-size="20" lengthAdjust="spacingAndGlyphs">
-				<text x="64" y="36" textLength="32">0 1</text>
-				<text x="109" y="36" textLength="32">2 3</text>
-				<text x="154" y="36" textLength="32">4 5</text>
-				<text x="199" y="36" textLength="32">6 7</text>
-				<text x="20" y="121" textLength="220">1 0 3 2 5 4 7 6</text>
-			</g>
-		</svg>
-		
-		<p>For example: If you encounter [01 23 45 67], the output would look like [1 0 3 2 5 4 7 6]</p>
+            <g font-family="monospace" font-size="20" lengthAdjust="spacingAndGlyphs">
+                <text x="64" y="36" textLength="32">0 1</text>
+                <text x="109" y="36" textLength="32">2 3</text>
+                <text x="154" y="36" textLength="32">4 5</text>
+                <text x="199" y="36" textLength="32">6 7</text>
+                <text x="20" y="121" textLength="220">1 0 3 2 5 4 7 6</text>
+            </g>
+        </svg>
+        
+        <p>For example: If you encounter [01 23 45 67], the output would look like [1 0 3 2 5 4 7 6]</p>
 
-		<p><img id="textures" src="./Decoding Doom RPG_files/textures.png"></p>
+        <p><img id="textures" src="./Decoding Doom RPG_files/textures.png"></p>
 
-		<a name="sprites"></a>
-		<h2>Sprites (stexels.bin, bitshapes.bin)</h2>
+        <a name="sprites"></a>
+        <h2>Sprites (stexels.bin, bitshapes.bin)</h2>
 
-		<p>Sprites are more complicated than textures, as they're spread out across two files: <code>stexels.bin</code> and <code>bitshapes.bin</code></p>
+        <p>Sprites are more complicated than textures, as they're spread out across two files: <code>stexels.bin</code> and <code>bitshapes.bin</code></p>
 
-		<p><code>stexels.bin</code>, like <code>wtexels.bin</code> has a 4-byte header, which is just a uInt32 that tells us the remaining length of the file.  The rest is just pixel data, 4-bits per pixel, with the same quirks we saw in <code>wtexels.bin</code> In a confusing twist, only the visible pixels are included.  There isn't a value to represent a 'transparent' color, so only the visible parts of the sprite have texels.  To produce the sprites, we need to know where those invisible pixels belong. This is where <code>bitshapes.bin</code> comes in.</p>
+        <p><code>stexels.bin</code>, like <code>wtexels.bin</code> has a 4-byte header, which is just a uInt32 that tells us the remaining length of the file.  The rest is just pixel data, 4-bits per pixel, with the same quirks we saw in <code>wtexels.bin</code> In a confusing twist, only the visible pixels are included.  There isn't a value to represent a 'transparent' color, so only the visible parts of the sprite have texels.  To produce the sprites, we need to know where those invisible pixels belong. This is where <code>bitshapes.bin</code> comes in.</p>
 
-		<p><code>bitshapes.bin</code> contains the "shape" of our sprites.  In the sprite data segments, each bit represents one pixel with a 0 meaning transparent and a 1 meaning colored.  The file itself starts of with 4 bytes, a uInt32, representing the remaining length of the file.  This is followed by a bunch of variable length records representing individual sprites.  Each sprite record contains a 12-byte header followed by the sprite shape data.</p>
+        <p><code>bitshapes.bin</code> contains the "shape" of our sprites.  In the sprite data segments, each bit represents one pixel with a 0 meaning transparent and a 1 meaning colored.  The file itself starts of with 4 bytes, a uInt32, representing the remaining length of the file.  This is followed by a bunch of variable length records representing individual sprites.  Each sprite record contains a 12-byte header followed by the sprite shape data.</p>
 
-		<p>I've only managed to decipher one small part of the Sprite Record Header, the length of the data segment + 4, which is enough to move to the next record.  The rest is unknown:</p>
+        <p>I've only managed to decipher one small part of the Sprite Record Header, the length of the data segment + 4, which is enough to move to the next record.  The rest is unknown:</p>
 
 <pre>Sprite Record Header (12 bytes):
 
-	4 bytes (unknown)
-	2 bytes (uInt16) Length of Sprite Shape Data + 4
-	6 bytes (unknown)
+    4 bytes (unknown)
+    2 bytes (uInt16) Length of Sprite Shape Data + 4
+    6 bytes (unknown)
 </pre>
 
-		<p>Sprites are of variable size.  They aren't all 64x64 like the wall textures.  In order to properly render the sprite, you'll need to know how many bytes are used per vertical strip, as well as the number of strips.  This information does not seem to be in the header, but I've managed to work-out the correct sizes for all the sprites.  This is included in the <a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a>.</p>
+        <p>Sprites are of variable size.  They aren't all 64x64 like the wall textures.  In order to properly render the sprite, you'll need to know how many bytes are used per vertical strip, as well as the number of strips.  This information does not seem to be in the header, but I've managed to work-out the correct sizes for all the sprites.  This is included in the <a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a>.</p>
 
-		<p>To clarify, each 1 bit represents 4-bits in <code>stexels.bin</code>.  You'll need to read them together to compose an entire sprite.  Additionally, if a sprite in <code>bitshapes.bin</code> contains an odd number of 1's, you'll need to advance your pointer to the next byte for the next sprite.  That is, a sprite with an odd-number of visible pixels will waste four bits in <code>stexels.bin</code>.</p>
+        <p>To clarify, each 1 bit represents 4-bits in <code>stexels.bin</code>.  You'll need to read them together to compose an entire sprite.  Additionally, if a sprite in <code>bitshapes.bin</code> contains an odd number of 1's, you'll need to advance your pointer to the next byte for the next sprite.  That is, a sprite with an odd-number of visible pixels will waste four bits in <code>stexels.bin</code>.</p>
 
-		<p>There is one additional quirk.  Like the nybbles in our wall texture data, the individual bits composing our sprite shape are reversed for each byte, with the least significant bit representing the left-most pixel and the most significant bit representing the right-most pixel.</p>
+        <p>There is one additional quirk.  Like the nybbles in our wall texture data, the individual bits composing our sprite shape are reversed for each byte, with the least significant bit representing the left-most pixel and the most significant bit representing the right-most pixel.</p>
 
-		<p>Conveniently, like textures, a naive rendering (each pixel in sequence from left-to-right, top-to-bottom) will produce a mirror image of the sprite, rotated 90-degrees to the left.</p>
+        <p>Conveniently, like textures, a naive rendering (each pixel in sequence from left-to-right, top-to-bottom) will produce a mirror image of the sprite, rotated 90-degrees to the left.</p>
 
-		<p>You'll notice that neither <code>stexels.bin</code> or <code>bitshapes.bin</code> contain an index of offsets for sprite records. While you can rather quickly walk through <code>bitshapes.bin</code> to find the sprite you want, you won't know where to start reading <code>stexels.bin</code> to get the texels. That data doesn't appear to be anywhere. You can find it by walking through each sprite shape in sequence in tandem with <code>stexels.bin</code> and making a note of each offset. I've done this already and included those values in the <a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a> under "stexels.bin Offset".</p>
+        <p>You'll notice that neither <code>stexels.bin</code> or <code>bitshapes.bin</code> contain an index of offsets for sprite records. While you can rather quickly walk through <code>bitshapes.bin</code> to find the sprite you want, you won't know where to start reading <code>stexels.bin</code> to get the texels. That data doesn't appear to be anywhere. You can find it by walking through each sprite shape in sequence in tandem with <code>stexels.bin</code> and making a note of each offset. I've done this already and included those values in the <a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a> under "stexels.bin Offset".</p>
 
-		<p>Again, like textures, no palette information is included.  This makes sense as sprites are frequently used with different palettes.</p>
+        <p>Again, like textures, no palette information is included.  This makes sense as sprites are frequently used with different palettes.</p>
 
-		<p><img id="sprites" src="./Decoding Doom RPG_files/sprites.png"></p>
+        <p><img id="sprites" src="./Decoding Doom RPG_files/sprites.png"></p>
 
-		<a name="colors"></a>
-		<h2>Palettes (palettes.bin)</h2>
+        <a name="colors"></a>
+        <h2>Palettes (palettes.bin)</h2>
 
-		<p>The first four bytes of <code>palettes.bin</code> gives us the remaining length of the file.  This is immediately followed by the palette records, each of which are 32 bytes in length.</p>
+        <p>The first four bytes of <code>palettes.bin</code> gives us the remaining length of the file.  This is immediately followed by the palette records, each of which are 32 bytes in length.</p>
 
-		<p>Each palette contains 16 colors.  Each color is 16 bits, in BGR565 format (not RGB565). You'll want to convert this in to the more familiar 24 or 32 bit color.</p>
-		
-		<p>The red and blue components are 5 bits wide.  The green component is 6 bits wide. We need to do more than just copy the values, as our colors would be very dark. White (0xFFFF) would become 0x1F3F1F, which is a very dark green. Shifting the components up gets us a lot closer, but they still won't be quite correct.  White would turn in to 0xF8FCF8, which is both duller, and a little green.</p>
+        <p>Each palette contains 16 colors.  Each color is 16 bits, in BGR565 format (not RGB565). You'll want to convert this in to the more familiar 24 or 32 bit color.</p>
+        
+        <p>The red and blue components are 5 bits wide.  The green component is 6 bits wide. We need to do more than just copy the values, as our colors would be very dark. White (0xFFFF) would become 0x1F3F1F, which is a very dark green. Shifting the components up gets us a lot closer, but they still won't be quite correct.  White would turn in to 0xF8FCF8, which is both duller, and a little green.</p>
 
-		<p>The most obvious way to do this is to find the ratio between 0x1F and 0xFF and 0x3F and 0xFF and multiply the values. This is better, but with integer multipication we still end up with a very slightly green white (0xF8FCF8).  If we try to correct this by adding 1, multiplying, and subtracting one, we preserve white, but end up with the same problem for black (0x0000), which will turn in to a slightly purple 0x070307.</p>
-		
-		<p>While you could work around those problems, there is a much faster and simpler way.  For red and blue, after shifting the values left by 3, copy the three most-significant bits to the least significant positions.  Do the same for green, but with the two most significant bits. Whites and blacks are preserved, and none of our colors are tinted green. This is the way the game does this internally:</p>
+        <p>The most obvious way to do this is to find the ratio between 0x1F and 0xFF and 0x3F and 0xFF and multiply the values. This is better, but with integer multipication we still end up with a very slightly green white (0xF8FCF8).  If we try to correct this by adding 1, multiplying, and subtracting one, we preserve white, but end up with the same problem for black (0x0000), which will turn in to a slightly purple 0x070307.</p>
+        
+        <p>While you could work around those problems, there is a much faster and simpler way.  For red and blue, after shifting the values left by 3, copy the three most-significant bits to the least significant positions.  Do the same for green, but with the two most significant bits. Whites and blacks are preserved, and none of our colors are tinted green. This is the way the game does this internally:</p>
 
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230">
-			<path d="M20,20 h20v20h-20z m20,0 h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M120,20 h20v20h-20z m20,0 h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z " fill="#88FF88" stroke="#000000"></path>
-			<path d="M240,20 h20v20h-20z m20,0 h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z" fill="#FF8888" stroke="#000000"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230">
+            <path d="M20,20 h20v20h-20z m20,0 h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M120,20 h20v20h-20z m20,0 h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z " fill="#88FF88" stroke="#000000"></path>
+            <path d="M240,20 h20v20h-20z m20,0 h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z m20,0h20v20h-20z" fill="#FF8888" stroke="#000000"></path>
 
-			<path d="M50,140 v60h-10 l15,10 l15,-10 h-10v-60z" fill="#CCCCCC" stroke="#CCCCCC"></path>
-			<path d="M90,180 v20h-10 l15,10 l15,-10 h-10v-20z" fill="#CCCCCC" stroke="#CCCCCC"></path>
-			<path d="M165,140 v60h-10 l15,10 l15,-10 h-10v-60z" fill="#CCCCCC" stroke="#CCCCCC"></path>
-			<path d="M200,180 v20h-10 l15,10 l15,-10 h-10v-20z" fill="#CCCCCC" stroke="#CCCCCC"></path>
-			<path d="M270,140 v60h-10 l15,10 l15,-10 h-10v-60z" fill="#CCCCCC" stroke="#CCCCCC"></path>
-			<path d="M310,180 v20h-10 l15,10 l15,-10 h-10v-20z" fill="#CCCCCC" stroke="#CCCCCC"></path>
+            <path d="M50,140 v60h-10 l15,10 l15,-10 h-10v-60z" fill="#CCCCCC" stroke="#CCCCCC"></path>
+            <path d="M90,180 v20h-10 l15,10 l15,-10 h-10v-20z" fill="#CCCCCC" stroke="#CCCCCC"></path>
+            <path d="M165,140 v60h-10 l15,10 l15,-10 h-10v-60z" fill="#CCCCCC" stroke="#CCCCCC"></path>
+            <path d="M200,180 v20h-10 l15,10 l15,-10 h-10v-20z" fill="#CCCCCC" stroke="#CCCCCC"></path>
+            <path d="M270,140 v60h-10 l15,10 l15,-10 h-10v-60z" fill="#CCCCCC" stroke="#CCCCCC"></path>
+            <path d="M310,180 v20h-10 l15,10 l15,-10 h-10v-20z" fill="#CCCCCC" stroke="#CCCCCC"></path>
 
-			<g font-family="monospace" font-size="10" lengthAdjust="spacingAndGlyphs">
-				<text x="25" y="60" textLength="90">color &gt;&gt; 11 &amp; 0x1F</text>
-				<text x="140" y="60" textLength="85">color &gt;&gt; 5 &amp; 0x3F</text>
-				<text x="260" y="60" textLength="60">color &amp; 0x1F</text>
+            <g font-family="monospace" font-size="10" lengthAdjust="spacingAndGlyphs">
+                <text x="25" y="60" textLength="90">color &gt;&gt; 11 &amp; 0x1F</text>
+                <text x="140" y="60" textLength="85">color &gt;&gt; 5 &amp; 0x3F</text>
+                <text x="260" y="60" textLength="60">color &amp; 0x1F</text>
 
-				<text x="60" y="80" textLength="25">blue</text>
-				<text x="170" y="80" textLength="30">green</text>
-				<text x="280" y="80" textLength="18">red</text>
+                <text x="60" y="80" textLength="25">blue</text>
+                <text x="170" y="80" textLength="30">green</text>
+                <text x="280" y="80" textLength="18">red</text>
 
-				<text x="50" y="120" textLength="54">blue &lt;&lt; 3</text>
-				<text x="155" y="120" textLength="60">green &lt;&lt; 2</text>
-				<text x="265" y="120" textLength="48">red &lt;&lt; 3</text>
+                <text x="50" y="120" textLength="54">blue &lt;&lt; 3</text>
+                <text x="155" y="120" textLength="60">green &lt;&lt; 2</text>
+                <text x="265" y="120" textLength="48">red &lt;&lt; 3</text>
 
-				<text x="50" y="160" textLength="54">blue &gt;&gt; 2</text>
-				<text x="155" y="160" textLength="60">green &gt;&gt; 4</text>
-				<text x="265" y="160" textLength="48">red &gt;&gt; 2</text>
+                <text x="50" y="160" textLength="54">blue &gt;&gt; 2</text>
+                <text x="155" y="160" textLength="60">green &gt;&gt; 4</text>
+                <text x="265" y="160" textLength="48">red &gt;&gt; 2</text>
 
-				<text x="69" y="195" textLength="12">or</text>
-				<text x="181" y="195" textLength="12">or</text>
-				<text x="289" y="195" textLength="12">or</text>
-			</g>
-			<path d="M30,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M60,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M140,90 h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M160,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M250,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M280,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
+                <text x="69" y="195" textLength="12">or</text>
+                <text x="181" y="195" textLength="12">or</text>
+                <text x="289" y="195" textLength="12">or</text>
+            </g>
+            <path d="M30,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M60,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M140,90 h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M160,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M250,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M280,90 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
 
-			<path d="M80,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M30,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M200,130 h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M140,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M300,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M250,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
+            <path d="M80,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M30,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M200,130 h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M140,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M300,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M250,130 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
 
-			<path d="M30,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M80,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z " fill="#8888FF" stroke="#000000"></path>
-			<path d="M140,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M200,170 h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M250,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
-			<path d="M300,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
+            <path d="M30,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M80,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z " fill="#8888FF" stroke="#000000"></path>
+            <path d="M140,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M200,170 h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M250,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FFFFFF" stroke="#000000"></path>
+            <path d="M300,170 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
 
-			<path d="M30,210 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#8888FF" stroke="#000000"></path>
-			<path d="M140,210 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
-			<path d="M250,210 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
+            <path d="M30,210 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#8888FF" stroke="#000000"></path>
+            <path d="M140,210 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#88FF88" stroke="#000000"></path>
+            <path d="M250,210 h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z m10,0h10v10h-10z" fill="#FF8888" stroke="#000000"></path>
 
-		</svg>
-		<br>
-<pre>	// separate each component
-	red   = color &amp; 0x1F;
-	green = (color &gt;&gt; 5 ) &amp; 0x3F;
-	blue  = (color &gt;&gt; 11) &amp; 0x1F;
-	
-	// convert to RGB888
-	red   =   (red &lt;&lt; 3) | (red &gt;&gt; 2);
-	green = (green &lt;&lt; 2) | (green &gt;&gt; 4);
-	blue  =  (blue &lt;&lt; 3) | (blue &gt;&gt; 2);
+        </svg>
+        <br>
+<pre>    // separate each component
+    red   = color &amp; 0x1F;
+    green = (color &gt;&gt; 5 ) &amp; 0x3F;
+    blue  = (color &gt;&gt; 11) &amp; 0x1F;
+    
+    // convert to RGB888
+    red   =   (red &lt;&lt; 3) | (red &gt;&gt; 2);
+    green = (green &lt;&lt; 2) | (green &gt;&gt; 4);
+    blue  =  (blue &lt;&lt; 3) | (blue &gt;&gt; 2);
 
-	// put them back together
-	color24 = (red &lt;&lt; 16) &amp; (green &lt;&lt; 8)  &amp;  blue;
+    // put them back together
+    color24 = (red &lt;&lt; 16) &amp; (green &lt;&lt; 8)  &amp;  blue;
 </pre>
 
-		<p>There are 143 palettes contained in <code>palettes.bin</code></p>
+        <p>There are 143 palettes contained in <code>palettes.bin</code></p>
 
-		<p><img id="palette" src="./Decoding Doom RPG_files/palette48.png"></p>
+        <p><img id="palette" src="./Decoding Doom RPG_files/palette48.png"></p>
 
-		<a name="entities"></a>
-		<h2>Entities</h2>
+        <a name="entities"></a>
+        <h2>Entities</h2>
 
-		<p>Some entity information is stored in <code>entities.db</code> and <code>entities.str</code>.  Not all in-game 'things' are stored here, with 'wall decorations' and 'fences' being the more obvious omissions.  No sprite or palette information is included in either file.</p>
+        <p>Some entity information is stored in <code>entities.db</code> and <code>entities.str</code>.  Not all in-game 'things' are stored here, with 'wall decorations' and 'fences' being the more obvious omissions.  No sprite or palette information is included in either file.</p>
 
-		<p>The <code>entities.str</code> file contains the in-game description of each entity. The file begins with a uInt16 that tells us the number of records in the file.  Records are variable length.  Each record begins with a uInt16 that tells us the length of the string data that follows.  These records are matched with the records in <code>entities.db</code> by the order in which they appear.</p>
-<pre>	entities.str
-		uInt16: number of Records to follow
-		
-	Records:
-		uInt16: length of string
-		varies: string data
+        <p>The <code>entities.str</code> file contains the in-game description of each entity. The file begins with a uInt16 that tells us the number of records in the file.  Records are variable length.  Each record begins with a uInt16 that tells us the length of the string data that follows.  These records are matched with the records in <code>entities.db</code> by the order in which they appear.</p>
+<pre>    entities.str
+        uInt16: number of Records to follow
+        
+    Records:
+        uInt16: length of string
+        varies: string data
 </pre>
 
-		<p>The <code>entities.db</code> file contains some information about in-game entities.  What information it contains varies by entity type. The file begins with a uInt16 that tells us the number of records in the file.  Records are 8 bytes in length.</p>
+        <p>The <code>entities.db</code> file contains some information about in-game entities.  What information it contains varies by entity type. The file begins with a uInt16 that tells us the number of records in the file.  Records are 8 bytes in length.</p>
 
-<pre>	entities.db
-		uInt16: number of Records to follow
-	Records
-		uInt16: id
-		uInt8:  type
-		uInt8:  p1
-		uInt32: p2
+<pre>    entities.db
+        uInt16: number of Records to follow
+    Records
+        uInt16: id
+        uInt8:  type
+        uInt8:  p1
+        uInt32: p2
 </pre>
-	
-		<p>Entity records are divided in to 4 parts: a 2-byte id, a type, and two parameters.  The id's match the id's used for 'things' in .bsp files.  The 'type' field groups related entities.  Entities with a shared type (mostly) share the same purpose for p1 and p2 (keys and medkits being exceptions).</p>
+    
+        <p>Entity records are divided in to 4 parts: a 2-byte id, a type, and two parameters.  The id's match the id's used for 'things' in .bsp files.  The 'type' field groups related entities.  Entities with a shared type (mostly) share the same purpose for p1 and p2 (keys and medkits being exceptions).</p>
 
-<pre>	Type 0 - Doors
-		P1: Normal: 0, Locked: 1, Unlocked: 2
-		P2: not used
+<pre>    Type 0 - Doors
+        P1: Normal: 0, Locked: 1, Unlocked: 2
+        P2: not used
 
-	Type 1 - Enemy
-		P1: Class
-		P2: Enemy 'level' within each class Level1: 0x126, Level2: 0x1D3, Level3: 0x280
+    Type 1 - Enemy
+        P1: Class
+        P2: Enemy 'level' within each class Level1: 0x126, Level2: 0x1D3, Level3: 0x280
 
-	Type 2 - Humans
-		P1: not used
-		P2: not used
+    Type 2 - Humans
+        P1: not used
+        P2: not used
 
-	Type 3 - Keys, health, armor, credits
-		P1: Class (Keys: 0x18, Health: 0x14, Armor: 0x15, Credits: 0x16 &amp; 0x17)
-		P2: Keys: Green - 0, Yellow - 1, Blue - 2,  Red - 3
-		    Health, armor, credits: Amount to add
+    Type 3 - Keys, health, armor, credits
+        P1: Class (Keys: 0x18, Health: 0x14, Armor: 0x15, Credits: 0x16 &amp; 0x17)
+        P2: Keys: Green - 0, Yellow - 1, Blue - 2,  Red - 3
+            Health, armor, credits: Amount to add
 
-	Type 4 - Inventory Consumables
-		P1: Sm Medkit: 0x19, Lg Medkit: 0xA1, SoulSphear: 0xA2, Berzerker: 0xA3, Dog Collar: 0xA4 
-		P2: Only for Medkits, amount of health to add when used
+    Type 4 - Inventory Consumables
+        P1: Sm Medkit: 0x19, Lg Medkit: 0xA1, SoulSphear: 0xA2, Berzerker: 0xA3, Dog Collar: 0xA4 
+        P2: Only for Medkits, amount of health to add when used
 
-	Type 5 - Weapons
-		P1: Cycle order
-		P2: Amount of ammo added on pickup	
-	
-	Type 6, 16 - Ammo Pickups (6 - single, 16 - multiple)
-		P1: Ammo Type (Halon: 0, Bullet: 1, Shell: 2, Rocket: 3, Cell:4)
-		P2: Amount of ammo added on pickup
+    Type 5 - Weapons
+        P1: Cycle order
+        P2: Amount of ammo added on pickup    
+    
+    Type 6, 16 - Ammo Pickups (6 - single, 16 - multiple)
+        P1: Ammo Type (Halon: 0, Bullet: 1, Shell: 2, Rocket: 3, Cell:4)
+        P2: Amount of ammo added on pickup
 
-	Type 7 - Furniture, portal, computers, unnamed
-		P1: unknown
-		P2: not used
-	
-	Type 8, 9, 14, 15 - Unknown (Unused?)
-		P1: not used
-		P2: not used
-	
-	Type 10, 11 (10 - Fire, 11 - Lava)
-		P1: not used
-		P2: not used
-	
-	Type 12 - Breakable Items
-		P1: Class (Barrel: 1, Crate: 2, Door/Wall: 3, Power Coupling: 4)
-		P2: unknown
-	
-	Type 13 - Furniture
-		P1: unused
-		P2: unused
-</pre>
-
-		<p>There are 115 entities included in the file.  See the <a href="http://www.neocomputer.org/projects/doomrpg/#entdata">Entities Data Appendix</a> for more details.</p>
-
-		<a name="mappings"></a>
-		<h2>Mappings (mappings.bin)</h2>
-
-		<p><code>mappings.bin</code> contains four unrelated groups of records.  The file starts out with a 16 byte header, composed of 4 uInt32's that indicate the length of each of these groups.</p>
-		
-		<p>Group 1 maps wall textures to color palettes. As each texture is used with different palettes, we end up with 51 records instead of 26.  Each record is 8 bytes in length, being composed of two uInt32's.  The first uInt32 indicates the wall texture (from <code>wtexels.bin</code>), the second indicates the palette (from <code>palettes.bin</code>). How, in both cases, is not obvious. To find the texture index, divide by 4096.  To find the texture offset, divide by 2 and add 4.  To find the palette index, divide by 16. To find the palette offset, add 4.</p>
-
-		<p>We can now extract all of the wall textures.</p>
-
-		<p><img id="texcolor" src="./Decoding Doom RPG_files/texturescolor.png"></p>
-
-		<p>Group 2 maps sprites to color palettes.  There are 207 8-byte records, each composed of two uInt32's.  The first indicates the sprite (from <code>bitshapes.bin</code>), the second indicates the color palette (from <code>palettes.bin</code>).  To find the offset in to <code>bitshapes.bin</code>, add 4.  To find the palette index, divide by 16. To find the palette offset, add 4.</p>
-
-		<p>Using some additional information about the dimentions of each sprite (from the <a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a>), we can finally extract all of the sprites.</p>
-
-		<p><img id="spritecolor" src="./Decoding Doom RPG_files/spritescolor.png"></p>
-
-		<p>Group 3 contains 93 records.  Each record consists of a single uInt16.  This maps the wall texture id from the line segment portion of .bsp files to the wall textures in Group 1.  For example, The wall texture assigned to the Portal (in <code>reactor.bsp</code>) is 34, but the wall texture is at index 24.  The value at Group 3 index 34 is 24.</p>
-
-		<p>Group 4 contains 252 records.  Each record consists of a single uIn16.  Values range from 0 to 205. Its purpose is unknown, but appears to be related to sprites.</p>
-
-		<a name="levels"></a>
-		<h2>Levels and Maps (*.bsp)</h2>
-		
-		<p>As luck would have it, <a href="https://soulsphere.org/">Simon Howard</a> (Fraggle) has worked out a good bit of the <a href="https://soulsphere.org/random/doom-rpg-bnf.txt">Doom RPG bsp file format</a> <a href="http://www.neocomputer.org/projects/doomrpg/bsp-bnf.txt">[Mirror]</a>.  I'll expand on his work here, filling in quite a few of the missing details. You can also take a look at <a href="http://walmsley.gen.nz/">Richard Walmsley's</a> <a href="https://github.com/richwalm/doomrpgmapviewer">Map Viewer</a>.</p>
-
-		<p>.bsp files start off with a 13-byte header:</p>
-<pre>	.bsp header:
-		uInt24: Floor Color BGR888
-		uInt24: Ceiling Color BGR888
-		uInt24: unknown (always 0)
-		uInt8:  Level id
-		uInt24: unknown
+    Type 7 - Furniture, portal, computers, unnamed
+        P1: unknown
+        P2: not used
+    
+    Type 8, 9, 14, 15 - Unknown (Unused?)
+        P1: not used
+        P2: not used
+    
+    Type 10, 11 (10 - Fire, 11 - Lava)
+        P1: not used
+        P2: not used
+    
+    Type 12 - Breakable Items
+        P1: Class (Barrel: 1, Crate: 2, Door/Wall: 3, Power Coupling: 4)
+        P2: unknown
+    
+    Type 13 - Furniture
+        P1: unused
+        P2: unused
 </pre>
 
-		<p>The Level id number starts at 1 for <code>intro.bsp</code> and increases by one for each file in the natural level order: <code>junction.bsp</code>, <code>level01.bsp</code>, <code>level02.bsp</code>, <code>level03.bsp</code>, <code>level04.bsp</code>, <code>level05.bsp</code>, <code>level06.bsp</code>, <code>level07.bsp</code>, <code>junction_destroyed.bsp</code>, <code>reactor.bsp</code>. The enemy montage at the end of the game <code>endgame.bsp</code> and the test <code>items.bsp</code> both have an id of 0.  </p>
+        <p>There are 115 entities included in the file.  See the <a href="http://www.neocomputer.org/projects/doomrpg/#entdata">Entities Data Appendix</a> for more details.</p>
 
-		<h3>BSP Tree</h3>
-		<p>Following the header is the BSP tree.  It starts with a uInt16 representing the number of nodes.  Each node record is 48 bytes in length, so you can quickly skip over this section if you don't need it.</p>
-		
-		<p>The first four bytes of each node record represent the two coordinate pairs of a bounding box (x1, y1, x2, y2 in that order).  (These are positioned on the "medium grid" mentioned earlier.  You can multiply each value by 8 to convert them to the "fine grid".)</p>
-		
-		<p>The last six bytes represent different things, depending on the value of the first byte.  We'll use Fraggle's naming here.  The first byte is the "nodetype", the second is named "splitpos", the remaining four represent two uInt16's, the purpose of which varies depending on nodetype, called "arg1" and "arg2".</p>
-		
-		<p>If nodetype is zero, the current node is a leaf-node.  The splitpos byte is ignored. arg1 tells us the number of line segments in the node, and arg2 gives us the index of the first line segment, in the line segment record set, of the first line segment in the node. (The remaining line segment indices are in sequence from the first segment.)</p>
+        <a name="mappings"></a>
+        <h2>Mappings (mappings.bin)</h2>
 
-		<p>If nodetype is 1, the current node is split in to two subnodes along the y-axis. splitpos contains the position along the y-axis to split the node.  Arg1 contains the index of the first subnode, arg2 the index of the second.</p>
+        <p><code>mappings.bin</code> contains four unrelated groups of records.  The file starts out with a 16 byte header, composed of 4 uInt32's that indicate the length of each of these groups.</p>
+        
+        <p>Group 1 maps wall textures to color palettes. As each texture is used with different palettes, we end up with 51 records instead of 26.  Each record is 8 bytes in length, being composed of two uInt32's.  The first uInt32 indicates the wall texture (from <code>wtexels.bin</code>), the second indicates the palette (from <code>palettes.bin</code>). How, in both cases, is not obvious. To find the texture index, divide by 4096.  To find the texture offset, divide by 2 and add 4.  To find the palette index, divide by 16. To find the palette offset, add 4.</p>
 
-		<p>If nodetype is 2, the current node is split in to two subnodes along the x-axis. splitpos contains the position along the y-axis to split the node.  Arg1 contains the index of the first subnode, arg2 the index of the second. (This is identical to a nodetype of 1, but split along the x-axis instead of the y-axis.)</p>
+        <p>We can now extract all of the wall textures.</p>
 
-		<h3>Line Segments</h3>
+        <p><img id="texcolor" src="./Decoding Doom RPG_files/texturescolor.png"></p>
 
-		<p>The line segment section immediately follows the bsp tree.  Line segments are used for walls and doors.  The line segment section begins with a uInt16 that tells us the number of line segment records that follow.</p>
-		
-		<p>Line segment records are 36 bytes in length.  The first 4 bytes represent the start and end coordinate pairs for each line segment on the medium grid. This is followed by a uInt16 for the wall texture, then a uInt16 for various flags.</p>
+        <p>Group 2 maps sprites to color palettes.  There are 207 8-byte records, each composed of two uInt32's.  The first indicates the sprite (from <code>bitshapes.bin</code>), the second indicates the color palette (from <code>palettes.bin</code>).  To find the offset in to <code>bitshapes.bin</code>, add 4.  To find the palette index, divide by 16. To find the palette offset, add 4.</p>
 
-		<p>The value for the wall texture is an index to group 3 in <code>mappings.bin</code> which has the actual wall texture index.</p>
+        <p>Using some additional information about the dimentions of each sprite (from the <a href="http://www.neocomputer.org/projects/doomrpg/#spritedata">Sprite Data Appendix</a>), we can finally extract all of the sprites.</p>
 
-		<p>For consistancy with Fraggle's work, I'll use LSB 0 numbering. From most significant to least significant:</p>
+        <p><img id="spritecolor" src="./Decoding Doom RPG_files/spritescolor.png"></p>
 
-<pre>	15: Flip texture horizontally
-	14: East-facing wall
-	13: West-facing wall
-	12: North-facing wall
-	11: South-facing wall
-	10: Locked door
-	 9: Shift horizontal
-	 8: Shift vertical
-	 7:  not used
-	 6:  not used
-	 5: Secret / Hidden
-	 4: Shift West or North
-	 3: Shift East or South
-	 2: Door (with bit 0)
-	 1:  not used
-	 0: Door (with bit 2)
+        <p>Group 3 contains 93 records.  Each record consists of a single uInt16.  This maps the wall texture id from the line segment portion of .bsp files to the wall textures in Group 1.  For example, The wall texture assigned to the Portal (in <code>reactor.bsp</code>) is 34, but the wall texture is at index 24.  The value at Group 3 index 34 is 24.</p>
+
+        <p>Group 4 contains 252 records.  Each record consists of a single uIn16.  Values range from 0 to 205. Its purpose is unknown, but appears to be related to sprites.</p>
+
+        <a name="levels"></a>
+        <h2>Levels and Maps (*.bsp)</h2>
+        
+        <p>As luck would have it, <a href="https://soulsphere.org/">Simon Howard</a> (Fraggle) has worked out a good bit of the <a href="https://soulsphere.org/random/doom-rpg-bnf.txt">Doom RPG bsp file format</a> <a href="http://www.neocomputer.org/projects/doomrpg/bsp-bnf.txt">[Mirror]</a>.  I'll expand on his work here, filling in quite a few of the missing details. You can also take a look at <a href="http://walmsley.gen.nz/">Richard Walmsley's</a> <a href="https://github.com/richwalm/doomrpgmapviewer">Map Viewer</a>.</p>
+
+        <p>.bsp files start off with a 13-byte header:</p>
+<pre>    .bsp header:
+        uInt24: Floor Color BGR888
+        uInt24: Ceiling Color BGR888
+        uInt24: unknown (always 0)
+        uInt8:  Level id
+        uInt24: unknown
 </pre>
 
-		<p>Doors, short walls, and walls that are not perfectly vertical or horizontal do not have an orientation flag (bits 14-11) set.</p>
+        <p>The Level id number starts at 1 for <code>intro.bsp</code> and increases by one for each file in the natural level order: <code>junction.bsp</code>, <code>level01.bsp</code>, <code>level02.bsp</code>, <code>level03.bsp</code>, <code>level04.bsp</code>, <code>level05.bsp</code>, <code>level06.bsp</code>, <code>level07.bsp</code>, <code>junction_destroyed.bsp</code>, <code>reactor.bsp</code>. The enemy montage at the end of the game <code>endgame.bsp</code> and the test <code>items.bsp</code> both have an id of 0.  </p>
 
-		<p>Doors all have either bit 8 or 9 set, but none have bit 4 or 3 set.</p>
+        <h3>BSP Tree</h3>
+        <p>Following the header is the BSP tree.  It starts with a uInt16 representing the number of nodes.  Each node record is 48 bytes in length, so you can quickly skip over this section if you don't need it.</p>
+        
+        <p>The first four bytes of each node record represent the two coordinate pairs of a bounding box (x1, y1, x2, y2 in that order).  (These are positioned on the "medium grid" mentioned earlier.  You can multiply each value by 8 to convert them to the "fine grid".)</p>
+        
+        <p>The last six bytes represent different things, depending on the value of the first byte.  We'll use Fraggle's naming here.  The first byte is the "nodetype", the second is named "splitpos", the remaining four represent two uInt16's, the purpose of which varies depending on nodetype, called "arg1" and "arg2".</p>
+        
+        <p>If nodetype is zero, the current node is a leaf-node.  The splitpos byte is ignored. arg1 tells us the number of line segments in the node, and arg2 gives us the index of the first line segment, in the line segment record set, of the first line segment in the node. (The remaining line segment indices are in sequence from the first segment.)</p>
 
-		<h3>Things</h3>
-		
-		<p>Immediately following line segments are 'things'.  Things is a broad category that covers everything to enemies and pickups to wall decorations and 'fences'. There are 107 things in the game. See the <a href="http://www.neocomputer.org/projects/doomrpg/#thingdata">Thing Data Appendix</a> for details.</p>
+        <p>If nodetype is 1, the current node is split in to two subnodes along the y-axis. splitpos contains the position along the y-axis to split the node.  Arg1 contains the index of the first subnode, arg2 the index of the second.</p>
 
-		<p>The things section starts with a uInt16 that tells us the number of thing records that follow.</p>
+        <p>If nodetype is 2, the current node is split in to two subnodes along the x-axis. splitpos contains the position along the y-axis to split the node.  Arg1 contains the index of the first subnode, arg2 the index of the second. (This is identical to a nodetype of 1, but split along the x-axis instead of the y-axis.)</p>
 
-		<p>Thing records are 5 bytes in length.  The first two bytes represent the x and y coordinates of the thing on the medium grid. Things are centered on their coordinates.  The third byte identifies the thing id (not necessarily the entity id) of the thing being described or the wall texture if flag bit 2 is set.  The remaining two bytes (uInt16) are flags which provided additional information about the thing.  Flags are mostly unused by enemies and pickups.  Wall decorations and 'fences' use most of the flags.</p>
+        <h3>Line Segments</h3>
 
-		<p>Using LSB 0 numbering, from most to least significant:</p>
+        <p>The line segment section immediately follows the bsp tree.  Line segments are used for walls and doors.  The line segment section begins with a uInt16 that tells us the number of line segment records that follow.</p>
+        
+        <p>Line segment records are 36 bytes in length.  The first 4 bytes represent the start and end coordinate pairs for each line segment on the medium grid. This is followed by a uInt16 for the wall texture, then a uInt16 for various flags.</p>
 
-<pre>	15:  not used
-	14:  not used
-	13:  not used
-	12:  not used
-	11: Fence (with bit 1)
-	10:  not used 
-	 9: North or South-facing wall decoration
-	 8: Dead Enemy
-	 7: Wall Decoration
-	 6: West-facing
-	 5: East-facing
-	 4: South-facing
-	 3: North-facing
-	 2: Treat as Wall *
-	 1: Fence (with bit 11)
-	 0: Hidden
+        <p>The value for the wall texture is an index to group 3 in <code>mappings.bin</code> which has the actual wall texture index.</p>
 
-	 * When set, the id is used as the wall texture id.
-	   Orientation bits also change:
-	   6: East-facing
-	   5: West-facing
-	   4: North-facing
-	   3: South-facing
-</pre>
-		<h2>Events</h2>
-		
-		<p>The events section immediately follows the things section.  Fraggle calls these 'interactions'. Events mark every scripted action in the game.  They can be triggered with the action button like activating doors, using computers, and talking to people or they can be triggered simply by stepping on or off a course grid square. They can even be triggerd by  scripts.</p>
+        <p>For consistancy with Fraggle's work, I'll use LSB 0 numbering. From most significant to least significant:</p>
 
-		<p>The events section starts with a uInt16, which tells us how many event records follow.</p>
-
-		<p>Event records are 4 bytes long, with all of the fields packed tightly in to a uInt32.  From most to least significant:</p>
-<pre>	bits 31-25:  unknown (7 bits) [sometimes set to 1, e.g. the portal in reactor.bsp]
-	bits 24-19: Number of commands in script (6 bits)
-	bits 18-10: Index of first command (9 bits)
-	bits 9-5  : Event Y position on course grid (5 bits)
-	bits 4-0  : Event X position on course grid (5 bits)
+<pre>    15: Flip texture horizontally
+    14: East-facing wall
+    13: West-facing wall
+    12: North-facing wall
+    11: South-facing wall
+    10: Locked door
+     9: Shift horizontal
+     8: Shift vertical
+     7:  not used
+     6:  not used
+     5: Secret / Hidden
+     4: Shift West or North
+     3: Shift East or South
+     2: Door (with bit 0)
+     1:  not used
+     0: Door (with bit 2)
 </pre>
 
-		<h2>Commands and Scripts</h2>
+        <p>Doors, short walls, and walls that are not perfectly vertical or horizontal do not have an orientation flag (bits 14-11) set.</p>
 
-		<p>Following events are commands.  The command section starts with a uInt16 which tells us how many commands follow.</p>  
-		
-		<p>Commands are 9 bytes in length. The first byte is the command. The next 8 bytes are two uInt32's, the first of which (arg1) acts as arguments to the command.  The second (arg2) deals with the execution of the command.  Each event has a value associated with it I'll call the Event Variable. It defaults to zero, and can be modified by other commands.  That variable is referenced by the event's position on the course grid (typically 16 bits with bits 15-8 representing the y coordinate and bits 7-0 representing the x coordinate).</p>
+        <p>Doors all have either bit 8 or 9 set, but none have bit 4 or 3 set.</p>
+
+        <h3>Things</h3>
+        
+        <p>Immediately following line segments are 'things'.  Things is a broad category that covers everything to enemies and pickups to wall decorations and 'fences'. There are 107 things in the game. See the <a href="http://www.neocomputer.org/projects/doomrpg/#thingdata">Thing Data Appendix</a> for details.</p>
+
+        <p>The things section starts with a uInt16 that tells us the number of thing records that follow.</p>
+
+        <p>Thing records are 5 bytes in length.  The first two bytes represent the x and y coordinates of the thing on the medium grid. Things are centered on their coordinates.  The third byte identifies the thing id (not necessarily the entity id) of the thing being described or the wall texture if flag bit 2 is set.  The remaining two bytes (uInt16) are flags which provided additional information about the thing.  Flags are mostly unused by enemies and pickups.  Wall decorations and 'fences' use most of the flags.</p>
+
+        <p>Using LSB 0 numbering, from most to least significant:</p>
+
+<pre>    15:  not used
+    14:  not used
+    13:  not used
+    12:  not used
+    11: Fence (with bit 1)
+    10:  not used 
+     9: North or South-facing wall decoration
+     8: Dead Enemy
+     7: Wall Decoration
+     6: West-facing
+     5: East-facing
+     4: South-facing
+     3: North-facing
+     2: Treat as Wall *
+     1: Fence (with bit 11)
+     0: Hidden
+
+     * When set, the id is used as the wall texture id.
+       Orientation bits also change:
+       6: East-facing
+       5: West-facing
+       4: North-facing
+       3: South-facing
+</pre>
+        <h2>Events</h2>
+        
+        <p>The events section immediately follows the things section.  Fraggle calls these 'interactions'. Events mark every scripted action in the game.  They can be triggered with the action button like activating doors, using computers, and talking to people or they can be triggered simply by stepping on or off a course grid square. They can even be triggerd by  scripts.</p>
+
+        <p>The events section starts with a uInt16, which tells us how many event records follow.</p>
+
+        <p>Event records are 4 bytes long, with all of the fields packed tightly in to a uInt32.  From most to least significant:</p>
+<pre>    bits 31-25:  unknown (7 bits) [sometimes set to 1, e.g. the portal in reactor.bsp]
+    bits 24-19: Number of commands in script (6 bits)
+    bits 18-10: Index of first command (9 bits)
+    bits 9-5  : Event Y position on course grid (5 bits)
+    bits 4-0  : Event X position on course grid (5 bits)
+</pre>
+
+        <h2>Commands and Scripts</h2>
+
+        <p>Following events are commands.  The command section starts with a uInt16 which tells us how many commands follow.</p>  
+        
+        <p>Commands are 9 bytes in length. The first byte is the command. The next 8 bytes are two uInt32's, the first of which (arg1) acts as arguments to the command.  The second (arg2) deals with the execution of the command.  Each event has a value associated with it I'll call the Event Variable. It defaults to zero, and can be modified by other commands.  That variable is referenced by the event's position on the course grid (typically 16 bits with bits 15-8 representing the y coordinate and bits 7-0 representing the x coordinate).</p>
 <pre>Arg2:
-	Bits 31-16: Only execute command IF this Value matches the Event Variable
+    Bits 31-16: Only execute command IF this Value matches the Event Variable
 
-	Bits 15-0:
-	15:
-	14:
-	13:
-	12:
-	11:
-	10:
-	 9: things/walls are added/removed by this command
-	 8: Execute command on 'action button pressed' 
-	 7: East  (execute command on 'leave', in directions set by bits 7-4)
-	 6: North 
-	 5: West  
-	 4: South 
-	 3: West (execute command on 'enter' in directions set by bits 3-0)
-	 2:
-	 1: East
-	 0:
+    Bits 15-0:
+    15:
+    14:
+    13:
+    12:
+    11:
+    10:
+     9: things/walls are added/removed by this command
+     8: Execute command on 'action button pressed' 
+     7: East  (execute command on 'leave', in directions set by bits 7-4)
+     6: North 
+     5: West  
+     4: South 
+     3: West (execute command on 'enter' in directions set by bits 3-0)
+     2:
+     1: East
+     0:
 </pre>
 
 <pre>Commands:
 
-	 1: Change Location
-		arg1: Orientation (bits 23-20) (N: - S: - E: - W: 8)
-		      Location Y,X on Course Grid (bits 15-0)
+     1: Change Location
+        arg1: Orientation (bits 23-20) (N: - S: - E: - W: 8)
+              Location Y,X on Course Grid (bits 15-0)
 
-	 2: Change Level 
-		arg1: Flags, level
-		      Completed current level (bit 31)
-		      unknown (bits 30-8)
-		      Level filename (local string index, bits 7-0)
-	
-	 3: Run Event Script
-		arg1: Event location Y,X (bits 15-0)
+     2: Change Level 
+        arg1: Flags, level
+              Completed current level (bit 31)
+              unknown (bits 30-8)
+              Level filename (local string index, bits 7-0)
+    
+     3: Run Event Script
+        arg1: Event location Y,X (bits 15-0)
 
-	 4: Show Status Bar Message
-		arg1: Message (string index, bits 15-8)
+     4: Show Status Bar Message
+        arg1: Message (string index, bits 15-8)
 
-	 5: Not Used
+     5: Not Used
 
-	 6: Not Used
+     6: Not Used
 
-	 7: Show Thing 
-		arg1: Thing state (bits 15-8) (state 0: normal, state 2: dead)
-		      Thing id (bits 7-0)
+     7: Show Thing 
+        arg1: Thing state (bits 15-8) (state 0: normal, state 2: dead)
+              Thing id (bits 7-0)
 
-	 8: Show Message
-		arg1: Message (string index, bits 15-8)
-	
-	 9: Get Map Data
+     8: Show Message
+        arg1: Message (string index, bits 15-8)
+    
+     9: Get Map Data
 
-	10: Enter Passcode (Halt on failure)
-		arg1: Prompt (string index, bits 15-8)
+    10: Enter Passcode (Halt on failure)
+        arg1: Prompt (string index, bits 15-8)
 
-	11: Set Event Variable
-		arg1: Value (bits 31-16)
-		      Event Variable to Modify (bits 15-0, Course Grid Location)
+    11: Set Event Variable
+        arg1: Value (bits 31-16)
+              Event Variable to Modify (bits 15-0, Course Grid Location)
 
-	12: Lock Door
-		arg1: Door (line segment index)
+    12: Lock Door
+        arg1: Door (line segment index)
 
-	13: Unlock Door
-		arg1: Door (line segment index)
+    13: Unlock Door
+        arg1: Door (line segment index)
 
-	14: Not Used
+    14: Not Used
 
-	15: Open Door
-		arg1: Door line segment index
+    15: Open Door
+        arg1: Door line segment index
 
-	16: Close Door
-		arg1: Door line segment index
+    16: Close Door
+        arg1: Door line segment index
 
-	17: Not Used
+    17: Not Used
 
-	18: Hide Things at Location
-		arg1: Course Grid Location (bits 15-0)
+    18: Hide Things at Location
+        arg1: Course Grid Location (bits 15-0)
 
-	19: Incriment Event Variable
-		arg1: event variable (bits 15-0)
-		      (increases by 2x after zero: 0, 1, 2, 4, 8, etc.)
+    19: Incriment Event Variable
+        arg1: event variable (bits 15-0)
+              (increases by 2x after zero: 0, 1, 2, 4, 8, etc.)
 
-	20: Not Used
+    20: Not Used
 
-	21: Increase Status Item Count
-		arg1: Amount to gain (bits 11-8)
-		      Status item (bits 7-0) health: 0, armor: 1, credits: 2
+    21: Increase Status Item Count
+        arg1: Amount to gain (bits 11-8)
+              Status item (bits 7-0) health: 0, armor: 1, credits: 2
 
-	22: Decrease Status Item Count
-	    arg1: Amount to lose (bits 11-8)
-	          Status item (bits 7-0) health: 0, armor: 1, credits: 2
+    22: Decrease Status Item Count
+        arg1: Amount to lose (bits 11-8)
+              Status item (bits 7-0) health: 0, armor: 1, credits: 2
 
-	23: Show Message and Halt IF Status Item Count is less than Amount
-		arg1: Message string index (bits 31-16)
-		      Amount (bits 15-8)
-		      Status item (bits 7-0) health: 0, armor: 1, credits: 2
+    23: Show Message and Halt IF Status Item Count is less than Amount
+        arg1: Message string index (bits 31-16)
+              Amount (bits 15-8)
+              Status item (bits 7-0) health: 0, armor: 1, credits: 2
 
-	24: Show Status Bar Message
-		arg1: Message (string index, bits 15-8)
+    24: Show Status Bar Message
+        arg1: Message (string index, bits 15-8)
 
-	25: Explosion
-		arg1: type? (bits 31-24), location on course grid (bits 23-0)
+    25: Explosion
+        arg1: type? (bits 31-24), location on course grid (bits 23-0)
 
-	26: Show Message
-		arg1: Message (string index, bits 15-8)
+    26: Show Message
+        arg1: Message (string index, bits 15-8)
 
-	27: Change Level Parameters (called before command 2) 
-		arg1: unknown (bits 31-24)
-		      Start Level At Course Grid Location Y,X (bits 23-8)
-		      unknown (bits 7-0)
-	
-	28: Not Used
+    27: Change Level Parameters (called before command 2) 
+        arg1: unknown (bits 31-24)
+              Start Level At Course Grid Location Y,X (bits 23-8)
+              unknown (bits 7-0)
+    
+    28: Not Used
 
-	29: Shake Effect
-		arg1: Intensity (bits 31-24), duration in ms (bits 23-0)
-	
-	30: Set Floor Color
-		arg2: Color BGR888 (bits 23-0)
-	
-	31: Set Ceiling Color
-		arg1: Color BGR888 (bits 23-0)
+    29: Shake Effect
+        arg1: Intensity (bits 31-24), duration in ms (bits 23-0)
+    
+    30: Set Floor Color
+        arg2: Color BGR888 (bits 23-0)
+    
+    31: Set Ceiling Color
+        arg1: Color BGR888 (bits 23-0)
 
-	32: Give/Take All Collected Weapons
-		arg1: 0 - Take, 1 - Give
+    32: Give/Take All Collected Weapons
+        arg1: 0 - Take, 1 - Give
 
-	33: Open Store
-		arg1: store id (0, 1, 2, or 3)
-	
-	34: Set State of Thing at Course Grid Location (used only to kill humans)
-		arg1: State (Bits 23-16) (state 2: dead)
-		      unknown (bits 15-10)
-		      Human course grid location Y (bits 9-5)
-		      Human course grid location X (bits 4-0)
-	
-	35: Particle Effect
-		arg1: effect (bits 31-24)
-		      color BGR888 (bits 23-0)
-		      (Effects: 0x20 blood spurt, 0x23 teleport/transformation)
+    33: Open Store
+        arg1: store id (0, 1, 2, or 3)
+    
+    34: Set State of Thing at Course Grid Location (used only to kill humans)
+        arg1: State (Bits 23-16) (state 2: dead)
+              unknown (bits 15-10)
+              Human course grid location Y (bits 9-5)
+              Human course grid location X (bits 4-0)
+    
+    35: Particle Effect
+        arg1: effect (bits 31-24)
+              color BGR888 (bits 23-0)
+              (Effects: 0x20 blood spurt, 0x23 teleport/transformation)
 
-	36: Draw Frame
+    36: Draw Frame
 
-	37: Wait
-		arg1: time to wait in ms (bits 23-0)
+    37: Wait
+        arg1: time to wait in ms (bits 23-0)
 
-	38: Unknown. Used Only Once (in reactor.bsp in the "gate lift" script) Related to the portal?
+    38: Unknown. Used Only Once (in reactor.bsp in the "gate lift" script) Related to the portal?
 
-	39: Show message IF [some level] not complete
-		arg1: Level id (bits 31-24) from bsp header
-		      Message (string index, bits 15-8)
+    39: Show message IF [some level] not complete
+        arg1: Level id (bits 31-24) from bsp header
+              Message (string index, bits 15-8)
 
-	40: Add Notebook Entry
-		arg1: Note (string index, bits 15-8)
-	
-	41: Halt IF missing keycard
-		arg1: Keycard id (bits 1-0)
-		(Green: 0, Yellow: 1, Blue: 2, Red: 3)
+    40: Add Notebook Entry
+        arg1: Note (string index, bits 15-8)
+    
+    41: Halt IF missing keycard
+        arg1: Keycard id (bits 1-0)
+        (Green: 0, Yellow: 1, Blue: 2, Red: 3)
 
 </pre>
 
-		<h3>Block Map</h3>
+        <h3>Block Map</h3>
 
-		<p>The last 256 bytes of the file represent the block map.  The blocks are ordered from left to right, top to bottom. The block map is 32x32 blocks in size, meaning that each block is represented by two bits. The MSB is a flag that tells us if a block is part of a secret area.  The LSB tells us if the square is impassable.  Bit pairs within each byte are not ordered as you'd expect, but 'reversed'. Each byte represents 4 blocks, but the left most block is represented by the least significant pair, the most significant pair representing the rightmost block.</p>
-<pre>	Bit pairs:
-		00 - Floor
-		01 - Wall 
-		10 - Floor (secret)
-		11 - Wall (secret)
+        <p>The last 256 bytes of the file represent the block map.  The blocks are ordered from left to right, top to bottom. The block map is 32x32 blocks in size, meaning that each block is represented by two bits. The MSB is a flag that tells us if a block is part of a secret area.  The LSB tells us if the square is impassable.  Bit pairs within each byte are not ordered as you'd expect, but 'reversed'. Each byte represents 4 blocks, but the left most block is represented by the least significant pair, the most significant pair representing the rightmost block.</p>
+<pre>    Bit pairs:
+        00 - Floor
+        01 - Wall 
+        10 - Floor (secret)
+        11 - Wall (secret)
 </pre>
 
-		<p>This block map of Level 2 shows all four block types:</p>
+        <p>This block map of Level 2 shows all four block types:</p>
 
-		<p><img id="blockmap" src="./Decoding Doom RPG_files/blockmap2.png"></p>
+        <p><img id="blockmap" src="./Decoding Doom RPG_files/blockmap2.png"></p>
 
-		<a name="spritedata"></a>
-		<h2>Sprite Data Appendix</h2>
+        <a name="spritedata"></a>
+        <h2>Sprite Data Appendix</h2>
 
-		<table id="spritetable">
-		<thead>
-		<tr>
-			<td>Index</td><td>Description</td><td>Offset</td><td>Strip Size</td><td>Strip Count</td><td>Length</td><td>stexels.bin  Offset</td><td>Header</td>
-		</tr>
-		</thead>
-		<tbody>
-			<tr><td>0</td><td>Axe</td><td>4</td><td>3</td><td>63</td><td>189</td><td>4</td><td><code>00 A0 01 00 <b>C1</b> <b>00</b> 70 01 01 3F 2C 3F </code></td></tr>
-			<tr><td>1</td><td>Fire Extinguisher</td><td>205</td><td>4</td><td>25</td><td>100</td><td>296</td><td><code>48 A2 01 00 <b>68</b> <b>00</b> 88 00 18 30 21 3F </code></td></tr>
-			<tr><td>2</td><td>Shotgun</td><td>317</td><td>2</td><td>64</td><td>128</td><td>458</td><td><code>8C A3 01 00 <b>84</b> <b>00</b> 84 01 00 3F 30 3F </code></td></tr>
-			<tr><td>3</td><td>Super Shotgun</td><td>457</td><td>3</td><td>55</td><td>165</td><td>709</td><td><code>82 A5 01 00 <b>A9</b> <b>00</b> 52 01 05 3B 2E 3F </code></td></tr>
-			<tr><td>4</td><td>Chain Gun</td><td>634</td><td>3</td><td>55</td><td>165</td><td>953</td><td><code>6A A7 01 00 <b>A9</b> <b>00</b> 50 01 05 3B 2C 3F </code></td></tr>
-			<tr><td>5</td><td>Rocket Launcher</td><td>811</td><td>3</td><td>62</td><td>186</td><td>1344</td><td><code>78 AA 01 00 <b>BE</b> <b>00</b> 7A 01 01 3E 2C 3F </code></td></tr>
-			<tr><td>6</td><td>Plasma Gun</td><td>1009</td><td>3</td><td>54</td><td>162</td><td>1705</td><td><code>4A AD 01 00 <b>A6</b> <b>00</b> 56 01 05 3A 2C 3F </code></td></tr>
-			<tr><td>7</td><td>BFG 9000</td><td>1183</td><td>5</td><td>64</td><td>320</td><td>2042</td><td><code>EC AF 01 00 <b>44</b> <b>01</b> A6 01 00 3F 1B 3F </code></td></tr>
-			<tr><td>8</td><td>Zombie</td><td>1515</td><td>7</td><td>41</td><td>287</td><td>2617</td><td><code>6A B4 01 00 <b>23</b> <b>01</b> D8 00 0E 36 09 3F </code></td></tr>
-			<tr><td>9</td><td>Zombie Attack</td><td>1814</td><td>7</td><td>39</td><td>273</td><td>3163</td><td><code>AE B8 01 00 <b>15</b> <b>01</b> BE 00 12 38 09 3F </code></td></tr>
-			<tr><td>10</td><td>Zombie Dead</td><td>2099</td><td>3</td><td>50</td><td>150</td><td>3673</td><td><code>AA BC 01 00 <b>9A</b> <b>00</b> CC 00 08 39 2F 3F </code></td></tr>
-			<tr><td>11</td><td>Hellhound</td><td>2261</td><td>6</td><td>33</td><td>198</td><td>3959</td><td><code>E6 BE 01 00 <b>CA</b> <b>00</b> A0 00 16 36 14 3F </code></td></tr>
-			<tr><td>12</td><td>Hellhound Attack</td><td>2471</td><td>8</td><td>47</td><td>376</td><td>4327</td><td><code>C6 C1 01 00 <b>7C</b> <b>01</b> E6 00 0D 3B 03 3F </code></td></tr>
-			<tr><td>13</td><td>Hellhound Dead</td><td>2859</td><td>3</td><td>51</td><td>153</td><td>4851</td><td><code>DE C5 01 00 <b>9D</b> <b>00</b> FC 00 07 39 29 3F </code></td></tr>
-			<tr><td>14</td><td>Commando</td><td>3024</td><td>8</td><td>50</td><td>400</td><td>5232</td><td><code>D8 C8 01 00 <b>94</b> <b>01</b> EE 00 0B 3C 05 3F </code></td></tr>
-			<tr><td>15</td><td>Commando Attack</td><td>3436</td><td>8</td><td>50</td><td>400</td><td>6000</td><td><code>D8 CE 01 00 <b>94</b> <b>01</b> 02 01 0A 3B 06 3F </code></td></tr>
-			<tr><td>16</td><td>Commando Dead</td><td>3848</td><td>3</td><td>64</td><td>192</td><td>6791</td><td><code>06 D5 01 00 <b>C4</b> <b>00</b> 16 01 00 3F 2B 3F </code></td></tr>
-			<tr><td>17</td><td>Imp</td><td>4052</td><td>7</td><td>46</td><td>322</td><td>7210</td><td><code>4C D8 01 00 <b>46</b> <b>01</b> 08 01 0C 39 08 3F </code></td></tr>
-			<tr><td>18</td><td>Imp Attack</td><td>4386</td><td>8</td><td>55</td><td>440</td><td>7824</td><td><code>18 DD 01 00 <b>BC</b> <b>01</b> 48 01 07 3D 04 3F </code></td></tr>
-			<tr><td>19</td><td>Imp Dead</td><td>4838</td><td>3</td><td>61</td><td>183</td><td>8458</td><td><code>0C E2 01 00 <b>BB</b> <b>00</b> 12 01 03 3F 2A 3F </code></td></tr>
-			<tr><td>20</td><td>Lost Soul</td><td>5033</td><td>7</td><td>44</td><td>308</td><td>8835</td><td><code>FE E4 01 00 <b>38</b> <b>01</b> FE 00 0A 35 08 3F </code></td></tr>
-			<tr><td>21</td><td>Lost Soul Attack</td><td>5353</td><td>7</td><td>44</td><td>308</td><td>9351</td><td><code>06 E9 01 00 <b>38</b> <b>01</b> 08 01 0A 35 0A 3F </code></td></tr>
-			<tr><td>22</td><td>Lost Soul Dead</td><td>5673</td><td>2</td><td>56</td><td>112</td><td>9862</td><td><code>04 ED 01 00 <b>74</b> <b>00</b> EA 00 06 3D 30 3F </code></td></tr>
-			<tr><td>23</td><td>Pinky</td><td>5797</td><td>7</td><td>49</td><td>343</td><td>10109</td><td><code>F2 EE 01 00 <b>5B</b> <b>01</b> 04 01 0C 3C 08 3F </code></td></tr>
-			<tr><td>24</td><td>Pinky Attack</td><td>6152</td><td>7</td><td>53</td><td>371</td><td>10921</td><td><code>4A F5 01 00 <b>77</b> <b>01</b> 24 01 0A 3E 09 3F </code></td></tr>
-			<tr><td>25</td><td>Pinky Dead</td><td>6535</td><td>4</td><td>64</td><td>256</td><td>11764</td><td><code>E0 FB 01 00 <b>04</b> <b>01</b> 28 01 00 3F 20 3F </code></td></tr>
-			<tr><td>26</td><td>Cacodemon</td><td>6803</td><td>8</td><td>64</td><td>512</td><td>12330</td><td><code>4C 00 02 00 <b>04</b> <b>02</b> 5C 01 00 3F 00 3F </code></td></tr>
-			<tr><td>27</td><td>Cacodemon Attack</td><td>7327</td><td>8</td><td>64</td><td>512</td><td>13930</td><td><code>CC 0C 02 00 <b>04</b> <b>02</b> 30 01 00 3F 00 3F </code></td></tr>
-			<tr><td>28</td><td>Cacodemon Dead</td><td>7851</td><td>5</td><td>64</td><td>320</td><td>15482</td><td><code>EC 18 02 00 <b>44</b> <b>01</b> 14 01 00 3F 1A 3F </code></td></tr>
-			<tr><td>29</td><td>Pain Elemental</td><td>8183</td><td>8</td><td>64</td><td>512</td><td>16265</td><td><code>0A 1F 02 00 <b>04</b> <b>02</b> 78 01 00 3F 07 3F </code></td></tr>
-			<tr><td>30</td><td>Pain Elemental Attack</td><td>8707</td><td>8</td><td>64</td><td>512</td><td>17518</td><td><code>D4 28 02 00 <b>04</b> <b>02</b> 72 01 00 3F 07 3F </code></td></tr>
-			<tr><td>31</td><td>Pain Elemental Dead</td><td>9231</td><td>5</td><td>63</td><td>315</td><td>18789</td><td><code>C2 32 02 00 <b>3F</b> <b>01</b> 1C 01 01 3F 1E 3F </code></td></tr>
-			<tr><td>32</td><td>Revenant</td><td>9558</td><td>8</td><td>50</td><td>400</td><td>19615</td><td><code>36 39 02 00 <b>94</b> <b>01</b> 4A 01 0B 3C 00 3F </code></td></tr>
-			<tr><td>33</td><td>Revenant Attack</td><td>9970</td><td>7</td><td>49</td><td>343</td><td>20209</td><td><code>DA 3D 02 00 <b>5B</b> <b>01</b> 28 01 0D 3D 09 3F </code></td></tr>
-			<tr><td>34</td><td>Mancubus</td><td>10325</td><td>8</td><td>64</td><td>512</td><td>20746</td><td><code>0C 42 02 00 <b>04</b> <b>02</b> 40 01 00 3F 00 3F </code></td></tr>
-			<tr><td>35</td><td>Mancubus Attack</td><td>10849</td><td>8</td><td>64</td><td>512</td><td>22308</td><td><code>40 4E 02 00 <b>04</b> <b>02</b> 64 01 00 3F 00 3F </code></td></tr>
-			<tr><td>36</td><td>Mancubus Dead</td><td>11373</td><td>4</td><td>64</td><td>256</td><td>23792</td><td><code>D8 59 02 00 <b>04</b> <b>01</b> 24 01 00 3F 21 3F </code></td></tr>
-			<tr><td>37</td><td>Archvile</td><td>11641</td><td>7</td><td>45</td><td>315</td><td>24464</td><td><code>18 5F 02 00 <b>3F</b> <b>01</b> 2C 01 0C 38 0E 3F </code></td></tr>
-			<tr><td>38</td><td>Archvile Attack</td><td>11968</td><td>8</td><td>64</td><td>512</td><td>24943</td><td><code>D6 62 02 00 <b>04</b> <b>02</b> C0 01 00 3F 00 3F </code></td></tr>
-			<tr><td>39</td><td>Archvile Dead</td><td>12492</td><td>3</td><td>52</td><td>156</td><td>25516</td><td><code>50 67 02 00 <b>A0</b> <b>00</b> D6 00 06 39 2E 3F </code></td></tr>
-			<tr><td>40</td><td>Baron</td><td>12660</td><td>8</td><td>48</td><td>384</td><td>25823</td><td><code>B6 69 02 00 <b>84</b> <b>01</b> 02 01 0B 3A 00 3F </code></td></tr>
-			<tr><td>41</td><td>Baron Attack</td><td>13056</td><td>8</td><td>64</td><td>512</td><td>26676</td><td><code>60 70 02 00 <b>04</b> <b>02</b> 80 01 00 3F 00 3F </code></td></tr>
-			<tr><td>42</td><td>Baron Dead</td><td>13580</td><td>4</td><td>55</td><td>220</td><td>27624</td><td><code>C8 77 02 00 <b>E0</b> <b>00</b> E4 00 06 3C 27 3F </code></td></tr>
-			<tr><td>43</td><td>Cyberdemon</td><td>13812</td><td>8</td><td>52</td><td>416</td><td>28072</td><td><code>48 7B 02 00 <b>A4</b> <b>01</b> 58 01 08 3B 00 3F </code></td></tr>
-			<tr><td>44</td><td>Cyberdemon Attack</td><td>14240</td><td>8</td><td>57</td><td>456</td><td>29076</td><td><code>20 83 02 00 <b>CC</b> <b>01</b> AC 01 03 3B 00 3F </code></td></tr>
-			<tr><td>45</td><td>Kratos</td><td>14708</td><td>8</td><td>59</td><td>472</td><td>30151</td><td><code>86 8B 02 00 <b>DC</b> <b>01</b> DE 01 01 3B 03 3F </code></td></tr>
-			<tr><td>46</td><td>Kratos Attack</td><td>15192</td><td>8</td><td>64</td><td>512</td><td>30833</td><td><code>DA 90 02 00 <b>04</b> <b>02</b> 02 02 00 3F 05 3F </code></td></tr>
-			<tr><td>47</td><td>Keycard</td><td>15716</td><td>3</td><td>15</td><td>45</td><td>31698</td><td><code>9C 97 02 00 <b>31</b> <b>00</b> 5C 00 19 27 2B 3F </code></td></tr>
-			<tr><td>48</td><td>Halon Can</td><td>15773</td><td>2</td><td>31</td><td>62</td><td>31811</td><td><code>7E 98 02 00 <b>42</b> <b>00</b> 80 00 13 31 36 3F </code></td></tr>
-			<tr><td>49</td><td>Bullet Clip</td><td>15847</td><td>2</td><td>16</td><td>32</td><td>31942</td><td><code>84 99 02 00 <b>24</b> <b>00</b> 44 00 1B 2A 35 3F </code></td></tr>
-			<tr><td>50</td><td>Shotgun Clip</td><td>15891</td><td>1</td><td>18</td><td>18</td><td>31998</td><td><code>F4 99 02 00 <b>16</b> <b>00</b> 4C 00 18 29 39 3F </code></td></tr>
-			<tr><td>51</td><td>Rocket</td><td>15921</td><td>3</td><td>25</td><td>75</td><td>32043</td><td><code>4E 9A 02 00 <b>4F</b> <b>00</b> 68 00 1A 32 27 3E </code></td></tr>
-			<tr><td>52</td><td>Cell Clip</td><td>16008</td><td>2</td><td>22</td><td>44</td><td>32167</td><td><code>46 9B 02 00 <b>30</b> <b>00</b> 5C 00 17 2C 34 3F </code></td></tr>
-			<tr><td>53</td><td>Health Vial</td><td>16064</td><td>3</td><td>19</td><td>57</td><td>32275</td><td><code>1E 9C 02 00 <b>3D</b> <b>00</b> 50 00 19 2B 2E 3F </code></td></tr>
-			<tr><td>54</td><td>Armor Shard</td><td>16133</td><td>2</td><td>22</td><td>44</td><td>32367</td><td><code>D6 9C 02 00 <b>30</b> <b>00</b> 5C 00 18 2D 31 3F </code></td></tr>
-			<tr><td>55</td><td>Flak Jacket</td><td>16189</td><td>3</td><td>31</td><td>93</td><td>32484</td><td><code>C0 9D 02 00 <b>61</b> <b>00</b> 8E 00 10 2E 2F 3F </code></td></tr>
-			<tr><td>56</td><td>Credit</td><td>16294</td><td>2</td><td>40</td><td>80</td><td>32681</td><td><code>4A 9F 02 00 <b>54</b> <b>00</b> A4 00 0E 35 2E 3D </code></td></tr>
-			<tr><td>57</td><td>Medkit</td><td>16386</td><td>3</td><td>38</td><td>114</td><td>32969</td><td><code>8A A1 02 00 <b>76</b> <b>00</b> 9C 00 12 37 2D 3F </code></td></tr>
-			<tr><td>58</td><td>Soul Sphear</td><td>16512</td><td>4</td><td>32</td><td>128</td><td>33262</td><td><code>D4 A3 02 00 <b>84</b> <b>00</b> 86 00 13 32 27 3F </code></td></tr>
-			<tr><td>59</td><td>Dog Collar</td><td>16652</td><td>4</td><td>35</td><td>140</td><td>33541</td><td><code>02 A6 02 00 <b>90</b> <b>00</b> BE 00 13 35 1F 3D </code></td></tr>
-			<tr><td>60</td><td>Lava Pit</td><td>16804</td><td>2</td><td>63</td><td>126</td><td>33758</td><td><code>B4 A7 02 00 <b>82</b> <b>00</b> 0E 01 01 3F 31 3F </code></td></tr>
-			<tr><td>61</td><td>Fire</td><td>16942</td><td>8</td><td>64</td><td>512</td><td>34075</td><td><code>2E AA 02 00 <b>04</b> <b>02</b> A8 01 00 3F 01 3F </code></td></tr>
-			<tr><td>62</td><td>Barrel</td><td>17466</td><td>4</td><td>39</td><td>156</td><td>35197</td><td><code>F2 B2 02 00 <b>A0</b> <b>00</b> A0 00 14 3A 20 3F </code></td></tr>
-			<tr><td>63</td><td>Coupler</td><td>17634</td><td>8</td><td>40</td><td>320</td><td>35605</td><td><code>22 B6 02 00 <b>44</b> <b>01</b> 58 01 0C 33 01 3F </code></td></tr>
-			<tr><td>64</td><td>Sink</td><td>17966</td><td>6</td><td>33</td><td>198</td><td>36332</td><td><code>D0 BB 02 00 <b>CA</b> <b>00</b> AC 00 17 37 12 3F </code></td></tr>
-			<tr><td>65</td><td>Toilet</td><td>18176</td><td>6</td><td>32</td><td>192</td><td>36653</td><td><code>52 BE 02 00 <b>C4</b> <b>00</b> 9E 00 12 31 16 3F </code></td></tr>
-			<tr><td>66</td><td>Chair</td><td>18380</td><td>5</td><td>28</td><td>140</td><td>37147</td><td><code>2E C2 02 00 <b>90</b> <b>00</b> B6 00 14 2F 1B 3F </code></td></tr>
-			<tr><td>67</td><td>Lamp</td><td>18532</td><td>6</td><td>42</td><td>252</td><td>37419</td><td><code>4E C4 02 00 <b>00</b> <b>01</b> B6 00 14 3D 10 3F </code></td></tr>
-			<tr><td>68</td><td>Exit Sign</td><td>18796</td><td>2</td><td>22</td><td>44</td><td>37770</td><td><code>0C C7 02 00 <b>30</b> <b>00</b> 5C 00 15 2A 00 0D </code></td></tr>
-			<tr><td>69</td><td>File Cabinet</td><td>18852</td><td>7</td><td>44</td><td>308</td><td>37921</td><td><code>3A C8 02 00 <b>38</b> <b>01</b> B4 00 14 3F 0C 3F </code></td></tr>
-			<tr><td>70</td><td>Table</td><td>19172</td><td>4</td><td>54</td><td>216</td><td>38592</td><td><code>78 CD 02 00 <b>DC</b> <b>00</b> 3C 01 07 3C 24 3F </code></td></tr>
-			<tr><td>71</td><td>Bunk</td><td>19400</td><td>6</td><td>58</td><td>348</td><td>38939</td><td><code>2E D0 02 00 <b>60</b> <b>01</b> B6 01 03 3C 16 3F </code></td></tr>
-			<tr><td>72</td><td>Enter Sign</td><td>19760</td><td>2</td><td>31</td><td>62</td><td>39611</td><td><code>6E D5 02 00 <b>42</b> <b>00</b> 80 00 10 2E 00 0D </code></td></tr>
-			<tr><td>73</td><td>Civilian</td><td>19834</td><td>7</td><td>36</td><td>252</td><td>39825</td><td><code>1A D7 02 00 <b>00</b> <b>01</b> B8 00 0E 31 08 3F </code></td></tr>
-			<tr><td>74</td><td>Scientist</td><td>20098</td><td>8</td><td>34</td><td>272</td><td>40352</td><td><code>38 DB 02 00 <b>14</b> <b>01</b> C2 00 13 34 06 3F </code></td></tr>
-			<tr><td>75</td><td>Marine</td><td>20382</td><td>8</td><td>36</td><td>288</td><td>40855</td><td><code>26 DF 02 00 <b>24</b> <b>01</b> C2 00 11 34 06 3F </code></td></tr>
-			<tr><td>76</td><td>Crate</td><td>20682</td><td>4</td><td>49</td><td>196</td><td>41347</td><td><code>FE E2 02 00 <b>C8</b> <b>00</b> C8 00 0D 3D 20 3F </code></td></tr>
-			<tr><td>77</td><td>Blast A Frame 1</td><td>20890</td><td>5</td><td>40</td><td>200</td><td>41966</td><td><code>D4 E7 02 00 <b>CC</b> <b>00</b> A4 00 0C 33 0C 33 </code></td></tr>
-			<tr><td>78</td><td>Blast A Frame 2</td><td>21102</td><td>6</td><td>48</td><td>288</td><td>42535</td><td><code>46 EC 02 00 <b>24</b> <b>01</b> 8C 01 07 36 09 38 </code></td></tr>
-			<tr><td>79</td><td>Blast A Frame 3</td><td>21402</td><td>8</td><td>62</td><td>496</td><td>43296</td><td><code>38 F2 02 00 <b>F4</b> <b>01</b> B2 02 00 3D 02 3D </code></td></tr>
-			<tr><td>80</td><td>Blast B Frame 1</td><td>21910</td><td>4</td><td>29</td><td>116</td><td>43641</td><td><code>EA F4 02 00 <b>78</b> <b>00</b> B6 00 11 2D 11 2D </code></td></tr>
-			<tr><td>81</td><td>Blast B Frame 2</td><td>22038</td><td>7</td><td>64</td><td>448</td><td>43868</td><td><code>B0 F6 02 00 <b>C4</b> <b>01</b> 32 01 00 3F 07 38 </code></td></tr>
-			<tr><td>82</td><td>Blast B Frame 3</td><td>22498</td><td>4</td><td>64</td><td>256</td><td>45039</td><td><code>D6 FF 02 00 <b>04</b> <b>01</b> 0E 01 00 3F 11 2C </code></td></tr>
-			<tr><td>83</td><td>Blast C Frame 1</td><td>22766</td><td>2</td><td>15</td><td>30</td><td>45478</td><td><code>44 03 03 00 <b>22</b> <b>00</b> 40 00 18 26 19 26 </code></td></tr>
-			<tr><td>84</td><td>Blast C Frame 2</td><td>22808</td><td>5</td><td>40</td><td>200</td><td>45528</td><td><code>A8 03 03 00 <b>CC</b> <b>00</b> FA 01 0B 32 0D 31 </code></td></tr>
-			<tr><td>85</td><td>Blood Splat</td><td>23020</td><td>8</td><td>59</td><td>472</td><td>45722</td><td><code>2C 05 03 00 <b>DC</b> <b>01</b> E2 01 03 3D 03 3D </code></td></tr>
-			<tr><td>86</td><td>Blood Splat Pentagram</td><td>23504</td><td>8</td><td>63</td><td>504</td><td>46212</td><td><code>00 09 03 00 <b>FC</b> <b>01</b> 96 02 01 3F 03 3F </code></td></tr>
-			<tr><td>87</td><td>Blood Splat Die</td><td>24020</td><td>8</td><td>52</td><td>416</td><td>46939</td><td><code>AE 0E 03 00 <b>A4</b> <b>01</b> 14 02 07 3A 06 3F </code></td></tr>
-			<tr><td>88</td><td>X Brace</td><td>24448</td><td>8</td><td>64</td><td>512</td><td>47312</td><td><code>98 11 03 00 <b>04</b> <b>02</b> D0 01 00 3F 00 3F </code></td></tr>
-			<tr><td>89</td><td>Wall Tube</td><td>24972</td><td>8</td><td>40</td><td>320</td><td>48777</td><td><code>0A 1D 03 00 <b>44</b> <b>01</b> A4 00 0C 33 00 3F </code></td></tr>
-			<tr><td>90</td><td>Wall Damage</td><td>25304</td><td>8</td><td>64</td><td>512</td><td>50057</td><td><code>0A 27 03 00 <b>04</b> <b>02</b> 8E 01 00 3F 00 3F </code></td></tr>
-			<tr><td>91</td><td>Bars</td><td>25828</td><td>8</td><td>64</td><td>512</td><td>50788</td><td><code>C0 2C 03 00 <b>04</b> <b>02</b> 52 01 00 3F 01 3F </code></td></tr>
-			<tr><td>92</td><td>Wall Side Supports</td><td>26352</td><td>8</td><td>64</td><td>512</td><td>51810</td><td><code>BC 34 03 00 <b>04</b> <b>02</b> A4 00 00 3F 00 3F </code></td></tr>
-			<tr><td>93</td><td>Wall Broken Plaster</td><td>26876</td><td>8</td><td>64</td><td>512</td><td>52203</td><td><code>CE 37 03 00 <b>04</b> <b>02</b> 04 01 00 3F 01 3F </code></td></tr>
-			<tr><td>94</td><td>Axe Hold</td><td>27400</td><td>8</td><td>31</td><td>248</td><td>53640</td><td><code>08 43 03 00 <b>FC</b> <b>00</b> 96 00 21 3F 07 3F </code></td></tr>
-			<tr><td>95</td><td>Axe Use</td><td>27660</td><td>5</td><td>35</td><td>175</td><td>54079</td><td><code>76 46 03 00 <b>B3</b> <b>00</b> 92 00 08 2A 1A 3F </code></td></tr>
-			<tr><td>96</td><td>Fire Extinguisher Hold</td><td>27847</td><td>5</td><td>63</td><td>315</td><td>54299</td><td><code>2E 48 03 00 <b>3F</b> <b>01</b> 2E 01 00 3E 1A 3F </code></td></tr>
-			<tr><td>97</td><td>Fire Extinguisher Use</td><td>28174</td><td>8</td><td>56</td><td>448</td><td>55022</td><td><code>D4 4D 03 00 <b>C4</b> <b>01</b> 6E 01 06 3D 00 3F </code></td></tr>
-			<tr><td>98</td><td>Gun Hold</td><td>28634</td><td>4</td><td>26</td><td>104</td><td>55884</td><td><code>90 54 03 00 <b>6C</b> <b>00</b> 6E 00 13 2C 27 3F </code></td></tr>
-			<tr><td>99</td><td>Gun Use</td><td>28750</td><td>4</td><td>26</td><td>104</td><td>56081</td><td><code>1A 56 03 00 <b>6C</b> <b>00</b> 82 00 12 2B 20 3F </code></td></tr>
-			<tr><td>100</td><td>Shotgun Hold</td><td>28866</td><td>4</td><td>42</td><td>168</td><td>56344</td><td><code>28 58 03 00 <b>AC</b> <b>00</b> AC 00 08 31 21 3F </code></td></tr>
-			<tr><td>101</td><td>Shotgun Use</td><td>29046</td><td>5</td><td>41</td><td>205</td><td>56719</td><td><code>16 5B 03 00 <b>D1</b> <b>00</b> C6 00 0A 32 1A 3F </code></td></tr>
-			<tr><td>102</td><td>Chain Gun Hold</td><td>29263</td><td>4</td><td>40</td><td>160</td><td>57259</td><td><code>4E 5F 03 00 <b>A4</b> <b>00</b> A4 00 0C 33 26 3F </code></td></tr>
-			<tr><td>103</td><td>Chain Gun User</td><td>29435</td><td>5</td><td>42</td><td>210</td><td>57666</td><td><code>7C 62 03 00 <b>D6</b> <b>00</b> B0 00 0C 35 1A 3F </code></td></tr>
-			<tr><td>104</td><td>Super Shotgun Hold</td><td>29657</td><td>3</td><td>36</td><td>108</td><td>58329</td><td><code>AA 67 03 00 <b>70</b> <b>00</b> 94 00 0E 31 28 3F </code></td></tr>
-			<tr><td>105</td><td>Super Shotgun Use</td><td>29777</td><td>5</td><td>40</td><td>200</td><td>58632</td><td><code>08 6A 03 00 <b>CC</b> <b>00</b> C2 00 0C 33 1D 3F </code></td></tr>
-			<tr><td>106</td><td>Plasma Gun Hold</td><td>29989</td><td>4</td><td>40</td><td>160</td><td>59106</td><td><code>BC 6D 03 00 <b>A4</b> <b>00</b> A6 00 0C 33 26 3F </code></td></tr>
-			<tr><td>107</td><td>Plasma Gun Use</td><td>30161</td><td>4</td><td>40</td><td>160</td><td>59532</td><td><code>10 71 03 00 <b>A4</b> <b>00</b> C0 00 0B 32 26 3F </code></td></tr>
-			<tr><td>108</td><td>Rocket Launcher Hold</td><td>30333</td><td>4</td><td>50</td><td>200</td><td>59942</td><td><code>44 74 03 00 <b>CC</b> <b>00</b> CC 00 07 38 27 3F </code></td></tr>
-			<tr><td>109</td><td>Rocket Launcher Use</td><td>30545</td><td>5</td><td>50</td><td>250</td><td>60410</td><td><code>EC 77 03 00 <b>FE</b> <b>00</b> D0 00 07 38 1E 3F </code></td></tr>
-			<tr><td>110</td><td>BFG 9000 Hold</td><td>30807</td><td>3</td><td>55</td><td>165</td><td>61093</td><td><code>42 7D 03 00 <b>A9</b> <b>00</b> E0 00 04 3A 28 3F </code></td></tr>
-			<tr><td>111</td><td>BFG 9000 Use</td><td>30984</td><td>6</td><td>63</td><td>378</td><td>61622</td><td><code>64 81 03 00 <b>7E</b> <b>01</b> 48 01 01 3F 12 3F </code></td></tr>
-			<tr><td>112</td><td>Hellhound Hold</td><td>31374</td><td>5</td><td>46</td><td>230</td><td>62642</td><td><code>5C 89 03 00 <b>EA</b> <b>00</b> C8 00 0A 37 1A 3F </code></td></tr>
-			<tr><td>113</td><td>Hellhound Use</td><td>31616</td><td>7</td><td>61</td><td>427</td><td>63179</td><td><code>8E 8D 03 00 <b>AF</b> <b>01</b> 34 01 02 3E 09 3F </code></td></tr>
-	</tbody>
+        <table id="spritetable">
+        <thead>
+        <tr>
+            <td>Index</td><td>Description</td><td>Offset</td><td>Strip Size</td><td>Strip Count</td><td>Length</td><td>stexels.bin  Offset</td><td>Header</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr><td>0</td><td>Axe</td><td>4</td><td>3</td><td>63</td><td>189</td><td>4</td><td><code>00 A0 01 00 <b>C1</b> <b>00</b> 70 01 01 3F 2C 3F </code></td></tr>
+            <tr><td>1</td><td>Fire Extinguisher</td><td>205</td><td>4</td><td>25</td><td>100</td><td>296</td><td><code>48 A2 01 00 <b>68</b> <b>00</b> 88 00 18 30 21 3F </code></td></tr>
+            <tr><td>2</td><td>Shotgun</td><td>317</td><td>2</td><td>64</td><td>128</td><td>458</td><td><code>8C A3 01 00 <b>84</b> <b>00</b> 84 01 00 3F 30 3F </code></td></tr>
+            <tr><td>3</td><td>Super Shotgun</td><td>457</td><td>3</td><td>55</td><td>165</td><td>709</td><td><code>82 A5 01 00 <b>A9</b> <b>00</b> 52 01 05 3B 2E 3F </code></td></tr>
+            <tr><td>4</td><td>Chain Gun</td><td>634</td><td>3</td><td>55</td><td>165</td><td>953</td><td><code>6A A7 01 00 <b>A9</b> <b>00</b> 50 01 05 3B 2C 3F </code></td></tr>
+            <tr><td>5</td><td>Rocket Launcher</td><td>811</td><td>3</td><td>62</td><td>186</td><td>1344</td><td><code>78 AA 01 00 <b>BE</b> <b>00</b> 7A 01 01 3E 2C 3F </code></td></tr>
+            <tr><td>6</td><td>Plasma Gun</td><td>1009</td><td>3</td><td>54</td><td>162</td><td>1705</td><td><code>4A AD 01 00 <b>A6</b> <b>00</b> 56 01 05 3A 2C 3F </code></td></tr>
+            <tr><td>7</td><td>BFG 9000</td><td>1183</td><td>5</td><td>64</td><td>320</td><td>2042</td><td><code>EC AF 01 00 <b>44</b> <b>01</b> A6 01 00 3F 1B 3F </code></td></tr>
+            <tr><td>8</td><td>Zombie</td><td>1515</td><td>7</td><td>41</td><td>287</td><td>2617</td><td><code>6A B4 01 00 <b>23</b> <b>01</b> D8 00 0E 36 09 3F </code></td></tr>
+            <tr><td>9</td><td>Zombie Attack</td><td>1814</td><td>7</td><td>39</td><td>273</td><td>3163</td><td><code>AE B8 01 00 <b>15</b> <b>01</b> BE 00 12 38 09 3F </code></td></tr>
+            <tr><td>10</td><td>Zombie Dead</td><td>2099</td><td>3</td><td>50</td><td>150</td><td>3673</td><td><code>AA BC 01 00 <b>9A</b> <b>00</b> CC 00 08 39 2F 3F </code></td></tr>
+            <tr><td>11</td><td>Hellhound</td><td>2261</td><td>6</td><td>33</td><td>198</td><td>3959</td><td><code>E6 BE 01 00 <b>CA</b> <b>00</b> A0 00 16 36 14 3F </code></td></tr>
+            <tr><td>12</td><td>Hellhound Attack</td><td>2471</td><td>8</td><td>47</td><td>376</td><td>4327</td><td><code>C6 C1 01 00 <b>7C</b> <b>01</b> E6 00 0D 3B 03 3F </code></td></tr>
+            <tr><td>13</td><td>Hellhound Dead</td><td>2859</td><td>3</td><td>51</td><td>153</td><td>4851</td><td><code>DE C5 01 00 <b>9D</b> <b>00</b> FC 00 07 39 29 3F </code></td></tr>
+            <tr><td>14</td><td>Commando</td><td>3024</td><td>8</td><td>50</td><td>400</td><td>5232</td><td><code>D8 C8 01 00 <b>94</b> <b>01</b> EE 00 0B 3C 05 3F </code></td></tr>
+            <tr><td>15</td><td>Commando Attack</td><td>3436</td><td>8</td><td>50</td><td>400</td><td>6000</td><td><code>D8 CE 01 00 <b>94</b> <b>01</b> 02 01 0A 3B 06 3F </code></td></tr>
+            <tr><td>16</td><td>Commando Dead</td><td>3848</td><td>3</td><td>64</td><td>192</td><td>6791</td><td><code>06 D5 01 00 <b>C4</b> <b>00</b> 16 01 00 3F 2B 3F </code></td></tr>
+            <tr><td>17</td><td>Imp</td><td>4052</td><td>7</td><td>46</td><td>322</td><td>7210</td><td><code>4C D8 01 00 <b>46</b> <b>01</b> 08 01 0C 39 08 3F </code></td></tr>
+            <tr><td>18</td><td>Imp Attack</td><td>4386</td><td>8</td><td>55</td><td>440</td><td>7824</td><td><code>18 DD 01 00 <b>BC</b> <b>01</b> 48 01 07 3D 04 3F </code></td></tr>
+            <tr><td>19</td><td>Imp Dead</td><td>4838</td><td>3</td><td>61</td><td>183</td><td>8458</td><td><code>0C E2 01 00 <b>BB</b> <b>00</b> 12 01 03 3F 2A 3F </code></td></tr>
+            <tr><td>20</td><td>Lost Soul</td><td>5033</td><td>7</td><td>44</td><td>308</td><td>8835</td><td><code>FE E4 01 00 <b>38</b> <b>01</b> FE 00 0A 35 08 3F </code></td></tr>
+            <tr><td>21</td><td>Lost Soul Attack</td><td>5353</td><td>7</td><td>44</td><td>308</td><td>9351</td><td><code>06 E9 01 00 <b>38</b> <b>01</b> 08 01 0A 35 0A 3F </code></td></tr>
+            <tr><td>22</td><td>Lost Soul Dead</td><td>5673</td><td>2</td><td>56</td><td>112</td><td>9862</td><td><code>04 ED 01 00 <b>74</b> <b>00</b> EA 00 06 3D 30 3F </code></td></tr>
+            <tr><td>23</td><td>Pinky</td><td>5797</td><td>7</td><td>49</td><td>343</td><td>10109</td><td><code>F2 EE 01 00 <b>5B</b> <b>01</b> 04 01 0C 3C 08 3F </code></td></tr>
+            <tr><td>24</td><td>Pinky Attack</td><td>6152</td><td>7</td><td>53</td><td>371</td><td>10921</td><td><code>4A F5 01 00 <b>77</b> <b>01</b> 24 01 0A 3E 09 3F </code></td></tr>
+            <tr><td>25</td><td>Pinky Dead</td><td>6535</td><td>4</td><td>64</td><td>256</td><td>11764</td><td><code>E0 FB 01 00 <b>04</b> <b>01</b> 28 01 00 3F 20 3F </code></td></tr>
+            <tr><td>26</td><td>Cacodemon</td><td>6803</td><td>8</td><td>64</td><td>512</td><td>12330</td><td><code>4C 00 02 00 <b>04</b> <b>02</b> 5C 01 00 3F 00 3F </code></td></tr>
+            <tr><td>27</td><td>Cacodemon Attack</td><td>7327</td><td>8</td><td>64</td><td>512</td><td>13930</td><td><code>CC 0C 02 00 <b>04</b> <b>02</b> 30 01 00 3F 00 3F </code></td></tr>
+            <tr><td>28</td><td>Cacodemon Dead</td><td>7851</td><td>5</td><td>64</td><td>320</td><td>15482</td><td><code>EC 18 02 00 <b>44</b> <b>01</b> 14 01 00 3F 1A 3F </code></td></tr>
+            <tr><td>29</td><td>Pain Elemental</td><td>8183</td><td>8</td><td>64</td><td>512</td><td>16265</td><td><code>0A 1F 02 00 <b>04</b> <b>02</b> 78 01 00 3F 07 3F </code></td></tr>
+            <tr><td>30</td><td>Pain Elemental Attack</td><td>8707</td><td>8</td><td>64</td><td>512</td><td>17518</td><td><code>D4 28 02 00 <b>04</b> <b>02</b> 72 01 00 3F 07 3F </code></td></tr>
+            <tr><td>31</td><td>Pain Elemental Dead</td><td>9231</td><td>5</td><td>63</td><td>315</td><td>18789</td><td><code>C2 32 02 00 <b>3F</b> <b>01</b> 1C 01 01 3F 1E 3F </code></td></tr>
+            <tr><td>32</td><td>Revenant</td><td>9558</td><td>8</td><td>50</td><td>400</td><td>19615</td><td><code>36 39 02 00 <b>94</b> <b>01</b> 4A 01 0B 3C 00 3F </code></td></tr>
+            <tr><td>33</td><td>Revenant Attack</td><td>9970</td><td>7</td><td>49</td><td>343</td><td>20209</td><td><code>DA 3D 02 00 <b>5B</b> <b>01</b> 28 01 0D 3D 09 3F </code></td></tr>
+            <tr><td>34</td><td>Mancubus</td><td>10325</td><td>8</td><td>64</td><td>512</td><td>20746</td><td><code>0C 42 02 00 <b>04</b> <b>02</b> 40 01 00 3F 00 3F </code></td></tr>
+            <tr><td>35</td><td>Mancubus Attack</td><td>10849</td><td>8</td><td>64</td><td>512</td><td>22308</td><td><code>40 4E 02 00 <b>04</b> <b>02</b> 64 01 00 3F 00 3F </code></td></tr>
+            <tr><td>36</td><td>Mancubus Dead</td><td>11373</td><td>4</td><td>64</td><td>256</td><td>23792</td><td><code>D8 59 02 00 <b>04</b> <b>01</b> 24 01 00 3F 21 3F </code></td></tr>
+            <tr><td>37</td><td>Archvile</td><td>11641</td><td>7</td><td>45</td><td>315</td><td>24464</td><td><code>18 5F 02 00 <b>3F</b> <b>01</b> 2C 01 0C 38 0E 3F </code></td></tr>
+            <tr><td>38</td><td>Archvile Attack</td><td>11968</td><td>8</td><td>64</td><td>512</td><td>24943</td><td><code>D6 62 02 00 <b>04</b> <b>02</b> C0 01 00 3F 00 3F </code></td></tr>
+            <tr><td>39</td><td>Archvile Dead</td><td>12492</td><td>3</td><td>52</td><td>156</td><td>25516</td><td><code>50 67 02 00 <b>A0</b> <b>00</b> D6 00 06 39 2E 3F </code></td></tr>
+            <tr><td>40</td><td>Baron</td><td>12660</td><td>8</td><td>48</td><td>384</td><td>25823</td><td><code>B6 69 02 00 <b>84</b> <b>01</b> 02 01 0B 3A 00 3F </code></td></tr>
+            <tr><td>41</td><td>Baron Attack</td><td>13056</td><td>8</td><td>64</td><td>512</td><td>26676</td><td><code>60 70 02 00 <b>04</b> <b>02</b> 80 01 00 3F 00 3F </code></td></tr>
+            <tr><td>42</td><td>Baron Dead</td><td>13580</td><td>4</td><td>55</td><td>220</td><td>27624</td><td><code>C8 77 02 00 <b>E0</b> <b>00</b> E4 00 06 3C 27 3F </code></td></tr>
+            <tr><td>43</td><td>Cyberdemon</td><td>13812</td><td>8</td><td>52</td><td>416</td><td>28072</td><td><code>48 7B 02 00 <b>A4</b> <b>01</b> 58 01 08 3B 00 3F </code></td></tr>
+            <tr><td>44</td><td>Cyberdemon Attack</td><td>14240</td><td>8</td><td>57</td><td>456</td><td>29076</td><td><code>20 83 02 00 <b>CC</b> <b>01</b> AC 01 03 3B 00 3F </code></td></tr>
+            <tr><td>45</td><td>Kratos</td><td>14708</td><td>8</td><td>59</td><td>472</td><td>30151</td><td><code>86 8B 02 00 <b>DC</b> <b>01</b> DE 01 01 3B 03 3F </code></td></tr>
+            <tr><td>46</td><td>Kratos Attack</td><td>15192</td><td>8</td><td>64</td><td>512</td><td>30833</td><td><code>DA 90 02 00 <b>04</b> <b>02</b> 02 02 00 3F 05 3F </code></td></tr>
+            <tr><td>47</td><td>Keycard</td><td>15716</td><td>3</td><td>15</td><td>45</td><td>31698</td><td><code>9C 97 02 00 <b>31</b> <b>00</b> 5C 00 19 27 2B 3F </code></td></tr>
+            <tr><td>48</td><td>Halon Can</td><td>15773</td><td>2</td><td>31</td><td>62</td><td>31811</td><td><code>7E 98 02 00 <b>42</b> <b>00</b> 80 00 13 31 36 3F </code></td></tr>
+            <tr><td>49</td><td>Bullet Clip</td><td>15847</td><td>2</td><td>16</td><td>32</td><td>31942</td><td><code>84 99 02 00 <b>24</b> <b>00</b> 44 00 1B 2A 35 3F </code></td></tr>
+            <tr><td>50</td><td>Shotgun Clip</td><td>15891</td><td>1</td><td>18</td><td>18</td><td>31998</td><td><code>F4 99 02 00 <b>16</b> <b>00</b> 4C 00 18 29 39 3F </code></td></tr>
+            <tr><td>51</td><td>Rocket</td><td>15921</td><td>3</td><td>25</td><td>75</td><td>32043</td><td><code>4E 9A 02 00 <b>4F</b> <b>00</b> 68 00 1A 32 27 3E </code></td></tr>
+            <tr><td>52</td><td>Cell Clip</td><td>16008</td><td>2</td><td>22</td><td>44</td><td>32167</td><td><code>46 9B 02 00 <b>30</b> <b>00</b> 5C 00 17 2C 34 3F </code></td></tr>
+            <tr><td>53</td><td>Health Vial</td><td>16064</td><td>3</td><td>19</td><td>57</td><td>32275</td><td><code>1E 9C 02 00 <b>3D</b> <b>00</b> 50 00 19 2B 2E 3F </code></td></tr>
+            <tr><td>54</td><td>Armor Shard</td><td>16133</td><td>2</td><td>22</td><td>44</td><td>32367</td><td><code>D6 9C 02 00 <b>30</b> <b>00</b> 5C 00 18 2D 31 3F </code></td></tr>
+            <tr><td>55</td><td>Flak Jacket</td><td>16189</td><td>3</td><td>31</td><td>93</td><td>32484</td><td><code>C0 9D 02 00 <b>61</b> <b>00</b> 8E 00 10 2E 2F 3F </code></td></tr>
+            <tr><td>56</td><td>Credit</td><td>16294</td><td>2</td><td>40</td><td>80</td><td>32681</td><td><code>4A 9F 02 00 <b>54</b> <b>00</b> A4 00 0E 35 2E 3D </code></td></tr>
+            <tr><td>57</td><td>Medkit</td><td>16386</td><td>3</td><td>38</td><td>114</td><td>32969</td><td><code>8A A1 02 00 <b>76</b> <b>00</b> 9C 00 12 37 2D 3F </code></td></tr>
+            <tr><td>58</td><td>Soul Sphear</td><td>16512</td><td>4</td><td>32</td><td>128</td><td>33262</td><td><code>D4 A3 02 00 <b>84</b> <b>00</b> 86 00 13 32 27 3F </code></td></tr>
+            <tr><td>59</td><td>Dog Collar</td><td>16652</td><td>4</td><td>35</td><td>140</td><td>33541</td><td><code>02 A6 02 00 <b>90</b> <b>00</b> BE 00 13 35 1F 3D </code></td></tr>
+            <tr><td>60</td><td>Lava Pit</td><td>16804</td><td>2</td><td>63</td><td>126</td><td>33758</td><td><code>B4 A7 02 00 <b>82</b> <b>00</b> 0E 01 01 3F 31 3F </code></td></tr>
+            <tr><td>61</td><td>Fire</td><td>16942</td><td>8</td><td>64</td><td>512</td><td>34075</td><td><code>2E AA 02 00 <b>04</b> <b>02</b> A8 01 00 3F 01 3F </code></td></tr>
+            <tr><td>62</td><td>Barrel</td><td>17466</td><td>4</td><td>39</td><td>156</td><td>35197</td><td><code>F2 B2 02 00 <b>A0</b> <b>00</b> A0 00 14 3A 20 3F </code></td></tr>
+            <tr><td>63</td><td>Coupler</td><td>17634</td><td>8</td><td>40</td><td>320</td><td>35605</td><td><code>22 B6 02 00 <b>44</b> <b>01</b> 58 01 0C 33 01 3F </code></td></tr>
+            <tr><td>64</td><td>Sink</td><td>17966</td><td>6</td><td>33</td><td>198</td><td>36332</td><td><code>D0 BB 02 00 <b>CA</b> <b>00</b> AC 00 17 37 12 3F </code></td></tr>
+            <tr><td>65</td><td>Toilet</td><td>18176</td><td>6</td><td>32</td><td>192</td><td>36653</td><td><code>52 BE 02 00 <b>C4</b> <b>00</b> 9E 00 12 31 16 3F </code></td></tr>
+            <tr><td>66</td><td>Chair</td><td>18380</td><td>5</td><td>28</td><td>140</td><td>37147</td><td><code>2E C2 02 00 <b>90</b> <b>00</b> B6 00 14 2F 1B 3F </code></td></tr>
+            <tr><td>67</td><td>Lamp</td><td>18532</td><td>6</td><td>42</td><td>252</td><td>37419</td><td><code>4E C4 02 00 <b>00</b> <b>01</b> B6 00 14 3D 10 3F </code></td></tr>
+            <tr><td>68</td><td>Exit Sign</td><td>18796</td><td>2</td><td>22</td><td>44</td><td>37770</td><td><code>0C C7 02 00 <b>30</b> <b>00</b> 5C 00 15 2A 00 0D </code></td></tr>
+            <tr><td>69</td><td>File Cabinet</td><td>18852</td><td>7</td><td>44</td><td>308</td><td>37921</td><td><code>3A C8 02 00 <b>38</b> <b>01</b> B4 00 14 3F 0C 3F </code></td></tr>
+            <tr><td>70</td><td>Table</td><td>19172</td><td>4</td><td>54</td><td>216</td><td>38592</td><td><code>78 CD 02 00 <b>DC</b> <b>00</b> 3C 01 07 3C 24 3F </code></td></tr>
+            <tr><td>71</td><td>Bunk</td><td>19400</td><td>6</td><td>58</td><td>348</td><td>38939</td><td><code>2E D0 02 00 <b>60</b> <b>01</b> B6 01 03 3C 16 3F </code></td></tr>
+            <tr><td>72</td><td>Enter Sign</td><td>19760</td><td>2</td><td>31</td><td>62</td><td>39611</td><td><code>6E D5 02 00 <b>42</b> <b>00</b> 80 00 10 2E 00 0D </code></td></tr>
+            <tr><td>73</td><td>Civilian</td><td>19834</td><td>7</td><td>36</td><td>252</td><td>39825</td><td><code>1A D7 02 00 <b>00</b> <b>01</b> B8 00 0E 31 08 3F </code></td></tr>
+            <tr><td>74</td><td>Scientist</td><td>20098</td><td>8</td><td>34</td><td>272</td><td>40352</td><td><code>38 DB 02 00 <b>14</b> <b>01</b> C2 00 13 34 06 3F </code></td></tr>
+            <tr><td>75</td><td>Marine</td><td>20382</td><td>8</td><td>36</td><td>288</td><td>40855</td><td><code>26 DF 02 00 <b>24</b> <b>01</b> C2 00 11 34 06 3F </code></td></tr>
+            <tr><td>76</td><td>Crate</td><td>20682</td><td>4</td><td>49</td><td>196</td><td>41347</td><td><code>FE E2 02 00 <b>C8</b> <b>00</b> C8 00 0D 3D 20 3F </code></td></tr>
+            <tr><td>77</td><td>Blast A Frame 1</td><td>20890</td><td>5</td><td>40</td><td>200</td><td>41966</td><td><code>D4 E7 02 00 <b>CC</b> <b>00</b> A4 00 0C 33 0C 33 </code></td></tr>
+            <tr><td>78</td><td>Blast A Frame 2</td><td>21102</td><td>6</td><td>48</td><td>288</td><td>42535</td><td><code>46 EC 02 00 <b>24</b> <b>01</b> 8C 01 07 36 09 38 </code></td></tr>
+            <tr><td>79</td><td>Blast A Frame 3</td><td>21402</td><td>8</td><td>62</td><td>496</td><td>43296</td><td><code>38 F2 02 00 <b>F4</b> <b>01</b> B2 02 00 3D 02 3D </code></td></tr>
+            <tr><td>80</td><td>Blast B Frame 1</td><td>21910</td><td>4</td><td>29</td><td>116</td><td>43641</td><td><code>EA F4 02 00 <b>78</b> <b>00</b> B6 00 11 2D 11 2D </code></td></tr>
+            <tr><td>81</td><td>Blast B Frame 2</td><td>22038</td><td>7</td><td>64</td><td>448</td><td>43868</td><td><code>B0 F6 02 00 <b>C4</b> <b>01</b> 32 01 00 3F 07 38 </code></td></tr>
+            <tr><td>82</td><td>Blast B Frame 3</td><td>22498</td><td>4</td><td>64</td><td>256</td><td>45039</td><td><code>D6 FF 02 00 <b>04</b> <b>01</b> 0E 01 00 3F 11 2C </code></td></tr>
+            <tr><td>83</td><td>Blast C Frame 1</td><td>22766</td><td>2</td><td>15</td><td>30</td><td>45478</td><td><code>44 03 03 00 <b>22</b> <b>00</b> 40 00 18 26 19 26 </code></td></tr>
+            <tr><td>84</td><td>Blast C Frame 2</td><td>22808</td><td>5</td><td>40</td><td>200</td><td>45528</td><td><code>A8 03 03 00 <b>CC</b> <b>00</b> FA 01 0B 32 0D 31 </code></td></tr>
+            <tr><td>85</td><td>Blood Splat</td><td>23020</td><td>8</td><td>59</td><td>472</td><td>45722</td><td><code>2C 05 03 00 <b>DC</b> <b>01</b> E2 01 03 3D 03 3D </code></td></tr>
+            <tr><td>86</td><td>Blood Splat Pentagram</td><td>23504</td><td>8</td><td>63</td><td>504</td><td>46212</td><td><code>00 09 03 00 <b>FC</b> <b>01</b> 96 02 01 3F 03 3F </code></td></tr>
+            <tr><td>87</td><td>Blood Splat Die</td><td>24020</td><td>8</td><td>52</td><td>416</td><td>46939</td><td><code>AE 0E 03 00 <b>A4</b> <b>01</b> 14 02 07 3A 06 3F </code></td></tr>
+            <tr><td>88</td><td>X Brace</td><td>24448</td><td>8</td><td>64</td><td>512</td><td>47312</td><td><code>98 11 03 00 <b>04</b> <b>02</b> D0 01 00 3F 00 3F </code></td></tr>
+            <tr><td>89</td><td>Wall Tube</td><td>24972</td><td>8</td><td>40</td><td>320</td><td>48777</td><td><code>0A 1D 03 00 <b>44</b> <b>01</b> A4 00 0C 33 00 3F </code></td></tr>
+            <tr><td>90</td><td>Wall Damage</td><td>25304</td><td>8</td><td>64</td><td>512</td><td>50057</td><td><code>0A 27 03 00 <b>04</b> <b>02</b> 8E 01 00 3F 00 3F </code></td></tr>
+            <tr><td>91</td><td>Bars</td><td>25828</td><td>8</td><td>64</td><td>512</td><td>50788</td><td><code>C0 2C 03 00 <b>04</b> <b>02</b> 52 01 00 3F 01 3F </code></td></tr>
+            <tr><td>92</td><td>Wall Side Supports</td><td>26352</td><td>8</td><td>64</td><td>512</td><td>51810</td><td><code>BC 34 03 00 <b>04</b> <b>02</b> A4 00 00 3F 00 3F </code></td></tr>
+            <tr><td>93</td><td>Wall Broken Plaster</td><td>26876</td><td>8</td><td>64</td><td>512</td><td>52203</td><td><code>CE 37 03 00 <b>04</b> <b>02</b> 04 01 00 3F 01 3F </code></td></tr>
+            <tr><td>94</td><td>Axe Hold</td><td>27400</td><td>8</td><td>31</td><td>248</td><td>53640</td><td><code>08 43 03 00 <b>FC</b> <b>00</b> 96 00 21 3F 07 3F </code></td></tr>
+            <tr><td>95</td><td>Axe Use</td><td>27660</td><td>5</td><td>35</td><td>175</td><td>54079</td><td><code>76 46 03 00 <b>B3</b> <b>00</b> 92 00 08 2A 1A 3F </code></td></tr>
+            <tr><td>96</td><td>Fire Extinguisher Hold</td><td>27847</td><td>5</td><td>63</td><td>315</td><td>54299</td><td><code>2E 48 03 00 <b>3F</b> <b>01</b> 2E 01 00 3E 1A 3F </code></td></tr>
+            <tr><td>97</td><td>Fire Extinguisher Use</td><td>28174</td><td>8</td><td>56</td><td>448</td><td>55022</td><td><code>D4 4D 03 00 <b>C4</b> <b>01</b> 6E 01 06 3D 00 3F </code></td></tr>
+            <tr><td>98</td><td>Gun Hold</td><td>28634</td><td>4</td><td>26</td><td>104</td><td>55884</td><td><code>90 54 03 00 <b>6C</b> <b>00</b> 6E 00 13 2C 27 3F </code></td></tr>
+            <tr><td>99</td><td>Gun Use</td><td>28750</td><td>4</td><td>26</td><td>104</td><td>56081</td><td><code>1A 56 03 00 <b>6C</b> <b>00</b> 82 00 12 2B 20 3F </code></td></tr>
+            <tr><td>100</td><td>Shotgun Hold</td><td>28866</td><td>4</td><td>42</td><td>168</td><td>56344</td><td><code>28 58 03 00 <b>AC</b> <b>00</b> AC 00 08 31 21 3F </code></td></tr>
+            <tr><td>101</td><td>Shotgun Use</td><td>29046</td><td>5</td><td>41</td><td>205</td><td>56719</td><td><code>16 5B 03 00 <b>D1</b> <b>00</b> C6 00 0A 32 1A 3F </code></td></tr>
+            <tr><td>102</td><td>Chain Gun Hold</td><td>29263</td><td>4</td><td>40</td><td>160</td><td>57259</td><td><code>4E 5F 03 00 <b>A4</b> <b>00</b> A4 00 0C 33 26 3F </code></td></tr>
+            <tr><td>103</td><td>Chain Gun User</td><td>29435</td><td>5</td><td>42</td><td>210</td><td>57666</td><td><code>7C 62 03 00 <b>D6</b> <b>00</b> B0 00 0C 35 1A 3F </code></td></tr>
+            <tr><td>104</td><td>Super Shotgun Hold</td><td>29657</td><td>3</td><td>36</td><td>108</td><td>58329</td><td><code>AA 67 03 00 <b>70</b> <b>00</b> 94 00 0E 31 28 3F </code></td></tr>
+            <tr><td>105</td><td>Super Shotgun Use</td><td>29777</td><td>5</td><td>40</td><td>200</td><td>58632</td><td><code>08 6A 03 00 <b>CC</b> <b>00</b> C2 00 0C 33 1D 3F </code></td></tr>
+            <tr><td>106</td><td>Plasma Gun Hold</td><td>29989</td><td>4</td><td>40</td><td>160</td><td>59106</td><td><code>BC 6D 03 00 <b>A4</b> <b>00</b> A6 00 0C 33 26 3F </code></td></tr>
+            <tr><td>107</td><td>Plasma Gun Use</td><td>30161</td><td>4</td><td>40</td><td>160</td><td>59532</td><td><code>10 71 03 00 <b>A4</b> <b>00</b> C0 00 0B 32 26 3F </code></td></tr>
+            <tr><td>108</td><td>Rocket Launcher Hold</td><td>30333</td><td>4</td><td>50</td><td>200</td><td>59942</td><td><code>44 74 03 00 <b>CC</b> <b>00</b> CC 00 07 38 27 3F </code></td></tr>
+            <tr><td>109</td><td>Rocket Launcher Use</td><td>30545</td><td>5</td><td>50</td><td>250</td><td>60410</td><td><code>EC 77 03 00 <b>FE</b> <b>00</b> D0 00 07 38 1E 3F </code></td></tr>
+            <tr><td>110</td><td>BFG 9000 Hold</td><td>30807</td><td>3</td><td>55</td><td>165</td><td>61093</td><td><code>42 7D 03 00 <b>A9</b> <b>00</b> E0 00 04 3A 28 3F </code></td></tr>
+            <tr><td>111</td><td>BFG 9000 Use</td><td>30984</td><td>6</td><td>63</td><td>378</td><td>61622</td><td><code>64 81 03 00 <b>7E</b> <b>01</b> 48 01 01 3F 12 3F </code></td></tr>
+            <tr><td>112</td><td>Hellhound Hold</td><td>31374</td><td>5</td><td>46</td><td>230</td><td>62642</td><td><code>5C 89 03 00 <b>EA</b> <b>00</b> C8 00 0A 37 1A 3F </code></td></tr>
+            <tr><td>113</td><td>Hellhound Use</td><td>31616</td><td>7</td><td>61</td><td>427</td><td>63179</td><td><code>8E 8D 03 00 <b>AF</b> <b>01</b> 34 01 02 3E 09 3F </code></td></tr>
+    </tbody>
 </table>
 
-			<a name="thingdata"></a>
-			<h2>Thing Data Appendix</h2>
+            <a name="thingdata"></a>
+            <h2>Thing Data Appendix</h2>
 
 <table>
-	<thead>
-		<tr><td>ID</td><td>ID<sub>16</sub></td><td>Description</td></tr>
-	</thead>
-	<tbody>
-		<tr><td>1</td><td>01</td><td>Axe</td></tr>
-		<tr><td>2</td><td>02</td><td>Fire Extinguisher</td></tr>
-		<tr><td>3</td><td>03</td><td>Shotgun</td></tr>
-		<tr><td>4</td><td>04</td><td>Super Shotgun</td></tr>
-		<tr><td>5</td><td>05</td><td>Chain Gun</td></tr>
-		<tr><td>6</td><td>06</td><td>Rocket Launcher</td></tr>
-		<tr><td>7</td><td>07</td><td>Plasma Gun</td></tr>
-		<tr><td>8</td><td>08</td><td>BFG9000</td></tr>
-		<tr><td>9</td><td>11</td><td>Zombie Pvt</td></tr>
-		<tr><td>10</td><td>12</td><td>Zombie Lt</td></tr>
-		<tr><td>11</td><td>13</td><td>Zombie Cpt</td></tr>
-		<tr><td>12</td><td>14</td><td>Hell Hound</td></tr>
-		<tr><td>13</td><td>15</td><td>Cerberus</td></tr>
-		<tr><td>14</td><td>16</td><td>Demon Wolf</td></tr>
-		<tr><td>15</td><td>17</td><td>Troop</td></tr>
-		<tr><td>16</td><td>18</td><td>Commando</td></tr>
-		<tr><td>17</td><td>19</td><td>Assassin</td></tr>
-		<tr><td>18</td><td>1A</td><td>Impling</td></tr>
-		<tr><td>19</td><td>1B</td><td>Imp</td></tr>
-		<tr><td>20</td><td>1C</td><td>Imp Lord</td></tr>
-		<tr><td>21</td><td>1D</td><td>Phantom</td></tr>
-		<tr><td>22</td><td>1E</td><td>Lost Soul</td></tr>
-		<tr><td>23</td><td>1F</td><td>Nightmare</td></tr>
-		<tr><td>24</td><td>20</td><td>Bull Demon</td></tr>
-		<tr><td>25</td><td>21</td><td>Pinky</td></tr>
-		<tr><td>26</td><td>22</td><td>Belphegor</td></tr>
-		<tr><td>27</td><td>23</td><td>Malwrath</td></tr>
-		<tr><td>28</td><td>24</td><td>Cacodemon</td></tr>
-		<tr><td>29</td><td>25</td><td>Wretched</td></tr>
-		<tr><td>30</td><td>26</td><td>Beholder</td></tr>
-		<tr><td>31</td><td>27</td><td>Rahovart</td></tr>
-		<tr><td>32</td><td>28</td><td>Pain Elemental</td></tr>
-		<tr><td>33</td><td>29</td><td>Ghoul</td></tr>
-		<tr><td>34</td><td>2A</td><td>Fiend</td></tr>
-		<tr><td>35</td><td>2B</td><td>Revenant</td></tr>
-		<tr><td>36</td><td>2C</td><td>Behemoth</td></tr>
-		<tr><td>37</td><td>2D</td><td>Mancubus</td></tr>
-		<tr><td>38</td><td>2E</td><td>Druj</td></tr>
-		<tr><td>39</td><td>2F</td><td>Infernis</td></tr>
-		<tr><td>40</td><td>30</td><td>Archvile</td></tr>
-		<tr><td>41</td><td>31</td><td>Apollyon</td></tr>
-		<tr><td>42</td><td>32</td><td>Ogre</td></tr>
-		<tr><td>43</td><td>33</td><td>Hell Knight</td></tr>
-		<tr><td>44</td><td>34</td><td>Baron</td></tr>
-		<tr><td>45</td><td>35</td><td>Cyberdemon</td></tr>
-		<tr><td>46</td><td>36</td><td>Kronos</td></tr>
-		<tr><td>47</td><td>3E</td><td>Burned Steel Wall</td></tr>
-		<tr><td>48</td><td>3F</td><td>Broken Tube Wall</td></tr>
-		<tr><td>49</td><td>41</td><td>Red Key</td></tr>
-		<tr><td>50</td><td>42</td><td>Blue Key</td></tr>
-		<tr><td>51</td><td>43</td><td>Green Key</td></tr>
-		<tr><td>52</td><td>47</td><td>Steel Wall</td></tr>
-		<tr><td>53</td><td>49</td><td>Yellow Key</td></tr>
-		<tr><td>54</td><td>51</td><td>Halon Can (1)</td></tr>
-		<tr><td>55</td><td>52</td><td>Halon Can (4)</td></tr>
-		<tr><td>56</td><td>53</td><td>Bullet Clip (1)</td></tr>
-		<tr><td>57</td><td>54</td><td>Bullet Clip (4)</td></tr>
-		<tr><td>58</td><td>55</td><td>Shell Clip (1)</td></tr>
-		<tr><td>59</td><td>56</td><td>Shell Clip (4)</td></tr>
-		<tr><td>60</td><td>57</td><td>Rocket (1)</td></tr>
-		<tr><td>61</td><td>58</td><td>Rocket (4)</td></tr>
-		<tr><td>62</td><td>59</td><td>Cell (1)</td></tr>
-		<tr><td>63</td><td>5A</td><td>Cell Clip (4)</td></tr>
-		<tr><td>64</td><td>5B</td><td>Health Vial</td></tr>
-		<tr><td>65</td><td>5C</td><td>Armor Shard</td></tr>
-		<tr><td>66</td><td>5D</td><td>Flak Jacket Green</td></tr>
-		<tr><td>67</td><td>5E</td><td>Combat Suit Blue</td></tr>
-		<tr><td>68</td><td>5F</td><td>Credit Green</td></tr>
-		<tr><td>69</td><td>60</td><td>Credit Yellow</td></tr>
-		<tr><td>70</td><td>63</td><td>MedKit Small</td></tr>
-		<tr><td>71</td><td>64</td><td>MedKit Large</td></tr>
-		<tr><td>72</td><td>65</td><td>Soul Sphear</td></tr>
-		<tr><td>73</td><td>66</td><td>Berserker</td></tr>
-		<tr><td>74</td><td>6E</td><td>Collar</td></tr>
-		<tr><td>75</td><td>80</td><td>Lava</td></tr>
-		<tr><td>76</td><td>81</td><td>Fire</td></tr>
-		<tr><td>77</td><td>82</td><td>Barrel</td></tr>
-		<tr><td>78</td><td>83</td><td>Power Coupling</td></tr>
-		<tr><td>79</td><td>84</td><td>Sink</td></tr>
-		<tr><td>80</td><td>85</td><td>Toilet</td></tr>
-		<tr><td>81</td><td>86</td><td>Chair</td></tr>
-		<tr><td>82</td><td>87</td><td>Lamp Yellow</td></tr>
-		<tr><td>83</td><td>8A</td><td>Exit Sign</td></tr>
-		<tr><td>84</td><td>8B</td><td>File Cabinet</td></tr>
-		<tr><td>85</td><td>8C</td><td>Lamp Blue</td></tr>
-		<tr><td>86</td><td>8D</td><td>Table</td></tr>
-		<tr><td>87</td><td>8E</td><td>Bunk</td></tr>
-		<tr><td>88</td><td>91</td><td>Civilian Yellow</td></tr>
-		<tr><td>89</td><td>92</td><td>Scientist White</td></tr>
-		<tr><td>90</td><td>93</td><td>Marine Green</td></tr>
-		<tr><td>91</td><td>94</td><td>Scientist Black</td></tr>
-		<tr><td>92</td><td>95</td><td>Scientist Blue (Guerard)</td></tr>
-		<tr><td>93</td><td>96</td><td>Civilian Purple (Nadira)</td></tr>
-		<tr><td>94</td><td>97</td><td>Civilian Green</td></tr>
-		<tr><td>95</td><td>98</td><td>Marine Blue</td></tr>
-		<tr><td>96</td><td>A1</td><td>Crate Orange</td></tr>
-		<tr><td>97</td><td>A2</td><td>Crate Yellow</td></tr>
-		<tr><td>98</td><td>D1</td><td>Splat</td></tr>
-		<tr><td>99</td><td>D2</td><td>Splat Pentagram</td></tr>
-		<tr><td>100</td><td>D3</td><td>Splat Die</td></tr>
-		<tr><td>101</td><td>D4</td><td>Wall X Brace</td></tr>
-		<tr><td>102</td><td>D5</td><td>Wall X Brace</td></tr>
-		<tr><td>103</td><td>D6</td><td>Wall Tech</td></tr>
-		<tr><td>104</td><td>D7</td><td>Damaged Stucco</td></tr>
-		<tr><td>105</td><td>D8</td><td>Bars</td></tr>
-		<tr><td>106</td><td>D9</td><td>Wall Side Supports</td></tr>
-		<tr><td>107</td><td>DC</td><td>Damaged Steel Wall</td></tr>
-	</tbody>
+    <thead>
+        <tr><td>ID</td><td>ID<sub>16</sub></td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>01</td><td>Axe</td></tr>
+        <tr><td>2</td><td>02</td><td>Fire Extinguisher</td></tr>
+        <tr><td>3</td><td>03</td><td>Shotgun</td></tr>
+        <tr><td>4</td><td>04</td><td>Super Shotgun</td></tr>
+        <tr><td>5</td><td>05</td><td>Chain Gun</td></tr>
+        <tr><td>6</td><td>06</td><td>Rocket Launcher</td></tr>
+        <tr><td>7</td><td>07</td><td>Plasma Gun</td></tr>
+        <tr><td>8</td><td>08</td><td>BFG9000</td></tr>
+        <tr><td>9</td><td>11</td><td>Zombie Pvt</td></tr>
+        <tr><td>10</td><td>12</td><td>Zombie Lt</td></tr>
+        <tr><td>11</td><td>13</td><td>Zombie Cpt</td></tr>
+        <tr><td>12</td><td>14</td><td>Hell Hound</td></tr>
+        <tr><td>13</td><td>15</td><td>Cerberus</td></tr>
+        <tr><td>14</td><td>16</td><td>Demon Wolf</td></tr>
+        <tr><td>15</td><td>17</td><td>Troop</td></tr>
+        <tr><td>16</td><td>18</td><td>Commando</td></tr>
+        <tr><td>17</td><td>19</td><td>Assassin</td></tr>
+        <tr><td>18</td><td>1A</td><td>Impling</td></tr>
+        <tr><td>19</td><td>1B</td><td>Imp</td></tr>
+        <tr><td>20</td><td>1C</td><td>Imp Lord</td></tr>
+        <tr><td>21</td><td>1D</td><td>Phantom</td></tr>
+        <tr><td>22</td><td>1E</td><td>Lost Soul</td></tr>
+        <tr><td>23</td><td>1F</td><td>Nightmare</td></tr>
+        <tr><td>24</td><td>20</td><td>Bull Demon</td></tr>
+        <tr><td>25</td><td>21</td><td>Pinky</td></tr>
+        <tr><td>26</td><td>22</td><td>Belphegor</td></tr>
+        <tr><td>27</td><td>23</td><td>Malwrath</td></tr>
+        <tr><td>28</td><td>24</td><td>Cacodemon</td></tr>
+        <tr><td>29</td><td>25</td><td>Wretched</td></tr>
+        <tr><td>30</td><td>26</td><td>Beholder</td></tr>
+        <tr><td>31</td><td>27</td><td>Rahovart</td></tr>
+        <tr><td>32</td><td>28</td><td>Pain Elemental</td></tr>
+        <tr><td>33</td><td>29</td><td>Ghoul</td></tr>
+        <tr><td>34</td><td>2A</td><td>Fiend</td></tr>
+        <tr><td>35</td><td>2B</td><td>Revenant</td></tr>
+        <tr><td>36</td><td>2C</td><td>Behemoth</td></tr>
+        <tr><td>37</td><td>2D</td><td>Mancubus</td></tr>
+        <tr><td>38</td><td>2E</td><td>Druj</td></tr>
+        <tr><td>39</td><td>2F</td><td>Infernis</td></tr>
+        <tr><td>40</td><td>30</td><td>Archvile</td></tr>
+        <tr><td>41</td><td>31</td><td>Apollyon</td></tr>
+        <tr><td>42</td><td>32</td><td>Ogre</td></tr>
+        <tr><td>43</td><td>33</td><td>Hell Knight</td></tr>
+        <tr><td>44</td><td>34</td><td>Baron</td></tr>
+        <tr><td>45</td><td>35</td><td>Cyberdemon</td></tr>
+        <tr><td>46</td><td>36</td><td>Kronos</td></tr>
+        <tr><td>47</td><td>3E</td><td>Burned Steel Wall</td></tr>
+        <tr><td>48</td><td>3F</td><td>Broken Tube Wall</td></tr>
+        <tr><td>49</td><td>41</td><td>Red Key</td></tr>
+        <tr><td>50</td><td>42</td><td>Blue Key</td></tr>
+        <tr><td>51</td><td>43</td><td>Green Key</td></tr>
+        <tr><td>52</td><td>47</td><td>Steel Wall</td></tr>
+        <tr><td>53</td><td>49</td><td>Yellow Key</td></tr>
+        <tr><td>54</td><td>51</td><td>Halon Can (1)</td></tr>
+        <tr><td>55</td><td>52</td><td>Halon Can (4)</td></tr>
+        <tr><td>56</td><td>53</td><td>Bullet Clip (1)</td></tr>
+        <tr><td>57</td><td>54</td><td>Bullet Clip (4)</td></tr>
+        <tr><td>58</td><td>55</td><td>Shell Clip (1)</td></tr>
+        <tr><td>59</td><td>56</td><td>Shell Clip (4)</td></tr>
+        <tr><td>60</td><td>57</td><td>Rocket (1)</td></tr>
+        <tr><td>61</td><td>58</td><td>Rocket (4)</td></tr>
+        <tr><td>62</td><td>59</td><td>Cell (1)</td></tr>
+        <tr><td>63</td><td>5A</td><td>Cell Clip (4)</td></tr>
+        <tr><td>64</td><td>5B</td><td>Health Vial</td></tr>
+        <tr><td>65</td><td>5C</td><td>Armor Shard</td></tr>
+        <tr><td>66</td><td>5D</td><td>Flak Jacket Green</td></tr>
+        <tr><td>67</td><td>5E</td><td>Combat Suit Blue</td></tr>
+        <tr><td>68</td><td>5F</td><td>Credit Green</td></tr>
+        <tr><td>69</td><td>60</td><td>Credit Yellow</td></tr>
+        <tr><td>70</td><td>63</td><td>MedKit Small</td></tr>
+        <tr><td>71</td><td>64</td><td>MedKit Large</td></tr>
+        <tr><td>72</td><td>65</td><td>Soul Sphear</td></tr>
+        <tr><td>73</td><td>66</td><td>Berserker</td></tr>
+        <tr><td>74</td><td>6E</td><td>Collar</td></tr>
+        <tr><td>75</td><td>80</td><td>Lava</td></tr>
+        <tr><td>76</td><td>81</td><td>Fire</td></tr>
+        <tr><td>77</td><td>82</td><td>Barrel</td></tr>
+        <tr><td>78</td><td>83</td><td>Power Coupling</td></tr>
+        <tr><td>79</td><td>84</td><td>Sink</td></tr>
+        <tr><td>80</td><td>85</td><td>Toilet</td></tr>
+        <tr><td>81</td><td>86</td><td>Chair</td></tr>
+        <tr><td>82</td><td>87</td><td>Lamp Yellow</td></tr>
+        <tr><td>83</td><td>8A</td><td>Exit Sign</td></tr>
+        <tr><td>84</td><td>8B</td><td>File Cabinet</td></tr>
+        <tr><td>85</td><td>8C</td><td>Lamp Blue</td></tr>
+        <tr><td>86</td><td>8D</td><td>Table</td></tr>
+        <tr><td>87</td><td>8E</td><td>Bunk</td></tr>
+        <tr><td>88</td><td>91</td><td>Civilian Yellow</td></tr>
+        <tr><td>89</td><td>92</td><td>Scientist White</td></tr>
+        <tr><td>90</td><td>93</td><td>Marine Green</td></tr>
+        <tr><td>91</td><td>94</td><td>Scientist Black</td></tr>
+        <tr><td>92</td><td>95</td><td>Scientist Blue (Guerard)</td></tr>
+        <tr><td>93</td><td>96</td><td>Civilian Purple (Nadira)</td></tr>
+        <tr><td>94</td><td>97</td><td>Civilian Green</td></tr>
+        <tr><td>95</td><td>98</td><td>Marine Blue</td></tr>
+        <tr><td>96</td><td>A1</td><td>Crate Orange</td></tr>
+        <tr><td>97</td><td>A2</td><td>Crate Yellow</td></tr>
+        <tr><td>98</td><td>D1</td><td>Splat</td></tr>
+        <tr><td>99</td><td>D2</td><td>Splat Pentagram</td></tr>
+        <tr><td>100</td><td>D3</td><td>Splat Die</td></tr>
+        <tr><td>101</td><td>D4</td><td>Wall X Brace</td></tr>
+        <tr><td>102</td><td>D5</td><td>Wall X Brace</td></tr>
+        <tr><td>103</td><td>D6</td><td>Wall Tech</td></tr>
+        <tr><td>104</td><td>D7</td><td>Damaged Stucco</td></tr>
+        <tr><td>105</td><td>D8</td><td>Bars</td></tr>
+        <tr><td>106</td><td>D9</td><td>Wall Side Supports</td></tr>
+        <tr><td>107</td><td>DC</td><td>Damaged Steel Wall</td></tr>
+    </tbody>
 </table>
 
-		<a name="entdata"></a>
-		<h2>Entities Data Appendix</h2>
+        <a name="entdata"></a>
+        <h2>Entities Data Appendix</h2>
 
 <table>
-	<thead>
-		<tr><td>#</td><td>String</td><td>ID</td><td>Type</td><td>P1</td><td>P2</td></tr>
-	</thead>
-	<tbody>
-		<tr><td>0:</td><td>Axe</td><td>0001</td><td>5</td><td>00</td><td>00000000</td></tr>
-		<tr><td>1:</td><td>Fire Ext</td><td>0002</td><td>5</td><td>01</td><td>0000000A</td></tr>
-		<tr><td>2:</td><td>Shotgun</td><td>0003</td><td>5</td><td>03</td><td>00000008</td></tr>
-		<tr><td>3:</td><td>Super Shotgn</td><td>0004</td><td>5</td><td>05</td><td>0000000A</td></tr>
-		<tr><td>4:</td><td>Chaingun</td><td>0005</td><td>5</td><td>04</td><td>0000000C</td></tr>
-		<tr><td>5:</td><td>Rocket Lnchr</td><td>0006</td><td>5</td><td>07</td><td>00000004</td></tr>
-		<tr><td>6:</td><td>Plasma Gun</td><td>0007</td><td>5</td><td>06</td><td>0000000C</td></tr>
-		<tr><td>7:</td><td>BFG</td><td>0008</td><td>5</td><td>08</td><td>0000000F</td></tr>
-		<tr><td>8:</td><td>Pistol</td><td>0009</td><td>5</td><td>02</td><td>00000000</td></tr>
-		<tr><td>9:</td><td>Hellhound</td><td>000A</td><td>5</td><td>09</td><td>00000000</td></tr>
-		<tr><td>10:</td><td>Cerberus</td><td>000B</td><td>5</td><td>0A</td><td>00000000</td></tr>
-		<tr><td>11:</td><td>Demon Wolf</td><td>000C</td><td>5</td><td>0B</td><td>00000000</td></tr>
-		<tr><td>12:</td><td>Zombie Pvt</td><td>0011</td><td>1</td><td>00</td><td>00000126</td></tr>
-		<tr><td>13:</td><td>Zombie Lt</td><td>0012</td><td>1</td><td>00</td><td>000001D3</td></tr>
-		<tr><td>14:</td><td>Zombie Cpt</td><td>0013</td><td>1</td><td>00</td><td>00000280</td></tr>
-		<tr><td>15:</td><td>Hellhound</td><td>0014</td><td>1</td><td>01</td><td>00000126</td></tr>
-		<tr><td>16:</td><td>Cerberus</td><td>0015</td><td>1</td><td>01</td><td>000001D3</td></tr>
-		<tr><td>17:</td><td>Demon Wolf</td><td>0016</td><td>1</td><td>01</td><td>00000280</td></tr>
-		<tr><td>18:</td><td>Troop</td><td>0017</td><td>1</td><td>02</td><td>00000126</td></tr>
-		<tr><td>19:</td><td>Commando</td><td>0018</td><td>1</td><td>02</td><td>000001D3</td></tr>
-		<tr><td>20:</td><td>Assassin</td><td>0019</td><td>1</td><td>02</td><td>00000280</td></tr>
-		<tr><td>21:</td><td>Impling</td><td>001A</td><td>1</td><td>03</td><td>00000126</td></tr>
-		<tr><td>22:</td><td>Imp</td><td>001B</td><td>1</td><td>03</td><td>000001D3</td></tr>
-		<tr><td>23:</td><td>Imp Lord</td><td>001C</td><td>1</td><td>03</td><td>00000280</td></tr>
-		<tr><td>24:</td><td>Phantom</td><td>001D</td><td>1</td><td>04</td><td>00000126</td></tr>
-		<tr><td>25:</td><td>Lost Soul</td><td>001E</td><td>1</td><td>04</td><td>000001D3</td></tr>
-		<tr><td>26:</td><td>Nightmare</td><td>001F</td><td>1</td><td>04</td><td>00000280</td></tr>
-		<tr><td>27:</td><td>Bull Demon</td><td>0020</td><td>1</td><td>05</td><td>00000126</td></tr>
-		<tr><td>28:</td><td>Pinky</td><td>0021</td><td>1</td><td>05</td><td>000001D3</td></tr>
-		<tr><td>29:</td><td>Belphegor</td><td>0022</td><td>1</td><td>05</td><td>00000280</td></tr>
-		<tr><td>30:</td><td>Malwrath</td><td>0023</td><td>1</td><td>06</td><td>00000126</td></tr>
-		<tr><td>31:</td><td>Cacodemon</td><td>0024</td><td>1</td><td>06</td><td>000001D3</td></tr>
-		<tr><td>32:</td><td>Wretched</td><td>0025</td><td>1</td><td>06</td><td>00000280</td></tr>
-		<tr><td>33:</td><td>Beholder</td><td>0026</td><td>1</td><td>07</td><td>00000126</td></tr>
-		<tr><td>34:</td><td>Rahovart</td><td>0027</td><td>1</td><td>07</td><td>000001D3</td></tr>
-		<tr><td>35:</td><td>Pain Elemental</td><td>0028</td><td>1</td><td>07</td><td>00000280</td></tr>
-		<tr><td>36:</td><td>Ghoul</td><td>0029</td><td>1</td><td>08</td><td>00000126</td></tr>
-		<tr><td>37:</td><td>Fiend</td><td>002A</td><td>1</td><td>08</td><td>000001D3</td></tr>
-		<tr><td>38:</td><td>Revenant</td><td>002B</td><td>1</td><td>08</td><td>00000280</td></tr>
-		<tr><td>39:</td><td>Behemoth</td><td>002C</td><td>1</td><td>09</td><td>00000126</td></tr>
-		<tr><td>40:</td><td>Mancubus</td><td>002D</td><td>1</td><td>09</td><td>000001D3</td></tr>
-		<tr><td>41:</td><td>Druj</td><td>002E</td><td>1</td><td>09</td><td>00000280</td></tr>
-		<tr><td>42:</td><td>Infernis</td><td>002F</td><td>1</td><td>0A</td><td>00000126</td></tr>
-		<tr><td>43:</td><td>Archvile</td><td>0030</td><td>1</td><td>0A</td><td>000001D3</td></tr>
-		<tr><td>44:</td><td>Apollyon</td><td>0031</td><td>1</td><td>0A</td><td>00000280</td></tr>
-		<tr><td>45:</td><td>Ogre</td><td>0032</td><td>1</td><td>0B</td><td>00000126</td></tr>
-		<tr><td>46:</td><td>Hell Knight</td><td>0033</td><td>1</td><td>0B</td><td>000001D3</td></tr>
-		<tr><td>47:</td><td>Baron</td><td>0034</td><td>1</td><td>0B</td><td>00000280</td></tr>
-		<tr><td>48:</td><td>Cyberdemon</td><td>0035</td><td>1</td><td>0C</td><td>00000126</td></tr>
-		<tr><td>49:</td><td>Kronos</td><td>0036</td><td>1</td><td>0D</td><td>00000126</td></tr>
-		<tr><td>50:</td><td>Red Key</td><td>0041</td><td>3</td><td>18</td><td>00000003</td></tr>
-		<tr><td>51:</td><td>Blue Key</td><td>0042</td><td>3</td><td>18</td><td>00000002</td></tr>
-		<tr><td>52:</td><td>Green Key</td><td>0043</td><td>3</td><td>18</td><td>00000000</td></tr>
-		<tr><td>53:</td><td>Yellow Key</td><td>0049</td><td>3</td><td>18</td><td>00000001</td></tr>
-		<tr><td>54:</td><td>Halon Can</td><td>0051</td><td>6</td><td>00</td><td>00000003</td></tr>
-		<tr><td>55:</td><td>Halon Cans</td><td>0052</td><td>16</td><td>00</td><td>0000000A</td></tr>
-		<tr><td>56:</td><td>Bullet Clip</td><td>0053</td><td>6</td><td>01</td><td>00000004</td></tr>
-		<tr><td>57:</td><td>Bullet Clips</td><td>0054</td><td>16</td><td>01</td><td>0000000A</td></tr>
-		<tr><td>58:</td><td>Shell Clip</td><td>0055</td><td>6</td><td>02</td><td>00000004</td></tr>
-		<tr><td>59:</td><td>Shell Clips</td><td>0056</td><td>16</td><td>02</td><td>0000000A</td></tr>
-		<tr><td>60:</td><td>Rocket</td><td>0057</td><td>6</td><td>03</td><td>00000001</td></tr>
-		<tr><td>61:</td><td>Rockets</td><td>0058</td><td>16</td><td>03</td><td>00000004</td></tr>
-		<tr><td>62:</td><td>Cell Clip</td><td>0059</td><td>6</td><td>04</td><td>00000004</td></tr>
-		<tr><td>63:</td><td>Cell Clips</td><td>005A</td><td>16</td><td>04</td><td>0000000A</td></tr>
-		<tr><td>64:</td><td>Health Vial</td><td>005B</td><td>3</td><td>14</td><td>00000004</td></tr>
-		<tr><td>65:</td><td>Armor Shard</td><td>005C</td><td>3</td><td>15</td><td>00000004</td></tr>
-		<tr><td>66:</td><td>Flak Jacket</td><td>005D</td><td>3</td><td>15</td><td>00000019</td></tr>
-		<tr><td>67:</td><td>Combat Suit</td><td>005E</td><td>3</td><td>15</td><td>00000032</td></tr>
-		<tr><td>68:</td><td>1 credit</td><td>005F</td><td>3</td><td>16</td><td>00000001</td></tr>
-		<tr><td>69:</td><td>5 credits</td><td>0060</td><td>3</td><td>17</td><td>00000005</td></tr>
-		<tr><td>70:</td><td>Sm Medkit</td><td>0063</td><td>4</td><td>19</td><td>00000019</td></tr>
-		<tr><td>71:</td><td>Lg Medkit</td><td>0064</td><td>4</td><td>1A</td><td>0000004B</td></tr>
-		<tr><td>72:</td><td>Soul Sphere</td><td>0065</td><td>4</td><td>1B</td><td>00000000</td></tr>
-		<tr><td>73:</td><td>Berserker</td><td>0066</td><td>4</td><td>1C</td><td>00000000</td></tr>
-		<tr><td>74:</td><td>Dog Collar</td><td>006E</td><td>4</td><td>1D</td><td>00000000</td></tr>
-		<tr><td>75:</td><td>Civilian</td><td>0091</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>76:</td><td>Scientist</td><td>0092</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>77:</td><td>Marine</td><td>0093</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>78:</td><td>Scientist</td><td>0094</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>79:</td><td>Dr. Guerard</td><td>0095</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>80:</td><td>Civilian</td><td>0096</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>81:</td><td>Civilian</td><td>0097</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>82:</td><td>Marine</td><td>0098</td><td>2</td><td>00</td><td>00000000</td></tr>
-		<tr><td>83:</td><td>Lava Pool</td><td>0080</td><td>11</td><td>00</td><td>00000000</td></tr>
-		<tr><td>84:</td><td>Fire</td><td>0081</td><td>10</td><td>00</td><td>00000000</td></tr>
-		<tr><td>85:</td><td>Barrel</td><td>0082</td><td>12</td><td>01</td><td>00000FFF</td></tr>
-		<tr><td>86:</td><td>Power Coupling</td><td>0083</td><td>12</td><td>04</td><td>00000FFF</td></tr>
-		<tr><td>87:</td><td>Sink</td><td>0084</td><td>13</td><td>00</td><td>00000000</td></tr>
-		<tr><td>88:</td><td>Toilet</td><td>0085</td><td>13</td><td>00</td><td>00000000</td></tr>
-		<tr><td>89:</td><td>Chair</td><td>0086</td><td>13</td><td>00</td><td>00000000</td></tr>
-		<tr><td>90:</td><td>Yellow Lamp</td><td>0087</td><td>7</td><td>00</td><td>00000000</td></tr>
-		<tr><td>91:</td><td>Cabinet</td><td>008B</td><td>7</td><td>00</td><td>00000000</td></tr>
-		<tr><td>92:</td><td>Blue Lamp</td><td>008C</td><td>7</td><td>00</td><td>00000000</td></tr>
-		<tr><td>93:</td><td>Table</td><td>008D</td><td>13</td><td>00</td><td>00000000</td></tr>
-		<tr><td>94:</td><td>Bunk Beds</td><td>008E</td><td>7</td><td>00</td><td>00000000</td></tr>
-		<tr><td>95:</td><td>Crate</td><td>00A1</td><td>12</td><td>02</td><td>00000FFF</td></tr>
-		<tr><td>96:</td><td>Crate</td><td>00A2</td><td>12</td><td>02</td><td>00000FFF</td></tr>
-		<tr><td>97:</td><td>Jammed Door</td><td>0132</td><td>12</td><td>03</td><td>00000001</td></tr>
-		<tr><td>98:</td><td>Weak Wall</td><td>014C</td><td>12</td><td>03</td><td>00000001</td></tr>
-		<tr><td>99:</td><td>Door</td><td>0131</td><td>0</td><td>00</td><td>00000000</td></tr>
-		<tr><td>100:</td><td>Red Door</td><td>0134</td><td>0</td><td>00</td><td>00000000</td></tr>
-		<tr><td>101:</td><td>Blue Door</td><td>0135</td><td>0</td><td>00</td><td>00000000</td></tr>
-		<tr><td>102:</td><td>Green Door</td><td>0136</td><td>0</td><td>00</td><td>00000000</td></tr>
-		<tr><td>103:</td><td>Yellow Door</td><td>0137</td><td>0</td><td>00</td><td>00000000</td></tr>
-		<tr><td>104:</td><td>Exit Door</td><td>0138</td><td>0</td><td>00</td><td>00000000</td></tr>
-		<tr><td>105:</td><td>Locked Door</td><td>013A</td><td>0</td><td>01</td><td>00000000</td></tr>
-		<tr><td>106:</td><td>Unlocked Door</td><td>013B</td><td>0</td><td>02</td><td>00000000</td></tr>
-		<tr><td>107:</td><td></td><td>0152</td><td>7</td><td>04</td><td>00000000</td></tr>
-		<tr><td>108:</td><td>Portal</td><td>0153</td><td>7</td><td>03</td><td>00000000</td></tr>
-		<tr><td>109:</td><td>Computer</td><td>0167</td><td>7</td><td>05</td><td>00000000</td></tr>
-		<tr><td>110:</td><td>Item Vendor</td><td>0168</td><td>7</td><td>00</td><td>00000000</td></tr>
-		<tr><td>111:</td><td></td><td>0201</td><td>9</td><td>00</td><td>00000000</td></tr>
-		<tr><td>112:</td><td></td><td>0202</td><td>14</td><td>00</td><td>00000000</td></tr>
-		<tr><td>113:</td><td></td><td>0203</td><td>15</td><td>00</td><td>00000000</td></tr>
-		<tr><td>114:</td><td></td><td>029A</td><td>8</td><td>00</td><td>00000000</td></tr>
-	</tbody>
+    <thead>
+        <tr><td>#</td><td>String</td><td>ID</td><td>Type</td><td>P1</td><td>P2</td></tr>
+    </thead>
+    <tbody>
+        <tr><td>0:</td><td>Axe</td><td>0001</td><td>5</td><td>00</td><td>00000000</td></tr>
+        <tr><td>1:</td><td>Fire Ext</td><td>0002</td><td>5</td><td>01</td><td>0000000A</td></tr>
+        <tr><td>2:</td><td>Shotgun</td><td>0003</td><td>5</td><td>03</td><td>00000008</td></tr>
+        <tr><td>3:</td><td>Super Shotgn</td><td>0004</td><td>5</td><td>05</td><td>0000000A</td></tr>
+        <tr><td>4:</td><td>Chaingun</td><td>0005</td><td>5</td><td>04</td><td>0000000C</td></tr>
+        <tr><td>5:</td><td>Rocket Lnchr</td><td>0006</td><td>5</td><td>07</td><td>00000004</td></tr>
+        <tr><td>6:</td><td>Plasma Gun</td><td>0007</td><td>5</td><td>06</td><td>0000000C</td></tr>
+        <tr><td>7:</td><td>BFG</td><td>0008</td><td>5</td><td>08</td><td>0000000F</td></tr>
+        <tr><td>8:</td><td>Pistol</td><td>0009</td><td>5</td><td>02</td><td>00000000</td></tr>
+        <tr><td>9:</td><td>Hellhound</td><td>000A</td><td>5</td><td>09</td><td>00000000</td></tr>
+        <tr><td>10:</td><td>Cerberus</td><td>000B</td><td>5</td><td>0A</td><td>00000000</td></tr>
+        <tr><td>11:</td><td>Demon Wolf</td><td>000C</td><td>5</td><td>0B</td><td>00000000</td></tr>
+        <tr><td>12:</td><td>Zombie Pvt</td><td>0011</td><td>1</td><td>00</td><td>00000126</td></tr>
+        <tr><td>13:</td><td>Zombie Lt</td><td>0012</td><td>1</td><td>00</td><td>000001D3</td></tr>
+        <tr><td>14:</td><td>Zombie Cpt</td><td>0013</td><td>1</td><td>00</td><td>00000280</td></tr>
+        <tr><td>15:</td><td>Hellhound</td><td>0014</td><td>1</td><td>01</td><td>00000126</td></tr>
+        <tr><td>16:</td><td>Cerberus</td><td>0015</td><td>1</td><td>01</td><td>000001D3</td></tr>
+        <tr><td>17:</td><td>Demon Wolf</td><td>0016</td><td>1</td><td>01</td><td>00000280</td></tr>
+        <tr><td>18:</td><td>Troop</td><td>0017</td><td>1</td><td>02</td><td>00000126</td></tr>
+        <tr><td>19:</td><td>Commando</td><td>0018</td><td>1</td><td>02</td><td>000001D3</td></tr>
+        <tr><td>20:</td><td>Assassin</td><td>0019</td><td>1</td><td>02</td><td>00000280</td></tr>
+        <tr><td>21:</td><td>Impling</td><td>001A</td><td>1</td><td>03</td><td>00000126</td></tr>
+        <tr><td>22:</td><td>Imp</td><td>001B</td><td>1</td><td>03</td><td>000001D3</td></tr>
+        <tr><td>23:</td><td>Imp Lord</td><td>001C</td><td>1</td><td>03</td><td>00000280</td></tr>
+        <tr><td>24:</td><td>Phantom</td><td>001D</td><td>1</td><td>04</td><td>00000126</td></tr>
+        <tr><td>25:</td><td>Lost Soul</td><td>001E</td><td>1</td><td>04</td><td>000001D3</td></tr>
+        <tr><td>26:</td><td>Nightmare</td><td>001F</td><td>1</td><td>04</td><td>00000280</td></tr>
+        <tr><td>27:</td><td>Bull Demon</td><td>0020</td><td>1</td><td>05</td><td>00000126</td></tr>
+        <tr><td>28:</td><td>Pinky</td><td>0021</td><td>1</td><td>05</td><td>000001D3</td></tr>
+        <tr><td>29:</td><td>Belphegor</td><td>0022</td><td>1</td><td>05</td><td>00000280</td></tr>
+        <tr><td>30:</td><td>Malwrath</td><td>0023</td><td>1</td><td>06</td><td>00000126</td></tr>
+        <tr><td>31:</td><td>Cacodemon</td><td>0024</td><td>1</td><td>06</td><td>000001D3</td></tr>
+        <tr><td>32:</td><td>Wretched</td><td>0025</td><td>1</td><td>06</td><td>00000280</td></tr>
+        <tr><td>33:</td><td>Beholder</td><td>0026</td><td>1</td><td>07</td><td>00000126</td></tr>
+        <tr><td>34:</td><td>Rahovart</td><td>0027</td><td>1</td><td>07</td><td>000001D3</td></tr>
+        <tr><td>35:</td><td>Pain Elemental</td><td>0028</td><td>1</td><td>07</td><td>00000280</td></tr>
+        <tr><td>36:</td><td>Ghoul</td><td>0029</td><td>1</td><td>08</td><td>00000126</td></tr>
+        <tr><td>37:</td><td>Fiend</td><td>002A</td><td>1</td><td>08</td><td>000001D3</td></tr>
+        <tr><td>38:</td><td>Revenant</td><td>002B</td><td>1</td><td>08</td><td>00000280</td></tr>
+        <tr><td>39:</td><td>Behemoth</td><td>002C</td><td>1</td><td>09</td><td>00000126</td></tr>
+        <tr><td>40:</td><td>Mancubus</td><td>002D</td><td>1</td><td>09</td><td>000001D3</td></tr>
+        <tr><td>41:</td><td>Druj</td><td>002E</td><td>1</td><td>09</td><td>00000280</td></tr>
+        <tr><td>42:</td><td>Infernis</td><td>002F</td><td>1</td><td>0A</td><td>00000126</td></tr>
+        <tr><td>43:</td><td>Archvile</td><td>0030</td><td>1</td><td>0A</td><td>000001D3</td></tr>
+        <tr><td>44:</td><td>Apollyon</td><td>0031</td><td>1</td><td>0A</td><td>00000280</td></tr>
+        <tr><td>45:</td><td>Ogre</td><td>0032</td><td>1</td><td>0B</td><td>00000126</td></tr>
+        <tr><td>46:</td><td>Hell Knight</td><td>0033</td><td>1</td><td>0B</td><td>000001D3</td></tr>
+        <tr><td>47:</td><td>Baron</td><td>0034</td><td>1</td><td>0B</td><td>00000280</td></tr>
+        <tr><td>48:</td><td>Cyberdemon</td><td>0035</td><td>1</td><td>0C</td><td>00000126</td></tr>
+        <tr><td>49:</td><td>Kronos</td><td>0036</td><td>1</td><td>0D</td><td>00000126</td></tr>
+        <tr><td>50:</td><td>Red Key</td><td>0041</td><td>3</td><td>18</td><td>00000003</td></tr>
+        <tr><td>51:</td><td>Blue Key</td><td>0042</td><td>3</td><td>18</td><td>00000002</td></tr>
+        <tr><td>52:</td><td>Green Key</td><td>0043</td><td>3</td><td>18</td><td>00000000</td></tr>
+        <tr><td>53:</td><td>Yellow Key</td><td>0049</td><td>3</td><td>18</td><td>00000001</td></tr>
+        <tr><td>54:</td><td>Halon Can</td><td>0051</td><td>6</td><td>00</td><td>00000003</td></tr>
+        <tr><td>55:</td><td>Halon Cans</td><td>0052</td><td>16</td><td>00</td><td>0000000A</td></tr>
+        <tr><td>56:</td><td>Bullet Clip</td><td>0053</td><td>6</td><td>01</td><td>00000004</td></tr>
+        <tr><td>57:</td><td>Bullet Clips</td><td>0054</td><td>16</td><td>01</td><td>0000000A</td></tr>
+        <tr><td>58:</td><td>Shell Clip</td><td>0055</td><td>6</td><td>02</td><td>00000004</td></tr>
+        <tr><td>59:</td><td>Shell Clips</td><td>0056</td><td>16</td><td>02</td><td>0000000A</td></tr>
+        <tr><td>60:</td><td>Rocket</td><td>0057</td><td>6</td><td>03</td><td>00000001</td></tr>
+        <tr><td>61:</td><td>Rockets</td><td>0058</td><td>16</td><td>03</td><td>00000004</td></tr>
+        <tr><td>62:</td><td>Cell Clip</td><td>0059</td><td>6</td><td>04</td><td>00000004</td></tr>
+        <tr><td>63:</td><td>Cell Clips</td><td>005A</td><td>16</td><td>04</td><td>0000000A</td></tr>
+        <tr><td>64:</td><td>Health Vial</td><td>005B</td><td>3</td><td>14</td><td>00000004</td></tr>
+        <tr><td>65:</td><td>Armor Shard</td><td>005C</td><td>3</td><td>15</td><td>00000004</td></tr>
+        <tr><td>66:</td><td>Flak Jacket</td><td>005D</td><td>3</td><td>15</td><td>00000019</td></tr>
+        <tr><td>67:</td><td>Combat Suit</td><td>005E</td><td>3</td><td>15</td><td>00000032</td></tr>
+        <tr><td>68:</td><td>1 credit</td><td>005F</td><td>3</td><td>16</td><td>00000001</td></tr>
+        <tr><td>69:</td><td>5 credits</td><td>0060</td><td>3</td><td>17</td><td>00000005</td></tr>
+        <tr><td>70:</td><td>Sm Medkit</td><td>0063</td><td>4</td><td>19</td><td>00000019</td></tr>
+        <tr><td>71:</td><td>Lg Medkit</td><td>0064</td><td>4</td><td>1A</td><td>0000004B</td></tr>
+        <tr><td>72:</td><td>Soul Sphere</td><td>0065</td><td>4</td><td>1B</td><td>00000000</td></tr>
+        <tr><td>73:</td><td>Berserker</td><td>0066</td><td>4</td><td>1C</td><td>00000000</td></tr>
+        <tr><td>74:</td><td>Dog Collar</td><td>006E</td><td>4</td><td>1D</td><td>00000000</td></tr>
+        <tr><td>75:</td><td>Civilian</td><td>0091</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>76:</td><td>Scientist</td><td>0092</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>77:</td><td>Marine</td><td>0093</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>78:</td><td>Scientist</td><td>0094</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>79:</td><td>Dr. Guerard</td><td>0095</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>80:</td><td>Civilian</td><td>0096</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>81:</td><td>Civilian</td><td>0097</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>82:</td><td>Marine</td><td>0098</td><td>2</td><td>00</td><td>00000000</td></tr>
+        <tr><td>83:</td><td>Lava Pool</td><td>0080</td><td>11</td><td>00</td><td>00000000</td></tr>
+        <tr><td>84:</td><td>Fire</td><td>0081</td><td>10</td><td>00</td><td>00000000</td></tr>
+        <tr><td>85:</td><td>Barrel</td><td>0082</td><td>12</td><td>01</td><td>00000FFF</td></tr>
+        <tr><td>86:</td><td>Power Coupling</td><td>0083</td><td>12</td><td>04</td><td>00000FFF</td></tr>
+        <tr><td>87:</td><td>Sink</td><td>0084</td><td>13</td><td>00</td><td>00000000</td></tr>
+        <tr><td>88:</td><td>Toilet</td><td>0085</td><td>13</td><td>00</td><td>00000000</td></tr>
+        <tr><td>89:</td><td>Chair</td><td>0086</td><td>13</td><td>00</td><td>00000000</td></tr>
+        <tr><td>90:</td><td>Yellow Lamp</td><td>0087</td><td>7</td><td>00</td><td>00000000</td></tr>
+        <tr><td>91:</td><td>Cabinet</td><td>008B</td><td>7</td><td>00</td><td>00000000</td></tr>
+        <tr><td>92:</td><td>Blue Lamp</td><td>008C</td><td>7</td><td>00</td><td>00000000</td></tr>
+        <tr><td>93:</td><td>Table</td><td>008D</td><td>13</td><td>00</td><td>00000000</td></tr>
+        <tr><td>94:</td><td>Bunk Beds</td><td>008E</td><td>7</td><td>00</td><td>00000000</td></tr>
+        <tr><td>95:</td><td>Crate</td><td>00A1</td><td>12</td><td>02</td><td>00000FFF</td></tr>
+        <tr><td>96:</td><td>Crate</td><td>00A2</td><td>12</td><td>02</td><td>00000FFF</td></tr>
+        <tr><td>97:</td><td>Jammed Door</td><td>0132</td><td>12</td><td>03</td><td>00000001</td></tr>
+        <tr><td>98:</td><td>Weak Wall</td><td>014C</td><td>12</td><td>03</td><td>00000001</td></tr>
+        <tr><td>99:</td><td>Door</td><td>0131</td><td>0</td><td>00</td><td>00000000</td></tr>
+        <tr><td>100:</td><td>Red Door</td><td>0134</td><td>0</td><td>00</td><td>00000000</td></tr>
+        <tr><td>101:</td><td>Blue Door</td><td>0135</td><td>0</td><td>00</td><td>00000000</td></tr>
+        <tr><td>102:</td><td>Green Door</td><td>0136</td><td>0</td><td>00</td><td>00000000</td></tr>
+        <tr><td>103:</td><td>Yellow Door</td><td>0137</td><td>0</td><td>00</td><td>00000000</td></tr>
+        <tr><td>104:</td><td>Exit Door</td><td>0138</td><td>0</td><td>00</td><td>00000000</td></tr>
+        <tr><td>105:</td><td>Locked Door</td><td>013A</td><td>0</td><td>01</td><td>00000000</td></tr>
+        <tr><td>106:</td><td>Unlocked Door</td><td>013B</td><td>0</td><td>02</td><td>00000000</td></tr>
+        <tr><td>107:</td><td></td><td>0152</td><td>7</td><td>04</td><td>00000000</td></tr>
+        <tr><td>108:</td><td>Portal</td><td>0153</td><td>7</td><td>03</td><td>00000000</td></tr>
+        <tr><td>109:</td><td>Computer</td><td>0167</td><td>7</td><td>05</td><td>00000000</td></tr>
+        <tr><td>110:</td><td>Item Vendor</td><td>0168</td><td>7</td><td>00</td><td>00000000</td></tr>
+        <tr><td>111:</td><td></td><td>0201</td><td>9</td><td>00</td><td>00000000</td></tr>
+        <tr><td>112:</td><td></td><td>0202</td><td>14</td><td>00</td><td>00000000</td></tr>
+        <tr><td>113:</td><td></td><td>0203</td><td>15</td><td>00</td><td>00000000</td></tr>
+        <tr><td>114:</td><td></td><td>029A</td><td>8</td><td>00</td><td>00000000</td></tr>
+    </tbody>
 </table>
 
-		<style>
-			p { max-width: 40em; }
+        <style>
+            p { max-width: 40em; }
 
-			img {
-				-ms-interpolation-mode: nearest-neighbor;
-				image-rendering: pixelated;
-				image-rendering: -webkit-crisp-edges;
-				image-rendering: -moz-crisp-edges;
-				image-rendering: crisp-edges;
-				}
+            img {
+                -ms-interpolation-mode: nearest-neighbor;
+                image-rendering: pixelated;
+                image-rendering: -webkit-crisp-edges;
+                image-rendering: -moz-crisp-edges;
+                image-rendering: crisp-edges;
+                }
 
-			#palette { width: 50%; }
-			#sprites { width: 70%; }
+            #palette { width: 50%; }
+            #sprites { width: 70%; }
 
-			svg { max-width: 40em; }
-			img { max-width: 40em; }
+            svg { max-width: 40em; }
+            img { max-width: 40em; }
 
-			pre { border-radius: 0.25em; padding: 1em; display:inline-block; background-color: #EEEEFF; }
+            pre { border-radius: 0.25em; padding: 1em; display:inline-block; background-color: #EEEEFF; }
 
-			table { border-spacing: 0; border-collapse: collapse; border-spacing: 1px 0px; font-family: Ariel, Helvetica, sans-serif; border-bottom: solid 1px #305080; }
-			td { padding: 0.125em; border: solid 1px #305080; border-width: 0 1px; }
+            table { border-spacing: 0; border-collapse: collapse; border-spacing: 1px 0px; font-family: Ariel, Helvetica, sans-serif; border-bottom: solid 1px #305080; }
+            td { padding: 0.125em; border: solid 1px #305080; border-width: 0 1px; }
 
-			thead { background-color: #305080; color: #FFFFFF; } 
-			tbody tr:nth-of-type(even) { background-color: #CCCCFF; } 
+            thead { background-color: #305080; color: #FFFFFF; } 
+            tbody tr:nth-of-type(even) { background-color: #CCCCFF; } 
 
-			#spritetable td { padding-left: 0.5em; padding-right: 0.5em; }
-			#spritetable thead td { text-align: center; }
-			#spritetable tbody td { text-align: right; }
-			#spritetable tbody td:nth-child(1) { text-align: left; } 
-			#spritetable tbody td:nth-child(2) { text-align: left; } 
+            #spritetable td { padding-left: 0.5em; padding-right: 0.5em; }
+            #spritetable thead td { text-align: center; }
+            #spritetable tbody td { text-align: right; }
+            #spritetable tbody td:nth-child(1) { text-align: left; } 
+            #spritetable tbody td:nth-child(2) { text-align: left; } 
 
-		</style>
+        </style>
 
 <br><br><hr>
 <a href="http://www.neocomputer.org/projects">Home</a> - Last modified: June 2017
@@ -1018,5 +1018,5 @@
 </script>
 <!-- /Google -->
 
-	
+    
 </body></html>
