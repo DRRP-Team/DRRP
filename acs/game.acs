@@ -34,12 +34,12 @@ function global str getThingName(int id, int state) {
     Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
     return "DRRPTODO";
 }
-`
-function global str localizeSound(str sound) {
+
+function str localizeSound(str sound) {
     str export = strcmp(GetCVar("language"), "rus")
             ? StrParam(s:sound, s:"/en")
             : StrParam(s:sound, s:"/ru");
-    Print(s:"localizeSound(", s:sound, s:") => ", s:export);
+    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") => ", s:export);
     return export;
 }
 
