@@ -109,7 +109,7 @@ Actor Rod : ExplosiveBarrel 10704 {
             ROD3 G  1  Bright
             ROD3 H  1  Bright A_Quake(6, 10, 0, 256)
             ROD3 IJKLM 1
-            ROD3 N  1 ACS_Execute(101,0)
+            ROD3 N  1 ACS_ExecuteAlways(101, 0)
             ROD3 N  1 A_SpawnItem("RodTrash")
             Stop
     }
