@@ -6,12 +6,20 @@
  */
 
 class ShaderControllerActor : EventHandler {
-    static int SetEnabled(int player, String name, bool enabled) {
+
+	override void WorldTick() {
+		for ( int i = 0; i < MAXPLAYERS; i++ ) {
+			CVar ShaderCVar = CVar.GetCVar( "drrp_enable_helmet_shader", Players[ i ] );
+			self.SetEnabled( i, "Helmet", ( ShaderCVar == null ) || !( ShaderCVar.GetBool() ) );
+		}
+	}
+
+    static int SetEnabled(int player, String name, bool isEnabled) {
         if (player != 0) {
-            Shader.SetEnabled(players[player - 1], name, enabled);
+            Shader.SetEnabled(players[player - 1], name, isEnabled);
         } else {
             for(int i = 0; i < players.Size(); i++) {
-                Shader.SetEnabled(players[i], name, enabled);
+                Shader.SetEnabled(players[i], name, isEnabled);
             }
         }
 
