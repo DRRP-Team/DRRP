@@ -1,27 +1,27 @@
 /**
  * Copyright (c) 2017-2019 DRRP-Team
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
 
-drone1                  DRONE1  // FIXME: Remove
-ambient/drone1          DRONE1
-ambient/mach04          MACH04
-ambient/lopneon2        LOPNEON2
+drone1                  sounds/DEPRECATED  // FIXME: Remove
+ambient/drone1          sounds/DRONE1
+ambient/mach04          sounds/MACH04
+ambient/lopneon2        sounds/LOPNEON2
 
-misc/alarm              ALARM2
-alarm/alarm1            ALARM1
-alarm/alarm2            ALARM2
-alarm/alarm3            ALARM3
+misc/alarm              sounds/ALARM2
+alarm/alarm1            sounds/ALARM1
+alarm/alarm2            sounds/ALARM2
+alarm/alarm3            sounds/ALARM3
 
-fire/start              FIRESTRT
-fire/loop1              FIRELOP1
-fire/loop2              FIRELOP2
-fire/loop3              FIRELOP3
-fire/die                FIREDIE
+fire/start              sounds/FIRESTRT
+fire/loop1              sounds/FIRELOP1
+fire/loop2              sounds/FIRELOP2
+fire/loop3              sounds/FIRELOP3
+fire/die                sounds/FIREDIE
 
-$random fire/loop { // FIXME: Remove
+$random fire/loop { // FIXME: Remove?
     fire/loop1
     fire/loop2
     fire/loop3
@@ -31,55 +31,93 @@ $random env/fire/loop {
     fire/loop
 }
 
-acess/grant1            ACGRA  // FIXME: Remove
-acess/deny1             ACDEN  // FIXME: Remove
-acess/grant2            ACGRA2 // FIXME: Remove
-acess/deny2             ACDEN2 // FIXME: Remove
-acess/orange            ACORAN // FIXME: Remove
-access/grant1           ACGRA
-access/grant2           ACGRA2
-access/grantb1          ACGRAB
-access/grantb2          ACGRAB2
-access/deny1            ACDEN
-access/deny2            ACDEN2
-access/orange           ACORAN
+acess/grant1            sounds/DEPRECATED  // FIXME: Remove
+acess/deny1             sounds/DEPRECATED  // FIXME: Remove
+acess/grant2            sounds/DEPRECATED // FIXME: Remove
+acess/deny2             sounds/DEPRECATED // FIXME: Remove
+acess/orange            sounds/DEPRECATED // FIXME: Remove
+access/grant1           sounds/DEPRECATED // FIXME: Remove
+access/grant1/ru        sounds/ACGRA_RU
+access/grant1/en        sounds/ACGRA_EN
+access/grant2           sounds/DEPRECATED // FIXME: Remove
+access/grant2/ru        sounds/ACGRA2_RU
+access/grant2/en        sounds/ACGRA2_EN
+access/grantb1          sounds/ACGRAB
+access/grantb2          sounds/ACGRAB2
+access/deny1            sounds/DEPRECATED
+access/deny1/ru         sounds/ACDEN_RU
+access/deny1/en         sounds/ACDEN_EN
+access/deny2            sounds/DEPRECATED
+access/deny2/ru         sounds/ACDEN2_RU
+access/deny2/en         sounds/ACDEN2_EN
+access/orange           sounds/ACORAN
 
 $random access/grantb {
     access/grantb1
     access/grantb2
 }
 
-techno/lightsof     LIGHTSOF // FIXME: Remove
+techno/lightsof     DEPRECATED // FIXME: Remove
 techno/poweroff     LIGHTSOF
-techno/lighton      LIGHTSON // FIXME: Remove
+techno/lighton      DEPRECATED // FIXME: Remove
 techno/poweron      LIGHTSON
 
-voice/reac01        REAC01
-voice/reacon        REACON
-voice/hireactemp    HITEMP
-voice/wtf           WTF
-voice/god           GOD
-voice/only          ONLY
-voice/powerback     PWBACK
-voice/powershake    PWSH
+voice/reac01        DEPRECATED // FIXME: Remove
+voice/reac01/ru     REAC01_RU
+voice/reac01/em     REAC01_EN
+voice/reacon        DEPRECATED // FIXME: Remove
+voice/reacon/ru     REACON_RU
+voice/reacon/en     REACON_EN
+voice/hireactemp    DEPRECATED // FIXME: Remove
+voice/hireactemp/ru HITEMP_RU
+voice/hireactemp/en HITEMP_EN
+voice/wtf           DEPRECATED // FIXME: Remove
+voice/wtf/ru        WTF_RU
+voice/wtf/en        WTF_EN
+voice/god           DEPRECATED // FIXME: Remove
+voice/god/ru        GOD_RU
+voice/god/en        GOD_EN
+voice/only          DEPRECATED // FIXME: Remove
+voice/only/ru       ONLY_RU
+voice/only/en       ONLY_EN
+voice/powerback     DEPRECATED // FIXME: Remove
+voice/powershake    PWSH_RU
+voice/powershake/ru PWSH_RU
+voice/powershake/en PWSH_EN
 voice/teleport321   TP
-voice/systemsoff    SYSOFF
+voice/systemsoff    DEPRECATED // FIXME: Remove
+voice/systemsoff/ru SYSOFF_RU
+voice/systemsoff/en SYSOFF_EN
 voice/nofire        NOFIRE
 voice/c2            C2
-voice/uac           FUCK
+voice/uac           DEPRECATED // FIXME: Remove
+voice/uac/ru        FUCK_RU
+voice/uac/en        FUCK_EN
 
-bet/destroy         BDEST
-bet/made            BMADE
-bet/earth           BEAR
+bet/destroy         BDEST_RU // FIXME: Remove
+bet/destroy/ru      BDEST_RU
+bet/destroy/en      BDEST_EN
+bet/made            BMADE_RU // FIXME: Remove
+bet/made/ru         BMADE_RU
+bet/made/en         BMADE_EN
+bet/earth           BEAR_RU // FIXME: Remove
+bet/earth/ru        BEAR_RU
+bet/earth/en        BEAR_EN
 
 core/c1             C1
 core/c2             C2
 core/c3             C3
 core/c4             C4
 
-ms/doctor           MSDOC
-ms/psy              MSPSY
-ms/safe             MSSAFE
+ms/doctor           DEPRECATED // FIXME: Remove
+ms/doctor/ru        MSDOC_RU
+ms/doctor/en        MSDOC_EN
+ms/psy              DEPRECATED // FIXME: Remove
+ms/psy/ru           MSPSY_RU
+ms/psy/en           MSPSY_EN
+ms/safe             DEPRECATED // FIXME: Remove
+ms/safe/ru          MSSAFE_RU
+ms/safe/en          MSSAFE_EN
 
 teleport/tohell     sounds/Teleport/teleport_to_hell
 teleport/loop       sounds/Teleport/teleport_loop
@@ -91,11 +129,11 @@ DSPLDETH            DSPLDETH  // TODO: Is it needless?
 DSPLPAIN            DSPLPAIN  // TODO: Is it needless?
 DSPOPAIN            DSPOPAIN  // TODO: Is it needless?
 DSRADIO             DSRADIO   // TODO: Is it needless?
-CYBRSIGH            CYBRSIGH  // FIXME: Remove
-CYBRSIGH2           CYBRSIGH2 // FIXME: Remove
-CYBRDTH             CYBRDTH   // FIXME: Remove
+CYBRSIGH            DEPRECATED  // FIXME: Remove
+CYBRSIGH2           DEPRECATED // FIXME: Remove
+CYBRDTH             DEPRECATED   // FIXME: Remove
 DSBDCLS             DSBDCLS   // TODO: Is it needless?
-TAUNT               TAUNT     // FIXME: Remove
+TAUNT               DEPRECATED     // FIXME: Remove
 ZBMB1               ZBMB1
 ZBMB2               ZBMB2
 DSBLUD03            DSBLUD03
