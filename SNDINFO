@@ -101,10 +101,18 @@ bet/earth           DEPRECATED     // FIXME: Remove OK
 bet/earth/ru        BEAR_RU
 bet/earth/en        BEAR_EN
 
-core/c1             C1
-core/c2             C2
-core/c3             C3
-core/c4             C4
+core/c1             DEPRECATED 
+core/c1/ru          C1_RU
+core/c1/en          C1_EN
+core/c2             DEPRECATED 
+core/c2/ru          C2_RU
+core/c2/en          C2_EN
+core/c3             DEPRECATED 
+core/c3/ru          C3_RU
+core/c3/en          C3_EN
+core/c4             DEPRECATED 
+core/c4/ru          C4_RU
+core/c4/en          C4_EN
 
 ms/doctor           DEPRECATED // FIXME: Remove OK
 ms/doctor/ru        MSDOC_RU
@@ -136,6 +144,7 @@ ZBMB2               ZBMB2
 DSBLUD03            DSBLUD03
 ROCK                ROCK
 ICOSCRE             ICOSCRE
+DEPRECATED          DEPRECATED
 
 DOGSONG             DOGSONG
 HODSONG             HODSONG
