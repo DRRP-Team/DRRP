@@ -53,112 +53,112 @@ $random access/grantb {
     access/grantb2
 }
 
-techno/lightsof     DEPRECATED  // FIXME: Remove OK
-techno/poweroff     LIGHTSOF
-techno/lighton      DEPRECATED  // FIXME: Remove OK
-techno/lightson     DEPRECATED  // FIXME: Remove OK
-techno/poweron      LIGHTSON
+techno/lightsof             sounds/DEPRECATED  // FIXME: Remove OK
+techno/poweroff             sounds/LIGHTSOF
+techno/lighton              sounds/DEPRECATED  // FIXME: Remove OK
+techno/lightson             sounds/DEPRECATED  // FIXME: Remove OK
+techno/poweron              sounds/LIGHTSON
 
-voice/reac01        DEPRECATED  // FIXME: Remove OK
-voice/reac01/ru     REAC01_RU
-voice/reac01/en     REAC01_EN
-voice/reacon        DEPRECATED  // FIXME: Remove OK
-voice/reacon/ru     REACON_RU
-voice/reacon/en     REACON_EN
-voice/hireactemp    DEPRECATED  // FIXME: Remove OK
-voice/hireactemp/ru HITEMP_RU
-voice/hireactemp/en HITEMP_EN
-voice/wtf           DEPRECATED  // FIXME: Remove FIREEXT
-voice/wtf/ru        WTF_RU
-voice/wtf/en        WTF_EN
-voice/god           DEPRECATED  // FIXME: Remove OK
-voice/god/ru        GOD_RU
-voice/god/en        GOD_EN
-voice/only          DEPRECATED  // FIXME: Remove OK
-voice/only/ru       ONLY_RU
-voice/only/en       ONLY_EN
-voice/powerback     PWBACK
-voice/powershake    DEPRECATED  // FIXME: Remove OK
-voice/powershake/ru PWSH_RU
-voice/powershake/en PWSH_EN
-voice/teleport321   TP
-voice/systemsoff    DEPRECATED  // FIXME: Remove NONE
-voice/systemsoff/ru SYSOFF_RU
-voice/systemsoff/en SYSOFF_EN
-voice/nofire        NOFIRE
-voice/c2            C2
-voice/uac           DEPRECATED  // FIXME: Remove OK
-voice/uac/ru        FUCK_RU
-voice/uac/en        FUCK_EN
+voice/reac01                sounds/DEPRECATED  // FIXME: Remove OK
+voice/reac01/ru             sounds/REAC01_RU
+voice/reac01/en             sounds/REAC01_EN
+voice/reacon                sounds/DEPRECATED  // FIXME: Remove OK
+voice/reacon/ru             sounds/REACON_RU
+voice/reacon/en             sounds/REACON_EN
+voice/hireactemp            sounds/DEPRECATED  // FIXME: Remove OK
+voice/hireactemp/ru         sounds/HITEMP_RU
+voice/hireactemp/en         sounds/HITEMP_EN
+voice/wtf                   sounds/DEPRECATED  // FIXME: Remove FIREEXT
+voice/wtf/ru                sounds/WTF_RU
+voice/wtf/en                sounds/WTF_EN
+voice/god                   sounds/DEPRECATED  // FIXME: Remove OK
+voice/god/ru                sounds/GOD_RU
+voice/god/en                sounds/GOD_EN
+voice/only                  sounds/DEPRECATED  // FIXME: Remove OK
+voice/only/ru               sounds/ONLY_RU
+voice/only/en               sounds/ONLY_EN
+voice/powerback             sounds/PWBACK
+voice/powershake            sounds/DEPRECATED  // FIXME: Remove OK
+voice/powershake/ru         sounds/PWSH_RU
+voice/powershake/en         sounds/PWSH_EN
+voice/teleport321           sounds/TP
+voice/systemsoff            sounds/DEPRECATED  // FIXME: Remove NONE
+voice/systemsoff/ru         sounds/SYSOFF_RU
+voice/systemsoff/en         sounds/SYSOFF_EN
+voice/nofire                sounds/NOFIRE
+voice/c2                    sounds/C2
+voice/uac                   sounds/DEPRECATED  // FIXME: Remove OK
+voice/uac/ru                sounds/FUCK_RU
+voice/uac/en                sounds/FUCK_EN
 
-bet/destroy         DEPRECATED    // FIXME: Remove OK
-bet/destroy/ru      BDEST_RU
-bet/destroy/en      BDEST_EN
-bet/made            DEPRECATED    // FIXME: Remove OK
-bet/made/ru         BMADE_RU
-bet/made/en         BMADE_EN
-bet/earth           DEPRECATED     // FIXME: Remove OK
-bet/earth/ru        BEAR_RU
-bet/earth/en        BEAR_EN
+bet/destroy                 sounds/DEPRECATED    // FIXME: Remove OK
+bet/destroy/ru              sounds/BDEST_RU
+bet/destroy/en              sounds/BDEST_EN
+bet/made                    sounds/DEPRECATED    // FIXME: Remove OK
+bet/made/ru                 sounds/BMADE_RU
+bet/made/en                 sounds/BMADE_EN
+bet/earth                   sounds/DEPRECATED     // FIXME: Remove OK
+bet/earth/ru                sounds/BEAR_RU
+bet/earth/en                sounds/BEAR_EN
 
-core/c1             DEPRECATED 
-core/c1/ru          C1_RU
-core/c1/en          C1_EN
-core/c2             DEPRECATED 
-core/c2/ru          C2_RU
-core/c2/en          C2_EN
-core/c3             DEPRECATED 
-core/c3/ru          C3_RU
-core/c3/en          C3_EN
-core/c4             DEPRECATED 
-core/c4/ru          C4_RU
-core/c4/en          C4_EN
+core/c1                     sounds/DEPRECATED 
+core/c1/ru                  sounds/C1_RU
+core/c1/en                  sounds/C1_EN
+core/c2                     sounds/DEPRECATED 
+core/c2/ru                  sounds/C2_RU
+core/c2/en                  sounds/C2_EN
+core/c3                     sounds/DEPRECATED 
+core/c3/ru                  sounds/C3_RU
+core/c3/en                  sounds/C3_EN
+core/c4                     sounds/DEPRECATED 
+core/c4/ru                  sounds/C4_RU
+core/c4/en                  sounds/C4_EN
 
-ms/doctor           DEPRECATED // FIXME: Remove OK
-ms/doctor/ru        MSDOC_RU
-ms/doctor/en        MSDOC_EN
-ms/psy              DEPRECATED // FIXME: Remove OK
-ms/psy/ru           MSPSY_RU
-ms/psy/en           MSPSY_EN
-ms/safe             DEPRECATED // FIXME: Remove OK
-ms/safe/ru          MSSAFE_RU
-ms/safe/en          MSSAFE_EN
+ms/doctor                   sounds/DEPRECATED // FIXME: Remove OK
+ms/doctor/ru                sounds/MSDOC_RU
+ms/doctor/en                sounds/MSDOC_EN
+ms/psy                      sounds/DEPRECATED // FIXME: Remove OK
+ms/psy/ru                   sounds/MSPSY_RU
+ms/psy/en                   sounds/MSPSY_EN
+ms/safe                     sounds/DEPRECATED // FIXME: Remove OK
+ms/safe/ru                  sounds/MSSAFE_RU
+ms/safe/en                  sounds/MSSAFE_EN
 
-teleport/tohell     sounds/Teleport/teleport_to_hell
-teleport/loop       sounds/Teleport/teleport_loop
+teleport/tohell             sounds/sounds/Teleport/teleport_to_hell
+teleport/loop               sounds/sounds/Teleport/teleport_loop
 
 
-misc/k_pkup         DSKEYUP
+misc/k_pkup                 sounds/DSKEYUP
 
-DSPLDETH            DSPLDETH
-DSPLPAIN            DSPLPAIN
-DSPOPAIN            DSPOPAIN
-DSRADIO             DSRADIO
-CYBRSIGH            DEPRECATED  // FIXME: Remove OK
-CYBRSIGH2           DEPRECATED  // FIXME: Remove OK
-CYBRDTH             DEPRECATED  // FIXME: Remove OK
-DSBDCLS             DSBDCLS
-TAUNT               DEPRECATED  // FIXME: Remove OK
-ZBMB1               ZBMB1
-ZBMB2               ZBMB2
-DSBLUD03            DSBLUD03
-ROCK                ROCK
-ICOSCRE             ICOSCRE
-DEPRECATED          DEPRECATED
+DSPLDETH                    sounds/DSPLDETH
+DSPLPAIN                    sounds/DSPLPAIN
+DSPOPAIN                    sounds/DSPOPAIN
+DSRADIO                     sounds/DSRADIO
+CYBRSIGH                    sounds/DEPRECATED  // FIXME: Remove OK
+CYBRSIGH2                   sounds/DEPRECATED  // FIXME: Remove OK
+CYBRDTH                     sounds/DEPRECATED  // FIXME: Remove OK
+DSBDCLS                     sounds/DSBDCLS
+TAUNT                       sounds/DEPRECATED  // FIXME: Remove OK
+ZBMB1                       sounds/ZBMB1
+ZBMB2                       sounds/ZBMB2
+DSBLUD03                    sounds/DSBLUD03
+ROCK                        sounds/ROCK
+ICOSCRE                     sounds/ICOSCRE
+DEPRECATED                  sounds/DEPRECATED
 
-DOGSONG             DOGSONG
-HODSONG             HODSONG
+DOGSONG                     sounds/DOGSONG
+HODSONG                     sounds/HODSONG
 
 // === Weapons ===
-weapon/gas          GAS
-weapon/axe/hit      AXEBLOOD
-weapon/axe/miss     AXEMISS
-weapon/fireext/loop FIREELOP
-weapon/fireext/stop FIREESTP
-weapon/fireext/pick WTF
+weapon/gas                  sounds/GAS
+weapon/axe/hit              sounds/AXEBLOOD
+weapon/axe/miss             sounds/AXEMISS
+weapon/fireext/loop         sounds/FIREELOP
+weapon/fireext/stop         sounds/FIREESTP
+weapon/fireext/pick         sounds/WTF
 
 // === Player ===
-player/taunt                TAUNT
+player/taunt                sounds/TAUNT
 
 // === Monsters ===
 monster/cyberdemon/sigh1    CYBRSIGH
@@ -168,14 +168,14 @@ monster/cyberdemon/death    CYBRDTH
 //Drugs
 // dag
 
-monsters/hellhound/see       DOG1RECO
-monsters/hellhound/pain      DOG1PAIN
-monsters/hellhound/bite      DOG1BITE
-monsters/hellhound/death     DOG1DIE
+monsters/hellhound/see      DOG1RECO
+monsters/hellhound/pain     DOG1PAIN
+monsters/hellhound/bite     DOG1BITE
+monsters/hellhound/death    DOG1DIE
 
-monsters/hellhound/bark1     DOG1BRK1
-monsters/hellhound/bark2     DOG1BRK2
-monsters/hellhound/bark3     DOG1BRK3
+monsters/hellhound/bark1    DOG1BRK1
+monsters/hellhound/bark2    DOG1BRK2
+monsters/hellhound/bark3    DOG1BRK3
 
 $random monsters/hellhound/bark {
     monsters/hellhound/bite
