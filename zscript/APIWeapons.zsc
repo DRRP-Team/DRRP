@@ -15,7 +15,7 @@ class WeaponController play {
         "DRRPRocketLauncher", 
         "DRRPPlasmagun", 
         "DRRPBFG9000",
-		"HellHoundGun", "CerberusGun", "DemonWolfGun"
+        "HellHoundGun", "CerberusGun", "DemonWolfGun"
     };
 
     static int TakeAllWeapons( int playerNum ) {

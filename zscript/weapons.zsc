@@ -47,7 +47,7 @@ class DRRPFireExt: Weapon {
     Default {
         Tag "$DRRP_W_FIREEXT";
         Obituary "%o was extinguished by %k";
-	    Scale 0.5;
+        Scale 0.5;
 
         Inventory.Icon "FEXTI0";
         Inventory.PickupSound "null";
@@ -101,38 +101,38 @@ class DRRPFireExt: Weapon {
                 A_Recoil(0.01);
             }
             FIEX C 1 {
-				A_FireProjectile("FireExtPuff", Random(0, 10), True);
-	            A_SetBlend("CC CC CC", FRandom(0.795, 0.80), Random(10, 20));
-            	A_SetAngle(FRandom(0.2, -0.2) + Angle);
-            	A_SetPitch(FRandom(0.2, -0.5) + Pitch);
-            	A_Recoil(0.02);
-			}
+                A_FireProjectile("FireExtPuff", Random(0, 10), True);
+                A_SetBlend("CC CC CC", FRandom(0.795, 0.80), Random(10, 20));
+                A_SetAngle(FRandom(0.2, -0.2) + Angle);
+                A_SetPitch(FRandom(0.2, -0.5) + Pitch);
+                A_Recoil(0.02);
+            }
             FIEX CC 1 A_FireProjectile("FireExtPuffNoDamage" , Random(0, 10), False);
             FIEX C 0 A_SetAngle(FRandom(0.2, -0.2) + Angle);
             FIEX C 0 A_SetPitch(FRandom(0.2, -0.5) + Pitch);
             FIEX C 1 {
-				A_FireProjectile("FireExtPuff", Random(0, 10), True);
-            	A_SetAngle(FRandom(0.2, -0.2) + Angle);
-            	A_SetPitch(FRandom(0.2, -0.5) + Pitch);
-				A_Recoil(0.02);
-			}
+                A_FireProjectile("FireExtPuff", Random(0, 10), True);
+                A_SetAngle(FRandom(0.2, -0.2) + Angle);
+                A_SetPitch(FRandom(0.2, -0.5) + Pitch);
+                A_Recoil(0.02);
+            }
             FIEX CC 1 A_FireProjectile("FireExtPuffNoDamage", Random(0, 10), False);
             FIEX B 1 {
-				A_SetAngle(FRandom(0.2, -0.2) + Angle);
-            	A_SetPitch(FRandom(0.2, -0.5) + Pitch);
-            	A_ReFire("FireLoop");
-				A_FireProjectile("FireExtPuff", Random(0, 10), True);
-			}
+                A_SetAngle(FRandom(0.2, -0.2) + Angle);
+                A_SetPitch(FRandom(0.2, -0.5) + Pitch);
+                A_ReFire("FireLoop");
+                A_FireProjectile("FireExtPuff", Random(0, 10), True);
+            }
             FIEX B 1;
             FIEX BB 1 A_FireProjectile("FireExtPuffNoDamage", Random(0, 10), False);
             FIEX B 0 {
-				A_SetAngle(FRandom(1, -1) + Angle);
-            	A_SetPitch(FRandom(1, -1) + Pitch);
-            	A_ReFire();
-            	A_StopSound(CHAN_WEAPON);
-            	A_PlaySound("weapon/fireext/stop", CHAN_WEAPON);
-            	ACS_NamedExecuteAlways("fireextfade", 0, 0);
-			}
+                A_SetAngle(FRandom(1, -1) + Angle);
+                A_SetPitch(FRandom(1, -1) + Pitch);
+                A_ReFire();
+                A_StopSound(CHAN_WEAPON);
+                A_PlaySound("weapon/fireext/stop", CHAN_WEAPON);
+                ACS_NamedExecuteAlways("fireextfade", 0, 0);
+            }
             Goto Ready;
         Spawn:
             FEXT I -1;
@@ -141,20 +141,20 @@ class DRRPFireExt: Weapon {
 }
 
 class FireExtPuff: Actor {
-	Default {
-	    PROJECTILE;
-	    +FORCEXYBILLBOARD;
-	    +SPECTRAL;
-	    Height 5;
-	    Radius 5;
-	    Alpha 0.85;
-	    Speed 30;
-	    Scale 0.5;
-	    Gravity 10;
-	    Damage (1);
-	    DamageType "DRRPFireExtDmg";
-	    RenderStyle "Add";
-	}
+    Default {
+        PROJECTILE;
+        +FORCEXYBILLBOARD;
+        +SPECTRAL;
+        Height 5;
+        Radius 5;
+        Alpha 0.85;
+        Speed 30;
+        Scale 0.5;
+        Gravity 10;
+        Damage (1);
+        DamageType "DRRPFireExtDmg";
+        RenderStyle "Add";
+    }
 
     States {
         Spawn:
@@ -184,9 +184,9 @@ class FireExtPuff: Actor {
 }
 
 class FireExtPuffNoDamage: FireExtPuff {
-	Default {
-	    Damage (0);
-	}
+    Default {
+        Damage (0);
+    }
 }
 
 class DRRPPistol: Pistol replaces Pistol {
@@ -561,17 +561,17 @@ class DRRPBFG9000Ball: BFGBall replaces BFGBall {
 }
 
 class HellHoundGun: Weapon {
-	Default {
-	    +WEAPON.WIMPY_WEAPON;
-	    //Tag "$DRRP_W_HELLHOUND";
-	    //Inventory.PickupSound "weapons/fireext/pick";
-	    //Inventory.PickupMessage "$DRRP_W_HELLHOUNDPICKUP";
-	    Weapon.AmmoUse 0;
-	    Weapon.AmmoGive 100;
-	    Weapon.SlotPriority 3;
-	    Weapon.SelectionOrder 83;
-	    DamageType "DRRPPhysicalDmg";
-	}
+    Default {
+        +WEAPON.WIMPY_WEAPON;
+        //Tag "$DRRP_W_HELLHOUND";
+        //Inventory.PickupSound "weapons/fireext/pick";
+        //Inventory.PickupMessage "$DRRP_W_HELLHOUNDPICKUP";
+        Weapon.AmmoUse 0;
+        Weapon.AmmoGive 100;
+        Weapon.SlotPriority 3;
+        Weapon.SelectionOrder 83;
+        DamageType "DRRPPhysicalDmg";
+    }
 
     States {
         Ready:
@@ -626,12 +626,12 @@ class HellHoundGun: Weapon {
 }
 
 class CerberusGun: HellHoundGun {
-	Default {
-	    Tag "$DRRP_W_CERBERUS";
-	    Inventory.PickupMessage "$DRRP_W_CEREBRUSPICKUP";
-	    Weapon.SlotPriority 2;
-	    Weapon.SelectionOrder 82;
-	}
+    Default {
+        Tag "$DRRP_W_CERBERUS";
+        Inventory.PickupMessage "$DRRP_W_CEREBRUSPICKUP";
+        Weapon.SlotPriority 2;
+        Weapon.SelectionOrder 82;
+    }
 
     States {
         Ready:
@@ -670,12 +670,12 @@ class CerberusGun: HellHoundGun {
 
 
 class DemonWolfGun: HellHoundGun {
-	Default {
-	    Tag "$DRRP_W_DEMONWOLF";
-	    Inventory.PickupMessage "$DRRP_W_DEMONWOLFPICKUP";
-	    Weapon.SlotPriority 1;
-	    Weapon.SelectionOrder 81;
-	}
+    Default {
+        Tag "$DRRP_W_DEMONWOLF";
+        Inventory.PickupMessage "$DRRP_W_DEMONWOLFPICKUP";
+        Weapon.SlotPriority 1;
+        Weapon.SelectionOrder 81;
+    }
 
     States {
         Ready:
@@ -713,20 +713,20 @@ class DemonWolfGun: HellHoundGun {
 }
 
 class DogGunPuff: Actor {
-	Default {
-	    +NOBLOCKMAP;
-	    +NOGRAVITY;
-	    +ALLOWPARTICLES;
-	    +RANDOMIZE;
-	    Alpha 0.5;
-	    VSpeed 1;
-	    Mass 5;
-	    AttackSound "weapons/melee/hitwall";
-	    SeeSound "weapons/melee/hit";
-	    Obituary "$OB_METADOG_BITE";
-	    DamageType "DRRPPhysicalDmg";
-	    RenderStyle "Translucent";
-	}
+    Default {
+        +NOBLOCKMAP;
+        +NOGRAVITY;
+        +ALLOWPARTICLES;
+        +RANDOMIZE;
+        Alpha 0.5;
+        VSpeed 1;
+        Mass 5;
+        AttackSound "weapons/melee/hitwall";
+        SeeSound "weapons/melee/hit";
+        Obituary "$OB_METADOG_BITE";
+        DamageType "DRRPPhysicalDmg";
+        RenderStyle "Translucent";
+    }
 
     States {
         Spawn:
