@@ -8,13 +8,14 @@
 class WeaponController play {
 
     static const class<Weapon> WeaponsToCheck[] = {
-        "DRRPAxe", "DRRPFireExt_zspatch" /*"DRRPFireExt"*/, 
+        "DRRPAxe", "DRRPFireExt",
         "DRRPPistol", 
         "DRRPShotgun", "DRRPSuperShotgun", 
         "DRRPChaingun", 
         "DRRPRocketLauncher", 
         "DRRPPlasmagun", 
-        "DRRPBFG9000"
+        "DRRPBFG9000",
+		"HellHoundGun", "CerberusGun", "DemonWolfGun"
     };
 
     static int TakeAllWeapons( int playerNum ) {
