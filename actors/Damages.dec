@@ -66,24 +66,13 @@ Actor DRRPLava: DRRPLava_ZSPatch 10251 {
     Tag "$DRRP_E_LAVAPOOL"
     Health 10
     Mass 0x7FFFFFFF
-    RenderStyle Add
     DamageFactor "Normal", 0
 
     States {
         Spawn:
-            SPKO D 0 Bright
-            SPKO D 0 Bright A_PlaySound("ICOSCRE", CHAN_7, 1, true, 2.5)
-            SPKO D 0 Bright A_Jump(256, 1, 2, 3, 4, 5, 6, 7, 8)
-        SpawnLoop:
-            SPKO ABCDEFGH 2 BRIGHT
+            LAVA A 0 Bright
+            LAVA A 1 Bright A_PlaySound("ICOSCRE", CHAN_7, 0.9, true, 2.5)
             Loop
-        Pain.FireExtDamage:
-            TNT1 A 0
-            Goto SpawnLoop
-        Death:
-        XDeath:
-            TNT1 A 0
-            Stop
     }
 }
 
