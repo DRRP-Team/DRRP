@@ -50,7 +50,7 @@ Actor DRRPFire : DRRPFire_ZSPatch 10250 {
 
 Actor DRRPLava: DRRPLava_ZSPatch 10251 {
     //$Category Damage
-    //$Sprite LAVAB0
+    //$Sprite LAVAA0
 
     MONSTER
     +NOBLOOD
@@ -71,7 +71,7 @@ Actor DRRPLava: DRRPLava_ZSPatch 10251 {
 
     States {
         Spawn:
-            LAVA A 0 Bright
+            SPKO D 0 Bright
             SPKO D 0 Bright A_PlaySound("ICOSCRE", CHAN_7, 1, true, 2.5)
             SPKO D 0 Bright A_Jump(256, 1, 2, 3, 4, 5, 6, 7, 8)
         SpawnLoop:
