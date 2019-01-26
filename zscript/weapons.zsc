@@ -5,7 +5,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-class DRRPAxe_ZSPatch: Weapon {
+class DRRPAxe: Weapon {
 
     Default {
         //$Category DWeapons
@@ -26,6 +26,14 @@ class DRRPAxe_ZSPatch: Weapon {
         DamageType "DRRPAxeDmg";
     }
 
+	override bool HandlePickup( Inventory item ) {
+		if ( item.GetClassName() == "DRRPAxe" ) {
+			S_Sound( "player/taunt", CHAN_AUTO );
+			console.printf( "Sound player at WorldTick == " .. gametic .. "." );
+		}
+		return Super.HandlePickup( item );
+	}
+
     States {
         Spawn:
             AXEI A -1;
@@ -41,8 +49,8 @@ class DRRPAxe_ZSPatch: Weapon {
             Loop;
         Fire:
             AXEF BCD 3;
-            AXEF D 1 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus");
-            AXEF E 5;
+            AXEF D 2 A_CustomPunch(Random(3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus");
+            AXEF E 4;
             Goto Ready;
     }
 }
