@@ -23,7 +23,7 @@ Actor DRRPFireExt : DRRPFireExt_zspatch 10556 {
     Scale 0.5
 
     Inventory.Icon "FEXTI0"
-    Inventory.PickupSound "voice/wtf"
+    Inventory.PickupSound "voice/wtf/ru" // FIXME: Localize
     Inventory.Pickupmessage "$DRRP_W_FIREEXTPICKUP"
     Weapon.AmmoUse 1
     Weapon.AmmoGive 40
