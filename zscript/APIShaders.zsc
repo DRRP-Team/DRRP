@@ -7,12 +7,10 @@
 
 class ShaderControllerActor : EventHandler {
 
-	override void WorldTick() {
-		for ( int i = 0; i < MAXPLAYERS; i++ ) {
-			CVar ShaderCVar = CVar.GetCVar( "drrp_enable_helmet_shader", Players[ i ] );
-			self.SetEnabled( i, "Helmet", ( ShaderCVar == null ) || !( ShaderCVar.GetBool() ) );
-		}
-	}
+    override void WorldTick() {
+        CVar ShaderCVar = CVar.GetCVar( "drrp_enable_helmet_shader", Players[ consoleplayer ] );
+        self.SetEnabled( consoleplayer, "Helmet", ( ShaderCVar != null ) && ( ShaderCVar.GetBool() ) );
+    } // of override void WorldTick() 
 
     static int SetEnabled(int player, String name, bool isEnabled) {
         if (player != 0) {
