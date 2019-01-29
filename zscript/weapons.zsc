@@ -155,7 +155,7 @@ class FireExtPuff: Actor {
         Speed 30;
         Scale 0.5;
         Gravity 10;
-        Damage (1);
+        DamageFunction 1;
         DamageType "DRRPFireExtDmg";
         RenderStyle "Add";
     }
@@ -235,8 +235,8 @@ class DRRPShotgun: Shotgun replaces Shotgun {
         Fire:
             SHTG A 1;
             SHTG A 2 {
-                A_FireBullets( 5.6, 0, 5, Random( 1, 3 ), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
-                A_FireBullets( 5.6, 0, 2, Random( 3, 5 ), "BulletPuff", FBF_NORANDOM );
+                A_FireBullets( 5.6, 0, 4, Random( 1, 3 ), "BulletPuff", FBF_NORANDOM + FBF_USEAMMO );
+                A_FireBullets( 5.6, 0, 3, Random( 3, 5 ), "BulletPuff", FBF_NORANDOM );
                 A_GunFlash();
                 A_PlaySound( "weapons/shotgf", CHAN_WEAPON );
             }
