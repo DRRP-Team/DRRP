@@ -39,8 +39,12 @@ Actor DRRPCharacter {
             "####" AAAAA 1 A_SpawnItemEx("DRRPBlood", random(0, 20), random(0, 20), random(10, 40))
             Goto MainLoop
         Death:
-            POSS H 4 A_ChangeFlag("USESPECIAL", False)
-            POSS I 4 A_Scream
+            POSS H 4 {
+                A_ChangeFlag( "USESPECIAL", False );
+                A_Scream;
+                A_ChangeFlag( "CORPSE", True );
+            }
+            POSS I 4 
             POSS J 4 A_NoBlocking
             POSS K 4
             POSS L -1
