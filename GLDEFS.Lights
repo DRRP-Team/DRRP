@@ -9,8 +9,8 @@
 FlickerLight FIRELIGHT {
     color 255 128 0
     size 32
-    secondarySize 48
-    chance 1
+    secondarySize 36
+    chance 0.5
 }
 
 Object DRRPFire {
@@ -19,6 +19,21 @@ Object DRRPFire {
     }
 }
 // end Fire
+
+// Lava
+PointLight LAVALIGHT {
+    color 255 128 0
+    size 64
+    offset 0 12 0
+    attenuate 1
+}
+
+Object DRRPLava {
+    Frame LAVA {
+        light LAVALIGHT
+    }
+}
+// end Lava
 
 // Blue lamp
 PointLight BLAMP {
