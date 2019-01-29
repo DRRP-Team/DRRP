@@ -141,7 +141,9 @@ Script "updateshaders" (bool forced) ENTER {
 
 // This hook called on change cinematic shaders' CVAR
 // Redefine it in your map
-Script "onCinematicShadersLoad" (bool forced) {}
+Script "onCinematicShadersLoad" (bool forced) {
+    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false); // FIXME: This is a crutch... Just temporary hotfix which doesn't really fix that bug
+}
 
 #include "flashlight.acs"
 #include "mapapis.acs"
