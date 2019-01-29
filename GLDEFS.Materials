@@ -207,7 +207,6 @@ Material Texture DRDC48 {
     BrightMap               "materials/emission/brpga14"
     normal                  "materials/normal/drdc48"
     specular                "materials/specular/drdc48"
-    // ao                      "materials/white"
     Texture tex_heightmap   "materials/height/drdc48"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -397,6 +396,8 @@ Material Texture DRDC47 {
     BrightMap "materials/emission/DRDC45_BRT"
     normal "materials/normal/drdc47"
     specular "materials/specular/drdc47"
+    Texture tex_heightmap   "materials/height/drdc47"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Default wall
