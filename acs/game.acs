@@ -121,7 +121,8 @@ Script "transformation"(int tid) {
 #define NUM_POM_TEXTURES 23
 str POM_TEXTURES[NUM_POM_TEXTURES] = { "DRDC1", "DRDC0", "DRDC24", "DRDC25", "DRDC26", "DRDC28", "DRDC34", "DRDC35", "DRDC42", "DRDC44", "DRDC46", "DRDC48", "DRDC2", "DRDC3", "DRDC4", "DRDC5", "DRDC9", "DRDC8", "DRDC41", "DRDC43", "DRDC45", "DRDC27", "DRDC32"};
 
-Script "updatepom" (int forced) ENTER {
+Script "updateshaders" (bool forced) ENTER {
+    bool isHelmetEnabled = GetCVar("drrp_enable_helmet_shader");
     bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
 
     if(!isPomEnabled) {
@@ -133,7 +134,14 @@ Script "updatepom" (int forced) ENTER {
             ReplaceTextures(StrParam(s:"NP_", s:POM_TEXTURES[i]), POM_TEXTURES[i]);
         }
     }
+
+    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HelmetShader", isHelmetEnabled);
+    ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
 }
+
+// This hook called on change cinematic shaders' CVAR
+// Redefine it in your map
+Script "onCinematicShadersLoad" (bool forced) {}
 
 #include "flashlight.acs"
 #include "mapapis.acs"
