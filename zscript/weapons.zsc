@@ -59,18 +59,10 @@ class DRRPFireExt: Weapon {
         DamageType "DRRPFireExtDmg";
     }
 
-/*    override bool TryPickup( in out Actor toucher ) {
-        if ( !Super.TryPickup( toucher ) ) return false;
-
+    override void Touch( Actor toucher ) {
         S_Sound( "voice/wtf" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ), CHAN_VOICE );
-        console.printf( "Sound player at WorldTick == " .. gametic .. "." );
-        return true;
-    } // of override bool TryPickup( in out Actor toucher ) {*/
-
-	override void Touch( Actor toucher ) {
-		S_Sound( "voice/wtf" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ), CHAN_VOICE );
-		Super.Touch( toucher );
-	}
+        Super.Touch( toucher );
+    }
 
     States {
         Ready: // Original sprite -- "DW2A"
