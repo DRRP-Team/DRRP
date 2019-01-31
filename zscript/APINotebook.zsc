@@ -82,7 +82,7 @@ class NotebookMenu : OptionMenu {
                 for(int j = 0; j < langstring_spl.size(); j++) {
                     OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 
-                    item.Init(langstring_spl[j]);
+                    item.Init( StringTable.localize( langstring_spl[j] ) );
                     desc.mItems.push(item);
                 }
                 {
@@ -105,7 +105,7 @@ class NotebookAPI {
         }
         
         NotebookItem nbitem = NotebookItem(activator.FindInventory("NotebookItem"));
-        
+
         nbitem.languageStrings.put(level.levelnum, entry);
         activator.A_GiveInventory("NotebookTooltipItem");
     }
