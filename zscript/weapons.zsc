@@ -50,7 +50,7 @@ class DRRPFireExt: Weapon {
         Scale 0.5;
 
         Inventory.Icon "FEXTI0";
-        Inventory.PickupSound "null";
+        Inventory.PickupSound "misc/i_pkup";
         Inventory.Pickupmessage "$DRRP_W_FIREEXTPICKUP";
         Weapon.AmmoUse 1;
         Weapon.AmmoGive 40;
@@ -60,7 +60,8 @@ class DRRPFireExt: Weapon {
     }
 
     override void Touch( Actor toucher ) {
-        S_Sound( "voice/wtf" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ), CHAN_VOICE );
+		if ( !toucher.CheckInventory( self.GetClassName(), 1 ) )
+	        S_Sound( "voice/wtf" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ), CHAN_VOICE );
         Super.Touch( toucher );
     }
 
