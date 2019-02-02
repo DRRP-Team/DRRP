@@ -82,3 +82,18 @@ class DRRPExplosion_ZSPatch: Actor {
     }
 
 }
+class WorldUnloaderHandler: EventHandler {
+
+	int prevValueAnchor;
+
+	override void WorldTick() {
+
+		PlayerInfo player = Players[ 1 ];
+		if ( ( prevValueAnchor == level.levelnum ) || ( player == null ) ) 
+		    return;
+
+		player.mo.ACS_NamedExecute( "onCinematicShadersUnload", 0 );
+		prevValueAnchor = level.levelnum;
+	}
+
+}
