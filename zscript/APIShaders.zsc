@@ -1,8 +1,8 @@
 /**
- *Copyright (c) 2018-2019 DRRP-Team
+ * Copyright (c) 2018-2019 DRRP-Team
  *
- *This software is released under the MIT License.
- *https://opensource.org/licenses/MIT
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
  */
 
 class ShaderControllerActor : EventHandler {
@@ -20,11 +20,11 @@ class ShaderControllerActor : EventHandler {
     }
 
     static int SetUniformFloat(int player, String name, String uniform, float value) {
-        if (player != 0) {
+        if (player > 0) {
             Shader.SetUniform1f(players[player - 1], name, uniform, value);
         } else {
             for(int i = 0; i < players.Size(); i++) {
-                Shader.SetUniform1f(players[player - 1], name, uniform, value);
+                Shader.SetUniform1f(players[player], name, uniform, value);
             }
         }
 
@@ -32,14 +32,21 @@ class ShaderControllerActor : EventHandler {
     }
 
     static int SetUniformInt(int player, String name, String uniform, int value) {
-        if (player != 0) {
+        if (player > 0) {
             Shader.SetUniform1i(players[player - 1], name, uniform, value);
         } else {
             for(int i = 0; i < players.Size(); i++) {
-                Shader.SetUniform1i(players[player - 1], name, uniform, value);
+                Shader.SetUniform1i(players[player], name, uniform, value);
             }
         }
 
         return 1;
     }
+
+    override void RenderOverlay(RenderEvent e) {
+        PlayerInfo players = players[consoleplayer];
+
+        Shader.SetUniform1f(players, "HeatHaze", "timer", gametic + e.FracTic);
+    }
+
 }
