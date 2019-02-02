@@ -136,7 +136,7 @@ Script "updateshaders" (bool forced) ENTER {
     }
 
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HelmetShader", isHelmetEnabled);
-    if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
+    ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
 }
 
 // This hook called on change cinematic shaders' CVAR
