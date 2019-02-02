@@ -82,18 +82,12 @@ class DRRPExplosion_ZSPatch: Actor {
     }
 
 }
-class WorldUnloaderHandler: EventHandler {
 
-	int prevValueAnchor;
+class DRRPCharacter_ZSPatch: Actor {
 
-	override void WorldTick() {
-
-		PlayerInfo player = Players[ 1 ];
-		if ( ( prevValueAnchor == level.levelnum ) || ( player == null ) ) 
-		    return;
-
-		player.mo.ACS_NamedExecute( "onCinematicShadersUnload", 0 );
-		prevValueAnchor = level.levelnum;
-	}
-
+    void A_DRRP_TransformationParticles( void ) {
+        Actor TransfParticleActor = Spawn( "DRRPTransformationParticle", 
+                                ( Random( 0, 20 ), Random( 0, 20 ), Random( 10, 40 ) ) );
+        TransfParticleActor.master = self;
+    } // of void A_DRRP_TransformationParticles( void )
 }

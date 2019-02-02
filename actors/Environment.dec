@@ -26,7 +26,7 @@ Actor BlackHole 10666 {
 
 Actor DRRPParticle : Blood {}
 Actor DRRPBlood : DRRPParticle {}
-Actor DRRPTransformationParticle : DRRPParticle {
+Actor DRRPTransformationParticle: DRRPParticle {
     Translation "177:191=213:223"
 }
 
