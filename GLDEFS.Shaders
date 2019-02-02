@@ -30,12 +30,19 @@ HardwareShader PostProcess Scene {
     Name "TestShader"
     Shader "shaders/custom/test.fp"             330
 }
-/*
+
 HardwareShader PostProcess Scene {
     Name "FilmGrain"
+    Uniform float timer
     Shader "shaders/custom/FilmGrain.fp"             330
 }
-*/
+
+HardwareShader PostProcess Scene {
+    Name "XHUBGrain"
+    Uniform float timer
+    Shader "shaders/custom/XHUBGrain.fp"             330
+}
+
 HardwareShader PostProcess Scene {
     Name "HeatHaze"
     Uniform float timer

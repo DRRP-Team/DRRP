@@ -12,4 +12,14 @@ void main() {
     #else
         FragColor = vec4(255, 0, 0, 1);
     #endif
+
+    vec4 c = texture(InputTexture, TexCoord);
+
+    vec3 color = c.rgb;
+    float alpha = c.a;
+
+    color.rgb *= vec3(0.3, 0.3, 0.3);
+    //color.rgb += vec3(0.3, 0.3, 0.3);
+
+    FragColor = vec4(color, alpha);
 }

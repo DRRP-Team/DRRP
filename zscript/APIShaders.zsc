@@ -47,6 +47,8 @@ class ShaderControllerActor : EventHandler {
         PlayerInfo players = players[consoleplayer];
 
         Shader.SetUniform1f(players, "HeatHaze", "timer", gametic + e.FracTic);
+        Shader.SetUniform1f(players, "FilmGrain", "timer", gametic + e.FracTic);
+        Shader.SetUniform1f(players, "XHUBGrain", "timer", gametic + e.FracTic);
     }
 
 }
