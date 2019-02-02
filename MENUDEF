@@ -28,7 +28,7 @@ ListMenu "MainMenu" {
 OptionMenu "DRRPMenu" {
     Title "Doom RPG Remake Project"
     StaticText " "
-    StaticText "$DRRP_D_MENU_DRRPMENU_INVENTORY"
+    StaticText "$DRRP_D_MENU_DRRPMENU_GAMEMENU"
     Command "$DRRP_D_MENU_DRRPMENU_NOTEPAD", "openmenu NotebookMenu"
     Command "$DRRP_D_MENU_DRRPMENU_STATINFO", "openmenu StatInfoMenu"
     StaticText " "
@@ -64,7 +64,7 @@ OptionValue "LocationOptions" {
 }
 
 OptionMenu "Flashlight" {
-    Title "$DRRP_D_MENU_FLASHLIGHT_Title"
+    Title "$DRRP_D_MENU_FLASHLIGHT_TITLE"
     StaticText " "
     ColorPicker "$DRRP_D_MENU_FLASHLIGHT_COLOR", "flashlight_color"
     StaticText " "
