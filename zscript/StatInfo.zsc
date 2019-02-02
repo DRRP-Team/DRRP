@@ -7,26 +7,67 @@
 
 class StatInfoMenu : OptionMenu {
 
-    void addStr( OptionMenuDescriptor desc, String text ) {
-        OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
-        item.Init( text );
-        desc.mItems.push( item );
-    } // void addStr( OptionMenuDescriptor desc, String text ) {
+    int nextStringColor;
+
+    Enum EColors {
+        cNormal = Font.CR_GRAY,
+        cBad    = Font.CR_RED,
+        cGood   = Font.CR_DARKGREEN,
+        cHeader = Font.CR_BLUE
+    } // of Enum EColors
+
+    String StatLocalize( String postfix ) {
+        postfix = "$DRRP_D_STATINFO_" .. postfix;
+        return StringTable.Localize( postfix );
+    }
+
+    void autoColor( Inventory cItem ) {
+        if ( ( cItem == null ) || !cItem.Amount ) 
+            nextStringColor = cBad;
+        else if ( cItem.Amount >= cItem.MaxAmount ) 
+            nextStringColor = cGood;
+        else
+            nextStringColor = cNormal;
+    }
+
+    void addStr( OptionMenuDescriptor desc, int textColor, String text ) {
+        OptionMenuItemStaticText menuitem = new( "OptionMenuItemStaticText" );
+        menuitem.Init( text );
+        menuitem.mColor = textColor;
+        desc.mItems.push( menuitem );
+    } // of void addStr( OptionMenuDescriptor desc, String text ) {
+
+    void addItemStr( OptionMenuDescriptor desc, Inventory item, String text, bool sizeless = false ) {
+        if ( item == null ) 
+            text = text .. "0";
+        else if ( sizeless )
+            text = text .. item.Amount;
+        else
+            text = text .. item.Amount .. "/" .. item.MaxAmount;
+        autoColor( item );
+
+        addStr( desc, nextStringColor, text );
+    }
+
+    void addSpecIntStr( OptionMenuDescriptor desc, int checkInt, int maxInt, String text, bool bad_check = false ) {
+
+        addStr( desc, checkInt >= maxInt ? cGood : 
+                    ( ( checkInt <= 0 ) && bad_check ? cBad : cNormal ), 
+                text .. checkInt .. "/" .. maxInt );
+    }
 
     void addHeaderStr( OptionMenuDescriptor desc, String headerText ) {
         int headerMaxLength = 20;
-
-        addStr( desc, " " );
+        addStr( desc, cNormal, " " );
 
         headerText = " " .. headerText .. " ";
         while ( headerText.Length() < headerMaxLength ) 
             headerText = "-" .. headerText .. "-";
 
-        OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
-        item.Init( headerText );
-        item.mColor = Font.CR_BLUE;
-        desc.mItems.push( item );
-    } // void addHeaderStr( OptionMenuDescriptor desc, String text ) {
+        addStr( desc, cHeader, headerText );
+    } // of void addHeaderStr( OptionMenuDescriptor desc, String text ) {
+
+
 
 
     override void Init( Menu parent, OptionMenuDescriptor desc ) {
@@ -36,46 +77,41 @@ class StatInfoMenu : OptionMenu {
         desc.mItems.clear();
 
         if ( pStat == null || pStat.mo == null ) {
-            OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
-
-            item.Init( StringTable.Localize( "$DRRP_D_STATINFO_NOTINGAME" ) );
-            desc.mItems.push( item );
+            addStr( desc, cNormal, "$DRRP_D_STATINFO_NOTINGAME" );
             return;
         }
 
         String tempStr;
-        String notNow = StringTable.Localize( "$DRRP_D_STATINFO_UNDERCONSTRUCT" );
+        String notNow = StatLocalize( "UNDERCONSTRUCT" );
 
-        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_PLAYER_T" ) );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_HEALTH" ) .. pStat.mo.health .. "/" .. pStat.mo.MaxHealth );
-        //addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_ARMOR" ) .. pStat.armor .. "/" .. pStat.mo.maxArmor );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_ARMOR" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_CREDITS" ) .. notNow );
-        //addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_LEVEL" ) .. pStat.mo.FindInventory( "DRRPPlayerLevel" ).Amount );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_LEVEL" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_EXPERIENCE" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_DEFENCE" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_STRENGTH" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_AGILITY" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_ACCURACY" ) .. notNow );
+        addHeaderStr( desc, StatLocalize( "PLAYER_T" ) );
+        addSpecIntStr( desc, pStat.mo.health, pStat.mo.MaxHealth, StatLocalize( "HEALTH" ), true );
+        addItemStr( desc, pStat.mo.FindInventory( "BasicArmor" ), StatLocalize( "ARMOR" ) );
+        addItemStr( desc, pStat.mo.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
+        addStr( desc, cNormal, StatLocalize( "LEVEL" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "EXPERIENCE" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "DEFENCE" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "STRENGTH" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "AGILITY" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "ACCURACY" ) .. notNow );
 
-        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_THISSECTOR_T" ) );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TIME" ) .. level.time / 35 );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_SECRETS" ) .. level.found_secrets .. "/" .. level.total_secrets );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_MONSTERS" ) .. level.killed_monsters .. "/" .. level.total_monsters );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TURNS" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_EXPERIENCE" ) .. notNow );
+        addHeaderStr( desc, StatLocalize( "THISSECTOR_T" ) );
+        addStr( desc, cNormal, StatLocalize( "TIME" ) .. level.time / 35 );
+        addSpecIntStr( desc, level.found_secrets, level.total_secrets, StatLocalize( "SECRETS" ) );
+        addSpecIntStr( desc, level.killed_monsters, level.total_monsters, StatLocalize( "MONSTERS" ) );
+        addStr( desc, cNormal, StatLocalize( "TURNS" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "EXPERIENCE" ) .. notNow );
 
-        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TOTAL_T" ) );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TIME" ) .. level.totaltime / 35 );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TURNS" ) .. notNow );
-        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_DEATHS" ) .. notNow );
+        addHeaderStr( desc, StatLocalize( "TOTAL_T" ) );
+        addStr( desc, cNormal, StatLocalize( "TIME" ) .. level.totaltime / 35 );
+        addStr( desc, cNormal, StatLocalize( "TURNS" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "DEATHS" ) .. notNow );
 
-        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_MAXKILLS_T" ) );
-        addStr( desc, notNow );
+        addHeaderStr( desc, StatLocalize( "MAXKILLS_T" ) );
+        addStr( desc, cNormal, notNow );
 
-        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_MAXSECRETS_T" ) );
-        addStr( desc, notNow );
+        addHeaderStr( desc, StatLocalize( "MAXSECRETS_T" ) );
+        addStr( desc, cNormal, notNow );
 
     } // override void Init( Menu parent, OptionMenuDescriptor desc ) {
 }

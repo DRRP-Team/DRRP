@@ -30,6 +30,7 @@ OptionMenu "DRRPMenu" {
     StaticText " "
     StaticText "$DRRP_D_MENU_DRRPMENU_INVENTORY"
     Command "$DRRP_D_MENU_DRRPMENU_NOTEPAD", "openmenu NotebookMenu"
+    Command "$DRRP_D_MENU_DRRPMENU_STATINFO", "openmenu StatInfoMenu"
     StaticText " "
     StaticText "$DRRP_D_MENU_DRRPMENU_SETTINGS"
     Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
