@@ -82,7 +82,7 @@ class NotebookMenu : OptionMenu {
                 for(int j = 0; j < langstring_spl.size(); j++) {
                     OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 
-                    item.Init( StringTable.localize( langstring_spl[j] ) );
+                    item.Init( StringTable.localize( "$" .. langstring_spl[ j ] ) );
                     desc.mItems.push(item);
                 }
                 {
