@@ -145,5 +145,9 @@ Script "onCinematicShadersLoad" (bool forced) {
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false); // FIXME: This is a crutch... Just temporary hotfix which doesn't really fix that bug
 }
 
+Script "onCinematicShadersUnload" (bool forced) {
+    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false);
+}
+
 #include "flashlight.acs"
 #include "mapapis.acs"

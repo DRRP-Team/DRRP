@@ -50,3 +50,90 @@ HardwareShader PostProcess Scene {
     Texture HazeBump "textures/shadermaps/haze.png"
     Shader "shaders/custom/HeatHaze.fp"              330
 }
+
+HardwareShader PostProcess Scene {
+    Name "DefaultLut"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+// Map specific lut shaders
+
+
+HardwareShader PostProcess Scene {
+    Name "TITLEMAP"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "INTRO"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "HUB"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC1"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC2"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC3"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC4"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC5"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC6"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC7_BEFORE"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "SEC7_AFTER"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "XHUB"
+    Texture LutMap "textures/shadermaps/lut_XHUB.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
+
+HardwareShader PostProcess Scene {
+    Name "REAC"
+    Texture LutMap "textures/shadermaps/lut.png"
+    Shader "shaders/custom/Tonemap.fp"               330
+}
