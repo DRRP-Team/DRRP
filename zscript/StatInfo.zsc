@@ -1,0 +1,81 @@
+/**
+ *Copyright (c) 2018-2019 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+class StatInfoMenu : OptionMenu {
+
+    void addStr( OptionMenuDescriptor desc, String text ) {
+        OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
+        item.Init( text );
+        desc.mItems.push( item );
+    } // void addStr( OptionMenuDescriptor desc, String text ) {
+
+    void addHeaderStr( OptionMenuDescriptor desc, String headerText ) {
+        int headerMaxLength = 20;
+
+        addStr( desc, " " );
+
+        headerText = " " .. headerText .. " ";
+        while ( headerText.Length() < headerMaxLength ) 
+            headerText = "-" .. headerText .. "-";
+
+        OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
+        item.Init( headerText );
+        item.mColor = Font.CR_BLUE;
+        desc.mItems.push( item );
+    } // void addHeaderStr( OptionMenuDescriptor desc, String text ) {
+
+
+    override void Init( Menu parent, OptionMenuDescriptor desc ) {
+
+        Super.Init( parent, desc );
+        PlayerInfo pStat = Players[ consoleplayer ];
+        desc.mItems.clear();
+
+        if ( pStat == null || pStat.mo == null ) {
+            OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+
+            item.Init( StringTable.Localize( "$DRRP_D_STATINFO_NOTINGAME" ) );
+            desc.mItems.push( item );
+            return;
+        }
+
+        String tempStr;
+        String notNow = StringTable.Localize( "$DRRP_D_STATINFO_UNDERCONSTRUCT" );
+
+        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_PLAYER_T" ) );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_HEALTH" ) .. pStat.mo.health .. "/" .. pStat.mo.MaxHealth );
+        //addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_ARMOR" ) .. pStat.armor .. "/" .. pStat.mo.maxArmor );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_ARMOR" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_CREDITS" ) .. notNow );
+        //addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_LEVEL" ) .. pStat.mo.FindInventory( "DRRPPlayerLevel" ).Amount );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_LEVEL" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_EXPERIENCE" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_DEFENCE" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_STRENGTH" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_AGILITY" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_ACCURACY" ) .. notNow );
+
+        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_THISSECTOR_T" ) );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TIME" ) .. level.time / 35 );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_SECRETS" ) .. level.found_secrets .. "/" .. level.total_secrets );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_MONSTERS" ) .. level.killed_monsters .. "/" .. level.total_monsters );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TURNS" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_EXPERIENCE" ) .. notNow );
+
+        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TOTAL_T" ) );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TIME" ) .. level.totaltime / 35 );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_TURNS" ) .. notNow );
+        addStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_DEATHS" ) .. notNow );
+
+        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_MAXKILLS_T" ) );
+        addStr( desc, notNow );
+
+        addHeaderStr( desc, StringTable.Localize( "$DRRP_D_STATINFO_MAXSECRETS_T" ) );
+        addStr( desc, notNow );
+
+    } // override void Init( Menu parent, OptionMenuDescriptor desc ) {
+}

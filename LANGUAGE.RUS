@@ -305,6 +305,7 @@
     DRRP_D_MENU_MISC_DEBUGMODE      = "DRRP Режим Разработчика";
 
     DRRP_D_MENU_LANGUAGE_TITLE      = "Выбор языка";
+    DRRP_D_MENU_STATINFO_TITLE      = "Статистика";
 
     DRRP_D_MENU_INFOBAR_ENABLE      = "Отображать названия объектов";
     DRRP_D_MENU_COMPASS_ENABLE      = "Включить компас";
@@ -340,6 +341,30 @@
     DRRP_D_NOTEBOOK_NOTINGAME       = "Вы должны быть в игре для просмотра блокнота.";
     DRRP_D_NOTEBOOK_TIP_PART1       = "Нажмите ";
     DRRP_D_NOTEBOOK_TIP_PART2       = " для открытия блокнота.";
+
+    DRRP_D_STATINFO_NOTINGAME       = "Вы должны быть в игре для просмотра статистики.";
+    DRRP_D_STATINFO_HEADER          = "СТАТУС";
+    DRRP_D_STATINFO_PLAYER_T        = "ИГРОК";
+    DRRP_D_STATINFO_THISSECTOR_T    = "ЭТОТ СЕКТОР";
+    DRRP_D_STATINFO_TOTAL_T         = "ВСЕГО";
+    DRRP_D_STATINFO_MAXKILLS_T      = "1ОО% УБИЙСТВ";
+    DRRP_D_STATINFO_MAXSECRETS_T    = "1ОО% СЕКРЕТОВ";
+    DRRP_D_STATINFO_HEALTH          = "3доровье: ";
+    DRRP_D_STATINFO_ARMOR           = "Броня: ";
+    DRRP_D_STATINFO_CREDITS         = "Кредиты: ";
+    DRRP_D_STATINFO_LEVEL           = "Уровень: ";
+    DRRP_D_STATINFO_EXPERIENCE      = "Опыт: ";
+    DRRP_D_STATINFO_DEFENCE         = "3ащита: ";
+    DRRP_D_STATINFO_STRENGTH        = "Сила: ";
+    DRRP_D_STATINFO_AGILITY         = "Ловкость: ";
+    DRRP_D_STATINFO_ACCURACY        = "Точность: ";
+    DRRP_D_STATINFO_TIME            = "Время: ";
+    DRRP_D_STATINFO_SECRETS         = "Секреты: ";
+    DRRP_D_STATINFO_MONSTERS        = "Монстры: ";
+    DRRP_D_STATINFO_TURNS           = "Ходы: ";
+    DRRP_D_STATINFO_DEATHS          = "Смерти: ";
+    DRRP_D_STATINFO_NOTHING         = "Ничего";
+    DRRP_D_STATINFO_UNDERCONSTRUCT  = "<в разработке>";
 
     DRRP_D_CHARACTER                = "Персонаж";
     DRRP_D_EXPLOSION                = "Взрыв";

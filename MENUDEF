@@ -92,3 +92,9 @@ OptionMenu "NotebookMenu" protected {
     Title "$DRRP_B_ID117"
     // Filled in by ZScript
 }
+
+OptionMenu "StatInfoMenu" protected {
+    Class "StatInfoMenu"
+    Title "$DRRP_D_MENU_STATINFO_TITLE"
+    // Filled in by ZScript
+}

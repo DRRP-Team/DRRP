@@ -327,6 +327,7 @@
     DRRP_D_MENU_MISC_DEBUGMODE      = "DRRP Debug Mode";
 
     DRRP_D_MENU_LANGUAGE_TITLE      = "Language";
+    DRRP_D_MENU_STATINFO_TITLE      = "Statistic";
 
     DRRP_D_MENU_INFOBAR_ENABLE      = "Show actor's names";
     DRRP_D_MENU_COMPASS_ENABLE      = "Enable compass";
@@ -359,6 +360,30 @@
     DRRP_D_NOTEBOOK_NOTINGAME       = "You should be in game to use notebook.";
     DRRP_D_NOTEBOOK_TIP_PART1       = "Press ";
     DRRP_D_NOTEBOOK_TIP_PART2       = " to open notebook.";
+
+    DRRP_D_STATINFO_NOTINGAME       = "You should be in game to see your statistic.";
+    DRRP_D_STATINFO_HEADER          = "STATICTIC";
+    DRRP_D_STATINFO_PLAYER_T        = "PLAYER";
+    DRRP_D_STATINFO_THISSECTOR_T    = "THIS SECTOR";
+    DRRP_D_STATINFO_TOTAL_T         = "TOTAL";
+    DRRP_D_STATINFO_MAXKILLS_T      = "1нн% KILLS";
+    DRRP_D_STATINFO_MAXSECRETS_T    = "1нн% SECRETS";
+    DRRP_D_STATINFO_HEALTH          = "Health: ";
+    DRRP_D_STATINFO_ARMOR           = "Armor: ";
+    DRRP_D_STATINFO_CREDITS         = "Credits: ";
+    DRRP_D_STATINFO_LEVEL           = "Level: ";
+    DRRP_D_STATINFO_EXPERIENCE      = "Experience: ";
+    DRRP_D_STATINFO_DEFENCE         = "Defence: ";
+    DRRP_D_STATINFO_STRENGTH        = "Strength: ";
+    DRRP_D_STATINFO_AGILITY         = "Agility: ";
+    DRRP_D_STATINFO_ACCURACY        = "Accuracy: ";
+    DRRP_D_STATINFO_TIME            = "Time: ";
+    DRRP_D_STATINFO_SECRETS         = "Secrets: ";
+    DRRP_D_STATINFO_MONSTERS        = "Monsters: ";
+    DRRP_D_STATINFO_TURNS           = "Turns: ";
+    DRRP_D_STATINFO_DEATHS          = "Deaths: ";
+    DRRP_D_STATINFO_NOTHING         = "Nothing";
+    DRRP_D_STATINFO_UNDERCONSTRUCT  = "<under construct>";
 
     DRRP_D_CHARACTER                = "Character";
     DRRP_D_EXPLOSION                = "Explosion";
