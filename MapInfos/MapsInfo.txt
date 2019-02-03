@@ -19,7 +19,6 @@ Episode INTRO {
 Map TITLEMAP "Introduction" {
     Music    = "D_SILENCE"
     SkyBox   = "DARK0305"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map TITLEMAP2 "Introduction" {
@@ -37,8 +36,6 @@ Map INTRO "Entrance" {
     SkyBox   = "SKY2"
     Cluster  = 1
     LevelNum = 1
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map INTRO2 "TitleMap" {
@@ -51,7 +48,6 @@ Map HUB "Junction" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 2
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC1 "Sector 1" {
@@ -59,8 +55,6 @@ Map SEC1 "Sector 1" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 3
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC2 "Sector 2" {
@@ -68,8 +62,6 @@ Map SEC2 "Sector 2" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 4
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC3 "Sector 3" {
@@ -77,8 +69,6 @@ Map SEC3 "Sector 3" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 5
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC4 "Sector 4" {
@@ -86,8 +76,6 @@ Map SEC4 "Sector 4" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 6
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC5 "Sector 5" {
@@ -95,8 +83,6 @@ Map SEC5 "Sector 5" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 7
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC6 "Sector 6" {
@@ -104,8 +90,6 @@ Map SEC6 "Sector 6" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 8
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map SEC7 "Sector 7" {
@@ -113,8 +97,6 @@ Map SEC7 "Sector 7" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 9
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map XHUB "Junction" {
@@ -122,8 +104,6 @@ Map XHUB "Junction" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 10
-    EventHandlers = "DoorCodeInputHandler"
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map REAC "Reactor" {
@@ -131,7 +111,6 @@ Map REAC "Reactor" {
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 11
-    EventHandlers = "ShaderControllerActor"
 }
 
 Map CREDITS "DRRP" {
@@ -145,5 +124,6 @@ Map CREDITS "DRRP" {
 Map TESTMAP "DRRP Developers Test Map" {
     Music    = "D_SILENCE"
     SkyBox   = "DARK0305"
-    EventHandlers = "ShaderControllerActor"
+    Cluster  = 1
+    LevelNum = 99
 }
