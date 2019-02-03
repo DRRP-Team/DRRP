@@ -62,19 +62,19 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name "TITLEMAP"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_INTRO.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
 HardwareShader PostProcess Scene {
     Name "INTRO"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_INTRO.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
 HardwareShader PostProcess Scene {
     Name "HUB"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_HUB.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
@@ -86,7 +86,7 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name "SEC2"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_SEC2.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
@@ -98,19 +98,19 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name "SEC4"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_SEC4.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
 HardwareShader PostProcess Scene {
     Name "SEC5"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_SEC5.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
 HardwareShader PostProcess Scene {
     Name "SEC6"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_SEC6.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
@@ -134,6 +134,6 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name "REAC"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_REAC.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
