@@ -151,8 +151,8 @@ Script "onCinematicShadersUnload" (bool forced) {
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false);
 }
 
-#define CINEMATIC_SHADERS_COUNT 19
-str CINEMATIC_SHADERS[] = { "RadialBlurShader", "INTRO", "HUB", "SEC1",
+#define CINEMATIC_SHADERS_COUNT 20
+str CINEMATIC_SHADERS[] = { "RadialBlurShader", "TITLEMAP", "INTRO", "HUB", "SEC1",
                             "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_BEFORE",
                             "SEC7_AFTER", "XHUB", "REAC", "HeatHaze", "FilmGrain",
                             "XHUBGrain", "DefaultLut", "BCFilter", "DoubleVisionShader" };
