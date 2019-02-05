@@ -164,7 +164,6 @@ Script "onCinematicShadersReload" (bool forced) {
 
     // Disable all cinematic shaders
     for(int i = 0; i < CINEMATIC_SHADERS_COUNT; i++) {
-        Print(s:"Disabling shader ", s:CINEMATIC_SHADERS[i]);
         ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
     }
 
