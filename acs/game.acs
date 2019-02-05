@@ -136,17 +136,39 @@ Script "updateshaders" (bool forced) ENTER {
     }
 
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HelmetShader", isHelmetEnabled);
-    ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
+
+    ACS_NamedExecuteAlways("onCinematicShadersReload", 0, forced);
 }
 
 // This hook called on change cinematic shaders' CVAR
 // Redefine it in your map
 Script "onCinematicShadersLoad" (bool forced) {
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false); // FIXME: This is a crutch... Just temporary hotfix which doesn't really fix that bug
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEFAULT Script onCinematicShadersUnload");
 }
 
-Script "onCinematicShadersUnload" (bool forced) UNLOADING {
+Script "onCinematicShadersUnload" (bool forced) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEPRECATED Script onCinematicShadersUnload");
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false);
+}
+
+#define CINEMATIC_SHADERS_COUNT 19
+str CINEMATIC_SHADERS[] = { "RadialBlurShader", "INTRO", "HUB", "SEC1",
+                            "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_BEFORE",
+                            "SEC7_AFTER", "XHUB", "REAC", "HeatHaze", "FilmGrain"
+                            "XHUBGrain", "DefaultLut", "BCFilter", "DoubleVisionShader" };
+
+// This hook must not be redefined but it can be.
+// Using to disable all cinematic shaders and (if they're enabled) enable map specific ones.
+Script "onCinematicShadersReload" (bool forced) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script onCinematicShadersReload");
+
+    // Disable all cinematic shaders
+    for(int i = 0; i < CINEMATIC_SHADERS_COUNT; i++) {
+        ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
+    }
+
+    // Enable map specific ones if cinematic shader support is enabled
+    if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
 }
 
 #include "flashlight.acs"
