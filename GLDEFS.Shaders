@@ -46,7 +46,7 @@ HardwareShader PostProcess Scene {
 HardwareShader PostProcess Scene {
     Name "HeatHaze"
     Uniform float timer
-	Uniform float Temperature
+    Uniform float Temperature
     Texture HazeBump "textures/shadermaps/haze.png"
     Shader "shaders/custom/HeatHaze.fp"              330
 }
