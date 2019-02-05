@@ -154,7 +154,7 @@ Script "onCinematicShadersUnload" (bool forced) {
 #define CINEMATIC_SHADERS_COUNT 19
 str CINEMATIC_SHADERS[] = { "RadialBlurShader", "INTRO", "HUB", "SEC1",
                             "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_BEFORE",
-                            "SEC7_AFTER", "XHUB", "REAC", "HeatHaze", "FilmGrain"
+                            "SEC7_AFTER", "XHUB", "REAC", "HeatHaze", "FilmGrain",
                             "XHUBGrain", "DefaultLut", "BCFilter", "DoubleVisionShader" };
 
 // This hook must not be redefined but it can be.
@@ -164,6 +164,7 @@ Script "onCinematicShadersReload" (bool forced) {
 
     // Disable all cinematic shaders
     for(int i = 0; i < CINEMATIC_SHADERS_COUNT; i++) {
+        Print(s:"Disabling shader ", s:CINEMATIC_SHADERS[i]);
         ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
     }
 
