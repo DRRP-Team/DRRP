@@ -80,10 +80,20 @@ class NotebookMenu : OptionMenu {
                 langstring.split(langstring_spl, "\n");
 
                 for(int j = 0; j < langstring_spl.size(); j++) {
-                    OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+                    OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
 
-                    item.Init( StringTable.localize( "$" .. langstring_spl[ j ] ) );
-                    desc.mItems.push(item);
+                    String initString = StringTable.localize( "$" .. langstring_spl[ j ] );
+                    item.Init( initString );
+                    desc.mItems.push( item );
+
+                    // (next lines must be striked) 
+                    // Thanks, UsernameAK, for the dumb API...
+                    // (end of strike)
+                    OptionMenuItemStaticText nullItem = new( "OptionMenuItemStaticText" );
+                    nullItem.Init( " " );
+                    for ( int k = 0; k < initString.Length() - 1; k++ )
+                        if ( initString.CharAt( k ) == "\n" )
+                            desc.mItems.push( nullItem );
                 }
                 {
                     OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
