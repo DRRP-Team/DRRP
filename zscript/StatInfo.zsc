@@ -7,8 +7,6 @@
 
 class StatInfoMenu : OptionMenu {
 
-    int nextStringColor;
-
     Enum EColors {
         cNormal = Font.CR_GRAY,
         cBad    = Font.CR_RED,
@@ -17,18 +15,8 @@ class StatInfoMenu : OptionMenu {
     } // of Enum EColors
 
     String StatLocalize( String postfix ) {
-        postfix = "$DRRP_D_STATINFO_" .. postfix;
-        return StringTable.Localize( postfix );
-    }
-
-    void autoColor( Inventory cItem ) {
-        if ( ( cItem == null ) || !cItem.Amount ) 
-            nextStringColor = cBad;
-        else if ( cItem.Amount >= cItem.MaxAmount ) 
-            nextStringColor = cGood;
-        else
-            nextStringColor = cNormal;
-    }
+        return StringTable.Localize( "$DRRP_D_STATINFO_" .. postfix );
+    } // of String StatLocalize( String postfix ) {
 
     void addStr( OptionMenuDescriptor desc, int textColor, String text ) {
         OptionMenuItemStaticText menuitem = new( "OptionMenuItemStaticText" );
@@ -44,17 +32,17 @@ class StatInfoMenu : OptionMenu {
             text = text .. item.Amount;
         else
             text = text .. item.Amount .. "/" .. item.MaxAmount;
-        autoColor( item );
 
-        addStr( desc, nextStringColor, text );
-    }
+        addStr( desc, ( item == null ) || ( !item.amount ) ? cBad : 
+                    ( item.Amount >= item.MaxAmount ? cGood : cNormal ), text );
+    } // of void addItemStr( OptionMenuDescriptor desc, Inventory item, String text, bool sizeless = false ) {
 
-    void addSpecIntStr( OptionMenuDescriptor desc, int checkInt, int maxInt, String text, bool bad_check = false ) {
+    void addSpecIntStr( OptionMenuDescriptor desc, int checkInt, int maxInt, String text, bool bad_checking = false ) {
 
-        addStr( desc, checkInt >= maxInt ? cGood : 
-                    ( ( checkInt <= 0 ) && bad_check ? cBad : cNormal ), 
+        addStr( desc, ( checkInt <= 0 ) && bad_checking ? cBad : 
+                    ( ( checkInt >= maxInt ) ? cGood : cNormal ), 
                 text .. checkInt .. "/" .. maxInt );
-    }
+    } // of void addSpecIntStr( OptionMenuDescriptor desc, int checkInt, int maxInt, String text, bool bad_check = false ) {
 
     void addHeaderStr( OptionMenuDescriptor desc, String headerText ) {
         int headerMaxLength = 20;
@@ -81,7 +69,7 @@ class StatInfoMenu : OptionMenu {
             return;
         }
 
-        String tempStr;
+        String tempStr; // For non-standart expressions (if any).
         String notNow = StatLocalize( "UNDERCONSTRUCT" );
 
         addHeaderStr( desc, StatLocalize( "PLAYER_T" ) );
