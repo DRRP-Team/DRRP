@@ -42,11 +42,8 @@ vec3 ProcessColor(vec3 color) {
 	float f = 0;
    
 	//only compute the cubic distortion if necessary
-	if( kcube == 0.0){
-			f = 1 + r2 * k;
-	}else{
-			f = 1 + r2 * (k + kcube * sqrt(r2));
-	}
+
+    f = 1 + r2 * (k + kcube * sqrt(r2));
 
 	float x = f*(TexCoord.x-0.5)+0.5;
 	float y = f*(TexCoord.y-0.5)+0.5;   
