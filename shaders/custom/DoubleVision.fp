@@ -8,9 +8,11 @@
 uniform float coeff = 5;
 
 void main() {
-    vec4 color1 = texture(InputTexture, vec2(TexCoord.x - coeff / 1000, TexCoord.y - coeff / 1000));
-    vec4 color2 = texture(InputTexture, vec2(TexCoord.x, TexCoord.y));
-    vec4 color3 = texture(InputTexture, vec2(TexCoord.x + coeff / 1000, TexCoord.y + coeff / 1000));
+    const vec2 disp = vec2(coeff / 1000);
 
-    FragColor = vec4((color1.rgb + color2.rgb + color3.rgb) / vec3(3), 1);
+    vec4 color1 = texture(InputTexture, TexCoord - disp);
+    vec4 color2 = texture(InputTexture, TexCoord);
+    vec4 color3 = texture(InputTexture, TexCoord + disp);
+
+    FragColor = vec4((color1.rgb + color2.rgb + color3.rgb) / 3, 1);
 }
