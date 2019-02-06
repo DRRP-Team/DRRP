@@ -14,8 +14,8 @@ const vec3 POSTFILTER   = vec3(0.0, 0.0, 0.0);    // Фильтр для пос�
 const vec3 CORNERFILTER = vec3(0.1, 0.1, 0.25);   // Фильтр для затемнения
 const vec3 CENTERFILTER = vec3(0.0, 0.0, 0.0);    // Фильтр для центра экрана
 const float RIGIDITY    = 100.;                         // Жесткость затемнения боков
-const float k = -1.0;                             // Коэффицент искажения линзы
-const float kcube = 0.15;                         // Коэффицент кубического искажения
+const float K = -1.0;                             // Коэффицент искажения линзы
+const float KCUBE = 0.15;                         // Коэффицент кубического искажения
 
 
 vec4 blur9(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
@@ -38,15 +38,15 @@ vec3 ProcessColor(vec3 color) {
     vec3 blur = blur9(InputTexture, TexCoord, Scale, vec2(0.7, 0.7)).rgb;
 
 
- 	float r2 = (TexCoord.x-0.5) * (TexCoord.x-0.5) + (TexCoord.y-0.5) * (TexCoord.y-0.5);       
+ 	float r2 = (TexCoord.x - 0.5) * (TexCoord.x - 0.5) + (TexCoord.y - 0.5) * (TexCoord.y - 0.5);       
 	float f = 0;
    
 	//only compute the cubic distortion if necessary
 
-    f = 1 + r2 * (k + kcube * sqrt(r2));
+    f = 1 + r2 * (K + KCUBE * sqrt(r2));
 
-	float x = f*(TexCoord.x-0.5)+0.5;
-	float y = f*(TexCoord.y-0.5)+0.5;   
+	float x = f * (TexCoord.x - 0.5) + 0.5;
+	float y = f * (TexCoord.y - 0.5) + 0.5;   
 
     vec4 d = texture(InputTexture, vec2(x, y)); // Текстура отражения от шлема
 
