@@ -16,7 +16,7 @@ vec3 LutFunc(vec3 colorIN) {
     vec2 Lut_pSize = vec2(1. / Lut_Size);
     vec4 Lut_UV;
 
-    colorIN    = clamp(colorIN, 0, 1.) * (Lut_Size.y - 1.);
+    colorIN    = clamp(colorIN, 0.0, 1.) * (Lut_Size.y - 1.);
 
     Lut_UV.w   = floor(colorIN.b);
     Lut_UV.xy  = (colorIN.rg + 0.5) * Lut_pSize;
