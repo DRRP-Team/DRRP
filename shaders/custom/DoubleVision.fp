@@ -8,7 +8,7 @@
 uniform float coeff = 5;
 
 void main() {
-    const vec2 disp = vec2(coeff / 1000);
+    vec2 disp = vec2(coeff / 1000);
 
     vec4 color1 = texture(InputTexture, TexCoord - disp);
     vec4 color2 = texture(InputTexture, TexCoord);
