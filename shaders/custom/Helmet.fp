@@ -14,6 +14,9 @@ const vec3 POSTFILTER   = vec3(0.0, 0.0, 0.0);    // Фильтр для пос�
 const vec3 CORNERFILTER = vec3(0.1, 0.1, 0.25);   // Фильтр для затемнения
 const vec3 CENTERFILTER = vec3(0.0, 0.0, 0.0);    // Фильтр для центра экрана
 const float RIGIDITY    = 100.;                         // Жесткость затемнения боков
+const float k = -1.0;                             // Коэффицент искажения линзы
+const float kcube = 0.15;                         // Коэффицент кубического искажения
+
 
 vec4 blur9(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
     vec4 color = vec4(0.0);
@@ -34,9 +37,20 @@ vec3 ProcessColor(vec3 color) {
     float cornermask = 1.-vig; //Маска бокового затемнения
     vec3 blur = blur9(InputTexture, TexCoord, Scale, vec2(0.7, 0.7)).rgb;
 
-    // TODO: Поработать над достоверностью заломления
-    float x = cos(TexCoord.x + .5) - sin(TexCoord.y);
-    float y = sin(TexCoord.x + .5) + cos(TexCoord.y + .3); //FIXME: Подправить Y
+
+ 	float r2 = (TexCoord.x-0.5) * (TexCoord.x-0.5) + (TexCoord.y-0.5) * (TexCoord.y-0.5);       
+	float f = 0;
+   
+	//only compute the cubic distortion if necessary
+	if( kcube == 0.0){
+			f = 1 + r2 * k;
+	}else{
+			f = 1 + r2 * (k + kcube * sqrt(r2));
+	}
+
+	float x = f*(TexCoord.x-0.5)+0.5;
+	float y = f*(TexCoord.y-0.5)+0.5;   
+
     vec4 d = texture(InputTexture, vec2(x, y)); // Текстура отражения от шлема
 
     color = color * vig + (d.rgb * cornermask / 2) + max(vec3(0), blur * (cornermask - .5)) + (CENTERFILTER * vig) + (CORNERFILTER * cornermask) + POSTFILTER;
