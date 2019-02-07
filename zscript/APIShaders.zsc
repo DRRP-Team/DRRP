@@ -31,7 +31,7 @@ class ShaderControllerActor: StaticEventHandler {
                     if ( ( player == null ) || ( player.mo == null ) || !PlayerInGame[ i ] ) 
                         continue;
                     player.mo.ACS_NamedExecute( "onCinematicShadersReload", 0 );
-                    console.printf( "#ShaderControllerActor: success call to ACS script." );
+                    //console.printf( "#ShaderControllerActor: success call to ACS script." );
                     break;
                 } // for ( int i = 0; i < MAXPLAYERS; i++ ) {
 
