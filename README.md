@@ -15,7 +15,7 @@
   - [Screenshots](#en_screenshots)
   - [Links](#en_links)
 - [How to download and install?](#en_install)
-- [WIKI](https://github.com/DRRP-Team/DRRP/wiki)
+- [WIKI](https://github.com/DRRP-Team/DRRP/wiki/eng-whoareyou)
 - [FAQ](#)
 - [I want to help!](https://github.com/DRRP-Team/DRRP/wiki/rus-interactive-iwannahelp)
 
@@ -95,7 +95,7 @@ Suitable for experienced and owners other OS.
   - [Скриншоты](#ru_screenshots)
   - [Полезные ссылки](#ru_links)
 - [Как скачать и установить?](#ru_install)
-- [WIKI](https://gitlab.com/prophessor/DRRP/wikis)
+- [WIKI](https://github.com/DRRP-Team/DRRP/wiki/rus-whoareyou)
 - [Частые вопросы](#)
 - [Я желаю помочь!](https://github.com/DRRP-Team/DRRP/wiki/rus-interactive-iwannahelp)
 
