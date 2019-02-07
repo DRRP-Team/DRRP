@@ -5,10 +5,43 @@
  * https://opensource.org/licenses/MIT
  */
 
-class ShaderControllerActor : EventHandler {
+class ShaderControllerActor: StaticEventHandler {
+
+    int WorldReloadedTick;
+
+    override void WorldLoaded( WorldEvent e ) {
+        if ( e.IsSaveGame ) {
+            WorldReloadedTick = 1;
+        }
+    } // of override void WorldLoaded( WorldEvent e ) {
+
+    override void PlayerEntered( PlayerEvent e ) {
+        WorldReloadedTick = 1;
+    } // of override void PlayerEntered( PlayerEvent e ) {
+
+    override void WorldTick() {
+        if ( WorldReloadedTick ) {
+
+            WorldReloadedTick--;
+
+            if ( !WorldReloadedTick ) {
+                PlayerInfo player;
+                for ( int i = 0; i < MAXPLAYERS; i++ ) {
+                    player = Players[ i ];
+                    if ( ( player == null ) || ( player.mo == null ) || !PlayerInGame[ i ] ) 
+                        continue;
+                    player.mo.ACS_NamedExecute( "onCinematicShadersReload", 0 );
+                    console.printf( "#ShaderControllerActor: success call to ACS script." );
+                    break;
+                } // for ( int i = 0; i < MAXPLAYERS; i++ ) {
+
+            } // if ( !WorldReloadedTick ) {
+        } // if ( WorldReloadedTick ) {
+    } // of override void WorldTick() {
+
 
     static int SetEnabled(int player, String name, bool isEnabled) {
-        if (player > 0) {
+        if (player != 0) {
             Shader.SetEnabled(players[player - 1], name, isEnabled);
         } else {
             for(int i = 0; i < players.Size(); i++) {
