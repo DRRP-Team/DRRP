@@ -12,8 +12,8 @@
 - [What is it?](#about)
   - [Screenshots](#screenshots)
   - [Links](#links)
-- [How to downloand and install?](#install)
-- [WIKI](https://gitlab.com/prophessor/DRRP/wikis)
+- [How to download and install?](#install)
+- [WIKI](https://github.com/DRRP-Team/DRRP/wiki)
 - [FAQ](#)
 - [I want to help!](https://github.com/DRRP-Team/DRRP/wiki/rus-interactive-iwannahelp)
 
@@ -45,13 +45,13 @@ In this moment project in the early access stage, on which is not avaliable vers
 
 ### Links:
 - [Official site](http://drrpofficial.tk)
-- [Page on ModDb](https://www.moddb.com/mods/drrp-doom-rpg-remake-project)
+- [Page on ModDB](https://www.moddb.com/mods/drrp-doom-rpg-remake-project)
 - [Topic on Doom Power](http://i.iddqd.ru/viewtopic.php?p=98116) (on russian)
 - [Topic on Doom World](https://www.doomworld.com/forum/topic/102919-drrp-doom-rpg-remake-project/) (on english)
-- [GitLab repository](https://gitlab.com/PROPHESSOR/DRRP)
 - [GitHub repository](https://github.com/DRRP-Team/DRRP)
 - [Board on Trello](https://trello.com/b/OGA3JkEH/drrp-doom-rpg-remake-project)
 - [Developer guide](https://gitlab.com/prophessor/DRRP/blob/master/CONTRIBUTING.md)
+- [GitLab repository](https://gitlab.com/PROPHESSOR/DRRP)(archived)
 
 <a name="install"></a>
 
@@ -72,11 +72,13 @@ Kits variants:
 - Windows 64 - Kit for Windows x64 (recommended)
 - Windows 32 - Vintage kit for Windows x86
 
+**This kits not available yet**
+
 <a name="pkfiles"></a>
 
 ### Files for GZDoom:
 
 This is .pk3 *(zip)* and .pk7 *(7z)* files, which can be run using GZDoom.
 Suitable for experienced and owners other OS.
-- PK7 - Recommended for peoples with limited traffic для людей с ограниченным трафиком
-- PK3 - Recommended for quick lauch
+- PK7 - Recommended for peoples with limited traffic
+- PK3 - Recommended for quick launch
