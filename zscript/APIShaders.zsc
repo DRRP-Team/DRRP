@@ -41,7 +41,7 @@ class ShaderControllerActor: StaticEventHandler {
 
 
     static int SetEnabled(int player, String name, bool isEnabled) {
-        if (player != 0) {
+        if (player > 0) {
             Shader.SetEnabled(players[player - 1], name, isEnabled);
         } else {
             for(int i = 0; i < players.Size(); i++) {
