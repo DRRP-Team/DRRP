@@ -40,6 +40,18 @@ function str localizeSound(str sound) {
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
+function fixed fmax(fixed val1, fixed val2) {
+    return val1 > val2 ? val1 : val2;
+}
+
+function fixed fmin(fixed val1, fixed val2) {
+    return val1 < val2 ? val1 : val2;
+}
+
+function fixed fclamp(fixed value, fixed min, fixed max) {
+    return fmax(min, fmin(max, value));
+}
+
 // \\ Useful functions
 
 script "fireextfade" (int mode) {
@@ -171,7 +183,7 @@ Script "onCinematicShadersReload" (bool forced) {
     if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
 }
 
-int playerDamageTimer = 0;
+float playerDamageTimer = 0;
 
 // NOTE: This script must be executed as ACS_NamedExecuteAlways
 Script "onPlayerDamage" (void) {
@@ -179,9 +191,8 @@ Script "onPlayerDamage" (void) {
     // But we can't get the max player's HP from here :(
     // OK: Enable shader
     ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", true);
-    // TODO: Set shader intensivity related to the damage value and the player's health
     // OK: Timed disable shader
-    playerDamageTimer += 5;
+    playerDamageTimer += 5.0;
     ACS_NamedExecute("playerDamageTimer", 0);
 }
 
@@ -190,7 +201,12 @@ const int PLAYER_DAMAGE_TICK_VALUE = 3;
 // This script decreases the playerDamageTimer value and intensivity of the damage shader
 Script "playerDamageTimer" (void) {
     while (playerDamageTimer > 0) {
-        playerDamageTimer--;
+        playerDamageTimer -= 1.0;
+        // OK: Set shader intensivity related to the damage value and the player's health
+
+        ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "DoubleVisionShader",
+                    "distortion", fclamp(playerDamageTimer, 1.0, 5.0));
+
         Delay(PLAYER_DAMAGE_TICK_VALUE);
     }
 

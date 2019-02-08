@@ -18,6 +18,8 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name    "DoubleVisionShader"
+    Uniform float distortion
+    Uniform float desaturation
     Shader  "shaders/custom/DoubleVision.fp"    330
 }
 
