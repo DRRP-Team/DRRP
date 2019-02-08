@@ -171,5 +171,31 @@ Script "onCinematicShadersReload" (bool forced) {
     if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
 }
 
+int playerDamageTimer = 0;
+
+// NOTE: This script must be executed as ACS_NamedExecuteAlways
+Script "onPlayerDamage" (void) {
+    // TODO: Use player health
+    // But we can't get the max player's HP from here :(
+    // OK: Enable shader
+    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", true);
+    // TODO: Set shader intensivity related to the damage value and the player's health
+    // OK: Timed disable shader
+    playerDamageTimer += 5;
+    ACS_NamedExecute("playerDamageTimer", 0);
+}
+
+const int PLAYER_DAMAGE_TICK_VALUE = 3;
+
+// This script decreases the playerDamageTimer value and intensivity of the damage shader
+Script "playerDamageTimer" (void) {
+    while (playerDamageTimer > 0) {
+        playerDamageTimer--;
+        Delay(PLAYER_DAMAGE_TICK_VALUE);
+    }
+
+    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);
+}
+
 #include "flashlight.acs"
 #include "mapapis.acs"

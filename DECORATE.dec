@@ -56,4 +56,16 @@ Actor DoomRPGPlayer : DoomPlayer {
 
     Player.StartItem "DRRPPistol"
     Player.StartItem "Clip", 8
+
+    States {
+        Pain:
+            PLAY G 0 {
+                if (GetCVar("drrp_enable_damage_shader")) {
+                    ACS_NamedExecuteAlways("onPlayerDamage");
+                }
+            }
+            PLAY G 4 
+            PLAY G 4 A_Pain
+            Goto Spawn    
+    }
 }
