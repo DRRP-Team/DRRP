@@ -32,6 +32,7 @@
  - Recompile - Благодарность за статью по устройству Doom RPG (http://www.neocomputer.org/projects/doomrpg/)
  
  - YURA_111 - Благодарность за некоторые спрайты
+ - Solarsnowfall, Tormentor667 and Ghastly_dragon - Эффект пара
  
 # English
 ## DRRP Team:
@@ -49,5 +50,5 @@
 ## Special thanks
 
  - Recompile - Doom RPG decompilation article (http://www.neocomputer.org/projects/doomrpg/)
- 
  - YURA_111 - Some sprites
+ - Solarsnowfall, Tormentor667 and Ghastly_dragon - Steam FX
