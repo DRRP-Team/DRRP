@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) PROPHESSOR 2019
+ */
+
 const json = require('./translation.json');
 
 const translators = {}; // { nickname: [ rating, count ] }
@@ -18,20 +22,26 @@ for (const string of json) {
 
 const output = [];
 
+// Calcualte quality and prepare to output
 for (const nickname in translators) {
     const translator = translators[nickname];
 
-    console.log('for', nickname, 'in', translators);
     output.push([nickname, translator[1], translator[0], Math.round((translator[0] / translator[1]) * 100)]);
 }
 
 output.sort((a, b) => b[3] - a[3]);
 
-console.info('Рейтинг переводчиков');
-console.info('\tНик\tПереведено\tРейтинг\tКачество');
+// Display the beautiful table
+// You may just console.log(output.join('\n'));
+const Table = require('cli-table');
+const table = new Table({
+    head: ['#', 'Ник', 'Переведено', 'Рейтинг', 'Качество (%)']
+});
 
 for (const i in output) {
     const line = output[i];
 
-    console.info(`${+i + 1}\t${line.join('\t')}%`);
+    table.push([+i + 1, ...line]);
 }
+
+console.log(table.toString());
