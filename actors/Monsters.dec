@@ -423,10 +423,10 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
         Death:
             SKEL L 7 A_SpawnItem("RocketAmmo")
             SKEL M 7 A_SpawnItem("Explosion", 0, 38.)
-            SKEL N 7 A_Scream
-            SKEL O 7 A_NoBlocking
-            SKEL P 7
-            SKEL Q -1
+            TNT1 A 7 A_Scream
+            TNT1 A 7 A_NoBlocking
+            TNT1 A 7
+            TNT1 A -1
             Stop
     }
 }
