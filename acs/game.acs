@@ -235,9 +235,10 @@ Script "onActorDie" (bool killedByPlayer) {
         // Levelup
         GiveInventory("DRRPPlayerLevel", 4);
         Player.Level++;
+        PlaySound(0, "player/taunt", CHAN_VOICE, 0.7);
         ACS_NamedExecuteWait("window", 0, StrParam(
             s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
-            l:"DRRP_B_ID76", i:2, s:"\n",       // Level:
+            l:"DRRP_B_ID76", i:Player.level, s:"\n",       // Level:
             l:"DRRP_B_ID74", i:4, s:"\n",       // Max Health:
             l:"DRRP_B_ID72", i:4, s:"\n",       // Max Armor:
             l:"DRRP_B_ID73", i:2, s:"\n",       // Defense:
@@ -246,8 +247,6 @@ Script "onActorDie" (bool killedByPlayer) {
             l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
             l:"DRRP_B_ID77"));                  // Helath restored.
     }
-
-    print (s:" Killed! ", i:Player.XP);
 }
 
 #include "flashlight.acs"
