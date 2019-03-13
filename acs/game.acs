@@ -65,7 +65,16 @@ script "fireextfade" (int mode) {
 
 // ACS based DRPG Window
 
-Script "window"(str Text) { // s: -> str
+Script "window"(str _Text) { // s: -> str
+    str Text;
+    int TextLen = strlen(_Text);
+    for (int i = 0; i < TextLen; i++) {
+        if(_Text[i] == 0x20)
+            Text = StrParam(s:Text, s:"  ");
+        else
+            Text = StrParam(s:Text, c:_Text[i]);
+    }
+
     const int SYM_HEIGHT = 12; // Symbol's height is 12px
 
     Delay(2);
