@@ -66,10 +66,12 @@ script "fireextfade" (int mode) {
 // ACS based DRPG Window
 
 Script "window"(str _Text) { // s: -> str
+    // This crutch fixes the GZDoom Encoding bug in russian translation
+    // https://trello.com/c/Yjn7YM8b
     str Text;
     int TextLen = strlen(_Text);
     for (int i = 0; i < TextLen; i++) {
-        if(_Text[i] == 0x20)
+        if (_Text[i] == 0x20) // space
             Text = StrParam(s:Text, s:" ");
         else
             Text = StrParam(s:Text, c:_Text[i]);
