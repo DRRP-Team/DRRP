@@ -222,11 +222,23 @@ const int KILLS_FOR_NEXT_LEVELUP = 18;
 struct player_t {
     int level;
     int XP;
+    int maxHealth;
+    int maxArmor;
+    int defence;
+    int strength;
+    int accuracy;
+    int agility;
 }
 
-player_t Player;
+world player_t Player;
+bool init = false;
 
 Script "onActorDie" (bool killedByPlayer) {
+    if (!init) {
+        Player.maxHealth = 30;
+        Player.level = 1;
+        init = true;
+    }
     if (!killedByPlayer) Terminate;
 
     Player.XP++;
@@ -234,7 +246,13 @@ Script "onActorDie" (bool killedByPlayer) {
     if (Player.XP % KILLS_FOR_NEXT_LEVELUP == 0) {
         // Levelup
         GiveInventory("DRRPPlayerLevel", 4);
-        Player.Level++;
+        Player.Level        += 1;
+        Player.maxHealth    += 4;
+        Player.maxArmor     += 4;
+        Player.defence      += 2;
+        Player.strength     += 2;
+        Player.accuracy     += 1;
+        Player.agility      += 1;
         PlaySound(0, "player/taunt", CHAN_VOICE, 0.7);
         ACS_NamedExecuteWait("window", 0, StrParam(
             s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
@@ -247,6 +265,8 @@ Script "onActorDie" (bool killedByPlayer) {
             l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
             l:"DRRP_B_ID77"));                  // Helath restored.
     }
+
+    // print (s: "Kills: ", i:Player.XP, s:" Level: ", i:Player.Level);
 }
 
 #include "flashlight.acs"
