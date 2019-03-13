@@ -213,5 +213,42 @@ Script "playerDamageTimer" (void) {
     ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);
 }
 
+/**
+ * RPG System
+ */
+
+const int KILLS_FOR_NEXT_LEVELUP = 18;
+
+struct player_t {
+    int level;
+    int XP;
+}
+
+player_t Player;
+
+Script "onActorDie" (bool killedByPlayer) {
+    if (!killedByPlayer) Terminate;
+
+    Player.XP++;
+
+    if (Player.XP % KILLS_FOR_NEXT_LEVELUP == 0) {
+        // Levelup
+        GiveInventory("DRRPPlayerLevel", 4);
+        Player.Level++;
+        ACS_NamedExecuteWait("window", 0, StrParam(
+            s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
+            l:"DRRP_B_ID76", i:2, s:"\n",       // Level:
+            l:"DRRP_B_ID74", i:4, s:"\n",       // Max Health:
+            l:"DRRP_B_ID72", i:4, s:"\n",       // Max Armor:
+            l:"DRRP_B_ID73", i:2, s:"\n",       // Defense:
+            l:"DRRP_B_ID75", i:2, s:"\n",       // Strength:
+            l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
+            l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
+            l:"DRRP_B_ID77"));                  // Helath restored.
+    }
+
+    print (s:" Killed! ", i:Player.XP);
+}
+
 #include "flashlight.acs"
 #include "mapapis.acs"
