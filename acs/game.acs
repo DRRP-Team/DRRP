@@ -295,6 +295,12 @@ Script "getRPGAttackDamage" (int min, int max) {
     SetResultValue(damage);
 }
 
+Script "getRPGDefenseDamage" (int damage) {
+    if (GetCVar("drrp_debug_mode")) Print(s:"Inner Damage: ", i:damage);
+
+    SetResultValue(damage);
+}
+
 Script "levelUp" (void) { // for the "pukename levelup" command
     ACS_NamedExecuteAlways("onActorDie", 0, true, true);
 }
