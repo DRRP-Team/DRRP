@@ -190,6 +190,8 @@ Script "onCinematicShadersReload" (bool forced) {
         ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
     }
 
+    ACS_NamedExecute("playerDamageTimer", 0); // Recalculate damage shader
+
     // Enable map specific ones if cinematic shader support is enabled
     if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
 }
