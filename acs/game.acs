@@ -65,7 +65,18 @@ script "fireextfade" (int mode) {
 
 // ACS based DRPG Window
 
-Script "window"(str Text) { // s: -> str
+Script "window"(str _Text) { // s: -> str
+    // This crutch fixes the GZDoom Encoding bug in russian translation
+    // https://trello.com/c/Yjn7YM8b
+    str Text;
+    int TextLen = strlen(_Text);
+    for (int i = 0; i < TextLen; i++) {
+        if (_Text[i] == 0x20) // space
+            Text = StrParam(s:Text, s:" ");
+        else
+            Text = StrParam(s:Text, c:_Text[i]);
+    }
+
     const int SYM_HEIGHT = 12; // Symbol's height is 12px
 
     Delay(2);
@@ -233,7 +244,7 @@ struct player_t {
 world player_t Player;
 bool init = false;
 
-Script "onActorDie" (bool killedByPlayer) {
+Script "onActorDie" (bool killedByPlayer, bool forceLevelUp) {
     if (!init) {
         Player.maxHealth = 30;
         Player.level = 1;
@@ -243,7 +254,7 @@ Script "onActorDie" (bool killedByPlayer) {
 
     Player.XP++;
 
-    if (Player.XP % KILLS_FOR_NEXT_LEVELUP == 0) {
+    if (Player.XP % KILLS_FOR_NEXT_LEVELUP == 0 || forceLevelUp) {
         // Levelup
         GiveInventory("DRRPPlayerLevel", 4);
         Player.Level        += 1;
@@ -267,6 +278,25 @@ Script "onActorDie" (bool killedByPlayer) {
     }
 
     // print (s: "Kills: ", i:Player.XP, s:" Level: ", i:Player.Level);
+}
+
+const int RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // Per strength value
+
+Script "getRPGAttackDamage" (int min, int max) {
+    if (GetCVar("drrp_debug_mode")) Log(s:"getRPGAttackDamage(", i:min, s:", ", i:max, s:")");
+    if (min == 0 && GetCVar("drrp_debug_mode")) Print(s:"[BUG]: getRPGDamage(0)");
+    if (max == 0) max = min;
+
+    int damage = random(min + (Player.strength * RPG_DAMAGE_STRENGTH_MULTIPLIER),
+                        max + (Player.strength * RPG_DAMAGE_STRENGTH_MULTIPLIER));
+
+    if (GetCVar("drrp_debug_mode")) Print(s:"Damage: ", i:damage);
+
+    SetResultValue(damage);
+}
+
+Script "levelUp" (void) { // for the "pukename levelup" command
+    ACS_NamedExecuteAlways("onActorDie", 0, true, true);
 }
 
 #include "flashlight.acs"
