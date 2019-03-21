@@ -6,8 +6,28 @@
  */
 
 
-class RPGSystem : EventHandler {
-    override void WorldThingDied(WorldEvent ev) {
-        Players[0].mo.ACS_NamedExecuteAlways("onActorDie", 0, !!ev.Thing.Target);
+class RPGSystemHandler: EventHandler {
+
+    override void OnRegister() {
+        SetOrder( 670 );
     }
+
+    override void WorldThingDamaged( WorldEvent e ) {
+
+        if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
+
+            /*console.printf( "#WorldThingDamaged(): Thing " .. e.Thing.GetClassName() 
+                        .. ", health " .. e.Thing.health .. ", damage " .. e.Damage 
+                        .. ", damager " .. e.DamageSource.GetClassName() );/* */
+
+            //if ( e.Thing is "DoomRPGPlayer" ) {
+            //  e.Thing.health += e.Damage - players[ 0 ].mo.ACS_NamedExecuteAlways( "getRPGDefenseDamage", e.Damage );
+            //}
+
+            if ( e.Thing.health <= 0 ) {
+                players[ 0 ].mo.ACS_NamedExecuteAlways( "onActorDie", 0, e.DamageSource is "DoomRPGPlayer" );
+            }
+        } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) { 
+    } // override void WorldThingDamaged( WorldEvent e ) {
+
 }
