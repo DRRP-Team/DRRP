@@ -266,7 +266,7 @@ Script "onActorDie" (bool killedByPlayer, bool forceLevelUp) {
         Player.strength     += 2;
         Player.accuracy     += 1;
         Player.agility      += 1;
-        PlaySound(0, "player/taunt", CHAN_VOICE, 0.7);
+        ActivatorSound("player/levelup", 127);
         ACS_NamedExecuteWait("window", 0, StrParam(
             s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
             l:"DRRP_B_ID76", i:Player.level, s:"\n",       // Level:
