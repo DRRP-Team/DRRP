@@ -297,8 +297,30 @@ Script "getRPGAttackDamage" (int min, int max) {
     SetResultValue(damage);
 }
 
+// [DogName, soundname]
+str DOGNAMES[] = { "HellHound", "Cerberus", "DemonWolf" };
+
 Script "getRPGDefenseDamage" (int damage) {
     if (GetCVar("drrp_debug_mode")) Print(s:"Inner Damage: ", i:damage);
+
+
+    // Test for dogs
+    for (int i = 0; i < 3; i ++) {
+        if (GetWeapon() == StrParam(s:DOGNAMES[i], s:"Gun")) {
+            ActivatorSound("monsters/hellhound/pain", 127);
+            TakeInventory(StrParam(s:DOGNAMES[i], s:"Health"), damage);
+
+            if (CheckInventory(StrParam(s:DOGNAMES[i], s:"Health")) == 0) {
+                TakeInventory(StrParam(s:DOGNAMES[i], s:"Gun"), 1);
+                ActivatorSound("monsters/hellhound/death", 127);
+            }
+
+            SetResultValue(0);
+            Terminate;
+        }
+    }
+
+    // TODO: Axe blocking
 
     SetResultValue(damage);
 }

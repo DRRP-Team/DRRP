@@ -557,6 +557,17 @@ class DRRPBFG9000Ball: BFGBall replaces BFGBall {
     }
 }
 
+class HellHoundHealth : Ammo {
+    Default {
+        Inventory.Amount 10;
+        Inventory.MaxAmount 100;
+        Inventory.Icon "DOGCA0";
+
+        Ammo.BackpackAmount 0;
+        Ammo.BackpackMaxAmount 0;
+    }
+}
+
 class HellHoundGun: Weapon {
     Default {
         +WEAPON.WIMPY_WEAPON;
@@ -565,6 +576,7 @@ class HellHoundGun: Weapon {
         //Inventory.PickupMessage "$DRRP_W_HELLHOUNDPICKUP";
         Weapon.AmmoUse 0;
         Weapon.AmmoGive 100;
+        Weapon.AmmoType "HellHoundHealth";
         Weapon.SlotPriority 3;
         Weapon.SelectionOrder 83;
         DamageType "DRRPPhysicalDmg";
@@ -622,10 +634,14 @@ class HellHoundGun: Weapon {
     }
 }
 
+class CerberusHealth : HellHoundHealth {}
+
 class CerberusGun: HellHoundGun {
     Default {
         Tag "$DRRP_W_CERBERUS";
         Inventory.PickupMessage "$DRRP_W_CEREBRUSPICKUP";
+
+        Weapon.AmmoType "CerberusHealth";
         Weapon.SlotPriority 2;
         Weapon.SelectionOrder 82;
     }
@@ -665,10 +681,14 @@ class CerberusGun: HellHoundGun {
     }
 }
 
+class DemonWolfHealth : HellHoundHealth {}
+
 class DemonWolfGun: HellHoundGun {
     Default {
         Tag "$DRRP_W_DEMONWOLF";
         Inventory.PickupMessage "$DRRP_W_DEMONWOLFPICKUP";
+
+        Weapon.AmmoType "DemonWolfHealth";
         Weapon.SlotPriority 1;
         Weapon.SelectionOrder 81;
     }
