@@ -292,7 +292,7 @@ Script "getRPGAttackDamage" (int min, int max) {
     int damage = random(min + (Player.strength * RPG_DAMAGE_STRENGTH_MULTIPLIER),
                         max + (Player.strength * RPG_DAMAGE_STRENGTH_MULTIPLIER));
 
-    if (GetCVar("drrp_debug_mode")) Print(s:"Damage: ", i:damage);
+    if (GetCVar("drrp_debug_mode")) Log(s:"Attack Damage: ", i:damage);
 
     SetResultValue(damage);
 }
@@ -301,8 +301,14 @@ Script "getRPGAttackDamage" (int min, int max) {
 str DOGNAMES[] = { "HellHound", "Cerberus", "DemonWolf" };
 
 Script "getRPGDefenseDamage" (int damage) {
-    if (GetCVar("drrp_debug_mode")) Print(s:"Inner Damage: ", i:damage);
+    if (GetCVar("drrp_debug_mode")) Log(s:"Defense Damage: ", i:damage);
 
+
+    if (GetWeapon() == "DRRPAxe") {
+        ActivatorSound("weapon/axe/block", 127);
+        SetResultValue(damage / 2);
+        Terminate;
+    }
 
     // Test for dogs
     for (int i = 0; i < 3; i ++) {
@@ -319,8 +325,6 @@ Script "getRPGDefenseDamage" (int damage) {
             Terminate;
         }
     }
-
-    // TODO: Axe blocking
 
     SetResultValue(damage);
 }
