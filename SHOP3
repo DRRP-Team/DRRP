@@ -124,19 +124,8 @@ conversation {
          name = "Stats";
          dialog = "What do you want to buy?";
          choice {
-             text = "+4 Hp [15 credits]";
-             giveitem = "DRRPPlayerLevel";
-             nomessage = "Not enough credits!";
-             nextpage = 3;
-             cost {
-                 item = "Credit";
-                 amount = 15;
-             }
-         }
-         /*
-         choice {
-             text = "+1 Accuracy [8 credits]";
-             giveitem = "HealthPowerUp";
+             text = "+1 Accuracy [15 credits]";
+             giveitem = "DRRPShopPlayerAccuracy";
              nomessage = "Not enough credits!";
              nextpage = 3;
              cost {
@@ -145,8 +134,8 @@ conversation {
              }
          }
          choice {
-             text = "+1 Agility [8 credits]";
-             giveitem = "HealthPowerUp";
+             text = "+1 Agility [15 credits]";
+             giveitem = "DRRPShopPlayerAgility";
              nomessage = "Not enough credits!";
              nextpage = 3;
              cost {
@@ -155,8 +144,8 @@ conversation {
              }
          }
          choice {
-             text = "+1 Strength [10 credits]";
-             giveitem = "HealthPowerUp";
+             text = "+1 Strength [20 credits]";
+             giveitem = "DRRPShopPlayerStrength";
              nomessage = "Not enough credits!";
              nextpage = 3;
              cost {
@@ -165,15 +154,16 @@ conversation {
              }
          }
          choice {
-             text = "+1 Defense [10 credits]";
-             giveitem = "HealthPowerUp";
+             text = "+1 Defense [20 credits]";
+             giveitem = "DRRPShopPlayerDefense";
              nomessage = "Not enough credits!";
              nextpage = 3;
              cost {
                  item = "Credit";
                  amount = 10;
              }
-         }*/
+         }
+
          choice {
              text = "Back";
              nextpage = 1;
