@@ -16,18 +16,27 @@ class RPGSystemHandler: EventHandler {
 
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
-            /*console.printf( "#WorldThingDamaged(): Thing " .. e.Thing.GetClassName() 
-                        .. ", health " .. e.Thing.health .. ", damage " .. e.Damage 
-                        .. ", damager " .. e.DamageSource.GetClassName() );/* */
-
-            //if ( e.Thing is "DoomRPGPlayer" ) {
-            //  e.Thing.health += e.Damage - players[ 0 ].mo.ACS_NamedExecuteAlways( "getRPGDefenseDamage", e.Damage );
-            //}
-
             if ( e.Thing.health <= 0 ) {
                 players[ 0 ].mo.ACS_NamedExecuteAlways( "onActorDie", 0, e.DamageSource is "DoomRPGPlayer" );
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) { 
     } // override void WorldThingDamaged( WorldEvent e ) {
+
+}
+
+class DRRPDamageAbsorber: Inventory {
+    default {
+        +Inventory.UNDROPPABLE;
+        Inventory.MaxAmount 1;
+        Inventory.Amount 1;
+    }
+
+    override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
+        if ( Owner == NULL || !( Owner is "DoomRPGPlayer" ) ) 
+            return;
+
+        newdamage = Owner.ACS_ScriptCall( "getRPGDefenseDamage", damage );
+        //console.printf( "Pre-damage: " .. damage .. "; post-damage: " .. newdamage .. "." );
+    }
 
 }
