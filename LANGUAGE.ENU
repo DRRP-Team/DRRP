@@ -414,6 +414,56 @@
     DRRP_D_BLUEDOOR                 = "You need a blue card to open this door";
     DRRP_D_GREENDOOR                = "You need a green card to open this door";
 //\\ DRRP
+
+// SHOP
+    DRRP_S_BACK                     = "Back";
+    DRRP_S_CLOSE                    = "Close";
+    DRRP_S_DIALOG                   = "What do you want to buy?";
+    DRRP_S_NOTENOUTH                = "Not enough credits!";
+    DRRP_S_NEXT_AMM                 = "Next (Ammo)";
+    DRRP_S_NEXT_FEA                 = "Next (Stats)";
+
+    DRRP_S_SEC_MED                  = "Heal";
+    DRRP_S_MED_SMEDKIT_4            = "Small medkit [4 credits]";
+    DRRP_S_MED_SMEDKIT_6            = "Small medkit [6 credits]";
+    DRRP_S_MED_SMEDKIT_8            = "Small medkit [8 credits]";
+    DRRP_S_MED_LMEDKIT_15           = "Large medkit [15 credits]";
+    DRRP_S_MED_LMEDKIT_35           = "Large medkit [35 credits]";
+    DRRP_S_MED_SSPHERE_30           = "Soul sphere [30 credits]";
+    DRRP_S_MED_SSPHERE_50           = "Soul sphere [50 credits]";
+    DRRP_S_MED_BERS_40              = "Berserker [40 credits]";
+
+    DRRP_S_SEC_AMM                  = "Ammo";
+    DRRP_S_AMM_HAL_2                = "10x Hal. Cans [2 credits]";
+    DRRP_S_AMM_HAL_3                = "10x Hal. Cans [3 credits]";
+    DRRP_S_AMM_HAL_4                = "10x Hal. Cans [4 credits]";
+    DRRP_S_AMM_HAL_5                = "10x Hal. Cans [5 credits]";
+    DRRP_S_AMM_BUL_2                = "10x Bullets [2 credits]";
+    DRRP_S_AMM_BUL_3                = "10x Bullets [3 credits]";
+    DRRP_S_AMM_BUL_4                = "10x Bullets [4 credits]";
+    DRRP_S_AMM_BUL_5                = "10x Bullets [5 credits]";
+    DRRP_S_AMM_SHE_4                = "10x Shells [4 credits]";
+    DRRP_S_AMM_SHE_6                = "10x Shells [6 credits]";
+    DRRP_S_AMM_SHE_8                = "10x Shells [8 credits]";
+    DRRP_S_AMM_SHE_10               = "10x Shells [10 credits]";
+    DRRP_S_AMM_ROC_5                = "3x Rockets [5 credits]";
+    DRRP_S_AMM_ROC_6                = "3x Rockets [6 credits]";
+    DRRP_S_AMM_ROC_10               = "3x Rockets [10 credits]";
+    DRRP_S_AMM_CEL_8                = "10x Cells [8 credits]";
+    DRRP_S_AMM_CEL_12               = "10x Cells [12 credits]";
+    DRRP_S_AMM_CEL_15               = "10x Cells [15 credits]";
+
+    DRRP_S_SEC_FEA                  = "Stats";
+    DRRP_S_FEA_ACC_8                = "+1 Accuracy [8 credits]";
+    DRRP_S_FEA_ACC_15               = "+1 Accuracy [15 credits]";
+    DRRP_S_FEA_AGI_8                = "+1 Agility [8 credits]";
+    DRRP_S_FEA_AGI_15               = "+1 Agility [15 credits]";
+    DRRP_S_FEA_STR_10               = "+1 Strength [10 credits]";
+    DRRP_S_FEA_STR_20               = "+1 Strength [20 credits]";
+    DRRP_S_FEA_DEF_10               = "+1 Defense [10 credits]";
+    DRRP_S_FEA_DEF_20               = "+1 Defense [20 credits]";
+//\\ SHOP
+
 // #=====# Entities #=====#
 
 // Monsters

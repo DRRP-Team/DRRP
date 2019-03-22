@@ -382,8 +382,8 @@
     DRRP_D_TMAP_RUSERNAMEAK         = "Программист, Маппер";
     DRRP_D_TMAP_RMORTHIMER          = "Программист";
     DRRP_D_TMAP_RSTORMCATCHER       = "Маппер";
-    DRRP_D_TMAP_RDSSKULL             = "Графика";
-    DRRP_D_TMAP_RLOLIMPIRE           = "Маппер";
+    DRRP_D_TMAP_RDSSKULL            = "Графика";
+    DRRP_D_TMAP_RLOLIMPIRE          = "Маппер";
 
     DRRP_D_USEFLASHLIGHT            = "Используйте фонарик";
 
@@ -396,6 +396,55 @@
     DRRP_D_BLUEDOOR                 = "Вам нужна синяя ключ-карта для открытия этой двери";
     DRRP_D_GREENDOOR                = "Вам нужна зеленая ключ-карта для открытия этой двери";
 //\\ DRRP
+
+// SHOP
+    DRRP_S_BACK                     = "Назад";
+    DRRP_S_CLOSE                    = "Закрыть";
+    DRRP_S_DIALOG                   = "Что желаете приобрести?";
+    DRRP_S_NOTENOUTH                = "Недостаточно кредитов!";
+    DRRP_S_NEXT_AMM                 = "Далее (Патроны)";
+    DRRP_S_NEXT_FEA                 = "Далее (Характеристики)";
+
+    DRRP_S_SEC_MED                  = "Лечение";
+    DRRP_S_MED_SMEDKIT_4            = "Мал. аптечка [4 кредита]";
+    DRRP_S_MED_SMEDKIT_6            = "Мал. аптечка [6 кредитов]";
+    DRRP_S_MED_SMEDKIT_8            = "Мал. аптечка [8 кредитов]";
+    DRRP_S_MED_LMEDKIT_15           = "Бол. аптечка [15 кредитов]";
+    DRRP_S_MED_LMEDKIT_35           = "Бол. аптечка [35 кредитов]";
+    DRRP_S_MED_SSPHERE_30           = "Сфера души [30 кредитов]";
+    DRRP_S_MED_SSPHERE_50           = "Сфера души [50 кредитов]";
+    DRRP_S_MED_BERS_40              = "Берсеркер [40 кредитов]";
+
+    DRRP_S_SEC_AMM                  = "Патроны";
+    DRRP_S_AMM_HAL_2                = "10 Порош. бал. [2 кредита]";
+    DRRP_S_AMM_HAL_3                = "10 Порош. бал. [3 кредита]";
+    DRRP_S_AMM_HAL_4                = "10 Порош. бал. [4 кредита]";
+    DRRP_S_AMM_HAL_5                = "10 Порош. бал. [5 кредитов]";
+    DRRP_S_AMM_BUL_2                = "10 Пист. патр. [2 кредита]";
+    DRRP_S_AMM_BUL_3                = "10 Пист. патр. [3 кредита]";
+    DRRP_S_AMM_BUL_4                = "10 Пист. патр. [4 кредита]";
+    DRRP_S_AMM_BUL_5                = "10 Пист. патр. [5 кредитов]";
+    DRRP_S_AMM_SHE_4                = "10 Патр. дроб. [4 кредита]";
+    DRRP_S_AMM_SHE_6                = "10 Патр. дроб. [6 кредитов]";
+    DRRP_S_AMM_SHE_8                = "10 Патр. дроб. [8 кредитов]";
+    DRRP_S_AMM_SHE_10               = "10 Патр. дроб. [10 кредитов]";
+    DRRP_S_AMM_ROC_5                = "3 Ракеты [5 кредитов]";
+    DRRP_S_AMM_ROC_6                = "3 Ракеты [6 кредитов]";
+    DRRP_S_AMM_ROC_10               = "3 Ракеты [10 кредитов]";
+    DRRP_S_AMM_CEL_8                = "10 Батарей [8 кредитов]";
+    DRRP_S_AMM_CEL_12               = "10 Батарей [12 кредитов]";
+    DRRP_S_AMM_CEL_15               = "10 Батарей [15 кредитов]";
+
+    DRRP_S_SEC_FEA                  = "Характеристики";
+    DRRP_S_FEA_ACC_8                = "+1 к Точности [8 кредитов]";
+    DRRP_S_FEA_ACC_15               = "+1 к Точности [15 кредитов]";
+    DRRP_S_FEA_AGI_8                = "+1 к Ловкости [8 кредитов]";
+    DRRP_S_FEA_AGI_15               = "+1 к Ловкости [15 кредитов]";
+    DRRP_S_FEA_STR_10               = "+1 к Силе [10 кредитов]";
+    DRRP_S_FEA_STR_20               = "+1 к Силе [20 кредитов]";
+    DRRP_S_FEA_DEF_10               = "+1 к Защите [10 кредитов]";
+    DRRP_S_FEA_DEF_20               = "+1 к Защите [20 кредитов]";
+//\\ SHOP
 
 // #=====# Entities #=====#
 

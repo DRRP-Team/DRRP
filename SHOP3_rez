@@ -10,11 +10,11 @@ namespace = "ZDoom";
 conversation {
     actor = "DRRPShop"; // Not a number!
     page {
-         goodbye = "Close";
-         name = "Shop";
-         dialog = "What do you want to buy?";
+         goodbye = "$DRRP_S_CLOSE";
+         name = "$DRRP_S_SEC_MED";
+         dialog = "$DRRP_S_DIALOG";
          choice {
-             text = "Small medikit [4 credits]";
+             text = "$DRRP_S_MED_SMEDKIT_4";
              giveitem = "SmallMedikit";
              nextpage = 1;
              nomessage = "Not enough credits!";
@@ -24,7 +24,7 @@ conversation {
              }
          }
          choice {
-             text = "Large medikit [15 credits]";
+             text = "$DRRP_S_MED_LMEDKIT_15";
              giveitem = "LargeMedikit";
              nextpage = 1;
              nomessage = "Not enough credits!";
@@ -34,7 +34,7 @@ conversation {
              }
          }
          choice {
-             text = "Soul sphere [30 credits]";
+             text = "$DRRP_S_MED_SSPHERE_30";
              giveitem = "SoulSphere";
              nextpage = 1;
              nomessage = "Not enough credits!";
@@ -44,7 +44,7 @@ conversation {
              }
          }
          choice {
-             text = "Berserker [40 credits]";
+             text = "$DRRP_S_MED_BERS_40";
              giveitem = "DRRPBerserkItem";
              nextpage = 1;
              nomessage = "Not enough credits!";
@@ -54,18 +54,18 @@ conversation {
              }
          }
          choice {
-             text = "Next (Ammo)";
+             text = "$DRRP_S_NEXT_AMM";
              nextpage = 2;
          }
     }
 
     page {
-         goodbye = "Close";
-         name = "Ammo";
-         dialog = "What do you want to buy?";
+         goodbye = "$DRRP_S_CLOSE";
+         name = "$DRRP_S_SEC_AMM";
+         dialog = "$DRRP_S_DIALOG";
          choice {
-             text = "10x Hal. Cans [2 credits]";
-             giveitem = "Balloon";
+             text = "$DRRP_S_AMM_HAL_2";
+             giveitem = "DRRPShopBalloon";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -74,8 +74,8 @@ conversation {
              }
          }
          choice {
-             text = "10x Bullets [2 credits]";
-             giveitem = "ClipBox";
+             text = "$DRRP_S_AMM_BUL_2";
+             giveitem = "DRRPShopClipBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -84,8 +84,8 @@ conversation {
              }
          }
          choice {
-             text = "10x Shells [4 credits]";
-             giveitem = "ShellBox";
+             text = "$DRRP_S_AMM_SHE_4";
+             giveitem = "DRRPShopShellBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -94,8 +94,8 @@ conversation {
              }
          }
          choice {
-             text = "3x Rockets [5 credits]";
-             giveitem = "RocketBox";
+             text = "$DRRP_S_AMM_ROC_5";
+             giveitem = "DRRPShopRocketBox";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -104,8 +104,8 @@ conversation {
              }
          }
          choice {
-             text = "10x Cells [8 credits]";
-             giveitem = "CellPack";
+             text = "$DRRP_S_AMM_CEL_8";
+             giveitem = "DRRPShopCellPack";
              nomessage = "Not enough credits!";
              nextpage = 2;
              cost {
@@ -114,17 +114,17 @@ conversation {
              }
          }
          choice {
-             text = "Next (Stats)";
+             text = "$DRRP_S_NEXT_FEA";
              nextpage = 3;
          }
     }
 
     page {
-         goodbye = "Close";
-         name = "Stats";
-         dialog = "What do you want to buy?";
+         goodbye = "$DRRP_S_CLOSE";
+         name = "$DRRP_S_SEC_FEA";
+         dialog = "$DRRP_S_DIALOG";
          choice {
-             text = "+1 Accuracy [15 credits]";
+             text = "$DRRP_S_FEA_ACC_8";
              giveitem = "DRRPShopPlayerAccuracy";
              nomessage = "Not enough credits!";
              nextpage = 3;
@@ -134,7 +134,7 @@ conversation {
              }
          }
          choice {
-             text = "+1 Agility [15 credits]";
+             text = "$DRRP_S_FEA_AGI_8";
              giveitem = "DRRPShopPlayerAgility";
              nomessage = "Not enough credits!";
              nextpage = 3;
@@ -144,7 +144,7 @@ conversation {
              }
          }
          choice {
-             text = "+1 Strength [20 credits]";
+             text = "$DRRP_S_FEA_STR_10";
              giveitem = "DRRPShopPlayerStrength";
              nomessage = "Not enough credits!";
              nextpage = 3;
@@ -154,7 +154,7 @@ conversation {
              }
          }
          choice {
-             text = "+1 Defense [20 credits]";
+             text = "$DRRP_S_FEA_DEF_10";
              giveitem = "DRRPShopPlayerDefense";
              nomessage = "Not enough credits!";
              nextpage = 3;
@@ -163,9 +163,8 @@ conversation {
                  amount = 10;
              }
          }
-
          choice {
-             text = "Back";
+             text = "$DRRP_S_BACK";
              nextpage = 1;
          }
     }
