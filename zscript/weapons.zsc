@@ -578,7 +578,7 @@ class HellHoundGun: Weapon {
         Weapon.AmmoGive 100;
         Weapon.AmmoType "HellHoundHealth";
         Weapon.SlotPriority 3;
-        Weapon.SelectionOrder 83;
+        Weapon.SelectionOrder 7;
         DamageType "DRRPPhysicalDmg";
     }
 
@@ -643,7 +643,7 @@ class CerberusGun: HellHoundGun {
 
         Weapon.AmmoType "CerberusHealth";
         Weapon.SlotPriority 2;
-        Weapon.SelectionOrder 82;
+        Weapon.SelectionOrder 6;
     }
 
     States {
@@ -690,7 +690,7 @@ class DemonWolfGun: HellHoundGun {
 
         Weapon.AmmoType "DemonWolfHealth";
         Weapon.SlotPriority 1;
-        Weapon.SelectionOrder 81;
+        Weapon.SelectionOrder 5;
     }
 
     States {
