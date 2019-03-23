@@ -354,6 +354,26 @@ Script "RPGIncrementFeature" (int feature) {
     }
 }
 
+Script "RPGSetFeature" (int feature, int value) {
+    switch (feature) {
+        case 0:
+            Player.accuracy = value;
+            Terminate;
+        case 1:
+            Player.agility = value;
+            Terminate;
+        case 2:
+            Player.defense = value;
+            Terminate;
+        case 3:
+            Player.strength = value;
+            Terminate;
+        default:
+            if (GetCVar("drrp_debug_mode")) Print(s:"[BUG] Unknown player feature ", i:feature);
+            Terminate;
+    }
+}
+
 Script "levelUp" (void) { // for the "pukename levelup" command
     ACS_NamedExecuteAlways("onActorDie", 0, true, true);
 }
