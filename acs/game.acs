@@ -258,6 +258,7 @@ Script "onActorDie" (bool killedByPlayer, bool forceLevelUp) {
 
     if (Player.XP % KILLS_FOR_NEXT_LEVELUP == 0 || forceLevelUp) {
         // Levelup
+        SetResultValue(1);
         GiveInventory("DRRPPlayerLevel", 4);
         Player.Level        += 1;
         Player.maxHealth    += 4;
@@ -351,6 +352,28 @@ Script "RPGIncrementFeature" (int feature) {
         default:
             if (GetCVar("drrp_debug_mode")) Print(s:"[BUG] Unknown player feature ", i:feature);
             break;
+    }
+}
+
+
+Script "RPGGetFeature" (int feature, int value) {
+    switch (feature) {
+        case 0:
+            SetResultValue(Player.accuracy);
+            Terminate;
+        case 1:
+            SetResultValue(Player.agility);
+            Terminate;
+        case 2:
+            SetResultValue(Player.defense);
+            Terminate;
+        case 3:
+            SetResultValue(Player.strength);
+            Terminate;
+        default:
+            if (GetCVar("drrp_debug_mode")) Print(s:"[BUG] Unknown player feature ", i:feature);
+            SetResultValue(666);
+            Terminate;
     }
 }
 
