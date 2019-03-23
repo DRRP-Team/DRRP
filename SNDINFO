@@ -151,13 +151,43 @@ HODSONG                     sounds/HODSONG
 
 // === Weapons ===
 weapon/gas                  sounds/GAS
-weapon/axe/hit              sounds/AXEBLOOD
+// weapon/axe/hit              sounds/AXEBLOOD
 weapon/axe/miss             sounds/AXEMISS
 weapon/axe/block            sounds/AXEBLOCK
+weapon/axe/wall             sounds/weapons/axe/wall.ogg
+weapon/axe/hit1             sounds/weapons/axe/hit1.ogg
+weapon/axe/hit2             sounds/weapons/axe/hit2.ogg
+weapon/axe/hit3             sounds/weapons/axe/hit3.ogg
+weapon/axe/hit4             sounds/weapons/axe/hit4.ogg
+weapon/axe/hit5             sounds/weapons/axe/hit5.ogg
+weapon/axe/hit6             sounds/weapons/axe/hit6.ogg
+$random weapon/axe/hit {
+    weapon/axe/hit1
+    weapon/axe/hit2
+    weapon/axe/hit3
+    weapon/axe/hit4
+    weapon/axe/hit5
+    weapon/axe/hit6
+}
+
+weapon/axe/swing1           sounds/weapons/axe/swing1.ogg
+weapon/axe/swing2           sounds/weapons/axe/swing2.ogg
+weapon/axe/swing3           sounds/weapons/axe/swing3.ogg
+$random weapon/axe/swing {
+    weapon/axe/swing1
+    weapon/axe/swing2
+    weapon/axe/swing3
+}
 
 weapon/fireext/loop         sounds/FIREELOP
 weapon/fireext/stop         sounds/FIREESTP
 weapon/fireext/pick         sounds/WTF
+
+weapon/pistol/fire          sounds/weapons/pistol/fire.ogg
+
+weapon/chaingun/fire        sounds/weapons/chaingun/fire.ogg
+
+weapon/ssg/fire             sounds/weapons/ssg/fire.ogg
 
 // === Player ===
 player/taunt                sounds/TAUNT
