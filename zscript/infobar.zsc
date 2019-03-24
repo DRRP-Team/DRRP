@@ -46,6 +46,8 @@ class InfobarHandler: EventHandler {
                     SetInfobarString( tClass.GetTag() );
                     if ( tClass.bCorpse ) InfobarInv.InfoString = InfobarInv.InfoString .. " ("
                                           .. StringTable.Localize( "$DRRP_M_CORPSE" ) .. ")";
+                    //else if ( tClass.health <= 0 ) InfobarInv.InfoString = InfobarInv.InfoString .. " (" 
+                    //                    .. StringTable.Localize( "$DRRP_OB_DESTROYED" ) .. ")";
                     InfobarInv.FontColor = InfobarFontColor;
 
                 } // of if ( InfobarTraceRay.HitType == TRACE_HitActor )
