@@ -7,25 +7,78 @@
 
 
 class RPGSystemHandler: EventHandler {
-
     override void OnRegister() {
         SetOrder( 670 );
     }
+
+
+	static void setAllFeatures( DRRPPlayer player )  {
+		player.health       = player.MaxHealth;
+		player.ForwardMove1 = player.Agility * 0.025 + 0.6;
+		player.ForwardMove2 = player.ForwardMove1 * 0.58333;
+		player.SideMove1    = player.Agility * 0.025 + 0.55;
+		player.SideMove2    = player.SideMove1 * 0.54545;
+	}
 
     override void WorldThingDamaged( WorldEvent e ) {
 
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
             if ( e.Thing.health <= 0 ) {
-                players[ 0 ].mo.ACS_NamedExecuteAlways( "onActorDie", 0, e.DamageSource is "DoomRPGPlayer" );
+                if ( ( e.DamageSource is "DoomRPGPlayer" ) && e.Thing.bIsMonster ) {
+
+					int playerNum = -1;
+					for ( int i = 0; i < MAXPLAYERS; i++ )
+						if ( players[ i ].mo == e.DamageSource ) {
+							playerNum = i;
+							break;
+						}
+
+					if ( ( playerNum < 0 ) || ( playerNum > MAXPLAYERS ) ) {
+						console.printf( "\034GWarning\034-: impossible value of player number (#WorldThingDamaged)." );
+						return;
+					}
+					DRRPPlayer player = DRRPPlayer( players[ playerNum ].mo );
+
+					player.Experience++;
+					//player.Experience = e.Thing.FindInventory( "ExpGain" ).Amount;
+
+					if ( player.Experience >= player.NextLevelXP )
+						EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", playerNum );
+                }
+
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) { 
+
     } // override void WorldThingDamaged( WorldEvent e ) {
 
+
+	override void NetworkProcess( ConsoleEvent e ) {
+
+		if ( e.Name ~== "DRRP_LevelUp_Attributes" ) {
+
+			if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) ) return;
+			DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
+			player.ACS_ScriptCall( "levelUp", 0 );
+
+        	player.Level       += 1;
+        	player.NextLevelXP += player.Level * 18;
+        	player.MaxHealth   += 4;
+        	player.Agility     += 1;
+        	player.Accuracy    += 1;
+        	player.Strength    += 2;
+        	player.Defense     += 2;
+        	//player.SetFeature( RPG_MaxArmor, player.GetFeature( RPG_MaxArmor ) + 4 );
+
+			setAllFeatures( player );
+		}
+
+	} // override void NetworkProcess( ConsoleEvent e ) {
 }
 
+
 class DRRPDamageAbsorber: Inventory {
-    default {
+    Default {
         +Inventory.UNDROPPABLE;
         Inventory.MaxAmount 1;
         Inventory.Amount 1;
@@ -34,9 +87,49 @@ class DRRPDamageAbsorber: Inventory {
     override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
         if ( Owner == NULL || !( Owner is "DoomRPGPlayer" ) ) 
             return;
-
-        newdamage = Owner.ACS_ScriptCall( "getRPGDefenseDamage", damage );
-        //console.printf( "Pre-damage: " .. damage .. "; post-damage: " .. newdamage .. "." );
+		newdamage = DamageHandler.getRPGAttackDamage( PlayerPawn( Owner ), damage, damage );
     }
 
+}
+
+class DRRPShopPlayerAccuracy: Inventory {
+	uint8 thisFeatureType;
+
+	Default {
+		Inventory.Amount 1;
+		Inventory.MaxAmount 511; // When ( Amount & 256 != 0 ), decrase value of the feature.
+	}
+
+	override void BeginPlay() {
+		thisFeatureType = RPG_Accuracy;
+		//Super.BeginPlay();
+	}
+
+	override void PostBeginPlay() {
+		if ( Owner && Owner is "DRRPPlayer" ) {
+			DRRPPlayer( Owner ).SetFeature( Owner, thisFeatureType, 
+					DRRPPlayer( Owner ).GetFeature( Owner, thisFeatureType ) + ( Amount & 0x100? -Amount : Amount ) );
+		}
+		Destroy();
+		DetachFromOwner();
+		Super.PostBeginPlay();
+	}
+}
+
+class DRRPShopPlayerAgility: DRRPShopPlayerAccuracy {
+	override void BeginPlay() {
+		thisFeatureType = RPG_Agility;
+	}
+}
+
+class DRRPShopPlayerDefense: DRRPShopPlayerAccuracy {
+	override void BeginPlay() {
+		thisFeatureType = RPG_Defense;
+	}
+}
+
+class DRRPShopPlayerStrength: DRRPShopPlayerAccuracy {
+	override void BeginPlay() {
+		thisFeatureType = RPG_Strength;
+	}
 }

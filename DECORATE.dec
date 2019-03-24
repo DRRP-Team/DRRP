@@ -34,7 +34,7 @@
 // (c) DSSKULL
 
 
-Actor DoomRPGPlayer : DoomPlayer {
+Actor DoomRPGPlayer: DRRPPlayer {
     Health 30
     Player.MaxHealth 30
     Player.MugShotMaxHealth 30

@@ -91,3 +91,52 @@ class DRRPCharacter_ZSPatch: Actor {
         TransfParticleActor.master = self;
     } // of void A_DRRP_TransformationParticles( void )
 }
+
+class DRRPPlayer: DoomPlayer {
+
+    int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength;
+
+	override void BeginPlay() {
+		Experience = Accuracy = Agility = Defense = Strength = 0;
+		Level = 1;
+		NextLevelXP = 18;
+		Super.BeginPlay();
+	}
+
+    static int GetFeature( Actor activator, int type ) {
+		if ( activator && activator.player && ( activator is "DRRPPlayer" ) ) {
+			DRRPPlayer player = DRRPPlayer( activator );
+	        switch ( type ) {
+	            case RPG_MaxHealth:  return player.MaxHealth;
+	            case RPG_Experience: return player.Experience;
+	            case RPG_NextLevelXP:return player.NextLevelXP;
+	            case RPG_Level:      return player.Level;
+	            case RPG_MaxArmor:   break;//returns "200" //return self.FindInventory( "BasicArmor" ).MaxAmount;
+	            case RPG_Accuracy:   return player.Accuracy;
+	            case RPG_Agility:    return player.Agility;
+	            case RPG_Defense:    return player.Defense;
+	            case RPG_Strength:   return player.Strength;
+	            default: break;
+	        }
+		} // of if ( activator && activator.player && ( activator is "DRRPPlayer" ) ) {
+        return -1;
+    }
+
+    static void SetFeature( Actor activator, int type, int value ) {
+        if ( ( value < 0 ) || !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return;
+		DRRPPlayer player = DRRPPlayer( activator );
+        switch ( type ) {
+            case RPG_MaxHealth:  player.MaxHealth = value; break;
+            case RPG_Experience: player.Experience = value; break;
+            case RPG_NextLevelXP:player.NextLevelXP = value; break;
+            case RPG_Level:      player.Level = value; break;
+            case RPG_MaxArmor:   break;//self.FindInventory( "BasicArmor" ).MaxAmount = value;
+            case RPG_Accuracy:   player.Accuracy = value; break;
+            case RPG_Agility:  { player.Agility = value; RPGSystemHandler.setAllFeatures( player ); break; }
+            case RPG_Defense:    player.Defense = value; break;
+            case RPG_Strength:   player.Strength = value; break;
+            default: break;
+        }
+    }
+
+}

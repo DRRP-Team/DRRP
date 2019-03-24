@@ -4,6 +4,19 @@
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
+
+enum RPGGetFeatureTypes {
+    RPG_Level,
+    RPG_Experience,
+    RPG_NextLevelXP,
+    RPG_MaxHealth,
+    RPG_MaxArmor,
+    RPG_Accuracy,
+    RPG_Agility,
+    RPG_Defense,
+    RPG_Strength
+}
+
  
 class DRRPIntToStringBruteforceMultiMapArrayWrapper {
     Array<String> TheStringArray;
