@@ -76,12 +76,12 @@ class StatInfoMenu : OptionMenu {
         addSpecIntStr( desc, pStat.mo.health, pStat.mo.MaxHealth, StatLocalize( "HEALTH" ), true );
         addItemStr( desc, pStat.mo.FindInventory( "BasicArmor" ), StatLocalize( "ARMOR" ) );
         addItemStr( desc, pStat.mo.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
-        addStr( desc, cNormal, StatLocalize( "LEVEL" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "EXPERIENCE" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "DEFENCE" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "STRENGTH" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "AGILITY" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "ACCURACY" ) .. notNow );
+        addStr( desc, cNormal, StatLocalize( "LEVEL" ) .. DRRPPlayer( pStat.mo ).Level );
+        addSpecIntStr( desc, DRRPPlayer( pStat.mo ).Experience, DRRPPlayer( pStat.mo ).NextLevelXP, StatLocalize( "EXPERIENCE" ) );
+        addStr( desc, cNormal, StatLocalize( "DEFENCE" ) .. DRRPPlayer( pStat.mo ).Defense );
+        addStr( desc, cNormal, StatLocalize( "STRENGTH" ) .. DRRPPlayer( pStat.mo ).Strength );
+        addStr( desc, cNormal, StatLocalize( "AGILITY" ) .. DRRPPlayer( pStat.mo ).Agility );
+        addStr( desc, cNormal, StatLocalize( "ACCURACY" ) .. DRRPPlayer( pStat.mo ).Accuracy );
 
         addHeaderStr( desc, StatLocalize( "THISSECTOR_T" ) );
         addStr( desc, cNormal, StatLocalize( "TIME" ) .. level.time / 35 );
