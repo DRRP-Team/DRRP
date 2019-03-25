@@ -35,6 +35,11 @@ Actor DRRPTransformationParticle: DRRPParticle {
     Translation "177:191=213:223"
     Radius 1
     Height 2
+    States {
+        Spawn:
+            BLUD CBA 3 Bright
+            Stop
+    }
 }
 
 // Environment spawners
