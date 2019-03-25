@@ -83,11 +83,18 @@ class DRRPExplosion_ZSPatch: Actor {
 
 }
 
+const velocityParticlesDelay = 25;
+
 class DRRPCharacter_ZSPatch: Actor {
 
-    void A_DRRP_TransformationParticles( void ) {
-        Actor TransfParticleActor = Spawn( "DRRPTransformationParticle", 
-                                ( Random( 0, 20 ), Random( 0, 20 ), Random( 10, 40 ) ) );
-        TransfParticleActor.master = self;
+    void A_DRRP_TransformationParticles() {
+        Actor particle = Spawn( "DRRPTransformationParticle", (
+                                pos.x + Random( radius * 0.5, radius * 1.5 ) * RandomPick( -1, 1 ),
+                                pos.y + Random( radius * 0.5, radius * 1.5 ) * RandomPick( -1, 1 ),
+                                pos.z + Random( pos.z + height * 0.15, height * 1.1 ) ) );
+
+        particle.Vel = ( ( pos.x - particle.pos.x ) / velocityParticlesDelay,
+                         ( pos.y - particle.pos.y ) / velocityParticlesDelay,
+                         ( ( pos.z + height / 2 ) - particle.pos.z ) / velocityParticlesDelay );
     } // of void A_DRRP_TransformationParticles( void )
 }

@@ -27,7 +27,14 @@ Actor BlackHole 10666 {
 Actor DRRPParticle : Blood {}
 Actor DRRPBlood : DRRPParticle {}
 Actor DRRPTransformationParticle: DRRPParticle {
+    +NOGRAVITY
+    +NOBLOCKMAP
+    -BLOCKEDBYSOLIDACTORS
+    -SOLID
+    +MOVEWITHSECTOR
     Translation "177:191=213:223"
+    Radius 1
+    Height 2
 }
 
 // Environment spawners

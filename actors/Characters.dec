@@ -7,7 +7,7 @@
 
 // 10500-10555
 
-Actor DRRPCharacter /*: DRRPCharacter_ZSPatch*/ {
+Actor DRRPCharacter: DRRPCharacter_ZSPatch {
     +SOLID
     +USESPECIAL
     +FRIENDLY
@@ -31,9 +31,18 @@ Actor DRRPCharacter /*: DRRPCharacter_ZSPatch*/ {
             "####" A 1
             Wait
         Turn:
-            "####" A 0 A_Pain
-            "####" AAAAA 1 A_SpawnItemEx("DRRPTransformationParticle", 
-                            Random(0,20), Random(0, 20), Random(10, 40) )//A_DRRP_TransformationParticles
+            "####" A 1 {
+                A_DRRP_TransformationParticles();
+                A_Pain();
+            }
+            "####" AAAAA 0 A_DRRP_TransformationParticles()
+            "####" A 1 A_DRRP_TransformationParticles()
+            "####" AAAAA 0 A_DRRP_TransformationParticles()
+            "####" A 1 A_DRRP_TransformationParticles()
+            "####" AAAAA 0 A_DRRP_TransformationParticles()
+            "####" A 1 A_DRRP_TransformationParticles()
+            "####" AAAAA 0 A_DRRP_TransformationParticles()
+            "####" A 1 A_DRRP_TransformationParticles()
             Loop
         Pain:
             "####" A 0 A_Pain
