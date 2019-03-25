@@ -67,12 +67,15 @@ Actor DRRPLava: DRRPLava_ZSPatch 10251 {
     Health 10
     Mass 0x7FFFFFFF
     DamageFactor "Normal", 0
+	Args 0, 0, 0, 0, 0 // Last (fifth) argument is visiblity of the lava pool.
 
     States {
         Spawn:
+            TNT1 A 0 Bright A_JumpIf( Args[ 4 ] != 0, "SpawnLoop" );
             LAVA A 0 Bright
-            LAVA A 1 Bright A_PlaySound("ICOSCRE", CHAN_7, 0.9, true, 2.5)
-            Loop
+        SpawnLoop:
+			"####" A 1 Bright A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 )
+			Wait;
     }
 }
 
