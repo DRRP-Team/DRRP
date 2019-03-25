@@ -37,7 +37,7 @@ Actor DRRPTransformationParticle: DRRPParticle {
     Height 2
     States {
         Spawn:
-            BLUD CBA 3 Bright
+            BLUD CBA 2 Bright // The live length (straight relation)
             Stop
     }
 }
