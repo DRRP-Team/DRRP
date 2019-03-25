@@ -71,11 +71,11 @@ Actor DRRPLava: DRRPLava_ZSPatch 10251 {
 
     States {
         Spawn:
-            TNT1 A 0 Bright A_JumpIf( Args[ 4 ] != 0, "SpawnLoop" );
+            TNT1 A 0 Bright A_JumpIf( Args[ 4 ] != 0, "SpawnLoop" )
             LAVA A 0 Bright
         SpawnLoop:
 			"####" A 1 Bright A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 )
-			Wait;
+			Wait
     }
 }
 
