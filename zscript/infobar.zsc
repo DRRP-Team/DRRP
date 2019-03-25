@@ -41,14 +41,20 @@ class InfobarHandler: EventHandler {
                     if ( tClass.bIsMonster )InfobarFontColor = Font.CR_RED;
                     if ( tClass.bFriendly ) InfobarFontColor = Font.CR_GREEN;
                     if ( tClass.bSpecial )  InfobarFontColor = Font.CR_SAPPHIRE;
-                    if ( tClass.bCorpse )   InfobarFontColor = Font.CR_DARKGRAY;
 
                     SetInfobarString( tClass.GetTag() );
-                    if ( tClass.bCorpse ) InfobarInv.InfoString = InfobarInv.InfoString .. " ("
-                                          .. StringTable.Localize( "$DRRP_M_CORPSE" ) .. ")";
-                    //else if ( tClass.health <= 0 ) InfobarInv.InfoString = InfobarInv.InfoString .. " (" 
-                    //                    .. StringTable.Localize( "$DRRP_OB_DESTROYED" ) .. ")";
+                    if ( tClass.bCorpse ) {
+                        InfobarInv.InfoString = InfobarInv.InfoString .. " ("
+                                  .. StringTable.Localize( "$DRRP_M_CORPSE" ) .. ")";
+                        InfobarFontColor = Font.CR_DARKGRAY;
+                    } else if ( tClass.health <= 0 ) {
+                        InfobarInv.InfoString = InfobarInv.InfoString .. " (" 
+                                  .. StringTable.Localize( "$DRRP_E_BROKEN" ) .. ")";
+                        InfobarFontColor = Font.CR_DARKGRAY;
+                    }
+
                     InfobarInv.FontColor = InfobarFontColor;
+
 
                 } // of if ( InfobarTraceRay.HitType == TRACE_HitActor )
 
