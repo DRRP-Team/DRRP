@@ -43,7 +43,7 @@ PointLight BLAMP {
     attenuate 1
 }
 
-Object BlueLamp {
+Object DRRPBlueLamp {
     Frame COLU {
         light BLAMP
     }
@@ -51,7 +51,7 @@ Object BlueLamp {
 // end Blue lamp
 
 // Yellow lamp
-Object YellowLamp {
+Object DRRPYellowLamp {
     Frame COLU {
         light LAMP
     }
@@ -65,7 +65,7 @@ PulseLight Alarm1Light {
     Interval 0.5
 }
 
-Object Alarm1 {
+Object DRRPAlarm1 {
     Frame ALAR {
         Light Alarm1Light
     }

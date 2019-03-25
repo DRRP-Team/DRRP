@@ -34,7 +34,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
     }
 }
 
-Actor Table 10702 {
+Actor DRRPTable 10702 {
     //$Category DDecorations
 
     +SOLID
@@ -54,14 +54,14 @@ Actor Table 10702 {
     }
 }
 
-Actor YellowLamp : Column replaces Column {
+Actor DRRPYellowLamp : Column replaces Column {
     //$Category DDecorations
     
     Tag "$DRRP_E_YELLOWLAMP"
     Radius 20
 }
 
-Actor BlueLamp : YellowLamp 10703 {
+Actor DRRPBlueLamp : DRRPYellowLamp 10703 {
     //$Category DDecorations
 
     Tag "$DRRP_E_BLUELAMP"
@@ -83,7 +83,7 @@ Actor DRRPChair 10750 {
     }
 }
 
-Actor Rod : ExplosiveBarrel 10704 {
+Actor DRRPRod : ExplosiveBarrel 10704 {
     //$Category DDecorations
 
     Tag "$DRRP_E_POWERCOUPLING"
@@ -110,12 +110,12 @@ Actor Rod : ExplosiveBarrel 10704 {
             ROD3 H  1  Bright A_Quake(6, 10, 0, 256)
             ROD3 IJKLM 1
             ROD3 N  1 ACS_ExecuteAlways(101, 0)
-            ROD3 N  1 A_SpawnItem("RodTrash")
+            ROD3 N  1 A_SpawnItem("DRRPRodTrash")
             Stop
     }
 }
 
-Actor RodTrash {
+Actor DRRPRodTrash {
     +SOLID
     +SHOOTABLE
 
@@ -136,7 +136,7 @@ Actor RodTrash {
     }
 }
 
-Actor Crate 10705 {
+Actor DRRPCrate 10705 {
     //$Category DDecorations
 
     +SOLID
@@ -160,14 +160,14 @@ Actor Crate 10705 {
             Stop
         Pain:
             CRAT A 0
-            CRAT AA 0 A_SpawnItemEx("CrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(3, 7), Random(-5, 5), Random(-5, 5), Random(1, 5))
+            CRAT AA 0 A_SpawnItemEx("DRRPCrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(3, 7), Random(-5, 5), Random(-5, 5), Random(1, 5))
             Goto Spawn
         Death:
             CRAT A 0
-            CRAT AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("CrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(1, 6), Random(-4, 4), Random(-4, 4), Random(1, 4))
+            CRAT AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DRRPCrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(1, 6), Random(-4, 4), Random(-4, 4), Random(1, 4))
             CRAT A 0 A_Quake(1, 18, 0, 128)
             CRT2 B 4
-            CRT2 C 3 A_SpawnItemEx("CrateSpawner")
+            CRT2 C 3 A_SpawnItemEx("DRRPCrateSpawner")
             CRT2 D 3
             CRT2 E 3 A_NoBlocking
             CRT2 FG 4
@@ -176,9 +176,9 @@ Actor Crate 10705 {
     }
 }
 
-Actor YellowCrate : Crate 10766 {}
+Actor DRRPYellowCrate : DRRPCrate 10766 {}
 
-Actor CrateShard {
+Actor DRRPCrateShard {
     -SOLID
     -NOGRAVITY
     -BLOCKEDBYSOLIDACTORS
@@ -233,7 +233,7 @@ Actor CrateShard {
     }
 }
 
-Actor CrateSpawner: RandomSpawner {
+Actor DRRPCrateSpawner: RandomSpawner {
     // TODO: Add original spawn chances
     DropItem "ArmorBonus"
     DropItem "SmallMedikit"
@@ -245,10 +245,9 @@ Actor CrateSpawner: RandomSpawner {
     DropItem "Balloon"
     DropItem "RocketAmmo"
     DropItem "Explosion"
-//    DropItem ""
 }
 
-Actor Wardrobe 10706  {
+Actor DRRPWardrobe 10706  {
     //$Category DDecorations
 
     +SOLID
@@ -257,7 +256,7 @@ Actor Wardrobe 10706  {
 
     Tag "$DRRP_E_CABINET"
     Radius 20
-    Height 27
+    Height 50
     Mass 0x7FFFFFFF
     ProjectilePassHeight -16
 
@@ -268,24 +267,7 @@ Actor Wardrobe 10706  {
     }
 }
 
-Actor Bed 10707  {
-    //$Category DDecorations
-
-    +SOLID
-
-    Tag "$DRRP_E_BUNKBEDS"
-    Radius 14
-    Height 57
-    Mass 0x7FFFFFFF
-
-    States {
-        Spawn:
-            BEDS A -1
-            Stop
-    }
-}
-
-Actor BedNosprite 10711 {
+Actor DRRPBed 10707  {
     //$Category DDecorations
 
     +SOLID
@@ -297,12 +279,22 @@ Actor BedNosprite 10711 {
 
     States {
         Spawn:
+            BEDS A -1
+            Stop
+    }
+}
+
+Actor DRRPBed_WithoutSprite: DRRPBed 10711 {
+    //$Category DDecorations
+
+    States {
+        Spawn:
             TNT1 A -1
             Stop
     }
 }
 
-Actor Exit 10708  {
+Actor DRRPExit 10708  {
     //$Category DDecorations
 
     -SOLID
@@ -319,7 +311,7 @@ Actor Exit 10708  {
     }
 }
 
-Actor Sink 10709  {
+Actor DRRPSink 10709  {
     //$Category DDecorations
 
     +SOLID
@@ -339,12 +331,12 @@ Actor Sink 10709  {
             Stop
         Death:
             TNT1 A 0
-            TNT1 A 0 A_SpawnItem("AqueductFountain")
+            TNT1 A 0 A_SpawnItem("DRRPAqueductFountain")
             Stop
     }
 }
 
-Actor Toilet 10710 {
+Actor DRRPToilet 10710 {
     //$Category DDecorations
 
     +SOLID
@@ -364,12 +356,12 @@ Actor Toilet 10710 {
             Stop
         Death:
             TNT1 A 0
-            TNT1 A 0 A_SpawnItem("AqueductFountain")
+            TNT1 A 0 A_SpawnItem("DRRPAqueductFountain")
             Stop
     }
 }
 
-Actor AqueductFountain {
+Actor DRRPAqueductFountain {
     //$Category DDecorations
 
     -SOLID
@@ -389,7 +381,7 @@ Actor AqueductFountain {
     }
 }
 
-Actor CEFEcon 10743  {
+Actor DRRPCEFEcon 10743  {
     //$Category DDecorations
 
     -SOLID
@@ -403,7 +395,7 @@ Actor CEFEcon 10743  {
             Loop
     }
 }
-Actor CEFRcon: CEFEcon 10744 {
+Actor DRRPCEFRcon: DRRPCEFEcon 10744 {
     //$Category DDecorations
 
     Tag "$DRRP_D_ALARM"
@@ -415,7 +407,7 @@ Actor CEFRcon: CEFEcon 10744 {
     }
 }
 
-Actor Alarm1 10745  {
+Actor DRRPAlarm1 10745  {
     //$Category DDecorations
 
     +NOCLIP
@@ -435,7 +427,7 @@ Actor Alarm1 10745  {
     }
 }
 
-Actor Alarm2: KlaxonWarningLight 10746  {
+Actor DRRPAlarm2: KlaxonWarningLight 10746  {
     //$Category DDecorations
 
     Tag "$DRRP_D_ALARM"
@@ -446,7 +438,7 @@ Actor Alarm2: KlaxonWarningLight 10746  {
     }
 }
 
-Actor Lightningactor777 19689 {
+Actor DRRPLightningactor777 19689 {
     //$Category DDecorations
 
     -SOLID
@@ -460,7 +452,7 @@ Actor Lightningactor777 19689 {
     }
 }
 
-Actor TunnelLights 19691 {
+Actor DRRPTunnelLights 19691 {
     //$Category DDecorations
 
     +NOGRAVITY
@@ -481,7 +473,7 @@ Actor TunnelLights 19691 {
     }
 }
 
-Actor RubbleSmall 19692 {
+Actor DRRPRubbleSmall 19692 {
     //$Category DDecorations
 
     +FORCEXYBILLBOARD
@@ -508,7 +500,7 @@ Actor RubbleSmall 19692 {
     }
 }
 
-Actor RubbleMedium : RubbleSmall 1332 {
+Actor DRRPRubbleMedium : DRRPRubbleSmall 1332 {
     //$Category DDecorations
 
     +SOLID
@@ -527,7 +519,7 @@ Actor RubbleMedium : RubbleSmall 1332 {
     }
 }
 
-Actor RubbleLarge : RubbleMedium 1333 {
+Actor DRRPRubbleLarge : DRRPRubbleMedium 1333 {
     //$Category DDecorations
 
     Radius 64
@@ -542,7 +534,7 @@ Actor RubbleLarge : RubbleMedium 1333 {
     }
 }
 
-Actor CeilLamp1 1316 {
+Actor DRRPCeilLamp1 1316 {
     //$Category DDecorations
 
     +NOGRAVITY
@@ -559,7 +551,7 @@ Actor CeilLamp1 1316 {
     }
 }
 
-Actor CeilLamp2: CeilLamp1 1317  {
+Actor DRRPCeilLamp2: DRRPCeilLamp1 1317  {
     //$Category DDecorations
 
     States {
@@ -569,7 +561,7 @@ Actor CeilLamp2: CeilLamp1 1317  {
     }
 }
 
-Actor CeilLamp3: CeilLamp1 1726  {
+Actor DRRPCeilLamp3: DRRPCeilLamp1 1726  {
     //$Category DDecorations
 
     States {
@@ -579,7 +571,7 @@ Actor CeilLamp3: CeilLamp1 1726  {
     }
 }
 
-Actor ShittyFog 10765 {
+Actor DRRPShittyFog 10765 {
     //$Category DDecorations
     //$Sprite STEML0
 
