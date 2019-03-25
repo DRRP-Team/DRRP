@@ -59,7 +59,6 @@ class RPGSystemHandler: EventHandler {
 
 			if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) ) return;
 			DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
-			player.ACS_ScriptCall( "levelUp", 0 );
 
         	player.Level       += 1;
         	player.NextLevelXP += player.Level * 18;
@@ -70,6 +69,7 @@ class RPGSystemHandler: EventHandler {
         	player.Defense     += 2;
         	//player.SetFeature( RPG_MaxArmor, player.GetFeature( RPG_MaxArmor ) + 4 );
 
+			player.ACS_ScriptCall( "levelUp", 0 );
 			setAllFeatures( player );
 		}
 
@@ -87,7 +87,8 @@ class DRRPDamageAbsorber: Inventory {
     override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
         if ( Owner == NULL || !( Owner is "DoomRPGPlayer" ) ) 
             return;
-		newdamage = DamageHandler.getRPGAttackDamage( PlayerPawn( Owner ), damage, damage );
+		newdamage = Owner.ACS_ScriptCall( "getRPGDefenseDamage", damage );
+		//newdamage = DamageHandler.getRPGAttackDamage( PlayerPawn( Owner ), damage, damage );
     }
 
 }
