@@ -17,7 +17,27 @@ enum RPGGetFeatureTypes {
     RPG_Strength
 }
 
- 
+class DRRPMath {
+
+    const e = 2.71828182845904523536;
+
+    static double PowerFloatToInt( double source, int powerTo ) {
+        if ( !powerTo ) return 1;
+        if ( powerTo == 1 ) return source;
+
+        bool isReverse = ( powerTo < 0? true : false );
+        if ( isReverse ) 
+            powerTo = -powerTo;
+        double originalSource = source;
+
+        while ( powerTo-- )
+            source *= originalSource;
+        return isReverse? 1 / source : source;
+    }
+}
+
+
+
 class DRRPIntToStringBruteforceMultiMapArrayWrapper {
     Array<String> TheStringArray;
 }
