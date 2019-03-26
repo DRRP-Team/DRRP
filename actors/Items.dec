@@ -314,7 +314,7 @@ Actor DRRPShopCellPack: CellPack {
     Inventory.Amount 10
 }
 
-Actor DRRPShopPlayerFeature : CustomInventory {
+/*Actor DRRPShopPlayerFeature : CustomInventory {
     Inventory.Amount 1
     Inventory.MaxAmount 100    
 }
@@ -349,4 +349,4 @@ Actor DRRPShopPlayerStrength : DRRPShopPlayerFeature {
             TNT1 A 0 ACS_NamedExecute("RPGIncrementFeature", 0, 3)
             TNT1 A 0 A_TakeInventory("DRRPShopPlayerStrength", 1)
     }
-}
+}*/

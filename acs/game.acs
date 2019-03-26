@@ -265,58 +265,19 @@ Script "LevelStatsNotifier" ENTER {
  * RPG System
  */
 
-const int KILLS_FOR_NEXT_LEVELUP = 18;
+enum RPGGetFeatureTypes {
+    RPG_Level,
+    RPG_Experience,
+    RPG_NextLevelXP,
 
-struct player_t {
-    int level;
-    int XP;
-    int maxHealth;
-    int maxArmor;
-    int defense;
-    int strength;
-    int accuracy;
-    int agility;
-}
+    RPG_MaxHealth,
+    RPG_MaxArmor,
 
-world player_t Player;
-bool init = false;
-
-Script "onActorDie" (bool killedByPlayer, bool forceLevelUp) {
-    if (!init) {
-        Player.maxHealth = 30;
-        Player.level = 1;
-        init = true;
-    }
-    if (!killedByPlayer) Terminate;
-
-    Player.XP++;
-
-    if (Player.XP % KILLS_FOR_NEXT_LEVELUP == 0 || forceLevelUp) {
-        // Levelup
-        SetResultValue(1);
-        GiveInventory("DRRPPlayerLevel", 4);
-        Player.Level        += 1;
-        Player.maxHealth    += 4;
-        Player.maxArmor     += 4;
-        Player.defense      += 2;
-        Player.strength     += 2;
-        Player.accuracy     += 1;
-        Player.agility      += 1;
-        ActivatorSound("player/levelup", 127);
-        ACS_NamedExecuteWait("window", 0, StrParam(
-            s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
-            l:"DRRP_B_ID76", i:Player.level, s:"\n",       // Level:
-            l:"DRRP_B_ID74", i:4, s:"\n",       // Max Health:
-            l:"DRRP_B_ID72", i:4, s:"\n",       // Max Armor:
-            l:"DRRP_B_ID73", i:2, s:"\n",       // Defense:
-            l:"DRRP_B_ID75", i:2, s:"\n",       // Strength:
-            l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
-            l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
-            l:"DRRP_B_ID77"));                  // Helath restored.
-    }
-
-    // print (s: "Kills: ", i:Player.XP, s:" Level: ", i:Player.Level);
-}
+    RPG_Accuracy,
+    RPG_Agility,
+    RPG_Defense,
+    RPG_Strength
+};
 
 const int RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // Per strength value
 
@@ -325,16 +286,17 @@ Script "getRPGAttackDamage" (int min, int max) {
     if (min == 0 && GetCVar("drrp_debug_mode")) Print(s:"[BUG]: getRPGDamage(0)");
     if (max == 0) max = min;
 
-    int damage = random(min + (Player.strength * RPG_DAMAGE_STRENGTH_MULTIPLIER),
-                        max + (Player.strength * RPG_DAMAGE_STRENGTH_MULTIPLIER));
+    int damageMultiplier = ScriptCall("DRRPPlayer", "GetFeature", RPG_Strength) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
+
+    int damage = random(min + damageMultiplier,
+                        max + damageMultiplier);
 
     if (GetCVar("drrp_debug_mode")) Log(s:"Attack Damage: ", i:damage);
 
     SetResultValue(damage);
 }
 
-// [DogName, soundname]
-str DOGNAMES[] = { "HellHound", "Cerberus", "DemonWolf" };
+const str DOGNAMES[] = { "HellHound", "Cerberus", "DemonWolf" };
 
 Script "getRPGDefenseDamage" (int damage) {
     if (GetCVar("drrp_debug_mode")) Log(s:"Defense Damage: ", i:damage);
@@ -365,75 +327,20 @@ Script "getRPGDefenseDamage" (int damage) {
     SetResultValue(damage);
 }
 
+Script "levelUp" ( void ) { // You can use it by the "pukename levelup" command
+    int pLevel = ScriptCall("DRRPPlayer", "GetFeature", RPG_Level);
 
-str PLAYER_FEATURES[] = { "Accuracy", "Agility", "Defense", "Strength" };
-
-Script "RPGIncrementFeature" (int feature) {
-    if (GetCVar("drrp_debug_mode")) Log(s:"Increment ", s:PLAYER_FEATURES[feature]);
-
-    switch (feature) {
-        case 0:
-            Player.accuracy++;
-            break;
-        case 1:
-            Player.agility++;
-            break;
-        case 2:
-            Player.defense++;
-            break;
-        case 3:
-            Player.strength++;
-            break;
-        default:
-            if (GetCVar("drrp_debug_mode")) Print(s:"[BUG] Unknown player feature ", i:feature);
-            break;
-    }
-}
-
-
-Script "RPGGetFeature" (int feature, int value) {
-    switch (feature) {
-        case 0:
-            SetResultValue(Player.accuracy);
-            Terminate;
-        case 1:
-            SetResultValue(Player.agility);
-            Terminate;
-        case 2:
-            SetResultValue(Player.defense);
-            Terminate;
-        case 3:
-            SetResultValue(Player.strength);
-            Terminate;
-        default:
-            if (GetCVar("drrp_debug_mode")) Print(s:"[BUG] Unknown player feature ", i:feature);
-            SetResultValue(666);
-            Terminate;
-    }
-}
-
-Script "RPGSetFeature" (int feature, int value) {
-    switch (feature) {
-        case 0:
-            Player.accuracy = value;
-            Terminate;
-        case 1:
-            Player.agility = value;
-            Terminate;
-        case 2:
-            Player.defense = value;
-            Terminate;
-        case 3:
-            Player.strength = value;
-            Terminate;
-        default:
-            if (GetCVar("drrp_debug_mode")) Print(s:"[BUG] Unknown player feature ", i:feature);
-            Terminate;
-    }
-}
-
-Script "levelUp" (void) { // for the "pukename levelup" command
-    ACS_NamedExecuteAlways("onActorDie", 0, true, true);
+    ActivatorSound("player/levelup", 127);
+    ACS_NamedExecuteWait("window", 0, StrParam(
+        s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
+        l:"DRRP_B_ID76", i:pLevel, s:"\n",  // Level:
+        l:"DRRP_B_ID74", i:4, s:"\n",       // Max Health:
+        l:"DRRP_B_ID72", i:4, s:"\n",       // Max Armor:
+        l:"DRRP_B_ID73", i:2, s:"\n",       // Defense:
+        l:"DRRP_B_ID75", i:2, s:"\n",       // Strength:
+        l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
+        l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
+        l:"DRRP_B_ID77"));                  // Helath restored.
 }
 
 #include "flashlight.acs"
