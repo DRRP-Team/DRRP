@@ -11,6 +11,10 @@ Actor DRRPCharacter: DRRPCharacter_ZSPatch {
     +SOLID
     +USESPECIAL
     +FRIENDLY
+    +SHOOTABLE
+    +NODAMAGE
+    +DONTRIP
+
 
     Radius  20
     Height  56
@@ -53,6 +57,7 @@ Actor DRRPCharacter: DRRPCharacter_ZSPatch {
                 A_ChangeFlag( "USESPECIAL", False );
                 A_Scream;
                 A_ChangeFlag( "CORPSE", True );
+                A_ChangeFlag( "SHOOTABLE", False );
             }
             POSS I 4 
             POSS J 4 A_NoBlocking
