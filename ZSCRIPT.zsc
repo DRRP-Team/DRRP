@@ -12,24 +12,24 @@ version "2.5"
 #include "zscript/Weapons.zsc"
 
 // APIs
-#include "zscript/APIWeapons.zsc"
-#include "zscript/APIConversation.zsc"
-#include "zscript/APIShaders.zsc"
-#include "zscript/APINotebook.zsc"
+#include "zscript/DRRP_API/APIWeapons.zsc"
+#include "zscript/DRRP_API/APIConversation.zsc"
+#include "zscript/DRRP_API/APIShaders.zsc"
+#include "zscript/DRRP_API/APINotebook.zsc"
 
 // Visual
-#include "zscript/Infobar.zsc"
-#include "zscript/Compass.zsc"
-#include "zscript/StatInfo.zsc"
-#include "zscript/Flashlight.zsc"
-#include "zscript/HUD.zsc"
-#include "zscript/Doorcode.zsc"
+#include "zscript/DRRP_MiscClasses/Infobar.zsc"
+#include "zscript/DRRP_MiscClasses/Compass.zsc"
+#include "zscript/DRRP_MiscClasses/StatInfo.zsc"
+#include "zscript/DRRP_MiscClasses/Flashlight.zsc"
+#include "zscript/DRRP_MiscClasses/HUD.zsc"
+#include "zscript/DRRP_MiscClasses/DoorCode.zsc"
 
 // Tools
 #include "zscript/RPGSystem.zsc"
 #include "zscript/System.zsc"
-#include "zscript/Utils.zsc"
-#include "zscript/Monsters.zsc"
+#include "zscript/DRRP_MiscClasses/Utils.zsc"
+#include "zscript/DRRP_MiscClasses/MonsterTools.zsc"
 
 
 
