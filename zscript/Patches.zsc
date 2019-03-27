@@ -55,6 +55,10 @@ class DRRPLava_ZSPatch: Actor {
 
 class DRRPFire_ZSPatch: DRRPLava_ZSPatch {
 
+    Default {
+        +SPECTRAL;      
+    }
+
     override void BeginPlay() {
         fireActorDamageMin = 1;
         fireActorDamageMax = 2;
