@@ -5,99 +5,18 @@
  * https://opensource.org/licenses/MIT
  */
 
-Actor DRRPFire : DRRPFire_ZSPatch 10250 {
+Actor DRRPFire_Decorate: DRRPFire 10250 {
     //$Category Damage
     //$Sprite FIREA0
-
-    MONSTER
-    +SOLID
-    +NOBLOOD
-    +NOTARGET
-    +NOTRIGGER
-    +DONTTHRUST
-    +NOTAUTOAIMED
-    -ISMONSTER
-    -COUNTKILL
-    -PUSHABLE
-
-    Tag "$DRRP_E_FIRE"
-    Obituary "$DRRP_OB_FIRE"
-    Health 6
-    Radius 33
-    Mass 0x7FFFFFFF
-    DamageType DRRPFireDmg
-    DamageFactor "DRRPFireExtDmg", 1.0
-    DamageFactor "Normal", 0
-
-    States {
-        Spawn:
-            FIRE A 0 Bright
-            FIRE A 0 Bright A_JumpIf(Args[0] != 0, "Spawn.Start")
-            FIRE A 0 Bright A_SetArg(0, 255)
-        Spawn.Start:
-            FIRE A 0 Bright
-            FIRE A 0 Bright A_PlaySound("fire/loop3", CHAN_7, (Args[0] * 1.0) / 255, true, 2.5)
-            FIRE A 0 Bright A_Jump(256, Random(1, 8))
-        Spawn.Loop:
-            FIRE ABCDEFGH 2 BRIGHT // See class "DRRPFire_zspatch", Tick() method.
-            Loop
-        Death:
-        XDeath:
-            TNT1 A 0
-            Stop
-    }
+    //$Title Fire
 }
 
-Actor DRRPLava: DRRPLava_ZSPatch 10251 {
+Actor DRRPLava_Decorate: DRRPLava 10251 {
     //$Category Damage
     //$Sprite LAVAA0
-
-    MONSTER
-    +NOBLOOD
-    +NOTARGET
-    +NOTRIGGER
-    +DONTTHRUST
-    +NOTAUTOAIMED
-    -ISMONSTER
-    -COUNTKILL
-    -SHOOTABLE
-    -PUSHABLE
-
-    Tag "$DRRP_E_LAVAPOOL"
-    Health 10
-    Mass 0x7FFFFFFF
-    DamageFactor "Normal", 0
-	Args 0, 0, 0, 0, 0 // Last (fifth) argument is visiblity of the lava pool.
-
-    States {
-        Spawn:
-            TNT1 A 0 Bright A_JumpIf( Args[ 4 ] != 0, "SpawnLoop" )
-            LAVA A 0 Bright
-        SpawnLoop:
-			"####" A 1 Bright A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 )
-			Wait
-    }
+    //$Title Lava pool
 }
 
-// Scripted
-
-Actor Explosion: DRRPExplosion_ZSPatch {
-    +NOGRAVITY
-    +DONTFALL
-    +FLOORCLIP
-
-    Tag "$DRRP_D_EXPLOSION"
-
+Actor Explosion_Decotare: DRRPExplosion {
     SpawnID 253
-    
-    States {
-        Spawn:
-            MISL B 0 Bright
-            MISL B 0 Bright A_Quake(7, 7, 0, 256)
-            MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_AUTO)
-            MISL B 5 Bright A_Explode
-            MISL C 5 Bright
-            MISL D 4 Bright
-            Stop
-    }
 }
