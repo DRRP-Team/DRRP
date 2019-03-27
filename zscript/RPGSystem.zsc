@@ -91,6 +91,7 @@ class RPGSystemHandler: EventHandler {
             player.Accuracy    += 1;
             player.Strength    += 2;
             player.Defense     += 2;
+            player.MaxHealth   += 4;
             //player.SetFeature( RPG_MaxArmor, player.GetFeature( RPG_MaxArmor ) + 4 );
 
             setAllFeatures( player );
