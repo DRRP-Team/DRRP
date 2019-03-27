@@ -233,7 +233,9 @@ Script "LevelStatsNotifier" ENTER {
     bool monsters = false,
          secrets  = false;
 
-    if (secretstotal == 0) secrets = true;
+    if (monsterstotal == 0) monsters = true;
+    if (secretstotal == 0)  secrets = true;
+    if (secrets && monsters) Terminate;
 
     while (true) {
         monsterstotal       = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
