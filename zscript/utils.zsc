@@ -36,6 +36,24 @@ class DRRPMath {
     }
 }
 
+class DRRPActors: Actor {
+
+    const velocityParticlesDelay = 4;
+    // The more value this constant has, the slowly particle speed.
+
+    static Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {
+        Actor particle = Spawn( spawnee, (
+                                spawner.pos.x + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
+                                spawner.pos.y + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
+                                spawner.pos.z + Random( splatZ * 0.05, splatZ * 0.95 ) ) );
+        particle.Vel = ( ( spawner.pos.x - particle.pos.x ) / velocityParticlesDelay,
+                         ( spawner.pos.y - particle.pos.y ) / velocityParticlesDelay,
+                         ( ( spawner.pos.z + splatZ / 2 ) - particle.pos.z ) / velocityParticlesDelay );
+        return particle;
+    }
+
+}
+
 
 
 class DRRPIntToStringBruteforceMultiMapArrayWrapper {

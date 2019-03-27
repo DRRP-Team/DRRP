@@ -66,8 +66,8 @@ class DRRPFire_ZSPatch: DRRPLava_ZSPatch {
 
         //float ScaleTo = -0.5 * exp( 1 - ( float( health / SpawnHealth() ) ) ) + 1.5;
         //float ScaleTo = 1 / ( 0.66 + ( 1 - float( health ) / float( SpawnHealth() ) ) ) - 0.5;
-        float ScaleTo = float( health ) / float( SpawnHealth() );
-        float ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
+        double ScaleTo = double( health ) / double( SpawnHealth() );
+        double ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
         self.Scale = ( ScaleNow, ScaleNow );
 
         Super.Tick();
@@ -83,21 +83,10 @@ class DRRPExplosion_ZSPatch: Actor {
 
 }
 
-const velocityParticlesDelay = 4;
-// The more value this constant has, the slowly particle speed.
-
 class DRRPCharacter_ZSPatch: Actor {
-
-    void A_DRRP_TransformationParticles() {
-        Actor particle = Spawn( "DRRPTransformationParticle", (
-                                pos.x + Random( radius * 0.5, radius * 1.5 ) * RandomPick( -1, 1 ),
-                                pos.y + Random( radius * 0.5, radius * 1.5 ) * RandomPick( -1, 1 ),
-                                pos.z + Random( pos.z + height * 0.15, height * 1.1 ) ) );
-
-        particle.Vel = ( ( pos.x - particle.pos.x ) / velocityParticlesDelay,
-                         ( pos.y - particle.pos.y ) / velocityParticlesDelay,
-                         ( ( pos.z + height / 2 ) - particle.pos.z ) / velocityParticlesDelay );
-    } // of void A_DRRP_TransformationParticles( void )
+    void A_DRRP_TransformationParticles( void ) {
+        DRRPActors.SummonDRRPParticle( self, "DRRPTransformationParticle", radius, height );
+    }
 }
 
 class DRRPPlayer: DoomPlayer {
@@ -147,9 +136,26 @@ class DRRPPlayer: DoomPlayer {
         }
     }
 
-    static float GetScatterMultiplier( Actor activator ) {
+    static double GetScatterMultiplier( Actor activator ) {
         if ( !( activator is "DRRPPlayer" ) ) return -1;
         return DRRPMath.PowerFloatToInt( DRRPMath.e * 0.378, -DRRPPlayer( activator ).Accuracy );
     } 
+
+}
+
+class DRRPTeleportFog: TeleportFog replaces TeleportFog {
+    int counter;
+
+    override void PostBeginPlay() {
+        counter = 30;
+        S_Sound( "misc/teleport", CHAN_AUTO );
+    }
+
+    States {
+        Spawn:
+            TNT1 AAAAA 0 { DRRPActors.SummonDRRPParticle( self, "DRRPTeleportationParticle", 32, 64 ); }
+            TNT1 A 1 A_JumpIf( !counter--, "Null" );
+            Loop;
+    }
 
 }
