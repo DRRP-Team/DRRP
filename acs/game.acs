@@ -134,11 +134,12 @@ Script "drpgquake"(int time, int intensivity) {
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEPRECATED Script drpgquake");
 }
 
-Script "transformation"(int tid) {
+Script "transformation"(int tid, int timedelay) {
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script transformation");
     if(tid < 0) tid *= -1;
 
     SetActorState(tid, "Turn");
+    Delay(timedelay || 2);
 }
 
 #define NUM_POM_TEXTURES 23
