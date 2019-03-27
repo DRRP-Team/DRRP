@@ -83,7 +83,7 @@ class DRRPExplosion_ZSPatch: Actor {
 
 }
 
-const velocityParticlesDelay = 5;
+const velocityParticlesDelay = 4;
 // The more value this constant has, the slowly particle speed.
 
 class DRRPCharacter_ZSPatch: Actor {
