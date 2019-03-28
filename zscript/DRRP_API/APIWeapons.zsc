@@ -42,16 +42,3 @@ class WeaponController play {
     } // of static void ReturnWeapons( int playerNum, int returnWeaponsMask )
 
 } // of class WeaponController play
-
-
-class DamageHandler {
-	const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1;
-
-	static play int getRPGAttackDamage( Actor player, int min, int max ) {
-	    if ( ( max == 0 ) || ( max < min ) ) 
-			max = min;
-    	int damageMultiplier = DRRPPlayer( player ).GetFeature( player, RPG_Strength ) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
-
-	    return random( min + damageMultiplier, max + damageMultiplier );
-	}
-}

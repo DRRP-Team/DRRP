@@ -35,6 +35,9 @@ version "2.5"
 
 class DRRPPlayer: DoomPlayer {
 
+    const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // From ACS
+    static const String dogNames[] = { "Hellhound", "Cerberus", "DemonWolf" };
+
     int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength;
 
     override void BeginPlay() {
@@ -80,9 +83,53 @@ class DRRPPlayer: DoomPlayer {
         }
     }
 
+
+
     static double GetScatterMultiplier( Actor activator ) {
         if ( !( activator is "DRRPPlayer" ) ) return -1;
         return DRRPMath.PowerFloatToInt( DRRPMath.e * 0.378, -DRRPPlayer( activator ).Accuracy );
     } 
 
+    static play int getRPGAttackDamage( Actor player, int min, int max ) {
+        if ( !player || !player.player || !( player is "DRRPPlayer" ) ) return -1;
+        if ( ( max == 0 ) || ( max < min ) )
+            max = min;
+
+        int damageMultiplier = DRRPPlayer( player ).GetFeature( player, RPG_Strength ) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
+
+        return Random( min + damageMultiplier, max + damageMultiplier );
+    }
+
+    static play int getRPGDefenseDamage( Actor activator, int damage, name mod ) {
+        if ( !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return -1;
+
+        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", activator.player );
+        if ( DebugCVar && DebugCVar.GetBool() )
+            console.printf( "#DRRPPlayer::getRPGDefenseDamage. Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
+
+        damage *= DRRPMath.PowerFloatToInt( DRRPMath.e * 0.377, -DRRPPlayer( activator ).Defense );
+        String ReadyWeapon = activator.player.ReadyWeapon.GetClassName();
+
+        if ( ( ReadyWeapon ~== "DRRPAxe" ) && ( mod != 'DRRPFireDmg' ) ) {
+            activator.S_Sound( "weapon/axe/block", CHAN_AUTO, 0.67 );
+            return damage / 2;
+        }
+
+        for ( int i = 0; i < DRRPPlayer.dogNames.Size(); i++ ) {
+            if ( ReadyWeapon.Left( DRRPPlayer.dogNames[ i ].Length() ) == DRRPPlayer.dogNames[ i ] ) {
+                activator.S_Sound( "monsters/hellhound/pain", CHAN_WEAPON, 0.5 );
+                activator.TakeInventory( DRRPPlayer.dogNames[ i ] .. "Health", damage );
+
+                if ( activator.FindInventory( DRRPPlayer.dogNames[ i ] .. "Health" ).Amount == 0 ) {
+                    activator.TakeInventory( ReadyWeapon, 1 );
+                    activator.S_Sound( "monsters/hellhound/death", CHAN_WEAPON, 0.5 );
+                }
+
+                return 0;
+            }
+        }
+
+        return damage;
+
+    } // of static play int getRPGDefenseDamage( Actor activator, int damage, name mod ) {
 }

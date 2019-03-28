@@ -36,7 +36,7 @@ class DRRPMath {
     }
 }
 
-class DRRPActors: Actor {
+class DRRPActorAdditionalFunctions: Actor {
 
     const velocityParticlesDelay = 4;
     // The more value this constant has, the slowly particle speed.

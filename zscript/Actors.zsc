@@ -171,9 +171,13 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
         S_Sound( "misc/teleport", CHAN_AUTO );
     }
 
+    void A_DRRP_TeleportationParticles( void ) {
+        DRRPActorAdditionalFunctions.SummonDRRPParticle( self, "DRRPTeleportationParticle", 24, 64 );
+    }
+
     States {
         Spawn:
-            TNT1 AAAAA 0 { DRRPActors.SummonDRRPParticle( self, "DRRPTeleportationParticle", 32, 64 ); }
+            TNT1 AAAAA 0 A_DRRP_TeleportationParticles();
             TNT1 A 1 A_JumpIf( !counter--, "Null" );
             Loop;
     }

@@ -112,8 +112,10 @@ class DRRPDamageAbsorber: Inventory {
     override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
         if ( Owner == NULL || !( Owner is "DoomRPGPlayer" ) ) 
             return;
-        newdamage = Owner.ACS_ScriptCall( "getRPGDefenseDamage", damage );
+        newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType );
     }
+
+}
 
 }
 
