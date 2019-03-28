@@ -305,7 +305,7 @@
 //\\ Base
 
 // DRRP
-    DRRP_D_DRRPVERSION      = "DRRP v0.2.2 EAB";
+    DRRP_D_DRRPVERSION      = "DRRP v0.2.x EAB";
     DRRP_D_SOUND_SUFFIX     = "/en";
 
     DRRP_D_MENU_NEWGAME     = "New Game";
@@ -404,7 +404,6 @@
     DRRP_D_TMAP_RDSSKULL            = "Graphics";
     DRRP_D_TMAP_RLOLIMPIRE          = "Mapper";
 
-    DRRP_D_USEFLASHLIGHT            = "You can use your flashlight";
     DRRP_D_WIPLEVEL                 = "Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!";
 
     DRRP_D_DOORCLOSED               = "\cgDoor closed!";
@@ -413,6 +412,12 @@
     DRRP_D_REDDOOR                  = "You need a red card to open this door";
     DRRP_D_BLUEDOOR                 = "You need a blue card to open this door";
     DRRP_D_GREENDOOR                = "You need a green card to open this door";
+
+    DRRP_D_TIP_1                    = "You can jump and crouch\nto get to places like this";
+    DRRP_D_TIP_2                    = "Do not use your flashlight\nat this location\nIt causes lags";
+    DRRP_D_TIP_3                    = "After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction";
+    DRRP_D_TIP_4                    = "The last shop terminal\nis in this sector,\nso if you have any credits left,\nwe recommend purchasing right now";
+    DRRP_D_TIP_5                    = "You can use your flashlight";
 //\\ DRRP
 
 // SHOP

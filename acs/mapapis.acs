@@ -99,6 +99,20 @@ Script 3010 (int sectorid, int keyid, bool mute) { // Colorful door
 }
 
 Script 3011 (fixed x, fixed y, int direction) { // DRPG Teleport
-    // TODO: Make some particles
+    SpawnForced("TeleportFog", x, y, 0);
     SetActorPosition(0, x, y, 0, 0);
+}
+
+Script 3012 (int id, int time) { // Show tip
+    if (!time) time = SECONDS * 7;
+
+    SetHudSize(640, 480, true);
+    //SetHUDClipRect(0, 0, 0, 0, 0);
+    //SetFont("M_WINDOW");
+    //HudMessage(s: "A"; HUDMSG_PLAIN, -10000, 0, 640.0, 10.1, 1);
+    SetFont("smallfont");
+    HudMessage(l: StrParam(s:"DRRP_D_TIP_", i:id); HUDMSG_PLAIN, -100001, CR_YELLOW,
+               600.0, 10.1, 15.0, 0.5);
+    Delay(time);
+    HudMessage(s: ""; HUDMSG_PLAIN, -100001, 0, 0.5, 0.8, 1);
 }

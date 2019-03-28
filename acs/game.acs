@@ -8,6 +8,8 @@
 #library game
 #include "zcommon.acs"
 
+const int SECONDS = 35; // Ticks per second
+
 // Useful functions
 
 function bool isLocalized(str string) {
@@ -121,8 +123,6 @@ Script "window"(str _Text) { // s: -> str
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
 }
-
-// ACS based DRPG Lock Window
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
