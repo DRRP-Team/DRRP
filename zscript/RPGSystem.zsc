@@ -13,7 +13,7 @@ class RPGSystemHandler: EventHandler {
 
 
     static void setLevelFeatures( DRRPPlayer player ) {
-        player.NextLevelXP += player.Level * 18;
+        player.NextLevelXP += player.Level * 20;
     }
 
     static void setAccuracyFeatures( DRRPPlayer player ) {
@@ -46,6 +46,36 @@ class RPGSystemHandler: EventHandler {
     }
 
 
+    override void WorldTick() {
+        if ( !level.time ) {
+            Actor mo;
+            ThinkerIterator ActorsIterator = ThinkerIterator.Create( "Actor" );
+
+            while ( mo = Actor( ActorsIterator.Next( True ) ) ) {
+                if ( mo is 'DRRPFire' )
+                    mo.A_SetInventory( "ExpGain", 1 );
+                else if ( mo is 'DRRPCrate' )
+                    mo.A_SetInventory( "ExpGain", 2 );
+                else if ( mo is 'DRRPRod' )
+                    mo.A_SetInventory( "ExpGain", 35 );
+                else if ( mo is 'DRRPRodTrash' ) // At the start of the level there's no one DRRPRodTrash'es.
+                    mo.A_SetInventory( "ExpGain", 7 );
+                else if ( mo.bIsMonster && !mo.bCorpse ) {
+                    double multiplier = 
+                        ( mo.health < 40 )?  FRandom( 0.02, 0.2 ) :
+                        ( mo.health < 160 )? FRandom( 0.016, 0.17 ) :
+                        ( mo.health < 300 )? FRandom( 0.013, 0.15 ) :
+                        FRandom( 0.01, 0.13 );
+                    mo.A_SetInventory( "ExpGain", 1 + ( int( multiplier * mo.health ) ) );
+
+                    CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+                    if ( DebugCVar && DebugCVar.GetBool() )
+                        console.printf( "#RPGSystemHandler::FirstWorldTick. Actor: " .. mo.GetClassName() .. "; Experience: " .. mo.FindInventory( "ExpGain" ).Amount .. "." );
+                }
+            }
+        }
+    }
+
     override void WorldThingDamaged( WorldEvent e ) {
 
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
@@ -66,8 +96,8 @@ class RPGSystemHandler: EventHandler {
                     }
                     DRRPPlayer player = DRRPPlayer( players[ playerNum ].mo );
 
-                    player.Experience++;
-                    //player.Experience = e.Thing.FindInventory( "ExpGain" ).Amount;
+                    Inventory gainExperience = e.Thing.FindInventory( "ExpGain" );
+                    if ( gainExperience ) player.Experience += gainExperience.Amount;
 
                     if ( player.Experience >= player.NextLevelXP )
                         EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", playerNum );
@@ -102,6 +132,7 @@ class RPGSystemHandler: EventHandler {
 }
 
 
+
 class DRRPDamageAbsorber: Inventory {
     Default {
         +Inventory.UNDROPPABLE;
@@ -117,6 +148,11 @@ class DRRPDamageAbsorber: Inventory {
 
 }
 
+class ExpGain: Inventory {
+    Default {
+        Inventory.Amount 1;
+        Inventory.MaxAmount 65535;
+    }
 }
 
 class DRRPShopPlayerAccuracy: Inventory {
