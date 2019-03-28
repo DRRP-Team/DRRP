@@ -36,7 +36,7 @@ version "2.5"
 class DRRPPlayer: DoomPlayer {
 
     const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // From ACS
-    static const String dogNames[] = { "Hellhound", "Cerberus", "DemonWolf" };
+    static const String dogNames[] = { "HellHound", "Cerberus", "DemonWolf" };
 
     int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength;
 
