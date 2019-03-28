@@ -19,7 +19,6 @@ class DRRPAxe: Weapon {
         Inventory.Icon "AXEIA0";
         Inventory.PickupSound "player/taunt";
         Weapon.SelectionOrder 90;
-        DamageType "DRRPAxeDmg";
     }
 
     States {
