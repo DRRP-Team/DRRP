@@ -36,7 +36,9 @@ class DRRPAxe: Weapon {
             AXEF A 1 A_Lower;
             Loop;
         Fire:
-            AXEF BCD 3;
+            AXEF B 3;
+            AXEF C 3 A_PlaySound("weapon/axe/swing", CHAN_WEAPON);
+            AXEF D 3;
             AXEF D 2 A_CustomPunch(DRRPPlayer.getRPGAttackDamage( self, 3, 12), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus");
             AXEF E 4;
             Goto Ready;

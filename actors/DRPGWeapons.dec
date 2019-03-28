@@ -22,8 +22,9 @@ Actor DRRPAxe_DecorateSummoner 10557 {
 }
 
 Actor DRRPAxePuff : BulletPuff {
-    SeeSound "DSBLUD03"
-    AttackSound "ROCK"    
+    SeeSound    "weapon/axe/hit"  // On actor hit
+    AttackSound "weapon/axe/wall" // On wall hit
+    ActiveSound ""                // On miss
 }
 
 Actor DRRPFireExt_DecorateSummoner 10556 {
