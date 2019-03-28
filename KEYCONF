@@ -8,12 +8,15 @@
 ClearPlayerClasses
 AddPlayerClass DoomRPGPlayer
 
-addkeysection "Flashlight" DRRPKeySection
-    addmenukey "Toggle Flashlight" toggleflashlight
+addkeysection "$DRRP_D_KEYBINDINGS_TITLE" DRRPKeySection
+    addmenukey "$DRRP_D_KEYBINDINGS_FLASHLIGHT" toggleflashlight
     alias toggleflashlight "pukename toggleflashlight"
     defaultbind F toggleflashlight
     
-addkeysection "DRRP" DRRPNotebookSection
-    addmenukey "Open Notebook" opennotebook
+    addmenukey "$DRRP_D_KEYBINDINGS_NOTEBOOK" opennotebook
     alias opennotebook "openmenu NotebookMenu"
     defaultbind N opennotebook
+
+    addmenukey "$DRRP_D_KEYBINDINGS_STATINFO" openstatinfo
+    alias openstatinfo "openmenu StatInfoMenu"
+    defaultbind M opennotebook
