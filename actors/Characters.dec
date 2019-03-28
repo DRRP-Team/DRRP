@@ -15,7 +15,8 @@ Actor DRRPCharacter: DRRPCharacter_ZSPatch {
     +NOBLOOD
     +NODAMAGE
     +DONTRIP
-
+    +DONTTHRUST
+    +NORADIUSDMG
 
     Radius  20
     Height  56
