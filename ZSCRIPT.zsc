@@ -38,11 +38,12 @@ class DRRPPlayer: DoomPlayer {
     const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // From ACS
     static const String dogNames[] = { "HellHound", "Cerberus", "DemonWolf" };
 
-    int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength;
+    int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength, MaxArmor;
 
     override void BeginPlay() {
         Experience = Accuracy = Agility = Defense = Strength = 0;
         Level = 1;
+        MaxArmor = 30;
         RPGSystemHandler.setAllFeatures( self );
         Super.BeginPlay();
     }
@@ -55,7 +56,7 @@ class DRRPPlayer: DoomPlayer {
                 case RPG_Experience: return player.Experience;
                 case RPG_NextLevelXP:return player.NextLevelXP;
                 case RPG_Level:      return player.Level;
-                case RPG_MaxArmor:   break;//returns "200" //return self.FindInventory( "BasicArmor" ).MaxAmount;
+                case RPG_MaxArmor:   return player.MaxArmor;
                 case RPG_Accuracy:   return player.Accuracy;
                 case RPG_Agility:    return player.Agility;
                 case RPG_Defense:    return player.Defense;
@@ -71,7 +72,7 @@ class DRRPPlayer: DoomPlayer {
         DRRPPlayer player = DRRPPlayer( activator );
         switch ( type ) {
             case RPG_MaxHealth:{ player.MaxHealth = value; if ( setFeatureConsequence ) RPGSystemHandler.setHealthFeatures( player );  break; }
-            case RPG_MaxArmor:   break;//self.FindInventory( "BasicArmor" ).MaxAmount = value;
+            case RPG_MaxArmor: { player.MaxArmor = value;  if ( setFeatureConsequence ) RPGSystemHandler.setArmorFeatures( player );   break; }
             case RPG_Experience: player.Experience = value; break;
             case RPG_NextLevelXP:player.NextLevelXP = value; break;
             case RPG_Level:    { player.Level = value;    if ( setFeatureConsequence ) RPGSystemHandler.setLevelFeatures( player );    break; }
@@ -107,7 +108,7 @@ class DRRPPlayer: DoomPlayer {
         if ( DebugCVar && DebugCVar.GetBool() )
             console.printf( "#DRRPPlayer::getRPGDefenseDamage. Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
 
-        damage *= DRRPMath.PowerFloatToInt( DRRPMath.e * 0.377, -DRRPPlayer( activator ).Defense );
+        damage *= DRRPMath.PowerFloatToInt( DRRPMath.e * 0.377, -( 1 + DRRPPlayer( activator ).Defense ) );
         String ReadyWeapon = activator.player.ReadyWeapon.GetClassName();
 
         if ( ( ReadyWeapon ~== "DRRPAxe" ) && ( mod != 'DRRPFireDmg' ) ) {

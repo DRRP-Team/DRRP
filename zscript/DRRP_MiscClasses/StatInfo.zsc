@@ -74,7 +74,7 @@ class StatInfoMenu : OptionMenu {
 
         addHeaderStr( desc, StatLocalize( "PLAYER_T" ) );
         addSpecIntStr( desc, pStat.mo.health, pStat.mo.MaxHealth, StatLocalize( "HEALTH" ), true );
-        addItemStr( desc, pStat.mo.FindInventory( "BasicArmor" ), StatLocalize( "ARMOR" ) );
+        addItemStr( desc, pStat.mo.FindInventory( "DRRPBasicArmor" ), StatLocalize( "ARMOR" ) );
         addItemStr( desc, pStat.mo.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
         addStr( desc, cNormal, StatLocalize( "LEVEL" ) .. DRRPPlayer( pStat.mo ).Level );
         addSpecIntStr( desc, DRRPPlayer( pStat.mo ).Experience, DRRPPlayer( pStat.mo ).NextLevelXP, StatLocalize( "EXPERIENCE" ) );

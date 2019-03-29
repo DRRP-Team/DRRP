@@ -16,6 +16,11 @@ class RPGSystemHandler: EventHandler {
         player.NextLevelXP += player.Level * 20;
     }
 
+    static void setArmorFeatures( DRRPPlayer player ) {
+        Inventory armor = player.FindInventory( "DRRPBasicArmor" );
+        if ( armor ) armor.MaxAmount = player.MaxArmor;
+    }
+
     static void setAccuracyFeatures( DRRPPlayer player ) {
     }
 
@@ -38,6 +43,7 @@ class RPGSystemHandler: EventHandler {
 
     static void setAllFeatures( DRRPPlayer player ) {
         setLevelFeatures( player );
+        setArmorFeatures( player );
         setAccuracyFeatures( player );
         setAgilityFeatures( player );
         setDefenseFeatures( player );
@@ -116,7 +122,7 @@ class RPGSystemHandler: EventHandler {
             player.Strength    += 2;
             player.Defense     += 2;
             player.MaxHealth   += 4;
-            //player.SetFeature( RPG_MaxArmor, player.GetFeature( RPG_MaxArmor ) + 4 );
+            player.MaxArmor    += 4;
 
             setAllFeatures( player );
             player.ACS_ScriptCall( "levelUp", 0 );
@@ -126,20 +132,117 @@ class RPGSystemHandler: EventHandler {
 }
 
 
-
 class DRRPDamageAbsorber: Inventory {
     Default {
-        +Inventory.UNDROPPABLE;
+        +INVENTORY.UNDROPPABLE;
         Inventory.MaxAmount 1;
+        Inventory.Amount 1;
+    }    
+
+    override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
+        if ( !Owner || !( Owner is "DoomRPGPlayer" ) ) 
+            return;
+
+        Inventory armor = DRRPPlayer( Owner ).FindInventory( "DRRPBasicArmor" );
+        console.printf( "----\nPre-damage. Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
+
+        if ( armor ) {
+            if ( ( newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType ) ) == damage )
+                armor.Amount -= damage / 2;
+            else
+                armor.Amount -= damage - newdamage;
+            if ( armor.Amount < 0 )
+                armor.Amount = 0;
+        } else
+            newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType );
+
+        console.printf( "Post-damage. Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
+    }
+}
+
+class DRRPBasicArmor: Armor {
+    Default {
+        Inventory.MaxAmount 30;
         Inventory.Amount 1;
     }
 
-    override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
-        if ( Owner == NULL || !( Owner is "DoomRPGPlayer" ) ) 
+    override void PostBeginPlay() {
+        if ( !Owner || !( Owner is "DoomRPGPlayer" ) ) {
+            Destroy();
             return;
-        newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType );
+        }
+        self.MaxAmount = DRRPPlayer( Owner ).GetFeature( Owner, RPG_MaxArmor );
+    }
+}
+
+class DRRPArmorShard: Inventory replaces ArmorBonus {
+    int armorAmountGive;
+    Default {
+        Radius 20;
+        Height 16;
+        Tag "$DRRP_I_ARMORSHARD";
+        Inventory.PickupMessage "$DRRP_I_ARMORSHARD";
+        +COUNTITEM;
+        +INVENTORY.ALWAYSPICKUP;
     }
 
+    override void BeginPlay() {
+        armorAmountGive = 1;
+    }
+
+    override void Touch( Actor toucher ) {
+        if ( !toucher || !( toucher is "DRRPPlayer" ) ) 
+            return;
+        Inventory armor = DRRPPlayer( toucher ).FindInventory( "DRRPBasicArmor" );
+        if ( armor ) 
+            if ( DRRPPlayer( toucher ).GetFeature( toucher, RPG_MaxArmor ) <= armor.Amount )
+                return;
+
+        toucher.A_GiveInventory( "DRRPBasicArmor", armorAmountGive );
+        Super.Touch( toucher );
+    }
+
+    States {
+        Spawn:
+            BON2 ABCDCB 6;
+            Loop;
+    }
+}
+
+class DRRPFlakJacket: DRRPArmorShard replaces GreenArmor {
+    Default {
+        Tag "$DRRP_I_FLAKJACKET";
+        Inventory.PickupMessage "$DRRP_I_FLAKJACKET";
+    }
+
+    override void BeginPlay() {
+        armorAmountGive = 25;
+    }
+
+    States {
+        Spawn:
+            ARM1 A 6;
+            ARM1 B 7 Bright;
+            Loop;
+    }
+}
+
+class DRRPCombatSuit: DRRPArmorShard replaces BlueArmor {
+    Default {
+        Tag "$DRRP_I_COMBATSUIT";
+        Inventory.PickupMessage "$DRRP_I_COMBATSUIT";
+    }
+
+    override void BeginPlay() {
+        armorAmountGive = 50;
+    }
+
+    States {
+        Spawn:
+            ARM2 A 6;
+            ARM2 B 6 Bright;
+            Loop;
+    }
 }
 
 class ExpGain: Inventory {
