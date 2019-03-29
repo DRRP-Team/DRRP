@@ -46,34 +46,28 @@ class RPGSystemHandler: EventHandler {
     }
 
 
-    override void WorldTick() {
-        if ( !level.time ) {
-            Actor mo;
-            ThinkerIterator ActorsIterator = ThinkerIterator.Create( "Actor" );
-
-            while ( mo = Actor( ActorsIterator.Next( True ) ) ) {
-                if ( mo is 'DRRPFire' )
-                    mo.A_SetInventory( "ExpGain", 1 );
-                else if ( mo is 'DRRPCrate' )
-                    mo.A_SetInventory( "ExpGain", 2 );
-                else if ( mo is 'DRRPRod' )
-                    mo.A_SetInventory( "ExpGain", 35 );
-                else if ( mo is 'DRRPRodTrash' ) // At the start of the level there's no one DRRPRodTrash'es.
-                    mo.A_SetInventory( "ExpGain", 7 );
-                else if ( mo.bIsMonster && !mo.bCorpse ) {
-                    double multiplier = 
-                        ( mo.health < 40 )?  FRandom( 0.02, 0.2 ) :
-                        ( mo.health < 160 )? FRandom( 0.016, 0.17 ) :
-                        ( mo.health < 300 )? FRandom( 0.013, 0.15 ) :
-                        FRandom( 0.01, 0.13 );
-                    mo.A_SetInventory( "ExpGain", 1 + ( int( multiplier * mo.health ) ) );
-
-                    CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
-                    if ( DebugCVar && DebugCVar.GetBool() )
-                        console.printf( "#RPGSystemHandler::FirstWorldTick. Actor: " .. mo.GetClassName() .. "; Experience: " .. mo.FindInventory( "ExpGain" ).Amount .. "." );
-                }
-            }
+    override void WorldThingSpawned( WorldEvent e ) {
+        if ( e.Thing is 'DRRPFire' )
+            e.Thing.A_SetInventory( "ExpGain", 1 );
+        else if ( e.Thing is 'DRRPCrate' )
+            e.Thing.A_SetInventory( "ExpGain", 2 );
+        else if ( e.Thing is 'DRRPRod' )
+            e.Thing.A_SetInventory( "ExpGain", 35 );
+        else if ( e.Thing is 'DRRPRodTrash' )
+            e.Thing.A_SetInventory( "ExpGain", 7 );
+        else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
+            double multiplier = 
+                ( e.Thing.health < 40 )?  FRandom( 0.02, 0.2 ) :
+                ( e.Thing.health < 160 )? FRandom( 0.016, 0.17 ) :
+                ( e.Thing.health < 300 )? FRandom( 0.013, 0.15 ) :
+                FRandom( 0.01, 0.13 );
+            e.Thing.A_SetInventory( "ExpGain", 1 + ( int( multiplier * e.Thing.health ) ) );
         }
+        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if ( DebugCVar && DebugCVar.GetBool() && e.Thing.FindInventory( "ExpGain" ) )
+            console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor &" .. e.Thing 
+                .. " <" .. e.Thing.GetClassName() .. "> ) amount of experience: " 
+                .. e.Thing.FindInventory( "ExpGain" ).Amount .. "." );
     }
 
     override void WorldThingDamaged( WorldEvent e ) {
