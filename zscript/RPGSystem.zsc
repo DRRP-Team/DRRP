@@ -144,7 +144,10 @@ class DRRPDamageAbsorber: Inventory {
             return;
 
         Inventory armor = DRRPPlayer( Owner ).FindInventory( "DRRPBasicArmor" );
-        console.printf( "----\nPre-damage. Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
+	    CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+
+        if ( DebugCVar && DebugCVar.GetBool() )
+            console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Pre-damage). Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
 
         if ( armor ) {
             if ( ( newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType ) ) == damage )
@@ -156,7 +159,8 @@ class DRRPDamageAbsorber: Inventory {
         } else
             newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType );
 
-        console.printf( "Post-damage. Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
+        if ( DebugCVar && DebugCVar.GetBool() )
+	        console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
     }
 }
 

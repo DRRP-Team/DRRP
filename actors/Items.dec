@@ -269,29 +269,7 @@ Actor DRRPHealthVial: Health replaces HealthBonus {
     }
 }
 
-/*Actor DRRPArmorBonus : ArmorBonus replaces ArmorBonus {
-    Tag "$DRRP_I_ARMORSHARD"    
-    Inventory.PickupMessage "$DRRP_I_ARMORSHARD"    
-}
 
-Actor DRRPGreenArmor : GreenArmor replaces GreenArmor {
-    Tag "$DRRP_I_FLAKJACKET"
-    Inventory.PickupMessage "$DRRP_I_FLAKJACKET"
-}
-
-Actor DRRPBlueArmor : BlueArmor replaces BlueArmor {
-    Tag "$DRRP_I_COMBATSUIT"
-    Inventory.PickupMessage "$DRRP_I_COMBATSUIT"
-}
-
-
-Actor HealthPowerUp : UpgradeStamina 10603 {
-    Inventory.Amount 4
-    Inventory.MaxAmount 999
-}
-
-Actor DRRPPlayerLevel : HealthPowerUp {}
-*/
 
 // For shops.
 Actor DRRPShopBalloon: Balloon {
@@ -313,40 +291,3 @@ Actor DRRPShopRocketBox: RocketBox {
 Actor DRRPShopCellPack: CellPack {
     Inventory.Amount 10
 }
-
-/*Actor DRRPShopPlayerFeature : CustomInventory {
-    Inventory.Amount 1
-    Inventory.MaxAmount 100    
-}
-
-Actor DRRPShopPlayerAccuracy : DRRPShopPlayerFeature {
-    States {
-        Pickup:
-            TNT1 A 0 ACS_NamedExecute("RPGIncrementFeature", 0, 0)
-            TNT1 A 0 A_TakeInventory("DRRPShopPlayerAccuracy", 1)
-    }
-}
-
-Actor DRRPShopPlayerAgility : DRRPShopPlayerFeature {
-    States {
-        Pickup:
-            TNT1 A 0 ACS_NamedExecute("RPGIncrementFeature", 0, 1)
-            TNT1 A 0 A_TakeInventory("DRRPShopPlayerAgility", 1)
-    }
-}
-
-Actor DRRPShopPlayerDefense : DRRPShopPlayerFeature {
-    States {
-        Pickup:
-            TNT1 A 0 ACS_NamedExecute("RPGIncrementFeature", 0, 2)
-            TNT1 A 0 A_TakeInventory("DRRPShopPlayerDefense", 1)
-    }
-}
-
-Actor DRRPShopPlayerStrength : DRRPShopPlayerFeature {
-    States {
-        Pickup:
-            TNT1 A 0 ACS_NamedExecute("RPGIncrementFeature", 0, 3)
-            TNT1 A 0 A_TakeInventory("DRRPShopPlayerStrength", 1)
-    }
-}*/
