@@ -38,7 +38,8 @@ class RPGSystemHandler: EventHandler {
     }
 
     static void setHealthFeatures( DRRPPlayer player ) {
-        player.health = player.MaxHealth;
+        player.A_GiveInventory( "DRRPHealthVial", 999 );
+		player.MugShotMaxHealth = player.MaxHealth;
     }
 
     static void setAllFeatures( DRRPPlayer player ) {
