@@ -18,7 +18,7 @@ class DRRPLava: Actor { // Has Decorate heir (DRRPLava_Decorate).
 
     override void BeginPlay() {
         fireActorDamageMin = 3;
-        fireActorDamageMax = 6;
+        fireActorDamageMax = 7;
         fireActorDamageTicks = 2;
     } // of override void BeginPlay()
 
@@ -84,14 +84,6 @@ class DRRPFire: DRRPLava { // Has Decorate heir (DRRPFire_Decorate).
     Default {
         MONSTER;
         +SOLID;
-        +NOBLOOD;
-        +NOTARGET;
-        +NOTRIGGER;
-        +DONTTHRUST;
-        //+NOTAUTOAIMED;
-        -ISMONSTER;
-        -COUNTKILL;
-        -PUSHABLE;
         +SPECTRAL;
         Tag "$DRRP_E_FIRE";
         Obituary "$DRRP_OB_FIRE";
@@ -105,7 +97,7 @@ class DRRPFire: DRRPLava { // Has Decorate heir (DRRPFire_Decorate).
 
     override void BeginPlay() {
         fireActorDamageMin = 1;
-        fireActorDamageMax = 2;
+        fireActorDamageMax = 4;
         fireActorDamageTicks = 3;
     } // of override void BeginPlay()
 
@@ -114,6 +106,8 @@ class DRRPFire: DRRPLava { // Has Decorate heir (DRRPFire_Decorate).
 
         //float ScaleTo = -0.5 * exp( 1 - ( float( health / SpawnHealth() ) ) ) + 1.5;
         //float ScaleTo = 1 / ( 0.66 + ( 1 - float( health ) / float( SpawnHealth() ) ) ) - 0.5;
+        fireActorDamageMax = ( health / 2  ) + 1;
+
         double ScaleTo = double( health ) / double( SpawnHealth() );
         double ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
         self.Scale = ( ScaleNow, ScaleNow );
