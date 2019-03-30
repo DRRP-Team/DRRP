@@ -11,7 +11,7 @@ Actor DRRPGreenCard : DoomKey 10622 {
     //$Sprite GKEYB0
 
     Tag                     "$DRRP_I_GREENKEY"
-    Inventory.PickupMessage "$DRRP_I_GREENKEY"
+    Inventory.PickupMessage "$DRRP_I_GOT_GREENKEY"
     Inventory.Icon          "STKEYS9"
     Inventory.PickupSound   "misc/k_pkup"
     // Translation             "168:191=112:127", "16:47=112:127", "1:2=126:127"
@@ -27,19 +27,19 @@ Actor DRRPGreenCard : DoomKey 10622 {
 Actor DRRPYellowCard : YellowCard replaces YellowCard {
     Tag                     "$DRRP_I_YELLOWKEY"
     Inventory.PickupSound   "misc/k_pkup"
-    Inventory.PickupMessage "$DRRP_I_YELLOWKEY"
+    Inventory.PickupMessage "$DRRP_I_GOT_YELLOWKEY"
 }
 
 Actor DRRPBlueCard : BlueCard replaces BlueCard {
     Tag                     "$DRRP_I_BLUEKEY"
     Inventory.PickupSound   "misc/k_pkup"
-    Inventory.PickupMessage "$DRRP_I_BLUEKEY"
+    Inventory.PickupMessage "$DRRP_I_GOT_BLUEKEY"
 }
 
 Actor DRRPRedCard : RedCard replaces RedCard {
     Tag                     "$DRRP_I_REDKEY"
     Inventory.PickupSound   "misc/k_pkup"
-    Inventory.PickupMessage "$DRRP_I_REDKEY"
+    Inventory.PickupMessage "$DRRP_I_GOT_REDKEY"
 }
 
 Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
@@ -54,7 +54,7 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
     Inventory.Icon          "YMEDI0"
     Inventory.MaxAmount     99
     HealthPickup.AutoUse    0
-    Inventory.PickupMessage "$DRRP_I_SMMEDKIT"
+    Inventory.PickupMessage "$DRRP_I_GOT_SMMEDKIT"
     Translation             "168:185=229:229", "186:191=163:163"
 
     States {
@@ -76,7 +76,7 @@ Actor LargeMedikit : HealthPickup 10601 {
     Inventory.Icon          "RMEDI0"
     Inventory.MaxAmount     99
     HealthPickup.AutoUse    0
-    Inventory.PickupMessage "$DRRP_I_LGMEDKIT"
+    Inventory.PickupMessage "$DRRP_I_GOT_LGMEDKIT"
     Translation             "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
 
     States {
@@ -99,7 +99,7 @@ Actor Balloon : Ammo 10610 {
     Inventory.MaxAmount     300
     Inventory.Icon          "BALLA0"
     Inventory.PickupSound   "weapon/gas"
-    Inventory.PickupMessage "$DRRP_I_HALONCAN"
+    Inventory.PickupMessage "$DRRP_I_GOT_HALONCAN"
 
     States {
         Spawn:
@@ -123,7 +123,7 @@ Actor Credit : Inventory 10620 {
     Tag                     "$DRRP_I_1CREDIT"
     Inventory.Icon          "CREDH0"
     Inventory.MaxAmount     0x7FFFFFFF
-    Inventory.PickupMessage "$DRRP_I_1CREDIT"
+    Inventory.PickupMessage "$DRRP_I_GOT_1CREDIT"
     
     States {
         Spawn:
@@ -141,7 +141,7 @@ Actor GoldCredit : CustomInventory 10621 {
     +FLOORCLIP
     
     Tag                     "$DRRP_I_5CREDITS"
-    Inventory.PickupMessage "$DRRP_I_5CREDITS"
+    Inventory.PickupMessage "$DRRP_I_GOT_5CREDITS"
     // Translation "112:127=%[0.00, 0.00, 0.00]:[2.00, 1.01, 0.00]"
 
     States {
@@ -164,7 +164,7 @@ Actor DRRPBerserkItem : CustomInventory replaces Berserk 10623 {
     Tag                     "$DRRP_I_BERSERKER"
     Inventory.MaxAmount     99
     Inventory.Icon          "BERSH0"
-    Inventory.PickupMessage "$DRRP_I_BERSERKER"
+    Inventory.PickupMessage "$DRRP_I_GOT_BERSERKER"
     Inventory.PickupSound   "misc/p_pkup"
 
     Translation "193:207=171:191", "240:247=185:191"
@@ -201,7 +201,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
     Inventory.MaxAmount     99
     Inventory.Icon          "SOULH0"
     Inventory.PickupSound   "misc/p_pkup"
-    Inventory.PickupMessage "$DRRP_I_SOULSPHERE"
+    Inventory.PickupMessage "$DRRP_I_GOT_SOULSPHERE"
 
     States {
         Spawn:
@@ -223,7 +223,7 @@ Actor DogCollar : CustomInventory 10624 {
 
     Tag                     "$DRRP_I_DOGCOLLAR"
     Inventory.Icon          "DOGCH0"
-    Inventory.PickupMessage "$DRRP_I_DOGCOLLAR"
+    Inventory.PickupMessage "$DRRP_I_GOT_DOGCOLLAR"
     Inventory.MaxAmount     99
 
     States {
@@ -260,7 +260,7 @@ Actor DogCollar : CustomInventory 10624 {
 Actor DRRPHealthVial: Health replaces HealthBonus {
     Tag "$DRRP_I_HEALTHVIAL"
     Inventory.Amount 1
-    Inventory.PickupMessage "$DRRP_I_HEALTHVIAL"
+    Inventory.PickupMessage "$DRRP_I_GOT_HEALTHVIAL"
 
     States {
         Spawn:

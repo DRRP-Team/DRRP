@@ -186,7 +186,7 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
         Radius 20;
         Height 16;
         Tag "$DRRP_I_ARMORSHARD";
-        Inventory.PickupMessage "$DRRP_I_ARMORSHARD";
+        Inventory.PickupMessage "$DRRP_I_GOT_ARMORSHARD";
         +COUNTITEM;
         +INVENTORY.ALWAYSPICKUP;
     }
@@ -217,7 +217,7 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
 class DRRPFlakJacket: DRRPArmorShard replaces GreenArmor {
     Default {
         Tag "$DRRP_I_FLAKJACKET";
-        Inventory.PickupMessage "$DRRP_I_FLAKJACKET";
+        Inventory.PickupMessage "$DRRP_I_GOT_FLAKJACKET";
     }
 
     override void BeginPlay() {
@@ -235,7 +235,7 @@ class DRRPFlakJacket: DRRPArmorShard replaces GreenArmor {
 class DRRPCombatSuit: DRRPArmorShard replaces BlueArmor {
     Default {
         Tag "$DRRP_I_COMBATSUIT";
-        Inventory.PickupMessage "$DRRP_I_COMBATSUIT";
+        Inventory.PickupMessage "$DRRP_I_GOT_COMBATSUIT";
     }
 
     override void BeginPlay() {
