@@ -38,6 +38,7 @@ Actor DRRPTrigger : DRRPCharacter 10554 {
 Actor DRRPInfo : DRRPTrigger {
     //$Category Invisible
     -USESPECIAL
+    +NOTAUTOAIMED
 }
 
 Actor DRRPWall : DRRPInfo 10801 {
