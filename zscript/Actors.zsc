@@ -88,6 +88,7 @@ class DRRPFire: DRRPLava { // Has Decorate heir (DRRPFire_Decorate).
         MONSTER;
         +SOLID;
         +SPECTRAL;
+        -COUNTKILL;
         Tag "$DRRP_E_FIRE";
         Obituary "$DRRP_OB_FIRE";
         Health 6;
