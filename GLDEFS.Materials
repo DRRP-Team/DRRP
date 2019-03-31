@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2017-2019 DRRP-Team
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
@@ -211,7 +211,7 @@ Material Texture DRDC48 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
-// 
+//
 
 // Door track
 Material Texture DRDC10 {
@@ -367,38 +367,168 @@ Material Texture DRDC31 {
     }
 //\\ Morthimer's computers
 
-// Door tunels
-Material Texture DRDC41 {
-    BrightMap "materials/emission/DRDC45_BRT"
-    normal "materials/normal/drdc47"
-    specular "materials/specular/drdc47"
-    Texture tex_heightmap   "materials/height/drdc47"
-    shader                  "shaders/parallax_pbr.fp"
-}
+// Door tunnels
+    Material Texture DRDC41 {
+        BrightMap "materials/emission/DRDC45_BRT"
+        normal "materials/normal/drdc47"
+        specular "materials/specular/drdc47"
+        Texture tex_heightmap   "materials/height/drdc47"
+        shader                  "shaders/parallax_pbr.fp"
+    }
 
-Material Texture DRDC43 {
-    BrightMap "materials/emission/DRDC45_BRT"
-    normal "materials/normal/drdc47"
-    specular "materials/specular/drdc47"
-    Texture tex_heightmap   "materials/height/drdc47"
-    shader                  "shaders/parallax_pbr.fp"
-}
+        Material Texture DRDC41P1 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
 
-Material Texture DRDC45 {
-    BrightMap "materials/emission/DRDC45_BRT"
-    normal "materials/normal/drdc47"
-    specular "materials/specular/drdc47"
-    Texture tex_heightmap   "materials/height/drdc47"
-    shader                  "shaders/parallax_pbr.fp"
-}
+        Material Texture DRDC41P2 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
 
-Material Texture DRDC47 {
-    BrightMap "materials/emission/DRDC45_BRT"
-    normal "materials/normal/drdc47"
-    specular "materials/specular/drdc47"
-    Texture tex_heightmap   "materials/height/drdc47"
-    shader                  "shaders/parallax_pbr.fp"
-}
+        Material Texture DRDC41P3 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC41P4 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+    Material Texture DRDC43 {
+        BrightMap "materials/emission/DRDC45_BRT"
+        normal "materials/normal/drdc47"
+        specular "materials/specular/drdc47"
+        Texture tex_heightmap   "materials/height/drdc47"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+
+        Material Texture DRDC43P1 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC43P2 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC43P3 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC43P4 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+    Material Texture DRDC45 {
+        BrightMap "materials/emission/DRDC45_BRT"
+        normal "materials/normal/drdc47"
+        specular "materials/specular/drdc47"
+        Texture tex_heightmap   "materials/height/drdc47"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+
+        Material Texture DRDC45P1 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC45P2 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC45P3 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC45P4 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+    Material Texture DRDC47 {
+        BrightMap "materials/emission/DRDC45_BRT"
+        normal "materials/normal/drdc47"
+        specular "materials/specular/drdc47"
+        Texture tex_heightmap   "materials/height/drdc47"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+
+        Material Texture DRDC47P1 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC47P2 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC47P3 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        Material Texture DRDC47P4 {
+            BrightMap "materials/emission/DRDC45_BRT"
+            normal "materials/normal/drdc47"
+            specular "materials/specular/drdc47"
+            Texture tex_heightmap   "materials/height/drdc47"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+// \\ Door tunnels
 
 // Default wall
 Material Texture DRDC27 {

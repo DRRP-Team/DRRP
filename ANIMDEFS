@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2017-2019 DRRP-Team
- * 
+ *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
@@ -37,3 +37,33 @@ Texture CGR_CRSR
 Texture CGR_M2A
     Pic CGR_M2A Tics 35
     Pic CGR_M2B Tics 17
+
+// Door tunnels
+
+// Red
+Texture DRDC41
+    Pic DRDC41P1 Tics 8
+    Pic DRDC41P2 Tics 8
+    Pic DRDC41P3 Tics 8
+    Pic DRDC41P4 Tics 8
+
+// Blue
+Texture DRDC43
+    Pic DRDC43P1 Tics 8
+    Pic DRDC43P2 Tics 8
+    Pic DRDC43P3 Tics 8
+    Pic DRDC43P4 Tics 8
+
+// Green
+Texture DRDC45
+    Pic DRDC45P1 Tics 8
+    Pic DRDC45P2 Tics 8
+    Pic DRDC45P3 Tics 8
+    Pic DRDC45P4 Tics 8
+
+// Yellow
+Texture DRDC47
+    Pic DRDC47P1 Tics 8
+    Pic DRDC47P2 Tics 8
+    Pic DRDC47P3 Tics 8
+    Pic DRDC47P4 Tics 8
