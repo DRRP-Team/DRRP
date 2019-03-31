@@ -125,14 +125,14 @@ Actor ZombieManDRRP : ZombieMan {
     +LOOKALLAROUND
 
     DropItem "Clip", 0, 0
-    DamageFactor DRRPAxeDmg, 2.0
+    DamageFactor DRRPAxeDmg, 3.0
 }
 
 Actor ShotgunGuyDRRP : ShotgunGuy {
     +LOOKALLAROUND
 
     DropItem "Shells", 0, 0
-    DamageFactor DRRPAxeDmg, 2.0
+    DamageFactor DRRPAxeDmg, 3.0
 }
 
 Actor ZombiePvt : ZombieManDRRP replaces ZombieMan 10274 {
