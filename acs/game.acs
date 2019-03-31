@@ -234,9 +234,7 @@ Script "LevelStatsNotifier" ENTER {
     bool monsters = false,
          secrets  = false;
 
-    if (monsterstotal == 0) monsters = true;
     if (secretstotal == 0)  secrets = true;
-    if (secrets && monsters) Terminate;
 
     while (true) {
         monsterstotal       = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
@@ -244,16 +242,16 @@ Script "LevelStatsNotifier" ENTER {
         int monsterskilled  = GetLevelInfo(LEVELINFO_KILLED_MONSTERS);
         int secretsfound    = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
 
-        if (monsterskilled == monsterstotal && !monsters) {
+        if (monsterstotal && monsterskilled == monsterstotal && !monsters) {
             SetFont("BIGFONT");
-            HudMessage(s:"Sector clear!\nYou killed all monsters!"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
+            HudMessage(l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
             LocalAmbientSound("COMPLETE", 115);
             monsters = true;
         }
 
         if (secretsfound == secretstotal && !secrets) {
             SetFont("BIGFONT");
-            HudMessage(s:"Sector researched!\nYou found all secrets!"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
+            HudMessage(l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
             LocalAmbientSound("SECRETS", 115);
             secrets = true;
         }

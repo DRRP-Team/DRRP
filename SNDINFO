@@ -5,7 +5,6 @@
  * https://opensource.org/licenses/MIT
  */
 
-drone1                  sounds/DEPRECATED  // FIXME: Remove OK
 ambient/drone1          sounds/DRONE1
 ambient/mach04          sounds/MACH04
 ambient/lopneon2        sounds/LOPNEON2
@@ -21,29 +20,14 @@ fire/loop2              sounds/FIRELOP2
 fire/loop3              sounds/FIRELOP3
 fire/die                sounds/FIREDIE
 
-$random fire/loop { // FIXME: Remove?
-    fire/loop1
-    fire/loop2
-    fire/loop3
-}
-
-acess/grant1            sounds/DEPRECATED // FIXME: Remove OK
-acess/deny1             sounds/DEPRECATED // FIXME: Remove OK
-acess/grant2            sounds/DEPRECATED // FIXME: Remove OK
-acess/deny2             sounds/DEPRECATED // FIXME: Remove OK
-acess/orange            sounds/DEPRECATED // FIXME: Remove OK
-access/grant1           sounds/DEPRECATED // FIXME: Remove OK
 access/grant1/ru        sounds/ACGRA_RU
 access/grant1/en        sounds/ACGRA_EN
-access/grant2           sounds/DEPRECATED // FIXME: Remove OK
 access/grant2/ru        sounds/ACGRA2_RU
 access/grant2/en        sounds/ACGRA2_EN
 access/grantb1          sounds/ACGRAB
 access/grantb2          sounds/ACGRAB2
-access/deny1            sounds/DEPRECATED // FIXME: Remove DOORLOCK
 access/deny1/ru         sounds/ACDEN_RU
 access/deny1/en         sounds/ACDEN_EN
-access/deny2            sounds/DEPRECATED // FIXME: Remove DOORLOCK
 access/deny2/ru         sounds/ACDEN2_RU
 access/deny2/en         sounds/ACDEN2_EN
 access/orange           sounds/ACORAN
@@ -53,74 +37,52 @@ $random access/grantb {
     access/grantb2
 }
 
-techno/lightsof             sounds/DEPRECATED  // FIXME: Remove OK
 techno/poweroff             sounds/LIGHTSOF
-techno/lighton              sounds/DEPRECATED  // FIXME: Remove OK
-techno/lightson             sounds/DEPRECATED  // FIXME: Remove OK
 techno/poweron              sounds/LIGHTSON
 
-voice/reac01                sounds/DEPRECATED  // FIXME: Remove OK
 voice/reac01/ru             sounds/REAC01_RU
 voice/reac01/en             sounds/REAC01_EN
-voice/reacon                sounds/DEPRECATED  // FIXME: Remove OK
 voice/reacon/ru             sounds/REACON_RU
 voice/reacon/en             sounds/REACON_EN
-voice/hireactemp            sounds/DEPRECATED  // FIXME: Remove OK
 voice/hireactemp/ru         sounds/HITEMP_RU
 voice/hireactemp/en         sounds/HITEMP_EN
-voice/wtf                   sounds/DEPRECATED  // FIXME: Remove FIREEXT
 voice/wtf/ru                sounds/WTF_RU
 voice/wtf/en                sounds/WTF_EN
-voice/god                   sounds/DEPRECATED  // FIXME: Remove OK
 voice/god/ru                sounds/GOD_RU
 voice/god/en                sounds/GOD_EN
-voice/only                  sounds/DEPRECATED  // FIXME: Remove OK
 voice/only/ru               sounds/ONLY_RU
 voice/only/en               sounds/ONLY_EN
 voice/powerback             sounds/PWBACK
-voice/powershake            sounds/DEPRECATED  // FIXME: Remove OK
 voice/powershake/ru         sounds/PWSH_RU
 voice/powershake/en         sounds/PWSH_EN
 voice/teleport321           sounds/TP
-voice/systemsoff            sounds/DEPRECATED  // FIXME: Remove NONE
 voice/systemsoff/ru         sounds/SYSOFF_RU
 voice/systemsoff/en         sounds/SYSOFF_EN
 voice/nofire                sounds/NOFIRE
 voice/c2                    sounds/C2
-voice/uac                   sounds/DEPRECATED  // FIXME: Remove OK
 voice/uac/ru                sounds/FUCK_RU
 voice/uac/en                sounds/FUCK_EN
 
-bet/destroy                 sounds/DEPRECATED    // FIXME: Remove OK
 bet/destroy/ru              sounds/BDEST_RU
 bet/destroy/en              sounds/BDEST_EN
-bet/made                    sounds/DEPRECATED    // FIXME: Remove OK
 bet/made/ru                 sounds/BMADE_RU
 bet/made/en                 sounds/BMADE_EN
-bet/earth                   sounds/DEPRECATED     // FIXME: Remove OK
 bet/earth/ru                sounds/BEAR_RU
 bet/earth/en                sounds/BEAR_EN
 
-core/c1                     sounds/DEPRECATED 
 core/c1/ru                  sounds/C1_RU
 core/c1/en                  sounds/C1_EN
-core/c2                     sounds/DEPRECATED 
 core/c2/ru                  sounds/C2_RU
 core/c2/en                  sounds/C2_EN
-core/c3                     sounds/DEPRECATED 
 core/c3/ru                  sounds/C3_RU
 core/c3/en                  sounds/C3_EN
-core/c4                     sounds/DEPRECATED 
 core/c4/ru                  sounds/C4_RU
 core/c4/en                  sounds/C4_EN
 
-ms/doctor                   sounds/DEPRECATED // FIXME: Remove OK
 ms/doctor/ru                sounds/MSDOC_RU
 ms/doctor/en                sounds/MSDOC_EN
-ms/psy                      sounds/DEPRECATED // FIXME: Remove OK
 ms/psy/ru                   sounds/MSPSY_RU
 ms/psy/en                   sounds/MSPSY_EN
-ms/safe                     sounds/DEPRECATED // FIXME: Remove OK
 ms/safe/ru                  sounds/MSSAFE_RU
 ms/safe/en                  sounds/MSSAFE_EN
 
@@ -134,11 +96,7 @@ DSPLDETH                    sounds/DSPLDETH
 DSPLPAIN                    sounds/DSPLPAIN
 DSPOPAIN                    sounds/DSPOPAIN
 DSRADIO                     sounds/DSRADIO
-CYBRSIGH                    sounds/DEPRECATED  // FIXME: Remove OK
-CYBRSIGH2                   sounds/DEPRECATED  // FIXME: Remove OK
-CYBRDTH                     sounds/DEPRECATED  // FIXME: Remove OK
 DSBDCLS                     sounds/DSBDCLS
-TAUNT                       sounds/DEPRECATED  // FIXME: Remove OK
 ZBMB1                       sounds/ZBMB1
 ZBMB2                       sounds/ZBMB2
 DSBLUD03                    sounds/DSBLUD03
