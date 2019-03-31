@@ -121,6 +121,14 @@ Material Texture DRDC34 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
+// Red metalic wall
+Material Texture DRDC36 {
+    normal "materials/normal/drdc34"
+    specular "materials/white"
+    Texture tex_heightmap   "materials/height/drdc34"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
 // Cyan scute 1
 Material Texture DRDC37 {
     normal "materials/normal/drdc37"
@@ -145,8 +153,19 @@ Material Texture DRDC40 {
     specular "materials/specular/drdc40"
 }
 
-// Scute/Elevator
+// Black Scute/Elevator
 Material Texture DRDC35 {
+    normal "materials/normal/drdc35"
+    metallic "materials/white"
+    roughness "materials/roughness/drdc35"
+    //ao "materials/ao/drdc35"
+    brightmap "materials/black"
+    Texture tex_heightmap   "materials/height/drdc35"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+// Red Scute/Elevator
+Material Texture RPWAL23 {
     normal "materials/normal/drdc35"
     metallic "materials/white"
     roughness "materials/roughness/drdc35"
