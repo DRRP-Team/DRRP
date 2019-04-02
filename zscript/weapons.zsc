@@ -478,12 +478,12 @@ class DRRPRocketLauncher: RocketLauncher replaces RocketLauncher {
 class DRRPRocket: Rocket replaces Rocket {
     Default {
         Decal "Scorch";
-        DamageFunction DRRPPlayer.getRPGAttackDamage( target, 15, 25 );
+        DamageFunction 20 + DRRPPlayer.getRPGAttackDamage( target, 35, 70 );
     }
 
     States {
         Death:
-            MISL B 8 Bright A_Explode(15 + DRRPPlayer.getRPGAttackDamage( self, 15, 30 ), 96);
+            MISL B 8 Bright A_Explode(15 + DRRPPlayer.getRPGAttackDamage( self, 50, 100 ), 96);
             MISL C 6 Bright;
             MISL D 4 Bright;
             Stop;
