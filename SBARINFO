@@ -49,3 +49,56 @@ statusbar normal { // Standard Doom Status bar
         drawmugshot "STF", 5, 143, 168;
     }
 }
+
+statusbar fullscreen, fullscreenoffsets // ZDoom HUD
+{
+    //health
+    drawimage "MEDIA0", 20, -2, centerbottom;
+    drawnumber 2147483647, HUDFONT_DOOM, untranslated, health, drawshadow, 82, -20;
+
+    //armor
+    drawimage "ARM1A0", 20, -24, centerbottom;
+    drawnumber 2147483647, HUDFONT_DOOM, untranslated, DRRPBasicArmor, drawshadow, 82, -39;
+
+    //ammo
+    drawimage ammoicon1, -14, -4, centerbottom;
+    drawnumber 2147483647, HUDFONT_DOOM, untranslated, ammo1, drawshadow, -25, -20;
+
+    usesammo
+    {
+        //secondary ammo and inventory
+        usessecondaryammo
+        {
+            drawimage ammoicon2, -14, -22, centerbottom;
+            drawnumber 2147483647, HUDFONT_DOOM, untranslated, ammo2, drawshadow, -25, -38;
+            inventorybarnotvisible
+            {
+                drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, HUDFONT_DOOM, -14, -39, -26, -56, untranslated;
+            }
+        }
+        else //no secondary ammo
+        {
+            inventorybarnotvisible
+            {
+                drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, HUDFONT_DOOM, -14, -21, -26, -38, untranslated;
+            }
+        }
+    }
+    else // no ammo but inventory
+    {
+        inventorybarnotvisible
+        {
+            drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, HUDFONT_DOOM, -14, -3, -26, -20, untranslated;
+        }
+    }
+
+    gamemode deathmatch
+    {
+        drawnumber 2147483647, HUDFONT_DOOM, untranslated, frags, drawshadow, -3, 1;
+    }
+    else
+    {
+        // let's hope no mod ever uses 100 keys...
+        drawkeybar 100, vertical, reverserows, auto, -10, 2, 0, 3, auto;
+    }
+}
