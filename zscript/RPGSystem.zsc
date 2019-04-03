@@ -39,7 +39,7 @@ class RPGSystemHandler: EventHandler {
 
     static void setHealthFeatures( DRRPPlayer player ) {
         player.A_GiveInventory( "DRRPHealthVial", 999 );
-		player.MugShotMaxHealth = player.MaxHealth;
+        player.MugShotMaxHealth = player.MaxHealth;
     }
 
     static void setAllFeatures( DRRPPlayer player ) {
@@ -135,7 +135,8 @@ class RPGSystemHandler: EventHandler {
 
 class DRRPDamageAbsorber: Inventory {
     Default {
-        +INVENTORY.UNDROPPABLE;
+        +Inventory.UNDROPPABLE;
+        +Inventory.KEEPDEPLETED;
         Inventory.MaxAmount 1;
         Inventory.Amount 1;
     }    
@@ -145,7 +146,7 @@ class DRRPDamageAbsorber: Inventory {
             return;
 
         Inventory armor = DRRPPlayer( Owner ).FindInventory( "DRRPBasicArmor" );
-	    CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
 
         if ( DebugCVar && DebugCVar.GetBool() )
             console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Pre-damage). Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
@@ -161,7 +162,7 @@ class DRRPDamageAbsorber: Inventory {
             newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType );
 
         if ( DebugCVar && DebugCVar.GetBool() )
-	        console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
+            console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
     }
 }
 
