@@ -57,7 +57,7 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
     drawnumber 2147483647, HUDFONT_DOOM, untranslated, health, drawshadow, 82, -20;
 
     //armor
-    drawimage "ARM1A0", 20, -24, centerbottom;
+    drawimage "BON2A0", 20, -24, centerbottom;
     drawnumber 2147483647, HUDFONT_DOOM, untranslated, DRRPBasicArmor, drawshadow, 82, -39;
 
     //ammo
