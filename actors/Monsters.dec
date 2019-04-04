@@ -668,7 +668,7 @@ Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
 
     Obituary "$DRRP_OB_CYBERDEMON"
     Tag "$DRRP_M_CYBERDEMON"
-    Health 3000
+    Health 6666
 }
 
 Actor Kronos 10391 {
@@ -682,7 +682,7 @@ Actor Kronos 10391 {
     +FLOAT
     Radius   24
     Height   56
-    Health   1500 // Original: 344..572
+    Health   3666 // Original: 344..572
     Speed    20
     Scale    0.43
     Obituary "$DRRP_OB_KRONOS"
