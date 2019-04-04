@@ -75,7 +75,7 @@ class DRRPLava: Actor { // Has Decorate heir (DRRPLava_Decorate).
     States {
         Spawn:
             TNT1 A 0;
-            TNT1 A 1 A_JumpIf( Args[ 4 ] != 0, "SpawnLoopVisible" );
+            TNT1 A 1 A_JumpIf( Args[ 4 ] == 0, "SpawnLoopVisible" );
             TNT1 A 1 A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 );
             Wait;
         SpawnLoopVisible:
