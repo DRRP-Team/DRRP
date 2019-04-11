@@ -8,7 +8,7 @@
 uniform vec2 Scale;
 uniform vec3 camerapos;
 
-varying float lightlevel;
+in float lightlevel;
 
 const vec3 POSTFILTER   = vec3(0.0, 0.0, 0.0);    // Фильтр для постобработки
 const vec3 CORNERFILTER = vec3(0.1, 0.1, 0.25);   // Фильтр для затемнения
