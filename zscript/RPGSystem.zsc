@@ -69,7 +69,7 @@ class RPGSystemHandler: EventHandler {
         else if ( e.Thing is 'DRRPToilet' )
             e.Thing.A_SetInventory( "ExpGain", 1 );
         else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
-            double multiplier = 
+            double multiplier =
                 ( e.Thing.health < 40 )?  FRandom( 0.02, 0.2 ) :
                 ( e.Thing.health < 160 )? FRandom( 0.016, 0.17 ) :
                 ( e.Thing.health < 300 )? FRandom( 0.013, 0.15 ) :
@@ -78,8 +78,8 @@ class RPGSystemHandler: EventHandler {
         }
         CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
         if ( DebugCVar && DebugCVar.GetBool() && e.Thing.FindInventory( "ExpGain" ) )
-            console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor &" .. e.Thing 
-                .. " <" .. e.Thing.GetClassName() .. "> ) amount of experience: " 
+            console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor &" .. e.Thing
+                .. " <" .. e.Thing.GetClassName() .. "> ) amount of experience: "
                 .. e.Thing.FindInventory( "ExpGain" ).Amount .. "." );
     }
 
@@ -111,7 +111,7 @@ class RPGSystemHandler: EventHandler {
                 }
 
             }
-        } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) { 
+        } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
     } // override void WorldThingDamaged( WorldEvent e ) {
 
@@ -132,7 +132,7 @@ class RPGSystemHandler: EventHandler {
             player.MaxArmor    += 4;
 
             setAllFeatures( player );
-            player.ACS_ScriptCall( "levelUp", 0 );
+            player.ACS_ScriptCall( "levelUp", 0, true );
         }
 
     } // override void NetworkProcess( ConsoleEvent e ) {
@@ -145,10 +145,10 @@ class DRRPDamageAbsorber: Inventory {
         +Inventory.KEEPDEPLETED;
         Inventory.MaxAmount 1;
         Inventory.Amount 1;
-    }    
+    }
 
     override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
-        if ( !Owner || !( Owner is "DoomRPGPlayer" ) ) 
+        if ( !Owner || !( Owner is "DoomRPGPlayer" ) )
             return;
 
         Inventory armor = DRRPPlayer( Owner ).FindInventory( "DRRPBasicArmor" );
@@ -208,7 +208,7 @@ class DRRPShopPlayerAccuracy: Inventory {
 
     override void PostBeginPlay() {
         if ( Owner && Owner is "DRRPPlayer" ) {
-            DRRPPlayer( Owner ).SetFeature( Owner, thisFeatureType, 
+            DRRPPlayer( Owner ).SetFeature( Owner, thisFeatureType,
                     DRRPPlayer( Owner ).GetFeature( Owner, thisFeatureType ) + ( Amount & 0x100? -Amount : Amount ) );
         }
         Destroy();

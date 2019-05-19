@@ -328,14 +328,18 @@ Script "getRPGDefenseDamage" (int damage) {
     SetResultValue(damage);
 }
 
-Script "levelUp" ( void ) { // You can use it by the "pukename levelup" command
+Script "levelUp" (bool windowOnly) { // You can use it by the "pukename levelup" command
     int pLevel = ScriptCall("DRRPPlayer", "GetFeature", RPG_Level);
-    ScriptCall("DRRPPlayer", "SetFeature", RPG_Level, pLevel + 1);
+
+    if (!windowOnly) {
+        pLevel++;
+        ScriptCall("DRRPPlayer", "SetFeature", RPG_Level, pLevel);
+    }
 
     ActivatorSound("player/levelup", 127);
     ACS_NamedExecuteWait("window", 0, StrParam(
         s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
-        l:"DRRP_B_ID76", i:pLevel + 1, s:"\n",  // Level:
+        l:"DRRP_B_ID76", i:pLevel, s:"\n",  // Level:
         l:"DRRP_B_ID74", i:4, s:"\n",       // Max Health:
         l:"DRRP_B_ID72", i:4, s:"\n",       // Max Armor:
         l:"DRRP_B_ID73", i:2, s:"\n",       // Defense:
