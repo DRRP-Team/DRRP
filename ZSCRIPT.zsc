@@ -109,7 +109,10 @@ class DRRPPlayer: DoomPlayer {
             console.printf( "#DRRPPlayer::getRPGDefenseDamage. Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
 
         damage *= DRRPMath.PowerFloatToInt( DRRPMath.e * 0.377, -( 1 + DRRPPlayer( activator ).Defense ) );
-        String ReadyWeapon = activator.player.ReadyWeapon.GetClassName();
+        String ReadyWeapon = "";
+        if ( activator.player.ReadyWeapon ) 
+            ReadyWeapon = activator.player.ReadyWeapon.GetClassName();
+            // We may haven't any weapons, for example, in Sector 3, Nadira's hall.
 
         if ( ( ReadyWeapon ~== "DRRPAxe" ) && ( mod != 'DRRPFireDmg' ) ) {
             activator.S_Sound( "weapon/axe/block", CHAN_AUTO, 0.67 );
