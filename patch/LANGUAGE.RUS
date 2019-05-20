@@ -1,0 +1,139 @@
+/**
+ * Copyright (c) 2018-2019 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+[rus]
+    DRRP_D_MENU_DRRPMENU_GAMEMENU   = "Игровое меню";
+    DRRP_D_MENU_DRRPMENU_NOTEPAD    = "Блокнот";
+    DRRP_D_MENU_DRRPMENU_STATINFO   = "Статистика";
+    DRRP_D_MENU_DRRPMENU_SETTINGS   = "Настройки";
+    DRRP_D_MENU_DRRPMENU_FLASHLIGHT = "Фонарик";
+    DRRP_D_MENU_DRRPMENU_SHADERS    = "Шейдеры";
+    DRRP_D_MENU_DRRPMENU_LANGUAGE   = "Язык";
+    DRRP_D_MENU_DRRPMENU_MISC       = "Прочее";
+
+    DRRP_D_KEYBINDINGS_TITLE        = "Назначение клавиш DRRP";
+    DRRP_D_KEYBINDINGS_FLASHLIGHT   = "Включить/отключить фонарь";
+    DRRP_D_KEYBINDINGS_NOTEBOOK     = "Открыть блокнот";
+    DRRP_D_KEYBINDINGS_STATINFO     = "Открыть статистику";
+
+    DRRP_D_MENU_MISC_FREELOOK       = "Отключить вертикальный обзор";
+    DRRP_D_MENU_MISC_DEBUGMODE      = "DRRP Режим Разработчика";
+
+    DRRP_D_MENU_LANGUAGE_TITLE      = "Выбор языка";
+    DRRP_D_MENU_STATINFO_TITLE      = "Статистика";
+
+    DRRP_D_MENU_INFOBAR_ENABLE      = "Отображать названия объектов";
+    DRRP_D_MENU_COMPASS_ENABLE      = "Включить компас";
+
+    DRRP_HUD_COMPASSVISUAL          = "С-----З-----Ю-----В-----";
+    // DRRP_HUD_COMPASSVISUAL       = "С---З---Ю---В---"; // 4test.
+    // DRRP_HUD_COMPASSVISUAL       = "С----сз----З----юз----Ю----юв----В----св----";
+
+    DRRP_D_MENU_FLASHLIGHT_HELMET   = "Шлем";
+    DRRP_D_MENU_FLASHLIGHT_RSHOULDER= "Правое плечо";
+    DRRP_D_MENU_FLASHLIGHT_LSHOULDER= "Левое плечо";
+    DRRP_D_MENU_FLASHLIGHT_CENTER   = "По центру";
+
+    DRRP_D_MENU_FLASHLIGHT_TITLE    = "Настройки фонарика";
+    DRRP_D_MENU_FLASHLIGHT_COLOR    = "Цвет";
+    DRRP_D_MENU_FLASHLIGHT_BRIGHNESS= "Яркость";
+    DRRP_D_MENU_FLASHLIGHT_IANGLE   = "Внутренний угол";
+    DRRP_D_MENU_FLASHLIGHT_OANGLE   = "Внешний угол";
+    DRRP_D_MENU_FLASHLIGHT_LOCATION = "Положение";
+    DRRP_D_MENU_FLASHLIGHT_KEY      = "Клавиша";
+
+    DRRP_D_MENU_SHADERS_TITLE       = "Настройки шейдеров";
+    DRRP_D_MENU_SHADERS_ENABLE      = "Включить шейдеры";
+    DRRP_D_MENU_SHADERS_HELMET      = "Включить шейдер шлема";
+    DRRP_D_MENU_SHADERS_CINEMATIC   = "Включить кинематографические шейдеры";
+    DRRP_D_MENU_SHADERS_DAMAGE      = "Включить шейдеры при уроне";
+    DRRP_D_MENU_SHADERS_LUT         = "> Включить LUT цветокоррекцию";
+    DRRP_D_MENU_SHADERS_POM         = "Включить объемные текстуры";
+    DRRP_D_MENU_SHADERS_APPLY       = "Применить изменения";
+
+
+    DRRP_D_PASSCODE_WRONG           = "Неверный пароль";
+
+    DRRP_D_NOTEBOOK_EMPTY           = "Записей пока нет.";
+    DRRP_D_NOTEBOOK_NOTINGAME       = "Вы должны быть в игре для просмотра блокнота.";
+    DRRP_D_NOTEBOOK_TIP_PART1       = "Нажмите ";
+    DRRP_D_NOTEBOOK_TIP_PART2       = " для открытия блокнота.";
+
+    DRRP_D_STATINFO_NOTINGAME       = "Вы должны быть в игре для просмотра статистики.";
+    DRRP_D_STATINFO_HEADER          = "СТАТУС";
+    DRRP_D_STATINFO_PLAYER_T        = "ИГРОК";
+    DRRP_D_STATINFO_THISSECTOR_T    = "ЭТОТ СЕКТОР";
+    DRRP_D_STATINFO_TOTAL_T         = "ВСЕГО";
+    DRRP_D_STATINFO_MAXKILLS_T      = "1ОО% УБИЙСТВ";
+    DRRP_D_STATINFO_MAXSECRETS_T    = "1ОО% СЕКРЕТОВ";
+    DRRP_D_STATINFO_HEALTH          = "3доровье: ";
+    DRRP_D_STATINFO_ARMOR           = "Броня: ";
+    DRRP_D_STATINFO_CREDITS         = "Кредиты: ";
+    DRRP_D_STATINFO_LEVEL           = "Уровень: ";
+    DRRP_D_STATINFO_EXPERIENCE      = "Опыт: ";
+    DRRP_D_STATINFO_DEFENCE         = "3ащита: ";
+    DRRP_D_STATINFO_STRENGTH        = "Сила: ";
+    DRRP_D_STATINFO_AGILITY         = "Ловкость: ";
+    DRRP_D_STATINFO_ACCURACY        = "Точность: ";
+    DRRP_D_STATINFO_TIME            = "Время: ";
+    DRRP_D_STATINFO_SECRETS         = "Секреты: ";
+    DRRP_D_STATINFO_MONSTERS        = "Монстры: ";
+    DRRP_D_STATINFO_TURNS           = "Ходы: ";
+    DRRP_D_STATINFO_DEATHS          = "Смерти: ";
+    DRRP_D_STATINFO_NOTHING         = "Ничего";
+    DRRP_D_STATINFO_UNDERCONSTRUCT  = "<в разработке>";
+
+// Obituarities
+    DRRP_OB_ZOMBIEPVT        = "%o был застрелен Зомби-солдатом.";
+    DRRP_OB_ZOMBIELT         = "%o был застрелен Зомби-лейтенантом.";
+    DRRP_OB_ZOMBIECPT        = "%o был застрелен Зомби-капитаном.";
+    DRRP_OB_HELLHOUND        = "%o скончался от укусов Адской гончей.";
+    DRRP_OB_CERBERUS         = "%o был загрызен Цербером.";
+    DRRP_OB_DEMONWOLF        = "%o был растерзан Демоном-волком.";
+    DRRP_OB_TROOP            = "%o был прошит пулями Штурмовика.";
+    DRRP_OB_COMMANDO         = "%o был застигнут врасплох Коммандосом.";
+    DRRP_OB_ASSASSIN         = "%o не заметил Убийцы.";
+    DRRP_OB_IMPLING          = "%o получил ожог III степени от Имплинга.";
+    DRRP_OBM_IMPLING         = "%o был растерзан Имплингом.";
+    DRRP_OB_IMP              = "%o не заметил файербола Импа.";
+    DRRP_OBM_IMP             = "%o был растерзан Импом.";
+    DRRP_OB_IMPLORD          = "%o получил раскалённую дырку в себе от Имп-лорда.";
+    DRRP_OBM_IMPLORD         = "%o умер от лап Имп-лорда.";
+    DRRP_OB_PHANTOM          = "%o был пробит Фантомом.";
+    DRRP_OB_LOSTSOUL         = "%o был съеден Потерянной душой.";
+    DRRP_OB_NIGHTMARE        = "%o был съеден Кошмаром.";
+    DRRP_OB_BULLDEMON        = "%o был надкусан Демоном-быком.";
+    DRRP_OB_PINKY            = "%o был съеден заживо Пинки.";
+    DRRP_OB_BELPHEGOR        = "%o был съеден заживо Бельфегором.";
+    DRRP_OB_MALWRATH         = "%o не успел убежать от плазмы Малвраса.";
+    DRRP_OBM_MALWRATH        = "%o был закусан Малврасом.";
+    DRRP_OB_CACODEMON        = "%o не успел отбежать с пути плазмы Какодемона.";
+    DRRP_OBM_CACODEMON       = "%o был закусан Какодемоном.";
+    DRRP_OB_WRETCHED         = "%o не успел отбежать с пути плазмы Несчастного.";
+    DRRP_OBM_WRETCHED        = "%o был зверски закусан Несчастным.";
+    DRRP_OB_GHOUL            = "%o не смог уйти от ракеты Упыря.";
+    DRRP_OBM_GHOUL           = "%o не смог уйти от кулака Упыря.";
+    DRRP_OB_FIEND            = "%o не смог уйти от ракеты Изверга.";
+    DRRP_OBM_GHOUL           = "%o не смог уйти от кулака Изверга.";
+    DRRP_OB_REVENANT         = "%o не смог уйти от ракеты Ревенанта.";
+    DRRP_OBM_GHOUL           = "%o не смог уйти от кулака Ревенанта.";
+    DRRP_OB_BEHEMOTH         = "%o был раздавлен Бегемотом.";
+    DRRP_OB_MANCUBUS         = "%o был раздавлен Манкубусом.";
+    DRRP_OB_DRUJ             = "%o был раздавлен Друйем.";
+    DRRP_OB_INFERNIS         = "%o поджарился после встречи с Инфернисом.";
+    DRRP_OB_ARCHVILE         = "%o стал прожаристым благодаря Арчвайлу.";
+    DRRP_OB_APOLLYON         = "%o стал обугленным благодаря Аполлиону.";
+    DRRP_OB_OGRE             = "%o был убит Людоедом.";
+    DRRP_OBM_OGRE            = "%o был съеден Людоедом.";
+    DRRP_OB_HELLKNIGHT       = "%o не смог уйти от Рыцаря ада.";
+    DRRP_OBM_HELLKNIGHT      = "%o был растерзан Рыцарем ада.";
+    DRRP_OB_BARON            = "%o не смог уйти от Барона.";
+    DRRP_OBM_BARON           = "%o был разорван Бароном.";
+    DRRP_OB_CYBERDEMON       = "%o был размазан по стене ракетой Кибердемона.";
+    DRRP_OB_KRONOS           = "%o не смог выстоять против Кроноса.";
+    DRRP_OB_FIRE             = "%o сгорел.";
+//\\ Obituarities
