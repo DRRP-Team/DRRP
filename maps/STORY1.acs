@@ -1,0 +1,8 @@
+#include "zcommon.acs"
+
+Script 1 OPEN {
+	SetMusic("D_DEAD");
+	SetHudSize(640, 480, false);
+	SetFont("TITLEPIC");
+	HudMessage(s:"A"; HUDMSG_FADEINOUT, 1, CR_BLACK, 320.0, 240.0, 512.0, 5.0, 5.0);
+}

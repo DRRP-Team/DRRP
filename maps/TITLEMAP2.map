@@ -1,0 +1,172 @@
+namespace = "zdoom";
+thing
+{
+x = -32.000;
+y = -112.000;
+type = 1;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+vertex
+{
+x = -128.000;
+y = -64.000;
+}
+
+vertex
+{
+x = 64.000;
+y = -64.000;
+}
+
+vertex
+{
+x = 64.000;
+y = -224.000;
+}
+
+vertex
+{
+x = -128.000;
+y = -224.000;
+}
+
+vertex
+{
+x = -64.000;
+y = -66.000;
+}
+
+vertex
+{
+x = 0.000;
+y = -66.000;
+}
+
+vertex
+{
+x = -64.000;
+y = -65.000;
+}
+
+vertex
+{
+x = 0.000;
+y = -65.000;
+}
+
+linedef
+{
+v1 = 0;
+v2 = 1;
+sidefront = 0;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1;
+v2 = 2;
+sidefront = 1;
+blocking = true;
+}
+
+linedef
+{
+v1 = 2;
+v2 = 3;
+sidefront = 2;
+blocking = true;
+}
+
+linedef
+{
+v1 = 3;
+v2 = 0;
+sidefront = 3;
+blocking = true;
+}
+
+linedef
+{
+v1 = 4;
+v2 = 5;
+sidefront = 4;
+sideback = 5;
+twosided = true;
+}
+
+linedef
+{
+v1 = 6;
+v2 = 7;
+sidefront = 6;
+sideback = 7;
+twosided = true;
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "STARS";
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "STARS";
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "STARS";
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "STARS";
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "GRID";
+scalex_mid = 2.000000;
+scaley_mid = 2.000000;
+}
+
+sidedef
+{
+sector = 0;
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "SSYSTEM";
+scalex_mid = 2.000000;
+scaley_mid = 2.000000;
+}
+
+sidedef
+{
+sector = 0;
+}
+
+sector
+{
+texturefloor = "FWATER4";
+textureceiling = "F_SKY1";
+heightceiling = 64;
+}
+

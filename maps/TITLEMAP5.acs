@@ -1,0 +1,34 @@
+#include "zcommon.acs"
+
+script 10 (void) { //Activate cut-scene
+	//Switch to the camera
+	ChangeCamera(4, 1, 0);
+	//Thing_Activate(4);
+	//Stop all sounds
+	StopSound(0, CHAN_7);
+	StopSound(0, 7);
+	SoundVolume(0, CHAN_7, 0.1);
+	SoundVolume(0, CHAN_5, 0.1);
+	SoundVolume(0, CHAN_6, 0.1);
+	SetMusic("d_silenc");
+	//Play music
+	SetMusic("D_MYST");
+	//Fade from black
+	FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 15.0);
+	//Camera flying to the central computer
+	//180° rotation
+	//Camera flying to the door
+	//90° rotation
+	//White or red splash
+	//Change textures
+	//Wait
+	//Splash
+	//Return textures
+	//Quake
+	//Explosion
+	//Rotate -90° and see for the Baron
+	//Rotate 180°
+	//Move to the door
+	//Fly around the last alive marine
+	//DRRP Logo
+}
