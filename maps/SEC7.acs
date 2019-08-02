@@ -203,15 +203,7 @@ script 15 (int arg0, int arg1, int arg2) { //X=15 Y=6 START=L_97 END=L_118 UNKN=
     if(arg2 == 0) Thing_Hate(32, 0, 0);
     if(arg2 == 0) ChangeFloor(666, "CEILING4");   // TODO: // ( USE IF_VAR( 0 ) ) FLOORCOLOR COLOR=8200980
     if(arg2 == 0) ChangeCeiling(666, "CEILING2"); // TODO: // ( USE IF_VAR( 0 ) ) CEILCOLOR COLOR=11488050
-    if(arg2 == 0) Floor_LowerByValue(942, 128, 64);
-    if(arg2 == 0) Ceiling_LowerByValue(942, 128, 64);
-    if(arg2 == 0) Ceiling_RaiseByValue(943, 128, 64);
-    if(arg2 == 0) Floor_RaiseByValue(943, 128, 64);
     if(arg2 == 0) Sector_SetFade(666, 255, 64, 0);
-    if(arg2 == 0) ChangeFloor(942, "CEILING4");   // TODO: // ( USE IF_VAR( 0 ) ) FLOORCOLOR COLOR=8200980
-    if(arg2 == 0) ChangeCeiling(942, "CEILING2"); // TODO: // ( USE IF_VAR( 0 ) ) CEILCOLOR COLOR=11488050
-    if(arg2 == 0) ChangeFloor(943, "CEILING4");   // TODO: // ( USE IF_VAR( 0 ) ) FLOORCOLOR COLOR=8200980
-    if(arg2 == 0) ChangeCeiling(943, "CEILING2"); // TODO: // ( USE IF_VAR( 0 ) ) CEILCOLOR COLOR=11488050
     if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 1000, 5); // ( USE IF_VAR( 0 ) ) EARTHQUAKE TIME=1000 INTENSITY=5
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) PARTICLE COLOR=46335 EFFECT=32
     if(arg2 == 0) ACS_ExecuteAlways(1, 0); // ( USE IF_VAR( 0 ) ) RUNPOS X=9 Y=1 VAL=0
