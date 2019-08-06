@@ -257,3 +257,31 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
     }
 
 }
+
+class DRRPDamageDoll: DRRPPlayer {
+    Default {
+        +BUDDHA;
+        +DONTTHRUST;
+        +NOBLOODDECALS;
+        +QUICKTORETALIATE;
+        -FRIENDLY;
+        //-NOINFIGHTING;
+        Health 0x4000;
+        Tag "\cGD\cXo\cQl\cHl\c-, \cLnot more\c-.";
+    }
+
+    override void Tick() {
+        Super.Tick();
+        if ( 0x4000 - health )
+            console.printf( "(Doll): taked " 
+                            .. TEXTCOLOR_YELLOW .. 0x4000 - health .. TEXTCOLOR_NORMAL .. " HP by " 
+                            .. ( ( target == NULL )
+                                ? "environment"
+                                : ( ( target.Player != NULL )
+                                    ? "player " .. target.Player.GetUserName()
+                                    : target.GetTag() .. " (class " .. target.GetClassName() .. ")"
+                                ) 
+                            ) .. "." );
+        health = 0x4000;
+    }
+}
