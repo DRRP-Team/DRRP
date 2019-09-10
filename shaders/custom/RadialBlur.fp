@@ -7,8 +7,8 @@
  * https://opensource.org/licenses/MIT
  */
 
-uniform float sampleDist = 1.0;
-uniform float sampleStrength = 2.2;
+const float sampleDist = 1.0;
+const float sampleStrength = 2.2;
 
 void main() {
     float samples[10];
