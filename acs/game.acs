@@ -104,7 +104,7 @@ Script "window"(str _Text) { // s: -> str
         SetHudSize(640, 480, true);
         SetHUDClipRect(0, 0, 0, 0, 0);
         SetFont("M_WINDOW");
-        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 320.0, 320.1, 1);
+        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 324.0, 320.1, 1);
         SetFont("smallfont");
         SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
         HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
@@ -328,8 +328,13 @@ Script "getRPGDefenseDamage" (int damage) {
     SetResultValue(damage);
 }
 
-Script "levelUp" ( void ) { // You can use it by the "pukename levelup" command
+Script "levelUp" (bool windowOnly) { // You can use it by the "pukename levelup" command
     int pLevel = ScriptCall("DRRPPlayer", "GetFeature", RPG_Level);
+
+    if (!windowOnly) {
+        pLevel++;
+        ScriptCall("DRRPPlayer", "SetFeature", RPG_Level, pLevel);
+    }
 
     ActivatorSound("player/levelup", 127);
     ACS_NamedExecuteWait("window", 0, StrParam(

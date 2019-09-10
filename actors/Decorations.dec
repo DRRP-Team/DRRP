@@ -72,6 +72,8 @@ Actor DRRPChair 10750 {
     //$Category DDecorations
 
     +SOLID
+    +NOTAUTOAIMED
+    -SHOOTABLE
     Tag "$DRRP_E_CHAIR"
     Radius 14
     Height 37

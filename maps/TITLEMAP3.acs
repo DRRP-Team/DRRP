@@ -1,0 +1,171 @@
+#include "zcommon.acs"
+// TITLEMAP (non-playable)
+
+/* HudMessage Syntax Reference:
+HudMessageBold(text; HUDMSG_PLAIN,     id, color, x, y, holdTime [, alpha]);
+HudMessageBold(text; HUDMSG_FADEOUT,   id, color, x, y, holdTime, fadeTime [, alpha]);
+HudMessageBold(text; HUDMSG_TYPEON,    id, color, x, y, holdTime, typeTime, fadeTime [, alpha]);
+HudMessageBold(text; HUDMSG_FADEINOUT, id, color, x, y, holdTime,   inTime, outTime [, alpha]);
+*/
+
+// Camera actions and delay until sequence ends
+script 1 OPEN
+{
+	// Version number log to console
+	HudMessageBold(s:"[DRRP] DooM RPG Remake Project";
+	HUDMSG_PLAIN | HUDMSG_LOG | HUDMSG_ALPHA,
+	0, CR_UNTRANSLATED, 0.5, 0.9, 0, 0.0);
+	
+	// Start out facing the credit texture
+	//SetMusic("D_SILENT");
+	//FadeTo(0, 0, 0, 1.0, 5.0);
+	Thing_Activate(23);
+	ChangeCamera(23, 0, 0);
+	Delay(35 * 5);
+	FadeTo(0, 0, 0, 1.0, 2.0);
+	Delay(35 * 3);
+	
+	// Start camera sequence
+	Thing_Deactivate(23); // Deactivate the credit camera
+	Thing_Activate(141); // Activate the moving camera //14
+	Thing_Activate(121); // Activate the actor mover
+	ChangeCamera(141, 0, 0);
+	
+	// Activate the monsters
+	//Thing_Activate(16);
+	//Thing_Activate(17);
+	//Thing_Activate(18);
+	//Thing_Activate(20);
+	
+	// Set thing hates
+	//Thing_Hate(16, 17, 6); // Marines hate Monsters
+	//Thing_Hate(17, 16, 6); // Monsters hate Marines
+	//Thing_Hate(18, 17, 6); // Hallway Marine hates monsters
+	//Thing_Hate(17, 18, 6); // Monsters hate Hallway Marine
+	
+	// Begin other scripts
+	ACS_Execute(2, 0);
+	ACS_Execute(3, 0);
+	ACS_Execute(4, 0);
+	ACS_Execute(5, 0);
+	ACS_Execute(6, 0);
+	ACS_Execute(7, 0);
+	
+	// Fade screen in and play the title music
+	//SetMusic("$MUS_TITLE");
+	FadeTo(0, 0, 0, 1.0, 0.0);
+	Delay(10);
+	FadeTo(0, 0, 0, 0.0, 5.0);
+	
+	// Change sector flags (as to not hear the closest Arachnotron's see sound)
+	// NOTE: This line will not work on GZDoom 2.0.05 and older, only the first sector tag is used!
+	Sector_ChangeFlags(3, 0, SECF_SILENT);
+	
+	// Delay until title music nears the end
+	// NOTE: This delay and the one below should be the amount of tics the
+	// camera sequence and the MIDI track should be. The title music is a
+	// little over 57 seconds long, that's 2,000 tics.
+	Delay(35 * 51);
+	
+	// Fade screen to black
+	FadeTo(0, 0, 0, 1.0, 5.0);
+	Delay(35 * 8);
+	
+	// Switch camera from the one showing the DOOM logo to the new one for the main menu
+	Thing_Deactivate(141); // Deactivate the moving camera //14
+	//Thing_Deactivate(21); // Deactivate the actor mover
+	Delay(1);
+	Thing_Activate(15); // Activate the new stationary camera for the main menu
+	ChangeCamera(15, 0, 0);
+	Delay(1);
+	
+	// Fade screen back in and change to main menu music
+	FadeTo(0, 0, 0, 0.0, 5.0);
+	SetMusic("$MUS_MENU");
+	
+	// TITLEMAP SEQUENCE COMPLETED
+}
+
+// Makes the Cyberdemon constantly hate the camera (uses a HateTarget and ActorMover)
+int hateCamera = 1;
+script 2 (void)
+{
+	While(hateCamera == 1)
+	{
+		Thing_Hate(20, 122, 6);
+		Delay(1);
+	}
+	terminate;
+}
+
+// Delay until release the Hallway Marine (between the two O's)
+script 3 (void)
+{
+	Delay(35 * 29);
+	Line_SetBlocking(1, 0, BLOCKF_EVERYTHING);
+}
+
+// Delay until remove things from the map
+script 4 (void)
+{
+	Delay(1390);
+	hateCamera = 0;
+	Thing_Remove(16);
+	Thing_Remove(17);
+	Thing_Remove(18);
+	Thing_Remove(19);
+	Thing_Remove(20);
+}
+
+// Delay until change floor textures
+script 5 (void)
+{
+	Delay(1390);
+	ChangeFloor(1, "F_SKY1"); // Set in-map floors to show the sky
+	ChangeFloor(2, "drdc23"); // Set skybox floor to show sky with title image//TITLESKY
+	ChangeFloor(666, "drdc23"); // Set skybox floor to show sky with title image
+}
+
+// Delay until change floor heights
+script 6 (void)
+{
+	Delay(1380);
+	Floor_MoveToValue(4, 16, 128, 0);
+}
+
+// Delay until change sector colors and light effects
+int flickerLights = 1;
+script 7 (void)
+{
+	Delay(1590);
+	
+	// Change colors of sides once all letters are down
+	Sector_SetColor(4, 255, 255, 255, 0); // Change letters to white//4
+	Sector_SetColor(555, 255, 155, 000, 1); // Change letters to orange//4
+	Sector_SetColor(1, 74, 112, 108, 0);
+	Sector_SetColor(5, 74, 112, 108, 0); // Change sides to aqua
+	
+	// Change lighting effects
+	flickerLights = 0;
+	Light_Stop(4);
+	Light_Stop(5);
+	Light_ChangeToValue(4, 160);
+	Light_ChangeToValue(555, 255);
+	Delay(1);
+	Light_Fade(1, 255, 105);
+	Light_Fade(555, 255, 105);//4
+}
+
+// Set sector light effects
+script 669 OPEN
+{
+	// Flicker DOOM letters
+	While(flickerLights == 1)
+	{
+		Light_Fade(4, Random(200, 255), Random(1, 3));
+		Light_Fade(555, Random(200, 255), Random(1, 3));
+		Delay(Random(3, 6));
+	}
+	terminate;
+}
+

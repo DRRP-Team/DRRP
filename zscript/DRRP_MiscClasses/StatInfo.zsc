@@ -87,6 +87,7 @@ class StatInfoMenu : OptionMenu {
         addStr( desc, cNormal, StatLocalize( "TIME" ) .. level.time / 35 );
         addSpecIntStr( desc, level.found_secrets, level.total_secrets, StatLocalize( "SECRETS" ) );
         addSpecIntStr( desc, level.killed_monsters, level.total_monsters, StatLocalize( "MONSTERS" ) );
+        addSpecIntStr( desc, level.found_items, level.total_items, StatLocalize( "ITEMS" ) );
         addStr( desc, cNormal, StatLocalize( "TURNS" ) .. notNow );
         addStr( desc, cNormal, StatLocalize( "EXPERIENCE" ) .. notNow );
 

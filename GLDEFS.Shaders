@@ -80,15 +80,8 @@ HardwareShader PostProcess Scene {
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
-/*HardwareShader PostProcess Scene {
-    Name "SEC1"
-    Texture LutMap "textures/shadermaps/lut.png"
-    Shader "shaders/custom/Tonemap.fp"               330
-}*/
-
 HardwareShader PostProcess Scene {
     Name "SEC1"
-    Uniform float timer
     Shader "shaders/custom/ccurves.fp"               330
 }
 

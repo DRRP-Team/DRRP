@@ -305,7 +305,7 @@
 //\\ Base
 
 // DRRP
-    DRRP_D_DRRPVERSION      = "DRRP v0.2.x EAB";
+    DRRP_D_DRRPVERSION      = "DRRP v0.3.x";
     DRRP_D_SOUND_SUFFIX     = "/en";
 
     DRRP_D_MENU_NEWGAME     = "New Game";
@@ -388,6 +388,7 @@
     DRRP_D_STATINFO_TIME            = "Time: ";
     DRRP_D_STATINFO_SECRETS         = "Secrets: ";
     DRRP_D_STATINFO_MONSTERS        = "Monsters: ";
+    DRRP_D_STATINFO_ITEMS           = "Items: ";
     DRRP_D_STATINFO_TURNS           = "Turns: ";
     DRRP_D_STATINFO_DEATHS          = "Deaths: ";
     DRRP_D_STATINFO_NOTHING         = "Nothing";
@@ -423,6 +424,7 @@
     DRRP_D_TIP_3                    = "After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction";
     DRRP_D_TIP_4                    = "The last shop terminal\nis in this sector,\nso if you have any credits left,\nwe recommend purchasing right now";
     DRRP_D_TIP_5                    = "You can use your flashlight";
+    DRRP_D_TIP_6                    = "You can use dog's jerk\nto speed up yourself";
 
     DRRP_D_ACH_MONSTERS             = "Sector clear!\nYou killed all monsters!";
     DRRP_D_ACH_SECRETS              = "Sector researched!\nYou found all secrets!";

@@ -69,14 +69,14 @@ class DRRPLava: Actor { // Has Decorate heir (DRRPLava_Decorate).
         Tag "$DRRP_E_LAVAPOOL";
         Health 10;
         Mass 0x7FFFFFFF;
-        Args 0, 0, 0, 0, 0; // Last (fifth) argument is visiblity of the lava pool.
+        // Last (fifth) argument is invisiblity of the lava pool.
     }
 
     States {
         Spawn:
             TNT1 A 0;
-            TNT1 A 1 A_JumpIf( Args[ 4 ] != 0, "SpawnLoop" );
-            TNT1 A 0;
+            TNT1 A 1 A_JumpIf( Args[ 4 ] == 0, "SpawnLoopVisible" );
+            TNT1 A 1 A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 );
             Wait;
         SpawnLoopVisible:
             LAVA A 1 Bright A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 );
@@ -256,4 +256,32 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
             Loop;
     }
 
+}
+
+class DRRPDamageDoll: DRRPPlayer {
+    Default {
+        +BUDDHA;
+        +DONTTHRUST;
+        +NOBLOODDECALS;
+        +QUICKTORETALIATE;
+        -FRIENDLY;
+        //-NOINFIGHTING;
+        Health 0x4000;
+        Tag "\cGD\cXo\cQl\cHl\c-, \cLnot more\c-.";
+    }
+
+    override void Tick() {
+        Super.Tick();
+        if ( 0x4000 - health )
+            console.printf( "(Doll): taked " 
+                            .. TEXTCOLOR_YELLOW .. 0x4000 - health .. TEXTCOLOR_NORMAL .. " HP by " 
+                            .. ( ( target == NULL )
+                                ? "environment"
+                                : ( ( target.Player != NULL )
+                                    ? "player " .. target.Player.GetUserName()
+                                    : target.GetTag() .. " (class " .. target.GetClassName() .. ")"
+                                ) 
+                            ) .. "." );
+        health = 0x4000;
+    }
 }

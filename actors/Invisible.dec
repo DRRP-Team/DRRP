@@ -39,6 +39,10 @@ Actor DRRPInfo : DRRPTrigger {
     //$Category Invisible
     -USESPECIAL
     +NOTAUTOAIMED
+    States {
+        TNT1 A 0
+        Stop
+    }
 }
 
 Actor DRRPWall : DRRPInfo 10801 {
