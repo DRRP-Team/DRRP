@@ -62,7 +62,7 @@ script 4 (int arg0, int arg1, int arg2) { //X=4 Y=2 START=L_12 END=L_17 UNKN=314
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(14)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=14
     if(arg2 == 0) SpawnForced("BullDemon", getMediumX(92), getMediumY(20), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=7 STATE=0
     if(arg2 == 0) SpawnForced("Behemoth", getMediumX(116), getMediumY(68), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=8 STATE=0
-    if(arg2 == 0) ACS_Execute(3000, 0, 6, 7); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=480
+    if(arg2 == 0) ACS_Execute(3000, 0, 3); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=480
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=4 Y=2
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(14)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=14
 }
@@ -92,7 +92,7 @@ script 12 (int arg0, int arg1, int arg2) { //X=24 Y=2 START=L_25 END=L_30 UNKN=3
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(15)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=15
     if(arg2 == 0) SpawnForced("Malwrath", getMediumX(140), getMediumY(20), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=9 STATE=0
     if(arg2 == 0) SpawnForced("Ghoul", getMediumX(124), getMediumY(28), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=10 STATE=0
-    if(arg2 == 0) ACS_Execute(3000, 0, 8, 9); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=474
+    if(arg2 == 0) ACS_Execute(3000, 0, 5); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=474
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=24 Y=2
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(15)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=15
 }
@@ -192,7 +192,7 @@ script 38 (int arg0, int arg1, int arg2) { //X=7 Y=13 START=L_69 END=L_69 UNKN=5
 script 39 (int arg0, int arg1, int arg2) { //X=4 Y=14 START=L_70 END=L_74 UNKN=2621440 UNKN2=0
     int sgenid0 = -142; // [x=4, y=14]
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(17), getString(16), 39); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=16 MSG=17
-    if(arg2 == 0) ACS_Execute(3000, 0, 4, 5); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=389
+    if(arg2 == 0) ACS_Execute(3000, 0, 4); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=389
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(18)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=18
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=4 Y=14
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(18)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=18
@@ -465,7 +465,7 @@ script 84 (int arg0, int arg1, int arg2) { //X=29 Y=25 START=L_219 END=L_223 UNK
     int sgenid0 = -953; // [x=29, y=25]
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(32), getString(31), 84); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=31 MSG=32
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(33)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=33
-    if(arg2 == 0) ACS_Execute(3000, 0, 10, 11); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=23
+    if(arg2 == 0) ACS_Execute(3000, 0, 10); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=23
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=29 Y=25
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(33)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=33
 }
