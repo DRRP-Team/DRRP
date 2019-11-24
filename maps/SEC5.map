@@ -21982,7 +21982,7 @@ texturemiddle = "DRDC10";
 sidedef
 {
 sector = 88;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 offsetx_top = -1.000000;
 }
 
@@ -27407,7 +27407,7 @@ offsetx_mid = 33;
 sidedef
 {
 sector = 72;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 offsetx_top = -1.000000;
 }
 
@@ -27571,7 +27571,8 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 97;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
+scalex_top = -1.000000;
 }
 
 sidedef
