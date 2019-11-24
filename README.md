@@ -64,6 +64,8 @@ In this moment project in the early access stage, on which is not avaliable vers
 2. Download the release you need (recommended first in the list)
 3. Drag and drop the downloaded file into the GZDoom binary
 
+<!--
+
 <a name="en_buildfiles"></a>
 
 ### Kits "download and play":
@@ -76,6 +78,8 @@ Kits variants:
 - Windows 32 - Vintage kit for Windows x86
 
 **This kits not available yet**
+
+-->
 
 <a name="en_pkfiles"></a>
 
@@ -145,6 +149,8 @@ Suitable for experienced and owners other OS.
 2. Скачайте нужную версию (рекомендуем брать первую в списке)
 3. Перетащите скачанный файл на GZDoom
 
+<!--
+
 <a name="ru_buildfiles"></a>
 
 ### Комплекты "скачай и играй":
@@ -157,6 +163,8 @@ Suitable for experienced and owners other OS.
 - Windows 32 - Vintage комплект для Windows x86
 
 **Данные комплекты пока не доступны**
+
+-->
 
 <a name="ru_pkfiles"></a>
 
