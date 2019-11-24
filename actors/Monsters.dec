@@ -152,7 +152,7 @@ Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
     Obituary "$DRRP_OB_ZOMBIELT"
     Tag "$DRRP_M_ZOMBIELT"
     Health 75
-    Translation "96:111=192:207", "0:8=246:246" 
+    Translation "96:111=%[0.00,0.00,0.00]:[0.98,1.25,1.76]", "16:47=%[0.00,0.00,0.00]:[0.31,0.59,0.94]", "48:79=%[0.00,0.00,0.00]:[0.80,0.93,1.16]", "176:191=240:240", "168:175=193:193", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[0.76,0.95,1.28]" 
 }
 
 Actor ZombieCpt : ZombieManDRRP 10474 {
@@ -206,7 +206,7 @@ Actor Commando : ChaingunGuyDRRP 10364 {
     Obituary "$DRRP_OB_COMMANDO"
     Tag "$DRRP_M_COMMANDO"
     Health 130
-    Translation "16:47=192:207"
+    Translation "16:47=192:207", "176:191=192:207"
 }
 
 Actor Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
@@ -354,7 +354,7 @@ Actor Belphegor : Demon 10359 {
     Obituary "$DRRP_OB_BEPHELGOR"
     Tag "$DRRP_M_BELPHEGOR"
     Health 400
-    Translation "16:47=%[0.00, 0.09, 0.20]:[0.49, 1.17, 2.00]"
+    Translation "16:47=%[0.00,0.00,0.00]:[0.65,0.89,1.61]"
 }
 
 
@@ -565,7 +565,7 @@ Actor Druj : DRRPCubus 10478 {
     Tag "$DRRP_M_DRUJ"
     Obituary "$DRRP_OB_DRUJ"
     Health 850
-    Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
+    Translation "48:79=16:47", "13:15=45:47", "144:151=40:47", "128:143=16:47", "144:151=40:47", "236:239=44:47"
 }
 
 
