@@ -153,3 +153,7 @@ Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
     -SOLID
     -SHOOTABLE
 }
+
+Actor DRRPDamageTestDoll : DRRPDamageDoll 10901 { // Written in ZScript
+    //$Category Invisible
+}

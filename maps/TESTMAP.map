@@ -2305,6 +2305,23 @@ skill5 = true;
 renderstyle = "";
 }
 
+thing
+{
+x = -704.000;
+y = 768.000;
+type = 10901;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
 vertex
 {
 x = -384.000;
@@ -5585,6 +5602,54 @@ vertex
 {
 x = -80.000;
 y = 1792.000;
+}
+
+vertex
+{
+x = -736.000;
+y = 736.000;
+}
+
+vertex
+{
+x = -736.000;
+y = 800.000;
+}
+
+vertex
+{
+x = -672.000;
+y = 800.000;
+}
+
+vertex
+{
+x = -672.000;
+y = 736.000;
+}
+
+vertex
+{
+x = -720.000;
+y = 752.000;
+}
+
+vertex
+{
+x = -720.000;
+y = 784.000;
+}
+
+vertex
+{
+x = -688.000;
+y = 784.000;
+}
+
+vertex
+{
+x = -688.000;
+y = 752.000;
 }
 
 linedef
@@ -13353,6 +13418,78 @@ playeruse = true;
 repeatspecial = true;
 }
 
+linedef
+{
+v1 = 547;
+v2 = 548;
+sidefront = 1109;
+sideback = 1113;
+twosided = true;
+}
+
+linedef
+{
+v1 = 548;
+v2 = 549;
+sidefront = 1110;
+sideback = 1116;
+twosided = true;
+}
+
+linedef
+{
+v1 = 549;
+v2 = 550;
+sidefront = 1111;
+sideback = 1115;
+twosided = true;
+}
+
+linedef
+{
+v1 = 550;
+v2 = 547;
+sidefront = 1112;
+sideback = 1114;
+twosided = true;
+}
+
+linedef
+{
+v1 = 551;
+v2 = 552;
+sidefront = 1117;
+sideback = 1121;
+twosided = true;
+}
+
+linedef
+{
+v1 = 552;
+v2 = 553;
+sidefront = 1118;
+sideback = 1124;
+twosided = true;
+}
+
+linedef
+{
+v1 = 553;
+v2 = 554;
+sidefront = 1119;
+sideback = 1123;
+twosided = true;
+}
+
+linedef
+{
+v1 = 554;
+v2 = 551;
+sidefront = 1120;
+sideback = 1122;
+twosided = true;
+}
+
 sidedef
 {
 sector = 155;
@@ -20120,6 +20257,102 @@ texturemiddle = "TEKGREN4";
 offsetx = 16;
 }
 
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 37;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 37;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 37;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 37;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 169;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 169;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 169;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 169;
+texturetop = "FLATFL";
+texturebottom = "FLATFL";
+}
+
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 168;
+}
+
+sidedef
+{
+sector = 168;
+}
+
 sector
 {
 texturefloor = "FLAT20";
@@ -21594,5 +21827,23 @@ textureceiling = "FLOOR3_3";
 heightfloor = -8;
 heightceiling = 56;
 lightlevel = 32;
+}
+
+sector
+{
+texturefloor = "FLATFL";
+textureceiling = "FLATFL";
+heightfloor = 8;
+heightceiling = 56;
+lightlevel = 255;
+}
+
+sector
+{
+texturefloor = "FLATFL";
+textureceiling = "FLATFL";
+heightfloor = 6;
+heightceiling = 59;
+lightlevel = 255;
 }
 
