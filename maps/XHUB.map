@@ -15252,7 +15252,7 @@ offsetx_mid = 48;
 sidedef
 {
 sector = 110;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -15543,7 +15543,7 @@ offsetx_mid = -32;
 sidedef
 {
 sector = 58;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -15564,7 +15564,7 @@ sector = 70;
 sidedef
 {
 sector = 9;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -15619,7 +15619,7 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 16;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -16347,7 +16347,7 @@ offsetx_mid = 48;
 sidedef
 {
 sector = 118;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -16396,7 +16396,7 @@ texturemiddle = "DRDC12";
 sidedef
 {
 sector = 40;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -16572,7 +16572,7 @@ offsetx_mid = 48;
 sidedef
 {
 sector = 47;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -16616,7 +16616,7 @@ texturemiddle = "DRDC10";
 sidedef
 {
 sector = 46;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -17373,7 +17373,7 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 8;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -17476,7 +17476,7 @@ offsetx_mid = 48;
 sidedef
 {
 sector = 30;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -17525,7 +17525,7 @@ texturemiddle = "DRPGB012";
 sidedef
 {
 sector = 58;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -17550,7 +17550,7 @@ offsetx_mid = 48;
 sidedef
 {
 sector = 59;
-texturetop = "DRPGA12";
+texturetop = "DRDC6";
 }
 
 sidedef
@@ -22163,15 +22163,15 @@ xpanningfloor = -32;
 
 sector
 {
-texturefloor = "DRPGA12B";
-textureceiling = "DRPGA12B";
+texturefloor = "DRDC6";
+textureceiling = "DRDC6";
 heightfloor = -8;
 heightceiling = 56;
 lightlevel = 100;
 rotationfloor = 90;
-xpanningfloor = -32;
+xpanningfloor = -64.000000;
 rotationceiling = 90;
-xpanningceiling = -32;
+xpanningceiling = -64.000000;
 }
 
 sector
