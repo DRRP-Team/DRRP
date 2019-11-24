@@ -43,6 +43,8 @@ In this moment project in the early access stage, on which is not avaliable vers
 [<img alt="DRRP Doom RPG Remake Project Sector 4" src="https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png" width=256/>](https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png)
 [<img alt="DRRP Doom RPG Remake Project Sector 2" src="https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png" width=256/>](https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png)
 [<img alt="DRRP Doom RPG Remake Project Reactor" src="https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png" width=256/>](https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png)
+[<img alt="DRRP Doom RPG Remake Project Sector 1" src="https://static.doomworld.com/monthly_2018_10/6.jpg.d657dc5bb2de7acfad617bcc25bc4b16.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/6.jpg.d657dc5bb2de7acfad617bcc25bc4b16.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 4" src="https://static.doomworld.com/monthly_2019_03/1129633616_2019-03-0122-19-58.png.487a5285c2a886a74176b53a8b70e70d.png" width=256/>](https://static.doomworld.com/monthly_2019_03/1129633616_2019-03-0122-19-58.png.487a5285c2a886a74176b53a8b70e70d.png)
 
 <a name="en_links"></a>
 
@@ -128,6 +130,8 @@ Suitable for experienced and owners other OS.
 [<img alt="DRRP Doom RPG Remake Project Сектор 4" src="https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png" width=256/>](https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png)
 [<img alt="DRRP Doom RPG Remake Project Сектор 2" src="https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png" width=256/>](https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png)
 [<img alt="DRRP Doom RPG Remake Project Реактор" src="https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png" width=256/>](https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png)
+[<img alt="DRRP Doom RPG Remake Project Сектор 1" src="https://static.doomworld.com/monthly_2018_10/6.jpg.d657dc5bb2de7acfad617bcc25bc4b16.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/6.jpg.d657dc5bb2de7acfad617bcc25bc4b16.jpg)
+[<img alt="DRRP Doom RPG Remake Project Сектор 4" src="https://static.doomworld.com/monthly_2019_03/1129633616_2019-03-0122-19-58.png.487a5285c2a886a74176b53a8b70e70d.png" width=256/>](https://static.doomworld.com/monthly_2019_03/1129633616_2019-03-0122-19-58.png.487a5285c2a886a74176b53a8b70e70d.png)
 
 <a name="ru_links"></a>
 
