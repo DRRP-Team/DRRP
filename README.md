@@ -36,12 +36,13 @@ In this moment project in the early access stage, on which is not avaliable vers
 
 ### Screenshots
 
-[<img alt="DRRP Doom RPG Remake Project Sector 4" src="http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg)
-[<img alt="DRRP Doom RPG Remake Project Sector 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg)
-[<img alt="DRRP Doom RPG Remake Project Sector 2" src="http://drrpofficial.tk/img/screenshots/thumbnails/3.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/3.jpg)
-[<img alt="DRRP Doom RPG Remake Project Reactor" src="http://drrpofficial.tk/img/screenshots/thumbnails/4.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/4.jpg)
-[<img alt="DRRP Doom RPG Remake Project Reactor" src="http://drrpofficial.tk/img/screenshots/thumbnails/5.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/5.jpg)
-[<img alt="DRRP Doom RPG Remake Project Sector 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/6.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/6.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 4" src="https://static.doomworld.com/monthly_2018_10/1.jpg.966058a49f84355e4cc0846a50cbe306.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/1.jpg.966058a49f84355e4cc0846a50cbe306.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 1" src="https://static.doomworld.com/monthly_2018_10/2.jpg.5208df1ff8339ff5168233ee37264010.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/2.jpg.5208df1ff8339ff5168233ee37264010.jpg)
+[<img alt="DRRP Doom RPG Remake Project Entrance" src="https://static.doomworld.com/monthly_2018_10/header.jpg.e6dce3d63b04a6d0e28a5b1bcacefea6.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/header.jpg.e6dce3d63b04a6d0e28a5b1bcacefea6.jpg)
+[<img alt="DRRP Doom RPG Remake Project Reactor" src="https://static.doomworld.com/monthly_2018_10/4.jpg.8a05c5fc9332177150b7da7a11173afe.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/4.jpg.8a05c5fc9332177150b7da7a11173afe.jpg)
+[<img alt="DRRP Doom RPG Remake Project Sector 4" src="https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png" width=256/>](https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png)
+[<img alt="DRRP Doom RPG Remake Project Sector 2" src="https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png" width=256/>](https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png)
+[<img alt="DRRP Doom RPG Remake Project Reactor" src="https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png" width=256/>](https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png)
 
 <a name="en_links"></a>
 
@@ -116,12 +117,13 @@ Suitable for experienced and owners other OS.
 
 ### Скриншоты
 
-[<img alt="DRRP Doom RPG Remake Project Сектор 4" src="http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/1.jpg)
-[<img alt="DRRP Doom RPG Remake Project Сектор 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/2.jpg)
-[<img alt="DRRP Doom RPG Remake Project Сектор 2" src="http://drrpofficial.tk/img/screenshots/thumbnails/3.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/3.jpg)
-[<img alt="DRRP Doom RPG Remake Project Реактор" src="http://drrpofficial.tk/img/screenshots/thumbnails/4.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/4.jpg)
-[<img alt="DRRP Doom RPG Remake Project Реактор" src="http://drrpofficial.tk/img/screenshots/thumbnails/5.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/5.jpg)
-[<img alt="DRRP Doom RPG Remake Project Сектор 1" src="http://drrpofficial.tk/img/screenshots/thumbnails/6.jpg" width=256/>](http://drrpofficial.tk/img/screenshots/thumbnails/6.jpg)
+[<img alt="DRRP Doom RPG Remake Project Сектор 4" src="https://static.doomworld.com/monthly_2018_10/1.jpg.966058a49f84355e4cc0846a50cbe306.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/1.jpg.966058a49f84355e4cc0846a50cbe306.jpg)
+[<img alt="DRRP Doom RPG Remake Project Сектор 1" src="https://static.doomworld.com/monthly_2018_10/2.jpg.5208df1ff8339ff5168233ee37264010.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/2.jpg.5208df1ff8339ff5168233ee37264010.jpg)
+[<img alt="DRRP Doom RPG Remake Project Вступление" src="https://static.doomworld.com/monthly_2018_10/header.jpg.e6dce3d63b04a6d0e28a5b1bcacefea6.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/header.jpg.e6dce3d63b04a6d0e28a5b1bcacefea6.jpg)
+[<img alt="DRRP Doom RPG Remake Project Реактор" src="https://static.doomworld.com/monthly_2018_10/4.jpg.8a05c5fc9332177150b7da7a11173afe.jpg" width=256/>](https://static.doomworld.com/monthly_2018_10/4.jpg.8a05c5fc9332177150b7da7a11173afe.jpg)
+[<img alt="DRRP Doom RPG Remake Project Сектор 4" src="https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png" width=256/>](https://static.doomworld.com/monthly_2019_03/10742485_2019-03-0122-20-23.png.fe2161a861f968a5192576e32293afb2.png)
+[<img alt="DRRP Doom RPG Remake Project Сектор 2" src="https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png" width=256/>](https://static.doomworld.com/monthly_2019_03/587111398_2019-03-0122-18-29.png.9efb39a9d4af44028f554726f1fcc0b9.png)
+[<img alt="DRRP Doom RPG Remake Project Реактор" src="https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png" width=256/>](https://static.doomworld.com/monthly_2019_03/1738872953_2019-03-0122-25-21.png.5fb3bf5540177ca9b03005cbb9c2562e.png)
 
 <a name="ru_links"></a>
 
