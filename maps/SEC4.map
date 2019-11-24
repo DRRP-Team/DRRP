@@ -107489,7 +107489,7 @@ scaley_mid = 2.000000;
 sidedef
 {
 sector = 107;
-texturetop = "DRPGA11";
+texturetop = "drdc11";
 }
 
 sidedef
@@ -108267,7 +108267,8 @@ offsetx_mid = 32.000000;
 sidedef
 {
 sector = 70;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -108308,7 +108309,8 @@ sector = 497;
 sidedef
 {
 sector = 73;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -109042,7 +109044,8 @@ light = 256;
 sidedef
 {
 sector = 3;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -110305,7 +110308,8 @@ texturetop = "DRPGB001";
 sidedef
 {
 sector = 67;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -110885,7 +110889,8 @@ sector = 518;
 sidedef
 {
 sector = 94;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -111297,8 +111302,10 @@ sector = 62;
 sidedef
 {
 sector = 272;
-texturemiddle = "DRPGA11";
+texturemiddle = "DRDC0";
+offsety = 8;
 offsety_mid = -24.000000;
+scalex_mid = -1.000000;
 }
 
 sidedef
@@ -111572,7 +111579,8 @@ sector = 15;
 sidedef
 {
 sector = 118;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -120906,7 +120914,8 @@ offsety_mid = -1.000000;
 sidedef
 {
 sector = 95;
-texturetop = "DRPGA11";
+texturetop = "DRDC0";
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -131925,7 +131934,8 @@ sidedef
 {
 sector = 881;
 texturetop = "drdc27";
-texturebottom = "DRPGA11";
+texturebottom = "DRDC0";
+scalex_bottom = -1.000000;
 }
 
 sidedef
