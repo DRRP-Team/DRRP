@@ -206,7 +206,7 @@ Actor Commando : ChaingunGuyDRRP 10364 {
     Obituary "$DRRP_OB_COMMANDO"
     Tag "$DRRP_M_COMMANDO"
     Health 130
-    Translation "16:47=192:207", "176:191=192:207"
+    Translation "16:47=192:207"
 }
 
 Actor Assassin : ChaingunGuyDRRP replaces ChaingunGuy 10464 {
@@ -567,7 +567,7 @@ Actor Druj : DRRPCubus 10478 {
     Tag "$DRRP_M_DRUJ"
     Obituary "$DRRP_OB_DRUJ"
     Health 850
-    Translation "48:79=16:47", "13:15=45:47", "144:151=40:47", "128:143=16:47", "144:151=40:47", "236:239=44:47"
+    Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
 }
 
 
