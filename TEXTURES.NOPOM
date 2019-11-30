@@ -15,6 +15,11 @@ Texture "NP_DRDC0", 64, 64 {
     Patch "DRDC0", 0, 0
 }
  
+// Exit door
+Texture "NP_DRDC6", 64, 64 {
+    Patch "DRDC6", 0, 0
+}
+ 
 // Brown bricks
 Texture "NP_DRDC24", 64, 64 {
     Patch "DRDC24", 0, 0
@@ -111,4 +116,25 @@ Texture "NP_DRDC27", 64, 64 {
 Texture "NP_DRDC32", 64, 64 {
     Patch "DRDC32", 0, 0
 }
- 
+
+// Reactor floor animation
+Texture "NP_RROCK04", 64, 64 {
+    Patch "RROCK04", 0, 0
+}
+
+Texture "NP_RROCK05", 64, 64 {
+    Patch "RROCK05", 0, 0
+}
+
+Texture "NP_RROCK06", 64, 64 {
+    Patch "RROCK06", 0, 0
+}
+
+Texture "NP_RROCK07", 64, 64 {
+    Patch "RROCK07", 0, 0
+}
+
+Texture "NP_RROCK08", 64, 64 {
+    Patch "RROCK08", 0, 0
+}
+
