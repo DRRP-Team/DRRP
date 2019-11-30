@@ -11,9 +11,11 @@ Material Texture DRDC29 {
 }
 
 // Exit door
-Material Texture DRDC06 {
+Material Texture DRDC6 {
     normal "materials/normal/drdc6"
     specular "materials/specular/drdc6"
+    Texture tex_heightmap   "materials/height/drdc6"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Jammed door
