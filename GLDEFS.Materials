@@ -564,3 +564,29 @@ Material Texture DRDC32 {
     Texture tex_heightmap   "materials/height/drdc32"
     shader                  "shaders/parallax_pbr.fp"
 }
+
+// Reactor floor animation
+Material Texture RROCK04 {
+    Texture tex_heightmap   "materials/height/RROCK04.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK05 {
+    Texture tex_heightmap   "materials/height/RROCK04.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK06 {
+    Texture tex_heightmap   "materials/height/RROCK04.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK07 {
+    Texture tex_heightmap   "materials/height/RROCK04.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK08 {
+    Texture tex_heightmap   "materials/height/RROCK04.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
