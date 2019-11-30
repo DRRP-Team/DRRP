@@ -142,8 +142,8 @@ Script "transformation"(int tid, int timedelay) {
     Delay(timedelay || 2);
 }
 
-#define NUM_POM_TEXTURES 29
-str POM_TEXTURES[NUM_POM_TEXTURES] = { "DRDC1", "DRDC0", "DRDC24", "DRDC25", "DRDC26", "DRDC28", "DRDC34", "DRDC35", "DRDC42", "DRDC44", "DRDC46", "DRDC48", "DRDC2", "DRDC3", "DRDC4", "DRDC5", "DRDC6", "DRDC9", "DRDC8", "DRDC41", "DRDC43", "DRDC45", "DRDC27", "DRDC32", "RROCK04", "RROCK05", "RROCK06", "RROCK07", "RROCK08"};
+#define NUM_POM_TEXTURES 31
+str POM_TEXTURES[NUM_POM_TEXTURES] = { "DRDC1", "DRDC0", "DRDC24", "DRDC25", "DRDC26", "DRDC28", "DRDC34", "DRDC35", "DRDC42", "DRDC44", "DRDC46", "DRDC48", "DRDC2", "DRDC3", "DRDC4", "DRDC5", "DRDC6", "DRDC9", "DRDC8", "DRDC41", "DRDC43", "DRDC45", "DRDC27", "DRDC32", "RROCK04", "RROCK05", "RROCK06", "RROCK07", "RROCK08", "DRDC11", "DRDC12" };
 
 Script "updateshaders" (bool forced) ENTER {
     bool isHelmetEnabled = GetCVar("drrp_enable_helmet_shader");

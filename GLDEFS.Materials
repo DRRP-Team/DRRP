@@ -39,12 +39,16 @@ Material Texture DRDC0 {
 Material Texture DRDC11 {
     normal "materials/normal/drdc11"
     specular "materials/specular/drdc11"
+    Texture tex_heightmap   "materials/height/drdc11"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Red ground
 Material Texture DRDC12 {
     normal "materials/normal/drdc11"
     specular "materials/specular/drdc11"
+    Texture tex_heightmap   "materials/height/drdc11"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Gray putty wall
