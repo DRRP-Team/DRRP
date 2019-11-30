@@ -390,6 +390,28 @@ Material Texture DRDC31 {
     Material Texture CGR_UAC {
         BrightMap "materials/emission/CGR_UAC_BRT"
     }
+
+    Material Texture CGR_UAC {
+        BrightMap "materials/emission/CGR_UAC_BRT"
+    }
+
+    Material Texture CGR_M1A {
+        BrightMap "materials/emission/CGR_M1A_BRT"
+    }
+
+    Material Texture CGR_M2A {
+        BrightMap "materials/emission/CGR_M2A_BRT"
+    }
+
+    Material Texture CGR_M2B {
+        BrightMap "materials/emission/CGR_M2B_BRT"
+    }
+
+    // Cincremental
+
+    Material Texture compam {
+        BrightMap "materials/emission/compam"
+    }
 //\\ Morthimer's computers
 
 // Door tunnels
