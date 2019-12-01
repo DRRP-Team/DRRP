@@ -36,6 +36,10 @@ Script 666 ENTER{
     ACS_Execute(1000, 0);
 }
 
+Script 555 RETURN {
+    SetMusic("*", 0);
+}
+
 script 1000 (void) {
     AmbientSound("ambient/drone1", 127);
     Delay(34*3);
@@ -267,6 +271,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
 
     if(arg2 == 1) {
         ACS_NamedExecuteWait("window", 0, getString(42)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=42
+        SetMusic("D_PORTAL", 0);
         FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.7);
         AmbientSound(localizeSound("voice/powershake"), 255);
         Delay(43*2);
