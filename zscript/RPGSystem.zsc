@@ -132,7 +132,7 @@ class RPGSystemHandler: EventHandler {
             player.MaxArmor    += 4;
 
             setAllFeatures( player );
-            player.ACS_ScriptCall( "levelUp", 0, true );
+            player.ACS_ScriptCall( "levelUp", true);
         }
 
     } // override void NetworkProcess( ConsoleEvent e ) {
