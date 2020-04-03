@@ -131,7 +131,7 @@ Actor ZombieManDRRP : ZombieMan {
 Actor ShotgunGuyDRRP : ShotgunGuy {
     +LOOKALLAROUND
 
-    DropItem "Shells", 0, 0
+    DropItem "DRRPShell", 0, 0
     DamageFactor DRRPAxeDmg, 3.0
 }
 
