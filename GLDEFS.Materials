@@ -626,6 +626,11 @@ Material Texture MFLR8_1 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
+Material Texture METAL1 {
+    Texture tex_heightmap   "materials/height/METAL1"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
 // StormCatcher.77's textures
 
 // Reactor floor animation
