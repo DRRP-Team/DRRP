@@ -5344,8 +5344,6 @@ x = -320.000;
 y = -1216.000;
 type = 10473;
 angle = 270;
-scalex = 0.700000;
-scaley = 0.700000;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -36258,8 +36256,8 @@ textureceiling = "FLAT20";
 lightlevel = 175;
 id = 20;
 hidden = true;
-xpanningfloor = 32.000000;
-rotationfloor = 270.000000;
+xpanningfloor = -32.000000;
+ypanningfloor = -32.000000;
 }
 
 sector
