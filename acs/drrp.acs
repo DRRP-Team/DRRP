@@ -349,5 +349,5 @@ Script "levelUp" (bool windowOnly) { // You can use it by the "pukename levelup"
         l:"DRRP_B_ID77"));                  // Helath restored.
 }
 
-#include "flashlight.acs"
-#include "mapapis.acs"
+#include "inc_flashlight.acs"
+#include "inc_mapapis.acs"
