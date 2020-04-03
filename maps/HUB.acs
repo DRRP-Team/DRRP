@@ -21,6 +21,43 @@ function str localizeSound(str sound) {
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
+/**
+ * Returns current game stage
+ * 0 - First enter
+ * 1 - After SEC3
+ * 2 - After SEC5
+ * 3 - After End
+ */
+function int stage(void) {
+    if (!CheckInventory("DRRPGreenCard"))    return 0;
+    if (!CheckInventory("DRRPBlueCard"))     return 1;
+    if (!CheckInventory("DRRPRedCard"))      return 2;
+    return 3;
+}
+
+int current_stage;
+
+function bool isStage(int _stage) {
+    return stage() == _stage;
+}
+
+#define IDSNUMBER 1
+
+int idsToReset[IDSNUMBER] = {
+    -242
+};
+
+/**
+ * Resets counters of all characters after every stage change
+ * It's used to fix the bug when the character got counter 2
+ * but at this stage the character can't process it.
+ */
+function void resetAllCharacters(void) {
+    for (int i = 0; i < IDSNUMBER; i++) {
+        ScriptCall("ConversationController", "SetArgument", idsToReset[i], 0);
+    }
+}
+
 Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HUB", true);
 }
@@ -35,12 +72,18 @@ Script 666 ENTER {
     ACS_Execute(1001, 0);
     ACS_Execute(3005, 0); // WIP level
     ACS_Execute(3004, 0); // Give automap
+    current_stage = stage();
 }
 
 Script 667 RETURN {
     Thing_Remove(CRATES_ID);
     SpawnSpot("DRRPCrate", CRATES_SPOT, CRATES_ID);
-    ScriptCall("ConversationController", "SetArgument", -465, 0); // Reset doctor
+    ScriptCall("ConversationController", "SetArgument", -465, 0); // Reset the doctor
+    if (current_stage != stage()) { // Got a new keycard
+        print(s:"RESET");
+        resetAllCharacters();
+        current_stage = stage();
+    }
 }
 
 script 1000 (void) {
@@ -118,19 +161,19 @@ script 7 (int arg0, int arg1, int arg2) { //X=5 Y=18 START=L_28 END=L_31 UNKN=20
 }
 script 8 (int arg0, int arg1, int arg2) { //X=7 Y=18 START=L_32 END=L_44 UNKN=6815744 UNKN2=0
     int sgenid0 = -242; // [x=7, y=18]
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=57
-    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=18 VAL=1
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(58)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=58
-    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=18 VAL=1
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(59)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=59
-    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(60)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=60
-    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=7 Y=18 VAL=2
-    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(61)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=61
-    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=7 Y=18 VAL=0
-    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(62)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=62
-    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=7 Y=18 VAL=3
-    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(63)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=63
-    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 4 ) ) SET_VAR X=7 Y=18 VAL=0
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=57
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=18 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(58)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=58
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=18 VAL=1
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(59)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=59
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(60)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=60
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=7 Y=18 VAL=2
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(61)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=61
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=7 Y=18 VAL=0
+    if(arg2 == 2 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(62)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=62
+    if(arg2 == 2 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=7 Y=18 VAL=3
+    if(arg2 == 3 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(63)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=63
+    if(arg2 == 3 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 4 ) ) SET_VAR X=7 Y=18 VAL=0
 }
 script 9 (int arg0, int arg1, int arg2) { //X=13 Y=18 START=L_45 END=L_63 UNKN=9961472 UNKN2=0
     int sgenid0 = -434; // [x=13, y=18]
