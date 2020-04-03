@@ -169,7 +169,7 @@ Actor DRRPCrate 10705 {
             CRAT AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DRRPCrateShard", FRandom(-5, 5), FRandom(-5, 5), Random(1, 6), Random(-4, 4), Random(-4, 4), Random(1, 4))
             CRAT A 0 A_Quake(1, 18, 0, 128)
             CRT2 B 4
-            CRT2 C 3 A_SpawnItemEx("DRRPCrateSpawner")
+            CRT2 C 3 //A_SpawnItemEx("DRRPCrateSpawner") // See "/ZScript/RPGSystem.zsc": "WorldThingDamaged()" calls "deathDropGetName()".
             CRT2 D 3
             CRT2 E 3 A_NoBlocking
             CRT2 FG 4
@@ -191,25 +191,11 @@ Actor DRRPCrateShard {
     Radius 2
     Height 3
     BounceFactor 0.3
-//    Var int user_ShardStopped;
     States {
     Spawn:
         BPRT A 0
-        BPRT A 0 {
-            A_SetScale(FRandomPick(-0.75, -0.5, 0.5, 0.75), FRandomPick(-0.75, -0.5, 0.5, 0.75));
-//            A_SetUserVar("user_ShardStopped", 0);
-        }
+        BPRT A 0 A_SetScale(FRandomPick(-0.75, -0.5, 0.5, 0.75), FRandomPick(-0.75, -0.5, 0.5, 0.75))
         BPRT A 0 A_Jump(255, "Type1", "Type2", "Type3", "Type4", "Type5", "Type6")
-/*    Type1a:
-        BPRT ABCDEFGHABCDEFGH 2 {
-            if (user_ShardStopped == 1) {
-                return;
-            }
-            if (!random(0, 7)) {
-                A_SetUserVar("user_ShardStopped", 1);
-            }
-        }
-        Goto Death /* */
     Type1:
         BPRT ABCDEFGHABCDEFGH 2
         Goto Death
