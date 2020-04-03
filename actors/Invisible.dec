@@ -28,6 +28,7 @@ Actor DRRPTrigger : DRRPCharacter 10554 {
     //$Sprite STEMA0
 
     -SOLID
+    -SHOOTABLE
     +NOSECTOR
 
     Tag "Trigger"
