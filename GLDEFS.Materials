@@ -621,6 +621,11 @@ Material Texture RROCK08 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
+Material Texture MFLR8_1 {
+    Texture tex_heightmap   "materials/height/MFLR8_1"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
 // StormCatcher.77's textures
 
 // Reactor floor animation
