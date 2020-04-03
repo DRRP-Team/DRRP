@@ -451,7 +451,9 @@ script 78 (int arg0, int arg1, int arg2) { //X=8 Y=22 START=L_222 END=L_225 UNKN
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(46)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=46
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=8 Y=22
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(47)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=47
-    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=8 Y=22 VAL=0
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) SET_VAR X=8 Y=22 VAL=0
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(95)); // Fire
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=8 Y=22 VAL=0
 }
 script 79 (int arg0, int arg1, int arg2) { //X=14 Y=22 START=L_226 END=L_226 UNKN=524288 UNKN2=0
     int sgenid0 = -272; // [x=8, y=16]
