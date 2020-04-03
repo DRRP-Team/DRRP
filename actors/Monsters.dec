@@ -409,7 +409,7 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
     Tag "$DRRP_M_REVENANT"
     Health 630
     Scale 0.74
-    Obituary "%o was slayed by the revenant."
+    //Obituary "%o was slayed by the revenant."
 
     States {
         Missile:
@@ -421,11 +421,18 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
         Death:
             SKEL L 7 A_SpawnItem("RocketAmmo")
             SKEL M 7 A_SpawnItem("DRRPExplosion", 0, 38.)
+			SKEL M 0 A_Jump( 256, "DeathReal" ) // For final monster cast.
+			SKEL N 7 A_Scream
+			SKEL OP 7
+			SKEL Q -1
+			Stop
+		DeathReal:
             TNT1 A 7 A_Scream
             TNT1 A 7 A_NoBlocking
             TNT1 A 7
             TNT1 A -1
             Stop
+			
     }
 }
 
