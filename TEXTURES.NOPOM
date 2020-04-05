@@ -104,7 +104,7 @@ Texture "NP_DRDC8", 64, 64 {
     Patch "DRDC8", 0, 0
 }
  
-// Door tunels
+// Door tunnels
 Texture "NP_DRDC41", 64, 64 {
     Patch "DRDC41", 0, 0
 }
@@ -117,6 +117,82 @@ Texture "NP_DRDC45", 64, 64 {
     Patch "DRDC45", 0, 0
 }
  
+Texture "NP_DRDC47", 64, 64 {
+    Patch "DRDC47", 0, 0
+}
+
+// Animated
+    Texture "NP_DRDC41A", 64, 64 {
+        Patch "DRDC41A", 0, 0
+    }
+     
+    Texture "NP_DRDC43A", 64, 64 {
+        Patch "DRDC43A", 0, 0
+    }
+     
+    Texture "NP_DRDC45A", 64, 64 {
+        Patch "DRDC45A", 0, 0
+    }
+     
+    Texture "NP_DRDC47A", 64, 64 {
+        Patch "DRDC47A", 0, 0
+    }
+    // Red
+    Texture "NP_DRDC41P1", 64, 64 {
+        Patch "DRDC41P1", 0, 0
+    }
+    Texture "NP_DRDC41P2", 64, 64 {
+        Patch "DRDC41P2", 0, 0
+    }
+    Texture "NP_DRDC41P3", 64, 64 {
+        Patch "DRDC41P3", 0, 0
+    }
+    Texture "NP_DRDC41P4", 64, 64 {
+        Patch "DRDC41P4", 0, 0
+    }
+
+    // Blue
+    Texture "NP_DRDC43P1", 64, 64 {
+        Patch "DRDC43P1", 0, 0
+    }
+    Texture "NP_DRDC43P2", 64, 64 {
+        Patch "DRDC43P2", 0, 0
+    }
+    Texture "NP_DRDC43P3", 64, 64 {
+        Patch "DRDC43P3", 0, 0
+    }
+    Texture "NP_DRDC43P4", 64, 64 {
+        Patch "DRDC43P4", 0, 0
+    }
+
+    // Green
+    Texture "NP_DRDC45P1", 64, 64 {
+        Patch "DRDC45P1", 0, 0
+    }
+    Texture "NP_DRDC45P2", 64, 64 {
+        Patch "DRDC45P2", 0, 0
+    }
+    Texture "NP_DRDC45P3", 64, 64 {
+        Patch "DRDC45P3", 0, 0
+    }
+    Texture "NP_DRDC45P4", 64, 64 {
+        Patch "DRDC45P4", 0, 0
+    }
+
+    // Yellow
+    Texture "NP_DRDC47P1", 64, 64 {
+        Patch "DRDC47P1", 0, 0
+    }
+    Texture "NP_DRDC47P2", 64, 64 {
+        Patch "DRDC47P2", 0, 0
+    }
+    Texture "NP_DRDC47P3", 64, 64 {
+        Patch "DRDC47P3", 0, 0
+    }
+    Texture "NP_DRDC47P4", 64, 64 {
+        Patch "DRDC47P4", 0, 0
+    }
+
 // Default wall
 Texture "NP_DRDC27", 64, 64 {
     Patch "DRDC27", 0, 0

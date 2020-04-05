@@ -142,7 +142,7 @@ Script "transformation"(int tid, int timedelay) {
     Delay(timedelay || 2);
 }
 
-#define NUM_POM_TEXTURES 35
+#define NUM_POM_TEXTURES 40
 str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "DRDC1",
     "DRDC0",
@@ -153,6 +153,14 @@ str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "DRDC34",
     "DRDC35",
     "DRDC42",
+    "DRDC41", // Tunnels
+    "DRDC41A",
+    "DRDC43",
+    "DRDC43A",
+    "DRDC45",
+    "DRDC45A",
+    "DRDC47",
+    "DRDC47A", // // Tunnels
     "DRDC44",
     "DRDC46",
     "DRDC48",
@@ -163,9 +171,6 @@ str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "DRDC6",
     "DRDC9",
     "DRDC8",
-    "DRDC41",
-    "DRDC43",
-    "DRDC45",
     "DRDC27",
     "DRDC32",
     "RROCK04",
@@ -187,6 +192,7 @@ Script "updateshaders" (bool forced) ENTER {
 
     if(!isPomEnabled) {
         for(int i = 0; i < NUM_POM_TEXTURES; i++) {
+            print(s:"Replace texture ", s:POM_TEXTURES[i], s:" to ", s:StrParam(s:"NP_", s:POM_TEXTURES[i]));
             ReplaceTextures(POM_TEXTURES[i], StrParam(s:"NP_", s:POM_TEXTURES[i]));
         }
     } else if(forced) { // Only if called from menudef
