@@ -601,36 +601,45 @@ Material Texture DRDC32 {
 
 // Reactor floor animation
 Material Texture RROCK04 {
+    normal   "materials/normal/RROCK04"
     Texture tex_heightmap   "materials/height/RROCK04"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture RROCK05 {
+    normal   "materials/normal/RROCK04"
     Texture tex_heightmap   "materials/height/RROCK04"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture RROCK06 {
+    normal   "materials/normal/RROCK04"
     Texture tex_heightmap   "materials/height/RROCK04"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture RROCK07 {
+    normal   "materials/normal/RROCK04"
     Texture tex_heightmap   "materials/height/RROCK04"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture RROCK08 {
+    normal   "materials/normal/RROCK04"
     Texture tex_heightmap   "materials/height/RROCK04"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture MFLR8_1 {
+    normal   "materials/normal/MFLR8_1"
     Texture tex_heightmap   "materials/height/MFLR8_1"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture METAL1 {
+    normal   "materials/normal/METAL1"
+    specular "materials/height/METAL1"
+    metallic   "materials/metallic/METAL1"
     Texture tex_heightmap   "materials/height/METAL1"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -639,6 +648,7 @@ Material Texture METAL1 {
 
 // Reactor floor animation
 Material Texture SC77_01 {
+    normal   "materials/normal/SC77_01"
     Texture tex_heightmap   "materials/height/SC77_01"
     shader                  "shaders/parallax_pbr.fp"
 }
