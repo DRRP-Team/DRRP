@@ -5,15 +5,21 @@
  * https://opensource.org/licenses/MIT
  */
 
+Material Texture ceil01 {
+    BrightMap "materials/emission/ceil01"
+}
+
 // Comp wall
 Material Texture DRDC29 {
     BrightMap "materials/emission/BRPGB013"
 }
 
 // Exit door
-Material Texture DRDC06 {
+Material Texture DRDC6 {
     normal "materials/normal/drdc6"
     specular "materials/specular/drdc6"
+    Texture tex_heightmap   "materials/height/drdc6"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Jammed door
@@ -37,12 +43,16 @@ Material Texture DRDC0 {
 Material Texture DRDC11 {
     normal "materials/normal/drdc11"
     specular "materials/specular/drdc11"
+    Texture tex_heightmap   "materials/height/drdc11"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Red ground
 Material Texture DRDC12 {
     normal "materials/normal/drdc11"
     specular "materials/specular/drdc11"
+    Texture tex_heightmap   "materials/height/drdc11"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Gray putty wall
@@ -384,6 +394,28 @@ Material Texture DRDC31 {
     Material Texture CGR_UAC {
         BrightMap "materials/emission/CGR_UAC_BRT"
     }
+
+    Material Texture CGR_UAC {
+        BrightMap "materials/emission/CGR_UAC_BRT"
+    }
+
+    Material Texture CGR_M1A {
+        BrightMap "materials/emission/CGR_M1A_BRT"
+    }
+
+    Material Texture CGR_M2A {
+        BrightMap "materials/emission/CGR_M2A_BRT"
+    }
+
+    Material Texture CGR_M2B {
+        BrightMap "materials/emission/CGR_M2B_BRT"
+    }
+
+    // Cincremental
+
+    Material Texture compam {
+        BrightMap "materials/emission/compam"
+    }
 //\\ Morthimer's computers
 
 // Door tunnels
@@ -560,5 +592,49 @@ Material Texture DRDC27 {
 // Damaged default wall
 Material Texture DRDC32 {
     Texture tex_heightmap   "materials/height/drdc32"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+// Reactor floor animation
+Material Texture RROCK04 {
+    Texture tex_heightmap   "materials/height/RROCK04"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK05 {
+    Texture tex_heightmap   "materials/height/RROCK04"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK06 {
+    Texture tex_heightmap   "materials/height/RROCK04"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK07 {
+    Texture tex_heightmap   "materials/height/RROCK04"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture RROCK08 {
+    Texture tex_heightmap   "materials/height/RROCK04"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture MFLR8_1 {
+    Texture tex_heightmap   "materials/height/MFLR8_1"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture METAL1 {
+    Texture tex_heightmap   "materials/height/METAL1"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+// StormCatcher.77's textures
+
+// Reactor floor animation
+Material Texture SC77_01 {
+    Texture tex_heightmap   "materials/height/SC77_01"
     shader                  "shaders/parallax_pbr.fp"
 }

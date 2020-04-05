@@ -131,7 +131,7 @@ Actor ZombieManDRRP : ZombieMan {
 Actor ShotgunGuyDRRP : ShotgunGuy {
     +LOOKALLAROUND
 
-    DropItem "Shells", 0, 0
+    DropItem "DRRPShell", 0, 0
     DamageFactor DRRPAxeDmg, 3.0
 }
 
@@ -152,7 +152,7 @@ Actor ZombieLt : ShotgunGuyDRRP replaces ShotgunGuy 10374 {
     Obituary "$DRRP_OB_ZOMBIELT"
     Tag "$DRRP_M_ZOMBIELT"
     Health 75
-    Translation "96:111=192:207", "0:8=246:246" 
+    Translation "96:111=%[0.00,0.00,0.00]:[0.98,1.25,1.76]", "16:47=%[0.00,0.00,0.00]:[0.31,0.59,0.94]", "48:79=%[0.00,0.00,0.00]:[0.80,0.93,1.16]", "176:191=240:240", "168:175=193:193", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[0.76,0.95,1.28]" 
 }
 
 Actor ZombieCpt : ZombieManDRRP 10474 {
@@ -162,7 +162,7 @@ Actor ZombieCpt : ZombieManDRRP 10474 {
     Obituary "$DRRP_OB_ZOMBIECPT"
     Tag "$DRRP_M_ZOMBIECPT"
     Health 155
-    Translation "128:143=176:189", "144:151=178:191", "16:47=180:191", "152:159=180:191", "112:127=176:191"
+    Translation "100:107=%[0.00,0.00,0.00]:[1.76,0.16,0.00]", "26:47=%[0.00,0.00,0.00]:[1.02,0.07,0.00]", "48:79=%[0.00,0.00,0.00]:[1.17,0.87,0.80]", "176:191=185:185", "168:175=173:173", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[1.53,0.02,0.06]"
 }
 
 
@@ -257,7 +257,7 @@ Actor ImpLord : DoomImp 10460 {
     HitObituary "$DRRP_OBM_IMPLORD"
     Tag "$DRRP_M_IMPLORD"
     Health 290
-    Translation "64:79=170:191"
+    Translation "64:79=174:191", "175:191=112:127"
 }
 
 
@@ -354,7 +354,7 @@ Actor Belphegor : Demon 10359 {
     Obituary "$DRRP_OB_BEPHELGOR"
     Tag "$DRRP_M_BELPHEGOR"
     Health 400
-    Translation "16:47=%[0.00, 0.09, 0.20]:[0.49, 1.17, 2.00]"
+    Translation "16:47=%[0.00,0.00,0.00]:[0.65,0.89,1.61]"
 }
 
 
@@ -409,7 +409,7 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
     Tag "$DRRP_M_REVENANT"
     Health 630
     Scale 0.74
-    Obituary "%o was slayed by the revenant."
+    //Obituary "%o was slayed by the revenant."
 
     States {
         Missile:
@@ -421,11 +421,18 @@ Actor DRRPRevenant : Revenant replaces Revenant 10477 { // Huesos (Spanish)
         Death:
             SKEL L 7 A_SpawnItem("RocketAmmo")
             SKEL M 7 A_SpawnItem("DRRPExplosion", 0, 38.)
+			SKEL M 0 A_Jump( 256, "DeathReal" ) // For final monster cast.
+			SKEL N 7 A_Scream
+			SKEL OP 7
+			SKEL Q -1
+			Stop
+		DeathReal:
             TNT1 A 7 A_Scream
             TNT1 A 7 A_NoBlocking
             TNT1 A 7
             TNT1 A -1
             Stop
+			
     }
 }
 
@@ -452,7 +459,7 @@ Actor Fiend : DRRPRevenant 10377 {
     HitObituary "$DRRP_OBM_FIEND"
     Tag "$DRRP_M_FIEND"
     Health 310
-    Translation "128:159=192:207", "48:79=192:207", "160:167=240:240", "236:239=243:243", "170:170=240:240", "21:47=176:191", "20:20=207:207", "168:191=176:191", "184:184=242:242", "9:9=207:207", "144:151=192:207", "13:15=241:241"
+    Translation "128:159=194:207", "48:79=196:207", "160:167=240:240", "236:239=243:243", "170:170=240:240", "16:47=252:254", "20:20=207:207", "184:184=242:242", "9:9=207:207", "144:151=195:204", "13:15=241:241"
 }
 
 
@@ -492,7 +499,9 @@ Actor Rahovart : DRRPPainElemental 10379 {
 
     Tag "$DRRP_M_RAHOVART"
     Health 420
-    Translation "13:15=204:206", "64:70=200:206", "128:143=192:207", "236:239=240:247", "71:79=246:246", "144:151=200:206"
+    Translation 
+"13:13=204:204", "14:14=204:204", "15:15=204:204", "64:64=198:198", "65:65=198:198", "66:66=198:198", "67:67=198:198", "68:68=198:198", "69:69=198:198", "70:70=198:198", "71:71=246:246", "72:72=246:246", "73:73=246:246", "74:74=246:246", "75:75=246:246", "76:76=246:246", "77:77=246:246", "78:78=246:246", "79:79=246:246", "128:128=197:197", "129:129=197:197", "130:130=197:197", "131:131=197:197", "132:132=197:197", "133:133=197:197", "134:134=197:197", "135:135=197:197", "136:136=197:197", "137:137=197:197", "138:138=197:197", "139:139=197:197", "140:140=197:197", "141:142=197:198", "143:143=198:198", "144:144=200:200", "145:151=200:206", "236:236=241:241", "237:237=241:241", "238:238=241:241", "239:239=241:241"
+
 
     States {
         Death:

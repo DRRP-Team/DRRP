@@ -64,7 +64,7 @@ In this moment project in the early access stage, on which is not avaliable vers
 
 1. To start, go to <a href="https://github.com/DRRP-Team/DRRP/releases" target="_blank">release page</a>
 2. Download the release you need (recommended first in the list)
-3. Drag and drop the downloaded file into the GZDoom binary
+3. Drag and drop the downloaded file into the GZDoom binary (make shure that you have doom2.wad in the GZDoom folder)
 
 <!--
 
@@ -143,7 +143,7 @@ Suitable for experienced and owners other OS.
 - [GitLab репозиторий](https://gitlab.com/PROPHESSOR/DRRP)
 - [GitHub репозиторий](https://github.com/DRRP-Team/DRRP)
 - [Доска на Trello](https://trello.com/b/OGA3JkEH/drrp-doom-rpg-remake-project)
-- [Руководство разработчика](https://gitlab.com/prophessor/DRRP/blob/master/CONTRIBUTING.md)
+- [Руководство разработчика](https://github.com/DRRP-Team/DRRP/blob/master/CONTRIBUTING.md#%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-drrp)
 
 <a name="ru_install"></a>
 
@@ -151,7 +151,7 @@ Suitable for experienced and owners other OS.
 
 1. Для начала, перейдите на <a href="https://github.com/DRRP-Team/DRRP/releases" target="_blank">страницу релизов</a>
 2. Скачайте нужную версию (рекомендуем брать первую в списке)
-3. Перетащите скачанный файл на GZDoom
+3. Перетащите скачанный файл на GZDoom (необходимо так же убедиться, что в папке с GZDoom присутствует doom2.wad)
 
 <!--
 

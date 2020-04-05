@@ -21982,7 +21982,8 @@ linedef
 v1 = 694;
 v2 = 695;
 sidefront = 1000;
-blocking = true;
+sideback = 1451;
+twosided = true;
 }
 
 linedef
@@ -21990,7 +21991,8 @@ linedef
 v1 = 696;
 v2 = 694;
 sidefront = 1001;
-blocking = true;
+sideback = 1452;
+twosided = true;
 }
 
 linedef
@@ -21998,7 +22000,8 @@ linedef
 v1 = 697;
 v2 = 696;
 sidefront = 1002;
-blocking = true;
+sideback = 1453;
+twosided = true;
 }
 
 linedef
@@ -22006,7 +22009,8 @@ linedef
 v1 = 695;
 v2 = 697;
 sidefront = 1003;
-blocking = true;
+sideback = 1454;
+twosided = true;
 }
 
 linedef
@@ -22014,7 +22018,8 @@ linedef
 v1 = 698;
 v2 = 699;
 sidefront = 1004;
-blocking = true;
+sideback = 1458;
+twosided = true;
 }
 
 linedef
@@ -22022,7 +22027,8 @@ linedef
 v1 = 700;
 v2 = 698;
 sidefront = 1005;
-blocking = true;
+sideback = 1455;
+twosided = true;
 }
 
 linedef
@@ -22030,7 +22036,8 @@ linedef
 v1 = 701;
 v2 = 700;
 sidefront = 1006;
-blocking = true;
+sideback = 1456;
+twosided = true;
 }
 
 linedef
@@ -22038,7 +22045,8 @@ linedef
 v1 = 699;
 v2 = 701;
 sidefront = 1007;
-blocking = true;
+sideback = 1457;
+twosided = true;
 }
 
 linedef
@@ -31177,28 +31185,28 @@ sidedef
 {
 sector = 136;
 texturemiddle = "transgri";
-texturebottom = "transgri";
+texturebottom = "DRDC35";
 }
 
 sidedef
 {
 sector = 136;
 texturemiddle = "transgri";
-texturebottom = "transgri";
+texturebottom = "DRDC35";
 }
 
 sidedef
 {
 sector = 136;
 texturemiddle = "transgri";
-texturebottom = "transgri";
+texturebottom = "DRDC35";
 }
 
 sidedef
 {
 sector = 136;
 texturemiddle = "transgri";
-texturebottom = "transgri";
+texturebottom = "DRDC35";
 }
 
 sidedef
@@ -33871,6 +33879,62 @@ sidedef
 sector = 69;
 }
 
+sidedef
+{
+sector = 201;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 201;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 201;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 201;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 202;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 202;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 202;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
+sidedef
+{
+sector = 202;
+texturetop = "DRDC35";
+texturebottom = "DRDC35";
+}
+
 sector
 {
 texturefloor = "flatfl";
@@ -36077,5 +36141,30 @@ textureceiling = "white";
 heightceiling = 128;
 lightlevel = 175;
 xpanningfloor = 32;
+}
+
+sector
+{
+texturefloor = "BLACK";
+textureceiling = "BLACK";
+heightfloor = -120;
+heightceiling = 160;
+lightlevel = 63;
+id = 18;
+hidden = true;
+xpanningfloor = 32.000000;
+xpanningceiling = -32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC34";
+textureceiling = "BLACK";
+heightfloor = 32;
+heightceiling = 160;
+lightlevel = 63;
+id = 18;
+hidden = true;
+xpanningceiling = -32.000000;
 }
 

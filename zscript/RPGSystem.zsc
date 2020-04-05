@@ -53,6 +53,45 @@ class RPGSystemHandler: EventHandler {
     }
 
 
+    const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
+								"Clip, DRRPShell, Rocket, Cell, Balloon, " ..
+								"SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
+    //const DDGI_DefaultMonster_C = "2,1,5,4,2";
+    const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
+
+    virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
+        Array<String> itemlist;
+        Name outItem;
+
+        rawlist.Replace( " ", "" );
+        rawchancelist.Replace( " ", "" );
+
+        if ( rawlist != "" ) {
+            rawlist.Split( itemlist, "," );
+            if ( rawchancelist != "" ) {
+                Array<String> chanceliststr; // Граф, если уж делаешь ".split()", то делай и что-нибудь типа ".map()"!
+                Array<uint> chancelist;
+                uint maxchance = 0, curchance, i;
+
+                rawchancelist.Split( chanceliststr, "," );
+
+				if ( chanceliststr.Size() == itemlist.Size() ) {
+	                for ( i = 0; i < chanceliststr.Size(); i++ )
+	                    maxchance += ( chancelist[ i ] = chanceliststr[ i ].ToInt( 10 ) );
+
+	                for ( i = 0, curchance = Random( 0, maxchance ); curchance > 0 && i < chancelist.Size(); i++, curchance -= chancelist[ i ] ) {}
+	                outItem = itemlist[ i ];
+				} else
+					outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];
+            } else if ( rawlist == "" )
+                outItem = "";
+            else
+                outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];
+        }
+
+        return outItem;
+    }
+
     override void WorldThingSpawned( WorldEvent e ) {
         if ( e.Thing is 'DRRPFire' )
             e.Thing.A_SetInventory( "ExpGain", 1 );
@@ -88,6 +127,7 @@ class RPGSystemHandler: EventHandler {
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
             if ( e.Thing.health <= 0 ) {
+                // Experience drop.
                 if ( e.DamageSource is "DoomRPGPlayer" ) {
 
                     int playerNum = -1;
@@ -110,6 +150,10 @@ class RPGSystemHandler: EventHandler {
                         EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", playerNum );
                 }
 
+                // Items drop.
+                Name dropitem = deathDropGetName( e.Thing.bISMONSTER? DDGI_DefaultMonster : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" ) );
+                if ( dropitem != "NULL" && dropitem != "" )
+                    e.Thing.Spawn( dropitem, e.Thing.pos );
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
@@ -132,7 +176,7 @@ class RPGSystemHandler: EventHandler {
             player.MaxArmor    += 4;
 
             setAllFeatures( player );
-            player.ACS_ScriptCall( "levelUp", 0, true );
+            player.ACS_ScriptCall( "levelUp", true );
         }
 
     } // override void NetworkProcess( ConsoleEvent e ) {

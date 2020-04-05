@@ -22,6 +22,10 @@ function str localizeSound(str sound) {
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
+Script "onCinematicShadersLoad" (bool forced) {
+    if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC3", true);
+}
+
 Script 666 ENTER{
     SetHudSize(640, 400, 0);
     SetFont("bigfont");
