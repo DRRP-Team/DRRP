@@ -163,6 +163,8 @@ Material Texture DRDC39 {
 Material Texture DRDC40 {
     normal "materials/normal/drdc40"
     specular "materials/specular/drdc40"
+    Texture tex_heightmap   "materials/height/drdc40"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Black Scute/Elevator
