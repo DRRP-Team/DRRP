@@ -155,6 +155,8 @@ Material Texture DRDC38 {
 Material Texture DRDC39 {
     normal "materials/normal/drdc39"
     specular "materials/specular/drdc39"
+    Texture tex_heightmap   "materials/height/drdc39"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Diagonal pipes
