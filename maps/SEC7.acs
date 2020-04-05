@@ -262,9 +262,14 @@ script 27 (int arg0, int arg1, int arg2) { //X=29 Y=11 START=L_142 END=L_148 UNK
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=29 Y=11
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(35)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=35
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=29 Y=11
-    if(arg2 == 2) ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(36)); // ( USE MODIFYWORLD IF_VAR( 2 ) ) NOTEBOOK_ADD STR=36
-    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(37)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=37
-    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(38)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=38
+    if(arg2 == 2) {
+        if (!CheckInventory("DRRPRedCard")) {
+            ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(36)); // ( USE MODIFYWORLD IF_VAR( 2 ) ) NOTEBOOK_ADD STR=36
+            ACS_NamedExecuteWait("window", 0, getString(37)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=37
+        } else {
+            ACS_NamedExecuteWait("window", 0, getString(38)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=38
+        }
+    }
 }
 script 28 (int arg0, int arg1, int arg2) { //X=2 Y=12 START=L_149 END=L_149 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=539
@@ -430,7 +435,7 @@ script 62 (int arg0, int arg1, int arg2) { //X=18 Y=27 START=L_222 END=L_232 UNK
     if(arg2 == 1) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=100
     if(arg2 == 1) ACS_NamedExecuteWait("drpgquake", 0, 100, 8); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) EARTHQUAKE TIME=100 INTENSITY=8
     if(arg2 == 1) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=100
-    if(arg2 == 1) Teleport(0, 666, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TELEPORT X=7 Y=28 DIR=8
+    if(arg2 == 1) TeleportOther(ActivatorTID(), 666, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TELEPORT X=7 Y=28 DIR=8
     if(arg2 == 1) weaponMask = ScriptCall("WeaponController", "TakeAllWeapons", PlayerNumber()); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TAKE_OR_RETURN_WEAPONS ACTION=0
     if(arg2 == 1) ACS_Execute(65, 0);
 }
