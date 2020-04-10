@@ -3167,6 +3167,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -4685,6 +4687,7 @@ coop = true;
 dm = true;
 renderstyle = "";
 comment = "3:24";
+height = 16.000000;
 }
 
 thing
@@ -4725,6 +4728,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -4742,6 +4747,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5355,6 +5362,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:25";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5372,6 +5381,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:25";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5407,6 +5418,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5424,6 +5437,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:25";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5441,6 +5456,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5458,6 +5475,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5475,6 +5494,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:25";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5493,6 +5514,7 @@ coop = true;
 dm = true;
 renderstyle = "";
 comment = "4:23";
+height = 16.000000;
 }
 
 thing
@@ -5510,6 +5532,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -5527,6 +5551,7 @@ coop = true;
 dm = true;
 renderstyle = "";
 comment = "4:25";
+height = 16.000000;
 }
 
 thing
@@ -5634,6 +5659,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6069,6 +6096,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "4:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6086,6 +6115,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6214,6 +6245,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6370,6 +6403,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6387,6 +6422,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "4:23";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6475,6 +6512,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6492,6 +6531,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "4:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6509,6 +6550,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6526,6 +6569,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -6543,6 +6588,8 @@ single = true;
 coop = true;
 dm = true;
 comment = "2:24";
+renderstyle = "";
+height = 16.000000;
 }
 
 thing
@@ -15551,6 +15598,48 @@ vertex
 {
 x = -272.000;
 y = 232.000;
+}
+
+vertex
+{
+x = -1536.000;
+y = -832.000;
+}
+
+vertex
+{
+x = -1536.000;
+y = -800.000;
+}
+
+vertex
+{
+x = -1504.000;
+y = -800.000;
+}
+
+vertex
+{
+x = -1504.000;
+y = -832.000;
+}
+
+vertex
+{
+x = -1504.000;
+y = -864.000;
+}
+
+vertex
+{
+x = -1472.000;
+y = -832.000;
+}
+
+vertex
+{
+x = -1472.000;
+y = -864.000;
 }
 
 linedef
@@ -26967,8 +27056,13 @@ linedef
 v1 = 1058;
 v2 = 1057;
 sidefront = 1866;
+special = 160;
 blocking = true;
 dontdraw = true;
+arg0 = 8;
+arg1 = 1;
+arg2 = 523;
+arg3 = 255;
 }
 
 linedef
@@ -29921,6 +30015,82 @@ v2 = 1247;
 sidefront = 2445;
 sideback = 2446;
 twosided = true;
+}
+
+linedef
+{
+v1 = 1248;
+v2 = 1249;
+sidefront = 2447;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1249;
+v2 = 1250;
+sidefront = 2448;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1250;
+v2 = 1251;
+sidefront = 2449;
+special = 160;
+blocking = true;
+arg0 = 8;
+arg1 = 2;
+arg3 = 128;
+}
+
+linedef
+{
+v1 = 1251;
+v2 = 1248;
+sidefront = 2450;
+blocking = true;
+arg0 = 9;
+arg1 = 255;
+}
+
+linedef
+{
+v1 = 1252;
+v2 = 1251;
+sidefront = 2451;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1251;
+v2 = 1253;
+sidefront = 2452;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1254;
+v2 = 1252;
+sidefront = 2453;
+blocking = true;
+arg0 = 9;
+arg1 = 255;
+}
+
+linedef
+{
+v1 = 1253;
+v2 = 1254;
+sidefront = 2454;
+special = 160;
+blocking = true;
+arg0 = 8;
+arg1 = 2;
+arg3 = 128;
 }
 
 sidedef
@@ -45012,6 +45182,54 @@ sidedef
 sector = 386;
 }
 
+sidedef
+{
+sector = 390;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 390;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 390;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 390;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 391;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 391;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 391;
+texturemiddle = "SLIME04";
+}
+
+sidedef
+{
+sector = 391;
+texturemiddle = "SLIME04";
+}
+
 sector
 {
 texturefloor = "SLIME15";
@@ -45181,7 +45399,7 @@ textureceiling = "flatfl";
 heightfloor = -64;
 heightceiling = 64;
 lightlevel = 64;
-id = 4;
+id = 8;
 }
 
 sector
@@ -47910,7 +48128,7 @@ textureceiling = "RLITE3";
 heightfloor = -64;
 heightceiling = 60;
 lightlevel = 64;
-id = 4;
+id = 8;
 xpanningceiling = 8.000000;
 }
 
@@ -48713,5 +48931,23 @@ textureceiling = "LITE3";
 heightceiling = 120;
 lightlevel = 64;
 xpanningceiling = -16.000000;
+}
+
+sector
+{
+texturefloor = "SLIME04";
+textureceiling = "SLIME04";
+heightfloor = -32;
+heightceiling = -24;
+id = 9;
+}
+
+sector
+{
+texturefloor = "SLIME04";
+textureceiling = "SLIME04";
+heightfloor = -48;
+heightceiling = -40;
+id = 9;
 }
 
