@@ -273,6 +273,16 @@ $random generic/expl/explode {
     generic/expl/explode2
 }
 
+generic/crate/hit1          sounds/crates/hit1.ogg
+generic/crate/hit2          sounds/crates/hit2.ogg
+generic/crate/hit3          sounds/crates/hit3.ogg
+
+$random generic/crate/hit {
+    generic/crate/hit1
+    generic/crate/hit2
+    generic/crate/hit3
+}
+
 Steam/Loop                  STEMLOOP
 Steam/Fire                  STEMFIRE
 
