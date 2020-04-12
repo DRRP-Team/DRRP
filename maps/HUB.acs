@@ -409,7 +409,7 @@ script 40 (int arg0, int arg1, int arg2) { //X=9 Y=24 START=L_187 END=L_200 UNKN
     if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(72)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=72
     if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=9 Y=24 VAL=1
     if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(73)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=73
-    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(74)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=74
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(74)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=74
     if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(75)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=75
     if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=9 Y=24 VAL=2
     if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(76)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=76
