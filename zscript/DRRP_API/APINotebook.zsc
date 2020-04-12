@@ -74,13 +74,11 @@ class NotebookMenu : OptionMenu {
             return;
         }
 
-        OptionMenuItemStaticText separator = new("OptionMenuItemStaticText");
-        separator.Init("");
-
         for(int i = strings.TheStringArray.size() - 1; i >= 0; i--) {
             String text = StringTable.localize( "$" .. strings.TheStringArray[i]);
 
             Array<String> lines;
+            lines.clear();
             text.split(lines, "\n");
 
             for(int j = 0; j < lines.size(); j++) {
@@ -91,6 +89,9 @@ class NotebookMenu : OptionMenu {
                 lineitem.Init( line );
                 menu.mItems.push( lineitem );
             }
+            OptionMenuItemStaticText separator = new("OptionMenuItemStaticText");
+            separator.Init("");
+
 
             menu.mItems.push( separator );
         }

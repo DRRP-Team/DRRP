@@ -1,0 +1,174 @@
+*** Fatal Error ***
+Address not mapped to object (signal 11)
+Address: 0x38
+
+System: Linux prophessor 4.4.0-53-generic #74-Ubuntu SMP Fri Dec 2 15:59:10 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+
+QZDoom version q2.0.0 (0473991c23da087669f9fcc591fd4fbdd89b1f3b)
+Compiler version: 6.2.0
+
+Command line: /opt/qzdoom/qzdoom -file .
+
+Wad 0: qzdoom.pk3
+Wad 1: doom2.wad
+Wad 2: lights.pk3
+Wad 3: brightmaps.pk3
+Wad 4: russian.pk3
+Wad 5: 
+
+Not in a level.
+
+Executing: gdb --quiet --batch --command=gdb-respfile-Mwcz7N
+Registered pretty printers for UE4 classes
+[New LWP 19809]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f9780daf0cb in __GI___waitpid (pid=19810, stat_loc=0x1185dac, options=0) at ../sysdeps/unix/sysv/linux/waitpid.c:29
+
+* Loaded Libraries
+From                To                  Syms Read   Shared Object Library
+0x00007f97819fd100  0x00007f9781a001df  Yes         /lib/x86_64-linux-gnu/librt.so.1
+0x00007f97817dcdb0  0x00007f97817ed810  Yes (*)     /lib/x86_64-linux-gnu/libz.so.1
+0x00007f97815cc380  0x00007f97815d80c2  Yes (*)     /lib/x86_64-linux-gnu/libbz2.so.1.0
+0x00007f97813c3da0  0x00007f97813c498e  Yes         /lib/x86_64-linux-gnu/libdl.so.2
+0x00007f97810b8600  0x00007f9781129d0a  Yes         /lib/x86_64-linux-gnu/libm.so.6
+0x00007f9780d028b0  0x00007f9780e55b04  Yes         /lib/x86_64-linux-gnu/libc.so.6
+0x00007f9781c03ac0  0x00007f9781c21790  Yes         /lib64/ld-linux-x86-64.so.2
+0x00007f9780ac8a30  0x00007f9780ad5a51  Yes         /lib/x86_64-linux-gnu/libpthread.so.0
+0x00007f97808b42d0  0x00007f97808b9bf1  Yes         /lib/x86_64-linux-gnu/libnss_compat.so.2
+0x00007f9780696ff0  0x00007f97806a41e1  Yes         /lib/x86_64-linux-gnu/libnsl.so.1
+0x00007f97804850b0  0x00007f978048b8aa  Yes         /lib/x86_64-linux-gnu/libnss_nis.so.2
+0x00007f978026d1b0  0x00007f97802732a1  Yes         /lib/x86_64-linux-gnu/libnss_files.so.2
+0x00007f9780005ee0  0x00007f9780047825  Yes (*)     /usr/lib/x86_64-linux-gnu/libopenal.so.1
+0x00007f977fdb6b20  0x00007f977fde3b59  Yes (*)     /usr/lib/x86_64-linux-gnu/libpulse.so.0
+0x00007f977fb9d800  0x00007f977fba2612  Yes (*)     /lib/x86_64-linux-gnu/libjson-c.so.2
+0x00007f977f92ce70  0x00007f977f96f899  Yes (*)     /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-8.0.so
+0x00007f977f6d5460  0x00007f977f700254  Yes (*)     /lib/x86_64-linux-gnu/libdbus-1.so.3
+0x00007f977f4ae1b0  0x00007f977f4c0195  Yes (*)     /usr/lib/x86_64-linux-gnu/libxcb.so.1
+0x00007f9781d07830  0x00007f9781d5ea9f  Yes (*)     /lib/x86_64-linux-gnu/libsystemd.so.0
+0x00007f977f295d70  0x00007f977f299798  Yes (*)     /lib/x86_64-linux-gnu/libwrap.so.0
+0x00007f977f0290f0  0x00007f977f06b6cc  Yes (*)     /usr/lib/x86_64-linux-gnu/libsndfile.so.1
+0x00007f977ee1c300  0x00007f977ee1e988  Yes (*)     /usr/lib/x86_64-linux-gnu/libasyncns.so.0
+0x00007f977ec13e50  0x00007f977ec14acc  Yes (*)     /usr/lib/x86_64-linux-gnu/libXau.so.6
+0x00007f977ea0c1d0  0x00007f977ea0db38  Yes (*)     /usr/lib/x86_64-linux-gnu/libXdmcp.so.6
+0x00007f977e7e8ab0  0x00007f977e7fb29b  Yes (*)     /lib/x86_64-linux-gnu/libselinux.so.1
+0x00007f977e5bd0d0  0x00007f977e5d124d  Yes (*)     /lib/x86_64-linux-gnu/liblzma.so.5
+0x00007f977e2dbd00  0x00007f977e37c548  Yes (*)     /lib/x86_64-linux-gnu/libgcrypt.so.20
+0x00007f977e063420  0x00007f977e0c4cfd  Yes (*)     /usr/lib/x86_64-linux-gnu/libFLAC.so.8
+0x00007f977ddbea60  0x00007f977ddc11a7  Yes (*)     /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2
+0x00007f977db8e950  0x00007f977db9e2b8  Yes         /lib/x86_64-linux-gnu/libresolv.so.2
+0x00007f977d91c530  0x00007f977d96b623  Yes (*)     /lib/x86_64-linux-gnu/libpcre.so.3
+0x00007f977d7058d0  0x00007f977d70edb9  Yes (*)     /lib/x86_64-linux-gnu/libgpg-error.so.0
+0x00007f977d4f4a70  0x00007f977d4f8c05  Yes (*)     /usr/lib/x86_64-linux-gnu/libogg.so.0
+0x00007f977d2c5d90  0x00007f977d2dbb3d  Yes (*)     /usr/lib/x86_64-linux-gnu/libvorbis.so.0
+(*): Shared library is missing debugging information.
+
+* Threads
+  Id   Target Id         Frame 
+* 1    Thread 0x7f9781e2b740 (LWP 19805) "qzdoom" 0x00007f9780daf0cb in __GI___waitpid (pid=19810, stat_loc=0x1185dac, options=0) at ../sysdeps/unix/sysv/linux/waitpid.c:29
+  2    Thread 0x7f97789b9700 (LWP 19809) "SDLTimer" 0x00007f9780ad2827 in futex_abstimed_wait_cancelable (private=0, abstime=0x0, expected=0, futex_word=0x36f9c30) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+
+* FPU Status
+  R7: Empty   0x00000000000000000000
+  R6: Empty   0x00000000000000000000
+  R5: Empty   0x00000000000000000000
+  R4: Empty   0x00000000000000000000
+  R3: Empty   0x00000000000000000000
+  R2: Empty   0x00000000000000000000
+  R1: Empty   0x00000000000000000000
+=>R0: Empty   0x00000000000000000000
+
+Status Word:         0x0000                                            
+                       TOP: 0
+Control Word:        0x037f   IM DM ZM OM UM PM
+                       PC: Extended Precision (64-bits)
+                       RC: Round to nearest
+Tag Word:            0xffff
+Instruction Pointer: 0x00:0x00000000
+Operand Pointer:     0x00:0x00000000
+Opcode:              0x0000
+
+* Registers
+rax            0xfffffffffffffe00	-512
+rbx            0x4d62	19810
+rcx            0x7f9780daf0cb	140288678621387
+rdx            0x0	0
+rsi            0x1185dac	18374060
+rdi            0x4d62	19810
+rbp            0x1185dac	0x1185dac
+rsp            0x1185d70	0x1185d70
+r8             0x0	0
+r9             0x7f9781e2b740	140288695908160
+r10            0x0	0
+r11            0x246	582
+r12            0x0	0
+r13            0x1183280	18363008
+r14            0x1090	4240
+r15            0x9	9
+rip            0x7f9780daf0cb	0x7f9780daf0cb <__GI___waitpid+107>
+eflags         0x246	[ PF ZF IF ]
+cs             0x33	51
+ss             0x2b	43
+ds             0x0	0
+es             0x0	0
+fs             0x0	0
+gs             0x0	0
+
+* Backtrace
+
+Thread 2 (Thread 0x7f97789b9700 (LWP 19809)):
+#0  0x00007f9780ad2827 in futex_abstimed_wait_cancelable (private=0, abstime=0x0, expected=0, futex_word=0x36f9c30) at ../sysdeps/unix/sysv/linux/futex-internal.h:205
+        __ret = -512
+        oldtype = 2
+        err = <optimized out>
+#1  do_futex_wait (sem=sem@entry=0x36f9c30, abstime=0x0) at sem_waitcommon.c:111
+No locals.
+#2  0x00007f9780ad28d4 in __new_sem_wait_slow (sem=0x36f9c30, abstime=0x0) at sem_waitcommon.c:181
+        _buffer = {__routine = 0x7f9780ad27e0 <__sem_wait_cleanup>, __arg = 0x36f9c30, __canceltype = 0, __prev = 0x0}
+        err = <optimized out>
+        d = 0
+#3  0x00007f9780ad297a in __new_sem_wait (sem=<optimized out>) at sem_wait.c:29
+No locals.
+#4  0x0000000000c2c445 in ?? ()
+No symbol table info available.
+#5  0x0000000000be7c98 in ?? ()
+No symbol table info available.
+#6  0x0000000000be787b in ?? ()
+No symbol table info available.
+#7  0x0000000000c2ba89 in ?? ()
+No symbol table info available.
+#8  0x00007f9780aca6ba in start_thread (arg=0x7f97789b9700) at pthread_create.c:333
+        __res = <optimized out>
+        pd = 0x7f97789b9700
+        now = <optimized out>
+        unwind_buf = {cancel_jmp_buf = {{jmp_buf = {140288540251904, 9047180710306719289, 0, 140725812198111, 140288540252608, 140725812198768, -9033943934105475527, -9033926504364169671}, mask_was_saved = 0}}, priv = {pad = {0x0, 0x0, 0x0, 0x0}, data = {prev = 0x0, cleanup = 0x0, canceltype = 0}}}
+        not_first_call = <optimized out>
+        pagesize_m1 = <optimized out>
+        sp = <optimized out>
+        freesize = <optimized out>
+        __PRETTY_FUNCTION__ = "start_thread"
+#9  0x00007f9780dea41d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:109
+No locals.
+
+Thread 1 (Thread 0x7f9781e2b740 (LWP 19805)):
+#0  0x00007f9780daf0cb in __GI___waitpid (pid=19810, stat_loc=0x1185dac, options=0) at ../sysdeps/unix/sysv/linux/waitpid.c:29
+        resultvar = 18446744073709551104
+        sc_cancel_oldtype = 0
+#1  0x0000000000593e9e in ?? ()
+No symbol table info available.
+#2  <signal handler called>
+No locals.
+#3  0x0000000000820de0 in PActorInfo::DestroyValue(void*) const ()
+No symbol table info available.
+#4  0x00000000007df9bc in PClass::StaticShutdown() ()
+No symbol table info available.
+#5  0x00000000005988c2 in call_terms() ()
+No symbol table info available.
+#6  0x00007f9780d1cff8 in __run_exit_handlers (status=-1, listp=0x7f97810a75f8 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true) at exit.c:82
+        atfct = <optimized out>
+        onfct = <optimized out>
+        cxafct = <optimized out>
+#7  0x00007f9780d1d045 in __GI_exit (status=<optimized out>) at exit.c:104
+No locals.
+#8  0x000000000057f507 in main ()
+No symbol table info available.
