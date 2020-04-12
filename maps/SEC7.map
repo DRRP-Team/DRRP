@@ -59564,6 +59564,8 @@ twosided = true;
 blocking = true;
 dontdraw = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -59705,6 +59707,8 @@ sideback = 924;
 twosided = true;
 blocking = true;
 impassable = true;
+blockhitscan = true;
+blockprojectiles = true;
 }
 
 linedef
@@ -59752,6 +59756,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -59859,6 +59865,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -60058,6 +60066,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -60070,6 +60080,8 @@ twosided = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -60143,6 +60155,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -61237,6 +61251,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -79711,6 +79727,8 @@ twosided = true;
 blocking = true;
 dontdraw = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -79724,6 +79742,8 @@ dontpegtop = true;
 dontpegbottom = true;
 blocking = true;
 dontdraw = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -79862,6 +79882,8 @@ sideback = 4452;
 twosided = true;
 blocking = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -88644,6 +88666,8 @@ twosided = true;
 dontpegbottom = true;
 blocking = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -88735,6 +88759,8 @@ twosided = true;
 blocking = true;
 dontdraw = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -95221,6 +95247,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -95247,6 +95275,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -99231,6 +99261,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -99245,6 +99277,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -104583,6 +104617,8 @@ twosided = true;
 dontpegbottom = true;
 blocking = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -104605,6 +104641,8 @@ twosided = true;
 dontpegbottom = true;
 blocking = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -112117,6 +112155,8 @@ twosided = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -112139,6 +112179,8 @@ twosided = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -114726,6 +114768,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -115458,6 +115502,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -115791,6 +115837,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -115804,6 +115852,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -115817,6 +115867,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -115830,6 +115882,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -115843,6 +115897,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -116323,6 +116379,8 @@ sidefront = 11197;
 sideback = 11198;
 twosided = true;
 secret = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -116356,6 +116414,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -116449,6 +116509,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
@@ -125062,6 +125124,8 @@ dontpegbottom = true;
 blocking = true;
 secret = true;
 impassable = true;
+blockprojectiles = true;
+blockhitscan = true;
 }
 
 linedef
