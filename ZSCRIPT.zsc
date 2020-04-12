@@ -73,23 +73,23 @@ class DRRPPlayer: DoomPlayer {
             case RPG_MaxHealth:  player.MaxHealth = value; if ( setFeatureConsequence ) RPGSystemHandler.setHealthFeatures( player );  break; 
             case RPG_MaxArmor:   player.MaxArmor = value;  if ( setFeatureConsequence ) RPGSystemHandler.setArmorFeatures( player );   break; 
             case RPG_Experience: 
-				player.Experience = value; 
-				if ( setFeatureConsequence ) {
-					int i = 0;
-					for ( ; i < MAXPLAYERS; i++ )
-						if ( players[ i ].mo == player ) break;
-					EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
-				}
-				break;
+                player.Experience = value; 
+                if ( setFeatureConsequence ) {
+                    int i = 0;
+                    for ( ; i < MAXPLAYERS; i++ )
+                        if ( players[ i ].mo == player ) break;
+                    EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
+                }
+                break;
             case RPG_NextLevelXP:
-				player.NextLevelXP = value;
-				if ( setFeatureConsequence ) {
-					int i = 0;
-					for ( ; i < MAXPLAYERS; i++ )
-						if ( players[ i ].mo == player ) break;
-					EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
-				}
-				break;
+                player.NextLevelXP = value;
+                if ( setFeatureConsequence ) {
+                    int i = 0;
+                    for ( ; i < MAXPLAYERS; i++ )
+                        if ( players[ i ].mo == player ) break;
+                    EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
+                }
+                break;
             case RPG_Level:      player.Level = value;    if ( setFeatureConsequence ) RPGSystemHandler.setLevelFeatures( player );    break; 
             case RPG_Accuracy:   player.Accuracy = value; if ( setFeatureConsequence ) RPGSystemHandler.setAccuracyFeatures( player ); break; 
             case RPG_Agility:    player.Agility = value;  if ( setFeatureConsequence ) RPGSystemHandler.setAgilityFeatures( player );  break; 

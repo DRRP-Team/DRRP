@@ -54,8 +54,8 @@ class RPGSystemHandler: EventHandler {
 
 
     const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
-								"Clip, DRRPShell, RocketAmmo, Cell, Balloon, " ..
-								"SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
+                                "Clip, DRRPShell, RocketAmmo, Cell, Balloon, " ..
+                                "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
     //const DDGI_DefaultMonster_C = "2,1,5,4,2";
     const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
 
@@ -75,14 +75,14 @@ class RPGSystemHandler: EventHandler {
 
                 rawchancelist.Split( chanceliststr, "," );
 
-				if ( chanceliststr.Size() == itemlist.Size() ) {
-	                for ( i = 0; i < chanceliststr.Size(); i++ )
-	                    maxchance += ( chancelist[ i ] = chanceliststr[ i ].ToInt( 10 ) );
+                if ( chanceliststr.Size() == itemlist.Size() ) {
+                    for ( i = 0; i < chanceliststr.Size(); i++ )
+                        maxchance += ( chancelist[ i ] = chanceliststr[ i ].ToInt( 10 ) );
 
-	                for ( i = 0, curchance = Random( 0, maxchance ); curchance > 0 && i < chancelist.Size(); i++, curchance -= chancelist[ i ] ) {}
-	                outItem = itemlist[ i ];
-				} else
-					outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];
+                    for ( i = 0, curchance = Random( 0, maxchance ); curchance > 0 && i < chancelist.Size(); i++, curchance -= chancelist[ i ] ) {}
+                    outItem = itemlist[ i ];
+                } else
+                    outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];
             } else if ( rawlist == "" )
                 outItem = "";
             else
@@ -154,9 +154,9 @@ class RPGSystemHandler: EventHandler {
                 Name dropitemname = deathDropGetName( e.Thing.bISMONSTER? DDGI_DefaultMonster : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" ) );
                 if ( dropitemname != "NULL" && dropitemname != "" ) {
                     Actor droppeditem = e.Thing.Spawn( dropitemname, e.Thing.pos );
-					if ( !droppeditem.bNOGRAVITY )
-						droppeditem.vel = ( FRandom( -3, 3 ), FRandom( -3, 3 ), FRandom( 0.1, 2 ) );
-				}
+                    if ( !droppeditem.bNOGRAVITY )
+                        droppeditem.vel = ( FRandom( -3, 3 ), FRandom( -3, 3 ), FRandom( 0.1, 2 ) );
+                }
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
@@ -182,12 +182,12 @@ class RPGSystemHandler: EventHandler {
             player.ACS_ScriptCall( "levelUp", true );
         } else if ( e.name ~== "DRRP_Exp_Check" ) {
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) )
-				return;
+                return;
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
-			if ( player.Experience >= player.NextLevelXP )
-            	EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", e.Args[ 0 ] );
-		}
+            if ( player.Experience >= player.NextLevelXP )
+                EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", e.Args[ 0 ] );
+        }
 
     } // override void NetworkProcess( ConsoleEvent e ) {
 }
