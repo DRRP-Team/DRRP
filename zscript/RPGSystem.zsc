@@ -177,7 +177,14 @@ class RPGSystemHandler: EventHandler {
 
             setAllFeatures( player );
             player.ACS_ScriptCall( "levelUp", true );
-        }
+        } else if ( e.name ~== "DRRP_Exp_Check" ) {
+            if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) )
+				return;
+            DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
+
+			if ( player.Experience >= player.NextLevelXP )
+            	EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", e.Args[ 0 ] );
+		}
 
     } // override void NetworkProcess( ConsoleEvent e ) {
 }

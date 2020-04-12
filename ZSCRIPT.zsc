@@ -69,16 +69,33 @@ class DRRPPlayer: DoomPlayer {
     static void SetFeature( Actor activator, int type, int value, bool setFeatureConsequence = true ) {
         if ( ( value < 0 ) || !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return;
         DRRPPlayer player = DRRPPlayer( activator );
+
         switch ( type ) {
-            case RPG_MaxHealth:{ player.MaxHealth = value; if ( setFeatureConsequence ) RPGSystemHandler.setHealthFeatures( player );  break; }
-            case RPG_MaxArmor: { player.MaxArmor = value;  if ( setFeatureConsequence ) RPGSystemHandler.setArmorFeatures( player );   break; }
-            case RPG_Experience: player.Experience = value; break;
-            case RPG_NextLevelXP:player.NextLevelXP = value; break;
-            case RPG_Level:    { player.Level = value;    if ( setFeatureConsequence ) RPGSystemHandler.setLevelFeatures( player );    break; }
-            case RPG_Accuracy: { player.Accuracy = value; if ( setFeatureConsequence ) RPGSystemHandler.setAccuracyFeatures( player ); break; }
-            case RPG_Agility:  { player.Agility = value;  if ( setFeatureConsequence ) RPGSystemHandler.setAgilityFeatures( player );  break; }
-            case RPG_Defense:  { player.Defense = value;  if ( setFeatureConsequence ) RPGSystemHandler.setDefenseFeatures( player );  break; }
-            case RPG_Strength: { player.Strength = value; if ( setFeatureConsequence ) RPGSystemHandler.setStrengthFeatures( player ); break; }
+            case RPG_MaxHealth:  player.MaxHealth = value; if ( setFeatureConsequence ) RPGSystemHandler.setHealthFeatures( player );  break; 
+            case RPG_MaxArmor:   player.MaxArmor = value;  if ( setFeatureConsequence ) RPGSystemHandler.setArmorFeatures( player );   break; 
+            case RPG_Experience: 
+				player.Experience = value; 
+				if ( setFeatureConsequence ) {
+					int i = 0;
+					for ( ; i < MAXPLAYERS; i++ )
+						if ( players[ i ].mo == player ) break;
+					EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
+				}
+				break;
+            case RPG_NextLevelXP:
+				player.NextLevelXP = value;
+				if ( setFeatureConsequence ) {
+					int i = 0;
+					for ( ; i < MAXPLAYERS; i++ )
+						if ( players[ i ].mo == player ) break;
+					EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
+				}
+				break;
+            case RPG_Level:      player.Level = value;    if ( setFeatureConsequence ) RPGSystemHandler.setLevelFeatures( player );    break; 
+            case RPG_Accuracy:   player.Accuracy = value; if ( setFeatureConsequence ) RPGSystemHandler.setAccuracyFeatures( player ); break; 
+            case RPG_Agility:    player.Agility = value;  if ( setFeatureConsequence ) RPGSystemHandler.setAgilityFeatures( player );  break; 
+            case RPG_Defense:    player.Defense = value;  if ( setFeatureConsequence ) RPGSystemHandler.setDefenseFeatures( player );  break; 
+            case RPG_Strength:   player.Strength = value; if ( setFeatureConsequence ) RPGSystemHandler.setStrengthFeatures( player ); break; 
             default: break;
         }
     }
