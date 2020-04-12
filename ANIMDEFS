@@ -11,6 +11,8 @@ TEXTURE REAC2
     PIC REAC2C TICS 3
     PIC REAC2D TICS 3
 
+// Computers
+
 Texture CGR_LC1
     Pic CGR_LC1 Tics 8
     Pic CGR_LC2 Tics 8
@@ -24,19 +26,42 @@ Texture CGR_LC1
     Pic CGR_LC10 Tics 8
     Pic CGR_LC11 Tics 8
     Pic CGR_LC12 Tics 8
+Texture NP_CGR_LC1
+    Pic NP_CGR_LC1 Tics 8
+    Pic NP_CGR_LC2 Tics 8
+    Pic NP_CGR_LC3 Tics 8
+    Pic NP_CGR_LC4 Tics 8
+    Pic NP_CGR_LC5 Tics 8
+    Pic NP_CGR_LC6 Tics 8
+    Pic NP_CGR_LC7 Tics 8
+    Pic NP_CGR_LC8 Tics 8
+    Pic NP_CGR_LC9 Tics 8
+    Pic NP_CGR_LC10 Tics 8
+    Pic NP_CGR_LC11 Tics 8
+    Pic NP_CGR_LC12 Tics 8
 
 Texture CGR_TXT1
     Pic CGR_TXT1 Tics 70
     Pic CGR_TXT2 Tics 70
     Pic CGR_TXT3 Tics 70
+Texture NP_CGR_TXT1
+    Pic NP_CGR_TXT1 Tics 70
+    Pic NP_CGR_TXT2 Tics 70
+    Pic NP_CGR_TXT3 Tics 70
 
 Texture CGR_CRSR
     Pic DRDC30 Tics 10
     Pic CGR_CRSR Tics 10
+Texture NP_CGR_CRSR
+    Pic NP_DRDC30 Tics 10
+    Pic NP_CGR_CRSR Tics 10
 
 Texture CGR_M2A
     Pic CGR_M2A Tics 35
     Pic CGR_M2B Tics 17
+Texture NP_CGR_M2A
+    Pic NP_CGR_M2A Tics 35
+    Pic NP_CGR_M2B Tics 17
 
 // Door tunnels
 

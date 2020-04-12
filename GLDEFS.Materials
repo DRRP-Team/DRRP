@@ -308,117 +308,167 @@ Material Texture DRDC8 {
 
 Material Texture DRDC30 {
     BrightMap "materials/emission/BRPGB030"
+    Texture tex_heightmap   "materials/height/drdc30"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture DRDC31 {
     BrightMap "materials/emission/BRPGB030"
+    Texture tex_heightmap   "materials/height/drdc30"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Morthimer's computers
     Material Texture CGR_CAPT {
         BrightMap "materials/emission/CGR_CAPT_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_CRSR {
         BrightMap "materials/emission/CGR_CRSR_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_EMPT {
         BrightMap "materials/emission/CGR_EMPT_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC1 {
         BrightMap "materials/emission/CGR_LC1_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC2 {
         BrightMap "materials/emission/CGR_LC2_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC3 {
         BrightMap "materials/emission/CGR_LC3_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC4 {
         BrightMap "materials/emission/CGR_LC4_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC5 {
         BrightMap "materials/emission/CGR_LC5_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC6 {
         BrightMap "materials/emission/CGR_LC6_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC7 {
         BrightMap "materials/emission/CGR_LC7_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC8 {
         BrightMap "materials/emission/CGR_LC8_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC9 {
         BrightMap "materials/emission/CGR_LC9_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC10 {
         BrightMap "materials/emission/CGR_LC10_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC11 {
         BrightMap "materials/emission/CGR_LC11_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC12 {
         BrightMap "materials/emission/CGR_LC12_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_MSG {
         BrightMap "materials/emission/CGR_MSG_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_OFF {
         BrightMap "materials/emission/CGR_OFF_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_TXT1 {
         BrightMap "materials/emission/CGR_TXT1_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_TXT2 {
         BrightMap "materials/emission/CGR_TXT2_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_TXT3 {
         BrightMap "materials/emission/CGR_TXT3_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_UAC {
         BrightMap "materials/emission/CGR_UAC_BRT"
-    }
-
-    Material Texture CGR_UAC {
-        BrightMap "materials/emission/CGR_UAC_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_M1A {
         BrightMap "materials/emission/CGR_M1A_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_M2A {
         BrightMap "materials/emission/CGR_M2A_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_M2B {
         BrightMap "materials/emission/CGR_M2B_BRT"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 
     // Cincremental
 
     Material Texture compam {
         BrightMap "materials/emission/compam"
+        Texture tex_heightmap   "materials/height/drdc30"
+        shader                  "shaders/parallax_pbr.fp"
     }
 //\\ Morthimer's computers
 
