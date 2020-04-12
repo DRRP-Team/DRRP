@@ -37,6 +37,7 @@ OptionMenu "DRRPMenu" {
     Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
     Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
     Submenu "$DRRP_D_MENU_DRRPMENU_MISC", "Misc"
+    Submenu "$OPTMNU_CONTROLS", "CustomizeControls"
 }
 
 OptionMenu "Language" {
