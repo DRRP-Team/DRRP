@@ -41,10 +41,27 @@ function bool isStage(int _stage) {
     return stage() == _stage;
 }
 
-#define IDSNUMBER 1
+#define IDSNUMBER 18
 
 int idsToReset[IDSNUMBER] = {
-    -242
+    -179,
+    -242,
+    -310,
+    -312,
+    -279,
+    -188,
+    -442,
+    -475,
+    -537,
+    -570,
+    -434,
+    -465,
+    -496,
+    -529,
+    -666,
+    -696,
+    -727,
+    -819
 };
 
 /**
