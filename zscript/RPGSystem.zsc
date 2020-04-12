@@ -110,7 +110,7 @@ class RPGSystemHandler: EventHandler {
             e.Thing.A_SetInventory( "ExpGain", 1 );
         else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
             double multiplier =
-                ( e.Thing.health < 40 )?  FRandom( 0.02, 0.2 ) :
+                ( e.Thing.health < 40 )?  FRandom( 0.01, 0.1 ) :
                 ( e.Thing.health < 160 )? FRandom( 0.016, 0.17 ) :
                 ( e.Thing.health < 300 )? FRandom( 0.013, 0.15 ) :
                 FRandom( 0.01, 0.13 );
