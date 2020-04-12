@@ -284,6 +284,24 @@ Script "playerDamageTimer" (void) {
     ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);
 }
 
+/**
+ * RPG System
+ */
+
+enum RPGGetFeatureTypes {
+    RPG_Level,
+    RPG_Experience,
+    RPG_NextLevelXP,
+
+    RPG_MaxHealth,
+    RPG_MaxArmor,
+
+    RPG_Accuracy,
+    RPG_Agility,
+    RPG_Defense,
+    RPG_Strength
+};
+
 Script "LevelStatsNotifier" ENTER {
     int  monsterstotal,
          secretstotal       = GetLevelInfo(LEVELINFO_TOTAL_SECRETS);
@@ -304,6 +322,7 @@ Script "LevelStatsNotifier" ENTER {
             HudMessage(l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
             LocalAmbientSound("COMPLETE", 115);
             monsters = true;
+            ScriptCall("DRRPPlayer", "SetFeature", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeature", RPG_Experience) + 10);
         }
 
         if (secretsfound == secretstotal && !secrets) {
@@ -311,31 +330,18 @@ Script "LevelStatsNotifier" ENTER {
             HudMessage(l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
             LocalAmbientSound("SECRETS", 115);
             secrets = true;
+            ScriptCall("DRRPPlayer", "SetFeature", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeature", RPG_Experience) + 10);
         }
 
-        if (monsters && secrets) break;
+        if (monsters && secrets) {
+            ScriptCall("DRRPPlayer", "SetFeature", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeature", RPG_Experience) + 25);
+            GiveInventory("Credit", 25);
+            break;
+        };
 
         Delay(17);
     }
 }
-
-/**
- * RPG System
- */
-
-enum RPGGetFeatureTypes {
-    RPG_Level,
-    RPG_Experience,
-    RPG_NextLevelXP,
-
-    RPG_MaxHealth,
-    RPG_MaxArmor,
-
-    RPG_Accuracy,
-    RPG_Agility,
-    RPG_Defense,
-    RPG_Strength
-};
 
 const int RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // Per strength value
 
