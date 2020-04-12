@@ -151,9 +151,12 @@ class RPGSystemHandler: EventHandler {
                 }
 
                 // Items drop.
-                Name dropitem = deathDropGetName( e.Thing.bISMONSTER? DDGI_DefaultMonster : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" ) );
-                if ( dropitem != "NULL" && dropitem != "" )
-                    e.Thing.Spawn( dropitem, e.Thing.pos );
+                Name dropitemname = deathDropGetName( e.Thing.bISMONSTER? DDGI_DefaultMonster : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" ) );
+                if ( dropitemname != "NULL" && dropitemname != "" ) {
+                    Actor droppeditem = e.Thing.Spawn( dropitemname, e.Thing.pos );
+					if ( !droppeditem.bNOGRAVITY )
+						droppeditem.vel = ( FRandom( -3, 3 ), FRandom( -3, 3 ), FRandom( 0.1, 2 ) );
+				}
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
