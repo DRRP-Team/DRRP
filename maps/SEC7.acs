@@ -435,7 +435,7 @@ script 62 (int arg0, int arg1, int arg2) { //X=18 Y=27 START=L_222 END=L_232 UNK
     if(arg2 == 1) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=100
     if(arg2 == 1) ACS_NamedExecuteWait("drpgquake", 0, 100, 8); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) EARTHQUAKE TIME=100 INTENSITY=8
     if(arg2 == 1) Delay(3); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=100
-    if(arg2 == 1) TeleportOther(ActivatorTID(), 666, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TELEPORT X=7 Y=28 DIR=8
+    if(arg2 == 1) TeleportOther(ActivatorTID(), 666, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TELEPORT X=7 Y=28 DIR=8
     if(arg2 == 1) weaponMask = ScriptCall("WeaponController", "TakeAllWeapons", PlayerNumber()); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) TAKE_OR_RETURN_WEAPONS ACTION=0
     if(arg2 == 1) ACS_Execute(65, 0);
 }
