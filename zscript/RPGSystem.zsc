@@ -54,7 +54,7 @@ class RPGSystemHandler: EventHandler {
 
 
     const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
-								"Clip, DRRPShell, Rocket, Cell, Balloon, " ..
+								"Clip, DRRPShell, RocketAmmo, Cell, Balloon, " ..
 								"SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
     //const DDGI_DefaultMonster_C = "2,1,5,4,2";
     const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
