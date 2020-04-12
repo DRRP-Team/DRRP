@@ -223,7 +223,7 @@ Actor DRRPCrateShard {
 }
 
 Actor DRRPCrateSpawner: RandomSpawner {
-    // TODO: Add original spawn chances
+    // See "/ZScript/RPGSystem.zsc": "WorldThingDamaged()" calls "deathDropGetName()".
     DropItem "ArmorBonus"
     DropItem "SmallMedikit"
     DropItem "Credit"
@@ -361,7 +361,7 @@ Actor DRRPAqueductFountain {
     States {
         Spawn:
             CEFE A 1
-            CEFE A 0 A_PlaySoundEx("Toilet/Water", CHAN_AUTO, true)
+            CEFE A 0 A_PlaySound( "Toilet/Water", CHAN_AUTO, 1, true, 2.33 )
             CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 100 * 99)
             CEFE AAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 1000 * 993)
             CEFE AAAABBBBCCCCAAAABBBBCCCCAAAABBBBCCCC 1 A_SetScale(ScaleX / 1000 * 995)
