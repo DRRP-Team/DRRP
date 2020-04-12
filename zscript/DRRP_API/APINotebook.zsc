@@ -40,19 +40,19 @@ class NotebookHandler : EventHandler {
 
 class NotebookMenu : OptionMenu {
     Override
-    void Init(Menu parent, OptionMenuDescriptor desc) {
-        super.Init(parent, desc);
+    void Init(Menu parent, OptionMenuDescriptor menu) {
+        super.Init(parent, menu);
         EventHandler.SendNetworkEvent("killnotebook");
 
         playerinfo player = players[consoleplayer];
 
-        desc.mItems.clear();
+        menu.mItems.clear();
 
         if(player == null || player.mo == null) {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 
             item.Init(StringTable.Localize("$DRRP_D_NOTEBOOK_NOTINGAME"));
-            desc.mItems.push(item);
+            menu.mItems.push(item);
 
             return;
         }
@@ -60,48 +60,39 @@ class NotebookMenu : OptionMenu {
         NotebookItem nbitem = NotebookItem(player.mo.FindInventory("NotebookItem"));
     
         
-        DRRPIntToStringBruteforceMultiMapArrayWrapper ls = null;
+        DRRPIntToStringBruteforceMultiMapArrayWrapper strings = null;
         if(nbitem != null) {
-            ls = nbitem.languageStrings.get(level.levelnum);
+            strings = nbitem.languageStrings.get(level.levelnum);
         }
         
 
-        if(nbitem == null || ls.TheStringArray.size() == 0) {
+        if(nbitem == null || strings.TheStringArray.size() == 0) {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 
             item.Init(StringTable.Localize("$DRRP_D_NOTEBOOK_EMPTY"));
-            desc.mItems.push(item);
-        } else {
-            for(int i = ls.TheStringArray.size() - 1; i >= 0; i--) {
-                String langstring = ls.TheStringArray[i];
-                Array<String> langstring_spl;
+            menu.mItems.push(item);
+            return;
+        }
 
-                langstring_spl.clear();
-                langstring.split(langstring_spl, "\n");
+        OptionMenuItemStaticText separator = new("OptionMenuItemStaticText");
+        separator.Init("");
 
-                for(int j = 0; j < langstring_spl.size(); j++) {
-                    OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
+        for(int i = strings.TheStringArray.size() - 1; i >= 0; i--) {
+            String text = StringTable.localize( "$" .. strings.TheStringArray[i]);
 
-                    String initString = StringTable.localize( "$" .. langstring_spl[ j ] );
-                    item.Init( initString );
-                    desc.mItems.push( item );
+            Array<String> lines;
+            text.split(lines, "\n");
 
-                    // (next lines must be striked) 
-                    // Thanks, UsernameAK, for the dumb API...
-                    // (end of strike)
-                    OptionMenuItemStaticText nullItem = new( "OptionMenuItemStaticText" );
-                    nullItem.Init( " " );
-                    for ( int k = 0; k < initString.Length() - 1; k++ )
-                        if ( initString.CharAt( k ) == "\n" )
-                            desc.mItems.push( nullItem );
-                }
-                {
-                    OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+            for(int j = 0; j < lines.size(); j++) {
+                String line = lines[j];
 
-                    item.Init("");
-                    desc.mItems.push(item);
-                }
+                OptionMenuItemStaticText lineitem = new( "OptionMenuItemStaticText" );
+
+                lineitem.Init( line );
+                menu.mItems.push( lineitem );
             }
+
+            menu.mItems.push( separator );
         }
     }
 }
