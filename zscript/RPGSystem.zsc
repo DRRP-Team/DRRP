@@ -56,8 +56,9 @@ class RPGSystemHandler: EventHandler {
     const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
                                 "Clip, DRRPShell, RocketAmmo, Cell, Balloon, " ..
                                 "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
-    //const DDGI_DefaultMonster_C = "2,1,5,4,2";
+    const DDGI_DefaultMonster_C = "1,5,3,5,5,3,3,2,5,2,5,5";
     const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
+    const DDGI_Crate_C = DDGI_DefaultMonster_C .. ", 3";
 
     virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
         Array<String> itemlist;
