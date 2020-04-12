@@ -20,3 +20,10 @@ addkeysection "$DRRP_D_KEYBINDINGS_TITLE" DRRPKeySection
     addmenukey "$DRRP_D_KEYBINDINGS_STATINFO" openstatinfo
     alias openstatinfo "openmenu StatInfoMenu"
     defaultbind M opennotebook
+
+addkeysection "$DRRP_D_KEYBINDINGS_FASTUSE" DRRPFastuseSection
+    addmenukey "$DRRP_I_SMMEDKIT" "use SmallMedikit"
+    addmenukey "$DRRP_I_LGMEDKIT" "use LargeMedikit"
+    addmenukey "$DRRP_I_SOULSPHERE" "use InventorySoulsphere"
+    addmenukey "$DRRP_I_BERSERKER" "use DRRPBerserkItem"
+    addmenukey "$DRRP_I_DOGCOLLAR" "use DogCollar"
