@@ -46034,8 +46034,12 @@ linedef
 v1 = 1233;
 v2 = 1226;
 sidefront = 2042;
+special = 80;
 blocking = true;
 dontdraw = true;
+arg0str = "PseudoEasterEgg";
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef

@@ -41,6 +41,10 @@ script 1000 (void) {
     Restart;
 }
 
+Script "PseudoEasterEgg" (void) {
+    LocalAmbientSound("DEPRECATED", 255);
+}
+
 script 1 (int arg0, int arg1, int arg2) { //X=13 Y=1 START=L_0 END=L_1 UNKN=1048576 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=480
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=474
