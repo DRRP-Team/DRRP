@@ -53,7 +53,7 @@ Actor DoomRPGPlayer: DRRPPlayer {
     Player.WeaponSlot 0, DRRPFireExt
 
     Player.StartItem "DRRPPistol"
-    Player.StartItem "Clip", 8
+    Player.StartItem "Clip", 16
     Player.StartItem "DRRPDamageAbsorber"
 
     States {
