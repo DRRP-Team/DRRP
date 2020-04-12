@@ -423,6 +423,7 @@ Actor Malwrath : Cacodemon 10262 {
     Tag "$DRRP_M_MALWRATH"
     Health 195
     Translation "168:191=160:167", "16:47=160:166", "112:127=176:191", "192:207=176:191", "240:247=191:191" //"173:191=[215, 222, 0]:[107, 65, 0]", "16:47=[214, 190, 123]:[107, 81, 0]", "167:167=164:164", "192:207=32:39", "240:247=40:47", "112:127=16:47"
+    DamageFactor DRRPAxeDmg, 3.0
 
     States {
     Missile:
@@ -441,6 +442,7 @@ Actor DRRPCacodemon : Cacodemon replaces Cacodemon 10362 {
     Obituary "$DRRP_OB_CACODEMON"
     Tag "$DRRP_M_CACODEMON"
     Health 365
+    DamageFactor DRRPAxeDmg, 3.0
 
     States {
     Missile:
@@ -460,6 +462,7 @@ Actor Wretched : Cacodemon 10462 {
     Tag "$DRRP_M_WRETCHED"
     Health 650
     Translation "168:191=193:207", "16:47=193:201", "192:207=168:191", "223:223=207:207"
+    DamageFactor DRRPAxeDmg, 3.0
 
     States {
     Missile:
