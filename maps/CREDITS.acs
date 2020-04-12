@@ -16,10 +16,12 @@ script 10 ENTER { //Activate cut-scene
 
 bool skip = false;
 
+int img_height = 2700;
+
 Script "Credits" (void) {
     SetFont("CREDITS");
-    SetHudSize(1024, 768); // Image: 1024x2222
-    for(int y = 0; y <= 3333; y++) {
+    SetHudSize(1024, 768); // Image: 1024ximg_height
+    for(int y = 0; y <= img_height + img_height / 2; y++) {
         HudMessage(s:"A"; HUDMSG_PLAIN, -10000001, CR_UNTRANSLATED, 0.5, 1138.1 - (y << 16), 1);
         Delay(1);
         if(skip) break;
