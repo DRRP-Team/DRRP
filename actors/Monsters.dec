@@ -8,63 +8,6 @@
 //Mask: 10 + <monster_skill + 1> + <ID>: e. g., 2 monster skill = 10300-10399.
 //So, Monsters: 10259-10499.
 
-//Dogs
-    //Hellhound     10246
-    //Cerberus      10346
-    //DemonWolf     10446
-//Zombies
-    //ZombieManDRRP <same as original>
-    //ShotgunGuyDRRP    <same as original>
-    //ZombiePvt     10274
-    //ZombieLt      10374
-    //ZombieCpt     10474
-//Chaingunners
-    //ChaingunGuyDRRP   <same as original>
-    //Troop         10264
-    //Commando      10364
-    //Assassin      10464
-//Imps
-    //Impling       10260
-    //Imp           10360
-    //ImpLord       10460
-//Lost souls
-    //Phantom       10263
-    //LostSoul1     10463 FIXME:
-    //Nightmare     10363
-//Demons
-    //BullDemon     10259
-    //Pinky         10459 FIXME:
-    //Belphegor     10359
-//Cacodemons
-    //Malrath       10262
-    //Cacodemon1    10362
-    //Wretched      10462
-//Revenants
-    //Ghoul         10277
-    //Fiend         10377
-    //RevenantDRRP  10477
-//Pain Elementals
-    //Rahovart      10379
-    //Beholder      10479
-    //DRRPPainElemental 10279 FIXME:
-//Mancubuses
-    //Behemoth      10278
-    //Mancubus      10378
-    //Druj          10478
-//Viles
-    //Infernis      10273
-    //ArchVile1     10373
-    //Apollyon      10473
-//BaronsOfHellKnights
-    //Ogre          10480 FIXME:
-    //HellKnight1   10380 FIXME:
-    //BaronOfHell   10280
-
-//Bosses
-    //Kronos TODO:
-    //Cyberdemon TODO:
-
-
 
 // Dogs -------------------------------------------------------------------------------
 
@@ -721,7 +664,7 @@ Actor Behemoth : DRRPCubus 10278 {
 
     Obituary "$DRRP_OB_BEHEMOTH"
     Tag "$DRRP_M_BEHEMOTH"
-    Health 230
+    Health 320
     Translation "48:79=%[0.00,0.00,0.00]:[0.95,0.89,1.83]", "128:143=%[0.00,0.00,0.00]:[1.02,1.04,1.57]", "112:127=176:191", "160:167=%[0.00,0.00,0.00]:[1.02,0.94,1.91]", "212:223=%[0.00,0.00,0.00]:[0.90,0.82,1.84]", "13:15=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "236:239=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "144:151=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "176:191=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "16:47=%[0.00,0.00,0.00]:[2.00,0.00,0.00]"
 }
 
@@ -731,7 +674,7 @@ Actor Mancubus : DRRPCubus replaces Fatso 10378 {
 
     Obituary "$DRRP_OB_MANCUBUS"
     Tag "$DRRP_M_MANCUBUS"
-    Health 510
+    Health 700
 }
 
 Actor Druj : DRRPCubus 10478 {
@@ -740,7 +683,7 @@ Actor Druj : DRRPCubus 10478 {
 
     Tag "$DRRP_M_DRUJ"
     Obituary "$DRRP_OB_DRUJ"
-    Health 850
+    Health 1024
     Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
 }
 
