@@ -793,8 +793,8 @@ Actor DRRPHellKnight : HellKnight replaces HellKnight 10380 {
     States {
     Melee:
     Missile:
-        BOSS EF 8 A_FaceTarget
-        BOSS G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 9 * Random( 1, 8 ) + 6, "baron/melee" )
+        BOS2 EF 8 A_FaceTarget
+        BOS2 G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 9 * Random( 1, 8 ) + 6, "baron/melee" )
         Goto See
     }
 }
@@ -812,8 +812,8 @@ Actor Ogre : DRRPHellKnight 10480 {
     States {
     Melee:
     Missile:
-        BOSS EF 8 A_FaceTarget
-        BOSS G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 7 * Random( 2, 7 ) + 4, "baron/melee" )
+        BOS2 EF 8 A_FaceTarget
+        BOS2 G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 7 * Random( 2, 7 ) + 4, "baron/melee" )
         Goto See
     }
 }
