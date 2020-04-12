@@ -29,7 +29,7 @@ Script 666 ENTER{
     SetFont("smallfont");
     ACS_Execute(1000, 0);
     ACS_Execute(11, 0); //Spawn first scientist-marine
-    ACS_Execute(3005, 0);
+    // ACS_Execute(3005, 0);
 }
 
 script 1000 (void) {
