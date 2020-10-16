@@ -18646,6 +18646,62 @@ class5 = true;
 comment = "14:4";
 }
 
+thing
+{
+x = 650.000;
+y = -40.000;
+type = 9830;
+angle = 180;
+height = 30.000000;
+arg0 = 128;
+arg1 = 255;
+arg3 = 16;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+skill6 = true;
+skill7 = true;
+skill8 = true;
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+class4 = true;
+class5 = true;
+}
+
+thing
+{
+x = 650.000;
+y = -56.000;
+type = 9830;
+angle = 180;
+height = 30.000000;
+arg0 = 128;
+arg1 = 255;
+arg3 = 16;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+skill6 = true;
+skill7 = true;
+skill8 = true;
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+class4 = true;
+class5 = true;
+}
+
 vertex
 {
 x = 1388.000;
@@ -32740,6 +32796,78 @@ x = 1464.000;
 y = 1904.000;
 }
 
+vertex
+{
+x = 768.000;
+y = 32.000;
+}
+
+vertex
+{
+x = 832.000;
+y = 32.000;
+}
+
+vertex
+{
+x = 768.000;
+y = 16.000;
+}
+
+vertex
+{
+x = 832.000;
+y = 16.000;
+}
+
+vertex
+{
+x = 640.000;
+y = -80.000;
+}
+
+vertex
+{
+x = 640.000;
+y = -16.000;
+}
+
+vertex
+{
+x = 832.000;
+y = -48.000;
+}
+
+vertex
+{
+x = 768.000;
+y = 0.000;
+}
+
+vertex
+{
+x = 656.000;
+y = -32.000;
+}
+
+vertex
+{
+x = 656.000;
+y = -64.000;
+}
+
+vertex
+{
+x = 816.000;
+y = -32.000;
+}
+
+vertex
+{
+x = 816.000;
+y = 0.000;
+}
+
 linedef
 {
 v1 = 0;
@@ -46034,12 +46162,13 @@ linedef
 v1 = 1233;
 v2 = 1226;
 sidefront = 2042;
+sideback = 5019;
 special = 80;
-blocking = true;
 dontdraw = true;
-arg0str = "PseudoEasterEgg";
 playeruse = true;
 repeatspecial = true;
+arg0 = 3002;
+twosided = true;
 }
 
 linedef
@@ -63846,6 +63975,220 @@ arg0 = 1;
 twosided = true;
 }
 
+linedef
+{
+v1 = 2349;
+v2 = 1226;
+sidefront = 5018;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1233;
+v2 = 2350;
+sidefront = 5020;
+blocking = true;
+}
+
+linedef
+{
+v1 = 2349;
+v2 = 2350;
+sidefront = 5023;
+sideback = 5021;
+special = 80;
+twosided = true;
+arg0 = 3002;
+playeruse = true;
+repeatspecial = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2351;
+v2 = 2349;
+sidefront = 5022;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2350;
+v2 = 2352;
+sidefront = 5024;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2352;
+v2 = 2351;
+sidefront = 5025;
+sideback = 5028;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2353;
+v2 = 2354;
+sidefront = 5026;
+special = 80;
+blocking = true;
+arg0 = 80;
+arg0str = "PseudoEasterEgg";
+repeatspecial = true;
+dontdraw = true;
+playeruse = true;
+}
+
+linedef
+{
+v1 = 2354;
+v2 = 2351;
+sidefront = 5027;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2355;
+v2 = 2353;
+sidefront = 5029;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2352;
+v2 = 2355;
+sidefront = 5030;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2356;
+v2 = 2357;
+sidefront = 5034;
+sideback = 5031;
+special = 181;
+twosided = true;
+arg1 = 1;
+arg0 = 1;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2356;
+v2 = 2351;
+sidefront = 5032;
+sideback = 5036;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2354;
+v2 = 2357;
+sidefront = 5033;
+sideback = 5035;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2357;
+v2 = 2358;
+sidefront = 5037;
+sideback = 5039;
+special = 181;
+twosided = true;
+arg1 = 1;
+arg0 = 1;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2358;
+v2 = 2353;
+sidefront = 5038;
+sideback = 5042;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2355;
+v2 = 2359;
+sidefront = 5040;
+sideback = 5044;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2358;
+v2 = 2359;
+sidefront = 5043;
+sideback = 5041;
+special = 181;
+arg1 = 1;
+twosided = true;
+arg0 = 1;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2360;
+v2 = 2356;
+sidefront = 5047;
+sideback = 5045;
+special = 181;
+twosided = true;
+arg1 = 1;
+arg0 = 1;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2360;
+v2 = 2352;
+sidefront = 5049;
+sideback = 5048;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 2359;
+v2 = 2360;
+sidefront = 5050;
+sideback = 5046;
+special = 181;
+twosided = true;
+arg1 = 1;
+arg0 = 1;
+dontdraw = true;
+}
+
 sidedef
 {
 sector = 211;
@@ -76258,9 +76601,9 @@ sector = 865;
 sidedef
 {
 sector = 291;
-texturemiddle = "ABSFLAT1";
-scalex_mid = 2.000000;
-scaley_mid = 2.000000;
+texturemiddle = "drdc10";
+offsetx = 48;
+offsety = 66;
 }
 
 sidedef
@@ -76292,9 +76635,8 @@ sector = 865;
 sidedef
 {
 sector = 291;
-texturemiddle = "ABSFLAT1";
-scalex_mid = 2.000000;
-scaley_mid = 2.000000;
+texturemiddle = "drdc10";
+offsety = 2;
 }
 
 sidedef
@@ -76307,7 +76649,7 @@ offsetx_mid = 36.000000;
 sidedef
 {
 sector = 291;
-texturemiddle = "DRDC0";
+texturetop = "DRDC0";
 }
 
 sidedef
@@ -94860,6 +95202,190 @@ sector = 869;
 texturebottom = "COMPWERD";
 }
 
+sidedef
+{
+sector = 870;
+texturemiddle = "drdc10";
+offsetx = 16;
+}
+
+sidedef
+{
+sector = 870;
+}
+
+sidedef
+{
+sector = 870;
+texturemiddle = "drdc10";
+offsetx = 16;
+}
+
+sidedef
+{
+sector = 870;
+}
+
+sidedef
+{
+sector = 871;
+texturemiddle = "drdc10";
+offsetx = -64;
+offsety = 2;
+}
+
+sidedef
+{
+sector = 871;
+texturetop = "DRDC0";
+}
+
+sidedef
+{
+sector = 871;
+texturemiddle = "drdc10";
+offsetx = 48;
+offsety = 2;
+}
+
+sidedef
+{
+sector = 871;
+}
+
+sidedef
+{
+sector = 872;
+texturemiddle = "CGR_UAC";
+offsetx = 128;
+offsety = 12;
+}
+
+sidedef
+{
+sector = 873;
+texturemiddle = "ASHWALL3";
+}
+
+sidedef
+{
+sector = 876;
+}
+
+sidedef
+{
+sector = 875;
+texturemiddle = "ASHWALL3";
+}
+
+sidedef
+{
+sector = 877;
+texturemiddle = "ASHWALL3";
+}
+
+sidedef
+{
+sector = 874;
+}
+
+sidedef
+{
+sector = 876;
+}
+
+sidedef
+{
+sector = 872;
+}
+
+sidedef
+{
+sector = 873;
+}
+
+sidedef
+{
+sector = 873;
+}
+
+sidedef
+{
+sector = 873;
+}
+
+sidedef
+{
+sector = 872;
+}
+
+sidedef
+{
+sector = 872;
+}
+
+sidedef
+{
+sector = 874;
+}
+
+sidedef
+{
+sector = 877;
+}
+
+sidedef
+{
+sector = 874;
+}
+
+sidedef
+{
+sector = 875;
+}
+
+sidedef
+{
+sector = 875;
+}
+
+sidedef
+{
+sector = 875;
+texturetop = "ASHWALL3";
+}
+
+sidedef
+{
+sector = 874;
+}
+
+sidedef
+{
+sector = 874;
+}
+
+sidedef
+{
+sector = 876;
+}
+
+sidedef
+{
+sector = 876;
+texturetop = "ASHWALL3";
+}
+
+sidedef
+{
+sector = 877;
+}
+
+sidedef
+{
+sector = 877;
+}
+
 sector
 {
 texturefloor = "CEIL5_1";
@@ -105639,5 +106165,117 @@ heightfloor = 104;
 heightceiling = 126;
 lightlevel = 64;
 xpanningceiling = 16.000000;
+}
+
+sector
+{
+texturefloor = "ABSFLAT1";
+textureceiling = "FLAT20";
+heightfloor = 64;
+heightceiling = 64;
+lightlevel = 64;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ABSFLAT1";
+textureceiling = "ABSFLAT1";
+heightfloor = 64;
+heightceiling = 120;
+lightlevel = 64;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ASHWALL3";
+textureceiling = "ASHWALL3";
+heightfloor = 80;
+heightceiling = 112;
+lightlevel = 32;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ASHWALL3";
+textureceiling = "ASHWALL3";
+heightfloor = 80;
+heightceiling = 112;
+lightlevel = 32;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ASHWALL3";
+textureceiling = "ASHWALL3";
+heightfloor = 56;
+heightceiling = 120;
+lightlevel = 32;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ASHWALL3";
+textureceiling = "ASHWALL3";
+heightfloor = 80;
+heightceiling = 112;
+lightlevel = 32;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ASHWALL3";
+textureceiling = "ABSFLAT1";
+heightfloor = 64;
+heightceiling = 120;
+lightlevel = 32;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "ASHWALL3";
+textureceiling = "ASHWALL3";
+heightfloor = 80;
+heightceiling = 104;
+lightlevel = 32;
+xscaleceiling = 2.000000;
+yscaleceiling = 2.000000;
+xscalefloor = 2.000000;
+yscalefloor = 2.000000;
+hidden = true;
 }
 
