@@ -61,6 +61,7 @@ class NotebookMenu : OptionMenu {
     
         
         DRRPIntToStringBruteforceMultiMapArrayWrapper strings = null;
+
         if(nbitem != null) {
             strings = nbitem.languageStrings.get(level.levelnum);
         }
@@ -70,6 +71,7 @@ class NotebookMenu : OptionMenu {
             OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
 
             item.Init(StringTable.Localize("$DRRP_D_NOTEBOOK_EMPTY"));
+//<<<<<<< Updated upstream
             menu.mItems.push(item);
             return;
         }
@@ -95,6 +97,65 @@ class NotebookMenu : OptionMenu {
 
             menu.mItems.push( separator );
         }
+//=======*/
+            //desc.mItems.push(item);
+//        } else {
+            /*for(int i = ls.TheStringArray.size() - 1; i >= 0; i--) {
+                String langstring = ls.TheStringArray[i];
+                Array<String> langstring_spl;
+
+                langstring_spl.clear();
+                langstring.split(langstring_spl, "\n");
+
+                for(int j = 0; j < langstring_spl.size(); j++) {
+                    OptionMenuItemStaticText item = new( "OptionMenuItemStaticText" );
+
+                    String initString = StringTable.localize( "$" .. langstring_spl[ j ] );
+                    item.Init( initString );
+                    for ( int k = 0; k < initString.Length() - 1; k++ )
+                        if ( initString.CharAt( k ) == "\n" ) {
+                            //desc.mItems.push( nullItem );
+                            console.printf( initString.Replace( "\n", "" ) .. ": " .. item.GetY() );
+                            item.OffsetPositionY( OptionMenuSettings.mLinespacing * CleanYfac_1 + 200 );
+                            console.printf( "(" .. initString.Replace( "\n", "" ) ..")" .. item.GetY() );
+                        }
+                    desc.mItems.push( item );
+
+                    // (next lines must be striked) 
+                    // Thanks, UsernameAK, for the dumb API...
+                    // (end of strike)
+                    OptionMenuItemStaticText nullItem = new( "OptionMenuItemStaticText" );
+                    nullItem.Init( " " );
+                }
+                {
+                    OptionMenuItemStaticText item = new("OptionMenuItemStaticText");
+
+                    item.Init("");
+                    desc.mItems.push(item);
+                }
+            }
+		        OptionMenuItemStaticText separator = new("OptionMenuItemStaticText");
+		        separator.Init(" ");
+
+                for(int i = ls.TheStringArray.size() - 1; i >= 0; i--) {
+                    String text = StringTable.localize( "$" .. ls.TheStringArray[i]);
+        
+                    Array<String> lines;
+                    text.split(lines, "\n");
+
+                    for(int j = 0; j < lines.size(); j++) {
+                        String line = lines[j];
+        
+                        OptionMenuItemStaticText lineitem = new( "OptionMenuItemStaticText" );
+
+                        lineitem.Init( line );
+                        desc.mItems.push( lineitem );
+                    } // of for(int j = 0; j < lines.size(); j++)
+        
+                    desc.mItems.push( separator );
+                } // of for(int i = strings.TheStringArray.size() - 1; i >= 0; i--)
+            }
+//>>>>>>> Stashed changes*/
     }
 }
 
