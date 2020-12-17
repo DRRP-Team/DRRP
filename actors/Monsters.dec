@@ -163,9 +163,11 @@ Actor ZombieCpt : ZombieManDRRP 10474 {
     States {
     Missile:
         POSS E 10 A_FaceTarget
-        POSS F 8 A_CustomBulletAttack( 22.5, 0, 1, Random( 2, 6 ) * 4 + 2, "BulletPuff", 0, CBAF_NORANDOM )
+        POSS E 0 A_FaceTarget
+        POSS FFF 3 A_CustomBulletAttack( 22.5, 0, 1, Random( 2, 6 ) * 4 + 2, "BulletPuff", 0, CBAF_NORANDOM )
         POSS E 8
-        Goto See
+        POSS E 8 A_Jump( 195, "See" )
+        Loop
     }
 }
 
