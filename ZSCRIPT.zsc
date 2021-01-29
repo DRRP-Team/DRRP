@@ -33,7 +33,7 @@ version "2.5"
 
 class DRRPPlayer: DoomPlayer {
 
-    const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // From ACS
+    const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // From ACS.
     static const String dogNames[] = { "HellHound", "Cerberus", "DemonWolf" };
 
     int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength, MaxArmor;
@@ -42,127 +42,161 @@ class DRRPPlayer: DoomPlayer {
         Experience = Accuracy = Agility = Defense = Strength = 0;
         Level = 1;
         MaxArmor = 30;
-        setAllPlayerLevelupFeatures( self );
+        setAllPlayerLevelupFeatures();
         Super.BeginPlay();
     }
 
-    static int GetFeature( Actor activator, int type ) {
-        if ( activator && activator.player && ( activator is "DRRPPlayer" ) ) {
-            DRRPPlayer player = DRRPPlayer( activator );
-            switch ( type ) {
-                case RPG_MaxHealth:  return player.MaxHealth;
-                case RPG_Experience: return player.Experience;
-                case RPG_NextLevelXP:return player.NextLevelXP;
-                case RPG_Level:      return player.Level;
-                case RPG_MaxArmor:   return player.MaxArmor;
-                case RPG_Accuracy:   return player.Accuracy;
-                case RPG_Agility:    return player.Agility;
-                case RPG_Defense:    return player.Defense;
-                case RPG_Strength:   return player.Strength;
-                default: break;
-            }
-        } // of if ( activator && activator.player && ( activator is "DRRPPlayer" ) ) {
+
+    /* Static get/set features methods (usually for ACS) */
+    static int GetFeatureStatic( Actor activator, int type ) {
+        int outValue = -1;
+
+        if ( activator && activator.player && ( activator is "DRRPPlayer" ) )
+            outValue = DRRPPlayer( activator ).GetFeature( type );
+
+        return outValue;
+    }
+
+    static void SetFeatureStatic( Actor activator, int type, int value, bool setFeatureConsequence = true ) {
+        if ( ( value < 0 ) || !activator || !activator.player || !( activator is "DRRPPlayer" ) )
+            return;
+
+        DRRPPlayer( activator ).SetFeature( type, value, setFeatureConsequence );
+    }
+
+
+    /* Overridable feature types */
+    virtual void SetLevelFeatures() {
+        self.NextLevelXP += self.Level * 20;
+    }
+
+    virtual void SetAgilityFeatures() {
+        self.ForwardMove1 = self.Agility * 0.025 + 0.6;
+        self.ForwardMove2 = self.ForwardMove1 * 0.58333;
+        self.SideMove1    = self.Agility * 0.025 + 0.55;
+        self.SideMove2    = self.SideMove1 * 0.54545;
+    }
+
+    virtual void SetHealthFeatures() {
+        self.A_GiveInventory( "DRRPHealthVial", 999 ); // Heal player to MaxHealth (cannot call "A_SetHealth()" here).
+        self.MugShotMaxHealth = self.MaxHealth;
+    }
+
+    virtual void SetArmorFeatures() {
+        Inventory armor = FindInventory( "DRRPBasicArmor" );
+        if ( armor ) 
+            armor.MaxAmount = self.MaxArmor;
+    }
+
+    virtual void SetDefenseFeatures() {}
+
+    virtual void SetAccuracyFeatures() {}
+
+    virtual void SetStrengthFeatures() {}
+
+
+    /* Features getter/setter */
+    int GetFeature( int type ) {
+        switch ( type ) {
+            case RPG_MaxHealth:  return self.MaxHealth;
+            case RPG_Experience: return self.Experience;
+            case RPG_NextLevelXP:return self.NextLevelXP;
+            case RPG_Level:      return self.Level;
+            case RPG_MaxArmor:   return self.MaxArmor;
+            case RPG_Accuracy:   return self.Accuracy;
+            case RPG_Agility:    return self.Agility;
+            case RPG_Defense:    return self.Defense;
+            case RPG_Strength:   return self.Strength;
+            default: break;
+        }
+
         return -1;
     }
 
-    static void SetFeature( Actor activator, int type, int value, bool setFeatureConsequence = true ) {
-        if ( ( value < 0 ) || !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return;
-        DRRPPlayer player = DRRPPlayer( activator );
-
+    void SetFeature( int type, int value, bool setFeatureConsequence = true ) {
         switch ( type ) {
-            case RPG_MaxHealth:  player.MaxHealth = value; if ( setFeatureConsequence ) RPGSystemHandler.setHealthFeatures( player );  break; 
-            case RPG_MaxArmor:   player.MaxArmor = value;  if ( setFeatureConsequence ) RPGSystemHandler.setArmorFeatures( player );   break; 
-            case RPG_Experience: 
-                player.Experience = value; 
-                if ( setFeatureConsequence ) {
-                    int i = 0;
-                    for ( ; i < MAXPLAYERS; i++ )
-                        if ( players[ i ].mo == player ) break;
-                    EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
-                }
-                break;
+            case RPG_MaxHealth:   self.MaxHealth = value; if ( setFeatureConsequence ) setHealthFeatures();  break; 
+            case RPG_MaxArmor:    self.MaxArmor = value;  if ( setFeatureConsequence ) setArmorFeatures();   break; 
+
+            case RPG_Experience:  self.Experience = value;
+            case RPG_NextLevelXP: self.NextLevelXP = value;
+            case RPG_Experience:
             case RPG_NextLevelXP:
-                player.NextLevelXP = value;
                 if ( setFeatureConsequence ) {
-                    int i = 0;
-                    for ( ; i < MAXPLAYERS; i++ )
-                        if ( players[ i ].mo == player ) break;
-                    EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
+                    for ( int i = 0; i < MAXPLAYERS; i++ )
+                        if ( players[ i ].mo == self ) {
+                            EventHandler.SendNetworkEvent( "DRRP_Exp_Check", i );
+                            break;
+                        }
                 }
                 break;
-            case RPG_Level:      player.Level = value;    if ( setFeatureConsequence ) RPGSystemHandler.setLevelFeatures( player );    break; 
-            case RPG_Accuracy:   player.Accuracy = value; if ( setFeatureConsequence ) RPGSystemHandler.setAccuracyFeatures( player ); break; 
-            case RPG_Agility:    player.Agility = value;  if ( setFeatureConsequence ) RPGSystemHandler.setAgilityFeatures( player );  break; 
-            case RPG_Defense:    player.Defense = value;  if ( setFeatureConsequence ) RPGSystemHandler.setDefenseFeatures( player );  break; 
-            case RPG_Strength:   player.Strength = value; if ( setFeatureConsequence ) RPGSystemHandler.setStrengthFeatures( player ); break; 
+
+            case RPG_Level:       self.Level = value;    if ( setFeatureConsequence ) setLevelFeatures();    break; 
+            case RPG_Accuracy:    self.Accuracy = value; if ( setFeatureConsequence ) setAccuracyFeatures(); break; 
+            case RPG_Agility:     self.Agility = value;  if ( setFeatureConsequence ) setAgilityFeatures();  break; 
+            case RPG_Defense:     self.Defense = value;  if ( setFeatureConsequence ) setDefenseFeatures();  break; 
+            case RPG_Strength:    self.Strength = value; if ( setFeatureConsequence ) setStrengthFeatures(); break; 
             default: break;
         }
     }
 
     /* Sets all player level up features. */
-    static void setAllPlayerLevelupFeatures( DRRPPlayer player ) {
-        // Level features:
-        player.NextLevelXP += player.Level * 20;
+    void SetAllPlayerLevelupFeatures() {
+        SetLevelFeatures();
 
-        // Armor features:
-        Inventory armor = player.FindInventory( "DRRPBasicArmor" );
-        if ( armor ) armor.MaxAmount = player.MaxArmor;
+        SetAccuracyFeatures();
+        SetAgilityFeatures();
+        SetDefenseFeatures();
+        SetStrengthFeatures();
 
-        // Agility features:
-        player.ForwardMove1 = player.Agility * 0.025 + 0.6;
-        player.ForwardMove2 = player.ForwardMove1 * 0.58333;
-        player.SideMove1    = player.Agility * 0.025 + 0.55;
-        player.SideMove2    = player.SideMove1 * 0.54545;
-
-        // Health features:
-        player.A_GiveInventory( "DRRPHealthVial", 999 );
-        player.MugShotMaxHealth = player.MaxHealth;
+        SetHealthFeatures();
+        SetArmorFeatures();
     } // of static void setAllPlayerLevelupFeatures( DRRPPlayer player ) {
 
 
 
-    static double GetScatterMultiplier( Actor activator ) {
-        if ( !( activator is "DRRPPlayer" ) ) return -1;
-        return DRRPMath.PowerFloatToInt( DRRPMath.e * 0.378, -DRRPPlayer( activator ).Accuracy );
+    double GetScatterMultiplier() {
+        //if ( !( activator is "DRRPPlayer" ) ) return -1;
+        //return DRRPMath.Power( DRRPMath.e * 0.378, -DRRPPlayer( activator ).Accuracy );
+        return DRRPMath.Power( DRRPMath.e * 0.378, -self.Accuracy );
     } 
 
-    static play int getRPGAttackDamage( Actor player, int min, int max = 0 ) {
-        if ( !player || !player.player || !( player is "DRRPPlayer" ) ) return -1;
-
+    play int getRPGAttackDamage( int min, int max = 0 ) {
+        //if ( !player || !self.player || !( player is "DRRPPlayer" ) ) return -1;
         if ( ( max == 0 ) || ( max < min ) )
             max = min;
 
-        int damageMultiplier = DRRPPlayer( player ).GetFeature( player, RPG_Strength ) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
+        int damageMultiplier = GetFeature( RPG_Strength ) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
 
         return Random( min + damageMultiplier, max + damageMultiplier );
     }
 
-    static play int getRPGDefenseDamage( Actor activator, int damage, name mod ) {
-        if ( !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return -1;
+    play int getRPGDefenseDamage( int damage, name mod ) {
+        //if ( !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return -1;
 
-        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", activator.player );
+        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", self.player );
         if ( DebugCVar && DebugCVar.GetBool() )
             console.printf( "#DRRPPlayer::getRPGDefenseDamage. Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
 
-        damage *= DRRPMath.PowerFloatToInt( DRRPMath.e * 0.377, -( 1 + DRRPPlayer( activator ).Defense ) );
+        damage *= DRRPMath.Power( DRRPMath.e * 0.377, -( 1 + self.Defense ) );
         String ReadyWeapon = "";
-        if ( activator.player.ReadyWeapon ) 
-            ReadyWeapon = activator.player.ReadyWeapon.GetClassName();
+        if ( self.player.ReadyWeapon ) 
+            ReadyWeapon = self.player.ReadyWeapon.GetClassName();
             // We may haven't any weapons, for example, in Sector 3, Nadira's hall.
 
         if ( ( ReadyWeapon ~== "DRRPAxe" ) && ( mod != 'DRRPFireDmg' ) ) {
-            activator.S_Sound( "weapon/axe/block", CHAN_AUTO, 0.67 );
+            S_Sound( "weapon/axe/block", CHAN_AUTO, 0.67 );
             return damage / 2;
         }
 
         for ( int i = 0; i < DRRPPlayer.dogNames.Size(); i++ ) {
             if ( ReadyWeapon.Left( DRRPPlayer.dogNames[ i ].Length() ) == DRRPPlayer.dogNames[ i ] ) {
-                activator.S_Sound( "monsters/hellhound/pain", CHAN_WEAPON, 0.5 );
-                activator.TakeInventory( DRRPPlayer.dogNames[ i ] .. "Health", damage );
+                S_Sound( "monsters/hellhound/pain", CHAN_WEAPON, 0.5 );
+                TakeInventory( DRRPPlayer.dogNames[ i ] .. "Health", damage );
 
-                if ( activator.FindInventory( DRRPPlayer.dogNames[ i ] .. "Health" ).Amount == 0 ) {
-                    activator.TakeInventory( ReadyWeapon, 1 );
-                    activator.S_Sound( "monsters/hellhound/death", CHAN_WEAPON, 0.5 );
+                if ( FindInventory( DRRPPlayer.dogNames[ i ] .. "Health" ).Amount == 0 ) {
+                    TakeInventory( ReadyWeapon, 1 );
+                    S_Sound( "monsters/hellhound/death", CHAN_WEAPON, 0.5 );
                 }
 
                 return 0;
@@ -171,5 +205,5 @@ class DRRPPlayer: DoomPlayer {
 
         return damage;
 
-    } // of static play int getRPGDefenseDamage( Actor activator, int damage, name mod ) {
+    } // of static play int getRPGDefenseDamage( int damage, name mod ) {
 }

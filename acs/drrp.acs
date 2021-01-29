@@ -288,7 +288,7 @@ Script "playerDamageTimer" (void) {
  * RPG System
  */
 
-enum RPGGetFeatureTypes {
+enum RPGGetFeatureStaticTypes {
     RPG_Level,
     RPG_Experience,
     RPG_NextLevelXP,
@@ -322,7 +322,7 @@ Script "LevelStatsNotifier" ENTER {
             HudMessage(l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
             LocalAmbientSound("COMPLETE", 115);
             monsters = true;
-            ScriptCall("DRRPPlayer", "SetFeature", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeature", RPG_Experience) + 10);
+            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 10);
         }
 
         if (secretsfound == secretstotal && !secrets) {
@@ -330,11 +330,11 @@ Script "LevelStatsNotifier" ENTER {
             HudMessage(l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
             LocalAmbientSound("SECRETS", 115);
             secrets = true;
-            ScriptCall("DRRPPlayer", "SetFeature", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeature", RPG_Experience) + 10);
+            ScriptCall("DRRPPlayer", "SetFeatureStaticACS", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 10);
         }
 
         if (monsters && secrets) {
-            ScriptCall("DRRPPlayer", "SetFeature", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeature", RPG_Experience) + 25);
+            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 25);
             GiveInventory("Credit", 25);
             break;
         };
@@ -350,7 +350,7 @@ Script "getRPGAttackDamage" (int min, int max) {
     if (min == 0 && GetCVar("drrp_debug_mode")) Print(s:"[BUG]: getRPGDamage(0)");
     if (max == 0) max = min;
 
-    int damageMultiplier = ScriptCall("DRRPPlayer", "GetFeature", RPG_Strength) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
+    int damageMultiplier = ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Strength) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
 
     int damage = random(min + damageMultiplier,
                         max + damageMultiplier);
@@ -392,11 +392,11 @@ Script "getRPGDefenseDamage" (int damage) {
 }
 
 Script "levelUp" (bool windowOnly) { // You can use it by the "pukename levelup" command
-    int pLevel = ScriptCall("DRRPPlayer", "GetFeature", RPG_Level);
+    int pLevel = ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Level);
 
     if (!windowOnly) {
         pLevel++;
-        ScriptCall("DRRPPlayer", "SetFeature", RPG_Level, pLevel);
+        ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Level, pLevel);
     }
 
     ActivatorSound("player/levelup", 127);

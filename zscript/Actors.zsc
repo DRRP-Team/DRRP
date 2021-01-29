@@ -184,9 +184,10 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
     override void Touch( Actor toucher ) {
         if ( !toucher || !( toucher is "DRRPPlayer" ) ) 
             return;
+
         Inventory armor = DRRPPlayer( toucher ).FindInventory( "DRRPBasicArmor" );
         if ( armor ) 
-            if ( DRRPPlayer( toucher ).GetFeature( toucher, RPG_MaxArmor ) <= armor.Amount )
+            if ( DRRPPlayer( toucher ).GetFeature( RPG_MaxArmor ) <= armor.Amount )
                 return;
 
         toucher.A_GiveInventory( "DRRPBasicArmor", armorAmountGive );

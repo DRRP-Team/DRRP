@@ -137,6 +137,7 @@ class RPGSystemHandler: EventHandler {
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) ) return;
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
+			// It's better to sequentally call player.SetFeature()...
             player.Level       += 1;
             player.Agility     += 1;
             player.Accuracy    += 1;
@@ -145,7 +146,7 @@ class RPGSystemHandler: EventHandler {
             player.MaxHealth   += 4;
             player.MaxArmor    += 4;
 
-            setAllPlayerLevelupFeatures( player );
+            player.setAllPlayerLevelupFeatures();
             player.ACS_ScriptCall( "levelUp", true );
 
         } else if ( e.name ~== "DRRP_Exp_Check" ) {
@@ -171,24 +172,24 @@ class DRRPDamageAbsorber: Inventory {
     }
 
     override void AbsorbDamage( int damage, Name damageType, out int newdamage ) {
-        if ( !Owner || !( Owner is "DoomRPGPlayer" ) )
+        if ( !owner || !( owner is "DoomRPGPlayer" ) )
             return;
 
-        Inventory armor = DRRPPlayer( Owner ).FindInventory( "DRRPBasicArmor" );
+        Inventory armor = DRRPPlayer( owner ).FindInventory( "DRRPBasicArmor" );
         CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
 
         if ( DebugCVar && DebugCVar.GetBool() )
             console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Pre-damage). Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
 
         if ( armor ) {
-            if ( ( newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType ) ) == damage )
+            if ( ( newdamage = DRRPPlayer( owner ).getRPGDefenseDamage( damage, damageType ) ) == damage )
                 armor.Amount -= damage / 2;
             else
                 armor.Amount -= damage - newdamage;
             if ( armor.Amount < 0 )
                 armor.Amount = 0;
         } else
-            newdamage = DRRPPlayer( Owner ).getRPGDefenseDamage( Owner, damage, damageType );
+            newdamage = DRRPPlayer( owner ).getRPGDefenseDamage( damage, damageType );
 
         if ( DebugCVar && DebugCVar.GetBool() )
             console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
@@ -202,11 +203,11 @@ class DRRPBasicArmor: Armor {
     }
 
     override void PostBeginPlay() {
-        if ( !Owner || !( Owner is "DoomRPGPlayer" ) ) {
+        if ( !owner || !( owner is "DoomRPGPlayer" ) ) {
             Destroy();
             return;
         }
-        self.MaxAmount = DRRPPlayer( Owner ).GetFeature( Owner, RPG_MaxArmor );
+        self.MaxAmount = DRRPPlayer( owner ).GetFeature( RPG_MaxArmor );
     }
 }
 
@@ -230,9 +231,9 @@ class DRRPShopPlayerAccuracy: Inventory {
     }
 
     override void PostBeginPlay() {
-        if ( Owner && Owner is "DRRPPlayer" ) {
-            DRRPPlayer( Owner ).SetFeature( Owner, thisFeatureType,
-                    DRRPPlayer( Owner ).GetFeature( Owner, thisFeatureType ) + ( Amount & 0x100? -Amount : Amount ) );
+        if ( owner && owner is "DRRPPlayer" ) {
+            DRRPPlayer( owner ).SetFeature( thisFeatureType,
+                    DRRPPlayer( owner ).GetFeature( thisFeatureType ) + ( Amount & 0x100? -Amount : Amount ) );
         }
         Destroy();
         DetachFromOwner();

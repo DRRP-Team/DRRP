@@ -34,6 +34,13 @@ class DRRPMath {
             source *= originalSource;
         return isReverse? 1 / source : source;
     }
+
+	// Returns (digit^power) if digit is greater than 0, else returns NAN.
+	//(I think there's no situations in project where I may use imaginary numbers).
+	static double Power( double digit, double power ) {
+		return exp( power * log( digit ) );
+	}
+
 }
 
 class DRRPActorAdditionalFunctions: Actor {
