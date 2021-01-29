@@ -116,10 +116,11 @@ class RPGSystemHandler: EventHandler {
                 FRandom( 0.01, 0.13 );
             e.Thing.A_SetInventory( "ExpGain", 1 + ( int( multiplier * e.Thing.health ) ) );
         }
+
         CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
         if ( DebugCVar && DebugCVar.GetBool() && e.Thing.FindInventory( "ExpGain" ) )
-            console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor &" .. e.Thing
-                .. " <" .. e.Thing.GetClassName() .. "> ) amount of experience: "
+            console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor " .. e.Thing.GetClassName()
+                .. " <" .. e.Thing .. "> ). Given amount of experience: "
                 .. e.Thing.FindInventory( "ExpGain" ).Amount .. "." );
     }
 
