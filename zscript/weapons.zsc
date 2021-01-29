@@ -480,9 +480,9 @@ class DRRPRocket: Rocket replaces Rocket {
         Decal "Scorch";
     }
 
-	override void PostBeginPlay() {
-		SetDamage( 20 + DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
-	}
+    override void PostBeginPlay() {
+        SetDamage( 20 + DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
+    }
 
     States {
         Death:
@@ -537,9 +537,9 @@ class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
         Decal "PlasmaScorch";
     }
 
-	override void PostBeginPlay() {
-		SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 3, 7 ) );
-	}
+    override void PostBeginPlay() {
+        SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 3, 7 ) );
+    }
 }
 
 class DRRPBFG9000: BFG9000 replaces BFG9000 {
@@ -600,9 +600,9 @@ class DRRPBFG9000Ball: BFGBall replaces BFGBall {
         Decal "BFGScorch";
     }
 
-	override void PostBeginPlay() {
-		SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
-	}
+    override void PostBeginPlay() {
+        SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
+    }
 }
 
 class HellHoundHealth : Ammo {

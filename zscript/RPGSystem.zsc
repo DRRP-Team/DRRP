@@ -137,7 +137,7 @@ class RPGSystemHandler: EventHandler {
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) ) return;
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
-			// It's better to sequentally call player.SetFeature()...
+            // It's better to sequentally call player.SetFeature()...
             player.Level       += 1;
             player.Agility     += 1;
             player.Accuracy    += 1;
