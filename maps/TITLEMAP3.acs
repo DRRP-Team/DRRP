@@ -81,7 +81,7 @@ script 1 OPEN
 	
 	// Fade screen back in and change to main menu music
 	FadeTo(0, 0, 0, 0.0, 5.0);
-	SetMusic("$MUS_MENU");
+	SetMusic("D_TITLE");
 	
 	// TITLEMAP SEQUENCE COMPLETED
 }
@@ -122,8 +122,8 @@ script 5 (void)
 {
 	Delay(1390);
 	ChangeFloor(1, "F_SKY1"); // Set in-map floors to show the sky
-	ChangeFloor(2, "drdc23"); // Set skybox floor to show sky with title image//TITLESKY
-	ChangeFloor(666, "drdc23"); // Set skybox floor to show sky with title image
+	ChangeFloor(2, "reac2"); // Set skybox floor to show sky with title image//TITLESKY
+	ChangeFloor(666, "reac2"); // Set skybox floor to show sky with title image
 }
 
 // Delay until change floor heights

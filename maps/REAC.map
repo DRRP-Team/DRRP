@@ -20396,7 +20396,7 @@ texturebottom = "DRDC40";
 sidedef
 {
 sector = 128;
-texturemiddle = "textures/reactor/drdc21";
+texturemiddle = "drdc21";
 texturebottom = "DRDC40";
 }
 
@@ -20409,7 +20409,7 @@ texturemiddle = "DRDC36";
 sidedef
 {
 sector = 0;
-texturemiddle = "textures/reactor/drdc21";
+texturemiddle = "drdc21";
 texturebottom = "DRDC40";
 }
 
@@ -24719,8 +24719,8 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 157;
-texturemiddle = "textures/walls/drdc29";
-offsetx_mid = 1;
+texturemiddle = "drdc29";
+offsetx_mid = 1.000000;
 }
 
 sidedef
@@ -24733,9 +24733,9 @@ offsetx_mid = -1;
 sidedef
 {
 sector = 157;
-texturemiddle = "textures/walls/drdc29";
+texturemiddle = "drdc29";
 offsetx = 32;
-offsetx_mid = 1;
+offsetx_mid = 1.000000;
 }
 
 sidedef
@@ -24748,9 +24748,9 @@ offsetx_mid = -11;
 sidedef
 {
 sector = 64;
-texturemiddle = "textures/walls/drdc12";
+texturemiddle = "drdc12";
 offsetx = 32;
-offsetx_mid = -43;
+offsetx_mid = -43.000000;
 }
 
 sidedef
@@ -31117,8 +31117,8 @@ texturebottom = "DRDC12";
 sidedef
 {
 sector = 64;
-texturetop = "textures/walls/drdc12";
-texturebottom = "textures/walls/drdc12";
+texturetop = "drdc12";
+texturebottom = "drdc12";
 }
 
 sidedef
@@ -31830,12 +31830,12 @@ ceilingglowheight = 1;
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 127;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -33005,149 +33005,149 @@ rotationfloor = 90;
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightceiling = 80;
 lightlevel = 143;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightceiling = 80;
 lightlevel = 159;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 95;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 yscalefloor = 2.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 127;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 95;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 yscalefloor = 2.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 79;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 95;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 xscalefloor = 3.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 95;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 xscalefloor = 3.000000;
 yscalefloor = 3.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 111;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 yscalefloor = 2.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 111;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 yscalefloor = 2.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 111;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 xscalefloor = 2.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 111;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightceiling = 80;
 lightlevel = 159;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 }
 
 sector
 {
-texturefloor = "textures/walls/drdc12";
+texturefloor = "DRDC12";
 textureceiling = "DRDC12";
 heightfloor = 24;
 heightceiling = 64;
 lightlevel = 127;
-rotationfloor = 90;
+rotationfloor = 90.000000;
 xscalefloor = 3.000000;
 yscalefloor = 2.000000;
 }

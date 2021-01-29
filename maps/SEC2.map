@@ -35564,11 +35564,11 @@ rotationfloor = 270;
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "textures/custom/absflat";
+textureceiling = "absflat";
 heightceiling = 64;
 lightlevel = 120;
-xpanningfloor = 32;
-rotationfloor = 270;
+xpanningfloor = 32.000000;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -36271,13 +36271,13 @@ rotationfloor = 270;
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "textures/custom/absflat";
+textureceiling = "absflat";
 lightlevel = 175;
 id = 21;
 hidden = true;
-xpanningfloor = 32;
-xpanningceiling = -32;
-rotationfloor = 270;
+xpanningfloor = 32.000000;
+xpanningceiling = -32.000000;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -36734,11 +36734,14 @@ heightfloor = -2;
 heightceiling = 69;
 lightlevel = 175;
 id = 666;
-ceilingplane_d = -400.013061;
 xpanningfloor = 32;
 xpanningceiling = -32;
 rotationceiling = 270;
 rotationfloor = 270;
+ceilingplane_a = -0.000000;
+ceilingplane_b = -0.000000;
+ceilingplane_c = -1.000000;
+ceilingplane_d = -400.013061;
 }
 
 sector
@@ -36763,11 +36766,14 @@ heightfloor = -2;
 heightceiling = 66;
 lightlevel = 175;
 id = 666;
-ceilingplane_d = 701.537109;
 xpanningfloor = 32;
 xpanningceiling = -32;
 rotationceiling = 270;
 rotationfloor = 270;
+ceilingplane_a = -0.000000;
+ceilingplane_b = -0.000000;
+ceilingplane_c = -1.000000;
+ceilingplane_d = 701.537109;
 }
 
 sector
@@ -36778,12 +36784,18 @@ heightfloor = 39;
 heightceiling = 69;
 lightlevel = 175;
 id = 666;
-floorplane_d = -1154.129028;
-ceilingplane_d = -400.013061;
 xpanningfloor = 32;
 xpanningceiling = -32;
 rotationceiling = 270;
 rotationfloor = 90;
+floorplane_a = -0.000000;
+floorplane_b = -0.000000;
+floorplane_c = -1.000000;
+floorplane_d = -1154.129028;
+ceilingplane_a = -0.000000;
+ceilingplane_b = -0.000000;
+ceilingplane_c = -1.000000;
+ceilingplane_d = -400.013061;
 }
 
 sector
@@ -36794,11 +36806,14 @@ heightfloor = 24;
 heightceiling = 69;
 lightlevel = 175;
 id = 666;
-ceilingplane_d = -400.013061;
 xpanningfloor = 32;
 xpanningceiling = -32;
 rotationceiling = 270;
 rotationfloor = 90;
+ceilingplane_a = -0.000000;
+ceilingplane_b = -0.000000;
+ceilingplane_c = -1.000000;
+ceilingplane_d = -400.013061;
 }
 
 sector
@@ -36809,12 +36824,18 @@ heightfloor = 39;
 heightceiling = 69;
 lightlevel = 175;
 id = 666;
-floorplane_d = 1220.200684;
-ceilingplane_d = -400.013061;
 xpanningfloor = 32;
 xpanningceiling = -32;
 rotationceiling = 270;
 rotationfloor = 90;
+floorplane_a = -0.000000;
+floorplane_b = -0.000000;
+floorplane_c = -1.000000;
+floorplane_d = 1220.200684;
+ceilingplane_a = -0.000000;
+ceilingplane_b = -0.000000;
+ceilingplane_c = -1.000000;
+ceilingplane_d = -400.013061;
 }
 
 sector
