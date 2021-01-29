@@ -5,115 +5,115 @@
  * https://opensource.org/licenses/MIT
  */
 
-ambient/drone1          sounds/DRONE1
-ambient/mach04          sounds/MACH04
-ambient/lopneon2        sounds/LOPNEON2
+ambient/drone1          sounds/DRONE1.ogg
+ambient/mach04          sounds/MACH04.ogg
+ambient/lopneon2        sounds/LOPNEON2.ogg
 
-misc/alarm              sounds/ALARM2
-alarm/alarm1            sounds/ALARM1
-alarm/alarm2            sounds/ALARM2
-alarm/alarm3            sounds/ALARM3
+misc/alarm              sounds/ALARM2.ogg
+alarm/alarm1            sounds/ALARM1.ogg
+alarm/alarm2            sounds/ALARM2.ogg
+alarm/alarm3            sounds/ALARM3.ogg
 
-fire/start              sounds/FIRESTRT
-fire/loop1              sounds/FIRELOP1
-fire/loop2              sounds/FIRELOP2
-fire/loop3              sounds/FIRELOP3
-fire/die                sounds/FIREDIE
+fire/start              sounds/FIRESTRT.ogg
+fire/loop1              sounds/FIRELOP1.ogg
+fire/loop2              sounds/FIRELOP2.ogg
+fire/loop3              sounds/FIRELOP3.ogg
+fire/die                sounds/FIREDIE.ogg
 
-access/grant1/ru        sounds/ACGRA_RU
-access/grant1/en        sounds/ACGRA_EN
-access/grant2/ru        sounds/ACGRA2_RU
-access/grant2/en        sounds/ACGRA2_EN
-access/grantb1          sounds/ACGRAB
-access/grantb2          sounds/ACGRAB2
-access/deny1/ru         sounds/ACDEN_RU
-access/deny1/en         sounds/ACDEN_EN
-access/deny2/ru         sounds/ACDEN2_RU
-access/deny2/en         sounds/ACDEN2_EN
-access/orange           sounds/ACORAN
+access/grant1/ru        sounds/ACGRA_RU.ogg
+access/grant1/en        sounds/ACGRA_EN.ogg
+access/grant2/ru        sounds/ACGRA2_RU.ogg
+access/grant2/en        sounds/ACGRA2_EN.ogg
+access/grantb1          sounds/ACGRAB.ogg
+access/grantb2          sounds/ACGRAB2.ogg
+access/deny1/ru         sounds/ACDEN_RU.ogg
+access/deny1/en         sounds/ACDEN_EN.ogg
+access/deny2/ru         sounds/ACDEN2_RU.ogg
+access/deny2/en         sounds/ACDEN2_EN.ogg
+access/orange           sounds/ACORAN.ogg
 
 $random access/grantb {
     access/grantb1
     access/grantb2
 }
 
-techno/poweroff             sounds/LIGHTSOF
-techno/poweron              sounds/LIGHTSON
+techno/poweroff             sounds/LIGHTSOF.ogg
+techno/poweron              sounds/LIGHTSON.ogg
 
-voice/reac01/ru             sounds/REAC01_RU
-voice/reac01/en             sounds/REAC01_EN
-voice/reacon/ru             sounds/REACON_RU
-voice/reacon/en             sounds/REACON_EN
-voice/hireactemp/ru         sounds/HITEMP_RU
-voice/hireactemp/en         sounds/HITEMP_EN
-voice/wtf/ru                sounds/WTF_RU
-voice/wtf/en                sounds/WTF_EN
-voice/god/ru                sounds/GOD_RU
-voice/god/en                sounds/GOD_EN
-voice/only/ru               sounds/ONLY_RU
-voice/only/en               sounds/ONLY_EN
-voice/powerback             sounds/PWBACK
-voice/powershake/ru         sounds/PWSH_RU
-voice/powershake/en         sounds/PWSH_EN
-voice/teleport321           sounds/TP
-voice/systemsoff/ru         sounds/SYSOFF_RU
-voice/systemsoff/en         sounds/SYSOFF_EN
-voice/nofire                sounds/NOFIRE
-voice/c2                    sounds/C2
-voice/uac/ru                sounds/FUCK_RU
-voice/uac/en                sounds/FUCK_EN
+voice/reac01/ru             sounds/REAC01_RU.ogg
+voice/reac01/en             sounds/REAC01_EN.ogg
+voice/reacon/ru             sounds/REACON_RU.ogg
+voice/reacon/en             sounds/REACON_EN.ogg
+voice/hireactemp/ru         sounds/HITEMP_RU.ogg
+voice/hireactemp/en         sounds/HITEMP_EN.ogg
+voice/wtf/ru                sounds/WTF_RU.ogg
+voice/wtf/en                sounds/WTF_EN.ogg
+voice/god/ru                sounds/GOD_RU.ogg
+voice/god/en                sounds/GOD_EN.ogg
+voice/only/ru               sounds/ONLY_RU.ogg
+voice/only/en               sounds/ONLY_EN.ogg
+voice/powerback             sounds/PWBACK.ogg
+voice/powershake/ru         sounds/PWSH_RU.ogg
+voice/powershake/en         sounds/PWSH_EN.ogg
+voice/teleport321           sounds/TP.ogg
+voice/systemsoff/ru         sounds/SYSOFF_RU.ogg
+voice/systemsoff/en         sounds/SYSOFF_EN.ogg
+voice/nofire                sounds/NOFIRE.ogg
+voice/c2                    sounds/C2.ogg
+voice/uac/ru                sounds/FUCK_RU.ogg
+voice/uac/en                sounds/FUCK_EN.ogg
 
-bet/destroy/ru              sounds/BDEST_RU
-bet/destroy/en              sounds/BDEST_EN
-bet/made/ru                 sounds/BMADE_RU
-bet/made/en                 sounds/BMADE_EN
-bet/earth/ru                sounds/BEAR_RU
-bet/earth/en                sounds/BEAR_EN
+bet/destroy/ru              sounds/BDEST_RU.ogg
+bet/destroy/en              sounds/BDEST_EN.ogg
+bet/made/ru                 sounds/BMADE_RU.ogg
+bet/made/en                 sounds/BMADE_EN.ogg
+bet/earth/ru                sounds/BEAR_RU.ogg
+bet/earth/en                sounds/BEAR_EN.ogg
 
-core/c1/ru                  sounds/C1_RU
-core/c1/en                  sounds/C1_EN
-core/c2/ru                  sounds/C2_RU
-core/c2/en                  sounds/C2_EN
-core/c3/ru                  sounds/C3_RU
-core/c3/en                  sounds/C3_EN
-core/c4/ru                  sounds/C4_RU
-core/c4/en                  sounds/C4_EN
+core/c1/ru                  sounds/C1_RU.ogg
+core/c1/en                  sounds/C1_EN.ogg
+core/c2/ru                  sounds/C2_RU.ogg
+core/c2/en                  sounds/C2_EN.ogg
+core/c3/ru                  sounds/C3_RU.ogg
+core/c3/en                  sounds/C3_EN.ogg
+core/c4/ru                  sounds/C4_RU.ogg
+core/c4/en                  sounds/C4_EN.ogg
 
-ms/doctor/ru                sounds/MSDOC_RU
-ms/doctor/en                sounds/MSDOC_EN
-ms/psy/ru                   sounds/MSPSY_RU
-ms/psy/en                   sounds/MSPSY_EN
-ms/safe/ru                  sounds/MSSAFE_RU
-ms/safe/en                  sounds/MSSAFE_EN
+ms/doctor/ru                sounds/MSDOC_RU.ogg
+ms/doctor/en                sounds/MSDOC_EN.ogg
+ms/psy/ru                   sounds/MSPSY_RU.ogg
+ms/psy/en                   sounds/MSPSY_EN.ogg
+ms/safe/ru                  sounds/MSSAFE_RU.ogg
+ms/safe/en                  sounds/MSSAFE_EN.ogg
 
-teleport/tohell             sounds/Teleport/teleport_to_hell
-teleport/loop               sounds/Teleport/teleport_loop
+teleport/tohell             sounds/teleport/teleport_to_hell.ogg
+teleport/loop               sounds/teleport/teleport_loop.ogg
 
 
-misc/k_pkup                 sounds/DSKEYUP
+misc/k_pkup                 sounds/DSKEYUP.ogg
 
-DSPLDETH                    sounds/DSPLDETH
-DSPLPAIN                    sounds/DSPLPAIN
-DSPOPAIN                    sounds/DSPOPAIN
-DSRADIO                     sounds/DSRADIO
-DSBDCLS                     sounds/DSBDCLS
-ZBMB1                       sounds/ZBMB1
-ZBMB2                       sounds/ZBMB2
-DSBLUD03                    sounds/DSBLUD03
-ROCK                        sounds/ROCK
-ICOSCRE                     sounds/ICOSCRE
-DEPRECATED                  sounds/DEPRECATED
-SECRETS                     sounds/SECRETS
-COMPLETE                    sounds/COMPLETE
+DSPLDETH                    sounds/DSPLDETH.ogg
+DSPLPAIN                    sounds/DSPLPAIN.ogg
+DSPOPAIN                    sounds/DSPOPAIN.ogg
+DSRADIO                     sounds/DSRADIO.ogg
+DSBDCLS                     sounds/DSBDCLS.ogg
+ZBMB1                       sounds/ZBMB1.ogg
+ZBMB2                       sounds/ZBMB2.ogg
+DSBLUD03                    sounds/DSBLUD03.ogg
+ROCK                        sounds/ROCK.ogg
+ICOSCRE                     sounds/ICOSCRE.ogg
+DEPRECATED                  sounds/DEPRECATED.ogg
+SECRETS                     sounds/SECRETS.ogg
+COMPLETE                    sounds/COMPLETE.ogg
 
-DOGSONG                     sounds/DOGSONG
-HODSONG                     sounds/HODSONG
+DOGSONG                     sounds/DOGSONG.ogg
+HODSONG                     sounds/HODSONG.ogg
 
 // === Weapons ===
-weapon/gas                  sounds/GAS
-// weapon/axe/hit              sounds/AXEBLOOD
-weapon/axe/miss             sounds/AXEMISS
-weapon/axe/block            sounds/AXEBLOCK
+weapon/gas                  sounds/GAS.ogg
+// weapon/axe/hit           sounds/AXEBLOOD.ogg
+weapon/axe/miss             sounds/AXEMISS.ogg
+weapon/axe/block            sounds/AXEBLOCK.ogg
 
 weapon/axe/wall             sounds/weapons/axe/wall.ogg
 weapon/axe/hit1             sounds/weapons/axe/hit1.ogg
@@ -140,13 +140,13 @@ $random weapon/axe/swing {
     weapon/axe/swing3
 }
 
-weapon/fireext/loop         sounds/FIREELOP
-weapon/fireext/stop         sounds/FIREESTP
-weapon/fireext/pick         sounds/WTF
+weapon/fireext/loop         sounds/FIREELOP.ogg
+weapon/fireext/stop         sounds/FIREESTP.ogg
+weapon/fireext/pick         sounds/WTF.ogg
 
 // === Player ===
-player/taunt                sounds/TAUNT
-player/levelup              sounds/LEVELUP
+player/taunt                sounds/TAUNT.ogg
+player/levelup              sounds/LEVELUP.ogg
 
 // === Monsters ===
 monster/cyberdemon/sigh1    CYBRSIGH
@@ -156,14 +156,14 @@ monster/cyberdemon/death    CYBRDTH
 //Drugs
 // dag
 
-monsters/hellhound/see      DOG1RECO
-monsters/hellhound/pain     DOG1PAIN
-monsters/hellhound/bite     DOG1BITE
-monsters/hellhound/death    DOG1DIE
+monsters/hellhound/see      sounds/dogs/DOG1RECO.ogg
+monsters/hellhound/pain     sounds/dogs/DOG1PAIN.ogg
+monsters/hellhound/bite     sounds/dogs/DOG1BITE.ogg
+monsters/hellhound/death    sounds/dogs/DOG1DIE.ogg
 
-monsters/hellhound/bark1    DOG1BRK1
-monsters/hellhound/bark2    DOG1BRK2
-monsters/hellhound/bark3    DOG1BRK3
+monsters/hellhound/bark1    sounds/dogs/DOG1BRK1.ogg
+monsters/hellhound/bark2    sounds/dogs/DOG1BRK2.ogg
+monsters/hellhound/bark3    sounds/dogs/DOG1BRK3.ogg
 
 $random monsters/hellhound/bark {
     monsters/hellhound/bite
@@ -172,11 +172,11 @@ $random monsters/hellhound/bark {
     monsters/hellhound/bark3
 }
 
-monsters/cerberus/see       DOG2RECO
+monsters/cerberus/see       sounds/dogs/DOG2RECO.ogg
 
-monsters/cerberus/bark1     DOG2BRK1
-monsters/cerberus/bark2     DOG2BRK2
-monsters/cerberus/bark3     DOG2BRK3
+monsters/cerberus/bark1     sounds/dogs/DOG2BRK1.ogg
+monsters/cerberus/bark2     sounds/dogs/DOG2BRK2.ogg
+monsters/cerberus/bark3     sounds/dogs/DOG2BRK3.ogg
 
 $random monsters/cerberus/bark {
     monsters/cerberus/bark1
@@ -184,13 +184,13 @@ $random monsters/cerberus/bark {
     monsters/cerberus/bark3
 }
 
-monsters/demonwolf/see      DOG3RECO
-monsters/demonwolf/jump     DOG3JUMP
-monsters/demonwolf/land     DOG3LAND
+monsters/demonwolf/see      sounds/dogs/DOG3RECO.ogg
+monsters/demonwolf/jump     sounds/dogs/DOG3JUMP.ogg
+monsters/demonwolf/land     sounds/dogs/DOG3LAND.ogg
 
-monsters/demonwolf/bark1    DOG3BRK1
-monsters/demonwolf/bark2    DOG3BRK2
-monsters/demonwolf/bark3    DOG3BRK3
+monsters/demonwolf/bark1    sounds/dogs/DOG3BRK1.ogg
+monsters/demonwolf/bark2    sounds/dogs/DOG3BRK2.ogg
+monsters/demonwolf/bark3    sounds/dogs/DOG3BRK3.ogg
 
 $random monsters/demonwolf/bark {
     monsters/demonwolf/bark1
@@ -200,14 +200,14 @@ $random monsters/demonwolf/bark {
 
 // Characters
 
-generic/char/pain1          NAZIPN1
-generic/char/pain2          NAZIPN2
-generic/char/pain3          NAZIPN3
-generic/char/pain4          NAZIPN4
-generic/char/pain5          NAZIPN5
-generic/char/pain6          NAZIPN6
-generic/char/pain7          NAZIPN7
-generic/char/pain8          NAZIPN8
+generic/char/pain1          sounds/death/NAZIPN1.ogg
+generic/char/pain2          sounds/death/NAZIPN2.ogg
+generic/char/pain3          sounds/death/NAZIPN3.ogg
+generic/char/pain4          sounds/death/NAZIPN4.ogg
+generic/char/pain5          sounds/death/NAZIPN5.ogg
+generic/char/pain6          sounds/death/NAZIPN6.ogg
+generic/char/pain7          sounds/death/NAZIPN7.ogg
+generic/char/pain8          sounds/death/NAZIPN8.ogg
 
 $random generic/char/pain {
     generic/char/pain1
@@ -220,17 +220,17 @@ $random generic/char/pain {
     generic/char/pain8
 }
 
-generic/char/death1         NAZIDTH1
-generic/char/death2         NAZIDTH2
-generic/char/death3         NAZIDTH3
-generic/char/death4         NAZIDTH4
-generic/char/death5         NAZIDTH5
-generic/char/death6         NAZIDTH6
-generic/char/death7         NAZIDTH7
-generic/char/death8         NAZIDTH8
-generic/char/death9         NAZIDTH9
-generic/char/death10        NAZIDTH10
-generic/char/death11        NAZIDTH11
+generic/char/death1         sounds/death/NAZIDTH1.ogg
+generic/char/death2         sounds/death/NAZIDTH2.ogg
+generic/char/death3         sounds/death/NAZIDTH3.ogg
+generic/char/death4         sounds/death/NAZIDTH4.ogg
+generic/char/death5         sounds/death/NAZIDTH5.ogg
+generic/char/death6         sounds/death/NAZIDTH6.ogg
+generic/char/death7         sounds/death/NAZIDTH7.ogg
+generic/char/death8         sounds/death/NAZIDTH8.ogg
+generic/char/death9         sounds/death/NAZIDTH9.ogg
+generic/char/death10        sounds/death/NAZIDTH10.ogg
+generic/char/death11        sounds/death/NAZIDTH11.ogg
 
 $random generic/char/death {
     generic/char/death1
@@ -247,13 +247,13 @@ $random generic/char/death {
 }
 
 // Misc
-generic/expl/barrel1        DSBAREX1
-generic/expl/barrel2        DSBAREX2
-generic/expl/barrel3        DSBAREX3
-generic/expl/barrel4        DSBAREX4
-generic/expl/barrel5        DSBAREX5
-generic/expl/barrel6        DSBAREX6
-generic/expl/barrel7        DSBAREX7
+generic/expl/barrel1        sounds/explosions/DSBAREX1.ogg
+generic/expl/barrel2        sounds/explosions/DSBAREX2.ogg
+generic/expl/barrel3        sounds/explosions/DSBAREX3.ogg
+generic/expl/barrel4        sounds/explosions/DSBAREX4.ogg
+generic/expl/barrel5        sounds/explosions/DSBAREX5.ogg
+generic/expl/barrel6        sounds/explosions/DSBAREX6.ogg
+generic/expl/barrel7        sounds/explosions/DSBAREX7.ogg
 
 $random generic/expl/barrel {
     generic/expl/barrel1
@@ -265,8 +265,8 @@ $random generic/expl/barrel {
     generic/expl/barrel7
 }
 
-generic/expl/explode1       EXPLODE1
-generic/expl/explode2       EXPLODE2
+generic/expl/explode1       sounds/explosions/EXPLODE1.ogg
+generic/expl/explode2       sounds/explosions/EXPLODE2.ogg
 
 $random generic/expl/explode {
     generic/expl/explode1
@@ -283,11 +283,11 @@ $random generic/crate/hit {
     generic/crate/hit3
 }
 
-Steam/Loop                  STEMLOOP
-Steam/Fire                  STEMFIRE
+Steam/Loop                  sounds/STEMLOOP.ogg
+Steam/Fire                  sounds/STEMFIRE.ogg
 
-Toilet/Crash                sounds/TOILCRASH
-Toilet/Water                sounds/TOILWATER
+Toilet/Crash                sounds/TOILCRASH.ogg
+Toilet/Water                sounds/TOILWATER.ogg
 
 // === Volume ===
 $volume             player/taunt        0.4
