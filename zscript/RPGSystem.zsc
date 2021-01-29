@@ -7,56 +7,18 @@
 
 
 class RPGSystemHandler: EventHandler {
+
     override void OnRegister() {
         SetOrder( 670 );
     }
 
 
-    static void setLevelFeatures( DRRPPlayer player ) {
-        player.NextLevelXP += player.Level * 20;
-    }
-
-    static void setArmorFeatures( DRRPPlayer player ) {
-        Inventory armor = player.FindInventory( "DRRPBasicArmor" );
-        if ( armor ) armor.MaxAmount = player.MaxArmor;
-    }
-
-    static void setAccuracyFeatures( DRRPPlayer player ) {
-    }
-
-    static void setAgilityFeatures( DRRPPlayer player ) {
-        player.ForwardMove1 = player.Agility * 0.025 + 0.6;
-        player.ForwardMove2 = player.ForwardMove1 * 0.58333;
-        player.SideMove1    = player.Agility * 0.025 + 0.55;
-        player.SideMove2    = player.SideMove1 * 0.54545;
-    }
-
-    static void setDefenseFeatures( DRRPPlayer player ) {
-    }
-
-    static void setStrengthFeatures( DRRPPlayer player ) {
-    }
-
-    static void setHealthFeatures( DRRPPlayer player ) {
-        player.A_GiveInventory( "DRRPHealthVial", 999 );
-        player.MugShotMaxHealth = player.MaxHealth;
-    }
-
-    static void setAllFeatures( DRRPPlayer player ) {
-        setLevelFeatures( player );
-        setArmorFeatures( player );
-        setAccuracyFeatures( player );
-        setAgilityFeatures( player );
-        setDefenseFeatures( player );
-        setStrengthFeatures( player );
-        setHealthFeatures( player );
-    }
-
-
+    /* Monsters and crates random death drop data and chooser. */
     const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
                                 "Clip, DRRPShell, RocketAmmo, Cell, Balloon, " ..
+                                "Clips4xSpawner, Shells4xSpawner, Cells4xSpawner, Balloons4xSpawner, " ..
                                 "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
-    const DDGI_DefaultMonster_C = "1,5,3,5,5,3,3,2,5,1,5,5";
+    const DDGI_DefaultMonster_C = "1,5,3 , 5,5,3,3,2 , 1,1,1,1 , 5,1,5,5";
     const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
     const DDGI_Crate_C = DDGI_DefaultMonster_C .. ", 3";
 
@@ -91,8 +53,9 @@ class RPGSystemHandler: EventHandler {
         }
 
         return outItem;
-    }
+    } // of virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
 
+    /* Obtaining units of experience by some types of DRRP-actors when it spawns. */
     override void WorldThingSpawned( WorldEvent e ) {
         if ( e.Thing is 'DRRPFire' )
             e.Thing.A_SetInventory( "ExpGain", 1 );
@@ -117,13 +80,15 @@ class RPGSystemHandler: EventHandler {
             e.Thing.A_SetInventory( "ExpGain", 1 + ( int( multiplier * e.Thing.health ) ) );
         }
 
+        // Just debug information...
         CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
         if ( DebugCVar && DebugCVar.GetBool() && e.Thing.FindInventory( "ExpGain" ) )
             console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor " .. e.Thing.GetClassName()
                 .. " <" .. e.Thing .. "> ). Given amount of experience: "
                 .. e.Thing.FindInventory( "ExpGain" ).Amount .. "." );
-    }
+    } // of override void WorldThingSpawned( WorldEvent e ) {
 
+    /* Give xp to killer player and drop random items on some DRRP actors death. */
     override void WorldThingDamaged( WorldEvent e ) {
 
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
@@ -180,9 +145,11 @@ class RPGSystemHandler: EventHandler {
             player.MaxHealth   += 4;
             player.MaxArmor    += 4;
 
-            setAllFeatures( player );
+            setAllPlayerLevelupFeatures( player );
             player.ACS_ScriptCall( "levelUp", true );
+
         } else if ( e.name ~== "DRRP_Exp_Check" ) {
+
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) )
                 return;
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );

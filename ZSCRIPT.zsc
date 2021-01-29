@@ -42,7 +42,7 @@ class DRRPPlayer: DoomPlayer {
         Experience = Accuracy = Agility = Defense = Strength = 0;
         Level = 1;
         MaxArmor = 30;
-        RPGSystemHandler.setAllFeatures( self );
+        setAllPlayerLevelupFeatures( self );
         Super.BeginPlay();
     }
 
@@ -99,6 +99,26 @@ class DRRPPlayer: DoomPlayer {
         }
     }
 
+    /* Sets all player level up features. */
+    static void setAllPlayerLevelupFeatures( DRRPPlayer player ) {
+        // Level features:
+        player.NextLevelXP += player.Level * 20;
+
+        // Armor features:
+        Inventory armor = player.FindInventory( "DRRPBasicArmor" );
+        if ( armor ) armor.MaxAmount = player.MaxArmor;
+
+        // Agility features:
+        player.ForwardMove1 = player.Agility * 0.025 + 0.6;
+        player.ForwardMove2 = player.ForwardMove1 * 0.58333;
+        player.SideMove1    = player.Agility * 0.025 + 0.55;
+        player.SideMove2    = player.SideMove1 * 0.54545;
+
+        // Health features:
+        player.A_GiveInventory( "DRRPHealthVial", 999 );
+        player.MugShotMaxHealth = player.MaxHealth;
+    } // of static void setAllPlayerLevelupFeatures( DRRPPlayer player ) {
+
 
 
     static double GetScatterMultiplier( Actor activator ) {
@@ -106,8 +126,9 @@ class DRRPPlayer: DoomPlayer {
         return DRRPMath.PowerFloatToInt( DRRPMath.e * 0.378, -DRRPPlayer( activator ).Accuracy );
     } 
 
-    static play int getRPGAttackDamage( Actor player, int min, int max ) {
+    static play int getRPGAttackDamage( Actor player, int min, int max = 0 ) {
         if ( !player || !player.player || !( player is "DRRPPlayer" ) ) return -1;
+
         if ( ( max == 0 ) || ( max < min ) )
             max = min;
 
