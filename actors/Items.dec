@@ -108,7 +108,64 @@ Actor Balloon : Ammo 10610 {
     }
 }
 
-Actor Balloons : Balloon 10611 {} // TODO:
+Actor Balloons4xSpawner 10611 {
+    //$Category DAmmo
+
+	States {
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 {
+				angle = 0;
+				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+					A_SpawnItemEx( "Balloon", 16 );
+				}
+			}
+			Stop
+	}
+}
+
+Actor Clips4xSpawner: Balloons4xSpawner 10612 {
+	States {
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 {
+				angle = 0;
+				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+					A_SpawnItemEx( "Clip", 16 );
+				}
+			}
+			Stop
+	}
+}
+
+Actor Shells4xSpawner: Balloons4xSpawner 10613 {
+	States {
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 {
+				angle = 0;
+				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+					A_SpawnItemEx( "DRRPShell", 16 );
+				}
+			}
+			Stop
+	}
+}
+
+Actor Cells4xSpawner: Balloons4xSpawner 10614 {
+	States {
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 {
+				angle = 0;
+				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+					A_SpawnItemEx( "Cell", 16 );
+				}
+			}
+			Stop
+	}
+}
+
 
 //Coins 10620-10629
 Actor Credit : Inventory 10620 {
