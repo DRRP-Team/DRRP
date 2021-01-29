@@ -855,14 +855,13 @@ Actor Kronos 10391 {
     Scale    0.43
     Obituary "$DRRP_OB_KRONOS"
     Tag      "$DRRP_M_KRONOS"
-    //SeeSound "DRRPMonsters/Kronos/sight"
-    //PainSound "DRRPMonsters/Kronos/pain"
-    //DeathSound "DRRPMonsters/Kronos/death"
-    //ActiveSound "DRRPMonsters/Kronos/active"
-    //AttackSound "DRRPMonsters/Kronos/attack"
-    SeeSound "demon/sight"
-    PainSound "skull/pain"
+
+    SeeSound "voice/laugh"
+    PainSound "brain/pain"
+    DeathSound "brain/death"
     ActiveSound "demon/active"
+    AttackSound "imp/melee"
+
     States {
         Spawn:
             KRON A 2 A_Look
@@ -882,8 +881,7 @@ Actor Kronos 10391 {
             KRON M 3 {
                 A_Fall;
                 A_NoBlocking;
-                A_PlaySound( "demon/death", CHAN_AUTO );
-                A_PlaySound( "cyber/death", CHAN_AUTO );
+                A_PlaySound( "brain/death", CHAN_AUTO );
             }
             KRON NOP 2
             KRON QRST 3
