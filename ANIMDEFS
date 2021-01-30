@@ -5,11 +5,11 @@
  * https://opensource.org/licenses/MIT
  */
 
-TEXTURE REAC2
-    PIC REAC2 TICS 3
-    PIC REAC2B TICS 3
-    PIC REAC2C TICS 3
-    PIC REAC2D TICS 3
+Texture REAC2
+    Pic REAC2 Tics 3
+    Pic REAC2B Tics 3
+    Pic REAC2C Tics 3
+    Pic REAC2D Tics 3
 
 // Computers
 
@@ -112,5 +112,12 @@ Texture NP_DRDC47A
     Pic NP_DRDC47P2 Tics 8
     Pic NP_DRDC47P3 Tics 8
     Pic NP_DRDC47P4 Tics 8
+
+// Pentagram
+Texture DRPGZ005
+    Pic DRPGZ005 Tics 8
+    Pic DRPGZb05 Tics 8
+    Pic DRPGZc05 Tics 8
+    Pic DRPGZb05 Tics 8
 
 Flat Optional NP_RROCK05 Range NP_RROCK08 Tics 8
