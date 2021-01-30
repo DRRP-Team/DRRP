@@ -5,6 +5,10 @@
  * https://opensource.org/licenses/MIT
  */
 
+/*
+You WANT to fold code by indent...
+*/
+
 Material Texture ceil01 {
     BrightMap "materials/emission/ceil01.png"
 }
@@ -211,38 +215,159 @@ Material Texture REAC2D {
 }
 
 // Doorsups
+    Material Texture DRDC42 {
+        BrightMap   "materials/emission/brpga14.png"
+        normal      "materials/normal/drdc48.png"
+        specular    "materials/specular/drdc48.png"
+        Texture tex_heightmap   "materials/height/drdc48.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
 
-Material Texture DRDC42 {
-    BrightMap   "materials/emission/brpga14.png"
-    normal      "materials/normal/drdc48.png"
-    specular    "materials/specular/drdc48.png"
-    Texture tex_heightmap   "materials/height/drdc48.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
+    Material Texture DRDC44 {
+        BrightMap   "materials/emission/brpga14.png"
+        normal      "materials/normal/drdc48.png"
+        specular    "materials/specular/drdc48.png"
+        Texture tex_heightmap   "materials/height/drdc48.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
 
-Material Texture DRDC44 {
-    BrightMap   "materials/emission/brpga14.png"
-    normal      "materials/normal/drdc48.png"
-    specular    "materials/specular/drdc48.png"
-    Texture tex_heightmap   "materials/height/drdc48.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
+    Material Texture DRDC46 {
+        BrightMap   "materials/emission/brpga14.png"
+        normal      "materials/normal/drdc48.png"
+        specular    "materials/specular/drdc48.png"
+        Texture tex_heightmap   "materials/height/drdc48.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
 
-Material Texture DRDC46 {
-    BrightMap   "materials/emission/brpga14.png"
-    normal      "materials/normal/drdc48.png"
-    specular    "materials/specular/drdc48.png"
-    Texture tex_heightmap   "materials/height/drdc48.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
+    Material Texture DRDC48 {
+        BrightMap               "materials/emission/brpga14.png"
+        normal                  "materials/normal/drdc48.png"
+        specular                "materials/specular/drdc48.png"
+        Texture tex_heightmap   "materials/height/drdc48.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
 
-Material Texture DRDC48 {
-    BrightMap               "materials/emission/brpga14.png"
-    normal                  "materials/normal/drdc48.png"
-    specular                "materials/specular/drdc48.png"
-    Texture tex_heightmap   "materials/height/drdc48.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
+    // Animations (oh shit...)
+        // Red
+        Material Texture DRDC42a {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC42b {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC42c {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC42d {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        // Blue
+        Material Texture DRDC44a {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC44b {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC44c {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC44d {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        // Green
+        Material Texture DRDC46a {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC46b {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC46c {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC46d {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
+        // Yellow
+        Material Texture DRDC48a {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC48b {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC48c {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+        Material Texture DRDC48d {
+            BrightMap   "materials/emission/brpga14.png"
+            normal      "materials/normal/drdc48.png"
+            specular    "materials/specular/drdc48.png"
+            Texture tex_heightmap   "materials/height/drdc48.png"
+            shader                  "shaders/parallax_pbr.fp"
+        }
+
 
 //
 
