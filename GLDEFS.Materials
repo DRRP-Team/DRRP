@@ -453,6 +453,13 @@ Material Texture DRDC8 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
+Material Texture DRDC89 {
+    normal      "materials/normal/drdc0.png"
+    specular    "materials/specular/drdc0.png"
+    Texture tex_heightmap   "materials/height/drdc0.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
 // Computers
 
 Material Texture DRDC30 {
