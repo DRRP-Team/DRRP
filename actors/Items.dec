@@ -130,7 +130,7 @@ Actor Balloons4xSpawner 10611 {
     }
 }
 
-Actor Clips4xSpawner: Balloons4xSpawner 10612 {
+Actor Clips4xSpawner: Balloons4xSpawner replaces ClipBox 10612 {
     States {
         Spawn:
             TNT1 A 0
@@ -144,7 +144,7 @@ Actor Clips4xSpawner: Balloons4xSpawner 10612 {
     }
 }
 
-Actor Shells4xSpawner: Balloons4xSpawner 10613 {
+Actor Shells4xSpawner: Balloons4xSpawner replaces ShellBox 10613 {
     States {
         Spawn:
             TNT1 A 0
@@ -158,14 +158,28 @@ Actor Shells4xSpawner: Balloons4xSpawner 10613 {
     }
 }
 
-Actor Cells4xSpawner: Balloons4xSpawner 10614 {
+Actor Cells4xSpawner: Balloons4xSpawner replaces CellPack 10614 {
     States {
         Spawn:
             TNT1 A 0
             TNT1 A 0 {
                 angle = 0;
                 for ( angle = 0.0; angle < 271.0; angle += 90 ) {
-                    A_SpawnItemEx( "Cell", 16 );
+                    A_SpawnItemEx( "DRRPCell", 16 );
+                }
+            }
+            Stop
+    }
+}
+
+Actor Rockets4xSpawner: Balloons4xSpawner replaces RocketBox {
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 {
+                angle = 0;
+                for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+                    A_SpawnItemEx( "RocketAmmo", 16 );
                 }
             }
             Stop
