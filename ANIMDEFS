@@ -12,6 +12,15 @@ Texture REAC2
     Pic REAC2D Tics 3
 
 // Computers
+    Texture DRDC31
+        Pic DRDC31  Tics 8
+        Pic DRDC31b Tics 8
+        Pic DRDC31c Tics 8
+    Texture NP_DRDC31
+        Pic NP_DRDC31  Tics 8
+        Pic NP_DRDC31b Tics 8
+        Pic NP_DRDC31c Tics 8
+
     Texture CGR_LC1
         Pic CGR_LC1 Tics 8
         Pic CGR_LC2 Tics 8
@@ -163,63 +172,62 @@ Texture REAC2
 // Color doors
     // Red
     Texture DRDC2
-        Pic DRDC2 Tics 8
+        Pic DRDC2  Tics 8
         Pic DRDC2b Tics 8
     Texture NP_DRDC2
-        Pic NP_DRDC2 Tics 8
+        Pic NP_DRDC2  Tics 8
         Pic NP_DRDC2b Tics 8
 
     // Blue
     Texture DRDC3
-        Pic DRDC3 Tics 8
+        Pic DRDC3  Tics 8
         Pic DRDC3b Tics 8
     Texture NP_DRDC3
-        Pic NP_DRDC3 Tics 8
+        Pic NP_DRDC3  Tics 8
         Pic NP_DRDC3b Tics 8
 
     // Green
     Texture DRDC4
-        Pic DRDC4 Tics 8
+        Pic DRDC4  Tics 8
         Pic DRDC4b Tics 8
     Texture NP_DRDC4
-        Pic NP_DRDC4 Tics 8
+        Pic NP_DRDC4  Tics 8
         Pic NP_DRDC4b Tics 8
 
     // Yellow
     Texture DRDC5
-        Pic DRDC5 Tics 8
+        Pic DRDC5  Tics 8
         Pic DRDC5b Tics 8
     Texture NP_DRDC5
-        Pic NP_DRDC5 Tics 8
+        Pic NP_DRDC5  Tics 8
         Pic NP_DRDC5b Tics 8
 
 // Normal doors
     // Closed
     Texture DRDC8
-        Pic DRDC8 Tics 8
+        Pic DRDC8  Tics 8
         Pic DRDC89 Tics 8
     Texture NP_DRDC8
-        Pic NP_DRDC8 Tics 8
+        Pic NP_DRDC8  Tics 8
         Pic NP_DRDC89 Tics 8
 
     // Opened
     Texture DRDC9
-        Pic DRDC9 Tics 8
+        Pic DRDC9  Tics 8
         Pic DRDC89 Tics 8
     Texture NP_DRDC9
-        Pic NP_DRDC9 Tics 8
+        Pic NP_DRDC9  Tics 8
         Pic NP_DRDC89 Tics 8
 
 // Server
 Texture DRDC29
-    Pic DRDC29 Tics 8
+    Pic DRDC29  Tics 8
     Pic DRDC29b Tics 8
 
 // Door track
 Texture DRDC10
-    Pic DRDC10 Tics 8
+    Pic DRDC10  Tics 8
     Pic DRDC10b Tics 8
-
 
 // Pentagram
 Texture DRPGZ005
