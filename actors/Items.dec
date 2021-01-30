@@ -42,7 +42,7 @@ Actor DRRPRedCard : RedCard replaces RedCard {
     Inventory.PickupMessage "$DRRP_I_GOT_REDKEY"
 }
 
-Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
+Actor SmallMedikit : DRRPBaseMedikit replaces Medikit 10600 {
     //$Category Items
     //$Sprite MEDIA0
 
@@ -64,26 +64,15 @@ Actor SmallMedikit : HealthPickup replaces Medikit 10600 {
     }
 }
 
-Actor LargeMedikit : HealthPickup 10601 {
+Actor LargeMedikit : SmallMedikit 10601 {
     //$Category Items
     //$Sprite MEDIA0
-
-    +FLOORCLIP
-    +INVENTORY.INVBAR
 
     Tag                     "$DRRP_I_LGMEDKIT"
     Health                  75
     Inventory.Icon          "RMEDI0"
-    Inventory.MaxAmount     99
-    HealthPickup.AutoUse    0
     Inventory.PickupMessage "$DRRP_I_GOT_LGMEDKIT"
     Translation             "168:185=229:229", "80:111=168:191", "3:3=184:184", "186:191=163:163"
-
-    States {
-        Spawn:
-            MEDI A -1
-            Stop
-    }
 }
 
 //Ammo 10610-10619
@@ -111,59 +100,59 @@ Actor Balloon : Ammo 10610 {
 Actor Balloons4xSpawner 10611 {
     //$Category DAmmo
 
-	States {
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 {
-				angle = 0;
-				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
-					A_SpawnItemEx( "Balloon", 16 );
-				}
-			}
-			Stop
-	}
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 {
+                angle = 0;
+                for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+                    A_SpawnItemEx( "Balloon", 16 );
+                }
+            }
+            Stop
+    }
 }
 
 Actor Clips4xSpawner: Balloons4xSpawner 10612 {
-	States {
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 {
-				angle = 0;
-				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
-					A_SpawnItemEx( "Clip", 16 );
-				}
-			}
-			Stop
-	}
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 {
+                angle = 0;
+                for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+                    A_SpawnItemEx( "Clip", 16 );
+                }
+            }
+            Stop
+    }
 }
 
 Actor Shells4xSpawner: Balloons4xSpawner 10613 {
-	States {
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 {
-				angle = 0;
-				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
-					A_SpawnItemEx( "DRRPShell", 16 );
-				}
-			}
-			Stop
-	}
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 {
+                angle = 0;
+                for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+                    A_SpawnItemEx( "DRRPShell", 16 );
+                }
+            }
+            Stop
+    }
 }
 
 Actor Cells4xSpawner: Balloons4xSpawner 10614 {
-	States {
-		Spawn:
-			TNT1 A 0
-			TNT1 A 0 {
-				angle = 0;
-				for ( angle = 0.0; angle < 271.0; angle += 90 ) {
-					A_SpawnItemEx( "Cell", 16 );
-				}
-			}
-			Stop
-	}
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 {
+                angle = 0;
+                for ( angle = 0.0; angle < 271.0; angle += 90 ) {
+                    A_SpawnItemEx( "Cell", 16 );
+                }
+            }
+            Stop
+    }
 }
 
 

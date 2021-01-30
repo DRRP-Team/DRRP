@@ -134,7 +134,9 @@ class RPGSystemHandler: EventHandler {
 
         if ( e.Name ~== "DRRP_LevelUp_Attributes" ) {
 
-            if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) ) return;
+            if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) || !playeringame[ e.Args[ 0 ] ] )
+				return;
+
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
             // It's better to sequentally call player.SetFeature()...

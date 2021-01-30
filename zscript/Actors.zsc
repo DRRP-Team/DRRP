@@ -201,6 +201,20 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
     }
 }
 
+
+class DRRPBaseMedikit: HealthPickup {
+
+    // Just a white flash on use (more or less the same as from the Doctor's healing).
+    override bool Use( bool ispickup ) {
+        bool outValue = Super.Use( ispickup );
+
+        if ( outValue )
+            owner.A_SetBlend( "FFFFFF", 0.4, 35 );
+
+        return outValue;
+    }
+}
+
 class DRRPFlakJacket: DRRPArmorShard replaces GreenArmor {
     Default {
         Tag "$DRRP_I_FLAKJACKET";
