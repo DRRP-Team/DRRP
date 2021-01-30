@@ -283,6 +283,23 @@ Actor DRRPBed_WithoutSprite: DRRPBed 10711 {
     }
 }
 
+Actor DRRPEnter 10712  {
+    //$Category DDecorations
+
+    -SOLID
+
+    Tag "$DRRP_E_ENTERDOOR"
+    Radius 14
+    Height 64
+    Mass 0x7FFFFFFF
+
+    States {
+        Spawn:
+            ENTR AB 35 Bright
+            Loop
+    }
+}
+
 Actor DRRPExit 10708  {
     //$Category DDecorations
 
@@ -295,8 +312,8 @@ Actor DRRPExit 10708  {
 
     States {
         Spawn:
-            EXIT A -1
-            Stop
+            EXIT AB 35 Bright
+            Loop
     }
 }
 
@@ -346,6 +363,41 @@ Actor DRRPToilet 10710 {
         Death:
             TNT1 A 0 A_PlaySoundEx("Toilet/Crash", CHAN_VOICE)
             TNT1 A 0 A_SpawnItem("DRRPAqueductFountain")
+            Stop
+    }
+}
+
+Actor DRRPLight1 10713 {
+    //$Category DDecorations
+
+    -SOLID
+
+    Alpha 0.1
+    Renderstyle Add
+
+    States {
+        Spawn:
+            GLOW A -1 Bright
+            Stop
+    }
+}
+
+Actor DRRPLight2: DRRPLight1 10714 {
+    //$Category DDecorations
+
+    States {
+        Spawn:
+            GLOW B -1 Bright
+            Stop
+    }
+}
+
+Actor DRRPLight3: DRRPLight1 10715 {
+    //$Category DDecorations
+
+    States {
+        Spawn:
+            GLOW C -1 Bright
             Stop
     }
 }

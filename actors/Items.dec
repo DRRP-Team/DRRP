@@ -76,6 +76,23 @@ Actor LargeMedikit : SmallMedikit 10601 {
 }
 
 //Ammo 10610-10619
+
+Actor DRRPClip : Clip replaces Clip {
+    States {
+        Spawn:
+            CLIP AB 15
+            Loop
+    }
+}
+
+Actor DRRPCell : Cell replaces Cell {
+    States {
+        Spawn:
+            CELL AB 15
+            Loop
+    }
+}
+
 Actor Balloon : Ammo 10610 {
     //$Category DAmmo
     //$Sprite BALLA0
@@ -120,7 +137,7 @@ Actor Clips4xSpawner: Balloons4xSpawner 10612 {
             TNT1 A 0 {
                 angle = 0;
                 for ( angle = 0.0; angle < 271.0; angle += 90 ) {
-                    A_SpawnItemEx( "Clip", 16 );
+                    A_SpawnItemEx( "DRRPClip", 16 );
                 }
             }
             Stop
@@ -173,8 +190,8 @@ Actor Credit : Inventory 10620 {
     
     States {
         Spawn:
-            CRED A -1
-            Stop
+            CRED ABCD 10
+            Loop
     }
 }
 
@@ -192,8 +209,8 @@ Actor GoldCredit : CustomInventory 10621 {
 
     States {
         Spawn:
-            CRED B -1
-            Stop
+            CRED EFGI 10
+            Loop
         Pickup:
             TNT1 A 0 A_GiveInventory("Credit", 5)
             Stop

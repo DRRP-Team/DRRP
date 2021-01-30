@@ -44,15 +44,15 @@ Actor DRRPCharacter: DRRPCharacter_ZSPatch {
             "####" AAAAA 0 A_DRRP_TransformationParticles()
             "####" A 1 A_DRRP_TransformationParticles()
             "####" AAAAA 0 A_DRRP_TransformationParticles()
-            "####" A 1 A_DRRP_TransformationParticles()
+            "####" B 1 A_DRRP_TransformationParticles()
             "####" AAAAA 0 A_DRRP_TransformationParticles()
             "####" A 1 A_DRRP_TransformationParticles()
             "####" AAAAA 0 A_DRRP_TransformationParticles()
-            "####" A 1 A_DRRP_TransformationParticles()
+            "####" B 1 A_DRRP_TransformationParticles()
             Loop
         Pain:
             "####" A 0 A_Pain
-            "####" AAAAA 1 A_SpawnItemEx("DRRPBlood", random(0, 20), random(0, 20), random(10, 40))
+            "####" ABABA 1 A_SpawnItemEx("DRRPBlood", random(0, 20), random(0, 20), random(10, 40))
             Goto MainLoop
         Death:
             POSS H 4 {
