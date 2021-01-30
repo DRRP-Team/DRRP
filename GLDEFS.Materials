@@ -386,9 +386,21 @@ Material Texture DRDC2 {
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
+Material Texture DRDC2b {
+    normal "materials/normal/drdc5.png"
+    specular "materials/specular/drdc5.png"
+    Texture tex_heightmap   "materials/height/drdc4.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
 
 Material Texture DRDC3 {
     BrightMap "materials/emission/DRDC5_BRT.png"
+    normal "materials/normal/drdc5.png"
+    specular "materials/specular/drdc5.png"
+    Texture tex_heightmap   "materials/height/drdc4.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+Material Texture DRDC3b {
     normal "materials/normal/drdc5.png"
     specular "materials/specular/drdc5.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
@@ -402,9 +414,21 @@ Material Texture DRDC4 {
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
+Material Texture DRDC4b {
+    normal "materials/normal/drdc5.png"
+    specular "materials/specular/drdc5.png"
+    Texture tex_heightmap   "materials/height/drdc4.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
 
 Material Texture DRDC5 {
     BrightMap "materials/emission/DRDC5_BRT.png"
+    normal "materials/normal/drdc5.png"
+    specular "materials/specular/drdc5.png"
+    Texture tex_heightmap   "materials/height/drdc4.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+Material Texture DRDC5b {
     normal "materials/normal/drdc5.png"
     specular "materials/specular/drdc5.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
