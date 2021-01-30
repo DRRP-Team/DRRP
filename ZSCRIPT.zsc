@@ -22,7 +22,7 @@ version "2.5"
 #include "zscript/DRRP_MiscClasses/Compass.zsc"
 #include "zscript/DRRP_MiscClasses/StatInfo.zsc"
 #include "zscript/DRRP_MiscClasses/Flashlight.zsc"
-//#include "zscript/DRRP_MiscClasses/HUD.zsc"
+//#include "zscript/DRRP_MiscClasses/HUD.zsc" // Errr, "NullHUD"?
 #include "zscript/DRRP_MiscClasses/DoorCode.zsc"
 
 // Tools
@@ -97,6 +97,7 @@ class DRRPPlayer: DoomPlayer {
 
     /* Features getter/setter */
     int GetFeature( int type ) {
+
         switch ( type ) {
             case RPG_MaxHealth:  return self.MaxHealth;
             case RPG_Experience: return self.Experience;
@@ -106,7 +107,7 @@ class DRRPPlayer: DoomPlayer {
             case RPG_Accuracy:   return self.Accuracy;
             case RPG_Agility:    return self.Agility;
             case RPG_Defense:    return self.Defense;
-            case RPG_Strength:   return self.Strength;
+            case RPG_Strength:   return Strength;
             default: break;
         }
 
@@ -156,13 +157,10 @@ class DRRPPlayer: DoomPlayer {
 
 
     double GetScatterMultiplier() {
-        //if ( !( activator is "DRRPPlayer" ) ) return -1;
-        //return DRRPMath.Power( DRRPMath.e * 0.378, -DRRPPlayer( activator ).Accuracy );
         return DRRPMath.Power( DRRPMath.e * 0.378, -self.Accuracy );
     } 
 
     play int getRPGAttackDamage( int min, int max = 0 ) {
-        //if ( !player || !self.player || !( player is "DRRPPlayer" ) ) return -1;
         if ( ( max == 0 ) || ( max < min ) )
             max = min;
 
@@ -172,7 +170,6 @@ class DRRPPlayer: DoomPlayer {
     }
 
     play int getRPGDefenseDamage( int damage, name mod ) {
-        //if ( !activator || !activator.player || !( activator is "DRRPPlayer" ) ) return -1;
 
         CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", self.player );
         if ( DebugCVar && DebugCVar.GetBool() )

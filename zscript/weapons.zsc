@@ -481,12 +481,20 @@ class DRRPRocket: Rocket replaces Rocket {
     }
 
     override void PostBeginPlay() {
-        SetDamage( 20 + DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
+        if ( target && target is 'DRRPPlayer' )
+            SetDamage( 20 + DRRPPlayer( target ).getRPGAttackDamage( 10, 35 ) );
+        else
+            SetDamage( 50 );
     }
 
     States {
         Death:
-            MISL B 8 Bright A_Explode(15 + DRRPPlayer( self ).getRPGAttackDamage( 50, 100 ), 96);
+            MISL B 8 Bright {
+                if ( target && target is 'DRRPPlayer' )
+                    A_Explode( 15 + DRRPPlayer( target ).getRPGAttackDamage( 50, 100 ), 96 );
+                else
+                    A_Explode( 15 + Random( 15, 45 ), 96 );
+            }
             MISL C 6 Bright;
             MISL D 4 Bright;
             Stop;
@@ -538,7 +546,10 @@ class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
     }
 
     override void PostBeginPlay() {
-        SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 3, 7 ) );
+        if ( target && target is 'DRRPPlayer' )
+            SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 3, 7 ) );
+        else
+            SetDamage( Random( 3, 7 ) );
     }
 }
 
@@ -601,7 +612,10 @@ class DRRPBFG9000Ball: BFGBall replaces BFGBall {
     }
 
     override void PostBeginPlay() {
-        SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
+        if ( target && target is 'DRRPPlayer' )
+            SetDamage( DRRPPlayer( target ).getRPGAttackDamage( 35, 0 ) );
+        else
+            SetDamage( 35 );
     }
 }
 
