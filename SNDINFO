@@ -110,6 +110,8 @@ COMPLETE                    sounds/COMPLETE.ogg
 DOGSONG                     sounds/DOGSONG.ogg
 HODSONG                     sounds/HODSONG.ogg
 
+
+
 // === Weapons ===
 weapon/gas                  sounds/GAS.ogg
 // weapon/axe/hit           sounds/AXEBLOOD.ogg
@@ -145,17 +147,26 @@ weapon/fireext/loop         sounds/FIREELOP.ogg
 weapon/fireext/stop         sounds/FIREESTP.ogg
 weapon/fireext/pick         sounds/WTF.ogg
 
+
+
 // === Player ===
 player/taunt                sounds/TAUNT.ogg
 player/levelup              sounds/LEVELUP.ogg
 
-// === Monsters ===
-monster/cyberdemon/sigh1    CYBRSIGH
-monster/cyberdemon/sigh2    CYBRSIGH2
-monster/cyberdemon/death    CYBRDTH
 
-//Drugs
-// dag
+
+// === Monsters ===
+monsters/cyberdemon/sigh1    CYBRSIGH
+monsters/cyberdemon/sigh2    CYBRSIGH2
+monsters/cyberdemon/death    CYBRDTH
+
+$alias monsters/kronos/see      voice/laugh
+$alias monsters/kronos/active   demon/active
+$alias monsters/kronos/meleehit imp/melee
+$alias monsters/kronos/meleemiss skeleton/whoosh
+$alias monsters/kronos/pain     brain/pain
+$alias monsters/kronos/death    brain/death
+
 
 monsters/hellhound/see      sounds/dogs/DOG1RECO.ogg
 monsters/hellhound/pain     sounds/dogs/DOG1PAIN.ogg
