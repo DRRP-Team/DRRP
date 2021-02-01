@@ -701,6 +701,7 @@ Actor DRRPVile : ArchVile {
     +LOOKALLAROUND
 
     Scale 0.7
+    Speed 10 // Doom's default: 15.
     const int vileInitialDamage = 15;
     const int vileBlastDamageNRadius = 50;
     DamageFactor DRRPAxeDmg, 5.0
@@ -709,8 +710,11 @@ Actor DRRPVile : ArchVile {
     States {
     
     See:
-        TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire
-        VILE AABBCCDDEEFF 2 A_VileChase
+        TNT1 A 0 Bright A_JumpIf(CheckClass("DRRPFire", AAPTR_TARGET, true), "Spawn") // Reset target if it's fire.
+        VILE AABB 2 A_Chase
+        VILE CC 2 A_VileChase
+        VILE DDEE 2 A_Chase
+        VILE FF 2 A_VileChase
         Loop
     Missile:
         VILE G 0 Bright A_VileStart
