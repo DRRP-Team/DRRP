@@ -113,11 +113,11 @@ script 101 (void){//Core
             Radius_Quake(12, 43, 0, 5, 0);
             SpawnSpot("Explosion", 666);
             FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            AmbientSound("monster/cyberdemon/sigh1", 127); //Activate cut-scene
+            AmbientSound("monsters/cyberdemon/sigh1", 127); //Activate cut-scene
             Ceiling_LowerByValue(667, 128, 128); //Replace with 3D floor
             Delay(43*2);
             SpawnSpot("Explosion", 666);
-            AmbientSound("monster/cyberdemon/sigh2", 200);
+            AmbientSound("monsters/cyberdemon/sigh2", 200);
             Radius_Quake(12, 43, 5, 10, 0);
             SpawnSpot("Explosion", 666);
             SpawnSpot("Explosion", 667);
@@ -134,7 +134,7 @@ script 101 (void){//Core
 }
 
 Script 102 (void) { // End
-    AmbientSound("monster/cyberdemon/death", 255);
+    AmbientSound("monsters/cyberdemon/death", 255);
     SpawnSpot("Explosion", 666);
     SetLineTexture(665, LINE_FRONT, TEXTURE_TOP, "REAC1");
     SetLineTexture(666, LINE_FRONT, TEXTURE_TOP, "REAC2");
