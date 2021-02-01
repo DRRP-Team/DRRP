@@ -873,11 +873,23 @@ Actor Kronos 10391 {
             KRON A 2 A_Look
             Wait
         See:
-            KRON AAA 2 A_Chase
+            KRON AAA 2 { 
+                A_Chase;
+                return A_Jump( 8, "KronosTeleport" );
+            }
             KRON A 0 A_SetScale( -0.43, 0.43 )
-            KRON AAA 2 A_Chase
+            KRON AAA 2 { 
+                A_Chase;
+                return A_Jump( 8, "KronosTeleport" );
+            }
             KRON A 0 A_SetScale( 0.43, 0.43 )
             Loop
+        KronosTeleport:
+            KRON A 0
+            KRON A 0 A_SpawnItem( "DRRPKronosTeleportFog" )
+            KRON AAAAAAAAAAAAAA 0 A_Wander
+            KRON A 0 A_SpawnItem( "DRRPKronosTeleportFog" )
+            Goto See
         Melee:
             KRON A 2
             KRON A 5 A_CustomMeleeAttack( Random( 1, 10 ), "monsters/kronos/meleehit", "monsters/kronos/meleemiss" )

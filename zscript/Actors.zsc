@@ -277,6 +277,9 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
 
 }
 
+class DRRPKronosTeleportFog: TeleportFog {
+}
+
 class DRRPDamageDoll: DRRPPlayer {
     Default {
         +BUDDHA;
