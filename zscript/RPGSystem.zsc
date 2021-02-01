@@ -20,7 +20,13 @@ class RPGSystemHandler: EventHandler {
                                 "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
     const DDGI_DefaultMonster_C = "1,5,3 , 5,5,3,3,2 , 1,1,1,1 , 5,1,5,5";
     const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
-    const DDGI_Crate_C = DDGI_DefaultMonster_C .. ", 3";
+    const DDGI_Crate_C = DDGI_DefaultMonster_C .. ", 3";/* */
+
+    // 4 debug:
+    /*const DDGI_DefaultMonster = "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
+    const DDGI_DefaultMonster_C = "5,1,5,5";
+    const DDGI_Crate = "Credit, GoldCredit, DRRPShell";
+    const DDGI_Crate_C = "50, 1, 50";/* */
 
     virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
         Array<String> itemlist;
@@ -31,44 +37,64 @@ class RPGSystemHandler: EventHandler {
 
         if ( rawlist != "" ) {
             rawlist.Split( itemlist, "," );
-            if ( rawchancelist != "" ) {
-                Array<String> chanceliststr; // Граф, если уж делаешь ".split()", то делай и что-нибудь типа ".map()"!
-                Array<uint> chancelist;
-                uint maxchance = 0, curchance, i;
 
+            if ( rawchancelist != "" ) {
+                Array<String> chanceliststr;    // Chances (in string format);
+                Array<uint> chancelist;         // Chances (in integer format).
+                uint maxchance = 0, i;
+                int curchance;
+
+                // Граф, если уж делаешь ".split()", то делай и что-нибудь типа ".map()"!
                 rawchancelist.Split( chanceliststr, "," );
 
-                if ( chanceliststr.Size() == itemlist.Size() ) {
-					chancelist.Resize( chanceliststr.Size() );
-                    for ( i = 0; i < chanceliststr.Size(); i++ )
-                        maxchance += ( chancelist[ i ] = chanceliststr[ i ].ToInt( 10 ) );
+                //console.printf( " ------------ Bfr rotation. i is NaN; sizes: " .. chanceliststr.Size() .. "/" .. itemlist.Size() );
 
-                    for ( i = 0, curchance = Random( 0, maxchance ); curchance > 0 && i < chancelist.Size(); i++, curchance -= chancelist[ i ] ) {}
-                    outItem = itemlist[ i ];								// Default behaviour.
+                if ( chanceliststr.Size() == itemlist.Size() ) {
+
+                    // Chances string-to-int unparsing and initialisation.
+                    chancelist.Resize( chanceliststr.Size() );
+                    for ( i = 0; i < chancelist.Size(); i++ ) {
+                        maxchance += ( chancelist[ i ] = chanceliststr[ i ].ToInt( 10 ) );
+                        //console.printf( "Init chances . #" .. i .. ", chancelist[ " .. i .. " ]: " .. chancelist[ i ] .. ", maxchance: " .. maxchance );
+                    }
+
+                    // Random item selection based on chances.
+                    for ( i = 0, curchance = Random( 0, maxchance ); curchance > 0 && i < chancelist.Size(); ) {
+                        //console.printf( "Random rotate. #" .. i .. ", (cur)" .. curchance .. " - (chan[i])" .. chancelist[ i ] .. " == (newcur)" .. curchance - chancelist[ i ] );
+                        curchance -= chancelist[ i ];
+
+                        if ( curchance > 0 )
+                            i++;
+                    }
+
+                    //console.printf( "End rotation. #" .. i .. ", (cur)" .. curchance );
+                    //for ( int j = 0; j < itemlist.Size(); j++ ) console.printf( "itemlist[ " .. j .. " ]: " .. itemlist[ j ] );
+
+                    outItem = itemlist[ i ];                                // Default behaviour.
                 } else
                     outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ]; // Different sizes: chanceliststr != itemlist.
             } else
-                outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];		// No raw chances list string.
+                outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];     // No raw chances list string.
         }
 
         return outItem;
     } // of virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
 
     /* Obtaining units of experience by some types of DRRP-actors when it spawns. */
-	Actor worldThingSpawnedActor;
+    Actor worldThingSpawnedActor;
 
     virtual void setDRRPDeathDataItem( int expGain, String deathDropNames = "", String deathDropChances = "" ) {
         DRRPDeathDataItem deathData = NULL;
-		Actor thing = worldThingSpawnedActor;
-		bool mustDropItems = ( deathDropNames != "" );
+        Actor thing = worldThingSpawnedActor;
+        bool mustDropItems = ( deathDropNames != "" );
 
         if ( thing ) {
             thing.A_SetInventory( "DRRPDeathDataItem", 1 );
             deathData = DRRPDeathDataItem( thing.FindInventory( "DRRPDeathDataItem" ) );
 
             if ( deathData ) {
-				if ( mustDropItems )
-	                deathData.DRRPDropItem = deathDropGetName( deathDropNames, deathDropChances );
+                if ( mustDropItems )
+                    deathData.DRRPDropItem = deathDropGetName( deathDropNames, deathDropChances );
                 deathData.ExpGain = expGain;
             }
         }
@@ -78,34 +104,34 @@ class RPGSystemHandler: EventHandler {
 
         if ( DebugCVar && DebugCVar.GetBool() ) {
             if ( !thing )
-				console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no thing." );
+                console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no thing." );
             else if ( !deathData )
-				console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no deathData item." );
-			else
-	            console.printf( "#RPGSystemHandler::setDRRPDeathDataItem( Actor " .. thing.GetClassName()
-	                .. " <" .. thing .. "> ). Death data: [ ExpGain: "
-	                .. deathData.ExpGain .. ", DRRPDropItem: " .. deathData.DRRPDropItem .. " ]." );
+                console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no deathData item." );
+            else
+                console.printf( "#RPGSystemHandler::setDRRPDeathDataItem( Actor " .. thing.GetClassName()
+                    .. " <" .. thing .. "> ). Death data: [ ExpGain: "
+                    .. deathData.ExpGain .. ", DRRPDropItem: " .. deathData.DRRPDropItem .. " ]." );
         }
 
     } // of virtual void setDRRPDeathDataItem( Actor thing, int expGain, String deathDropNames, String deathDropChances ) {
 
     override void WorldThingSpawned( WorldEvent e ) {
-		worldThingSpawnedActor = e.Thing;
+        worldThingSpawnedActor = e.Thing;
 
         if ( e.Thing is 'DRRPFire' )
-			setDRRPDeathDataItem( 1 );
+            setDRRPDeathDataItem( 1 );
         else if ( e.Thing is 'DRRPCrate' )
-			setDRRPDeathDataItem( 2, DDGI_Crate, DDGI_Crate_C );
+            setDRRPDeathDataItem( 2, DDGI_Crate, DDGI_Crate_C );
         else if ( e.Thing is 'DRRPRod' )
-			setDRRPDeathDataItem( 35 );
+            setDRRPDeathDataItem( 35 );
         else if ( e.Thing is 'DRRPRodTrash' )
-			setDRRPDeathDataItem( 7 );
+            setDRRPDeathDataItem( 7 );
         else if ( e.Thing is 'DRRPBarrel' )
-			setDRRPDeathDataItem( 1 );
+            setDRRPDeathDataItem( 1 );
         else if ( e.Thing is 'DRRPSink' )
-			setDRRPDeathDataItem( 1 );
+            setDRRPDeathDataItem( 1 );
         else if ( e.Thing is 'DRRPToilet' )
-			setDRRPDeathDataItem( 1 );
+            setDRRPDeathDataItem( 1 );
         else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
             double multiplier =
                 ( e.Thing.health < 40 )?  FRandom( 0.02, 0.2 ) :
@@ -113,10 +139,10 @@ class RPGSystemHandler: EventHandler {
                 ( e.Thing.health < 300 )? FRandom( 0.013, 0.15 ) :
                 FRandom( 0.01, 0.13 );
 
-			setDRRPDeathDataItem( 1 + ( int( multiplier * e.Thing.health ) ), DDGI_DefaultMonster, DDGI_DefaultMonster_C );
+            setDRRPDeathDataItem( 1 + ( int( multiplier * e.Thing.health ) ), DDGI_DefaultMonster, DDGI_DefaultMonster_C );
         }
 
-		worldThingSpawnedActor = NULL;
+        worldThingSpawnedActor = NULL;
     } // of override void WorldThingSpawned( WorldEvent e ) {
 
     /* Give xp to killer player and drop random items on some DRRP actors death. */
@@ -125,7 +151,7 @@ class RPGSystemHandler: EventHandler {
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
             if ( e.Thing.health <= 0 ) {
-				DRRPDeathDataItem deathData = DRRPDeathDataItem( e.Thing.FindInventory( "DRRPDeathDataItem" ) );
+                DRRPDeathDataItem deathData = DRRPDeathDataItem( e.Thing.FindInventory( "DRRPDeathDataItem" ) );
 
                 // Experience drop.
                 if ( e.DamageSource is "DoomRPGPlayer" ) {
@@ -144,27 +170,19 @@ class RPGSystemHandler: EventHandler {
                     DRRPPlayer player = DRRPPlayer( players[ playerNum ].mo );
 
                     if ( deathData )
-						player.Experience += deathData.ExpGain;
+                        player.Experience += deathData.ExpGain;
 
-					// Levels up once. Is it better to write "while (...)"?
+                    // Levels up once. Is it better to write "while (...)"?
                     if ( player.Experience >= player.NextLevelXP )
                         EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", playerNum );
                 }
 
                 // Items drop.
-				if ( deathData && deathData.DRRPDropItem )
-					e.Thing.Spawn( deathData.DRRPDropItem, e.Thing.pos );
-                /*String deathDropNamesTemplate;
-                if ( e.Thing.bISMONSTER )
-                    deathDropNamesTemplate = DDGI_DefaultMonster; : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" );
+                if ( deathData && deathData.DRRPDropItem ) {
+                    Actor droppedItem = e.Thing.Spawn( deathData.DRRPDropItem, e.Thing.pos );
+                    droppedItem.vel = ( FRandom( -2.0, 2.0 ), FRandom( -2.0, 2.0 ), FRandom( 0.5, 4.0 ) );
+                }
 
-                Name dropitemname = deathDropGetName( deadActorType );
-
-                if ( dropitemname != "NULL" && dropitemname != "" ) {
-                    Actor droppeditem = e.Thing.Spawn( dropitemname, e.Thing.pos );
-                    if ( !droppeditem.bNOGRAVITY )
-                        droppeditem.vel = ( FRandom( -3, 3 ), FRandom( -3, 3 ), FRandom( 0.1, 2 ) );
-                }*/
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
