@@ -24,7 +24,7 @@ class RPGSystemHandler: EventHandler {
 
     virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
         Array<String> itemlist;
-        Name outItem;
+        Name outItem = "";
 
         rawlist.Replace( " ", "" );
         rawchancelist.Replace( " ", "" );
@@ -39,53 +39,84 @@ class RPGSystemHandler: EventHandler {
                 rawchancelist.Split( chanceliststr, "," );
 
                 if ( chanceliststr.Size() == itemlist.Size() ) {
+					chancelist.Resize( chanceliststr.Size() );
                     for ( i = 0; i < chanceliststr.Size(); i++ )
                         maxchance += ( chancelist[ i ] = chanceliststr[ i ].ToInt( 10 ) );
 
                     for ( i = 0, curchance = Random( 0, maxchance ); curchance > 0 && i < chancelist.Size(); i++, curchance -= chancelist[ i ] ) {}
-                    outItem = itemlist[ i ];
+                    outItem = itemlist[ i ];								// Default behaviour.
                 } else
-                    outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];
-            } else if ( rawlist == "" )
-                outItem = "";
-            else
-                outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];
+                    outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ]; // Different sizes: chanceliststr != itemlist.
+            } else
+                outItem = itemlist[ Random( 0, itemlist.Size() - 1 ) ];		// No raw chances list string.
         }
 
         return outItem;
     } // of virtual Name deathDropGetName( String rawlist, String rawchancelist = "" ) {
 
     /* Obtaining units of experience by some types of DRRP-actors when it spawns. */
+	Actor worldThingSpawnedActor;
+
+    virtual void setDRRPDeathDataItem( int expGain, String deathDropNames = "", String deathDropChances = "" ) {
+        DRRPDeathDataItem deathData = NULL;
+		Actor thing = worldThingSpawnedActor;
+		bool mustDropItems = ( deathDropNames != "" );
+
+        if ( thing ) {
+            thing.A_SetInventory( "DRRPDeathDataItem", 1 );
+            deathData = DRRPDeathDataItem( thing.FindInventory( "DRRPDeathDataItem" ) );
+
+            if ( deathData ) {
+				if ( mustDropItems )
+	                deathData.DRRPDropItem = deathDropGetName( deathDropNames, deathDropChances );
+                deathData.ExpGain = expGain;
+            }
+        }
+
+
+        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+
+        if ( DebugCVar && DebugCVar.GetBool() ) {
+            if ( !thing )
+				console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no thing." );
+            else if ( !deathData )
+				console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no deathData item." );
+			else
+	            console.printf( "#RPGSystemHandler::setDRRPDeathDataItem( Actor " .. thing.GetClassName()
+	                .. " <" .. thing .. "> ). Death data: [ ExpGain: "
+	                .. deathData.ExpGain .. ", DRRPDropItem: " .. deathData.DRRPDropItem .. " ]." );
+        }
+
+    } // of virtual void setDRRPDeathDataItem( Actor thing, int expGain, String deathDropNames, String deathDropChances ) {
+
     override void WorldThingSpawned( WorldEvent e ) {
+		worldThingSpawnedActor = e.Thing;
+
         if ( e.Thing is 'DRRPFire' )
-            e.Thing.A_SetInventory( "ExpGain", 1 );
+			setDRRPDeathDataItem( 1 );
         else if ( e.Thing is 'DRRPCrate' )
-            e.Thing.A_SetInventory( "ExpGain", 2 );
+			setDRRPDeathDataItem( 2, DDGI_Crate, DDGI_Crate_C );
         else if ( e.Thing is 'DRRPRod' )
-            e.Thing.A_SetInventory( "ExpGain", 35 );
+			setDRRPDeathDataItem( 35 );
         else if ( e.Thing is 'DRRPRodTrash' )
-            e.Thing.A_SetInventory( "ExpGain", 7 );
+			setDRRPDeathDataItem( 7 );
         else if ( e.Thing is 'DRRPBarrel' )
-            e.Thing.A_SetInventory( "ExpGain", 1 );
+			setDRRPDeathDataItem( 1 );
         else if ( e.Thing is 'DRRPSink' )
-            e.Thing.A_SetInventory( "ExpGain", 1 );
+			setDRRPDeathDataItem( 1 );
         else if ( e.Thing is 'DRRPToilet' )
-            e.Thing.A_SetInventory( "ExpGain", 1 );
+			setDRRPDeathDataItem( 1 );
         else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
             double multiplier =
                 ( e.Thing.health < 40 )?  FRandom( 0.02, 0.2 ) :
                 ( e.Thing.health < 160 )? FRandom( 0.016, 0.17 ) :
                 ( e.Thing.health < 300 )? FRandom( 0.013, 0.15 ) :
                 FRandom( 0.01, 0.13 );
-            e.Thing.A_SetInventory( "ExpGain", 1 + ( int( multiplier * e.Thing.health ) ) );
+
+			setDRRPDeathDataItem( 1 + ( int( multiplier * e.Thing.health ) ), DDGI_DefaultMonster, DDGI_DefaultMonster_C );
         }
 
-        // Just debug information...
-        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
-        if ( DebugCVar && DebugCVar.GetBool() && e.Thing.FindInventory( "ExpGain" ) )
-            console.printf( "#RPGSystemHandler::WorldThingSpawned( Actor " .. e.Thing.GetClassName()
-                .. " <" .. e.Thing .. "> ). Given amount of experience: "
-                .. e.Thing.FindInventory( "ExpGain" ).Amount .. "." );
+		worldThingSpawnedActor = NULL;
     } // of override void WorldThingSpawned( WorldEvent e ) {
 
     /* Give xp to killer player and drop random items on some DRRP actors death. */
@@ -94,6 +125,8 @@ class RPGSystemHandler: EventHandler {
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
             if ( e.Thing.health <= 0 ) {
+				DRRPDeathDataItem deathData = DRRPDeathDataItem( e.Thing.FindInventory( "DRRPDeathDataItem" ) );
+
                 // Experience drop.
                 if ( e.DamageSource is "DoomRPGPlayer" ) {
 
@@ -110,20 +143,28 @@ class RPGSystemHandler: EventHandler {
                     }
                     DRRPPlayer player = DRRPPlayer( players[ playerNum ].mo );
 
-                    Inventory gainExperience = e.Thing.FindInventory( "ExpGain" );
-                    if ( gainExperience ) player.Experience += gainExperience.Amount;
+                    if ( deathData )
+						player.Experience += deathData.ExpGain;
 
+					// Levels up once. Is it better to write "while (...)"?
                     if ( player.Experience >= player.NextLevelXP )
                         EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", playerNum );
                 }
 
                 // Items drop.
-                Name dropitemname = deathDropGetName( e.Thing.bISMONSTER? DDGI_DefaultMonster : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" ) );
+				if ( deathData && deathData.DRRPDropItem )
+					e.Thing.Spawn( deathData.DRRPDropItem, e.Thing.pos );
+                /*String deathDropNamesTemplate;
+                if ( e.Thing.bISMONSTER )
+                    deathDropNamesTemplate = DDGI_DefaultMonster; : ( e.Thing is "DRRPCrate"? DDGI_Crate : "" );
+
+                Name dropitemname = deathDropGetName( deadActorType );
+
                 if ( dropitemname != "NULL" && dropitemname != "" ) {
                     Actor droppeditem = e.Thing.Spawn( dropitemname, e.Thing.pos );
                     if ( !droppeditem.bNOGRAVITY )
                         droppeditem.vel = ( FRandom( -3, 3 ), FRandom( -3, 3 ), FRandom( 0.1, 2 ) );
-                }
+                }*/
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
@@ -135,7 +176,7 @@ class RPGSystemHandler: EventHandler {
         if ( e.Name ~== "DRRP_LevelUp_Attributes" ) {
 
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) || !playeringame[ e.Args[ 0 ] ] )
-				return;
+                return;
 
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
@@ -164,6 +205,17 @@ class RPGSystemHandler: EventHandler {
     } // override void NetworkProcess( ConsoleEvent e ) {
 }
 
+
+
+class DRRPDeathDataItem: Inventory {
+    int ExpGain;
+    class<Actor> DRRPDropItem;
+
+    Default {
+        Inventory.Amount 1;
+        Inventory.MaxAmount 65535;
+    }
+}
 
 class DRRPDamageAbsorber: Inventory {
     Default {
@@ -210,13 +262,6 @@ class DRRPBasicArmor: Armor {
             return;
         }
         self.MaxAmount = DRRPPlayer( owner ).GetFeature( RPG_MaxArmor );
-    }
-}
-
-class ExpGain: Inventory {
-    Default {
-        Inventory.Amount 1;
-        Inventory.MaxAmount 65535;
     }
 }
 
