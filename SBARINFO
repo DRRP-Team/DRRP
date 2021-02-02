@@ -20,7 +20,7 @@ statusbar normal { // Standard Doom Status bar
     DrawSwitchableImage KeySlot 1, "nullimage", "STKEYS2", 239, 169; // Red
     DrawSwitchableImage KeySlot 2, "nullimage", "STKEYS0", 239, 177; // Blue
     DrawSwitchableImage KeySlot 3, "nullimage", "STKEYS1", 239, 185; // Yellow
-    DrawSwitchableImage KeySlot 4, "nullimage", "graphics/STKEYS9", 239, 193; // Green
+    DrawSwitchableImage KeySlot 4, "nullimage", "graphics/STKEYS9.png", 239, 193; // Green
 
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Clip), 288, 173;
     drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(DRRPShell), 288, 179;
