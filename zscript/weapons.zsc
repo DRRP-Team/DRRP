@@ -441,6 +441,7 @@ class DRRPChaingun: Chaingun replaces Chaingun {
 
 class DRRPRocketLauncher: RocketLauncher replaces RocketLauncher {
     Default {
+        DamageType "DRRPRocketDmg";
         Weapon.SelectionOrder 60;
     }
 
@@ -477,6 +478,7 @@ class DRRPRocketLauncher: RocketLauncher replaces RocketLauncher {
 
 class DRRPRocket: Rocket replaces Rocket {
     Default {
+        DamageType "DRRPRocketDmg";
         Decal "Scorch";
     }
 
@@ -503,6 +505,7 @@ class DRRPRocket: Rocket replaces Rocket {
 
 class DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle {
     Default {
+        DamageType "DRRPPlasmaDmg";
         Weapon.SelectionOrder 20;
         +INVENTORY.ALWAYSPICKUP;
     }
@@ -542,6 +545,7 @@ class DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle {
 
 class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
     Default {
+        DamageType "DRRPPlasmaDmg";
         Decal "PlasmaScorch";
     }
 
@@ -555,6 +559,7 @@ class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
 
 class DRRPBFG9000: BFG9000 replaces BFG9000 {
     Default {
+        DamageType "DRRPPlasmaDmg";
         Weapon.AmmoUse 30;
         Weapon.SelectionOrder 50;
     }
@@ -608,6 +613,7 @@ class DRRPBFG9000: BFG9000 replaces BFG9000 {
 
 class DRRPBFG9000Ball: BFGBall replaces BFGBall {
     Default {
+        DamageType "DRRPPlasmaDmg";
         Decal "BFGScorch";
     }
 
