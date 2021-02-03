@@ -20,7 +20,7 @@ jobs:
         with:
           # The arguments for the `git add` command (see the paragraph below for more info)
           # Default: '.'
-          add: '.'
+          # add: '.'
 
           # The name of the user that will be displayed as the author of the commit
           # Default: author of the commit that triggered the run
@@ -36,7 +36,7 @@ jobs:
 
           # The local path to the directory where your repository is located. You should use actions/checkout first to set it up
           # Default: '.'
-          cwd: '-a'
+          # cwd: '.'
 
           # The message for the commit
           # Default: 'Commit from GitHub Actions (name of the workflow)'
@@ -52,12 +52,12 @@ jobs:
 
           # The arguments for the `git rm` command (see the paragraph below for more info)
           # Default: ''
-          remove: ''
+          # remove: ''
 
           # Whether to use the --signoff option on `git commit` (only `true` and `false` are accepted)
           # Default: false
-          signoff: false
+          # signoff: false
 
           # Arguments for the git tag command (the tag name always needs to be the first word not preceded by an hyphen)
           # Default: ''
-          tag: ''
+          # tag: ''
