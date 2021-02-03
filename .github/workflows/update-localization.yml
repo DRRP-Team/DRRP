@@ -32,11 +32,11 @@ jobs:
 
           # Name of the branch to use, if different from the one that triggered the workflow
           # Default: the branch that triggered the run
-          branch: master
+          # branch: master
 
           # The local path to the directory where your repository is located. You should use actions/checkout first to set it up
           # Default: '.'
-          cwd: '.'
+          cwd: '-a'
 
           # The message for the commit
           # Default: 'Commit from GitHub Actions (name of the workflow)'
@@ -44,7 +44,7 @@ jobs:
 
           # The flag used on the pull strategy
           # Default: '--no-rebase'
-          pull_strategy: '--rebase'
+          # pull_strategy: '--rebase'
 
           # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
           # Default: true
