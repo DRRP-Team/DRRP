@@ -9,14 +9,15 @@ on:
 jobs:
   build:
     name: Update localization
-    runs-on: ubuntu-latest
+    runs-on: alpine:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Fetch localization
         shell: bash
         run: ./tools/updateLocalization.sh
-      - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
           # The arguments for the `git add` command (see the paragraph below for more info)
           # Default: '.'
@@ -40,7 +41,7 @@ jobs:
 
           # The message for the commit
           # Default: 'Commit from GitHub Actions (name of the workflow)'
-          message: "Update localization ${{ github.event.inputs.comment }}"
+          message: "Update localization"
 
           # The flag used on the pull strategy
           # Default: '--no-rebase'
