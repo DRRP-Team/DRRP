@@ -38,9 +38,9 @@ class InfobarHandler: EventHandler {
 
                 if ( ( InfobarTraceRay.HitType == TRACE_HitActor ) && !tClass.CheckClass( "DRRPTrigger", AAPTR_DEFAULT, true ) ) {
 
-                    if ( tClass.bIsMonster )InfobarFontColor = Font.CR_RED;
-                    if ( tClass.bFriendly ) InfobarFontColor = Font.CR_GREEN;
-                    if ( tClass.bSpecial )  InfobarFontColor = Font.CR_SAPPHIRE;
+                    if ( tClass.bIsMonster )InfobarFontColor = Font.CR_RED;         // Enemy;
+                    if ( tClass.bFriendly ) InfobarFontColor = Font.CR_GREEN;       // Friend;
+                    if ( tClass.bSpecial )  InfobarFontColor = Font.CR_SAPPHIRE;    // Item.
 
                     SetInfobarString( tClass.GetTag() );
                     if ( tClass.bCorpse ) {
@@ -54,7 +54,6 @@ class InfobarHandler: EventHandler {
                     }
 
                     InfobarInv.FontColor = InfobarFontColor;
-
 
                 } // of if ( InfobarTraceRay.HitType == TRACE_HitActor )
 
@@ -95,7 +94,6 @@ class InfobarHandler: EventHandler {
             } // of if ( PlayerInGame[ i ] && Players[ i ].FindInventory( "InfobarItem" ) ) {
         } // of for ( int i = 0; i < MAXPLAYERS; i++ ) {
 
-        //Super.RenderOverlay();
     } // of override void RenderOverlay( RenderEvent e ) {
 
 }
