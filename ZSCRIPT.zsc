@@ -32,8 +32,6 @@ version "2.5"
 
 
 class DRRPPlayer: DoomPlayer {
-
-    const RPG_DAMAGE_STRENGTH_MULTIPLIER = 1; // From ACS.
     static const String dogNames[] = { "HellHound", "Cerberus", "DemonWolf" };
 
     int Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength, MaxArmor;
@@ -157,14 +155,14 @@ class DRRPPlayer: DoomPlayer {
 
 
     double GetScatterMultiplier() {
-        return DRRPMath.Power( DRRPMath.e * 0.378, -self.Accuracy );
+        return DRRPMath.Power( DRRPMath.e * 0.3725, -self.Accuracy );
     } 
 
     play int getRPGAttackDamage( int min, int max = 0 ) {
         if ( ( max == 0 ) || ( max < min ) )
             max = min;
 
-        int damageMultiplier = GetFeature( RPG_Strength ) * RPG_DAMAGE_STRENGTH_MULTIPLIER;
+        int damageMultiplier = DRRPMath.Power( GetFeature( RPG_Strength ), 0.6 ) * 1.5;
 
         return Random( min + damageMultiplier, max + damageMultiplier );
     }
