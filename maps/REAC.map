@@ -35159,6 +35159,7 @@ heightceiling = 72;
 lightlevel = 127;
 rotationfloor = 90.000000;
 lightfloor = 200;
+damagetype = "Fire";
 }
 
 sector
@@ -35457,6 +35458,7 @@ lightlevel = 127;
 rotationfloor = 90.000000;
 xpanningfloor = -32;
 lightfloor = 200;
+damagetype = "Fire";
 }
 
 sector
@@ -35477,6 +35479,7 @@ heightceiling = 64;
 lightlevel = 127;
 rotationfloor = 90.000000;
 lightfloor = 200;
+damagetype = "Fire";
 }
 
 sector
@@ -35498,6 +35501,7 @@ heightceiling = 64;
 lightlevel = 127;
 rotationfloor = 90.000000;
 lightfloor = 200;
+damagetype = "Fire";
 }
 
 sector
@@ -35799,7 +35803,7 @@ id = 8;
 rotationfloor = 90.000000;
 lightfloor = 200;
 damageamount = 10;
-damagetype = "Slime";
+damagetype = "Fire";
 damageinterval = 1;
 damageterraineffect = true;
 }
@@ -35816,7 +35820,7 @@ id = 8;
 rotationfloor = 90.000000;
 lightfloor = 200;
 damageamount = 10;
-damagetype = "Slime";
+damagetype = "Fire";
 damageinterval = 1;
 damageterraineffect = true;
 }
@@ -35833,7 +35837,7 @@ id = 8;
 rotationfloor = 90.000000;
 lightfloor = 200;
 damageamount = 10;
-damagetype = "Slime";
+damagetype = "Fire";
 damageinterval = 1;
 damageterraineffect = true;
 }
@@ -35848,7 +35852,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -35865,7 +35869,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -35894,7 +35898,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -35911,7 +35915,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -35928,7 +35932,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -35968,7 +35972,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -35985,7 +35989,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36002,7 +36006,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36019,7 +36023,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36036,7 +36040,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36053,7 +36057,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36107,7 +36111,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36124,7 +36128,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36152,7 +36156,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -36704,7 +36708,7 @@ lightlevel = 255;
 special = 848;
 id = 3;
 rotationfloor = 90.000000;
-damagetype = "Slime";
+damagetype = "Fire";
 damageamount = 10;
 damageinterval = 1;
 lightfloor = 200;
@@ -37023,6 +37027,7 @@ heightceiling = 64;
 lightlevel = 127;
 rotationfloor = 90.000000;
 lightfloor = 200;
+damagetype = "Fire";
 }
 
 sector
@@ -37034,6 +37039,7 @@ heightceiling = 72;
 lightlevel = 127;
 rotationfloor = 90.000000;
 lightfloor = 200;
+damagetype = "Fire";
 }
 
 sector
