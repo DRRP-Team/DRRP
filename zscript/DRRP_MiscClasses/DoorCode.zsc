@@ -61,7 +61,7 @@ class DoorCodeInputMenu : GenericMenu {
     String codeStr;
     String realCodeStr;
     String displayTooltip;
-    
+
     Override
     void init(Menu parent) {
         DoorCodeInputStubItem item = DoorCodeInputStubItem(players[consoleplayer].mo.findInventory("DoorCodeInputStubItem"));
@@ -80,9 +80,9 @@ class DoorCodeInputMenu : GenericMenu {
         }
     }
     
-    Override
-    void drawer() {
-        super.drawer();
+    override void Drawer() {
+        Super.Drawer();
+
         let tex = TexMan.CheckForTexture("M_WINDOW", TexMan.Type_MiscPatch);
         if (tex.IsValid()) {
             Vector2 v = TexMan.GetScaledSize(tex);
@@ -93,43 +93,71 @@ class DoorCodeInputMenu : GenericMenu {
             screen.DrawText(font, Font.CR_WHITE, 244, 322, displayTooltip .. " " .. self.codeStr, DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);
         }
     }
-    
-    Override
-    bool OnUIEvent(UIEvent ev) { 
-        super.OnUIEvent(ev);
-        if (ev.Type == UiEvent.Type_KeyDown && (ev.keyChar >= 48 && ev.keyChar <= 57)) {
-            for(int i = 0; i < self.codeStr.Length(); i++) {
-                if (self.codeStr.CharAt(i) != '_') continue;
-                
-                self.codeStr = String.format("%s%c", self.codeStr.Left(i), ev.keyChar);
 
-                for(int j = self.codeStr.Length(); j < self.realCodeStr.Length(); j++) {
-                    self.codeStr.AppendFormat("_");
+
+    // Here we handle only keys from '0' to '9' (ASCII 48...57):
+    override bool OnUIEvent( UIEvent e ) {
+        Super.OnUIEvent( e );
+
+        if ( e.Type == UiEvent.Type_KeyDown ) {
+
+            // Handle numbers from 0 to 9:
+            if ( e.keyChar >= 48 && e.keyChar <= 57 ) {
+
+                for ( int i = 0; i < codeStr.Length(); i++ ) {
+                    if ( codeStr.CharAt( i ) != '_' )
+                        continue;
+
+                    codeStr = String.format( "%s%c", codeStr.Left( i ), e.keyChar );
+
+                    for( int j = codeStr.Length(); j < self.realCodeStr.Length(); j++ )
+                        codeStr.AppendFormat( "_" );
+
+                    break;
                 }
 
-                break;
+                // Length of input is less than password length:
+                for ( int i = 0; i < codeStr.Length(); i++ )
+                    if ( codeStr.CharAt( i ) == '_' )
+                        return true;
+
+                // Limit by length:
+                EventHandler.SendNetworkEvent( "closedoorinput", codeStr == realCodeStr ? 1 : 2 );
+                Close();
+
             }
- 
-            for(int i = 0; i < self.codeStr.Length(); i++) {
-                if (self.codeStr.CharAt(i) == '_') {
-                    return true;
-                }
-            }
-            
-            EventHandler.SendNetworkEvent("closedoorinput", codeStr == realCodeStr ? 1 : 2);
-            Close();
-        } else if (ev.Type == UiEvent.Type_KeyDown && ev.keyChar == 27) {
-            Close();
-        }
+
+        } // of if ( e.Type == UiEvent.Type_KeyDown ) {
 
         return true;
     }
-    
-    Override
-    bool MenuEvent (int mkey, bool fromcontroller) {
-        if(mkey == Menu.MKEY_Back) {
-            EventHandler.SendNetworkEvent("closedoorinput", 3);
+
+    // Here we handle backspace and escape:
+    override bool MenuEvent( int mkey, bool fromcontroller ) {
+        switch ( mkey ) {
+            case Menu.MKEY_Clear: // Backspace.
+                int inputEndIndex = codeStr.IndexOf( "_" );
+
+                if ( inputEndIndex > 0 ) {
+                    String codeStrEndPart = "";
+
+                    for ( int i = 0; i < codeStr.Length() - inputEndIndex + 1; i++ )
+                        codeStrEndPart = codeStrEndPart .. "_";
+
+                    codeStr.Truncate( inputEndIndex - 1 );
+                    codeStr = codeStr .. codeStrEndPart;
+                }
+
+                break;
+
+            case Menu.MKEY_Back: // Escape.
+                EventHandler.SendNetworkEvent( "closedoorinput", 3 );
+                break;
+
+            default:
+                break;
         }
-        return super.MenuEvent(mkey, fromcontroller);
+
+        return Super.MenuEvent( mkey, fromcontroller );
     }
 }
