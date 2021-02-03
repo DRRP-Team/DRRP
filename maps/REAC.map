@@ -9531,25 +9531,25 @@ y = 1152.000;
 vertex
 {
 x = 448.000;
-y = 1200.000;
+y = 1192.000;
 }
 
 vertex
 {
 x = 512.000;
-y = 1200.000;
+y = 1192.000;
 }
 
 vertex
 {
 x = 448.000;
-y = 1168.000;
+y = 1176.000;
 }
 
 vertex
 {
 x = 512.000;
-y = 1168.000;
+y = 1176.000;
 }
 
 vertex
@@ -24886,6 +24886,8 @@ sidedef
 {
 sector = 45;
 texturemiddle = "DRDC10";
+offsetx = -8;
+offsety = -3;
 offsetx_mid = 48;
 }
 
@@ -24936,6 +24938,7 @@ sidedef
 {
 sector = 45;
 texturemiddle = "DRDC10";
+offsety = -3;
 }
 
 sidedef
@@ -27589,6 +27592,7 @@ sidedef
 {
 sector = 65;
 texturemiddle = "DRDC10";
+offsetx = -8;
 offsetx_mid = 48;
 }
 
@@ -32290,6 +32294,7 @@ sidedef
 {
 sector = 125;
 texturemiddle = "DRDC10";
+offsetx = -8;
 offsetx_mid = 48;
 }
 
