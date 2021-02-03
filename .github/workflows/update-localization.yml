@@ -1,15 +1,11 @@
 name: Update localization
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Comment'
-        required: false
 
 jobs:
   build:
     name: Update localization
-    runs-on: alpine:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
