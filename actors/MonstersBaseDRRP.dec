@@ -157,7 +157,7 @@ Actor Revenant_BaseDRRP: Revenant {
     }
 }
 
-Actor PainElemental_BaseDRRP: PainElemental {
+Actor PainElemental_BaseDRRP: PainElemental_ZSPatch {
     +LOOKALLAROUND
 
     DamageFactor DRRPFireDmg, 0.0

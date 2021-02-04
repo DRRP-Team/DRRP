@@ -460,7 +460,7 @@ Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
         PAIN H  8 Bright
         PAIN I  8 Bright A_Scream
         PAIN JK 8 Bright
-        PAIN L  8 Bright A_PainDie("Nightmare")
+        PAIN L  8 Bright A_DRRP_PainDie( "Nightmare" )
         PAIN M  8 Bright
         PAIN Z -1
         Stop
@@ -482,7 +482,7 @@ Actor Rahovart: PainElemental_BaseDRRP 10379 {
         PAIN H  8 Bright
         PAIN I  8 Bright A_Scream
         PAIN JK 8 Bright
-        PAIN L  8 Bright A_PainDie("DRRPLostSoul")
+        PAIN L  8 Bright A_DRRP_PainDie( "DRRPLostSoul" )
         PAIN M  8 Bright
         PAIN Z -1
         Stop
@@ -503,7 +503,7 @@ Actor Beholder: PainElemental_BaseDRRP 10479 {
         PAIN H  8 Bright
         PAIN I  8 Bright A_Scream
         PAIN JK 8 Bright
-        PAIN L  8 Bright A_PainDie("Phantom")
+        PAIN L  8 Bright A_DRRP_PainDie( "Phantom" )
         PAIN M  8 Bright
         PAIN Z -1
         Stop            
