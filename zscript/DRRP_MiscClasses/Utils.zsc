@@ -28,13 +28,13 @@ class DRRPMath {
 
 }
 
-class DRRPActorAdditionalFunctions: Actor {
+class DRRPActorAdditionalFunctions play {
 
     const velocityParticlesDelay = 4;
     // The higher the value this constant has, the slower the particle speed.
 
-    static Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {
-        Actor particle = Spawn( spawnee, (
+    static play Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {
+        Actor particle = Actor.Spawn( spawnee, (
                                 spawner.pos.x + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
                                 spawner.pos.y + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
                                 spawner.pos.z + Random( splatZ * 0.05, splatZ * 0.95 ) ) );
@@ -44,7 +44,7 @@ class DRRPActorAdditionalFunctions: Actor {
         return particle;
     }
 
-} // of class DRRPActorAdditionalFunctions: Actor {
+} // of class DRRPActorAdditionalFunctions {
 
 
 
