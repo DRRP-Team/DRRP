@@ -24198,9 +24198,8 @@ sidedef
 sector = 89;
 texturetop = "DRDC34";
 texturebottom = "DRDC32";
-offsetx = 64;
-offsety = 76;
-offsetx_mid = 33;
+offsety = 4;
+offsetx_mid = 33.000000;
 offsetx_bottom = -32;
 }
 
@@ -27396,6 +27395,7 @@ offsetx_mid = -62;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
@@ -27409,6 +27409,7 @@ offsetx = 16;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
@@ -27437,6 +27438,7 @@ offsetx = 17;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
@@ -28158,8 +28160,8 @@ sector = 94;
 texturetop = "DRDC34";
 texturebottom = "DRDC32";
 offsetx = 32;
-offsety = 68;
-offsetx_mid = 33;
+offsety = -60;
+offsetx_mid = 33.000000;
 offsety_bottom = 52;
 }
 
@@ -28349,6 +28351,7 @@ offsetx = 31;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
@@ -28362,6 +28365,7 @@ offsetx = 33;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
@@ -28375,6 +28379,7 @@ offsetx = 5;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
@@ -28906,7 +28911,6 @@ sidedef
 {
 sector = 89;
 texturemiddle = "DRDC34";
-offsety = 64;
 offsetx_mid = -33;
 }
 
@@ -29639,7 +29643,7 @@ texturebottom = "MFLR8_2";
 sidedef
 {
 sector = 99;
-texturebottom = "REAC2D";
+texturebottom = "MFLR8_2";
 offsetx_bottom = 3.000000;
 offsety_bottom = 10.000000;
 }
@@ -29659,12 +29663,13 @@ texturebottom = "MFLR8_2";
 sidedef
 {
 sector = 84;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
 {
 sector = 99;
-texturebottom = "REAC2D";
+texturebottom = "MFLR8_2";
 offsetx_bottom = 3;
 offsety_bottom = 10;
 }
@@ -30022,6 +30027,7 @@ offsetx = 62;
 sidedef
 {
 sector = 160;
+texturebottom = "MFLR8_2";
 }
 
 sidedef
