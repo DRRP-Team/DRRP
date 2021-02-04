@@ -37622,6 +37622,7 @@ sidefront = 698;
 sideback = 699;
 twosided = true;
 secret = true;
+blocking = true;
 }
 
 linedef
@@ -37632,6 +37633,7 @@ sidefront = 700;
 sideback = 701;
 twosided = true;
 secret = true;
+blocking = true;
 }
 
 linedef
@@ -52014,6 +52016,7 @@ sidefront = 3025;
 sideback = 3026;
 twosided = true;
 secret = true;
+blocking = true;
 }
 
 linedef
@@ -52140,6 +52143,7 @@ sidefront = 3048;
 sideback = 3049;
 twosided = true;
 secret = true;
+blocking = true;
 }
 
 linedef
@@ -52300,6 +52304,7 @@ sidefront = 3080;
 sideback = 3081;
 twosided = true;
 secret = true;
+blocking = true;
 }
 
 linedef
@@ -105345,14 +105350,14 @@ textureceiling = "ABSFLAT1";
 heightfloor = 35;
 heightceiling = 64;
 lightlevel = 64;
-floorplane_a = 0.000000;
-floorplane_b = -0.878812;
-floorplane_c = 0.477169;
-floorplane_d = 1174.967407;
 ypanningfloor = -24.000000;
 yscalefloor = 2.200000;
 xscaleceiling = 1.500000;
 yscaleceiling = 1.500000;
+floorplane_a = 0.000000;
+floorplane_b = -0.878812;
+floorplane_c = 0.477169;
+floorplane_d = 1174.967407;
 }
 
 sector
@@ -105362,14 +105367,14 @@ textureceiling = "ABSFLAT1";
 heightfloor = 35;
 heightceiling = 64;
 lightlevel = 64;
-floorplane_a = 0.000000;
-floorplane_b = -0.878812;
-floorplane_c = 0.477169;
-floorplane_d = 1174.967407;
 ypanningfloor = -24.000000;
 yscalefloor = 2.200000;
 xscaleceiling = 1.500000;
 yscaleceiling = 1.500000;
+floorplane_a = 0.000000;
+floorplane_b = -0.878812;
+floorplane_c = 0.477169;
+floorplane_d = 1174.967407;
 }
 
 sector
@@ -105379,15 +105384,15 @@ textureceiling = "ABSFLAT1";
 heightfloor = 35;
 heightceiling = 64;
 lightlevel = 64;
-floorplane_a = 0.000000;
-floorplane_b = 0.878812;
-floorplane_c = 0.477169;
-floorplane_d = -793.568909;
 ypanningfloor = 5.000000;
 yscalefloor = 2.200000;
 ypanningceiling = 21.333000;
 xscaleceiling = 1.500000;
 yscaleceiling = 1.500000;
+floorplane_a = 0.000000;
+floorplane_b = 0.878812;
+floorplane_c = 0.477169;
+floorplane_d = -793.568909;
 }
 
 sector
@@ -105397,16 +105402,16 @@ textureceiling = "ABSFLAT1";
 heightfloor = 35;
 heightceiling = 64;
 lightlevel = 64;
-floorplane_a = 0.000000;
-floorplane_b = -0.878812;
-floorplane_c = 0.477169;
-floorplane_d = 1174.967407;
 xpanningfloor = 8.000000;
 ypanningfloor = -24.000000;
 yscalefloor = 2.200000;
 xscaleceiling = 1.500000;
 yscaleceiling = 1.500000;
 xpanningceiling = 8.000000;
+floorplane_a = 0.000000;
+floorplane_b = -0.878812;
+floorplane_c = 0.477169;
+floorplane_d = 1174.967407;
 }
 
 sector
@@ -105416,15 +105421,15 @@ textureceiling = "ABSFLAT1";
 heightfloor = 35;
 heightceiling = 64;
 lightlevel = 64;
-floorplane_a = 0.000000;
-floorplane_b = 0.878812;
-floorplane_c = 0.477169;
-floorplane_d = -793.568909;
 ypanningfloor = 5.000000;
 yscalefloor = 2.200000;
 ypanningceiling = 21.333000;
 xscaleceiling = 1.500000;
 yscaleceiling = 1.500000;
+floorplane_a = 0.000000;
+floorplane_b = 0.878812;
+floorplane_c = 0.477169;
+floorplane_d = -793.568909;
 }
 
 sector
@@ -105434,16 +105439,16 @@ textureceiling = "ABSFLAT1";
 heightfloor = 35;
 heightceiling = 64;
 lightlevel = 64;
+xpanningfloor = 8.000000;
+ypanningfloor = 5.000000;
+yscalefloor = 2.200000;
+xpanningceiling = 8.000000;
+xscaleceiling = 1.500000;
+yscaleceiling = 1.500000;
 floorplane_a = 0.000000;
 floorplane_b = 0.878812;
 floorplane_c = 0.477169;
 floorplane_d = -1131.032471;
-xpanningfloor = 8.000000;
-ypanningfloor = 5.000000;
-yscalefloor = 2.200000;
-xpanningceiling = 8.000000;
-xscaleceiling = 1.500000;
-yscaleceiling = 1.500000;
 }
 
 sector
