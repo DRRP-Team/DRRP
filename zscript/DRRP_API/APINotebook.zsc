@@ -29,6 +29,8 @@ class NotebookHandler: EventHandler {
 
             Screen.drawText(font, Font.CR_GOLD, Screen.GetWidth() - font.StringWidth(ss), 0, ss);
         }
+
+        Super.RenderOverlay( e );
     } // of override void RenderOverlay( RenderEvent e ) {
 
     

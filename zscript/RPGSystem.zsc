@@ -143,6 +143,8 @@ class RPGSystemHandler: EventHandler {
         }
 
         worldThingSpawnedActor = NULL;
+
+        Super.WorldThingSpawned( e );
     } // of override void WorldThingSpawned( WorldEvent e ) {
 
     /* Give xp to killer player and drop random items on some DRRP actors death. */
@@ -186,6 +188,7 @@ class RPGSystemHandler: EventHandler {
             }
         } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
 
+        Super.WorldThingDamaged( e );
     } // override void WorldThingDamaged( WorldEvent e ) {
 
 
@@ -220,6 +223,7 @@ class RPGSystemHandler: EventHandler {
                 EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", e.Args[ 0 ] );
         }
 
+        Super.NetworkProcess( e );
     } // override void NetworkProcess( ConsoleEvent e ) {
 }
 

@@ -32,5 +32,7 @@ class CompassHandler: EventHandler {
                              320 - ( StrVisibleLen * 4 ), 0, VisualStr, 
                              DTA_VirtualWidth, 640, DTA_VirtualHeight, 480 ); /* */
         }
+
+        Super.RenderOverlay( e );
     }
 }

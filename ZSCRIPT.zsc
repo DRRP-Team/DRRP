@@ -14,6 +14,7 @@ version "2.5"
 // APIs
 #include "zscript/DRRP_API/APIWeapons.zsc"
 #include "zscript/DRRP_API/APIConversation.zsc"
+#include "zscript/DRRP_API/APIDoorCode.zsc"
 #include "zscript/DRRP_API/APIShaders.zsc"
 #include "zscript/DRRP_API/APINotebook.zsc"
 
@@ -23,7 +24,6 @@ version "2.5"
 #include "zscript/DRRP_MiscClasses/StatInfo.zsc"
 #include "zscript/DRRP_MiscClasses/Flashlight.zsc"
 //#include "zscript/DRRP_MiscClasses/HUD.zsc" // Errr, "NullHUD"?
-#include "zscript/DRRP_MiscClasses/DoorCode.zsc"
 
 // Tools
 #include "zscript/RPGSystem.zsc"

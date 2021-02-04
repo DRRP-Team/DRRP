@@ -6,167 +6,6 @@
  */
 
 
-// Damages -----------------------------------------------------------------------
-
-class DRRPLava: Actor { // Has Decorate heir (DRRPLava_Decorate).
-
-    int fireActorDamageMin, fireActorDamageMax, fireActorDamageTicks;
-
-    void damageNearestPlayers( void ) {
-        for ( int i = 0; i < MAXPLAYERS; i++ ) {
-            if ( !( level.maptime % fireActorDamageTicks ) && PlayerInGame[ i ] && Distance3D( players[ i ].mo ) < 32 )
-                Players[ i ].mo.DamageMobj( self, self, random( fireActorDamageMin, fireActorDamageMax ), "DRRPFireDmg" );
-        } // of for ( uint8 i = 0; i < MAXPLAYERS; i++ )
-    } // of void damagePlayers( void )
-
-    override void BeginPlay() {
-        fireActorDamageMin = 3;
-        fireActorDamageMax = 7;
-        fireActorDamageTicks = 2;
-    } // of override void BeginPlay()
-
-    override void Tick() {
-        damageNearestPlayers();
-        Super.Tick();
-    } // of override void Tick()
-
-    override bool CanCollideWith( Actor other, bool passive ) {
-
-        String cn = other.getClassName();
-        if ( cn ~== "DoomRPGPlayer"
-                || cn ~== "Phantom"
-                || cn ~== "DRRPLostSoul"
-                || cn ~== "Nightmare"
-
-                || cn ~== "Beholder"
-                || cn ~== "Rahovart"
-                || cn ~== "DRRPPainElemental"
-
-                || cn ~== "Infernis"
-                || cn ~== "DRRPArchVile"
-                || cn ~== "Apollyon"
-
-                || cn ~== "BulletPuff"
-
-                || ( ( other.bMISSILE == true ) && ( cn != "FireExtPuff") ) ) {
-            return false;
-        }
-
-        return true;
-    } // of override bool CanCollideWith( Actor other, bool passive )
-
-    Default {
-        MONSTER;
-        +NOBLOOD;
-        +NOTARGET;
-        +NOTRIGGER;
-        +DONTTHRUST;
-        +NOTAUTOAIMED;
-        -ISMONSTER;
-        -COUNTKILL;
-        -SHOOTABLE;
-        -PUSHABLE;
-        Tag "$DRRP_E_LAVAPOOL";
-        Health 10;
-        Mass 0x7FFFFFFF;
-        // Last (fifth) argument is invisiblity of the lava pool.
-    }
-
-    States {
-        Spawn:
-            TNT1 A 0;
-            TNT1 A 1 A_JumpIf( Args[ 4 ] == 0, "SpawnLoopVisible" );
-            TNT1 A 1 A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 );
-            Wait;
-        SpawnLoopVisible:
-            LAVA ABCD 15 Bright A_PlaySound( "ICOSCRE", CHAN_7, 0.9, true, 2.5 );
-            Loop;
-    }
-}
-
-class DRRPFire: DRRPLava { // Has Decorate heir (DRRPFire_Decorate).
-
-    Default {
-        MONSTER;
-        +SOLID;
-        +SPECTRAL;
-        -ISMONSTER;
-        -COUNTKILL;
-        Tag "$DRRP_E_FIRE";
-        Obituary "$DRRP_OB_FIRE";
-        Health 6;
-        Radius 33;
-        Mass 0x7FFFFFFF;
-        DamageType "DRRPFireDmg";
-        DamageFactor "DRRPFireExtDmg", 1.0;
-        DamageFactor "Normal", 0;
-    }
-
-    override void BeginPlay() {
-        fireActorDamageMin = 1;
-        fireActorDamageMax = 4;
-        fireActorDamageTicks = 3;
-    } // of override void BeginPlay()
-
-    override void Tick() {
-        damageNearestPlayers();
-
-        //float ScaleTo = -0.5 * exp( 1 - ( float( health / SpawnHealth() ) ) ) + 1.5;
-        //float ScaleTo = 1 / ( 0.66 + ( 1 - float( health ) / float( SpawnHealth() ) ) ) - 0.5;
-        fireActorDamageMax = ( health / 2  ) + 1;
-
-        double ScaleTo = double( health ) / double( SpawnHealth() );
-        double ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
-        self.Scale = ( ScaleNow, ScaleNow );
-
-        Super.Tick();
-    } // of override void Tick()
-
-    States {
-        Spawn:
-            FIRE A 0 Bright;
-            FIRE A 0 Bright A_JumpIf(Args[0] != 0, "Spawn.Start");
-            FIRE A 0 Bright A_SetArg(0, 255);
-        Spawn.Start:
-            FIRE A 0 Bright;
-            FIRE A 0 Bright A_PlaySound("fire/loop3", CHAN_7, (Args[0] * 1.0) / 255, true, 2.5);
-            FIRE A 0 Bright A_Jump(256, Random(1, 8));
-        Spawn.Loop:
-            FIRE ABCDEFGH 2 BRIGHT;
-            Loop;
-        Death:
-            TNT1 A 0;
-            Stop;
-    }
-
-}
-
-class DRRPExplosion: Actor { // Has Decorate heir (DRRPExplosion_Decorate).
-    Default {
-        +NOGRAVITY;
-        +DONTFALL;
-        +FLOORCLIP;
-        Tag "$DRRP_D_EXPLOSION";
-    }
-
-    override void PostBeginPlay() {
-        if ( pos.z <= ( FloorZ + self.height ) )
-            SetZ( FloorZ + ( self.height * 1.5 ) );
-
-        vel -= vel; // Preventing crate "floating away" explosions.
-    }
-
-    States {
-        Spawn:
-            MISL B 0 Bright A_Quake( 7, 7, 0, 256 );
-            MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_AUTO);
-            MISL B 5 Bright A_Explode();
-            MISL C 5 Bright;
-            MISL D 4 Bright;
-            Stop;
-    }
-}
-
 // Items -------------------------------------------------------------------------
 
 class DRRPArmorShard: Inventory replaces ArmorBonus {
@@ -201,20 +40,6 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
         Spawn:
             BON2 ABCDCB 6;
             Loop;
-    }
-}
-
-
-class DRRPBaseMedikit: HealthPickup {
-
-    // Just a white flash on use (more or less the same as from the Doctor's healing).
-    override bool Use( bool ispickup ) {
-        bool outValue = Super.Use( ispickup );
-
-        if ( outValue )
-            owner.A_SetBlend( "FFFFFF", 0.4, 35 );
-
-        return outValue;
     }
 }
 
@@ -265,8 +90,6 @@ class DRRPActorsHandler: EventHandler {
 
     override void WorldThingDamaged( WorldEvent e ) {
         if ( e.Thing && e.Thing.bISMONSTER && e.Thing.health < gibDamage ) {
-            console.printf( e.Thing.GetClassName() .. ": " .. e.Thing.health );
-
             Actor gibSpawner = e.Thing.Spawn( "DRRPExtraDamageGibSpawner", e.Thing.pos );
             gibSpawner.master = e.Thing;
         }
@@ -393,8 +216,8 @@ class DRRPDamageDoll: DRRPPlayer {
         Super.Tick();
         if ( 0x4000 - health )
             console.printf( "(Doll): taked " 
-                            .. TEXTCOLOR_YELLOW .. 0x4000 - health .. TEXTCOLOR_NORMAL .. " HP by " 
-                            .. ( ( target == NULL )
+                            .. TEXTCOLOR_YELLOW .. 0x4000 - health .. TEXTCOLOR_NORMAL 
+                            .. " HP by " .. ( ( target == NULL )
                                 ? "environment"
                                 : ( ( target.Player != NULL )
                                     ? "player " .. target.Player.GetUserName()

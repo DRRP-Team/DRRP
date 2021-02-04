@@ -43,6 +43,7 @@ class InfobarHandler: EventHandler {
                     if ( tClass.bSpecial )  InfobarFontColor = Font.CR_SAPPHIRE;    // Item.
 
                     SetInfobarString( tClass.GetTag() );
+
                     if ( tClass.bCorpse ) {
                         InfobarInv.InfoString = InfobarInv.InfoString .. " ("
                                   .. StringTable.Localize( "$DRRP_M_CORPSE" ) .. ")";
@@ -94,6 +95,7 @@ class InfobarHandler: EventHandler {
             } // of if ( PlayerInGame[ i ] && Players[ i ].FindInventory( "InfobarItem" ) ) {
         } // of for ( int i = 0; i < MAXPLAYERS; i++ ) {
 
+        Super.RenderOverlay( e );
     } // of override void RenderOverlay( RenderEvent e ) {
 
 }
