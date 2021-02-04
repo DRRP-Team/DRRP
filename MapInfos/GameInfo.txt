@@ -7,10 +7,13 @@
 
 GameInfo {
     PlayerClasses    = "DoomRPGPlayer"
-    AddEventHandlers = "NotebookHandler",
+    AddEventHandlers = "RPGSystemHandler",
+                       "DRRPActorsHandler",
+
+                       "NotebookHandler",
                        "InfobarHandler", 
                        "CompassHandler",
                        "DoorCodeInputHandler",
-                       "ShaderControllerActor",
-                       "RPGSystemHandler"
+
+                       "ShaderControllerActor"
 }
