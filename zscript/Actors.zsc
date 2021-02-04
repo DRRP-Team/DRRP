@@ -339,9 +339,7 @@ class DRRPExtraDamageGib: Actor {
         }
         "####" "############################" 2 {
             if ( !( --curRollingDelay ) ) {
-                console.printf( "Bfr. Frame: " .. frame );
                 frame = ( frame + 1 ) % 4;
-                console.printf( "Aft. Frame: " .. frame );
                 curRollingDelay = rollingDelay;
 
                 if ( !Random( 0, 1 ) )
