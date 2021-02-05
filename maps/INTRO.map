@@ -6577,9 +6577,10 @@ skill5 = true;
 
 thing
 {
-x = 1056.000;
-y = 224.000;
-type = 10714;
+x = 1696.000;
+y = 1120.000;
+type = 10265;
+arg1 = 255;
 coop = true;
 dm = true;
 single = true;
@@ -6588,13 +6589,17 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
 {
-x = 1184.000;
-y = 224.000;
-type = 10714;
+x = 1632.000;
+y = 1056.000;
+type = 10265;
+arg1 = 255;
 coop = true;
 dm = true;
 single = true;
@@ -6603,6 +6608,9 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
@@ -7395,44 +7403,6 @@ thing
 {
 x = 1056.000;
 y = 480.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1632.000;
-y = 1056.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1696.000;
-y = 1120.000;
 type = 10265;
 arg1 = 255;
 coop = true;
