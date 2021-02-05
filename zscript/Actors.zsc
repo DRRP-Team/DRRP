@@ -112,14 +112,14 @@ class DRRPExtraDamageGibSpawner: Actor {
         if ( !master )
             Destroy();
         else
-            spawnTime = Random( 2, 13 );
+            spawnTime = Random( 2, 8 );
     }
 
     override void Tick() {
         for ( int i = 0; i < Random( 0, 5 ); i++ ) {
             master.A_SpawnItemEx( "DRRPExtraDamageGib", 
-                    FRandom( -3.0, 3.0 ), FRandom( -3.0, 3.0 ), FRandom( -3.0, 3.0 ),
-                    FRandom( -5.0, 5.0 ), FRandom( -5.0, 5.0 ), FRandom( -1.0, 5.0 ) );
+                    FRandom( -4.0, 4.0 ), FRandom( -4.0, 4.0 ), FRandom( 5.0, 10.0 ),
+                    FRandom( -6.0, 6.0 ), FRandom( -6.0, 6.0 ), FRandom( 5.0, 10.0 ) );
         }
 
         if ( !( --spawnTime ) )
