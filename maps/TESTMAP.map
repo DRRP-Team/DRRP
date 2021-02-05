@@ -1,8 +1,8 @@
 namespace = "zdoom";
 thing
 {
-x = -320.000;
-y = -128.000;
+x = -608.000;
+y = -352.000;
 type = 1;
 angle = 90;
 skill1 = true;
@@ -453,8 +453,8 @@ renderstyle = "";
 
 thing
 {
-x = 32.000;
-y = 224.000;
+x = 16.000;
+y = 240.000;
 type = 10708;
 angle = 180;
 skill1 = true;
@@ -1923,7 +1923,7 @@ thing
 {
 x = -608.000;
 y = -224.000;
-type = 16;
+type = 10390;
 angle = 90;
 coop = true;
 dm = true;
@@ -1938,10 +1938,10 @@ renderstyle = "";
 
 thing
 {
-x = -608.000;
-y = -352.000;
-type = 2;
-angle = 90;
+x = -208.000;
+y = 1808.000;
+type = 10900;
+arg1str = "Arg1";
 coop = true;
 dm = true;
 single = true;
@@ -1950,7 +1950,9 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+comment = "RadialBlurShader";
 renderstyle = "";
+arg0str = "Arg0";
 }
 
 thing
@@ -2628,10 +2630,28 @@ arg0str = "Arg0";
 
 thing
 {
-x = -208.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
+x = -320.000;
+y = -128.000;
+type = 1;
+angle = 90;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+single = true;
+dm = true;
+coop = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -112.000;
+y = 416.000;
+type = 10713;
+angle = 90;
+renderstyle = "";
 coop = true;
 dm = true;
 single = true;
@@ -2640,9 +2660,76 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-comment = "RadialBlurShader";
+}
+
+thing
+{
+x = -80.000;
+y = 416.000;
+type = 10714;
+angle = 270;
 renderstyle = "";
-arg0str = "Arg0";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = -32.000;
+y = 416.000;
+type = 10715;
+angle = 270;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = 48.000;
+y = 208.000;
+type = 10712;
+angle = 180;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = -96.000;
+y = 352.000;
+type = 10265;
+angle = 90;
+arg0 = 1;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg1 = 255;
 }
 
 vertex
