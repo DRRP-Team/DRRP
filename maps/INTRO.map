@@ -6453,9 +6453,10 @@ skill5 = true;
 
 thing
 {
-x = 1440.000;
-y = -224.000;
-type = 10714;
+x = 1760.000;
+y = 1056.000;
+type = 10265;
+arg1 = 255;
 coop = true;
 dm = true;
 single = true;
@@ -6464,6 +6465,9 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
@@ -7429,25 +7433,6 @@ thing
 {
 x = 1696.000;
 y = 1120.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1760.000;
-y = 1056.000;
 type = 10265;
 arg1 = 255;
 coop = true;
@@ -34245,7 +34230,7 @@ xpanningceiling = -5.000000;
 sector
 {
 texturefloor = "DRDC67";
-textureceiling = "DRDC13";
+textureceiling = "DRDC51";
 heightceiling = 64;
 lightlevel = 255;
 rotationfloor = 90.000000;
@@ -34255,7 +34240,7 @@ rotationceiling = 90.000000;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "FLAT1";
+textureceiling = "DRDC62";
 heightceiling = 64;
 lightlevel = 255;
 rotationfloor = 90.000000;
@@ -35953,7 +35938,7 @@ rotationfloor = 90;
 sector
 {
 texturefloor = "DRDC67";
-textureceiling = "DRDC13";
+textureceiling = "DRDC61";
 heightceiling = 64;
 lightlevel = 255;
 rotationceiling = 90.000000;
