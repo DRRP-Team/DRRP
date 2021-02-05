@@ -92,11 +92,11 @@ Script "window"(str _Text) { // s: -> str
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
 
     While(TRUE) {
-        if(ReadedKey == BT_FORWARD && ScrollY > 0) {
+        if(ReadedKey & BT_FORWARD && ScrollY > 0) {
             ScrollY -= SYM_HEIGHT;
             Delay(4);
         }
-        if(ReadedKey == BT_BACK && ScrollY < height * SYM_HEIGHT) {
+        if(ReadedKey & BT_BACK && ScrollY < height * SYM_HEIGHT) {
             ScrollY += SYM_HEIGHT;
             Delay(4);
         }
@@ -113,9 +113,9 @@ Script "window"(str _Text) { // s: -> str
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
-        if((FirstRun == 0) && (ReadedKey == BT_USE))
+        if((FirstRun == 0) && (ReadedKey & BT_USE))
             Break;
-        if((FirstRun == 1) && (ReadedKey != BT_USE))
+        if((FirstRun == 1) && !(ReadedKey & BT_USE))
             FirstRun = 0;
     }
 
