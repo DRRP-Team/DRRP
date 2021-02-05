@@ -153,6 +153,8 @@ Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
     +SPECTRAL
     -SOLID
     -SHOOTABLE
+
+    Tag "Morthimer McMare Fix This!"
 }
 
 Actor DRRPDamageTestDoll : DRRPDamageDoll 10901 { // Written in ZScript
