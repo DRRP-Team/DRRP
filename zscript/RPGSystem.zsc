@@ -15,7 +15,7 @@ class RPGSystemHandler: EventHandler {
 
     /* Monsters and crates random death drop data and chooser. */
     const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
-                                "Clip, DRRPShell, RocketAmmo, Cell, Balloon, " ..
+                                "DRRPClip, DRRPShell, RocketAmmo, DRRPCell, Balloon, " ..
                                 "Clips4xSpawner, Shells4xSpawner, Cells4xSpawner, Balloons4xSpawner, " ..
                                 "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
     const DDGI_DefaultMonster_C = "1,5,3 , 5,5,3,3,2 , 1,1,1,1 , 5,1,5,5";
