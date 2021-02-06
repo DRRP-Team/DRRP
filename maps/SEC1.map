@@ -16170,6 +16170,7 @@ arg0 = 3003;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
+dontdraw = true;
 }
 
 linedef
@@ -16223,6 +16224,7 @@ v2 = 75;
 sidefront = 81;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16240,6 +16242,7 @@ v2 = 87;
 sidefront = 83;
 sideback = 84;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -16248,6 +16251,7 @@ v1 = 87;
 v2 = 88;
 sidefront = 85;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16261,6 +16265,7 @@ arg0 = 3003;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
+dontdraw = true;
 }
 
 linedef
@@ -16270,6 +16275,7 @@ v2 = 89;
 sidefront = 88;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16309,6 +16315,7 @@ v1 = 86;
 v2 = 92;
 sidefront = 94;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16318,6 +16325,7 @@ v2 = 93;
 sidefront = 95;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16326,6 +16334,7 @@ v1 = 76;
 v2 = 94;
 sidefront = 96;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16443,6 +16452,7 @@ v1 = 77;
 v2 = 74;
 sidefront = 115;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -16472,6 +16482,7 @@ v1 = 75;
 v2 = 76;
 sidefront = 119;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -17911,6 +17922,7 @@ v2 = 84;
 sidefront = 323;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -17927,6 +17939,7 @@ v1 = 89;
 v2 = 86;
 sidefront = 325;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -17935,6 +17948,7 @@ v1 = 92;
 v2 = 282;
 sidefront = 326;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -17943,6 +17957,7 @@ v1 = 282;
 v2 = 87;
 sidefront = 327;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -17968,6 +17983,7 @@ v1 = 283;
 v2 = 77;
 sidefront = 331;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -17976,6 +17992,7 @@ v1 = 94;
 v2 = 283;
 sidefront = 332;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -18574,6 +18591,7 @@ v1 = 131;
 v2 = 354;
 sidefront = 418;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -18582,6 +18600,7 @@ v1 = 130;
 v2 = 355;
 sidefront = 419;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -18600,6 +18619,7 @@ v1 = 357;
 v2 = 358;
 sidefront = 422;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -18609,6 +18629,7 @@ v2 = 360;
 sidefront = 423;
 sideback = 424;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -18684,6 +18705,7 @@ v2 = 368;
 sidefront = 435;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -18972,6 +18994,7 @@ v1 = 406;
 v2 = 407;
 sidefront = 474;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -19011,6 +19034,7 @@ arg0 = 3003;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
+dontdraw = true;
 }
 
 linedef
@@ -19056,6 +19080,7 @@ v1 = 415;
 v2 = 416;
 sidefront = 486;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -19064,6 +19089,7 @@ v1 = 416;
 v2 = 417;
 sidefront = 487;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -19946,6 +19972,7 @@ v2 = 412;
 sidefront = 609;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -19955,6 +19982,7 @@ v2 = 406;
 sidefront = 610;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -19988,6 +20016,7 @@ v1 = 402;
 v2 = 410;
 sidefront = 615;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -20268,6 +20297,7 @@ v1 = 417;
 v2 = 496;
 sidefront = 657;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -20286,6 +20316,7 @@ v1 = 368;
 v2 = 497;
 sidefront = 660;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -20299,6 +20330,7 @@ arg0 = 3003;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
+dontdraw = true;
 }
 
 linedef
@@ -20308,6 +20340,7 @@ v2 = 413;
 sidefront = 663;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -20963,6 +20996,7 @@ v1 = 358;
 v2 = 359;
 sidefront = 749;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -21063,6 +21097,7 @@ v2 = 357;
 sidefront = 762;
 sideback = 763;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -21072,6 +21107,7 @@ v2 = 360;
 sidefront = 764;
 sideback = 765;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -24757,6 +24793,7 @@ v1 = 843;
 v2 = 131;
 sidefront = 1397;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24765,6 +24802,7 @@ v1 = 845;
 v2 = 846;
 sidefront = 1398;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24783,6 +24821,7 @@ v1 = 847;
 v2 = 843;
 sidefront = 1401;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24791,6 +24830,7 @@ v1 = 848;
 v2 = 847;
 sidefront = 1402;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24810,6 +24850,7 @@ v2 = 848;
 sidefront = 1405;
 arg0 = 1;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24840,6 +24881,7 @@ v1 = 359;
 v2 = 851;
 sidefront = 1410;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24848,6 +24890,7 @@ v1 = 355;
 v2 = 850;
 sidefront = 1411;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24857,6 +24900,7 @@ v2 = 845;
 sidefront = 1412;
 arg0 = 1;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24865,6 +24909,7 @@ v1 = 853;
 v2 = 854;
 sidefront = 1413;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24873,6 +24918,7 @@ v1 = 850;
 v2 = 855;
 sidefront = 1414;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24882,6 +24928,7 @@ v2 = 853;
 sidefront = 1415;
 arg0 = 1;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24902,6 +24949,7 @@ v1 = 857;
 v2 = 856;
 sidefront = 1418;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24910,6 +24958,7 @@ v1 = 858;
 v2 = 857;
 sidefront = 1419;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24929,6 +24978,7 @@ v2 = 858;
 sidefront = 1422;
 arg0 = 1;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24937,6 +24987,7 @@ v1 = 856;
 v2 = 357;
 sidefront = 1423;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -24955,6 +25006,7 @@ v1 = 851;
 v2 = 852;
 sidefront = 1426;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -27867,6 +27919,7 @@ arg0 = 3003;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
+dontdraw = true;
 }
 
 linedef
@@ -27875,6 +27928,7 @@ v1 = 1077;
 v2 = 130;
 sidefront = 1910;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -27897,6 +27951,7 @@ v2 = 1078;
 sidefront = 1913;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -27986,6 +28041,7 @@ v1 = 497;
 v2 = 1084;
 sidefront = 1929;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -27994,6 +28050,7 @@ v1 = 1084;
 v2 = 1085;
 sidefront = 1930;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -28002,6 +28059,7 @@ v1 = 1085;
 v2 = 415;
 sidefront = 1931;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -28051,6 +28109,7 @@ v2 = 1077;
 sidefront = 1940;
 dontpegbottom = true;
 blocking = true;
+dontdraw = true;
 }
 
 linedef
@@ -28311,6 +28370,7 @@ v2 = 0;
 sidefront = 1989;
 sideback = 1990;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -46165,6 +46225,7 @@ textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
 special = 1024;
+hidden = true;
 }
 
 sector
@@ -46174,6 +46235,7 @@ textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
 special = 1024;
+hidden = true;
 }
 
 sector
@@ -46306,7 +46368,6 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
-special = 1024;
 }
 
 sector
@@ -46322,6 +46383,7 @@ sector
 texturefloor = "flatfl";
 textureceiling = "FLAT20";
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46331,6 +46393,7 @@ textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
 special = 1024;
+hidden = true;
 }
 
 sector
@@ -46538,6 +46601,8 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+special = 1024;
+hidden = true;
 }
 
 sector
@@ -46546,6 +46611,7 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46600,6 +46666,7 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46609,6 +46676,7 @@ textureceiling = "flatfl";
 heightceiling = 28;
 lightlevel = 64;
 rotationceiling = 90.000000;
+hidden = true;
 }
 
 sector
@@ -46617,6 +46685,7 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46657,6 +46726,7 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46718,6 +46788,7 @@ lightlevel = 64;
 yscalefloor = 4.000000;
 rotationfloor = 180.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -46772,6 +46843,7 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46779,6 +46851,7 @@ sector
 texturefloor = "flatfl";
 textureceiling = "DRDC34";
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46802,6 +46875,7 @@ sector
 texturefloor = "flatfl";
 textureceiling = "DRDC34";
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -46863,6 +46937,7 @@ heightceiling = 64;
 lightlevel = 64;
 special = 1024;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -46907,6 +46982,7 @@ textureceiling = "LITE5OFF";
 heightceiling = 60;
 lightlevel = 64;
 xpanningceiling = -8.000000;
+hidden = true;
 }
 
 sector
@@ -46916,6 +46992,7 @@ textureceiling = "LITE5OFF";
 heightceiling = 60;
 lightlevel = 64;
 xpanningceiling = -8.000000;
+hidden = true;
 }
 
 sector
@@ -48026,6 +48103,7 @@ yscalefloor = 2.000000;
 rotationfloor = 90.000000;
 xpanningfloor = 8.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48037,6 +48115,7 @@ lightlevel = 64;
 yscalefloor = 4.000000;
 rotationfloor = 180.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48047,6 +48126,7 @@ heightceiling = 64;
 lightlevel = 64;
 yscalefloor = 4.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48060,6 +48140,7 @@ yscalefloor = 2.000000;
 rotationfloor = 90.000000;
 xpanningfloor = -8.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48073,6 +48154,7 @@ yscalefloor = 2.000000;
 rotationfloor = 90.000000;
 xpanningfloor = -8.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48083,6 +48165,7 @@ heightceiling = 64;
 lightlevel = 64;
 yscalefloor = 4.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48104,6 +48187,7 @@ yscalefloor = 2.000000;
 rotationfloor = 90.000000;
 xpanningfloor = 8.000000;
 ypanningceiling = 32.000000;
+hidden = true;
 }
 
 sector
@@ -48272,6 +48356,7 @@ lightlevel = 64;
 ypanningceiling = 56.000000;
 rotationceiling = 90.000000;
 xpanningceiling = 16.000000;
+hidden = true;
 }
 
 sector
@@ -48283,6 +48368,7 @@ lightlevel = 64;
 ypanningceiling = 56.000000;
 rotationceiling = 90.000000;
 xpanningceiling = 16.000000;
+hidden = true;
 }
 
 sector
@@ -48746,6 +48832,7 @@ texturefloor = "flatfl";
 textureceiling = "flatfl";
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -48764,6 +48851,7 @@ textureceiling = "RLITE3";
 heightceiling = 60;
 lightlevel = 64;
 xpanningceiling = -8.000000;
+hidden = true;
 }
 
 sector
@@ -48773,6 +48861,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 64;
+hidden = true;
 }
 
 sector
@@ -48789,6 +48878,7 @@ sector
 texturefloor = "flatfl";
 textureceiling = "flatfl";
 lightlevel = 64;
+hidden = true;
 }
 
 sector
