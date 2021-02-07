@@ -12686,6 +12686,366 @@ x = 1280.000;
 y = 384.000;
 }
 
+vertex
+{
+x = 1215.000;
+y = -1.000;
+}
+
+vertex
+{
+x = 1215.000;
+y = -63.000;
+}
+
+vertex
+{
+x = 1215.000;
+y = -65.000;
+}
+
+vertex
+{
+x = 1215.000;
+y = -127.000;
+}
+
+vertex
+{
+x = 1215.000;
+y = -129.000;
+}
+
+vertex
+{
+x = 1215.000;
+y = -191.000;
+}
+
+vertex
+{
+x = 577.000;
+y = 65.000;
+}
+
+vertex
+{
+x = 577.000;
+y = 127.000;
+}
+
+vertex
+{
+x = 895.000;
+y = 127.000;
+}
+
+vertex
+{
+x = 895.000;
+y = 65.000;
+}
+
+vertex
+{
+x = 705.000;
+y = 1089.000;
+}
+
+vertex
+{
+x = 705.000;
+y = 1151.000;
+}
+
+vertex
+{
+x = 705.000;
+y = 1025.000;
+}
+
+vertex
+{
+x = 705.000;
+y = 1087.000;
+}
+
+vertex
+{
+x = 705.000;
+y = 961.000;
+}
+
+vertex
+{
+x = 705.000;
+y = 1023.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1151.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1089.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1087.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1025.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1023.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 961.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1345.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1279.000;
+}
+
+vertex
+{
+x = 2559.000;
+y = 1217.000;
+}
+
+vertex
+{
+x = 2113.000;
+y = 577.000;
+}
+
+vertex
+{
+x = 2113.000;
+y = 639.000;
+}
+
+vertex
+{
+x = 2113.000;
+y = 449.000;
+}
+
+vertex
+{
+x = 2113.000;
+y = 511.000;
+}
+
+vertex
+{
+x = 2303.000;
+y = 511.000;
+}
+
+vertex
+{
+x = 2303.000;
+y = 449.000;
+}
+
+vertex
+{
+x = 2303.000;
+y = 639.000;
+}
+
+vertex
+{
+x = 2303.000;
+y = 577.000;
+}
+
+vertex
+{
+x = 2369.000;
+y = 1345.000;
+}
+
+vertex
+{
+x = 2369.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 2369.000;
+y = 1217.000;
+}
+
+vertex
+{
+x = 2369.000;
+y = 1279.000;
+}
+
+vertex
+{
+x = 1665.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1727.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1729.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1791.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1857.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1919.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1921.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 1983.000;
+y = 1407.000;
+}
+
+vertex
+{
+x = 706.000;
+y = 1151.000;
+}
+
+vertex
+{
+x = 768.000;
+y = 1151.000;
+}
+
+vertex
+{
+x = 833.000;
+y = 1151.000;
+}
+
+vertex
+{
+x = 895.000;
+y = 1151.000;
+}
+
+vertex
+{
+x = 2175.000;
+y = 639.000;
+}
+
+vertex
+{
+x = 2241.000;
+y = 639.000;
+}
+
+vertex
+{
+x = 1663.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1601.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1727.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1665.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1535.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1473.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1471.000;
+y = 705.000;
+}
+
+vertex
+{
+x = 1409.000;
+y = 705.000;
+}
+
 linedef
 {
 v1 = 0;
@@ -23380,6 +23740,285 @@ twosided = true;
 dontdraw = true;
 }
 
+linedef
+{
+v1 = 878;
+v2 = 879;
+sidefront = 1698;
+sideback = 1699;
+twosided = true;
+}
+
+linedef
+{
+v1 = 880;
+v2 = 881;
+sidefront = 1700;
+sideback = 1701;
+twosided = true;
+}
+
+linedef
+{
+v1 = 882;
+v2 = 883;
+sidefront = 1702;
+sideback = 1703;
+twosided = true;
+}
+
+linedef
+{
+v1 = 884;
+v2 = 885;
+sidefront = 1705;
+sideback = 1704;
+twosided = true;
+}
+
+linedef
+{
+v1 = 886;
+v2 = 887;
+sidefront = 1706;
+sideback = 1707;
+twosided = true;
+}
+
+linedef
+{
+v1 = 888;
+v2 = 889;
+sidefront = 1709;
+sideback = 1708;
+twosided = true;
+}
+
+linedef
+{
+v1 = 890;
+v2 = 891;
+sidefront = 1711;
+sideback = 1710;
+twosided = true;
+}
+
+linedef
+{
+v1 = 892;
+v2 = 893;
+sidefront = 1713;
+sideback = 1712;
+twosided = true;
+}
+
+linedef
+{
+v1 = 894;
+v2 = 895;
+sidefront = 1714;
+sideback = 1715;
+twosided = true;
+}
+
+linedef
+{
+v1 = 896;
+v2 = 897;
+sidefront = 1716;
+sideback = 1717;
+twosided = true;
+}
+
+linedef
+{
+v1 = 898;
+v2 = 899;
+sidefront = 1718;
+sideback = 1719;
+twosided = true;
+}
+
+linedef
+{
+v1 = 900;
+v2 = 901;
+sidefront = 1720;
+sideback = 1721;
+twosided = true;
+}
+
+linedef
+{
+v1 = 902;
+v2 = 903;
+sidefront = 1722;
+sideback = 1723;
+twosided = true;
+}
+
+linedef
+{
+v1 = 904;
+v2 = 905;
+sidefront = 1725;
+sideback = 1724;
+twosided = true;
+}
+
+linedef
+{
+v1 = 906;
+v2 = 907;
+sidefront = 1727;
+sideback = 1726;
+twosided = true;
+}
+
+linedef
+{
+v1 = 908;
+v2 = 909;
+sidefront = 1728;
+sideback = 1729;
+twosided = true;
+}
+
+linedef
+{
+v1 = 910;
+v2 = 911;
+sidefront = 1730;
+sideback = 1731;
+twosided = true;
+}
+
+linedef
+{
+v1 = 912;
+v2 = 913;
+sidefront = 1733;
+sideback = 1732;
+twosided = true;
+}
+
+linedef
+{
+v1 = 914;
+v2 = 915;
+sidefront = 1735;
+sideback = 1734;
+twosided = true;
+}
+
+linedef
+{
+v1 = 916;
+v2 = 917;
+sidefront = 1736;
+sideback = 1737;
+twosided = true;
+}
+
+linedef
+{
+v1 = 918;
+v2 = 919;
+sidefront = 1738;
+sideback = 1739;
+twosided = true;
+}
+
+linedef
+{
+v1 = 920;
+v2 = 921;
+sidefront = 1740;
+sideback = 1741;
+twosided = true;
+}
+
+linedef
+{
+v1 = 922;
+v2 = 923;
+sidefront = 1742;
+sideback = 1743;
+twosided = true;
+}
+
+linedef
+{
+v1 = 924;
+v2 = 925;
+sidefront = 1744;
+sideback = 1745;
+twosided = true;
+}
+
+linedef
+{
+v1 = 926;
+v2 = 927;
+sidefront = 1746;
+sideback = 1747;
+twosided = true;
+}
+
+linedef
+{
+v1 = 905;
+v2 = 928;
+sidefront = 1748;
+sideback = 1749;
+twosided = true;
+}
+
+linedef
+{
+v1 = 929;
+v2 = 910;
+sidefront = 1750;
+sideback = 1751;
+twosided = true;
+}
+
+linedef
+{
+v1 = 930;
+v2 = 931;
+sidefront = 1753;
+sideback = 1752;
+twosided = true;
+}
+
+linedef
+{
+v1 = 932;
+v2 = 933;
+sidefront = 1755;
+sideback = 1754;
+twosided = true;
+}
+
+linedef
+{
+v1 = 934;
+v2 = 935;
+sidefront = 1757;
+sideback = 1756;
+twosided = true;
+}
+
+linedef
+{
+v1 = 936;
+v2 = 937;
+sidefront = 1759;
+sideback = 1758;
+twosided = true;
+}
+
 sidedef
 {
 sector = 149;
@@ -23426,7 +24065,7 @@ offsetx = 64;
 sidedef
 {
 sector = 211;
-texturemiddle = "drpgb000";
+texturemiddle = "drdc34";
 offsetx = 128;
 }
 
@@ -23457,7 +24096,6 @@ texturemiddle = "DRDC47A";
 sidedef
 {
 sector = 1;
-texturetop = "DRPGA12";
 texturemiddle = "DRDC6";
 }
 
@@ -23549,7 +24187,7 @@ texturemiddle = "DRDC27";
 sidedef
 {
 sector = 174;
-texturemiddle = "DRPGB00";
+texturemiddle = "DRDC17";
 }
 
 sidedef
@@ -23926,7 +24564,7 @@ scalex_mid = 0.700000;
 sidedef
 {
 sector = 182;
-texturemiddle = "DRPGB000";
+texturemiddle = "drdc34";
 }
 
 sidedef
@@ -23956,7 +24594,7 @@ texturemiddle = "DRDC37";
 sidedef
 {
 sector = 190;
-texturemiddle = "DRPGB000";
+texturemiddle = "drdc34";
 }
 
 sidedef
@@ -24061,7 +24699,7 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 226;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 64;
 }
 
@@ -25196,7 +25834,7 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 227;
-texturemiddle = "drpgc00";
+texturemiddle = "DRDC18";
 }
 
 sidedef
@@ -26080,7 +26718,7 @@ texturemiddle = "DRDC28";
 sidedef
 {
 sector = 265;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 }
 
 sidedef
@@ -26355,7 +26993,7 @@ texturemiddle = "DRDC10";
 sidedef
 {
 sector = 203;
-texturemiddle = "DRPGB010";
+texturemiddle = "DRDC37";
 }
 
 sidedef
@@ -26402,7 +27040,7 @@ texturemiddle = "DRDC37";
 sidedef
 {
 sector = 203;
-texturemiddle = "DRPGB012";
+texturemiddle = "DRDC37";
 }
 
 sidedef
@@ -26418,13 +27056,13 @@ sector = 81;
 sidedef
 {
 sector = 203;
-texturemiddle = "DRPGB012";
+texturemiddle = "DRDC37";
 }
 
 sidedef
 {
 sector = 203;
-texturemiddle = "DRPGB010";
+texturemiddle = "DRDC37";
 }
 
 sidedef
@@ -27207,7 +27845,7 @@ texturemiddle = "DOORSTOP";
 sidedef
 {
 sector = 105;
-texturemiddle = "DRPGB012";
+texturemiddle = "drdc34";
 offsetx_mid = -17;
 }
 
@@ -27377,7 +28015,7 @@ sector = 290;
 sidedef
 {
 sector = 203;
-texturemiddle = "DRPGB010";
+texturemiddle = "DRDC37";
 offsetx = -12;
 offsetx_mid = 16;
 }
@@ -27452,7 +28090,7 @@ texturemiddle = "DRDC28";
 sidedef
 {
 sector = 227;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 }
 
 sidedef
@@ -27477,21 +28115,21 @@ sector = 114;
 sidedef
 {
 sector = 112;
-texturemiddle = "DRPGB000";
+texturemiddle = "drdc34";
 offsetx_mid = 56;
 }
 
 sidedef
 {
 sector = 114;
-texturemiddle = "DRPGB000";
+texturemiddle = "drdc34";
 offsetx_mid = 16;
 }
 
 sidedef
 {
 sector = 112;
-texturemiddle = "DRPGB000";
+texturemiddle = "drdc34";
 }
 
 sidedef
@@ -27525,7 +28163,7 @@ sector = 114;
 sidedef
 {
 sector = 114;
-texturemiddle = "DRPGB000";
+texturemiddle = "drdc34";
 offsetx_mid = 48;
 }
 
@@ -27538,7 +28176,7 @@ texturemiddle = "drdc34";
 sidedef
 {
 sector = 227;
-texturemiddle = "drpgc00";
+texturemiddle = "DRDC18";
 }
 
 sidedef
@@ -27669,7 +28307,7 @@ scalex_mid = 1.200000;
 sidedef
 {
 sector = 211;
-texturemiddle = "drpgb000";
+texturemiddle = "drdc34";
 }
 
 sidedef
@@ -27681,7 +28319,7 @@ texturemiddle = "DRDC35";
 sidedef
 {
 sector = 211;
-texturemiddle = "drpgb000";
+texturemiddle = "drdc34";
 }
 
 sidedef
@@ -27718,7 +28356,7 @@ sector = 203;
 sidedef
 {
 sector = 203;
-texturemiddle = "DRPGB010";
+texturemiddle = "DRDC37";
 }
 
 sidedef
@@ -27742,7 +28380,7 @@ sector = 123;
 sidedef
 {
 sector = 121;
-texturemiddle = "DRPGB012";
+texturemiddle = "DRDC37";
 offsetx_mid = 48;
 }
 
@@ -27756,7 +28394,7 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 121;
-texturemiddle = "DRPGB012";
+texturemiddle = "DRDC37";
 }
 
 sidedef
@@ -27832,7 +28470,7 @@ sector = 127;
 sidedef
 {
 sector = 125;
-texturemiddle = "DRPGB012";
+texturemiddle = "DRDC37";
 offsetx_mid = 48;
 }
 
@@ -27846,7 +28484,7 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 125;
-texturemiddle = "DRPGB012";
+texturemiddle = "DRDC37";
 }
 
 sidedef
@@ -27911,7 +28549,7 @@ offsetx_mid = 59;
 sidedef
 {
 sector = 130;
-texturetop = "DRPGB001";
+texturetop = "drdc34";
 }
 
 sidedef
@@ -27949,7 +28587,7 @@ texturemiddle = "DRDC27";
 sidedef
 {
 sector = 129;
-texturetop = "DRPGB001";
+texturetop = "drdc34";
 }
 
 sidedef
@@ -28310,7 +28948,7 @@ offsetx = 9;
 sidedef
 {
 sector = 271;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 256;
 }
 
@@ -28324,14 +28962,14 @@ offsetx = 192;
 sidedef
 {
 sector = 271;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 128;
 }
 
 sidedef
 {
 sector = 271;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 64;
 }
 
@@ -28359,7 +28997,7 @@ offsetx = 384;
 sidedef
 {
 sector = 271;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 320;
 }
 
@@ -28496,7 +29134,7 @@ offsetx = 128;
 sidedef
 {
 sector = 241;
-texturemiddle = "DRPGB001";
+texturemiddle = "drdc34";
 offsetx = 64;
 }
 
@@ -28618,7 +29256,7 @@ offsetx = 128;
 sidedef
 {
 sector = 211;
-texturemiddle = "drpgb000";
+texturemiddle = "drdc34";
 offsetx = 128;
 }
 
@@ -28766,21 +29404,21 @@ offsetx = 64;
 sidedef
 {
 sector = 269;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 128;
 }
 
 sidedef
 {
 sector = 269;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 64;
 }
 
 sidedef
 {
 sector = 269;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 256;
 }
 
@@ -28801,7 +29439,7 @@ offsetx = 384;
 sidedef
 {
 sector = 269;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 320;
 }
 
@@ -30005,7 +30643,7 @@ sector = 160;
 sidedef
 {
 sector = 227;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 128;
 }
 
@@ -33609,7 +34247,7 @@ sector = 264;
 sidedef
 {
 sector = 266;
-texturemiddle = "drpgb00";
+texturemiddle = "DRDC17";
 offsetx = 128;
 }
 
@@ -34141,6 +34779,374 @@ sector = 62;
 sidedef
 {
 sector = 303;
+}
+
+sidedef
+{
+sector = 174;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 174;
+}
+
+sidedef
+{
+sector = 174;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 174;
+}
+
+sidedef
+{
+sector = 174;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 174;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 182;
+}
+
+sidedef
+{
+sector = 182;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 190;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 190;
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 226;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 226;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 265;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 265;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 265;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 265;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 266;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 266;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 211;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 271;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ001";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ001";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ001";
+}
+
+sidedef
+{
+sector = 203;
+texturemiddle = "DRPGZ001";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 269;
+texturemiddle = "DRPGZ002";
 }
 
 sector
