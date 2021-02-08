@@ -3,5 +3,5 @@
 script 10 (void) { // Activate reactor
 	SetLineTexture(1, SIDE_FRONT, TEXTURE_MIDDLE, "REAC1"); // Left
 	SetLineTexture(2, SIDE_FRONT, TEXTURE_MIDDLE, "REAC2"); // Center
-	SetLineTexture(3, SIDE_FRONT, TEXTURE_MIDDLE, "REAC3"); // Right
+	SetLineTexture(3, SIDE_FRONT, TEXTURE_MIDDLE, "REAC1"); // Right
 }

@@ -64,7 +64,7 @@ Script 3007 (int doorf, int doorb) { // Door Unlocker
     SetLineSpecial(doorf, ACS_Execute, 3001);
 
     if(doorb != 0) {
-        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRPGA10B");
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
         SetLineSpecial(doorb, ACS_Execute, 3001);
     }
 }
