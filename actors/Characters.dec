@@ -36,7 +36,7 @@ Actor DRRPCharacter: DRRPCharacter_ZSPatch {
             //"####" A 0 A_ChangeFlag("SHOOTABLE", True)
             "####" A 1
             Wait
-        Turn:
+        Turn:   // Transformation to the monster and the like.
             "####" A 1 {
                 A_DRRP_TransformationParticles();
                 A_Pain();

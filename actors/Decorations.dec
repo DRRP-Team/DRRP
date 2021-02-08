@@ -63,7 +63,7 @@ Actor DRRPYellowLamp : Column replaces Column {
     States {
         Spawn:
             TNT1 A 0
-            TNT1 A 0 A_SpawnItemEx( "DRRPLight1", 0, 0, 40 )
+            TNT1 A 0 A_SpawnItemEx( "DRRPLight1", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER )
             Goto Super::Spawn
     }
 }
@@ -88,8 +88,9 @@ Actor DRRPLight1 10713 {
 
     States {
         Spawn:
-            GLOW A -1 Bright
-            Stop
+            GLOW A 0 Bright // Next line will remove lamp's glow if it is destroyed:
+            GLOW A 1 Bright A_JumpIf( IsPointerEqual( AAPTR_MASTER, AAPTR_NULL ), "Null" )
+            Wait
     }
 }
 
@@ -266,20 +267,6 @@ Actor DRRPCrateShard {
         "####" "#" 2 A_FadeOut(0.02)
         Wait
     }
-}
-
-Actor DRRPCrateSpawner: RandomSpawner {
-    // See "/ZScript/RPGSystem.zsc": "WorldThingDamaged()" calls "deathDropGetName()".
-    DropItem "ArmorBonus"
-    DropItem "SmallMedikit"
-    DropItem "Credit"
-    DropItem "GoldCredit"
-    DropItem "Shell"
-    DropItem "DRRPCell"
-    DropItem "DRRPClip"
-    DropItem "Balloon"
-    DropItem "RocketAmmo"
-    DropItem "DRRPExplosion"
 }
 
 Actor DRRPWardrobe 10706  {
