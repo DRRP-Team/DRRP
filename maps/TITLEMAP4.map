@@ -5532,14 +5532,12 @@ sidedef
 {
 sector = 0;
 texturemiddle = "DRPGZ010";
-texturebottom = "DRPGB010";
 }
 
 sidedef
 {
 sector = 3;
 texturemiddle = "DRPGZ010";
-texturebottom = "DRPGB000";
 }
 
 sidedef
@@ -5695,8 +5693,9 @@ offsetx_mid = 35;
 sidedef
 {
 sector = 3;
-texturemiddle = "RCOFA00";
+texturemiddle = "drdc49";
 offsetx = 192;
+scalex_mid = -1.000000;
 }
 
 sidedef
@@ -5835,7 +5834,6 @@ offsetx_mid = 3;
 sidedef
 {
 sector = 2;
-texturetop = "DRPGA11B";
 texturebottom = "DRDC8";
 }
 
@@ -5981,14 +5979,12 @@ sidedef
 {
 sector = 5;
 texturemiddle = "DRPGZ010";
-texturebottom = "DRPGB010";
 }
 
 sidedef
 {
 sector = 6;
 texturemiddle = "DRPGZ010";
-texturebottom = "DRPGB000";
 }
 
 sidedef
@@ -6029,13 +6025,11 @@ sidedef
 {
 sector = 6;
 texturetop = "DRDC11";
-texturebottom = "DRPGB010";
 }
 
 sidedef
 {
 sector = 8;
-texturebottom = "DRPGB000";
 }
 
 sidedef
@@ -6085,13 +6079,11 @@ sidedef
 {
 sector = 6;
 texturetop = "DRDC11";
-texturebottom = "DRPGB010";
 }
 
 sidedef
 {
 sector = 10;
-texturebottom = "DRPGB000";
 }
 
 sidedef
@@ -6136,13 +6128,11 @@ sidedef
 {
 sector = 6;
 texturetop = "DRDC11";
-texturebottom = "DRPGB010";
 }
 
 sidedef
 {
 sector = 12;
-texturebottom = "DRPGB000";
 }
 
 sidedef
@@ -6219,13 +6209,11 @@ sidedef
 {
 sector = 6;
 texturetop = "DRDC11";
-texturebottom = "DRPGB010";
 }
 
 sidedef
 {
 sector = 13;
-texturebottom = "DRPGB000";
 }
 
 sidedef
@@ -7023,9 +7011,10 @@ offsetx = 128;
 sidedef
 {
 sector = 18;
-texturetop = "REAC3";
+texturetop = "reac1";
 texturemiddle = "DRDC11";
 offsetx = 192;
+scalex_top = -1.000000;
 }
 
 sidedef
@@ -7454,6 +7443,7 @@ offsetx_bottom = 16;
 sidedef
 {
 sector = 26;
+texturemiddle = "DRDC8";
 }
 
 sidedef
@@ -7572,7 +7562,7 @@ offsetx_mid = 48;
 sidedef
 {
 sector = 7;
-texturetop = "DRPGA11B";
+texturetop = "DRDC8";
 }
 
 sidedef
@@ -8543,8 +8533,8 @@ xpanningfloor = -32;
 
 sector
 {
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT3";
+texturefloor = "floor";
+textureceiling = "ceiling";
 heightfloor = -64;
 lightlevel = 250;
 rotationfloor = 90;
@@ -8588,8 +8578,8 @@ id = 666;
 
 sector
 {
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT3";
+texturefloor = "RROCK05";
+textureceiling = "BLOOD1";
 heightceiling = 64;
 lightlevel = 125;
 rotationfloor = 90;
