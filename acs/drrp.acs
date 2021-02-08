@@ -409,8 +409,9 @@ Script "levelUp" (bool windowOnly) { // You can use it by the "pukename levelup"
         l:"DRRP_B_ID75", i:2, s:"\n",       // Strength:
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
-        l:"DRRP_B_ID77"));                  // Helath restored.
+        l:"DRRP_B_ID77"));                  // Health restored.
 }
+
 
 #include "inc_flashlight.acs"
 #include "inc_mapapis.acs"
