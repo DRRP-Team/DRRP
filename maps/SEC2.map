@@ -37427,7 +37427,7 @@ sidedef
 {
 sector = 22;
 texturemiddle = "DRPGZ002";
-offsety = -64;
+offsety = -72;
 }
 
 sidedef
@@ -44556,7 +44556,7 @@ ypanningceiling = 32.000000;
 
 sector
 {
-texturefloor = "DRDC10";
+texturefloor = "MFLR8_2";
 textureceiling = "FLAT20";
 lightlevel = 175;
 id = 6;
@@ -44565,6 +44565,7 @@ xpanningceiling = 32.000000;
 hidden = true;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -44628,11 +44629,10 @@ textureceiling = "FLAT20";
 lightlevel = 175;
 id = 7;
 xpanningfloor = 32.000000;
-rotationfloor = 270;
+xpanningceiling = 32.000000;
 hidden = true;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
@@ -45011,10 +45011,9 @@ textureceiling = "FLAT20";
 lightlevel = 175;
 id = 12;
 xpanningfloor = 32.000000;
-rotationfloor = 270;
+xpanningceiling = 32.000000;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
@@ -45411,11 +45410,10 @@ textureceiling = "FLAT20";
 lightlevel = 175;
 id = 15;
 xpanningfloor = 32.000000;
-rotationfloor = 270;
+xpanningceiling = 32.000000;
 hidden = true;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
@@ -45835,11 +45833,10 @@ textureceiling = "FLAT20";
 lightlevel = 175;
 id = 666;
 xpanningfloor = 32.000000;
-rotationfloor = 270;
+xpanningceiling = 32.000000;
 hidden = true;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
