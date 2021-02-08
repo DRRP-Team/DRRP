@@ -315,6 +315,7 @@ Actor Malwrath: Cacodemon_BaseDRRP 10262 {
     //$Sprite HEADA1
 
     Obituary "$DRRP_OB_MALWRATH"
+    HitObituary "$DRRP_OBM_MALWRATH"
     Tag "$DRRP_M_MALWRATH"
     Health 195
     Translation "168:191=160:167", "16:47=160:166", "112:127=176:191", "192:207=176:191", "240:247=191:191" //"173:191=[215, 222, 0]:[107, 65, 0]", "16:47=[214, 190, 123]:[107, 81, 0]", "167:167=164:164", "192:207=32:39", "240:247=40:47", "112:127=16:47"
@@ -322,7 +323,12 @@ Actor Malwrath: Cacodemon_BaseDRRP 10262 {
     States {
     Missile:
         HEAD BC 5 A_FaceTarget
-        HEAD DCD 5 Bright A_CustomComboAttack( "DRRPMalwrathBall", 32, 10 * Random( 1, 3 ) )
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPMalwrathBall", 32, 7 * Random( 1, 3 ) )
+        HEAD C 9
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPMalwrathBall", 32, 7 * Random( 1, 3 ) )
+        HEAD C 9
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPMalwrathBall", 32, 7 * Random( 1, 3 ) )
+        HEAD C 9
         Goto See
     }
 }
@@ -332,13 +338,19 @@ Actor DRRPCacodemon: Cacodemon_BaseDRRP replaces Cacodemon 10362 {
     //$Sprite HEADA1
 
     Obituary "$DRRP_OB_CACODEMON"
+    HitObituary "$DRRP_OBM_CACODEMON"
     Tag "$DRRP_M_CACODEMON"
     Health 365
 
     States {
     Missile:
         HEAD BC 5 A_FaceTarget
-        HEAD DCD 5 Bright A_CustomComboAttack( "DRRPCacodemonBall", 32, 10 * Random( 1, 5 ) + 5 )
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPCacodemonBall", 32, 10 * Random( 1, 5 ) + 5 )
+        HEAD C 9 
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPCacodemonBall", 32, 10 * Random( 1, 5 ) + 5 )
+        HEAD C 9 
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPCacodemonBall", 32, 10 * Random( 1, 5 ) + 5 )
+        HEAD C 9 
         Goto See
     }
 }
@@ -348,6 +360,7 @@ Actor Wretched: Cacodemon_BaseDRRP 10462 {
     //$Sprite HEADA1
 
     Obituary "$DRRP_OB_WRETCHED"
+    HitObituary "$DRRP_OBM_WRETCHED"
     Tag "$DRRP_M_WRETCHED"
     Health 650
     Translation "168:191=193:207", "16:47=193:201", "192:207=168:191", "223:223=207:207"
@@ -355,18 +368,23 @@ Actor Wretched: Cacodemon_BaseDRRP 10462 {
     States {
     Missile:
         HEAD BC 5 A_FaceTarget
-        HEAD DCD 5 Bright A_CustomComboAttack( "DRRPWretchedBall", 32, 10 * Random( 2, 8 ) )
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPWretchedBall", 32, 10 * Random( 2, 8 ) )
+        HEAD C 9 
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPWretchedBall", 32, 10 * Random( 2, 8 ) )
+        HEAD C 9 
+        HEAD D 4 Bright A_CustomComboAttack( "DRRPWretchedBall", 32, 10 * Random( 2, 8 ) )
+        HEAD C 9 
         Goto See
     }
 }
 
 Actor DRRPMalwrathBall: CacodemonBall {
-    Damage (3 * Random( 3, 8 ))
+    Damage (2 * Random( 3, 8 ) + 3)
     Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231"
 }
 
 Actor DRRPCacodemonBall: CacodemonBall replaces CacodemonBall {
-    Damage (5 * Random( 3, 10 ) + 7)
+    Damage (4 * Random( 3, 10 ) + 7)
     Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231"
 }
 
