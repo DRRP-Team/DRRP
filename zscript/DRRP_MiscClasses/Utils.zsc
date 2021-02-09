@@ -20,11 +20,22 @@ enum RPGGetFeatureTypes {
 class DRRPMath {
     const e = 2.71828182845904523536;
 
-    // Returns (digit^power) if digit is greater than 0, else returns NAN.
+    // Returns (digit^power).
     //(I think there's no situations in project where I may use imaginary numbers).
     static double Power( double digit, double power ) {
-        return exp( power * log( digit ) );
-    }
+        double outValue = 1.0;
+
+        if ( power != 0.0 ) {
+            if ( digit > 0.0 )
+                exp( power * log( digit ) );
+            else if ( digit == 0.0 )
+                outValue = 0.0;
+            else
+                outValue = exp( power * log( abs( digit ) ) ) * ( power > 0.0? 1 : -1 );
+        }
+
+        return outValue;
+    } // of static double Power( double digit, double power ) {
 
 }
 
