@@ -919,3 +919,28 @@ Material Texture SC77_01 {
     Texture tex_heightmap   "materials/height/SC77_01.png"
     shader                  "shaders/parallax_pbr.fp"
 }
+
+// BREW Ceilings
+
+// Rectangular lights
+Material Texture DRDC53 {
+    BrightMap   "materials/emission/drdc53.png"
+}
+
+Material Texture DRDC63 {
+    BrightMap   "materials/emission/drdc53.png"
+}
+
+
+// Circlular lights
+Material Texture DRDC55 {
+    BrightMap   "materials/emission/drdc55.png"
+}
+
+Material Texture DRDC58 {
+    BrightMap   "materials/emission/drdc55.png"
+}
+
+Material Texture DRDC60 {
+    BrightMap   "materials/emission/drdc55.png"
+}
