@@ -7325,64 +7325,7 @@ arg0 = 1;
 
 thing
 {
-x = 1120.000;
-y = 352.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 56;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
 x = 1056.000;
-y = 224.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1184.000;
-y = 224.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1184.000;
 y = 480.000;
 type = 10265;
 arg1 = 255;
@@ -7402,6 +7345,44 @@ arg0 = 1;
 thing
 {
 x = 1056.000;
+y = 224.000;
+type = 10265;
+arg1 = 255;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+height = 64;
+renderstyle = "";
+arg0 = 1;
+}
+
+thing
+{
+x = 1184.000;
+y = 224.000;
+type = 10265;
+arg1 = 255;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+height = 64;
+renderstyle = "";
+arg0 = 1;
+}
+
+thing
+{
+x = 1184.000;
 y = 480.000;
 type = 10265;
 arg1 = 255;
@@ -36736,7 +36717,6 @@ textureceiling = "DRDC51";
 heightfloor = -3;
 heightceiling = 64;
 lightlevel = 125;
-xpanningceiling = 27;
 rotationceiling = 90.000000;
 xpanningfloor = 25;
 ypanningfloor = -20;
@@ -36800,7 +36780,6 @@ textureceiling = "DRDC51";
 heightfloor = -3;
 heightceiling = 64;
 lightlevel = 100;
-xpanningceiling = 27;
 rotationceiling = 90.000000;
 xpanningfloor = 25;
 rotationfloor = 90;
@@ -38476,7 +38455,6 @@ textureceiling = "DRDC51";
 heightfloor = -3;
 heightceiling = 64;
 lightlevel = 125;
-xpanningceiling = 27;
 rotationceiling = 90.000000;
 xpanningfloor = 25;
 ypanningfloor = -20;
