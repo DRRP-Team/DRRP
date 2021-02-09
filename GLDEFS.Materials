@@ -215,7 +215,7 @@ Material Texture RPWAL23 {
 
 // Reactor portal animation
 Material Texture REAC1 {
-    BrightMap "materials/emission/REAC1_BRT.png"
+    BrightMap "materials/emission/reac1_brt.png"
 }
 
 Material Texture REAC2 {
@@ -400,7 +400,7 @@ Material Texture DRDC10b {
 // Colorful doors
 
 Material Texture DRDC2 {
-    BrightMap "materials/emission/DRDC5_BRT.png"
+    BrightMap "materials/emission/drdc5_brt.png"
     normal "materials/normal/drdc5.png"
     specular "materials/specular/drdc5.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
@@ -414,7 +414,7 @@ Material Texture DRDC2b {
 }
 
 Material Texture DRDC3 {
-    BrightMap "materials/emission/DRDC5_BRT.png"
+    BrightMap "materials/emission/drdc5_brt.png"
     normal "materials/normal/drdc5.png"
     specular "materials/specular/drdc5.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
@@ -428,7 +428,7 @@ Material Texture DRDC3b {
 }
 
 Material Texture DRDC4 {
-    BrightMap "materials/emission/DRDC5_BRT.png"
+    BrightMap "materials/emission/drdc5_brt.png"
     normal "materials/normal/drdc4.png"
     specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
@@ -442,7 +442,7 @@ Material Texture DRDC4b {
 }
 
 Material Texture DRDC5 {
-    BrightMap "materials/emission/DRDC5_BRT.png"
+    BrightMap "materials/emission/drdc5_brt.png"
     normal "materials/normal/drdc5.png"
     specular "materials/specular/drdc5.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
@@ -458,7 +458,7 @@ Material Texture DRDC5b {
 // Opened/closed doors
 
 Material Texture DRDC9 {
-    BrightMap   "materials/emission/DRDC9_BRT.png"
+    BrightMap   "materials/emission/drdc9_brt.png"
     normal      "materials/normal/drdc0.png"
     specular    "materials/specular/drdc0.png"
     Texture tex_heightmap   "materials/height/drdc0.png"
@@ -466,7 +466,7 @@ Material Texture DRDC9 {
 }
 
 Material Texture DRDC8 {
-    BrightMap   "materials/emission/DRDC8_BRT.png"
+    BrightMap   "materials/emission/drdc8_brt.png"
     normal      "materials/normal/drdc0.png"
     specular    "materials/specular/drdc0.png"
     Texture tex_heightmap   "materials/height/drdc0.png"
@@ -512,168 +512,168 @@ Material Texture DRDC31 {
 
 // Morthimer's computers
     Material Texture CGR_CAPT {
-        BrightMap "materials/emission/CGR_CAPT_BRT.png"
+        BrightMap "materials/emission/cgr_capt_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_CRSR {
-        BrightMap "materials/emission/CGR_CRSR_BRT.png"
+        BrightMap "materials/emission/cgr_crsr_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_EMPT {
-        BrightMap "materials/emission/CGR_EMPT_BRT.png"
+        BrightMap "materials/emission/cgr_empt_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC1 {
-        BrightMap "materials/emission/CGR_LC1_BRT.png"
+        BrightMap "materials/emission/cgr_lc1_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC2 {
-        BrightMap "materials/emission/CGR_LC2_BRT.png"
+        BrightMap "materials/emission/cgr_lc2_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC3 {
-        BrightMap "materials/emission/CGR_LC3_BRT.png"
+        BrightMap "materials/emission/cgr_lc3_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC4 {
-        BrightMap "materials/emission/CGR_LC4_BRT.png"
+        BrightMap "materials/emission/cgr_lc4_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC5 {
-        BrightMap "materials/emission/CGR_LC5_BRT.png"
+        BrightMap "materials/emission/cgr_lc5_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC6 {
-        BrightMap "materials/emission/CGR_LC6_BRT.png"
+        BrightMap "materials/emission/cgr_lc6_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC7 {
-        BrightMap "materials/emission/CGR_LC7_BRT.png"
+        BrightMap "materials/emission/cgr_lc7_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC8 {
-        BrightMap "materials/emission/CGR_LC8_BRT.png"
+        BrightMap "materials/emission/cgr_lc8_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC9 {
-        BrightMap "materials/emission/CGR_LC9_BRT.png"
+        BrightMap "materials/emission/cgr_lc9_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC10 {
-        BrightMap "materials/emission/CGR_LC10_BRT.png"
+        BrightMap "materials/emission/cgr_lc10_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC11 {
-        BrightMap "materials/emission/CGR_LC11_BRT.png"
+        BrightMap "materials/emission/cgr_lc11_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_LC12 {
-        BrightMap "materials/emission/CGR_LC12_BRT.png"
+        BrightMap "materials/emission/cgr_lc12_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_MSG {
-        BrightMap "materials/emission/CGR_MSG_BRT.png"
+        BrightMap "materials/emission/cgr_msg_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_OFF {
-        BrightMap "materials/emission/CGR_OFF_BRT.png"
+        BrightMap "materials/emission/cgr_off_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_TXT1 {
-        BrightMap "materials/emission/CGR_TXT1_BRT.png"
+        BrightMap "materials/emission/cgr_txt1_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_TXT2 {
-        BrightMap "materials/emission/CGR_TXT2_BRT.png"
+        BrightMap "materials/emission/cgr_txt2_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_TXT3 {
-        BrightMap "materials/emission/CGR_TXT3_BRT.png"
+        BrightMap "materials/emission/cgr_txt3_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_UAC {
-        BrightMap "materials/emission/CGR_UAC_BRT.png"
+        BrightMap "materials/emission/cgr_uac_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_M1A {
-        BrightMap "materials/emission/CGR_M1A_BRT.png"
+        BrightMap "materials/emission/cgr_m1a_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_M2A {
-        BrightMap "materials/emission/CGR_M2A_BRT.png"
+        BrightMap "materials/emission/cgr_m2a_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
 
     Material Texture CGR_M2B {
-        BrightMap "materials/emission/CGR_M2B_BRT.png"
+        BrightMap "materials/emission/cgr_m2b_brt.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
@@ -691,7 +691,7 @@ Material Texture DRDC31 {
 
 // Door tunnels
     Material Texture DRDC41 {
-        BrightMap "materials/emission/DRDC45_BRT.png"
+        BrightMap "materials/emission/drdc45_brt.png"
         normal "materials/normal/drdc47.png"
         specular "materials/specular/drdc47.png"
         Texture tex_heightmap   "materials/height/drdc47.png"
@@ -699,7 +699,7 @@ Material Texture DRDC31 {
     }
 
         Material Texture DRDC41P1 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -707,7 +707,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC41P2 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -715,7 +715,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC41P3 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -723,7 +723,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC41P4 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -731,7 +731,7 @@ Material Texture DRDC31 {
         }
 
     Material Texture DRDC43 {
-        BrightMap "materials/emission/DRDC45_BRT.png"
+        BrightMap "materials/emission/drdc45_brt.png"
         normal "materials/normal/drdc47.png"
         specular "materials/specular/drdc47.png"
         Texture tex_heightmap   "materials/height/drdc47.png"
@@ -739,7 +739,7 @@ Material Texture DRDC31 {
     }
 
         Material Texture DRDC43P1 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -747,7 +747,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC43P2 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -755,7 +755,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC43P3 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -763,7 +763,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC43P4 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -771,7 +771,7 @@ Material Texture DRDC31 {
         }
 
     Material Texture DRDC45 {
-        BrightMap "materials/emission/DRDC45_BRT.png"
+        BrightMap "materials/emission/drdc45_brt.png"
         normal "materials/normal/drdc47.png"
         specular "materials/specular/drdc47.png"
         Texture tex_heightmap   "materials/height/drdc47.png"
@@ -779,7 +779,7 @@ Material Texture DRDC31 {
     }
 
         Material Texture DRDC45P1 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -787,7 +787,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC45P2 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -795,7 +795,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC45P3 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -803,7 +803,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC45P4 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -811,7 +811,7 @@ Material Texture DRDC31 {
         }
 
     Material Texture DRDC47 {
-        BrightMap "materials/emission/DRDC45_BRT.png"
+        BrightMap "materials/emission/drdc45_brt.png"
         normal "materials/normal/drdc47.png"
         specular "materials/specular/drdc47.png"
         Texture tex_heightmap   "materials/height/drdc47.png"
@@ -819,7 +819,7 @@ Material Texture DRDC31 {
     }
 
         Material Texture DRDC47P1 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -827,7 +827,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC47P2 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -835,7 +835,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC47P3 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
@@ -843,7 +843,7 @@ Material Texture DRDC31 {
         }
 
         Material Texture DRDC47P4 {
-            BrightMap "materials/emission/DRDC45_BRT.png"
+            BrightMap "materials/emission/drdc45_brt.png"
             normal "materials/normal/drdc47.png"
             specular "materials/specular/drdc47.png"
             Texture tex_heightmap   "materials/height/drdc47.png"
