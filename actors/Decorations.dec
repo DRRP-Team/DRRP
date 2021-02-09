@@ -78,6 +78,10 @@ Actor DRRPBlueLamp : DRRPYellowLamp 10703 {
 Actor DRRPLight1 10713 {
     //$Category DDecorations
 
+    const float minAlpha = 0.1;
+    const float maxAlpha = 0.5;
+    const float maxDiffAlpha = 0.03;
+
     -SOLID
     +NOGRAVITY
 
@@ -87,9 +91,20 @@ Actor DRRPLight1 10713 {
     Radius 0
 
     States {
-        Spawn:
-            GLOW A -1 Bright
-            Stop
+        Spawn: // Set spawn origin to master (lamp):
+            GLOW A 1 Bright {
+                A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 );
+                A_Warp( AAPTR_MASTER, 0, 0, 40 );
+            }
+            GLOW AAA 1 Bright A_Warp( AAPTR_MASTER, 0, 0, 40 )
+            GLOW A 1 Bright {
+                A_SetTranslucent( clamp( alpha + FRandom( -maxDiffAlpha, maxDiffAlpha ), minAlpha, maxAlpha ), 1 );
+                A_Warp( AAPTR_MASTER, 0, 0, 40 );
+            }
+            GLOW AAA 1 Bright A_Warp( AAPTR_MASTER, 0, 0, 40 )
+        SpawnLoop:
+            GLOW A 4 Bright A_SetTranslucent( clamp( alpha + FRandom( -maxDiffAlpha, maxDiffAlpha ), minAlpha, maxAlpha ), 1 )
+            Wait
     }
 }
 
@@ -99,6 +114,8 @@ Actor DRRPLight2: DRRPLight1 10714 {
 
     States {
         Spawn:
+            GLOW B 0 Bright
+            GLOW B 0 Bright A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 )
             GLOW B -1 Bright
             Stop
     }
@@ -109,6 +126,8 @@ Actor DRRPLight3: DRRPLight1 10715 {
 
     States {
         Spawn:
+            GLOW C 0 Bright
+            GLOW C 0 Bright A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 )
             GLOW C -1 Bright
             Stop
     }
