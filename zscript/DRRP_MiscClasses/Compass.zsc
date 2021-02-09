@@ -22,8 +22,12 @@ class CompassHandler: EventHandler {
 
             VisualStr = StringTable.Localize( "$DRRP_HUD_COMPASSVISUAL" );
 
-            CompassStrPos = floor( ( Players[ i ].mo.Angle - 90 ) % 360 / 360 * VisualStr.Length() ) + VisualStr.Length();
+            // About "Players[ i ].mo.Angle - 85". Alas, so strange angle is a
+            //visual crutch for the compass positioneering, with it the string
+            //displayed exactly to the cardinal points.
+            CompassStrPos = floor( ( Players[ i ].mo.Angle - 85 ) % 360 / 360.0 * VisualStr.Length() ) + VisualStr.Length();
             VisualStr = VisualStr .. VisualStr .. VisualStr.Left( StrVisibleLen / 2 );
+
             // (North in DRRP) = (Top on the automap) = (90 degree in ZDoom).
             VisualStr = "<" .. VisualStr.Mid( CompassStrPos - StrVisibleLen / 2, StrVisibleLen ) .. ">";
 
