@@ -3,7 +3,7 @@
 Actor Dog_BaseDRRP: MBFHelperDog {
     +LOOKALLAROUND
 
-    DamageFactor DRRPShotgunDmg, 2.0
+    DamageFactor DRRPShotgunDmg, 4.0
     DamageFactor DRRPPlasmaDmg, 2.0
 
     ActiveSound  "monsters/hellhound/see"
@@ -54,6 +54,7 @@ Actor ChaingunGuy_BaseDRRP: ChaingunGuy {
     const int ChanceFailAttackRightBack = 192;
 
     DropItem "Chaingun", 0, 0
+    DamageFactor DRRPBulletDmg, 3.0
     DamageFactor DRRPPlasmaDmg, 2.0
     +LOOKALLAROUND
 
@@ -78,8 +79,7 @@ Actor ChaingunGuy_BaseDRRP: ChaingunGuy {
 Actor DoomImp_BaseDRRP : DoomImp {
     +LOOKALLAROUND
 
-    DamageFactor DRRPShotgunDmg, 2.0
-    DamageFactor DRRPSSGDmg, 2.0
+    DamageFactor DRRPShotgunDmg, 3.0
 }
 
 Actor LostSoul_BaseDRRP: LostSoul {
@@ -123,8 +123,8 @@ Actor Demon_BaseDRRP: Demon {
 Actor Cacodemon_BaseDRRP: Cacodemon {
     +LOOKALLAROUND
 
-    DamageFactor DRRPAxeDmg, 2.0
-    DamageFactor DRRPPlasmaDmg, 2.0
+    DamageFactor DRRPAxeDmg, 3.0
+    DamageFactor DRRPBulletDmg, 2.0
 }
 
 Actor Revenant_BaseDRRP: Revenant {
@@ -179,7 +179,7 @@ Actor Fatso_BaseDRRP: Fatso {
     Height 52
     +LOOKALLAROUND
 
-    DamageFactor DRRPRocketDmg, 2.0
+    DamageFactor DRRPRocketDmg, 2.5
 
     States {
     Missile:
@@ -202,7 +202,8 @@ Actor ArchVile_BaseDRRP: ArchVile {
     Speed 10 // Doom's default: 15.
     +LOOKALLAROUND
 
-    DamageFactor DRRPAxeDmg, 5.0
+    DamageFactor DRRPAxeDmg, 10.0
+    DamageFactor DRRPFireExtDmg, 4.0
     DamageFactor DRRPFireDmg, 0.0
     
     States {
@@ -229,7 +230,7 @@ Actor BaronOfHell_BaseDRRP: BaronOfHell {
     Scale 0.85
     +LOOKALLAROUND
 
-    DamageFactor DRRPSSGDmg, 5.0
+    DamageFactor DRRPShotgunDmg, 5.0
 
     States {
     Melee:
@@ -244,7 +245,7 @@ Actor HellKnight_BaseDRRP: HellKnight {
     Scale 0.85
     +LOOKALLAROUND
 
-    DamageFactor DRRPSSGDmg, 5.0
+    DamageFactor DRRPShotgunDmg, 5.0
 }
 
 

@@ -324,7 +324,7 @@ class DRRPShellBox: DRRPShell replaces ShellBox {
 
 class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
     Default {
-        DamageType "DRRPSSGDmg";
+        DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
         Weapon.AmmoType "DRRPShell";
         Weapon.SelectionOrder 10;
