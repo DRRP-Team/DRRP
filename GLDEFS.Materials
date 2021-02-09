@@ -497,20 +497,14 @@ Material Texture DRDC31 {
 }
 
 // Orange computer animations
-    Material Texture DRDC31 {
-        BrightMap "materials/emission/CGR_FULL_BRT.png"
-        normal "materials/normal/drdc30.png"
-        Texture tex_heightmap   "materials/height/drdc30.png"
-        shader                  "shaders/parallax_pbr.fp"
-    }
     Material Texture DRDC31b {
-        BrightMap "materials/emission/CGR_FULL_BRT.png"
+        BrightMap "materials/emission/drdc31b.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
     }
     Material Texture DRDC31c {
-        BrightMap "materials/emission/CGR_FULL_BRT.png"
+        BrightMap "materials/emission/drdc31c.png"
         normal "materials/normal/drdc30.png"
         Texture tex_heightmap   "materials/height/drdc30.png"
         shader                  "shaders/parallax_pbr.fp"
