@@ -64,13 +64,13 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name "TITLEMAP"
-    Texture LutMap "textures/shadermaps/lut_INTRO.png"
+    Texture LutMap "textures/shadermaps/lut.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
 HardwareShader PostProcess Scene {
     Name "INTRO"
-    Texture LutMap "textures/shadermaps/lut_INTRO.png"
+    Texture LutMap "textures/shadermaps/lut.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
@@ -117,7 +117,7 @@ HardwareShader PostProcess Scene {
 
 HardwareShader PostProcess Scene {
     Name "SEC7_BEFORE"
-    Texture LutMap "textures/shadermaps/lut.png"
+    Texture LutMap "textures/shadermaps/lut_SEC7_Before.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
