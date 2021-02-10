@@ -234,8 +234,8 @@ Script "onCinematicShadersUnload" (bool forced) {
 
 #define CINEMATIC_SHADERS_COUNT 20
 str CINEMATIC_SHADERS[] = { "RadialBlurShader", "TITLEMAP", "INTRO", "HUB", "SEC1",
-                            "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_BEFORE",
-                            "SEC7_AFTER", "XHUB", "REAC", "HeatHaze", "FilmGrain",
+                            "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_Before",
+                            "SEC7_After", "XHUB", "REAC", "HeatHaze", "FilmGrain",
                             "XHUBGrain", "DefaultLut", "BCFilter", "DoubleVisionShader" };
 
 // This hook must not be redefined but it can be.
