@@ -2,6 +2,8 @@
 
 // Coordinate offset is: (0;0)
 
+bool invasion = false;
+
 function str getString(int id) {
     return StrParam(l:StrParam(s:"DRRP_SEC7_", i:id));
 }
@@ -20,6 +22,18 @@ function fixed getMediumY(int y) {
 
 function str localizeSound(str sound) {
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
+}
+
+Script "onCinematicShadersLoad" (bool forced) {
+    if(GetCVar("drrp_enable_lut_shader")) {
+		if (invasion) {
+			ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC7_Before", false);
+			ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC7_After", true);
+		} else {
+			ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC7_After", false);
+			ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC7_Before", true);
+		}
+	}
 }
 
 Script 666 ENTER{
@@ -183,6 +197,10 @@ script 15 (int arg0, int arg1, int arg2) { //X=15 Y=6 START=L_97 END=L_118 UNKN=
     if(arg2 == 0) ACS_Execute(3000, 0, 1); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=260
     if(arg2 == 0) SpawnSpotForced("Explosion", 488, 0, 0);
     if(arg2 == 0) SetMusic("D_HARB");
+	if(arg2 == 0) {
+		invasion = true;
+		ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, true);
+	}
     if(arg2 == 0) Delay(15);
     if(arg2 == 0) SetLineBlocking(666, BLOCK_NOTHING);
     if(arg2 == 0) SetLineTexture(666, SIDE_FRONT, TEXTURE_MIDDLE, "-");

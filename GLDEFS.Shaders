@@ -116,13 +116,13 @@ HardwareShader PostProcess Scene {
 }
 
 HardwareShader PostProcess Scene {
-    Name "SEC7_BEFORE"
+    Name "SEC7_Before"
     Texture LutMap "textures/shadermaps/lut_SEC7_Before.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }
 
 HardwareShader PostProcess Scene {
-    Name "SEC7_AFTER"
+    Name "SEC7_After"
     Texture LutMap "textures/shadermaps/lut.png"
     Shader "shaders/custom/Tonemap.fp"               330
 }

@@ -318,9 +318,9 @@ Script 684(int code, int front, int back) {
 }
 
 str shadernames[] = { "TestShader", "FilmGrain", "HeatHaze", "XHUBGrain", "DoubleVisionShader", "RadialBlurShader",
-                      "INTRO", "SEC1", "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7", "XHUB", "REAC" };
+                      "INTRO", "SEC1", "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_Before", "SEC7_After", "XHUB", "REAC" };
 bool shaders[]    = { false, false, false, false, false, false,
-                      false, false, false, false, false, false, false, false, false, false };
+                      false, false, false, false, false, false, false, false, false, false, false };
 
 Script 685(int index) {
     shaders[index] = !shaders[index];
