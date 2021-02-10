@@ -309,8 +309,9 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         Radius_Quake(12, 20, 0, 5, 0);
         FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.3);
         Thing_Remove(463); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=14 Y=15
-        Sector_SetColor(666, 128, 0, 0, 0);
-        Sector_SetColor(668, 128, 0, 0, 0);
+        Sector_SetColor(666, 128, 0, 0, 0); // Invasion room
+        Sector_SetColor(668, 128, 0, 0, 0); // Invasion room 3D floor
+		Sector_SetColor(669, 128, 0, 0, 0); // Invasion room lamps
         Sector_SetColor(100, 128, 0, 0, 0);
         Sector_SetColor(13, 128, 0, 0, 0);
         Sector_SetFade(13, 255, 0, 0);
@@ -320,6 +321,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         SpawnSpot("Explosion", 561);
         SpawnSpot("Explosion", 530);
         Radius_Quake(12, 20, 1, 5, 0);
+		ChangeCeiling(669, "DRDC54"); // Broke ceil lamps
         Floor_LowerByValue(100, 999, 64);
         ActivatorSound("DSPLDETH", 196);
         SpawnSpot("Explosion", 433);
