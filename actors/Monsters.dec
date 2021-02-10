@@ -203,7 +203,7 @@ Actor ImpLord: DoomImp_BaseDRRP 10460 {
     HitObituary "$DRRP_OBM_IMPLORD"
     Tag "$DRRP_M_IMPLORD"
     Health 290
-    Translation "64:79=174:191", "175:191=112:127"
+    Translation "64:79=180:191", "175:191=125:125", "184:184=120:120", "179:179=123:123", "181:182=125:125", "186:189=122:127", "174:174=124:124"
 }
 
 Actor DRRPDoomImpBall: DoomImpBall replaces DoomImpBall {
