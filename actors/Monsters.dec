@@ -363,7 +363,7 @@ Actor Wretched: Cacodemon_BaseDRRP 10462 {
     HitObituary "$DRRP_OBM_WRETCHED"
     Tag "$DRRP_M_WRETCHED"
     Health 650
-    Translation "168:191=193:207", "16:47=193:201", "192:207=168:191", "223:223=207:207"
+    Translation "168:191=193:207", "167:167=244:244", "16:47=193:201", "192:207=168:184", "240:242=185:191", "223:223=207:207", "0:2=246:246"
 
     States {
     Missile:
