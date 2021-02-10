@@ -182,7 +182,7 @@ Actor Impling: DoomImp_BaseDRRP 10260 {
     HitObituary "$DRRP_OBM_IMPLING"
     Tag "$DRRP_M_IMPLING"
     Health 50
-    Translation "64:79=112:127", "61:63=112:118"
+    Translation "64:79=117:127", "61:63=127:127"
 }
 
 Actor DRRPImp: DoomImp_BaseDRRP replaces DoomImp 10360 {
