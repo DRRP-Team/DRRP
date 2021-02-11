@@ -240,8 +240,9 @@ class DRRPExplosion: Actor { // Has Decorate heir (DRRPExplosion_Decorate).
 
     override void PostBeginPlay() {
         if ( pos.z <= ( FloorZ + self.height ) )
-			SetZ( FloorZ + ( self.height * 1.5 ) );
-		vel -= vel;
+            SetZ( FloorZ + ( self.height * 1.5 ) );
+
+        vel -= vel; // Prevent out-of-crate floating explosions.
     }
 
     States {
