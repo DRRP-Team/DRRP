@@ -288,6 +288,7 @@ Script "playerDamageTimer" (void) {
  * RPG System
  */
 
+// For "/ZScript/RPGSystem.zsc":
 enum RPGGetFeatureStaticTypes {
     RPG_Level,
     RPG_Experience,
@@ -302,7 +303,28 @@ enum RPGGetFeatureStaticTypes {
     RPG_Strength
 };
 
-Script "LevelStatsNotifier" ENTER {
+
+Script "LevelDoneNotifierVisual" ( void ) {
+    int monsterstotal  = GetLevelInfo( LEVELINFO_TOTAL_MONSTERS );
+    int monsterskilled = GetLevelInfo( LEVELINFO_KILLED_MONSTERS);
+
+    int secretstotal   = GetLevelInfo( LEVELINFO_TOTAL_SECRETS  );
+    int secretsfound   = GetLevelInfo( LEVELINFO_FOUND_SECRETS  );
+
+    SetFont( "BIGFONT" );
+
+    if ( monsterstotal && monsterskilled == monsterstotal ) {
+        HudMessage( l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0 );
+        LocalAmbientSound( "COMPLETE", 115 );
+    }
+
+    if ( secretstotal && secretsfound == secretstotal ) {
+        HudMessage( l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0 );
+        LocalAmbientSound( "SECRETS", 115 );
+    }
+}
+
+/*Script "LevelStatsNotifier" ENTER {
     int  monsterstotal,
          secretstotal       = GetLevelInfo(LEVELINFO_TOTAL_SECRETS);
 
@@ -341,9 +363,9 @@ Script "LevelStatsNotifier" ENTER {
 
         Delay(17);
     }
-}
+}*/
 
-Script "levelUp" (bool windowOnly) { // You can use it by the "pukename levelup" command
+Script "levelUp" (bool windowOnly) {
     int pLevel = ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Level);
 
     if (!windowOnly) {

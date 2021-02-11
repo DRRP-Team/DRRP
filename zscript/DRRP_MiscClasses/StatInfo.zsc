@@ -20,7 +20,6 @@ class LevelStatsNotifierHandler: StaticEventHandler {
 
     // ZScript cannot return a pointer to the dynamic array, 
     //so "ui Array<String> GetAllDoneMapNamesArray()" is impossible.
-
     ui String GetAllDoneMapNamesArray( int doneType, String outIfNone = "", String separator = "\n" ) {
         String outStr = "";
         int arraySize;
@@ -48,13 +47,14 @@ class LevelStatsNotifierHandler: StaticEventHandler {
                 break;
             default:
                 break;
-        }
+        } // of switch ( doneType ) {
 
         return ( outStr == "" )? outIfNone : outStr;
     } // of ui String GetAllDoneMapNamesArray( int doneType, String outIfNone = "", String separator = "\n" ) {
 
 
     override void WorldLoaded( WorldEvent e ) {
+        // Check for new game:
         if ( !level.totaltime ) {
             MapsMonstersDone.Clear();
             MapsSecretsDone.Clear();
@@ -68,21 +68,35 @@ class LevelStatsNotifierHandler: StaticEventHandler {
 
     override void WorldTick() {
         if ( !( level.maptime % 3 ) ) {
+            bool callDoneSequence = false;
 
             // All monsters killed check:
             if ( !curMapMonstersDone && level.total_monsters == level.killed_monsters ) {
-                //ACS_ScriptCall( "levelStatsNotifier", curMapSecretsDone? LSN_Both : LSN_AllMonsters );
                 MapsMonstersDone.Push( level.LevelName );
                 curMapMonstersDone = true;
+                callDoneSequence = true;
             }
 
             // All secrets found check:
             if ( !curMapSecretsDone && level.total_secrets == level.found_secrets ) {
-                //ACS_ScriptCall( "levelStatsNotifier", curMapMonstersDone? LSN_Both : LSN_AllSecrets );
                 MapsSecretsDone.Push( level.LevelName );
                 curMapSecretsDone = true;
+                callDoneSequence = true;
             }
-        }
+
+            // Done sequence:
+            if ( callDoneSequence && playeringame[ 0 ] && players[ 0 ].mo ) {
+                DRRPPlayer player = DRRPPlayer( players[ 0 ].mo );
+
+                if ( curMapMonstersDone ^ curMapSecretsDone )
+                    player.AddFeature( RPG_Experience, 10 );
+                else if ( curMapSecretsDone )
+                    player.GiveInventory( "Credit", 25 );
+
+                player.ACS_ScriptCall( "LevelDoneNotifierVisual" );
+            }
+
+        } // of if ( !( level.maptime % 3 ) ) {
 
         Super.WorldTick();
     }
@@ -91,13 +105,13 @@ class LevelStatsNotifierHandler: StaticEventHandler {
 
 
 
-class StatInfoMenu : OptionMenu {
+class StatInfoMenu: OptionMenu {
     enum EColors {
         cNormal = Font.CR_GRAY,
         cBad    = Font.CR_RED,
         cGood   = Font.CR_DARKGREEN,
         cHeader = Font.CR_BLUE
-    } // of Enum EColors
+    };
 
     OptionMenuDescriptor initdesc;
 
@@ -164,28 +178,29 @@ class StatInfoMenu : OptionMenu {
     override void Init( Menu parent, OptionMenuDescriptor desc ) {
         Super.Init( parent, desc );
 
-        PlayerInfo pStat = Players[ consoleplayer ];
+        PlayerInfo pStatInfo = players[ consoleplayer ];
         desc.mItems.clear();
 
-        if ( pStat == null || pStat.mo == null ) {
+        if ( !pStatInfo || !pStatInfo.mo ) {
             addStr( cNormal, "$DRRP_D_STATINFO_NOTINGAME" );
             return;
         }
 
+        DRRPPlayer player = DRRPPlayer( pStatInfo.mo );
         initdesc = desc;
 
         //String notNow = StatLocalize( "UNDERCONSTRUCT" ); // Finally, got it!
 
         addHeaderStr( StatLocalize( "PLAYER_T" ) );
-        addSpecIntStr( pStat.mo.health, pStat.mo.MaxHealth, StatLocalize( "HEALTH" ), true );
-        addItemStr( pStat.mo.FindInventory( "DRRPBasicArmor" ), StatLocalize( "ARMOR" ) );
-        addItemStr( pStat.mo.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
-        addStr( cNormal, StatLocalize( "LEVEL" ) .. DRRPPlayer( pStat.mo ).Level );
-        addSpecIntStr( DRRPPlayer( pStat.mo ).Experience, DRRPPlayer( pStat.mo ).NextLevelXP, StatLocalize( "EXPERIENCE" ) );
-        addStr( cNormal, StatLocalize( "DEFENCE" ) .. DRRPPlayer( pStat.mo ).Defense );
-        addStr( cNormal, StatLocalize( "STRENGTH" ) .. DRRPPlayer( pStat.mo ).Strength );
-        addStr( cNormal, StatLocalize( "AGILITY" ) .. DRRPPlayer( pStat.mo ).Agility );
-        addStr( cNormal, StatLocalize( "ACCURACY" ) .. DRRPPlayer( pStat.mo ).Accuracy );
+        addSpecIntStr( player.health, player.MaxHealth, StatLocalize( "HEALTH" ), true );
+        addItemStr( player.FindInventory( "DRRPBasicArmor" ), StatLocalize( "ARMOR" ) );
+        addItemStr( player.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
+        addStr( cNormal, StatLocalize( "LEVEL" ) .. player.GetFeature( RPG_Level ) );
+        addSpecIntStr( player.GetFeature( RPG_Experience ), player.GetFeature( RPG_NextLevelXP ), StatLocalize( "EXPERIENCE" ) );
+        addStr( cNormal, StatLocalize( "DEFENCE" ) .. player.GetFeature( RPG_Defence ) );
+        addStr( cNormal, StatLocalize( "STRENGTH" ) .. player.GetFeature( RPG_Strength ) );
+        addStr( cNormal, StatLocalize( "AGILITY" ) .. player.GetFeature( RPG_Agility ) );
+        addStr( cNormal, StatLocalize( "ACCURACY" ) .. player.GetFeature( RPG_Accuracy ) );
 
         addHeaderStr( StatLocalize( "THISSECTOR_T" ) );
         addStr( cNormal, StatLocalize( "TIME" ) .. level.maptime / 35 );
@@ -203,4 +218,5 @@ class StatInfoMenu : OptionMenu {
         addDoneLevelsStr( LSN_AllSecrets );
 
     } // override void Init( Menu parent, OptionMenuDescriptor desc ) {
-}
+
+} // of class StatInfoMenu: OptionMenu {

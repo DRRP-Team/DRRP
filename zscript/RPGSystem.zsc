@@ -5,6 +5,22 @@
  * https://opensource.org/licenses/MIT
  */
 
+enum RPGGetFeatureTypes {
+    _RPG_FirstStat = 0,
+
+    RPG_Level = _RPG_FirstStat,
+    RPG_Experience,
+    RPG_NextLevelXP,
+    RPG_MaxHealth,
+    RPG_MaxArmor,
+    RPG_Accuracy,
+    RPG_Agility,
+    RPG_Defence,
+    RPG_Strength,
+
+    _RPG_Quantity
+}
+
 
 class RPGSystemHandler: EventHandler {
 
@@ -171,12 +187,10 @@ class RPGSystemHandler: EventHandler {
                     }
                     DRRPPlayer player = DRRPPlayer( players[ playerNum ].mo );
 
+                    // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
                     if ( deathData )
-                        player.Experience += deathData.ExpGain;
+                        player.AddFeature( RPG_Experience, deathData.ExpGain, true );
 
-                    // Levels up once. Is it better to write "while (...)"?
-                    if ( player.Experience >= player.NextLevelXP )
-                        EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", playerNum );
                 }
 
                 // Items drop.
@@ -195,32 +209,26 @@ class RPGSystemHandler: EventHandler {
     override void NetworkProcess( ConsoleEvent e ) {
 
         if ( e.Name ~== "DRRP_LevelUp_Attributes" ) {
-
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) || !playeringame[ e.Args[ 0 ] ] )
                 return;
 
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
-            // It's better to sequentally call player.SetFeature()...
-            player.Level       += 1;
-            player.Agility     += 1;
-            player.Accuracy    += 1;
-            player.Strength    += 2;
-            player.Defense     += 2;
-            player.MaxHealth   += 4;
-            player.MaxArmor    += 4;
-
-            player.setAllPlayerLevelupFeatures();
-            player.ACS_ScriptCall( "levelUp", true );
+            if ( player.GetFeature( RPG_Experience ) >= player.GetFeature( RPG_NextLevelXP ) ) {
+                player.AddAllPlayerLevelupStats();
+                player.SetAllPlayerLevelupFeatures();
+                player.ACS_ScriptCall( "levelUp", true );
+            }
 
         } else if ( e.name ~== "DRRP_Exp_Check" ) {
-
-            if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) )
+            if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS )  || !playeringame[ e.Args[ 0 ] ] )
                 return;
+
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
-            if ( player.Experience >= player.NextLevelXP )
+            if ( player.GetFeature( RPG_Experience ) >= player.GetFeature( RPG_NextLevelXP ) )
                 EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", e.Args[ 0 ] );
+
         }
 
         Super.NetworkProcess( e );
@@ -259,14 +267,14 @@ class DRRPDamageAbsorber: Inventory {
             console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Pre-damage). Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
 
         if ( armor ) {
-            if ( ( newdamage = DRRPPlayer( owner ).getRPGDefenseDamage( damage, damageType ) ) == damage )
+            if ( ( newdamage = DRRPPlayer( owner ).getRPGDefenceDamage( damage, damageType ) ) == damage )
                 armor.Amount -= damage / 2;
             else
                 armor.Amount -= damage - newdamage;
             if ( armor.Amount < 0 )
                 armor.Amount = 0;
         } else
-            newdamage = DRRPPlayer( owner ).getRPGDefenseDamage( damage, damageType );
+            newdamage = DRRPPlayer( owner ).getRPGDefenceDamage( damage, damageType );
 
         if ( DebugCVar && DebugCVar.GetBool() )
             console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
@@ -305,6 +313,7 @@ class DRRPShopPlayerAccuracy: Inventory {
             DRRPPlayer( owner ).SetFeature( thisFeatureType,
                     DRRPPlayer( owner ).GetFeature( thisFeatureType ) + ( Amount & 0x100? -Amount : Amount ) );
         }
+
         Destroy();
         DetachFromOwner();
         Super.PostBeginPlay();
@@ -317,9 +326,9 @@ class DRRPShopPlayerAgility: DRRPShopPlayerAccuracy {
     }
 }
 
-class DRRPShopPlayerDefense: DRRPShopPlayerAccuracy {
+class DRRPShopPlayerDefence: DRRPShopPlayerAccuracy {
     override void BeginPlay() {
-        thisFeatureType = RPG_Defense;
+        thisFeatureType = RPG_Defence;
     }
 }
 
