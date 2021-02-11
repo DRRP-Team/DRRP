@@ -177,6 +177,14 @@ class FireExtPuff: Actor {
         DamageType "DRRPFireExtDmg";
         RenderStyle "Add";
     }
+	
+    override void Tick() {
+		if(CountInv("DRRPExtinguisherTrigger") >= 6) {
+			SetState(ResolveState("Death"));
+		}
+		
+		super.Tick();
+	}
 
     States {
         Spawn:
