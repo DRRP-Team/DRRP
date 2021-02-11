@@ -174,8 +174,9 @@ class RPGSystemHandler: EventHandler {
                 // Experience drop.
                 if ( e.DamageSource is "DoomRPGPlayer" ) {
                     DRRPPlayer player = DRRPPlayer( e.DamageSource );
-
+					
                     // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
+
                     if ( deathData )
                         player.AddFeature( RPG_Experience, deathData.ExpGain, true );
 

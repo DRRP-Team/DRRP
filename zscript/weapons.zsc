@@ -184,12 +184,20 @@ class FireExtPuff: Actor {
     }
     
     override void Tick() {
-        if(CountInv("DRRPExtinguisherTrigger") >= 6) {
-            SetState(ResolveState("Death"));
-        }
-        
-        super.Tick();
-    }
+		int damRad = 16;
+	
+		BlockThingsIterator it = BlockThingsIterator.Create(self, damRad);
+		
+		while(it.Next()) {
+			Actor mo = it.thing;
+			if(!mo || !(mo is "DRRPFire") || Distance2D(mo) > damRad)
+				continue;
+			
+			mo.Health--;
+		}
+		
+		super.Tick();
+	}
 
     States {
         Spawn:

@@ -205,11 +205,10 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
         double ScaleTo = double( health ) / double( SpawnHealth() );
         double ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
         self.Scale = ( ScaleNow, ScaleNow );
-        
-        Health -= A_RadiusGive("DRRPExtinguisherTrigger", Height, RGF_MISSILES | RGF_CUBE | RGF_NOSIGHT, 1, "FireExtPuff");
-        if(Health <= 0) {
-            Destroy();
-        }
+
+		if(Health <= 0) {
+			Destroy();
+		}
 
         Super.Tick();
     } // of override void Tick()
