@@ -51,7 +51,8 @@ class DRRPAxe: Weapon {
             GAXW A 0 A_PlaySound( "weapon/axe/swing", CHAN_WEAPON );
         Fire:
             GAXW ACJ 2;
-            GAXW JLNQ 1;
+        FireHoldReturn:
+            GAXW JNQ 2;
             GAXW R 2 { pitch -= 0.3; }
         FireHold:
             GAXW R 2;
@@ -62,7 +63,11 @@ class DRRPAxe: Weapon {
             GAXF H 3 A_CustomPunch( DRRPPlayer( self ).getRPGAttackDamage( 3, 12 ), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
             GAXF IK 1 { pitch += 1.5; }
             GAXD FED 1 { pitch -= 1.2; }
-            GAXD CB 1 { pitch -= 1.6; }
+            GAXD C 1 { pitch -= 1.6; }
+            GAXD B 1 {
+                pitch -= 1.6;
+                A_Refire( "FireHoldReturn" );
+            }
             Goto AxeReady;
     }
 }
@@ -177,14 +182,14 @@ class FireExtPuff: Actor {
         DamageType "DRRPFireExtDmg";
         RenderStyle "Add";
     }
-	
+    
     override void Tick() {
-		if(CountInv("DRRPExtinguisherTrigger") >= 6) {
-			SetState(ResolveState("Death"));
-		}
-		
-		super.Tick();
-	}
+        if(CountInv("DRRPExtinguisherTrigger") >= 6) {
+            SetState(ResolveState("Death"));
+        }
+        
+        super.Tick();
+    }
 
     States {
         Spawn:
