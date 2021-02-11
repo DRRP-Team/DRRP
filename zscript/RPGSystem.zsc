@@ -173,19 +173,7 @@ class RPGSystemHandler: EventHandler {
 
                 // Experience drop.
                 if ( e.DamageSource is "DoomRPGPlayer" ) {
-
-                    int playerNum = -1;
-                    for ( int i = 0; i < MAXPLAYERS; i++ )
-                        if ( players[ i ].mo == e.DamageSource ) {
-                            playerNum = i;
-                            break;
-                        }
-
-                    if ( ( playerNum < 0 ) || ( playerNum > MAXPLAYERS ) ) {
-                        console.printf( "\034GWarning\034-: impossible value of player number (#RPGSystem::WorldThingDamaged)." );
-                        return;
-                    }
-                    DRRPPlayer player = DRRPPlayer( players[ playerNum ].mo );
+                    DRRPPlayer player = DRRPPlayer( e.DamageSource );
 
                     // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
                     if ( deathData )
