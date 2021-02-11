@@ -163,33 +163,34 @@ class RPGSystemHandler: EventHandler {
         Super.WorldThingSpawned( e );
     } // of override void WorldThingSpawned( WorldEvent e ) {
 
+    static void DoRpgDeath(Actor deadActor, Actor damageSource) {
+        DRRPDeathDataItem deathData = DRRPDeathDataItem( deadActor.FindInventory( "DRRPDeathDataItem" ) );
+
+        // Experience drop.
+        if ( damageSource is "DoomRPGPlayer" ) {
+            DRRPPlayer player = DRRPPlayer( damageSource );
+            
+            // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
+
+            if ( deathData ) {
+                player.AddFeature( RPG_Experience, deathData.ExpGain, true );
+            }
+        }
+
+        // Items drop.
+        if ( deathData && deathData.DRRPDropItem ) {
+            Actor droppedItem = deadActor.Spawn( deathData.DRRPDropItem, deadActor.pos );
+            droppedItem.vel = ( FRandom( -2.0, 2.0 ), FRandom( -2.0, 2.0 ), FRandom( 0.5, 4.0 ) );
+        }
+    }
+
     /* Give xp to killer player and drop random items on some DRRP actors death. */
     override void WorldThingDamaged( WorldEvent e ) {
-
         if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
-
             if ( e.Thing.health <= 0 ) {
-                DRRPDeathDataItem deathData = DRRPDeathDataItem( e.Thing.FindInventory( "DRRPDeathDataItem" ) );
-
-                // Experience drop.
-                if ( e.DamageSource is "DoomRPGPlayer" ) {
-                    DRRPPlayer player = DRRPPlayer( e.DamageSource );
-					
-                    // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
-
-                    if ( deathData )
-                        player.AddFeature( RPG_Experience, deathData.ExpGain, true );
-
-                }
-
-                // Items drop.
-                if ( deathData && deathData.DRRPDropItem ) {
-                    Actor droppedItem = e.Thing.Spawn( deathData.DRRPDropItem, e.Thing.pos );
-                    droppedItem.vel = ( FRandom( -2.0, 2.0 ), FRandom( -2.0, 2.0 ), FRandom( 0.5, 4.0 ) );
-                }
-
+                DoRpgDeath(e.Thing, e.DamageSource);
             }
-        } // of if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
+        }
 
         Super.WorldThingDamaged( e );
     } // override void WorldThingDamaged( WorldEvent e ) {

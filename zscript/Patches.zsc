@@ -206,9 +206,9 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
         double ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
         self.Scale = ( ScaleNow, ScaleNow );
 
-		if(Health <= 0) {
-			Destroy();
-		}
+        if(Health <= 0) {
+            Destroy();
+        }
 
         Super.Tick();
     } // of override void Tick()

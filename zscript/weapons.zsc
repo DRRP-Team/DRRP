@@ -184,20 +184,26 @@ class FireExtPuff: Actor {
     }
     
     override void Tick() {
-		int damRad = 16;
-	
-		BlockThingsIterator it = BlockThingsIterator.Create(self, damRad);
-		
-		while(it.Next()) {
-			Actor mo = it.thing;
-			if(!mo || !(mo is "DRRPFire") || Distance2D(mo) > damRad)
-				continue;
-			
-			mo.Health--;
-		}
-		
-		super.Tick();
-	}
+        int damRad = 16;
+    
+        BlockThingsIterator it = BlockThingsIterator.Create(self, damRad);
+        
+        while(it.Next()) {
+            Actor mo = it.thing;
+            if(!mo || !(mo is "DRRPFire") || Distance2D(mo) > damRad)
+                continue;
+            
+            if(mo.Health > 0) {
+                mo.Health--;
+
+                if(mo.Health <= 0) {
+                    RPGSystemHandler.DoRpgDeath(mo, target);
+                }
+            }
+        }
+        
+        super.Tick();
+    }
 
     States {
         Spawn:
