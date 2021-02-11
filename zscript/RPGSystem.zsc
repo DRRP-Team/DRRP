@@ -208,13 +208,14 @@ class RPGSystemHandler: EventHandler {
 
     override void NetworkProcess( ConsoleEvent e ) {
 
+        // "netevent DRRP_LevelUp_Attributes 0 1" forces level up (for the 0th (1st) player).
         if ( e.Name ~== "DRRP_LevelUp_Attributes" ) {
             if ( ( e.Args[ 0 ] < 0 ) || ( e.Args[ 0 ] > MAXPLAYERS ) || !playeringame[ e.Args[ 0 ] ] )
                 return;
 
             DRRPPlayer player = DRRPPlayer( players[ e.Args[ 0 ] ].mo );
 
-            if ( player.GetFeature( RPG_Experience ) >= player.GetFeature( RPG_NextLevelXP ) ) {
+            if ( ( player.GetFeature( RPG_Experience ) >= player.GetFeature( RPG_NextLevelXP ) ) || e.Args[ 1 ] == 1 ) {
                 player.AddAllPlayerLevelupStats();
                 player.SetAllPlayerLevelupFeatures();
                 player.ACS_ScriptCall( "levelUp", true );
