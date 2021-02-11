@@ -133206,7 +133206,7 @@ offsetx_bottom = 56.000000;
 sidedef
 {
 sector = 354;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_TXT1";
 offsetx = 1;
 }
 
@@ -135184,7 +135184,7 @@ texturemiddle = "drdc37";
 sidedef
 {
 sector = 38;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_CRSR";
 }
 
 sidedef
@@ -135480,7 +135480,7 @@ texturemiddle = "drdc33";
 sidedef
 {
 sector = 768;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_M2A";
 }
 
 sidedef
@@ -137964,7 +137964,7 @@ sector = 1247;
 sidedef
 {
 sector = 1251;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_LC1";
 }
 
 sidedef
@@ -138415,7 +138415,7 @@ offsetx_mid = 48.000000;
 sidedef
 {
 sector = 1251;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_MSG";
 }
 
 sidedef
@@ -138584,7 +138584,7 @@ texturemiddle = "drdc28";
 sidedef
 {
 sector = 30;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_CRSR";
 }
 
 sidedef
@@ -145737,7 +145737,7 @@ offsetx_mid = 32.000000;
 sidedef
 {
 sector = 87;
-texturemiddle = "drdc30";
+texturemiddle = "CGR_UAC";
 }
 
 sidedef
@@ -254739,11 +254739,11 @@ xscalefloor = 2.000000;
 floorplane_a = -0.207911;
 floorplane_b = -0.000000;
 floorplane_c = 0.978148;
-floorplane_d = 413.954171;
+floorplane_d = 413.954069;
 ceilingplane_a = 0.342020;
 ceilingplane_b = -0.000000;
 ceilingplane_c = 0.939693;
-ceilingplane_d = -702.357196;
+ceilingplane_d = -702.356980;
 }
 
 sector
@@ -256072,7 +256072,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.000000;
 floorplane_b = -0.878812;
 floorplane_c = -0.477169;
-floorplane_d = 1468.492721;
+floorplane_d = 1468.492144;
 }
 
 sector
@@ -256091,7 +256091,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738834;
+floorplane_d = 1524.738847;
 }
 
 sector
@@ -256276,7 +256276,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.000000;
 floorplane_b = 0.878811;
 floorplane_c = -0.477170;
-floorplane_d = -1512.503605;
+floorplane_d = -1512.503618;
 }
 
 sector
@@ -256295,7 +256295,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738834;
+floorplane_d = 1524.738847;
 }
 
 sector
@@ -256488,7 +256488,7 @@ xscaleceiling = -1.000000;
 floorplane_a = 0.878811;
 floorplane_b = -0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738834;
+floorplane_d = -1524.738847;
 }
 
 sector
@@ -256507,7 +256507,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = 0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738834;
+floorplane_d = 1524.738847;
 }
 
 sector
@@ -256540,7 +256540,7 @@ rotationfloor = 270.000000;
 floorplane_a = 0.878811;
 floorplane_b = 0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738834;
+floorplane_d = -1524.738847;
 }
 
 sector
@@ -256559,7 +256559,7 @@ rotationfloor = 270.000000;
 floorplane_a = 0.878811;
 floorplane_b = 0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738834;
+floorplane_d = -1524.738847;
 }
 
 sector
@@ -256620,7 +256620,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738834;
+floorplane_d = 1524.738847;
 }
 
 sector
@@ -256734,7 +256734,7 @@ xscaleceiling = -1.000000;
 floorplane_a = 0.878811;
 floorplane_b = -0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738834;
+floorplane_d = -1524.738847;
 }
 
 sector
@@ -256881,7 +256881,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738834;
+floorplane_d = 1524.738847;
 }
 
 sector
@@ -256900,7 +256900,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738834;
+floorplane_d = 1524.738847;
 }
 
 sector
@@ -259896,10 +259896,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.883291;
-floorplane_b = 0.043087;
-floorplane_c = -0.466842;
-floorplane_d = -343.799354;
+floorplane_a = 0.883295;
+floorplane_b = 0.043088;
+floorplane_c = -0.466834;
+floorplane_d = -343.801327;
 }
 
 sector
@@ -259943,10 +259943,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.497019;
-floorplane_b = -0.437377;
-floorplane_c = -0.749449;
-floorplane_d = 284.106569;
+floorplane_a = 0.497022;
+floorplane_b = -0.437379;
+floorplane_c = -0.749446;
+floorplane_d = 284.107867;
 }
 
 sector
@@ -259973,10 +259973,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.599811;
-floorplane_b = 0.199932;
-floorplane_c = -0.774761;
-floorplane_d = -373.976986;
+floorplane_a = 0.599809;
+floorplane_b = 0.199927;
+floorplane_c = -0.774763;
+floorplane_d = -373.971552;
 }
 
 sector
@@ -260327,11 +260327,11 @@ xscaleceiling = 2.000000;
 floorplane_a = 0.454529;
 floorplane_b = 0.454529;
 floorplane_c = -0.766033;
-floorplane_d = -784.118777;
+floorplane_d = -784.118863;
 ceilingplane_a = -0.454527;
 ceilingplane_b = -0.454527;
 ceilingplane_c = -0.766035;
-ceilingplane_d = 888.299851;
+ceilingplane_d = 888.300202;
 }
 
 sector
