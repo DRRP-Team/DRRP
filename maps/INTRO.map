@@ -15896,7 +15896,7 @@ linedef
 v1 = 310;
 v2 = 321;
 sidefront = 385;
-arg0 = 3000;
+id = 7;
 arg2 = 4;
 blocking = true;
 playeruse = true;
@@ -24435,7 +24435,7 @@ texturemiddle = "DRDC29";
 sidedef
 {
 sector = 179;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_CAPT";
 offsetx_mid = 64;
 }
 
@@ -24736,7 +24736,7 @@ texturemiddle = "DOORSTOP";
 sidedef
 {
 sector = 284;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_TXT1";
 }
 
 sidedef
@@ -26510,13 +26510,13 @@ texturemiddle = "DRDC29";
 sidedef
 {
 sector = 221;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_LC1";
 }
 
 sidedef
 {
 sector = 64;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_MSG";
 }
 
 sidedef
@@ -26538,13 +26538,13 @@ sector = 212;
 sidedef
 {
 sector = 271;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_MSG";
 }
 
 sidedef
 {
 sector = 63;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_LC1";
 }
 
 sidedef
@@ -28185,7 +28185,7 @@ sector = 233;
 sidedef
 {
 sector = 69;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_M2A";
 }
 
 sidedef
@@ -28630,7 +28630,7 @@ texturemiddle = "DRDC37";
 sidedef
 {
 sector = 181;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_LC1";
 }
 
 sidedef
@@ -28991,7 +28991,7 @@ texturemiddle = "DRDC29";
 sidedef
 {
 sector = 237;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_TXT1";
 }
 
 sidedef
@@ -29319,14 +29319,14 @@ offsety = -16;
 sidedef
 {
 sector = 286;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_TXT1";
 offsetx = 28;
 }
 
 sidedef
 {
 sector = 285;
-texturemiddle = "DRDC30";
+texturemiddle = "CGR_TXT1";
 offsetx = 32;
 }
 
