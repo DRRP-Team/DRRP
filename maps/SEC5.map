@@ -13521,6 +13521,30 @@ x = -832.000;
 y = 128.000;
 }
 
+vertex
+{
+x = -1.000;
+y = -127.000;
+}
+
+vertex
+{
+x = -63.000;
+y = -127.000;
+}
+
+vertex
+{
+x = 127.000;
+y = -127.000;
+}
+
+vertex
+{
+x = 64.000;
+y = -127.000;
+}
+
 linedef
 {
 v1 = 0;
@@ -21835,6 +21859,24 @@ arg0 = 78;
 playercross = true;
 }
 
+linedef
+{
+v1 = 823;
+v2 = 824;
+sidefront = 1154;
+sideback = 1153;
+twosided = true;
+}
+
+linedef
+{
+v1 = 825;
+v2 = 826;
+sidefront = 1155;
+sideback = 1156;
+twosided = true;
+}
+
 sidedef
 {
 sector = 88;
@@ -21945,14 +21987,14 @@ texturemiddle = "DRDC27";
 sidedef
 {
 sector = 8;
-texturemiddle = "DRPGZ002";
+texturemiddle = "DRDC34";
 offsetx_mid = -1;
 }
 
 sidedef
 {
 sector = 8;
-texturemiddle = "DRPGZ002";
+texturemiddle = "DRDC34";
 }
 
 sidedef
@@ -29101,6 +29143,28 @@ sector = 136;
 sidedef
 {
 sector = 136;
+}
+
+sidedef
+{
+sector = 8;
+}
+
+sidedef
+{
+sector = 8;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 8;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 8;
 }
 
 sector
