@@ -5,9 +5,96 @@
  *https://opensource.org/licenses/MIT
  */
 
-class StatInfoMenu : OptionMenu {
+enum ELevelStatsNotifier {
+    LSN_Unknown = 0,
+    LSN_AllMonsters,
+    LSN_AllSecrets,
+    LSN_Both
+}
 
-    Enum EColors {
+class LevelStatsNotifierHandler: StaticEventHandler {
+
+    Array<String> MapsMonstersDone;
+    Array<String> MapsSecretsDone;
+    bool curMapMonstersDone, curMapSecretsDone;
+
+    // ZScript cannot return a pointer to the dynamic array, 
+    //so "ui Array<String> GetAllDoneMapNamesArray()" is impossible.
+
+    ui String GetAllDoneMapNamesArray( int doneType, String outIfNone = "", String separator = "\n" ) {
+        String outStr = "";
+        int arraySize;
+
+        switch ( doneType ) {
+            case LSN_AllMonsters:
+                arraySize = MapsMonstersDone.Size();
+
+                for ( int i = 0; i < arraySize - 1; i++ )
+                    outStr = outStr .. MapsMonstersDone[ i ] .. separator;
+
+                if ( arraySize )
+                    outStr = outStr .. MapsMonstersDone[ arraySize - 1 ];
+
+                break;
+            case LSN_AllSecrets:
+                arraySize = MapsSecretsDone.Size();
+
+                for ( int i = 0; i < arraySize - 1; i++ )
+                    outStr = outStr .. MapsMonstersDone[ i ] .. separator;
+
+                if ( arraySize )
+                    outStr = outStr .. MapsSecretsDone[ arraySize - 1 ];
+
+                break;
+            default:
+                break;
+        }
+
+        return ( outStr == "" )? outIfNone : outStr;
+    } // of ui String GetAllDoneMapNamesArray( int doneType, String outIfNone = "", String separator = "\n" ) {
+
+
+    override void WorldLoaded( WorldEvent e ) {
+        if ( !level.totaltime ) {
+            MapsMonstersDone.Clear();
+            MapsSecretsDone.Clear();
+        }
+
+        curMapMonstersDone = ( level.total_monsters == level.killed_monsters );
+        curMapSecretsDone = ( level.total_secrets == level.found_secrets );
+
+        Super.WorldLoaded( e );
+    }
+
+    override void WorldTick() {
+        if ( !( level.maptime % 3 ) ) {
+
+            // All monsters killed check:
+            if ( !curMapMonstersDone && level.total_monsters == level.killed_monsters ) {
+                //ACS_ScriptCall( "levelStatsNotifier", curMapSecretsDone? LSN_Both : LSN_AllMonsters );
+                MapsMonstersDone.Push( level.LevelName );
+                curMapMonstersDone = true;
+            }
+
+            // All secrets found check:
+            if ( !curMapSecretsDone && level.total_secrets == level.found_secrets ) {
+                //ACS_ScriptCall( "levelStatsNotifier", curMapMonstersDone? LSN_Both : LSN_AllSecrets );
+                MapsSecretsDone.Push( level.LevelName );
+                curMapSecretsDone = true;
+            }
+        }
+
+        Super.WorldTick();
+    }
+
+} // of class LevelStatsNotifierHandler: StaticEventHandler {
+
+
+
+class StatInfoMenu : OptionMenu {
+    OptionMenuDescriptor initdesc;
+
+    enum EColors {
         cNormal = Font.CR_GRAY,
         cBad    = Font.CR_RED,
         cGood   = Font.CR_DARKGREEN,
@@ -18,14 +105,14 @@ class StatInfoMenu : OptionMenu {
         return StringTable.Localize( "$DRRP_D_STATINFO_" .. postfix );
     } // of String StatLocalize( String postfix ) {
 
-    void addStr( OptionMenuDescriptor desc, int textColor, String text ) {
+    void addStr( int textColor, String text ) {
         OptionMenuItemStaticText menuitem = new( "OptionMenuItemStaticText" );
         menuitem.Init( text );
         menuitem.mColor = textColor;
-        desc.mItems.push( menuitem );
-    } // of void addStr( OptionMenuDescriptor desc, String text ) {
+        initdesc.mItems.push( menuitem );
+    } // of void addStr( String text ) {
 
-    void addItemStr( OptionMenuDescriptor desc, Inventory item, String text, bool sizeless = false ) {
+    void addItemStr( Inventory item, String text, bool sizeless = false ) {
         if ( item == null ) 
             text = text .. "0";
         else if ( sizeless )
@@ -33,74 +120,87 @@ class StatInfoMenu : OptionMenu {
         else
             text = text .. item.Amount .. "/" .. item.MaxAmount;
 
-        addStr( desc, ( item == null ) || ( !item.amount ) ? cBad : 
+        addStr( ( item == null ) || ( !item.amount ) ? cBad : 
                     ( item.Amount >= item.MaxAmount ? cGood : cNormal ), text );
-    } // of void addItemStr( OptionMenuDescriptor desc, Inventory item, String text, bool sizeless = false ) {
+    } // of void addItemStr( Inventory item, String text, bool sizeless = false ) {
 
-    void addSpecIntStr( OptionMenuDescriptor desc, int checkInt, int maxInt, String text, bool bad_checking = false ) {
+    void addSpecIntStr( int checkInt, int maxInt, String text, bool bad_checking = false ) {
 
-        addStr( desc, ( checkInt <= 0 ) && bad_checking ? cBad : 
+        addStr( ( checkInt <= 0 ) && bad_checking ? cBad : 
                     ( ( checkInt >= maxInt ) ? cGood : cNormal ), 
                 text .. checkInt .. "/" .. maxInt );
-    } // of void addSpecIntStr( OptionMenuDescriptor desc, int checkInt, int maxInt, String text, bool bad_check = false ) {
+    } // of void addSpecIntStr( int checkInt, int maxInt, String text, bool bad_check = false ) {
 
-    void addHeaderStr( OptionMenuDescriptor desc, String headerText ) {
+    void addDoneLevels( uint doneType ) {
+        LevelStatsNotifierHandler mapsHandler = LevelStatsNotifierHandler( EventHandler.Find( "LevelStatsNotifierHandler" ) );
+        String rawMapnames = mapsHandler.GetAllDoneMapNamesArray( doneType, "", "\n" );
+
+        if ( rawMapnames.Length() ) {
+            Array<String> mapnames;
+            rawMapnames.Split( mapnames, "\n" );
+
+            for ( int i = 0; i < mapnames.Size(); i++ )
+                addStr( cNormal, mapnames[ i ] );
+        } else {
+            addStr( cNormal, StatLocalize( "NOTHING" ) );
+        }
+    } // of void addDoneLevels( uint doneType ) {
+
+    void addHeaderStr( String headerText ) {
         int headerMaxLength = 20;
-        addStr( desc, cNormal, " " );
+        addStr( cNormal, " " );
 
         headerText = " " .. headerText .. " ";
         while ( headerText.Length() < headerMaxLength ) 
             headerText = "-" .. headerText .. "-";
 
-        addStr( desc, cHeader, headerText );
-    } // of void addHeaderStr( OptionMenuDescriptor desc, String text ) {
+        addStr( cHeader, headerText );
+    } // of void addHeaderStr( String text ) {
 
 
 
 
     override void Init( Menu parent, OptionMenuDescriptor desc ) {
-
         Super.Init( parent, desc );
+
         PlayerInfo pStat = Players[ consoleplayer ];
         desc.mItems.clear();
 
         if ( pStat == null || pStat.mo == null ) {
-            addStr( desc, cNormal, "$DRRP_D_STATINFO_NOTINGAME" );
+            addStr( cNormal, "$DRRP_D_STATINFO_NOTINGAME" );
             return;
         }
+
+        initdesc = desc;
 
         String tempStr; // For non-standart expressions (if any).
         String notNow = StatLocalize( "UNDERCONSTRUCT" );
 
-        addHeaderStr( desc, StatLocalize( "PLAYER_T" ) );
-        addSpecIntStr( desc, pStat.mo.health, pStat.mo.MaxHealth, StatLocalize( "HEALTH" ), true );
-        addItemStr( desc, pStat.mo.FindInventory( "DRRPBasicArmor" ), StatLocalize( "ARMOR" ) );
-        addItemStr( desc, pStat.mo.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
-        addStr( desc, cNormal, StatLocalize( "LEVEL" ) .. DRRPPlayer( pStat.mo ).Level );
-        addSpecIntStr( desc, DRRPPlayer( pStat.mo ).Experience, DRRPPlayer( pStat.mo ).NextLevelXP, StatLocalize( "EXPERIENCE" ) );
-        addStr( desc, cNormal, StatLocalize( "DEFENCE" ) .. DRRPPlayer( pStat.mo ).Defense );
-        addStr( desc, cNormal, StatLocalize( "STRENGTH" ) .. DRRPPlayer( pStat.mo ).Strength );
-        addStr( desc, cNormal, StatLocalize( "AGILITY" ) .. DRRPPlayer( pStat.mo ).Agility );
-        addStr( desc, cNormal, StatLocalize( "ACCURACY" ) .. DRRPPlayer( pStat.mo ).Accuracy );
+        addHeaderStr( StatLocalize( "PLAYER_T" ) );
+        addSpecIntStr( pStat.mo.health, pStat.mo.MaxHealth, StatLocalize( "HEALTH" ), true );
+        addItemStr( pStat.mo.FindInventory( "DRRPBasicArmor" ), StatLocalize( "ARMOR" ) );
+        addItemStr( pStat.mo.FindInventory( "Credit" ), StatLocalize( "CREDITS" ), true );
+        addStr( cNormal, StatLocalize( "LEVEL" ) .. DRRPPlayer( pStat.mo ).Level );
+        addSpecIntStr( DRRPPlayer( pStat.mo ).Experience, DRRPPlayer( pStat.mo ).NextLevelXP, StatLocalize( "EXPERIENCE" ) );
+        addStr( cNormal, StatLocalize( "DEFENCE" ) .. DRRPPlayer( pStat.mo ).Defense );
+        addStr( cNormal, StatLocalize( "STRENGTH" ) .. DRRPPlayer( pStat.mo ).Strength );
+        addStr( cNormal, StatLocalize( "AGILITY" ) .. DRRPPlayer( pStat.mo ).Agility );
+        addStr( cNormal, StatLocalize( "ACCURACY" ) .. DRRPPlayer( pStat.mo ).Accuracy );
 
-        addHeaderStr( desc, StatLocalize( "THISSECTOR_T" ) );
-        addStr( desc, cNormal, StatLocalize( "TIME" ) .. level.time / 35 );
-        addSpecIntStr( desc, level.found_secrets, level.total_secrets, StatLocalize( "SECRETS" ) );
-        addSpecIntStr( desc, level.killed_monsters, level.total_monsters, StatLocalize( "MONSTERS" ) );
-        addSpecIntStr( desc, level.found_items, level.total_items, StatLocalize( "ITEMS" ) );
-        addStr( desc, cNormal, StatLocalize( "TURNS" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "EXPERIENCE" ) .. notNow );
+        addHeaderStr( StatLocalize( "THISSECTOR_T" ) );
+        addStr( cNormal, StatLocalize( "TIME" ) .. level.maptime / 35 );
+        addSpecIntStr( level.found_secrets, level.total_secrets, StatLocalize( "SECRETS" ) );
+        addSpecIntStr( level.killed_monsters, level.total_monsters, StatLocalize( "MONSTERS" ) );
+        addSpecIntStr( level.found_items, level.total_items, StatLocalize( "ITEMS" ) );
 
-        addHeaderStr( desc, StatLocalize( "TOTAL_T" ) );
-        addStr( desc, cNormal, StatLocalize( "TIME" ) .. level.totaltime / 35 );
-        addStr( desc, cNormal, StatLocalize( "TURNS" ) .. notNow );
-        addStr( desc, cNormal, StatLocalize( "DEATHS" ) .. notNow );
+        addHeaderStr( StatLocalize( "TOTAL_T" ) );
+        addStr( cNormal, StatLocalize( "TIME" ) .. level.totaltime / 35 );
 
-        addHeaderStr( desc, StatLocalize( "MAXKILLS_T" ) );
-        addStr( desc, cNormal, notNow );
+        addHeaderStr( StatLocalize( "MAXKILLS_T" ) );
+        addDoneLevels( LSN_AllMonsters );
 
-        addHeaderStr( desc, StatLocalize( "MAXSECRETS_T" ) );
-        addStr( desc, cNormal, notNow );
+        addHeaderStr( StatLocalize( "MAXSECRETS_T" ) );
+        addDoneLevels( LSN_AllSecrets );
 
     } // override void Init( Menu parent, OptionMenuDescriptor desc ) {
 }
