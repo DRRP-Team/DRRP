@@ -52,6 +52,7 @@ OptionMenu "Misc" {
     StaticText " "
     Option "$DRRP_D_MENU_INFOBAR_ENABLE", "drrp_enable_infobar", "ONOFF"
     Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
+    Option "$DRRP_D_MENU_GIBS_ENABLE",  "drrp_enable_extended_gibs", "ONOFF"
     StaticText " "
     Option "$DRRP_D_MENU_MISC_FREELOOK", "sv_freelook", "YesNo"
     Option "$DRRP_D_MENU_MISC_DEBUGMODE", "drrp_debug_mode", "OnOff"

@@ -89,8 +89,12 @@ class DRRPActorsHandler: EventHandler {
 
     override void WorldThingDamaged( WorldEvent e ) {
         if ( e.Thing && e.Thing.bISMONSTER && e.Thing.health < gibDamage ) {
-            Actor gibSpawner = e.Thing.Spawn( "DRRPExtraDamageGibSpawner", e.Thing.pos );
-            gibSpawner.master = e.Thing;
+
+            if ( CVar.FindCVar( "drrp_enable_extended_gibs" ).GetBool() ) {
+                Actor gibSpawner = e.Thing.Spawn( "DRRPExtraDamageGibSpawner", e.Thing.pos );
+                gibSpawner.master = e.Thing;
+            }
+
         }
 
         Super.WorldThingDamaged( e );
