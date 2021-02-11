@@ -15,7 +15,7 @@ class DRRPCharacter_ZSPatch: Actor {
 }
 
 class PainElemental_ZSPatch: PainElemental {
-    // Lost souls and its derivatives dies right after default A_PainDie() spawn.
+    // Lost souls and its derivatives dies right after default A_PainDie() spawning.
     action void A_DRRP_PainDie( class<Actor> spawnee ) {
 
         if ( target && IsFriend( target ) ) // And I thought you were my friend!
@@ -146,15 +146,15 @@ class DRRPLava: Actor { // Has Decorate heir (DRRPLava_Decorate).
     }
 }
 
-class DRRPExtinguisherTrigger : Inventory {
-	States {
-		Spawn:
-			TNT1 A -1;
-			Stop;
-	}
+class DRRPExtinguisherTrigger: Inventory {
+    States {
+        Spawn:
+            TNT1 A -1;
+            Stop;
+    }
 }
 
-class DRRPFire : Actor { // Has Decorate heir (DRRPFire_Decorate).
+class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
 
     Default {
         // MONSTER;
@@ -162,25 +162,25 @@ class DRRPFire : Actor { // Has Decorate heir (DRRPFire_Decorate).
         //+SPECTRAL;
         //-ISMONSTER;
         //-COUNTKILL;
-		-SOLID;
-		-PUSHABLE;
-		-SHOOTABLE;
-		+NOBLOOD;
-		+NOTARGET;
-		+NOTRIGGER;
-		+DONTTHRUST;
+        -SOLID;
+        -PUSHABLE;
+        -SHOOTABLE;
+        +NOBLOOD;
+        +NOTARGET;
+        +NOTRIGGER;
+        +DONTTHRUST;
         Tag "$DRRP_E_FIRE";
         Obituary "$DRRP_OB_FIRE";
         Health 6;
         Radius 33;
-		Height 64;
+        Height 64;
         Mass 0x7FFFFFFF;
         DamageType "DRRPFireDmg";
         DamageFactor "DRRPFireExtDmg", 1.0;
         DamageFactor "Normal", 0;
     }
-	
-	int fireActorDamageMin, fireActorDamageMax, fireActorDamageTicks;
+    
+    int fireActorDamageMin, fireActorDamageMax, fireActorDamageTicks;
 
     void damageNearestPlayers( void ) {
         for ( int i = 0; i < MAXPLAYERS; i++ ) {
@@ -205,11 +205,11 @@ class DRRPFire : Actor { // Has Decorate heir (DRRPFire_Decorate).
         double ScaleTo = double( health ) / double( SpawnHealth() );
         double ScaleNow = ( ScaleTo < Scale.x )? Scale.x - ( ( Scale.x - ScaleTo ) / 15 ): ScaleTo;
         self.Scale = ( ScaleNow, ScaleNow );
-		
-		Health -= A_RadiusGive("DRRPExtinguisherTrigger", Height, RGF_MISSILES | RGF_CUBE | RGF_NOSIGHT, 1, "FireExtPuff");
-		if(Health <= 0) {
-			Destroy();
-		}
+        
+        Health -= A_RadiusGive("DRRPExtinguisherTrigger", Height, RGF_MISSILES | RGF_CUBE | RGF_NOSIGHT, 1, "FireExtPuff");
+        if(Health <= 0) {
+            Destroy();
+        }
 
         Super.Tick();
     } // of override void Tick()
