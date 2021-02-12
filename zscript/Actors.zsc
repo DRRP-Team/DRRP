@@ -252,19 +252,23 @@ class DRRPLightWrapper: Actor {
         } // of switch ( lightType ) {
 
         if ( dynlight ) {
-            dynlight.angle = angle;
-            dynlight.pitch = pitch;
-            dynlight.roll  = roll;
+            dynlight.angle  = angle;
+            dynlight.pitch  = pitch;
+            dynlight.roll   = roll;
             dynlight.ChangeTID( self.TID );
 
             for ( int i = 0; i < 5; i++ )
                 dynlight.args[ i ] = self.args[ i ];
+
+            for ( int i = 0; i < 5; i++ )
+                console.printf( dynlight.args[ i ] .. "" );
         }
 
         Destroy();
     } // of override void PostBeginPlay() {
 
 } // of class DRRPLightWrapper: Actor {
+
 
 class DRRPDamageDoll: DRRPPlayer {
     Default {
