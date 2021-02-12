@@ -57,6 +57,7 @@ Actor DRRPTable 10702 {
 Actor DRRPYellowLamp : Column replaces Column {
     //$Category DDecorations
 
+    Args 255, 255, 204, 96
     Tag "$DRRP_E_YELLOWLAMP"
     Radius 20
 
@@ -64,6 +65,7 @@ Actor DRRPYellowLamp : Column replaces Column {
         Spawn:
             TNT1 A 0 // TID in the next line is for the lamp glow removing:
             TNT1 A 0 A_SpawnItemEx( "DRRPLight1", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER, 0, tid )
+            TNT1 A 0 A_SpawnItemEx( "DRRPLightWrapper", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER | SXF_TRANSFERSPECIAL, 0, tid )
             Goto Super::Spawn
     }
 }
@@ -71,6 +73,7 @@ Actor DRRPYellowLamp : Column replaces Column {
 Actor DRRPBlueLamp : DRRPYellowLamp 10703 {
     //$Category DDecorations
 
+    Args 204, 204, 255, 96
     Tag "$DRRP_E_BLUELAMP"
     Translation "224:231=192:195", "160:167=196:199"
 }
