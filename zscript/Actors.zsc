@@ -83,19 +83,40 @@ class DRRPCombatSuit: DRRPArmorShard replaces BlueArmor {
 class DRRPActorsHandler: EventHandler {
     const gibDamage = -30;
 
+    enum EBloodFlashTypes {
+        BFT_None = 0,
+        BFT_Backslash = 1,  // "SPLASH_1"
+        BFT_Claws = 2,      // "SPLASH_2"
+        BFT_Spot = 3        // "SPLASH_3"
+    };
+
     override void OnRegister() {
         SetOrder( 2174 );
     }
 
     override void WorldThingDamaged( WorldEvent e ) {
+        // For extra gibs:
         if ( e.Thing && e.Thing.bISMONSTER && e.Thing.health < gibDamage ) {
 
             if ( CVar.FindCVar( "drrp_enable_extended_gibs" ).GetBool() ) {
                 Actor gibSpawner = e.Thing.Spawn( "DRRPExtraDamageGibSpawner", e.Thing.pos );
                 gibSpawner.master = e.Thing;
             }
-
         }
+
+        // For player's blood flashes:
+        if ( e.Thing is 'DRRPPlayer' ) {
+            int flashType = 0;
+
+            if ( e.Inflictor.bISMONSTER )
+                flashType = ( e.Inflictor is 'LostSoul' )? BFT_Claws : RandomPick( BFT_Backslash, BFT_Claws );
+            else if ( !( e.DamageType == 'DRRPFireDmg' ) && !( e.DamageType == 'DRRPFireExtDmg' ) )
+                flashType = BFT_Spot;
+
+            if ( flashType )
+                e.Thing.ACS_ScriptCall( "BloodFlashVisual", flashType, e.Damage );
+        }
+
 
         Super.WorldThingDamaged( e );
     } // of override void WorldThingDamaged( WorldEvent e ) {
