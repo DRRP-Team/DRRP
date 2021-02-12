@@ -259,9 +259,6 @@ class DRRPLightWrapper: Actor {
 
             for ( int i = 0; i < 5; i++ )
                 dynlight.args[ i ] = self.args[ i ];
-
-            for ( int i = 0; i < 5; i++ )
-                console.printf( dynlight.args[ i ] .. "" );
         }
 
         Destroy();
