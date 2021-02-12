@@ -6,17 +6,17 @@
  */
 
 enum ELevelStatsNotifier {
-    LSN_Unknown = 0,
-    LSN_AllMonsters,
-    LSN_AllSecrets,
-    LSN_Both
+    LSN_Unknown         = 0x00,
+    LSN_AllMonsters     = 0x01,
+    LSN_AllSecrets      = 0x02,
+    LSN_Both            = LSN_AllMonsters | LSN_AllSecrets,
 }
 
 class LevelStatsNotifierHandler: StaticEventHandler {
 
     Array<String> MapsMonstersDone;
     Array<String> MapsSecretsDone;
-    bool curMapMonstersDone, curMapSecretsDone;
+    uint curMapDoneMask;
 
     // ZScript cannot return a pointer to the dynamic array, 
     //so "ui Array<String> GetAllDoneMapNamesArray()" is impossible.
@@ -60,8 +60,8 @@ class LevelStatsNotifierHandler: StaticEventHandler {
             MapsSecretsDone.Clear();
         }
 
-        curMapMonstersDone = ( level.total_monsters == level.killed_monsters );
-        curMapSecretsDone = ( level.total_secrets == level.found_secrets );
+        curMapDoneMask  = LSN_AllMonsters * ( level.total_monsters == level.killed_monsters );
+        curMapDoneMask |= LSN_AllSecrets  * ( level.total_secrets == level.found_secrets );
 
         Super.WorldLoaded( e );
     }
@@ -71,16 +71,16 @@ class LevelStatsNotifierHandler: StaticEventHandler {
             bool callDoneSequence = false;
 
             // All monsters killed check:
-            if ( !curMapMonstersDone && level.total_monsters == level.killed_monsters ) {
+            if ( !( curMapDoneMask & LSN_AllMonsters ) && level.total_monsters == level.killed_monsters ) {
                 MapsMonstersDone.Push( level.LevelName );
-                curMapMonstersDone = true;
+                curMapDoneMask |= LSN_AllMonsters;
                 callDoneSequence = true;
             }
 
             // All secrets found check:
-            if ( !curMapSecretsDone && level.total_secrets == level.found_secrets ) {
+            if ( !( curMapDoneMask & LSN_AllSecrets ) && level.total_secrets == level.found_secrets ) {
                 MapsSecretsDone.Push( level.LevelName );
-                curMapSecretsDone = true;
+                curMapDoneMask |= LSN_AllSecrets;
                 callDoneSequence = true;
             }
 
@@ -88,9 +88,12 @@ class LevelStatsNotifierHandler: StaticEventHandler {
             if ( callDoneSequence && playeringame[ 0 ] && players[ 0 ].mo ) {
                 DRRPPlayer player = DRRPPlayer( players[ 0 ].mo );
 
-                if ( curMapMonstersDone ^ curMapSecretsDone )
+                // If secrets OR monsters OR both:
+                if ( curMapDoneMask & LSN_Both )
                     player.AddFeature( RPG_Experience, 10 );
-                else if ( curMapSecretsDone )
+
+                // If both:
+                if ( ( curMapDoneMask & LSN_Both ) == LSN_Both )
                     player.GiveInventory( "Credit", 25 );
 
                 player.ACS_ScriptCall( "LevelDoneNotifierVisual" );
