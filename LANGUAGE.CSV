@@ -307,6 +307,7 @@ Settings,DRRP_D_MENU_DRRPMENU_SETTINGS,,,Настройки
 Flashlight,DRRP_D_MENU_DRRPMENU_FLASHLIGHT,,,Фонарик
 Shaders,DRRP_D_MENU_DRRPMENU_SHADERS,,,Шейдеры
 Language,DRRP_D_MENU_DRRPMENU_LANGUAGE,,,Язык
+Performance,DRRP_D_MENU_DRRPMENU_PERFORMANCE,,,Производительность
 Misc,DRRP_D_MENU_DRRPMENU_MISC,,,ПРОЧЕЕ
 DRRP key bindings,DRRP_D_KEYBINDINGS_TITLE,,,Назначение клавиш DRRP
 Toggle flashlight,DRRP_D_KEYBINDINGS_FLASHLIGHT,,,Включить/отключить фонарь
@@ -344,6 +345,8 @@ Enable parallax occlusion mapping,DRRP_D_MENU_SHADERS_POM,,,Включить м�
 Enable cinematic shaders,DRRP_D_MENU_SHADERS_CINEMATIC,,,Включить кинематографические шейдеры
 > Enable lut tonemap shaders,DRRP_D_MENU_SHADERS_LUT,,,> Включить LUT цветокоррекцию
 Apply changes,DRRP_D_MENU_SHADERS_APPLY,,,Применить изменения
+Required to apply changes,DRRP_D_MENU_PERFORMANCE_APPLYNEEDED,,,Требуется применить изменения
+Will be applied at the next map,DRRP_D_MENU_PERFORMANCE_NEWMAPNEEDED,,,Применится на следующем уровне
 Wrong passcode,DRRP_D_PASSCODE_WRONG,,,Неверный пароль
 No records yet.,DRRP_D_NOTEBOOK_EMPTY,,,Записей пока нет.
 You should be in game to use notebook.,DRRP_D_NOTEBOOK_NOTINGAME,,,Вы должны быть в игре для просмотра блокнота.

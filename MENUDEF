@@ -36,6 +36,7 @@ OptionMenu "DRRPMenu" {
     Submenu "$DRRP_D_MENU_DRRPMENU_LANGUAGE", "Language"
     Submenu "$DRRP_D_MENU_DRRPMENU_FLASHLIGHT", "Flashlight"
     Submenu "$DRRP_D_MENU_DRRPMENU_SHADERS", "Shaders"
+    Submenu "$DRRP_D_MENU_DRRPMENU_PERFORMANCE", "Performance"
     Submenu "$DRRP_D_MENU_DRRPMENU_MISC", "Misc"
     Submenu "$OPTMNU_CONTROLS", "CustomizeControls"
 }
@@ -45,6 +46,20 @@ OptionMenu "Language" {
     StaticText " "
     Command "English US", "language enu"
     Command "Russian", "language rus"
+}
+
+OptionMenu "Performance" {
+    Title "$DRRP_D_MENU_DRRPMENU_PERFORMANCE"
+    StaticText " "
+    Option "$DRRP_D_MENU_SHADERS_ENABLE", "gl_custompost", "ONOFF"
+    Option "$DRRP_D_MENU_GIBS_ENABLE",  "drrp_enable_extended_gibs", "ONOFF"
+    StaticText "-----"
+    StaticText "$DRRP_D_MENU_PERFORMANCE_APPLYNEEDED"
+    Option "$DRRP_D_MENU_SHADERS_POM", "drrp_enable_pom_shader", "ONOFF"
+    Command "$DRRP_D_MENU_SHADERS_APPLY", "pukename updateshaders 1"
+    StaticText "-----"
+    StaticText "$DRRP_D_MENU_PERFORMANCE_NEWMAPNEEDED"
+    Option "$DRRP_D_MENU_LIGHTS_TYPE", "drrp_lights_wrapper_type", LightsWrapperType
 }
 
 OptionMenu "Misc" {
