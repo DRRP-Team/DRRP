@@ -1152,7 +1152,7 @@ comment = "20:7";
 
 thing
 {
-x = 1960.000;
+x = 1952.000;
 y = 1376.000;
 type = 2028;
 angle = 90;
@@ -1178,8 +1178,8 @@ comment = "21:3";
 
 thing
 {
-x = 2024.000;
-y = 1240.000;
+x = 2016.000;
+y = 1248.000;
 type = 10703;
 angle = 90;
 skill1 = true;
@@ -3090,64 +3090,40 @@ comment = "22:4";
 
 thing
 {
-x = 1960.000;
-y = 1376.000;
-type = 9800;
-angle = 270;
-height = 32;
-arg0 = 255;
+x = 1184.000;
+y = 480.000;
+type = 10265;
 arg1 = 255;
-arg2 = 100;
-arg3 = 32;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-id = 675;
-comment = "21:3";
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
 {
-x = 2024.000;
-y = 1240.000;
-type = 9800;
-angle = 270;
-height = 32;
-arg0 = 100;
-arg1 = 100;
-arg2 = 255;
-arg3 = 32;
+x = 1184.000;
+y = 224.000;
+type = 10265;
+arg1 = 255;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-id = 709;
-comment = "22:5";
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
@@ -3210,64 +3186,40 @@ comment = "25:6";
 
 thing
 {
-x = 2392.000;
-y = 1128.000;
-type = 9800;
-angle = 270;
-height = 32;
-arg0 = 255;
+x = 1056.000;
+y = 224.000;
+type = 10265;
 arg1 = 255;
-arg2 = 100;
-arg3 = 32;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-id = 870;
-comment = "27:6";
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
 {
-x = 2536.000;
-y = 1128.000;
-type = 9800;
-angle = 270;
-height = 32;
-arg0 = 255;
+x = 1056.000;
+y = 480.000;
+type = 10265;
 arg1 = 255;
-arg2 = 100;
-arg3 = 32;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-id = 966;
-comment = "30:6";
+height = 64;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
@@ -7308,82 +7260,6 @@ thing
 {
 x = 1952.000;
 y = 1056.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1056.000;
-y = 480.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1056.000;
-y = 224.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1184.000;
-y = 224.000;
-type = 10265;
-arg1 = 255;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-height = 64;
-renderstyle = "";
-arg0 = 1;
-}
-
-thing
-{
-x = 1184.000;
-y = 480.000;
 type = 10265;
 arg1 = 255;
 coop = true;
