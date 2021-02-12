@@ -53,12 +53,19 @@ OptionMenu "Misc" {
     Option "$DRRP_D_MENU_INFOBAR_ENABLE", "drrp_enable_infobar", "ONOFF"
     Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
     Option "$DRRP_D_MENU_GIBS_ENABLE",  "drrp_enable_extended_gibs", "ONOFF"
+    Option "$DRRP_D_MENU_LIGHTS_TYPE", "drrp_lights_wrapper_type", LightsWrapperType
     StaticText " "
     Option "$DRRP_D_MENU_MISC_FREELOOK", "sv_freelook", "YesNo"
     Option "$DRRP_D_MENU_MISC_DEBUGMODE", "drrp_debug_mode", "OnOff"
 }
 
-OptionValue "LocationOptions" {
+OptionValue "LightsWrapperType" {
+    0, "$DRRP_D_MENU_LIGHTS_NONE"
+    1, "$DRRP_D_MENU_LIGHTS_NORMAL"
+    2, "$DRRP_D_MENU_LIGHTS_ATTENUATED"
+}
+
+OptionValue "FlashlightLocationOptions" {
     0, "$DRRP_D_MENU_FLASHLIGHT_HELMET"
     1, "$DRRP_D_MENU_FLASHLIGHT_RSHOULDER"
     2, "$DRRP_D_MENU_FLASHLIGHT_LSHOULDER"
@@ -74,7 +81,7 @@ OptionMenu "Flashlight" {
     StaticText " "
     Slider "$DRRP_D_MENU_FLASHLIGHT_IANGLE", "flashlight_inner", 0, 180, 10, 0
     Slider "$DRRP_D_MENU_FLASHLIGHT_OANGLE", "flashlight_outer", 0, 180, 10, 0
-    Option "$DRRP_D_MENU_FLASHLIGHT_LOCATION", flashlight_location, LocationOptions
+    Option "$DRRP_D_MENU_FLASHLIGHT_LOCATION", "flashlight_location", FlashlightLocationOptions
     StaticText " "
     Control "$DRRP_D_MENU_FLASHLIGHT_KEY", "toggleflashlight"
 }

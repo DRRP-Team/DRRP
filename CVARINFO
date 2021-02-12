@@ -16,7 +16,8 @@ user bool drrp_enable_damage_shader         = true;
 user bool drrp_enable_infobar               = true;
 user bool drrp_enable_compass               = true;
 
-server bool drrp_enable_extended_gibs		= true;
+server bool drrp_enable_extended_gibs       = true;
+server int drrp_lights_wrapper_type         = 1;
 
 // Flashlight
 server color flashlight_color               = "AB AB FF";

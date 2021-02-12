@@ -336,11 +336,16 @@
     DRRP_D_MENU_LANGUAGE_TITLE      = "Language";
     DRRP_D_MENU_STATINFO_TITLE      = "Statistic";
 
-    DRRP_D_MENU_INFOBAR_ENABLE      = "Show actor's names";
+    DRRP_D_MENU_INFOBAR_ENABLE      = "Show actor names";
     DRRP_D_MENU_COMPASS_ENABLE      = "Enable compass";
     DRRP_D_MENU_GIBS_ENABLE         = "Enable extra gibs";
+    DRRP_D_MENU_LIGHTS_TYPE         = "Lighting type for levels";
 
     DRRP_HUD_COMPASSVISUAL          = "N-----W-----S-----E-----";
+
+    DRRP_D_MENU_LIGHTS_NONE         = "None";
+    DRRP_D_MENU_LIGHTS_NORMAL       = "Normal";
+    DRRP_D_MENU_LIGHTS_ATTENUATED   = "Attenuated";
 
     DRRP_D_MENU_FLASHLIGHT_HELMET   = "Helmet";
     DRRP_D_MENU_FLASHLIGHT_RSHOULDER= "Right Shoulder";

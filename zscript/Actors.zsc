@@ -206,6 +206,45 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
 class DRRPKronosTeleportFog: TeleportFog {
 }
 
+class DRRPLightWrapper: Actor {
+    enum ELightsWrapperTypes {
+        LWT_None = 0,
+        LWT_NormalLight,
+        LWT_AttenuatedLight
+    }
+
+    override void PostBeginPlay() {
+        DynamicLight dynlight;
+
+        int lightType = CVar.GetCVar( "drrp_lights_wrapper_type" ).GetInt();
+
+        switch ( lightType ) {
+            case LWT_NormalLight:
+                dynlight = DynamicLight( Spawn( "PointLight", pos ) );
+                break;
+            case LWT_AttenuatedLight:
+                dynlight = DynamicLight( Spawn( "PointLightAttenuated", pos ) );
+                break;
+            case LWT_None:
+            default:
+                break;
+        } // of switch ( lightType ) {
+
+        if ( dynlight ) {
+            dynlight.angle = angle;
+            dynlight.pitch = pitch;
+            dynlight.roll  = roll;
+            dynlight.ChangeTID( self.TID );
+
+            for ( int i = 0; i < 5; i++ )
+                dynlight.args[ i ] = self.args[ i ];
+        }
+
+        Destroy();
+    } // of override void PostBeginPlay() {
+
+} // of class DRRPLightWrapper: Actor {
+
 class DRRPDamageDoll: DRRPPlayer {
     Default {
         +BUDDHA;
