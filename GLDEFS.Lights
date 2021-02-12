@@ -39,35 +39,6 @@ Object DRRPLava {
 }
 // end Lava
 
-// Blue lamp
-PointLight BLAMP {
-    color 64 64 255
-    size 32
-    offset 0 44 0
-    attenuate 1
-}
-
-Object DRRPBlueLamp {
-    Frame COLU {
-        light BLAMP
-    }
-}
-// end Blue lamp
-
-// Yellow lamp
-PointLight YLAMP {
-    color 255 255 204
-    size 32
-    offset 0 44 0
-    attenuate 1
-}
-
-Object DRRPYellowLamp {
-    Frame COLU {
-        light YLAMP
-    }
-}
-// end Yellow lamp
 // Alarm1
 PulseLight Alarm1Light {
     Color 1.0 0.0 0.0
