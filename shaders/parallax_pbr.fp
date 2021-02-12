@@ -101,7 +101,7 @@ Material ProcessMaterial() {
 #if defined(PBR)
     material.Metallic = texture(metallictexture, texCoord).r;
     material.Roughness = texture(roughnesstexture, texCoord).r;
-    material.AO = texture(aotexture, texCoord).r;
+    //material.AO = texture(aotexture, texCoord).r;
 #endif
 #if defined(BRIGHTMAP)
     material.Bright = texture(brighttexture, texCoord);

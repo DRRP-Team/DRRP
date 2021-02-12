@@ -94,7 +94,6 @@ Material Texture DRDC24 {
     normal "materials/normal/drdc25.png"
     metallic "materials/black.png"
     roughness "materials/white.png"
-    ao "materials/ao/drdc25.png"
     Texture tex_heightmap   "materials/height/drdc25.png"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -104,7 +103,6 @@ Material Texture DRDC25 {
     normal "materials/normal/drdc25.png"
     metallic "materials/black.png"
     roughness "materials/white.png"
-    ao "materials/ao/drdc25.png"
     Texture tex_heightmap   "materials/height/drdc25.png"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -114,7 +112,6 @@ Material Texture DRDC26 {
     normal "materials/normal/drdc25.png"
     metallic "materials/black.png"
     roughness "materials/white.png"
-    ao "materials/ao/drdc25.png"
     Texture tex_heightmap   "materials/height/drdc25.png"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -196,7 +193,6 @@ Material Texture DRDC35 {
     normal "materials/normal/drdc35.png"
     metallic "materials/white.png"
     roughness "materials/roughness/drdc35.png"
-    //ao "materials/ao/drdc35.png"
     brightmap "materials/black.png"
     Texture tex_heightmap   "materials/height/drdc35.png"
     shader                  "shaders/parallax_pbr.fp"
@@ -207,7 +203,6 @@ Material Texture RPWAL23 {
     normal "materials/normal/drdc35.png"
     metallic "materials/white.png"
     roughness "materials/roughness/drdc35.png"
-    //ao "materials/ao/drdc35.png"
     brightmap "materials/black.png"
     Texture tex_heightmap   "materials/height/drdc35.png"
     shader                  "shaders/parallax_pbr.fp"
