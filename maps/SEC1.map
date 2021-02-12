@@ -4692,15 +4692,12 @@ height = 16.000000;
 
 thing
 {
-x = -992.000;
-y = -288.000;
-type = 9830;
-id = 434;
-height = 32.000000;
-arg0 = 192;
+x = -320.000;
+y = 220.000;
+type = 14006;
+id = 746;
+height = 128.000000;
 arg1 = 255;
-arg2 = 255;
-arg3 = 128;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -4710,7 +4707,7 @@ single = true;
 coop = true;
 dm = true;
 renderstyle = "";
-comment = "13:18";
+comment = "23:10";
 }
 
 thing
@@ -5194,16 +5191,14 @@ comment = "1:18";
 
 thing
 {
-x = -1760.000;
-y = -288.000;
+x = -120.000;
+y = 32.000;
 type = 9830;
 id = 50;
-height = 56.000000;
+height = 8.000000;
 pitch = 180;
 arg0 = 240;
-arg1 = 240;
-arg2 = 255;
-arg3 = 128;
+arg3 = 32;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -6476,15 +6471,16 @@ comment = "10:11";
 
 thing
 {
-x = -1376.000;
-y = 224.000;
-type = 9830;
-id = 234;
-height = 32.000000;
-arg0 = 192;
+x = -416.000;
+y = 220.000;
+type = 9804;
+id = 746;
+height = 128.000000;
+arg0 = 255;
 arg1 = 255;
 arg2 = 255;
-arg3 = 128;
+arg3 = 28;
+arg4 = 32;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -6494,7 +6490,7 @@ single = true;
 coop = true;
 dm = true;
 renderstyle = "";
-comment = "7:10";
+comment = "23:10";
 }
 
 thing
@@ -6594,15 +6590,16 @@ height = 16.000000;
 
 thing
 {
-x = -1376.000;
-y = -288.000;
-type = 9830;
-id = 242;
-height = 32.000000;
+x = -320.000;
+y = 220.000;
+type = 9804;
+id = 746;
+height = 128.000000;
 arg0 = 255;
-arg1 = 225;
-arg2 = 128;
-arg3 = 128;
+arg1 = 255;
+arg2 = 255;
+arg3 = 28;
+arg4 = 32;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -6612,7 +6609,7 @@ single = true;
 coop = true;
 dm = true;
 renderstyle = "";
-comment = "7:18";
+comment = "23:10";
 }
 
 thing
@@ -7932,182 +7929,6 @@ coop = true;
 dm = true;
 renderstyle = "";
 comment = "1:18";
-}
-
-thing
-{
-x = -120.000;
-y = 32.000;
-type = 9830;
-id = 50;
-height = 8.000000;
-pitch = 180;
-arg0 = 240;
-arg3 = 32;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "1:18";
-}
-
-thing
-{
-x = -672.000;
-y = 736.000;
-type = 9830;
-id = 242;
-height = 32.000000;
-arg0 = 255;
-arg1 = 225;
-arg2 = 128;
-arg3 = 64;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "7:18";
-}
-
-thing
-{
-x = -672.000;
-y = 608.000;
-type = 9830;
-id = 242;
-height = 32.000000;
-arg0 = 255;
-arg1 = 225;
-arg2 = 128;
-arg3 = 64;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "7:18";
-}
-
-thing
-{
-x = -800.000;
-y = 736.000;
-type = 9830;
-id = 242;
-height = 32.000000;
-arg0 = 64;
-arg1 = 64;
-arg2 = 128;
-arg3 = 32;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "7:18";
-}
-
-thing
-{
-x = -416.000;
-y = 220.000;
-type = 9804;
-id = 746;
-height = 128.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 255;
-arg3 = 28;
-arg4 = 32;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "23:10";
-}
-
-thing
-{
-x = -320.000;
-y = 220.000;
-type = 9804;
-id = 746;
-height = 128.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 255;
-arg3 = 28;
-arg4 = 32;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "23:10";
-}
-
-thing
-{
-x = -320.000;
-y = 220.000;
-type = 14006;
-id = 746;
-height = 128.000000;
-arg1 = 255;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
-comment = "23:10";
-}
-
-thing
-{
-x = -32.000;
-y = -96.000;
-type = 9048;
-arg0 = 10;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-renderstyle = "";
 }
 
 vertex
