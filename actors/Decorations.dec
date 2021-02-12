@@ -115,13 +115,13 @@ Actor DRRPLight1 10713 {
 
 Actor DRRPLight2: DRRPLight1 10714 {
     //$Category DDecorations
-    Args 255, 255, 255, 32
+    Args 255, 255, 255, 64
     +SPAWNCEILING
 
     States {
         Spawn:
             GLOW B 0 Bright
-            GLOW B 0 Bright A_SpawnItemEx( "DRRPLightWrapper", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERSPECIAL, 0, TID )
+            GLOW B 0 Bright A_SpawnItemEx( "DRRPLightWrapper", 0, 0, -32, 0, 0, 0, 0, SXF_TRANSFERSPECIAL, 0, TID )
             GLOW B 0 Bright A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 )
             GLOW B -1 Bright
             Stop
