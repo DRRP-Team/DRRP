@@ -85,6 +85,7 @@ class DRRPPlayer: DoomPlayer {
 
     virtual void SetHealthFeatures() {
         self.maxHealth = self.health = playerStats[ RPG_MaxHealth ];
+        self.GiveInventory( "DRRPHealthVial", 999 );
         self.MugShotMaxHealth = playerStats[ RPG_MaxHealth ];
     }
 
