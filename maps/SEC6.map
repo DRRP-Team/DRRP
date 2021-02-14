@@ -39072,7 +39072,7 @@ rotationceiling = 90;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 175;
 id = 18;
@@ -39295,7 +39295,7 @@ hidden = true;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 175;
 special = 1024;
@@ -40277,7 +40277,7 @@ hidden = true;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 143;
 id = 18;
@@ -40297,7 +40297,7 @@ hidden = true;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 143;
 id = 18;
@@ -40307,27 +40307,7 @@ hidden = true;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
-heightceiling = 64;
-lightlevel = 143;
-id = 18;
-hidden = true;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 143;
-id = 18;
-hidden = true;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 143;
 id = 18;
@@ -40347,17 +40327,7 @@ hidden = true;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
-heightceiling = 64;
-lightlevel = 143;
-id = 18;
-hidden = true;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 143;
 id = 18;
@@ -40377,7 +40347,37 @@ hidden = true;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRPGDEPR";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 143;
+id = 18;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 143;
+id = 18;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 143;
+id = 18;
+hidden = true;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 143;
 id = 18;
