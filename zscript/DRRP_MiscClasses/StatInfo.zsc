@@ -182,15 +182,15 @@ class StatInfoMenu: OptionMenu {
         Super.Init( parent, desc );
 
         PlayerInfo pStatInfo = players[ consoleplayer ];
-        desc.mItems.clear();
+        initdesc = desc;
+        initdesc.mItems.clear();
 
-        if ( !pStatInfo || !pStatInfo.mo ) {
+        if ( !pStatInfo || !pStatInfo.mo || ( gamestate != GS_LEVEL ) ) {
             addStr( cNormal, "$DRRP_D_STATINFO_NOTINGAME" );
             return;
         }
 
         DRRPPlayer player = DRRPPlayer( pStatInfo.mo );
-        initdesc = desc;
 
         //String notNow = StatLocalize( "UNDERCONSTRUCT" ); // Finally, got it!
 
