@@ -108,7 +108,7 @@ class DRRPActorsHandler: EventHandler {
         if ( e.Thing is 'DRRPPlayer' ) {
             int flashType = 0;
 
-            if ( e.Inflictor.bISMONSTER )
+            if ( e.Inflictor && e.Inflictor.bISMONSTER )
                 flashType = ( e.Inflictor is 'LostSoul' )? BFT_Claws : RandomPick( BFT_Backslash, BFT_Claws );
             else if ( !( e.DamageType == 'DRRPFireDmg' ) && !( e.DamageType == 'DRRPFireExtDmg' ) )
                 flashType = BFT_Spot;
