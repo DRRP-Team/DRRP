@@ -60,7 +60,7 @@ class DRRPAxe: Weapon {
             GAXF C 1 { pitch += 1.5; }
             GAXF F 1 { pitch += 1.5; S_Sound( "weapon/axe/swing", CHAN_WEAPON ); }
             GAXF FGG 1 { pitch += 1.5; }
-            GAXF H 3 A_CustomPunch( DRRPPlayer( self ).getRPGAttackDamage( 3, 12 ), TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
+            GAXF H 3 A_CustomPunch( DRRPPlayer( self ).getRPGAttackDamage( 4, 15 ) + 3, TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
             GAXF IK 1 { pitch += 1.5; }
             GAXD FED 1 { pitch -= 1.2; }
             GAXD C 1 { pitch -= 1.6; }
