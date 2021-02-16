@@ -25,7 +25,7 @@ DamageType DRRPShotgunDmg   {}
 DamageType DRRPRocketDmg    {}
 
 // Plasmagun & BFG9000:
-DamageType DRRPPlasmaDmg    {}
+DamageType DRRPPlasmaDmg    { ReplaceFactor }
 
 // Physical (dogs) & separated type for axe:
 DamageType DRRPPhysicalDmg  {}
