@@ -247,10 +247,63 @@ class DRRPExplosion: Actor { // Has Decorate heir (DRRPExplosion_Decorate).
     States {
         Spawn:
             MISL B 0 Bright A_Quake( 7, 7, 0, 256 );
-            MISL B 1 Bright A_PlaySound("generic/expl/explode", CHAN_AUTO);
+            MISL B 1 Bright A_PlaySound( "generic/expl/explode", CHAN_AUTO );
             MISL B 5 Bright A_Explode();
             MISL C 5 Bright;
             MISL D 4 Bright;
             Stop;
     }
 }
+
+class DRRPGeneralRandomSpawner: RandomSpawner {
+    Default {
+        DropItem "DRRPHealthVial";  // 33% of 40%;
+        DropItem "DRRPArmorShard";  // 33% of 40%;
+        DropItem "Credit";          // 33% of 40% (also may be replaced with "GoldCredit").
+    }
+
+    override void PostSpawn( Actor spawned ) {
+
+        // See "/ZScript/RPGSystem.zsc :: DoRPGDeath()".
+        if ( master && spawned is 'Credit' ) {
+            bool dropGoldCredit = false;
+
+            // There's no explicit monster level separation, so now I'm forced 
+            //to write, er, really bad code block.
+            switch ( master.GetClassName() ) {
+
+                // 2rd level (3% gold credit drop):
+                case 'Cerberus': case 'ZombieLt': case 'DRRPLostSoul': 
+                case 'Commando': case 'Rahovart': case 'DRRPCacodemon': 
+                case 'Mancubus': case 'DRRPImp' : case 'DRRPArchVile': 
+                case 'Pinky'   : case 'Fiend'   : case 'DRRPHellKnight': 
+                    if ( Random( 1, 100 ) <= 3 )
+                        dropGoldCredit = true;
+                    break;
+
+                // 3rd level (5% gold credit drop):
+                case 'DemonWolf': case 'ZombieCpt': case 'DRRPRevenant':
+                case 'Nightmare': case 'Belphegor': case 'Druj':
+                case 'Assassin' : case 'Wretched' : case 'DRRPPainElemental':
+                case 'Apollyon' : case 'ImpLord'  : case 'DRRPBaronOfHell':
+                    if ( Random( 1, 100 ) <= 5 )
+                        dropGoldCredit = true;
+                    break;
+
+                // 1st level (1% gold credit drop):
+                default:
+                    if ( !Random( 0, 99 ) )
+                        dropGoldCredit = true;
+                    break;
+
+            } // of switch ( master.GetClassName() ) {
+
+            if ( dropGoldCredit ) {
+                spawned.Spawn( "GoldCredit", spawned.pos );
+                spawned.Destroy();
+            }
+
+        } // of if ( master && spawned is 'Credit' ) {
+    } // of override void PostSpawn( Actor spawned ) {
+
+} // of class DRRPGeneralRandomSpawner: RandomSpawner {

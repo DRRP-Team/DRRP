@@ -30,13 +30,44 @@ class RPGSystemHandler: EventHandler {
 
 
     /* Monsters and crates random death drop data and chooser. */
-    const DDGI_DefaultMonster = "NULL, Credit, GoldCredit, " ..
-                                "DRRPClip, DRRPShell, RocketAmmo, DRRPCell, Balloon, " ..
-                                "Clips4xSpawner, Shells4xSpawner, Cells4xSpawner, Balloons4xSpawner, " ..
-                                "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
-    const DDGI_DefaultMonster_C = "1,5,3 , 5,5,3,3,2 , 1,1,1,1 , 5,1,5,5";
-    const DDGI_Crate = DDGI_DefaultMonster .. ", DRRPExplosion";
-    const DDGI_Crate_C = DDGI_DefaultMonster_C .. ", 3";/* */
+
+    // RandomSpawner has no master field by default, so we're spawn 
+    //slightly extended RandomSpawner actor in the "WorldThingDamaged()".
+
+    const DDGI_DefaultMonster   = "NULL, DRRPGeneralRandomSpawner";
+    const DDGI_DefaultMonster_C = "50, 100"; // 150% as 40%+20% == 60%.
+
+
+    const DDGI_Zombieman   = "Clips4xSpawner, DRRPShell, Clip, , " .. DDGI_DefaultMonster;
+    const DDGI_Zombieman_C = "6, 30, 64, , " .. DDGI_DefaultMonster_C;
+
+    const DDGI_Chaingunner   = "Clips4xSpawner, Clip, " .. DDGI_DefaultMonster;
+    const DDGI_Chaingunner_C = "33, 67, " .. DDGI_DefaultMonster_C;
+
+    const DDGI_Cacodemon   = "LargeMedikit, SmallMedikit, " .. DDGI_DefaultMonster;
+    const DDGI_Cacodemon_C = "6, 94, " .. DDGI_DefaultMonster_C;
+
+    const DDGI_PainElemental   = "GoldCredit, " .. DDGI_DefaultMonster;
+    const DDGI_PainElemental_C = "100, " .. DDGI_DefaultMonster_C;
+
+    const DDGI_Revenant   = "Rockets4xSpawner, RocketAmmo, " .. DDGI_DefaultMonster;
+    const DDGI_Revenant_C = "6, 94, " .. DDGI_DefaultMonster_C;
+
+    const DDGI_Fatso   = "Cells4xSpawner, Cell, " .. DDGI_DefaultMonster;
+    const DDGI_Fatso_C = "6, 94, " .. DDGI_DefaultMonster_C;
+
+    const DDGI_ArchVile   = "GoldCredit, LargeMedikit, SmallMedikit, " .. DDGI_DefaultMonster;
+    const DDGI_ArchVile_C = "30, 4, 66, " .. DDGI_DefaultMonster_C;
+
+    const DDGI_Baron   = "Cells4xSpawner, Shells4xSpawner, " .. DDGI_DefaultMonster;
+    const DDGI_Baron_C = "30, 70, " .. DDGI_DefaultMonster_C;
+
+
+    const DDGI_Crate   = "NULL, DRRPExplosion, Credit, GoldCredit, " ..
+                         "DRRPClip, DRRPShell, RocketAmmo, DRRPCell, Balloon, " ..
+                         "Clips4xSpawner, Shells4xSpawner, Cells4xSpawner, Balloons4xSpawner, " ..
+                         "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
+    const DDGI_Crate_C = "1,5,3,3 , 5,5,3,3,2 , 1,1,1,1 , 5,1,5,5";
 
     // 4 debug:
     /*const DDGI_DefaultMonster = "SmallMedikit, LargeMedikit, DRRPArmorShard, DRRPHealthVial";
@@ -142,28 +173,57 @@ class RPGSystemHandler: EventHandler {
             setDRRPDeathDataItem( 35 );
         else if ( e.Thing is 'DRRPRodTrash' )
             setDRRPDeathDataItem( 7 );
-        else if ( e.Thing is 'DRRPBarrel' )
-            setDRRPDeathDataItem( 1 );
-        else if ( e.Thing is 'DRRPSink' )
-            setDRRPDeathDataItem( 1 );
-        else if ( e.Thing is 'DRRPToilet' )
+        else if ( e.Thing is 'DRRPBarrel' || e.Thing is 'DRRPSink' || e.Thing is 'DRRPToilet' )
             setDRRPDeathDataItem( 1 );
         else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
+
+            // Monsters handling.
             double multiplier =
                 ( e.Thing.health < 40 )?  FRandom( 0.02, 0.2 ) :
                 ( e.Thing.health < 160 )? FRandom( 0.016, 0.17 ) :
                 ( e.Thing.health < 300 )? FRandom( 0.013, 0.15 ) :
                 FRandom( 0.01, 0.13 );
 
-            setDRRPDeathDataItem( 1 + ( int( multiplier * e.Thing.health ) ), DDGI_DefaultMonster, DDGI_DefaultMonster_C );
-        }
+            String dropItems = DDGI_DefaultMonster, dropChances = DDGI_DefaultMonster_C;
+
+            if ( e.Thing is 'ZombieMan_BaseDRRP' || e.Thing is 'ShotgunGuy_BaseDRRP' ) {
+                dropItems   = DDGI_Zombieman;
+                dropChances = DDGI_Zombieman_C;
+            } else if ( e.Thing is 'ChaingunGuy_BaseDRRP' ) {
+                dropItems   = DDGI_Chaingunner;
+                dropChances = DDGI_Chaingunner_C;
+            } else if ( e.Thing is 'Cacodemon_BaseDRRP' ) {
+                dropItems   = DDGI_Cacodemon;
+                dropChances = DDGI_Cacodemon_C;
+            } else if ( e.Thing is 'Revenant_BaseDRRP' ) {
+                dropItems   = DDGI_Revenant;
+                dropChances = DDGI_Revenant_C;
+            } else if ( e.Thing is 'PainElemental_BaseDRRP' ) {
+                dropItems   = DDGI_PainElemental;
+                dropChances = DDGI_PainElemental_C;
+            } else if ( e.Thing is 'Fatso_BaseDRRP' ) {
+                dropItems   = DDGI_Fatso;
+                dropChances = DDGI_Fatso_C;
+            } else if ( e.Thing is 'ArchVile_BaseDRRP' ) {
+                dropItems   = DDGI_ArchVile;
+                dropChances = DDGI_ArchVile_C;
+            } else if ( e.Thing is 'BaronOfHell_BaseDRRP' || e.Thing is 'HellKnight_BaseDRRP' ) {
+                dropItems   = DDGI_Baron;
+                dropChances = DDGI_Baron_C;
+            } else if ( e.Thing is 'Dog_BaseDRRP' || e.Thing is 'DRRPCyberdemon' || e.Thing is 'Kronos' ) {
+                dropItems   = "";
+                dropChances = "";
+            } // All other monsters has only default death drop items.
+
+            setDRRPDeathDataItem( 1 + ( int( multiplier * e.Thing.health ) ), dropItems, dropChances );
+        } // of else if ( e.Thing.bIsMonster && !e.Thing.bCorpse ) {
 
         worldThingSpawnedActor = NULL;
 
         Super.WorldThingSpawned( e );
     } // of override void WorldThingSpawned( WorldEvent e ) {
 
-    static void DoRpgDeath(Actor deadActor, Actor damageSource) {
+    static void DoRPGDeath( Actor deadActor, Actor damageSource ) {
         DRRPDeathDataItem deathData = DRRPDeathDataItem( deadActor.FindInventory( "DRRPDeathDataItem" ) );
 
         // Experience drop.
@@ -171,7 +231,6 @@ class RPGSystemHandler: EventHandler {
             DRRPPlayer player = DRRPPlayer( damageSource );
             
             // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
-
             if ( deathData ) {
                 player.AddFeature( RPG_Experience, deathData.ExpGain, true );
             }
@@ -180,16 +239,16 @@ class RPGSystemHandler: EventHandler {
         // Items drop.
         if ( deathData && deathData.DRRPDropItem ) {
             Actor droppedItem = deadActor.Spawn( deathData.DRRPDropItem, deadActor.pos );
+            droppedItem.master = deadActor;
             droppedItem.vel = ( FRandom( -2.0, 2.0 ), FRandom( -2.0, 2.0 ), FRandom( 0.5, 4.0 ) );
         }
     }
 
     /* Give xp to killer player and drop random items on some DRRP actors death. */
     override void WorldThingDamaged( WorldEvent e ) {
-        if ( e.Thing != NULL && e.Inflictor != NULL && e.DamageSource != NULL ) {
-            if ( e.Thing.health <= 0 ) {
-                DoRpgDeath(e.Thing, e.DamageSource);
-            }
+        if ( e.Thing && e.Inflictor && e.DamageSource ) {
+            if ( e.Thing.health <= 0 )
+                DoRPGDeath( e.Thing, e.DamageSource );
         }
 
         Super.WorldThingDamaged( e );

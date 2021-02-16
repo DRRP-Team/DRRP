@@ -1,5 +1,52 @@
 //
 
+/*  == Drop items: ==
+
+// See "/ZScript/Patches.zsc :: DRRPGeneralRandomSpawner".
+I  ) 20% || (is 'Dog' / 'Cyber' / 'Kronos'): NULL
+
+II ) 40%:
+    1) 33% Health bonus;
+    2) 33% Armor bonus;
+    3) 33% Credit:
+        a) (monsLvl==1 && 1%): gold credit;
+        b) (monsLvl==2 && 3%): gold credit;
+        c) (monsLvl==3 && 5%): gold credit;
+        d) Green credit.
+
+
+// Part III is in this file.
+III) 40%:
+    1) (is 'Zombieman'):
+        a) 6%: clips 4x;
+        b) 30%: shell;
+        c) 64%: clip.
+    2) (is 'Chaingunner'):
+        a) 33%: clips 4x;
+        b) 67%: clip.
+    3) (is 'Cacodemon'):
+        a) 6%: large medikit;
+        b) 94%: small medikit.
+    4) (is 'PainElemental'):
+        100%: gold credit.
+    5) (is 'Revenant'):
+        a) 6%: rockets 4x;
+        b) 94%: rocket.
+    6) (is 'Fatso'):
+        a) 6%: cells 4x;
+        b) 94%: cell.
+    7) (is 'ArchVile'):
+        a) 30%: gold credit;
+        b) 4%: large medikit;
+        c) 66%: small medikit.
+    8) (is 'Baron'):
+        a) 30%: cells 4x;
+        a) 70%: shells 4x;
+    9) (is 'Pinky'):
+        a) 0%: NULL.
+*/
+
+
 Actor Dog_BaseDRRP: MBFHelperDog {
     +LOOKALLAROUND
 
@@ -76,7 +123,7 @@ Actor ChaingunGuy_BaseDRRP: ChaingunGuy {
     }
 }
 
-Actor DoomImp_BaseDRRP : DoomImp {
+Actor DoomImp_BaseDRRP: DoomImp {
     +LOOKALLAROUND
 
     DamageFactor DRRPShotgunDmg, 3.0
