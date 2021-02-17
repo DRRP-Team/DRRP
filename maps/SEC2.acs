@@ -587,14 +587,17 @@ script 73 (int arg0, int arg1, int arg2) { //X=8 Y=30 START=L_213 END=L_213 UNKN
 script 74 (int arg0, int arg1, int arg2) { //X=10 Y=30 START=L_214 END=L_221 UNKN=4194304 UNKN2=0
     int sgenid0 = -147; // [x=4, y=19]
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_THING_STATE ARG1=150116 X=4 Y=19 VAL=2
-    if(arg2 == 0) ACS_Execute(3009, 0, sgenid0, 1);
     //if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=4 Y=19 VAL=2
-    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(20), getMediumY(156), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
-    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(12), getMediumY(140), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(20), getMediumY(156), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(12), getMediumY(140), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
+	if(arg2 == 0) {
+		Thing_Hate(1, -sgenid0);
+	}
     if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(20), getMediumY(108), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
     if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(12), getMediumY(100), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
     if(arg2 == 0) SpawnForced("Ghoul", getMediumX(28), getMediumY(196), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
     if(arg2 == 0) SpawnForced("BullDemon", getMediumX(12), getMediumY(204), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
+	if(arg2 == 0) ACS_Execute(3009, 0, sgenid0, 1);
 }
 
 script 75 (int arg0, int arg1, int arg2) { //X=12 Y=30 START=L_222 END=L_231 UNKN=5242880 UNKN2=0
