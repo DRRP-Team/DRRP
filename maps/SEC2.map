@@ -39606,7 +39606,7 @@ sector = 276;
 
 sidedef
 {
-sector = 277;
+sector = 395;
 texturebottom = "DRDC11";
 offsetx_bottom = 58;
 }
@@ -39678,7 +39678,7 @@ sector = 276;
 
 sidedef
 {
-sector = 277;
+sector = 395;
 texturebottom = "DRDC11";
 }
 
@@ -42043,7 +42043,7 @@ sector = 280;
 
 sidedef
 {
-sector = 277;
+sector = 395;
 }
 
 sidedef
@@ -42053,17 +42053,17 @@ sector = 281;
 
 sidedef
 {
-sector = 277;
+sector = 395;
 }
 
 sidedef
 {
-sector = 277;
+sector = 395;
 }
 
 sidedef
 {
-sector = 277;
+sector = 395;
 }
 
 sidedef
@@ -42084,7 +42084,7 @@ offsetx = 128;
 
 sidedef
 {
-sector = 277;
+sector = 395;
 offsetx = 64;
 }
 
@@ -42096,7 +42096,7 @@ offsetx = 64;
 
 sidedef
 {
-sector = 277;
+sector = 395;
 offsetx = 128;
 }
 
@@ -48639,12 +48639,12 @@ textureceiling = "DRDC51";
 heightfloor = -32;
 heightceiling = 64;
 lightlevel = 175;
-id = 100;
+id = 668;
 moreids = "666";
 xpanningfloor = 32.000000;
 xpanningceiling = 32.000000;
-rotationceiling = 270;
-rotationfloor = 180;
+rotationceiling = 270.000000;
+rotationfloor = 180.000000;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
 }
@@ -50253,5 +50253,22 @@ rotationfloor = 270.000000;
 xpanningceiling = 32.000000;
 ypanningceiling = 32.000000;
 ypanningfloor = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 175;
+id = 668;
+moreids = "666";
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+rotationfloor = 180.000000;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
 }
 
