@@ -85,6 +85,10 @@ script 5 (int arg0, int arg1, int arg2) { //X=20 Y=3 START=L_17 END=L_32 UNKN=83
     if(arg2 == 0) ACS_Execute(3009, 0, 169, 1); // ( USE IF_VAR( 0 ) ) SET_THING_STATE ARG1=157989 X=5 Y=9 VAL=2
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) FRAME ARG1=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=20 Y=3
+	if(arg2 == 0) {
+		Delay(28);
+		Thing_Hate(1, 0, 0);
+	}
 }
 script 6 (int arg0, int arg1, int arg2) { //X=22 Y=3 START=L_33 END=L_33 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=234
@@ -278,7 +282,10 @@ script 37 (int arg0, int arg1, int arg2) { //X=4 Y=9 START=L_100 END=L_124 UNKN=
     if(arg2 == 0) SpawnForced("Marine", getMediumX(44), getMediumY(76), 0, 169); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=17 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=6 Y=8 VAL=1
     if(arg2 == 0) Thing_Remove(73); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=2 Y=9
-    if(arg2 == 0) SpawnForced("ZombieCpt", getMediumX(44), getMediumY(60), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
+    if(arg2 == 0) SpawnForced("ZombieCpt", getMediumX(44), getMediumY(60), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
+	if(arg2 == 0) {
+		Thing_Hate(1, 169, 0);
+	}
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) FRAME ARG1=0
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(73)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=73
     if(arg2 == 0) ACS_NamedExecuteWait("drpgquake", 0, 200, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) EARTHQUAKE TIME=200 INTENSITY=1
