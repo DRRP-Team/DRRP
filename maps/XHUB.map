@@ -1705,7 +1705,7 @@ thing
 {
 x = -800.000;
 y = 288.000;
-type = 10279;
+type = 10359;
 coop = true;
 dm = true;
 single = true;
@@ -4046,6 +4046,22 @@ skill4 = true;
 skill5 = true;
 renderstyle = "";
 arg0 = 8;
+}
+
+thing
+{
+x = -800.000;
+y = 224.000;
+type = 10624;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
 }
 
 vertex
