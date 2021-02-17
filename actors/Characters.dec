@@ -185,3 +185,8 @@ Actor Marine1 : Marine 10521 { // Blue
             Goto MainLoop
     }
 }
+
+Actor DRRPDeadMarine : DeadMarine replaces DeadMarine {
+    Tag "$DRRP_D_DEADMARINE"
+}
+

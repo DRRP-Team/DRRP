@@ -658,3 +658,7 @@ Actor DRRPShittyFog 10765 {
             Loop
     }
 }
+
+Actor DRRPNonSolidMeat5 : NonSolidMeat5 replaces NonSolidMeat5 {
+    Tag "$DRRP_D_NONSOLIDMEATS"
+}
