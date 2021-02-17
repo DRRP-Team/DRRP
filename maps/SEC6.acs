@@ -630,7 +630,10 @@ script 99 (int arg0, int arg1, int arg2) { //X=5 Y=21 START=L_279 END=L_298 UNKN
     if(arg2 == 1) ACS_ExecuteAlways(3000, 0, 9, 0, 1); // ( USE IF_VAR( 1 ) ) DOOR_UNLOCK LINE=423
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=57
     if(arg2 == 1) ACS_ExecuteAlways(3002, 0, 31); // ( USE IF_VAR( 1 ) ) DOOR_OPEN LINE=423
-    if(arg2 == 1) SpawnForced("Wretched", getMediumX(52), getMediumY(172), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
+    if(arg2 == 1) SpawnForced("Wretched", getMediumX(52), getMediumY(172), 0, 2); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
+	if(arg2 == 1) {
+		Thing_Hate(2, -sgenid0, 4);
+	}
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(58)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=58
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(59)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=59
     if(arg2 == 1) ACS_NamedExecuteWait("drpgquake", 0, 200, 1); // ( USE IF_VAR( 1 ) ) EARTHQUAKE TIME=200 INTENSITY=1
