@@ -121,7 +121,7 @@ script 6 (int arg0, int arg1, int arg2) { //X=6 Y=13 START=L_10 END=L_29 UNKN=10
     if(arg2 == 1) SpawnForced("TeleportFog", getMediumX(68), getMediumY(108), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
     if(arg2 == 1) Delay(7);
     if(arg2 == 1) SpawnForced("Assassin", getMediumX(68), getMediumY(108), 0, 1767); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
-    if(arg2 == 1) Thing_Hate(1767, 205);
+    if(arg2 == 1) Thing_Hate(1767, 205, 4);
     if(arg2 == 1) ACS_NamedExecuteWait("drpgquake", 0, 200, 1); // ( USE IF_VAR( 1 ) ) EARTHQUAKE TIME=200 INTENSITY=1
     if(arg2 == 1) ACS_Execute(3009, 0, 205, 0); // ( USE IF_VAR( 1 ) ) PARTICLE COLOR=180 EFFECT=32
     if(arg2 == 1) Delay(28); // ( USE IF_VAR( 1 ) ) SLEEP MSEC=800
@@ -136,6 +136,9 @@ script 6 (int arg0, int arg1, int arg2) { //X=6 Y=13 START=L_10 END=L_29 UNKN=10
     if(arg2 == 1) ACS_Execute(3009, 0, 205, 1); // ( USE IF_VAR( 1 ) ) SET_THING_STATE ARG1=149926 X=6 Y=13 VAL=2
     /* Not Implemented */ // ( USE IF_VAR( 1 ) ) FRAME ARG1=0
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=6 Y=13
+	if(arg2 == 1) {
+		Thing_Hate(1767, 0, 0);
+	}
 }
 script 7 (int arg0, int arg1, int arg2) { //X=15 Y=16 START=L_30 END=L_30 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) SHOP ID=0
