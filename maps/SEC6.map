@@ -23418,6 +23418,8 @@ v2 = 709;
 sidefront = 1000;
 sideback = 1451;
 twosided = true;
+wrapmidtex = true;
+blocking = true;
 }
 
 linedef
@@ -23427,6 +23429,8 @@ v2 = 708;
 sidefront = 1001;
 sideback = 1452;
 twosided = true;
+wrapmidtex = true;
+blocking = true;
 }
 
 linedef
@@ -23436,6 +23440,8 @@ v2 = 710;
 sidefront = 1002;
 sideback = 1453;
 twosided = true;
+wrapmidtex = true;
+blocking = true;
 }
 
 linedef
@@ -23445,6 +23451,8 @@ v2 = 711;
 sidefront = 1003;
 sideback = 1454;
 twosided = true;
+wrapmidtex = true;
+blocking = true;
 }
 
 linedef
@@ -23454,6 +23462,7 @@ v2 = 713;
 sidefront = 1004;
 sideback = 1458;
 twosided = true;
+blocking = true;
 }
 
 linedef
@@ -23463,6 +23472,7 @@ v2 = 712;
 sidefront = 1005;
 sideback = 1455;
 twosided = true;
+blocking = true;
 }
 
 linedef
@@ -23472,6 +23482,7 @@ v2 = 714;
 sidefront = 1006;
 sideback = 1456;
 twosided = true;
+blocking = true;
 }
 
 linedef
@@ -23481,6 +23492,7 @@ v2 = 715;
 sidefront = 1007;
 sideback = 1457;
 twosided = true;
+blocking = true;
 }
 
 linedef
@@ -34700,6 +34712,7 @@ sidedef
 sector = 276;
 texturemiddle = "transgri";
 texturebottom = "transgri";
+offsety = -8;
 }
 
 sidedef
@@ -37413,6 +37426,7 @@ sidedef
 {
 sector = 201;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37420,6 +37434,7 @@ sidedef
 {
 sector = 201;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37427,6 +37442,7 @@ sidedef
 {
 sector = 201;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37434,6 +37450,7 @@ sidedef
 {
 sector = 201;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37441,6 +37458,7 @@ sidedef
 {
 sector = 202;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37448,6 +37466,7 @@ sidedef
 {
 sector = 202;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37455,6 +37474,7 @@ sidedef
 {
 sector = 202;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
@@ -37462,6 +37482,7 @@ sidedef
 {
 sector = 202;
 texturetop = "DRDC35";
+texturemiddle = "transgri";
 texturebottom = "DRDC35";
 }
 
