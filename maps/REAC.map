@@ -35842,8 +35842,13 @@ heightfloor = -8;
 heightceiling = 104;
 lightlevel = 125;
 special = 768;
-rotationfloor = 90;
-xpanningfloor = -32;
+rotationfloor = 90.000000;
+xpanningfloor = -32.000000;
+damagetype = "Slime";
+damagehazard = true;
+damageamount = 10;
+damageinterval = 10;
+damageterraineffect = true;
 }
 
 sector
