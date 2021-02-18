@@ -63,7 +63,7 @@ Actor DRRPYellowLamp : Column replaces Column {
 
     States {
         Spawn:
-            TNT1 A 0 // TID in the next line is for the lamp glow removing:
+            COLU A 0 // TID in the next line is for the lamp glow removing:
             TNT1 A 0 A_SpawnItemEx( "DRRPLight1", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER, 0, tid )
             TNT1 A 0 A_SpawnItemEx( "DRRPLightWrapper", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER | SXF_TRANSFERSPECIAL, 0, tid )
             Goto Super::Spawn
