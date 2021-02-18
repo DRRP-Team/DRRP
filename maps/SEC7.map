@@ -3276,6 +3276,7 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "12:8";
+height = 24;
 }
 
 thing
@@ -3621,6 +3622,7 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "13:10";
+height = 24;
 }
 
 thing
@@ -4034,6 +4036,7 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "15:7";
+height = 8;
 }
 
 thing
@@ -4059,6 +4062,7 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "15:11";
+height = 24;
 }
 
 thing
@@ -4468,7 +4472,7 @@ x = 1120.000;
 y = 1312.000;
 type = 10250;
 id = 555;
-height = 16.000000;
+height = 24;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -4912,6 +4916,7 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "19:6";
+height = 8;
 }
 
 thing
@@ -6304,11 +6309,11 @@ comment = "25:8";
 
 thing
 {
-x = 1624.000;
+x = 1640.000;
 y = 1448.000;
 type = 10250;
 id = 809;
-height = 8.000000;
+height = 24;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -6804,6 +6809,7 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "27:13";
+height = 8;
 }
 
 thing
@@ -20333,6 +20339,22 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+}
+
+thing
+{
+x = 1500.000;
+y = 1600.000;
+type = 34;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
 }
 
 vertex
@@ -254739,11 +254761,11 @@ xscalefloor = 2.000000;
 floorplane_a = -0.207911;
 floorplane_b = -0.000000;
 floorplane_c = 0.978148;
-floorplane_d = 413.953967;
+floorplane_d = 413.953865;
 ceilingplane_a = 0.342020;
 ceilingplane_b = -0.000000;
 ceilingplane_c = 0.939693;
-ceilingplane_d = -702.356764;
+ceilingplane_d = -702.356548;
 }
 
 sector
@@ -256072,7 +256094,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.000000;
 floorplane_b = -0.878812;
 floorplane_c = -0.477169;
-floorplane_d = 1468.491567;
+floorplane_d = 1468.490990;
 }
 
 sector
@@ -256091,7 +256113,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738860;
+floorplane_d = 1524.738873;
 }
 
 sector
@@ -256276,7 +256298,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.000000;
 floorplane_b = 0.878811;
 floorplane_c = -0.477170;
-floorplane_d = -1512.503631;
+floorplane_d = -1512.503644;
 }
 
 sector
@@ -256295,7 +256317,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738860;
+floorplane_d = 1524.738873;
 }
 
 sector
@@ -256488,7 +256510,7 @@ xscaleceiling = -1.000000;
 floorplane_a = 0.878811;
 floorplane_b = -0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738860;
+floorplane_d = -1524.738873;
 }
 
 sector
@@ -256507,7 +256529,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = 0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738860;
+floorplane_d = 1524.738873;
 }
 
 sector
@@ -256540,7 +256562,7 @@ rotationfloor = 270.000000;
 floorplane_a = 0.878811;
 floorplane_b = 0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738860;
+floorplane_d = -1524.738873;
 }
 
 sector
@@ -256559,7 +256581,7 @@ rotationfloor = 270.000000;
 floorplane_a = 0.878811;
 floorplane_b = 0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738860;
+floorplane_d = -1524.738873;
 }
 
 sector
@@ -256620,7 +256642,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738860;
+floorplane_d = 1524.738873;
 }
 
 sector
@@ -256734,7 +256756,7 @@ xscaleceiling = -1.000000;
 floorplane_a = 0.878811;
 floorplane_b = -0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738860;
+floorplane_d = -1524.738873;
 }
 
 sector
@@ -256881,7 +256903,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738860;
+floorplane_d = 1524.738873;
 }
 
 sector
@@ -256900,7 +256922,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738860;
+floorplane_d = 1524.738873;
 }
 
 sector
@@ -259899,7 +259921,7 @@ yscalefloor = 2.000000;
 floorplane_a = 0.883284;
 floorplane_b = 0.043087;
 floorplane_c = -0.466854;
-floorplane_d = -343.796355;
+floorplane_d = -343.796531;
 }
 
 sector
@@ -259946,7 +259968,7 @@ yscalefloor = 2.000000;
 floorplane_a = 0.497016;
 floorplane_b = -0.437374;
 floorplane_c = -0.749453;
-floorplane_d = 284.104873;
+floorplane_d = 284.104836;
 }
 
 sector
@@ -259973,10 +259995,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.599810;
-floorplane_b = 0.199929;
-floorplane_c = -0.774762;
-floorplane_d = -373.974077;
+floorplane_a = 0.599813;
+floorplane_b = 0.199939;
+floorplane_c = -0.774757;
+floorplane_d = -373.984946;
 }
 
 sector
@@ -260327,11 +260349,11 @@ xscaleceiling = 2.000000;
 floorplane_a = 0.454529;
 floorplane_b = 0.454529;
 floorplane_c = -0.766033;
-floorplane_d = -784.118949;
+floorplane_d = -784.119035;
 ceilingplane_a = -0.454527;
 ceilingplane_b = -0.454527;
 ceilingplane_c = -0.766035;
-ceilingplane_d = 888.300553;
+ceilingplane_d = 888.300904;
 }
 
 sector
