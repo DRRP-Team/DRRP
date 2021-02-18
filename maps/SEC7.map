@@ -153588,11 +153588,13 @@ texturebottom = "floor";
 sidedef
 {
 sector = 501;
+texturetop = "CUSTFLB";
 }
 
 sidedef
 {
 sector = 501;
+texturetop = "CUSTFLB";
 }
 
 sidedef
@@ -254761,11 +254763,11 @@ xscalefloor = 2.000000;
 floorplane_a = -0.207911;
 floorplane_b = -0.000000;
 floorplane_c = 0.978148;
-floorplane_d = 413.953865;
+floorplane_d = 413.953763;
 ceilingplane_a = 0.342020;
 ceilingplane_b = -0.000000;
 ceilingplane_c = 0.939693;
-ceilingplane_d = -702.356548;
+ceilingplane_d = -702.356332;
 }
 
 sector
@@ -256094,7 +256096,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.000000;
 floorplane_b = -0.878812;
 floorplane_c = -0.477169;
-floorplane_d = 1468.490990;
+floorplane_d = 1468.490413;
 }
 
 sector
@@ -256113,7 +256115,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738873;
+floorplane_d = 1524.738886;
 }
 
 sector
@@ -256298,7 +256300,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.000000;
 floorplane_b = 0.878811;
 floorplane_c = -0.477170;
-floorplane_d = -1512.503644;
+floorplane_d = -1512.503657;
 }
 
 sector
@@ -256317,7 +256319,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738873;
+floorplane_d = 1524.738886;
 }
 
 sector
@@ -256510,7 +256512,7 @@ xscaleceiling = -1.000000;
 floorplane_a = 0.878811;
 floorplane_b = -0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738873;
+floorplane_d = -1524.738886;
 }
 
 sector
@@ -256529,7 +256531,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = 0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738873;
+floorplane_d = 1524.738886;
 }
 
 sector
@@ -256562,7 +256564,7 @@ rotationfloor = 270.000000;
 floorplane_a = 0.878811;
 floorplane_b = 0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738873;
+floorplane_d = -1524.738886;
 }
 
 sector
@@ -256581,7 +256583,7 @@ rotationfloor = 270.000000;
 floorplane_a = 0.878811;
 floorplane_b = 0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738873;
+floorplane_d = -1524.738886;
 }
 
 sector
@@ -256642,7 +256644,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738873;
+floorplane_d = 1524.738886;
 }
 
 sector
@@ -256756,7 +256758,7 @@ xscaleceiling = -1.000000;
 floorplane_a = 0.878811;
 floorplane_b = -0.000000;
 floorplane_c = 0.477170;
-floorplane_d = -1524.738873;
+floorplane_d = -1524.738886;
 }
 
 sector
@@ -256903,7 +256905,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738873;
+floorplane_d = 1524.738886;
 }
 
 sector
@@ -256922,7 +256924,7 @@ xscaleceiling = -1.000000;
 floorplane_a = -0.878811;
 floorplane_b = -0.000000;
 floorplane_c = -0.477170;
-floorplane_d = 1524.738873;
+floorplane_d = 1524.738886;
 }
 
 sector
@@ -259918,10 +259920,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.883284;
+floorplane_a = 0.883288;
 floorplane_b = 0.043087;
-floorplane_c = -0.466854;
-floorplane_d = -343.796531;
+floorplane_c = -0.466846;
+floorplane_d = -343.798280;
 }
 
 sector
@@ -259965,10 +259967,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.497016;
-floorplane_b = -0.437374;
-floorplane_c = -0.749453;
-floorplane_d = 284.104836;
+floorplane_a = 0.497017;
+floorplane_b = -0.437375;
+floorplane_c = -0.749452;
+floorplane_d = 284.105197;
 }
 
 sector
@@ -259995,10 +259997,10 @@ xscaleceiling = 2.000000;
 yscaleceiling = 2.000000;
 xscalefloor = 2.000000;
 yscalefloor = 2.000000;
-floorplane_a = 0.599813;
-floorplane_b = 0.199939;
-floorplane_c = -0.774757;
-floorplane_d = -373.984946;
+floorplane_a = 0.599815;
+floorplane_b = 0.199946;
+floorplane_c = -0.774753;
+floorplane_d = -373.992957;
 }
 
 sector
@@ -260349,11 +260351,11 @@ xscaleceiling = 2.000000;
 floorplane_a = 0.454529;
 floorplane_b = 0.454529;
 floorplane_c = -0.766033;
-floorplane_d = -784.119035;
+floorplane_d = -784.119121;
 ceilingplane_a = -0.454527;
 ceilingplane_b = -0.454527;
 ceilingplane_c = -0.766035;
-ceilingplane_d = 888.300904;
+ceilingplane_d = 888.301255;
 }
 
 sector
