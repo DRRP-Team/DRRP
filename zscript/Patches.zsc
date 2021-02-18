@@ -15,41 +15,14 @@ class DRRPCharacter_ZSPatch: Actor {
 }
 
 class PainElemental_ZSPatch: PainElemental {
-    // Lost souls and its derivatives dies right after default A_PainDie() spawning.
-    action void A_DRRP_PainDie( class<Actor> spawnee ) {
+
+    // Lost souls and its derivatives must not die right after default A_PainDie() spawning.
+    action void A_DRRP_PainSpawnSoul( class<Actor> spawnee ) {
 
         if ( target && IsFriend( target ) ) // And I thought you were my friend!
             bFriendly = false;
 
-        A_NoBlocking();
-        A_FaceTarget();
-
-        double defaultSpawneeRadius = GetDefaultByType( spawnee ).radius;
-        //double defaultSpawneeHeight = GetDefaultByType( spawnee ).height;
-
-        for ( int i = 0; i < 3; i++ ) {
-            vector3 newsoulpos = ( 0, 0, 8 );
-            newsoulpos.xy = AngleToVector( ( angle + i * 90 ) % 360, defaultSpawneeRadius * 2 );
-
-            Actor newsoul = Spawn( spawnee, pos + newsoulpos );
-
-            if ( newsoul ) {
-                newsoul.FindFloorCeiling();
-                newsoul.CopyFriendliness( self, true );
-
-                BlockLinesIterator it = BlockLinesIterator.Create( newsoul );
-
-                //console.printf( "it.line: " .. it.CurLine );
-
-                if ( it.Next() ) {
-                    //console.printf( "it.line: " .. it.CurLine );
-                    newsoul.Destroy();
-                }
-
-                newsoul.A_SkullAttack();
-            }
-        }
-
+        A_PainAttack( spawnee );
     } // of action void A_DRRP_PainDie( class<Actor> spawnee ) {
 
 }
