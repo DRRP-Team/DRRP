@@ -168,6 +168,8 @@ Actor Demon_BaseDRRP: Demon {
     +LOOKALLAROUND
 
     DamageFactor DRRPRocketDmg, 0.5
+
+    Radius 20
 }
 
 Actor Cacodemon_BaseDRRP: Cacodemon {
