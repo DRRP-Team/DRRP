@@ -38548,7 +38548,8 @@ v2 = 175;
 sidefront = 852;
 sideback = 853;
 special = 80;
-arg0 = 3002;
+id = 13;
+arg0 = 3001;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -38561,7 +38562,8 @@ v2 = 244;
 sidefront = 854;
 sideback = 855;
 special = 80;
-arg0 = 3002;
+id = 14;
+arg0 = 3001;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -69462,7 +69464,7 @@ offsety_top = -16.000000;
 sidedef
 {
 sector = 84;
-texturetop = "DRDC0";
+texturetop = "DRDC8";
 }
 
 sidedef
@@ -69473,7 +69475,7 @@ sector = 86;
 sidedef
 {
 sector = 85;
-texturetop = "DRDC0";
+texturetop = "DRDC8";
 }
 
 sidedef
