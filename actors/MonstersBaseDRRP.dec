@@ -50,6 +50,8 @@ III) 40%:
 Actor Dog_BaseDRRP: MBFHelperDog {
     +LOOKALLAROUND
 
+    Speed 5 // 10 / 2
+
     DamageFactor DRRPShotgunDmg, 4.0
     DamageFactor DRRPPlasmaDmg, 2.0
 
@@ -170,6 +172,7 @@ Actor Demon_BaseDRRP: Demon {
     DamageFactor DRRPRocketDmg, 0.5
 
     Radius 20
+    Speed 5 // 10
 }
 
 Actor Cacodemon_BaseDRRP: Cacodemon {
@@ -251,7 +254,7 @@ Actor ArchVile_BaseDRRP: ArchVile {
     const int vileBlastDamageNRadius = 50;
 
     Scale 0.7
-    Speed 10 // Doom's default: 15.
+    Speed 7 // Doom's default: 15.
     +LOOKALLAROUND
 
     DamageFactor DRRPAxeDmg, 10.0
