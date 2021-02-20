@@ -140,7 +140,7 @@ Actor LostSoul_BaseDRRP: LostSoul {
     -DONTFALL
     +NOINFIGHTSPECIES
 
-    DamageFactor DRRPFireExtDmg, 5.0
+    DamageFactor DRRPFireExtDmg, 10.0
     DamageFactor DRRPFireDmg, 0.0
 
     States {
@@ -178,7 +178,7 @@ Actor Demon_BaseDRRP: Demon {
 Actor Cacodemon_BaseDRRP: Cacodemon {
     +LOOKALLAROUND
 
-    DamageFactor DRRPAxeDmg, 3.0
+    DamageFactor DRRPAxeDmg, 10.0
     DamageFactor DRRPBulletDmg, 2.0
 }
 
