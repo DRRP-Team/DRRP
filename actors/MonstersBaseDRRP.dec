@@ -212,8 +212,14 @@ Actor Revenant_BaseDRRP: Revenant {
     }
 }
 
+Actor PainShot : FatShot {
+    Damage 2
+}
+
 Actor PainElemental_BaseDRRP: PainElemental_ZSPatch {
     +LOOKALLAROUND
+
+    const int baseDamage = 10;
 
     DamageFactor DRRPFireDmg, 0.0
     DamageFactor DRRPPhysicalDmg, 2.0
@@ -223,7 +229,7 @@ Actor PainElemental_BaseDRRP: PainElemental_ZSPatch {
         PAIN D 5 A_FaceTarget
         PAIN E 5 A_FaceTarget
         PAIN F 5 Bright A_FaceTarget
-        PAIN F 0 Bright A_CustomComboAttack("FatShot", 32, 2 * Random(1, 6))
+        PAIN F 0 Bright A_CustomComboAttack("PainShot", 32, 2 * Random(1, 5))
         Goto See
     }
 }
