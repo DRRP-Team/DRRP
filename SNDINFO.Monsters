@@ -295,6 +295,28 @@
 
 // Elementals
 
+/// Beholder
+    monsters/beholder/sight            dspesit
+    monsters/beholder/active           dsdmact
+    monsters/beholder/pain             dspepain
+    monsters/beholder/death            dspedth
+
+    $pitchset monsters/beholder/sight  1.1
+    $pitchset monsters/beholder/active 1.1
+    $pitchset monsters/beholder/pain   1.1
+    $pitchset monsters/beholder/death  1.1
+
+/// Pain Elemental
+    monsters/painelemental/sight            dspesit
+    monsters/painelemental/active           dsdmact
+    monsters/painelemental/pain             dspepain
+    monsters/painelemental/death            dspedth
+
+    $pitchset monsters/painelemental/sight  0.9
+    $pitchset monsters/painelemental/active 0.9
+    $pitchset monsters/painelemental/pain   0.9
+    $pitchset monsters/painelemental/death  0.9
+
 // Cubuses
 
 // Viles
