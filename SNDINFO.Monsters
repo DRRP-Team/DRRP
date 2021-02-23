@@ -10,132 +10,184 @@
 // Zombies
 
 /// Zombie Pvt
+    monsters/zombiepvt/sight1            dsposit1
+    monsters/zombiepvt/sight2            dsposit2
+    monsters/zombiepvt/sight3            dsposit3
+    monsters/zombiepvt/active            dsposact
+    monsters/zombiepvt/pain              dspopain
+    monsters/zombiepvt/death1            dspodth1
+    monsters/zombiepvt/death2            dspodth2
+    monsters/zombiepvt/death3            dspodth3
 
-monsters/zombiepvt/sight1            dsposit1
-monsters/zombiepvt/sight2            dsposit2
-monsters/zombiepvt/sight3            dsposit3
-monsters/zombiepvt/active            dsposact
-monsters/zombiepvt/pain              dspopain
-monsters/zombiepvt/death1            dspodth1
-monsters/zombiepvt/death2            dspodth2
-monsters/zombiepvt/death3            dspodth3
+    $pitchset monsters/zombiepvt/sight1  1.1
+    $pitchset monsters/zombiepvt/sight2  1.1
+    $pitchset monsters/zombiepvt/sight3  1.1
+    $pitchset monsters/zombiepvt/active  1.1
+    $pitchset monsters/zombiepvt/pain    1.1
+    $pitchset monsters/zombiepvt/death1  1.1
+    $pitchset monsters/zombiepvt/death2  1.1
+    $pitchset monsters/zombiepvt/death3  1.1
 
-$pitchset monsters/zombiepvt/sight1  1.1
-$pitchset monsters/zombiepvt/sight2  1.1
-$pitchset monsters/zombiepvt/sight3  1.1
-$pitchset monsters/zombiepvt/active  1.1
-$pitchset monsters/zombiepvt/pain    1.1
-$pitchset monsters/zombiepvt/death1  1.1
-$pitchset monsters/zombiepvt/death2  1.1
-$pitchset monsters/zombiepvt/death3  1.1
-
-$random monsters/zombiepvt/sight {
-    monsters/zombiepvt/sight1
-    monsters/zombiepvt/sight2
-    monsters/zombiepvt/sight3
-}
-$random monsters/zombiepvt/death {
-    monsters/zombiepvt/death1
-    monsters/zombiepvt/death2
-    monsters/zombiepvt/death3
-}
+    $random monsters/zombiepvt/sight {
+        monsters/zombiepvt/sight1
+        monsters/zombiepvt/sight2
+        monsters/zombiepvt/sight3
+    }
+    $random monsters/zombiepvt/death {
+        monsters/zombiepvt/death1
+        monsters/zombiepvt/death2
+        monsters/zombiepvt/death3
+    }
 
 /// ZombieCpt
+    monsters/zombiecpt/sight1            dsposit1
+    monsters/zombiecpt/sight2            dsposit2
+    monsters/zombiecpt/sight3            dsposit3
+    monsters/zombiecpt/active            dsposact
+    monsters/zombiecpt/pain              dspopain
+    monsters/zombiecpt/death1            dspodth1
+    monsters/zombiecpt/death2            dspodth2
+    monsters/zombiecpt/death3            dspodth3
 
-monsters/zombiecpt/sight1            dsposit1
-monsters/zombiecpt/sight2            dsposit2
-monsters/zombiecpt/sight3            dsposit3
-monsters/zombiecpt/active            dsposact
-monsters/zombiecpt/pain              dspopain
-monsters/zombiecpt/death1            dspodth1
-monsters/zombiecpt/death2            dspodth2
-monsters/zombiecpt/death3            dspodth3
+    $pitchset monsters/zombiecpt/sight1  0.9
+    $pitchset monsters/zombiecpt/sight2  0.9
+    $pitchset monsters/zombiecpt/sight3  0.9
+    $pitchset monsters/zombiecpt/active  0.9
+    $pitchset monsters/zombiecpt/pain    0.9
+    $pitchset monsters/zombiecpt/death1  0.9
+    $pitchset monsters/zombiecpt/death2  0.9
+    $pitchset monsters/zombiecpt/death3  0.9
 
-$pitchset monsters/zombiecpt/sight1  0.9
-$pitchset monsters/zombiecpt/sight2  0.9
-$pitchset monsters/zombiecpt/sight3  0.9
-$pitchset monsters/zombiecpt/active  0.9
-$pitchset monsters/zombiecpt/pain    0.9
-$pitchset monsters/zombiecpt/death1  0.9
-$pitchset monsters/zombiecpt/death2  0.9
-$pitchset monsters/zombiecpt/death3  0.9
-
-$random monsters/zombiecpt/sight {
-    monsters/zombiecpt/sight1
-    monsters/zombiecpt/sight2
-    monsters/zombiecpt/sight3
-}
-$random monsters/zombiecpt/death {
-    monsters/zombiecpt/death1
-    monsters/zombiecpt/death2
-    monsters/zombiecpt/death3
-}
+    $random monsters/zombiecpt/sight {
+        monsters/zombiecpt/sight1
+        monsters/zombiecpt/sight2
+        monsters/zombiecpt/sight3
+    }
+    $random monsters/zombiecpt/death {
+        monsters/zombiecpt/death1
+        monsters/zombiecpt/death2
+        monsters/zombiecpt/death3
+    }
 
 // Chaingunners
 
 /// Troop
+    monsters/troop/sight1            dsposit1
+    monsters/troop/sight2            dsposit2
+    monsters/troop/sight3            dsposit3
+    monsters/troop/active            dsposact
+    monsters/troop/pain              dspopain
+    monsters/troop/death1            dspodth1
+    monsters/troop/death2            dspodth2
+    monsters/troop/death3            dspodth3
 
-monsters/troop/sight1            dsposit1
-monsters/troop/sight2            dsposit2
-monsters/troop/sight3            dsposit3
-monsters/troop/active            dsposact
-monsters/troop/pain              dspopain
-monsters/troop/death1            dspodth1
-monsters/troop/death2            dspodth2
-monsters/troop/death3            dspodth3
+    $pitchset monsters/troop/sight1  1.1
+    $pitchset monsters/troop/sight2  1.1
+    $pitchset monsters/troop/sight3  1.1
+    $pitchset monsters/troop/active  1.1
+    $pitchset monsters/troop/pain    1.1
+    $pitchset monsters/troop/death1  1.1
+    $pitchset monsters/troop/death2  1.1
+    $pitchset monsters/troop/death3  1.1
 
-$pitchset monsters/troop/sight1  1.1
-$pitchset monsters/troop/sight2  1.1
-$pitchset monsters/troop/sight3  1.1
-$pitchset monsters/troop/active  1.1
-$pitchset monsters/troop/pain    1.1
-$pitchset monsters/troop/death1  1.1
-$pitchset monsters/troop/death2  1.1
-$pitchset monsters/troop/death3  1.1
-
-$random monsters/troop/sight {
-    monsters/troop/sight1
-    monsters/troop/sight2
-    monsters/troop/sight3
-}
-$random monsters/troop/death {
-    monsters/troop/death1
-    monsters/troop/death2
-    monsters/troop/death3
-}
+    $random monsters/troop/sight {
+        monsters/troop/sight1
+        monsters/troop/sight2
+        monsters/troop/sight3
+    }
+    $random monsters/troop/death {
+        monsters/troop/death1
+        monsters/troop/death2
+        monsters/troop/death3
+    }
 
 /// Assassin
+    monsters/assassin/sight1            dsposit1
+    monsters/assassin/sight2            dsposit2
+    monsters/assassin/sight3            dsposit3
+    monsters/assassin/active            dsposact
+    monsters/assassin/pain              dspopain
+    monsters/assassin/death1            dspodth1
+    monsters/assassin/death2            dspodth2
+    monsters/assassin/death3            dspodth3
 
-monsters/assassin/sight1            dsposit1
-monsters/assassin/sight2            dsposit2
-monsters/assassin/sight3            dsposit3
-monsters/assassin/active            dsposact
-monsters/assassin/pain              dspopain
-monsters/assassin/death1            dspodth1
-monsters/assassin/death2            dspodth2
-monsters/assassin/death3            dspodth3
+    $pitchset monsters/assassin/sight1  0.9
+    $pitchset monsters/assassin/sight2  0.9
+    $pitchset monsters/assassin/sight3  0.9
+    $pitchset monsters/assassin/active  0.9
+    $pitchset monsters/assassin/pain    0.9
+    $pitchset monsters/assassin/death1  0.9
+    $pitchset monsters/assassin/death2  0.9
+    $pitchset monsters/assassin/death3  0.9
 
-$pitchset monsters/assassin/sight1  0.9
-$pitchset monsters/assassin/sight2  0.9
-$pitchset monsters/assassin/sight3  0.9
-$pitchset monsters/assassin/active  0.9
-$pitchset monsters/assassin/pain    0.9
-$pitchset monsters/assassin/death1  0.9
-$pitchset monsters/assassin/death2  0.9
-$pitchset monsters/assassin/death3  0.9
-
-$random monsters/assassin/sight {
-    monsters/assassin/sight1
-    monsters/assassin/sight2
-    monsters/assassin/sight3
-}
-$random monsters/assassin/death {
-    monsters/assassin/death1
-    monsters/assassin/death2
-    monsters/assassin/death3
-}
+    $random monsters/assassin/sight {
+        monsters/assassin/sight1
+        monsters/assassin/sight2
+        monsters/assassin/sight3
+    }
+    $random monsters/assassin/death {
+        monsters/assassin/death1
+        monsters/assassin/death2
+        monsters/assassin/death3
+    }
 
 // Imps
+
+/// Impling
+    monsters/impling/sight1            dsbgsit1
+    monsters/impling/sight2            dsbgsit2
+    monsters/impling/active            dsbgact
+    monsters/impling/pain              dspopain
+    monsters/impling/death1            dsbgdth1
+    monsters/impling/death2            dsbgdth2
+    monsters/impling/shotx             dsfirxpl
+
+    $limit monsters/impling/active 6
+
+    $pitchset monsters/impling/sight1  1.1
+    $pitchset monsters/impling/sight2  1.1
+    $pitchset monsters/impling/active  1.1
+    $pitchset monsters/impling/pain    1.1
+    $pitchset monsters/impling/death1  1.1
+    $pitchset monsters/impling/death2  1.1
+    $pitchset monsters/impling/shotx   1.1
+
+    $random monsters/impling/sight {
+        monsters/impling/sight1
+        monsters/impling/sight2
+    }
+    $random monsters/impling/death {
+        monsters/impling/death1
+        monsters/impling/death2
+    }
+
+/// Imp Lord
+    monsters/implord/sight1            dsbgsit1
+    monsters/implord/sight2            dsbgsit2
+    monsters/implord/active            dsbgact
+    monsters/implord/pain              dspopain
+    monsters/implord/death1            dsbgdth1
+    monsters/implord/death2            dsbgdth2
+    monsters/implord/shotx             dsfirxpl
+
+    $limit monsters/implord/active 6
+
+    $pitchset monsters/implord/sight1  0.9
+    $pitchset monsters/implord/sight2  0.9
+    $pitchset monsters/implord/active  0.9
+    $pitchset monsters/implord/pain    0.9
+    $pitchset monsters/implord/death1  0.9
+    $pitchset monsters/implord/death2  0.9
+    $pitchset monsters/implord/shotx   0.9
+
+    $random monsters/implord/sight {
+        monsters/implord/sight1
+        monsters/implord/sight2
+    }
+    $random monsters/implord/death {
+        monsters/implord/death1
+        monsters/implord/death2
+    }
 
 // Souls
 

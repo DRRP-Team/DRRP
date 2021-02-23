@@ -203,6 +203,11 @@ Actor Impling: DoomImp_BaseDRRP 10260 {
     Tag "$DRRP_M_IMPLING"
     Health 50
     Translation "64:79=117:127", "61:63=127:127"
+
+    SeeSound "monsters/impling/sight"
+    PainSound "monsters/impling/pain"
+    DeathSound "monsters/impling/death"
+    ActiveSound "monsters/impling/active"
 }
 
 Actor DRRPImp: DoomImp_BaseDRRP replaces DoomImp 10360 {
@@ -224,6 +229,11 @@ Actor ImpLord: DoomImp_BaseDRRP 10460 {
     Tag "$DRRP_M_IMPLORD"
     Health 290
     Translation "169:191=112:127", "64:79=177:191", "191:191=127:127"
+
+    SeeSound "monsters/implord/sight"
+    PainSound "monsters/implord/pain"
+    DeathSound "monsters/implord/death"
+    ActiveSound "monsters/implord/active"
 }
 
 Actor DRRPDoomImpBall: DoomImpBall replaces DoomImpBall {
