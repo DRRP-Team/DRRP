@@ -24,6 +24,8 @@ Actor BlackHole 10666 {
     }
 }
 
+Actor InformatorActor: DRRPInformatorActor 10667 {}
+
 Actor DRRPParticle : Blood {
     -SOLID
     +NOGRAVITY

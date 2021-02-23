@@ -278,6 +278,15 @@ class DRRPLightWrapper: Actor {
 } // of class DRRPLightWrapper: Actor {
 
 
+class DRRPInformatorActor: Actor {
+    String informString; // As args[ 0 ].
+
+    override void PostBeginPlay() {
+        informString = "" .. ACS_ScriptCall( "getString", args[ 0 ] );
+        Super.PostBeginPlay();
+    }
+}
+
 class DRRPDamageDoll: DRRPPlayer {
     Default {
         +BUDDHA;
