@@ -74,6 +74,11 @@ Actor ZombiePvt: ZombieMan_BaseDRRP replaces ZombieMan 10274 {
     Health 35
     Translation "16:47=152:159"
 
+    SeeSound "monsters/zombiepvt/sight"
+    PainSound "monsters/zombiepvt/pain"
+    DeathSound "monsters/zombiepvt/death"
+    ActiveSound "monsters/zombiepvt/active"
+
     States {
     Missile:
         POSS E 10 A_FaceTarget
@@ -92,6 +97,11 @@ Actor ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy 10374 {
     Health 75
     Translation "96:111=%[0.00,0.00,0.00]:[0.98,1.25,1.76]", "16:47=%[0.00,0.00,0.00]:[0.31,0.59,0.94]", "48:79=%[0.00,0.00,0.00]:[0.80,0.93,1.16]", "178:178=181:181", "168:175=193:193", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[0.76,0.95,1.28]" 
 
+    SeeSound "monsters/zombielt/sight"
+    PainSound "monsters/zombielt/pain"
+    DeathSound "monsters/zombielt/death"
+    ActiveSound "monsters/zombielt/active"
+
     States {
     Missile:
         SPOS E 10 A_FaceTarget
@@ -109,6 +119,11 @@ Actor ZombieCpt: ZombieMan_BaseDRRP 10474 {
     Tag "$DRRP_M_ZOMBIECPT"
     Health 155
     Translation "101:106=@94[144,22,16]", "26:47=@97[173,25,25]", "48:79=@19[123,16,16]", "176:191=185:185", "168:175=173:173", "160:167=%[0.00,0.00,0.00]:[1.55,0.02,0.06]", "208:223=67:67", "120:125=@52[0,128,0]"
+
+    SeeSound "monsters/zombiecpt/sight"
+    PainSound "monsters/zombiecpt/pain"
+    DeathSound "monsters/zombiecpt/death"
+    ActiveSound "monsters/zombiecpt/active"
 
     States {
     Missile:
