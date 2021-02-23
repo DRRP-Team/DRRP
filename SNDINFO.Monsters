@@ -191,7 +191,7 @@
 
 // Souls
 
-// Phantom
+/// Phantom
     monsters/phantom/active           dsdmact
     monsters/phantom/pain             dsdmpain
     monsters/phantom/melee            dssklatk
@@ -202,18 +202,48 @@
     $pitchset monsters/phantom/melee  1.1
     $pitchset monsters/phantom/death  1.1
 
-// Nightmare
+/// Nightmare
     monsters/nightmare/active           dsdmact
     monsters/nightmare/pain             dsdmpain
     monsters/nightmare/melee            dssklatk
     monsters/nightmare/death            dsfirxpl
 
-    $pitchset monsters/nightmare/active 1.1
-    $pitchset monsters/nightmare/pain   1.1
-    $pitchset monsters/nightmare/melee  1.1
-    $pitchset monsters/nightmare/death  1.1
+    $pitchset monsters/nightmare/active 0.9
+    $pitchset monsters/nightmare/pain   0.9
+    $pitchset monsters/nightmare/melee  0.9
+    $pitchset monsters/nightmare/death  0.9
 
 // Demons
+
+/// Bull Demon
+    monsters/bulldemon/sight            dssgtsit
+    monsters/bulldemon/active           dsdmact
+    monsters/bulldemon/pain             dsdmpain
+    monsters/bulldemon/melee            dssgtatk
+    monsters/bulldemon/death            dssgtdth
+
+    $pitchset monsters/bulldemon/sight  1.1
+    $pitchset monsters/bulldemon/active 1.1
+    $pitchset monsters/bulldemon/pain   1.1
+    $pitchset monsters/bulldemon/melee  1.1
+    $pitchset monsters/bulldemon/death  1.1
+
+    $limit monsters/bulldemon/melee 4
+
+/// Belphegor
+    monsters/belphegor/sight            dssgtsit
+    monsters/belphegor/active           dsdmact
+    monsters/belphegor/pain             dsdmpain
+    monsters/belphegor/melee            dssgtatk
+    monsters/belphegor/death            dssgtdth
+
+    $pitchset monsters/belphegor/sight  0.9
+    $pitchset monsters/belphegor/active 0.9
+    $pitchset monsters/belphegor/pain   0.9
+    $pitchset monsters/belphegor/melee  0.9
+    $pitchset monsters/belphegor/death  0.9
+
+    $limit monsters/belphegor/melee 4
 
 // Cacodemons
 

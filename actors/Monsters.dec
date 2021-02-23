@@ -297,6 +297,12 @@ Actor BullDemon: Demon_BaseDRRP 10259 {
     Health 85
     Translation "213:223=162:164", "27:47=[74,65,24]:[74,65,24]", "27:37=[115,105,57]:[115,105,57]", "27:33=[156,142,99]:[156,142,99]", "21:26=[189,178,132]:[189,178,132]", "16:20=[214,203,173]:[214,203,173]"
 
+    SeeSound "monsters/bulldemon/sight"
+    AttackSound "monsters/bulldemon/melee"
+    PainSound "monsters/bulldemon/pain"
+    DeathSound "monsters/bulldemon/death"
+    ActiveSound "monsters/bulldemon/active"
+
     States {
     Melee:
         SARG EF 8 Fast A_FaceTarget
@@ -313,6 +319,12 @@ Actor Belphegor: Demon_BaseDRRP 10359 { //FIXME: id
     Tag "$DRRP_M_BELPHEGOR"
     Health 375
     Translation "16:47=%[0.00,0.00,0.00]:[0.57,0.77,1.41]"
+
+    SeeSound "monsters/belphegor/sight"
+    AttackSound "monsters/belphegor/melee"
+    PainSound "monsters/belphegor/pain"
+    DeathSound "monsters/belphegor/death"
+    ActiveSound "monsters/belphegor/active"
 
     States {
     See:
