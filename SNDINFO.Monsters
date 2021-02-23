@@ -1,0 +1,216 @@
+/**
+ * Copyright (c) 2017-2021 DRRP-Team
+ *
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+// Custom monsters pitches
+
+// Zombies
+
+/// Zombie Pvt
+
+monsters/zombiepvt/sight1            dsposit1
+monsters/zombiepvt/sight2            dsposit2
+monsters/zombiepvt/sight3            dsposit3
+monsters/zombiepvt/active            dsposact
+monsters/zombiepvt/pain              dspopain
+monsters/zombiepvt/death1            dspodth1
+monsters/zombiepvt/death2            dspodth2
+monsters/zombiepvt/death3            dspodth3
+
+$pitchset monsters/zombiepvt/sight1  2.0
+$pitchset monsters/zombiepvt/sight2  2.0
+$pitchset monsters/zombiepvt/sight3  2.0
+$pitchset monsters/zombiepvt/active  2.0
+$pitchset monsters/zombiepvt/pain    2.0
+$pitchset monsters/zombiepvt/death1  2.0
+$pitchset monsters/zombiepvt/death2  2.0
+$pitchset monsters/zombiepvt/death3  2.0
+
+$random monsters/zombiepvt/sight {
+    monsters/zombiepvt/sight1
+    monsters/zombiepvt/sight2
+    monsters/zombiepvt/sight3
+}
+$random monsters/zombiepvt/death {
+    monsters/zombiepvt/death1
+    monsters/zombiepvt/death2
+    monsters/zombiepvt/death3
+}
+
+/// Zombie Lt
+
+monsters/zombielt/sight1            dsposit1
+monsters/zombielt/sight2            dsposit2
+monsters/zombielt/sight3            dsposit3
+monsters/zombielt/active            dsposact
+monsters/zombielt/pain              dspopain
+monsters/zombielt/death1            dspodth1
+monsters/zombielt/death2            dspodth2
+monsters/zombielt/death3            dspodth3
+
+$pitchset monsters/zombielt/sight1  1.0
+$pitchset monsters/zombielt/sight2  1.0
+$pitchset monsters/zombielt/sight3  1.0
+$pitchset monsters/zombielt/active  1.0
+$pitchset monsters/zombielt/pain    1.0
+$pitchset monsters/zombielt/death1  1.0
+$pitchset monsters/zombielt/death2  1.0
+$pitchset monsters/zombielt/death3  1.0
+
+$random monsters/zombielt/sight {
+    monsters/zombielt/sight1
+    monsters/zombielt/sight2
+    monsters/zombielt/sight3
+}
+$random monsters/zombielt/death {
+    monsters/zombielt/death1
+    monsters/zombielt/death2
+    monsters/zombielt/death3
+}
+
+/// ZombieCpt
+
+monsters/zombiecpt/sight1            dsposit1
+monsters/zombiecpt/sight2            dsposit2
+monsters/zombiecpt/sight3            dsposit3
+monsters/zombiecpt/active            dsposact
+monsters/zombiecpt/pain              dspopain
+monsters/zombiecpt/death1            dspodth1
+monsters/zombiecpt/death2            dspodth2
+monsters/zombiecpt/death3            dspodth3
+
+$pitchset monsters/zombiecpt/sight1  0.5
+$pitchset monsters/zombiecpt/sight2  0.5
+$pitchset monsters/zombiecpt/sight3  0.5
+$pitchset monsters/zombiecpt/active  0.5
+$pitchset monsters/zombiecpt/pain    0.5
+$pitchset monsters/zombiecpt/death1  0.5
+$pitchset monsters/zombiecpt/death2  0.5
+$pitchset monsters/zombiecpt/death3  0.5
+
+$random monsters/zombiecpt/sight {
+    monsters/zombiecpt/sight1
+    monsters/zombiecpt/sight2
+    monsters/zombiecpt/sight3
+}
+$random monsters/zombiecpt/death {
+    monsters/zombiecpt/death1
+    monsters/zombiecpt/death2
+    monsters/zombiecpt/death3
+}
+
+// Chaingunners
+
+/// Troop
+
+monsters/troop/sight1            dsposit1
+monsters/troop/sight2            dsposit2
+monsters/troop/sight3            dsposit3
+monsters/troop/active            dsposact
+monsters/troop/pain              dspopain
+monsters/troop/death1            dspodth1
+monsters/troop/death2            dspodth2
+monsters/troop/death3            dspodth3
+
+$pitchset monsters/troop/sight1  1.0
+$pitchset monsters/troop/sight2  1.0
+$pitchset monsters/troop/sight3  1.0
+$pitchset monsters/troop/active  1.0
+$pitchset monsters/troop/pain    1.0
+$pitchset monsters/troop/death1  1.0
+$pitchset monsters/troop/death2  1.0
+$pitchset monsters/troop/death3  1.0
+
+$random monsters/troop/sight {
+    monsters/troop/sight1
+    monsters/troop/sight2
+    monsters/troop/sight3
+}
+$random monsters/troop/death {
+    monsters/troop/death1
+    monsters/troop/death2
+    monsters/troop/death3
+}
+
+/// Commando
+
+monsters/commando/sight1            dsposit1
+monsters/commando/sight2            dsposit2
+monsters/commando/sight3            dsposit3
+monsters/commando/active            dsposact
+monsters/commando/pain              dspopain
+monsters/commando/death1            dspodth1
+monsters/commando/death2            dspodth2
+monsters/commando/death3            dspodth3
+
+$pitchset monsters/commando/sight1  1.0
+$pitchset monsters/commando/sight2  1.0
+$pitchset monsters/commando/sight3  1.0
+$pitchset monsters/commando/active  1.0
+$pitchset monsters/commando/pain    1.0
+$pitchset monsters/commando/death1  1.0
+$pitchset monsters/commando/death2  1.0
+$pitchset monsters/commando/death3  1.0
+
+$random monsters/commando/sight {
+    monsters/commando/sight1
+    monsters/commando/sight2
+    monsters/commando/sight3
+}
+$random monsters/commando/death {
+    monsters/commando/death1
+    monsters/commando/death2
+    monsters/commando/death3
+}
+
+/// Assassin
+
+monsters/assassin/sight1            dsposit1
+monsters/assassin/sight2            dsposit2
+monsters/assassin/sight3            dsposit3
+monsters/assassin/active            dsposact
+monsters/assassin/pain              dspopain
+monsters/assassin/death1            dspodth1
+monsters/assassin/death2            dspodth2
+monsters/assassin/death3            dspodth3
+
+$pitchset monsters/assassin/sight1  1.0
+$pitchset monsters/assassin/sight2  1.0
+$pitchset monsters/assassin/sight3  1.0
+$pitchset monsters/assassin/active  1.0
+$pitchset monsters/assassin/pain    1.0
+$pitchset monsters/assassin/death1  1.0
+$pitchset monsters/assassin/death2  1.0
+$pitchset monsters/assassin/death3  1.0
+
+$random monsters/assassin/sight {
+    monsters/assassin/sight1
+    monsters/assassin/sight2
+    monsters/assassin/sight3
+}
+$random monsters/assassin/death {
+    monsters/assassin/death1
+    monsters/assassin/death2
+    monsters/assassin/death3
+}
+
+// Imps
+
+// Souls
+
+// Demons
+
+// Cacodemons
+
+// Revenants
+
+// Elementals
+
+// Cubuses
+
+// Viles
+
+// -Hells
