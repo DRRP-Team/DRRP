@@ -132,6 +132,7 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
 // Player's bloody damage flash visual effect.
 int flashMessageID = 30;
 Script "BloodFlashVisual" ( int flashType, int receivedDamage ) {
+	if ( flashType == 0 ) flashType = Random(1, 4);
 
     if ( flashType > 0 && flashType < 4 ) {
         // Cyclic HudMessage id:
@@ -140,9 +141,9 @@ Script "BloodFlashVisual" ( int flashType, int receivedDamage ) {
         else
             flashMessageID++;
 
-        //SetHudSize( 320, 200, false );
+        SetHudSize( 64, 64, false );
         SetFont( StrParam( s:"SPLASH_", i:flashType ) );
-        HudMessage( s: "a"; HUDMSG_FADEOUT, flashMessageID, CR_GRAY, Random( 0, 0xFFFF ), Random( 0, 0xFFFF ), 0.33, 0.5, 0.5 );
+        HudMessage( s: "a"; HUDMSG_FADEOUT | HUDMSG_ALPHA, flashMessageID, CR_GRAY, 32.0, 32.0, 0.33, 0.5, 0.5);
     }
 }
 
