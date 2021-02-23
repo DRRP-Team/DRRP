@@ -15,7 +15,11 @@ statusbar normal { // Standard Doom Status bar
     drawimage "STTPRCNT", 221, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, health, 90, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 44, 171;
-    InInventory "DRRPBasicArmor", 1 {
+    IsSelected "HellHoundGun", "CerberusGun" {
+        drawnumber 3, HUDFONT_DOOM, Green, DRRPBasicArmor, drawshadow, 221, 171;
+    } else IsSelected "DemonWolfGun" {
+        drawnumber 3, HUDFONT_DOOM, Green, DRRPBasicArmor, drawshadow, 221, 171;
+    } else InInventory "DRRPBasicArmor", 1 {
         drawnumber 3, HUDFONT_DOOM, Gray, DRRPBasicArmor, 221, 171;
     } else {
         drawnumber 3, HUDFONT_DOOM, Red, DRRPBasicArmor, 221, 171;
@@ -79,7 +83,11 @@ statusbar fullscreen, fullscreenoffsets {// ZDoom HUD
 
     // Armor
     drawimage "BON2A0", 20, -24, centerbottom;
-    InInventory "DRRPBasicArmor", 1 {
+    IsSelected "HellHoundGun", "CerberusGun" {
+        drawnumber 3, HUDFONT_DOOM, Green, DRRPBasicArmor, drawshadow, 82, -39;
+    } else IsSelected "DemonWolfGun" {
+        drawnumber 3, HUDFONT_DOOM, Green, DRRPBasicArmor, drawshadow, 82, -39;
+    } else InInventory "DRRPBasicArmor", 1 {
         drawnumber 3, HUDFONT_DOOM, Gray, DRRPBasicArmor, drawshadow, 82, -39;
     } else {
         drawnumber 3, HUDFONT_DOOM, Red, DRRPBasicArmor, drawshadow, 82, -39;
