@@ -100,7 +100,7 @@ Actor ShotgunGuy_BaseDRRP: ShotgunGuy {
 }
 
 Actor ChaingunGuy_BaseDRRP: ChaingunGuy {
-    const int ChanceFailAttackRightBack = 192;
+    const int ChanceFailAttackRightBack = 224;
 
     DropItem "Chaingun", 0, 0
     DamageFactor DRRPBulletDmg, 3.0
@@ -110,8 +110,8 @@ Actor ChaingunGuy_BaseDRRP: ChaingunGuy {
     States {
     Missile:
         CPOS E 10 A_FaceTarget
-        CPOS FE 4 Bright A_CustomBulletAttack( 22.5, 0, 1, Random( 1, 5 ) * 3, "BulletPuff", 0, CBAF_NORANDOM )
-        CPOS F 1 A_CPosRefire
+        CPOS FE 4 Bright A_CustomBulletAttack( 22.5, 0, 1, Random( 1, 4 ) * 3 - 2, "BulletPuff", 0, CBAF_NORANDOM )
+        CPOS F 2 A_CPosRefire
         Goto Missile + 1
     Pain:
         CPOS G 3 A_Pain
@@ -186,6 +186,7 @@ Actor Revenant_BaseDRRP: Revenant {
     Scale 0.74
     +LOOKALLAROUND
 
+    DamageFactor DRRPAxeDmg, 5.0
     DamageFactor DRRPRocketDmg, 2.0
 
     States {
@@ -196,8 +197,8 @@ Actor Revenant_BaseDRRP: Revenant {
         SKEL K 10 A_FaceTarget
         Goto See
     Death:
-        SKEL L 7 A_SpawnItem("RocketAmmo")
-        SKEL M 7 A_SpawnItem("DRRPExplosion", 0, 38)
+        SKEL L 7 A_SpawnItem( "RocketAmmo" )
+        SKEL M 7 A_SpawnItem( "DRRPExplosion", 0, 38 )
         SKEL M 0 A_Jump( 256, "DeathReal" ) // For final monster cast.
         SKEL N 7 A_Scream
         SKEL OP 7
