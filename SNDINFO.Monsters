@@ -271,6 +271,28 @@
 
 // Revenants
 
+/// Ghoul
+    monsters/ghoul/sight            dsskesit
+    monsters/ghoul/active           dsskeact
+    monsters/ghoul/pain             dspopain
+    monsters/ghoul/death            dsskedth
+
+    $pitchset monsters/ghoul/sight  1.1
+    $pitchset monsters/ghoul/active 1.1
+    $pitchset monsters/ghoul/pain   1.1
+    $pitchset monsters/ghoul/death  1.1
+
+/// Revenant
+    monsters/revenant/sight            dsskesit
+    monsters/revenant/active           dsskeact
+    monsters/revenant/pain             dspopain
+    monsters/revenant/death            dsskedth
+
+    $pitchset monsters/revenant/sight  0.9
+    $pitchset monsters/revenant/active 0.9
+    $pitchset monsters/revenant/pain   0.9
+    $pitchset monsters/revenant/death  0.9
+
 // Elementals
 
 // Cubuses
