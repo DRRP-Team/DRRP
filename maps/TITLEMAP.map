@@ -1,32 +1,43 @@
 namespace = "zdoom";
 thing
 {
-x = 1440.000;
-y = 1632.000;
-type = 1;
+x = -1088.000;
+y = -832.000;
+type = 10714;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+id = 431;
+}
+
+thing
+{
+x = -960.000;
+y = -1088.000;
+type = 10250;
 angle = 90;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+height = 32;
 }
 
 thing
 {
-x = 1248.000;
-y = 1120.000;
+x = -1088.000;
+y = -960.000;
 type = 10714;
 renderstyle = "";
 coop = true;
@@ -37,315 +48,17 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+id = 431;
 }
 
 thing
 {
-x = 1184.000;
-y = 792.000;
-type = 888;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 1248.000;
-y = 1248.000;
-type = 10714;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-}
-
-thing
-{
-x = 992.000;
-y = 1120.000;
-type = 10714;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-}
-
-thing
-{
-x = 1120.000;
-y = 928.000;
-type = 10714;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-}
-
-thing
-{
-x = 1120.000;
-y = 1184.000;
-type = 10714;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-}
-
-thing
-{
-x = 1312.000;
-y = 480.000;
-type = 10250;
-angle = 180;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 1120.000;
-y = 680.000;
-type = 10250;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 1120.000;
-y = 800.000;
-type = 10714;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-}
-
-thing
-{
-x = 984.000;
-y = 616.000;
-type = 10250;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 1256.000;
-y = 624.000;
-type = 10250;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 1256.000;
-y = 344.000;
-type = 10250;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 992.000;
-y = 352.000;
-type = 10250;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 928.000;
-y = 480.000;
-type = 10250;
-angle = 180;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 992.000;
-y = 1248.000;
-type = 10714;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-}
-
-thing
-{
-x = 1056.000;
-y = 928.000;
-type = 3004;
+x = -896.000;
+y = -832.000;
+type = 9001;
 angle = 270;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-renderstyle = "";
-}
-
-thing
-{
-x = 1056.000;
-y = 1184.000;
-type = 888;
-angle = 270;
+id = 463;
+height = 32;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -366,9 +79,15 @@ class5 = true;
 
 thing
 {
-x = 1056.000;
-y = 792.000;
-type = 888;
+x = -1216.000;
+y = -736.000;
+type = 9800;
+angle = 270;
+height = 32;
+arg0 = 100;
+arg1 = 255;
+arg2 = 100;
+arg3 = 16;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -385,34 +104,16 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 302;
 }
 
 thing
 {
-x = 1184.000;
-y = 928.000;
-type = 3004;
-angle = 270;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-renderstyle = "";
-}
-
-thing
-{
-x = 1120.000;
-y = 416.000;
-type = 9075;
+x = -1088.000;
+y = -1024.000;
+type = 10250;
 angle = 90;
+renderstyle = "";
 coop = true;
 dm = true;
 single = true;
@@ -421,102 +122,37 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-id = 5;
-arg0 = 13;
+height = 32;
+}
+
+thing
+{
+x = -960.000;
+y = -704.000;
+type = 10260;
+angle = 225;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 28;
 special = 80;
+id = 493;
 renderstyle = "";
+dormant = true;
+height = 32.000000;
 }
 
 thing
 {
-x = 736.000;
-y = 480.000;
-type = 9070;
-angle = 270;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-id = 6;
-arg1 = 64;
-height = 32;
-}
-
-thing
-{
-x = 1120.000;
-y = 480.000;
-type = 9070;
+x = -1024.000;
+y = -768.000;
+type = 9025;
 angle = 180;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-id = 5;
-arg1 = 64;
-height = 32;
-arg3 = 6;
-}
-
-thing
-{
-x = 1120.000;
-y = 800.000;
-type = 9070;
-angle = 270;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-id = 7;
-arg1 = 64;
-height = 32;
-arg3 = 5;
-}
-
-thing
-{
-x = 1120.000;
-y = 1088.000;
-type = 9070;
-angle = 180;
-renderstyle = "";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-id = 3;
-arg3 = 7;
-arg1 = 64;
-height = 32;
-arg0 = 180;
-}
-
-thing
-{
-x = 1120.000;
-y = 1184.000;
-type = 9070;
-angle = 90;
 renderstyle = "";
 coop = true;
 dm = true;
@@ -527,18 +163,18 @@ skill3 = true;
 skill4 = true;
 skill5 = true;
 id = 1;
-arg1 = 64;
-height = 32;
-arg3 = 3;
-arg2 = 5;
+height = 64;
+pitch = 75;
+arg2 = 3000;
+arg1 = 900;
 }
 
 thing
 {
-x = 1056.000;
-y = 1312.000;
-type = 9072;
-angle = 90;
+x = -896.000;
+y = -1024.000;
+type = 10714;
+renderstyle = "";
 coop = true;
 dm = true;
 single = true;
@@ -547,18 +183,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-renderstyle = "";
-arg0 = 1;
-id = 4;
+id = 431;
 }
 
 thing
 {
-x = 1248.000;
-y = 480.000;
-type = 9001;
+x = -896.000;
+y = -960.000;
+type = 10703;
 angle = 180;
-id = 20;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -575,19 +208,129 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+fillcolor = 16777215;
+id = 465;
 }
 
 thing
 {
-x = 1120.000;
-y = 1260.000;
+x = -896.000;
+y = -768.000;
+type = 10714;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+id = 431;
+}
+
+thing
+{
+x = -1152.000;
+y = -640.000;
+type = 1;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = -1216.000;
+y = -896.000;
+type = 10814;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 34;
+special = 80;
+id = 304;
+renderstyle = "";
+}
+
+thing
+{
+x = -1216.000;
+y = -768.000;
+type = 10274;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+dormant = true;
+}
+
+thing
+{
+x = -1024.000;
+y = -960.000;
+type = 10464;
+angle = 90;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+height = 32.000000;
+dormant = true;
+}
+
+thing
+{
+x = -960.000;
+y = -576.000;
+type = 10501;
+angle = 225;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 30;
+special = 80;
+id = 430;
+renderstyle = "";
+height = 32;
+}
+
+thing
+{
+x = -1216.000;
+y = -1056.000;
 type = 9800;
 angle = 270;
 height = 32;
-arg0 = 255;
+arg0 = 100;
 arg1 = 255;
 arg2 = 100;
-arg3 = 50;
+arg3 = 16;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -604,38 +347,82 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 307;
 }
 
 thing
 {
-x = 1176.000;
-y = 1248.000;
-type = 888;
+x = -896.000;
+y = -896.000;
+type = 9800;
 angle = 270;
+id = 464;
+height = 32.000000;
+arg0 = 100;
+arg1 = 100;
+arg2 = 255;
+arg3 = 32;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
 }
 
 thing
 {
-x = 1120.000;
-y = 1184.000;
+x = -1088.000;
+y = -832.000;
 type = 10259;
-angle = 270;
+angle = 45;
+renderstyle = "";
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+height = 32.000000;
+dormant = true;
+}
+
+thing
+{
+x = -832.000;
+y = -768.000;
+type = 10262;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 28;
+special = 80;
+id = 493;
+renderstyle = "";
+dormant = true;
+height = 32.000000;
+}
+
+thing
+{
+x = -896.000;
+y = -832.000;
+type = 10703;
+angle = 180;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -652,3322 +439,2708 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+fillcolor = 16777215;
+id = 463;
 }
 
 vertex
 {
-x = 1184.000;
-y = 640.000;
+x = -800.000;
+y = -704.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 640.000;
+x = -768.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1168.000;
-y = 576.000;
+x = -672.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 560.000;
+x = -672.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 1056.000;
+x = -1119.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1056.000;
-y = 1088.000;
+x = -1119.000;
+y = -1055.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 1088.000;
+x = -736.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 1152.000;
+x = -768.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 432.000;
+x = -1056.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1200.000;
-y = 448.000;
+x = -1056.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 768.000;
+x = -800.000;
+y = -1136.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 768.000;
+x = -864.000;
+y = -1136.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 960.000;
+x = -1184.000;
+y = -832.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 960.000;
+x = -1152.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1184.000;
-y = 1088.000;
+x = -992.000;
+y = -1120.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 1056.000;
+x = -1056.000;
+y = -1120.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 960.000;
+x = -928.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 960.000;
+x = -864.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 1024.000;
+x = -904.000;
+y = -920.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 1088.000;
+x = -920.000;
+y = -904.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 1088.000;
+x = -874.000;
+y = -890.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 1296.000;
+x = -890.000;
+y = -874.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 1296.000;
+x = -1056.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 768.000;
+x = -1056.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 400.000;
+x = -1152.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1040.000;
-y = 384.000;
+x = -1184.000;
+y = -960.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 1024.000;
+x = -737.000;
+y = -991.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 1000.000;
+x = -737.000;
+y = -1055.000;
 }
 
 vertex
 {
-x = 1136.000;
-y = 1000.000;
+x = -928.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 528.000;
+x = -928.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 560.000;
+x = -864.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1472.000;
-y = 1600.000;
+x = -1120.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1408.000;
-y = 1600.000;
+x = -1119.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 1000.000;
+x = -1184.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1472.000;
-y = 1632.000;
+x = -992.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 400.000;
+x = -928.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1168.000;
-y = 384.000;
+x = -928.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1504.000;
-y = 1664.000;
+x = -1088.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1376.000;
-y = 1664.000;
+x = -1120.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 432.000;
+x = -1184.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1020.000;
-y = 832.000;
+x = -801.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1020.000;
-y = 896.000;
+x = -1120.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 984.000;
+x = -1216.000;
+y = -704.000;
 }
 
 vertex
 {
-x = 1104.000;
-y = 984.000;
+x = -1216.000;
+y = -576.000;
 }
 
 vertex
 {
-x = 1408.000;
-y = 1632.000;
+x = -864.000;
+y = -1120.000;
 }
 
 vertex
 {
-x = 1168.000;
-y = 448.000;
+x = -928.000;
+y = -1120.000;
 }
 
 vertex
 {
-x = 1140.000;
-y = 460.000;
+x = -1119.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1140.000;
-y = 500.000;
+x = -800.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 984.000;
+x = -800.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1040.000;
-y = 448.000;
+x = -1184.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 432.000;
+x = -1120.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1072.000;
-y = 576.000;
+x = -920.000;
+y = -888.000;
 }
 
 vertex
 {
-x = 1040.000;
-y = 576.000;
+x = -1248.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1200.000;
-y = 384.000;
+x = -1248.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 1280.000;
+x = -800.000;
+y = -1088.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 1280.000;
+x = -673.000;
+y = -991.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 528.000;
+x = -673.000;
+y = -801.000;
 }
 
 vertex
 {
-x = 1112.000;
-y = 728.000;
+x = -1119.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1112.000;
-y = 736.000;
+x = -1247.750;
+y = -928.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 432.000;
+x = -1247.750;
+y = -991.750;
 }
 
 vertex
 {
-x = 1072.000;
-y = 448.000;
+x = -1120.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 896.000;
+x = -656.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 1216.000;
+x = -864.000;
+y = -672.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 1152.000;
+x = -864.000;
+y = -656.000;
 }
 
 vertex
 {
-x = 1200.000;
-y = 576.000;
+x = -888.000;
+y = -872.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 400.000;
+x = -872.000;
+y = -888.000;
 }
 
 vertex
 {
-x = 1072.000;
-y = 384.000;
+x = -768.000;
+y = -1055.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 400.000;
+x = -1055.000;
+y = -673.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 728.000;
+x = -1055.000;
+y = -705.000;
 }
 
 vertex
 {
-x = 1168.000;
-y = 512.000;
+x = -928.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 528.000;
+x = -800.000;
+y = -1120.000;
 }
 
 vertex
 {
-x = 1040.000;
-y = 512.000;
+x = -888.000;
+y = -920.000;
 }
 
 vertex
 {
-x = 1100.000;
-y = 460.000;
+x = -672.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1112.000;
-y = 1000.000;
+x = -672.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 1280.000;
+x = -1120.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 1280.000;
+x = -1119.000;
+y = -737.000;
 }
 
 vertex
 {
-x = 1144.000;
-y = 984.000;
+x = -656.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 1280.000;
+x = -736.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1072.000;
-y = 512.000;
+x = -1248.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 880.000;
-y = 512.000;
+x = -799.000;
+y = -927.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 512.000;
+x = -799.000;
+y = -865.000;
 }
 
 vertex
 {
-x = 880.000;
-y = 448.000;
+x = -904.000;
+y = -872.000;
 }
 
 vertex
 {
-x = 1296.000;
-y = 1216.000;
+x = -1184.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1296.000;
-y = 1152.000;
+x = -800.000;
+y = -656.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 1088.000;
+x = -800.000;
+y = -672.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 1280.000;
+x = -1248.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 560.000;
+x = -736.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1120.000;
-y = 744.000;
+x = -736.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 832.000;
+x = -801.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 560.000;
+x = -864.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 1216.000;
+x = -864.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 944.000;
-y = 1152.000;
+x = -902.000;
+y = -918.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 320.000;
+x = -890.000;
+y = -918.000;
 }
 
 vertex
 {
-x = 1008.000;
-y = 320.000;
+x = -992.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1200.000;
-y = 512.000;
+x = -991.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 528.000;
+x = -992.000;
+y = -863.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 448.000;
+x = -992.000;
+y = -672.250;
 }
 
 vertex
 {
-x = 928.000;
-y = 512.000;
+x = -928.000;
+y = -672.250;
 }
 
 vertex
 {
-x = 960.000;
-y = 544.000;
+x = -864.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 744.000;
+x = -1055.000;
+y = -1088.000;
 }
 
 vertex
 {
-x = 1100.000;
-y = 500.000;
+x = -1056.000;
+y = -1086.000;
 }
 
 vertex
 {
-x = 944.000;
-y = 1216.000;
+x = -991.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 320.000;
+x = -801.000;
+y = -1087.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 320.000;
+x = -1088.000;
+y = -576.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 576.000;
+x = -1088.000;
+y = -704.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 416.000;
+x = -992.000;
+y = -929.000;
 }
 
 vertex
 {
-x = 928.000;
-y = 448.000;
+x = -929.000;
+y = -929.000;
 }
 
 vertex
 {
-x = 1008.000;
-y = 640.000;
+x = -992.000;
+y = -672.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 640.000;
+x = -928.000;
+y = -672.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 592.000;
+x = -1088.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 576.000;
+x = -1056.000;
+y = -704.000;
 }
 
 vertex
 {
-x = 1264.000;
-y = 704.000;
+x = -769.000;
+y = -737.000;
 }
 
 vertex
 {
-x = 1344.000;
-y = 704.000;
+x = -737.000;
+y = -737.000;
 }
 
 vertex
 {
-x = 928.000;
-y = 576.000;
+x = -992.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 608.000;
+x = -863.000;
+y = -863.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 640.000;
+x = -801.000;
+y = -863.000;
 }
 
 vertex
 {
-x = 1232.000;
-y = 288.000;
+x = -1247.000;
+y = -863.000;
 }
 
 vertex
 {
-x = 1232.000;
-y = 320.000;
+x = -1247.000;
+y = -801.000;
 }
 
 vertex
 {
-x = 1232.000;
-y = 640.000;
+x = -863.000;
+y = -929.000;
 }
 
 vertex
 {
-x = 1232.000;
-y = 672.000;
+x = -801.000;
+y = -929.000;
 }
 
 vertex
 {
-x = 976.000;
-y = 704.000;
+x = -1056.000;
+y = -1088.000;
 }
 
 vertex
 {
-x = 1008.000;
-y = 672.000;
+x = -929.000;
+y = -863.000;
 }
 
 vertex
 {
-x = 1344.000;
-y = 624.000;
+x = -874.000;
+y = -902.000;
 }
 
 vertex
 {
-x = 1312.000;
-y = 592.000;
+x = -864.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 416.000;
+x = -872.000;
+y = -904.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 368.000;
+x = -1056.000;
+y = -672.000;
 }
 
 vertex
 {
-x = 1216.000;
-y = 320.000;
+x = -1248.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1056.000;
-y = 640.000;
+x = -1087.000;
+y = -1055.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 768.000;
+x = -1248.000;
+y = -736.000;
 }
 
 vertex
 {
-x = 976.000;
-y = 256.000;
+x = -735.000;
+y = -1057.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 256.000;
+x = -801.000;
+y = -1119.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 320.000;
+x = -1055.000;
+y = -1119.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 704.000;
+x = -865.000;
+y = -1119.000;
 }
 
 vertex
 {
-x = 896.000;
-y = 384.000;
+x = -801.000;
+y = -673.000;
 }
 
 vertex
 {
-x = 1280.000;
-y = 544.000;
+x = -801.000;
+y = -704.000;
 }
 
 vertex
 {
-x = 928.000;
-y = 384.000;
+x = -928.000;
+y = -1119.000;
 }
 
 vertex
 {
-x = 1312.000;
-y = 368.000;
+x = -1088.000;
+y = -737.000;
 }
 
 vertex
 {
-x = 1344.000;
-y = 336.000;
+x = -918.000;
+y = -902.000;
 }
 
 vertex
 {
-x = 1344.000;
-y = 256.000;
+x = -902.000;
+y = -874.000;
 }
 
 vertex
 {
-x = 1264.000;
-y = 256.000;
+x = -918.000;
+y = -890.000;
 }
 
 vertex
 {
-x = 960.000;
-y = 384.000;
+x = -993.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1008.000;
-y = 288.000;
+x = -993.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1312.000;
-y = 448.000;
+x = -992.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1344.000;
-y = 448.000;
+x = -800.000;
+y = -800.000;
 }
 
 vertex
 {
-x = 1312.000;
-y = 512.000;
+x = -737.000;
+y = -801.000;
 }
 
 vertex
 {
-x = 1344.000;
-y = 512.000;
+x = -800.000;
+y = -992.000;
 }
 
 vertex
 {
-x = 1360.000;
-y = 448.000;
+x = -1312.000;
+y = -928.000;
 }
 
 vertex
 {
-x = 1360.000;
-y = 512.000;
+x = -1312.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 672.000;
+x = -1376.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 704.000;
+x = -1376.000;
+y = -768.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 672.000;
+x = -1312.000;
+y = -768.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 704.000;
+x = -1312.000;
+y = -864.000;
 }
 
 vertex
 {
-x = 1152.000;
-y = 744.000;
+x = -1086.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 728.000;
+x = -992.000;
+y = -1119.000;
 }
 
 vertex
 {
-x = 1024.000;
-y = 1216.000;
+x = -1056.000;
+y = -1056.000;
 }
 
 vertex
 {
-x = 1088.000;
-y = 1152.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 1216.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 1216.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 1152.000;
-}
-
-vertex
-{
-x = 1024.000;
-y = 1152.000;
-}
-
-vertex
-{
-x = 1216.000;
-y = 1216.000;
-}
-
-vertex
-{
-x = 1216.000;
-y = 1152.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 896.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 896.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 832.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 832.000;
-}
-
-vertex
-{
-x = 1024.000;
-y = 576.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 640.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 576.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 576.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 640.000;
-}
-
-vertex
-{
-x = 1216.000;
-y = 576.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 384.000;
-}
-
-vertex
-{
-x = 1216.000;
-y = 384.000;
-}
-
-vertex
-{
-x = 1024.000;
-y = 384.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 384.000;
-}
-
-vertex
-{
-x = 960.000;
-y = 640.000;
-}
-
-vertex
-{
-x = 1280.000;
-y = 640.000;
-}
-
-vertex
-{
-x = 1024.000;
-y = 512.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 512.000;
-}
-
-vertex
-{
-x = 1152.000;
-y = 512.000;
-}
-
-vertex
-{
-x = 1216.000;
-y = 512.000;
-}
-
-vertex
-{
-x = 1024.000;
-y = 448.000;
-}
-
-vertex
-{
-x = 1088.000;
-y = 448.000;
-}
-
-vertex
-{
-x = 1280.000;
-y = 448.000;
-}
-
-vertex
-{
-x = 1280.000;
-y = 512.000;
+x = -992.000;
+y = -1056.000;
 }
 
 linedef
 {
 v1 = 0;
 v2 = 1;
-sidefront = 195;
+sidefront = 152;
 blocking = true;
-impact = true;
 }
 
 linedef
 {
 v1 = 2;
 v2 = 3;
-sidefront = 52;
+sidefront = 238;
 blocking = true;
-impact = true;
 }
 
 linedef
 {
 v1 = 4;
 v2 = 5;
-sidefront = 203;
-blocking = true;
-impact = true;
+sidefront = 181;
+sideback = 29;
+twosided = true;
 }
 
 linedef
 {
 v1 = 6;
 v2 = 7;
-sidefront = 202;
+sidefront = 117;
 blocking = true;
-impact = true;
 }
 
 linedef
 {
 v1 = 8;
 v2 = 9;
-sidefront = 28;
-blocking = true;
-impact = true;
+sidefront = 113;
+sideback = 55;
+twosided = true;
+dontdraw = true;
 }
 
 linedef
 {
 v1 = 10;
 v2 = 11;
-sidefront = 197;
-sideback = 198;
+sidefront = 141;
+sideback = 175;
+special = 80;
 twosided = true;
-impact = true;
+playeruse = true;
+repeatspecial = true;
+arg0 = 3002;
 }
 
 linedef
 {
 v1 = 12;
 v2 = 13;
-sidefront = 8;
+sidefront = 24;
 blocking = true;
-impact = true;
 }
 
 linedef
 {
 v1 = 14;
 v2 = 15;
-sidefront = 18;
+sidefront = 190;
 blocking = true;
-impact = true;
 }
 
 linedef
 {
 v1 = 16;
 v2 = 17;
-sidefront = 201;
-blocking = true;
-impact = true;
+sidefront = 1;
+sideback = 2;
+twosided = true;
 }
 
 linedef
 {
 v1 = 18;
-v2 = 4;
-sidefront = 204;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 19;
-v2 = 20;
-sidefront = 69;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 21;
-v2 = 22;
-sidefront = 42;
-sideback = 27;
+v2 = 19;
+sidefront = 174;
+sideback = 59;
 twosided = true;
-impact = true;
+dontdraw = true;
 }
 
 linedef
 {
-v1 = 13;
+v1 = 20;
+v2 = 21;
+sidefront = 205;
+sideback = 186;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 22;
 v2 = 23;
-sidefront = 200;
-blocking = true;
-impact = true;
+sidefront = 155;
+sideback = 41;
+twosided = true;
+dontdraw = true;
 }
 
 linedef
 {
 v1 = 24;
 v2 = 25;
-sidefront = 47;
+sidefront = 200;
 blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 18;
-v2 = 26;
-sidefront = 104;
-sideback = 87;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 27;
-v2 = 28;
-sidefront = 17;
-sideback = 12;
-impact = true;
-twosided = true;
-}
-
-linedef
-{
-v1 = 29;
-v2 = 30;
-sidefront = 61;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 31;
-v2 = 32;
-sidefront = 93;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 33;
-v2 = 18;
-sidefront = 48;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 34;
-v2 = 31;
-sidefront = 49;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 35;
-v2 = 36;
-sidefront = 103;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 37;
-v2 = 34;
-sidefront = 56;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 38;
-v2 = 37;
-sidefront = 39;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 39;
-v2 = 35;
-sidefront = 166;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 40;
-v2 = 41;
-sidefront = 44;
-sideback = 43;
-twosided = true;
-dontdraw = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 42;
-v2 = 43;
-sidefront = 10;
-sideback = 9;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 32;
-v2 = 44;
-sidefront = 7;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 9;
-v2 = 45;
-sidefront = 59;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 44;
-v2 = 38;
-sidefront = 85;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 46;
-v2 = 47;
-sidefront = 167;
-sideback = 54;
-twosided = true;
-blockmonsters = true;
-blockfloaters = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 17;
-v2 = 42;
-sidefront = 3;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 48;
-v2 = 12;
-sidefront = 5;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 49;
-v2 = 50;
-sidefront = 60;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 51;
-v2 = 52;
-sidefront = 22;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 36;
-v2 = 53;
-sidefront = 64;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 54;
-v2 = 55;
-sidefront = 62;
-sideback = 2;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 3;
-v2 = 56;
-sidefront = 82;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 57;
-v2 = 58;
-sidefront = 83;
-sideback = 41;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 59;
-v2 = 60;
-sidefront = 13;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 41;
-v2 = 61;
-sidefront = 20;
-blocking = true;
-dontdraw = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 23;
-v2 = 11;
-sidefront = 199;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 62;
-v2 = 63;
-sidefront = 23;
-sideback = 19;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 64;
-v2 = 2;
-sidefront = 57;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 65;
-v2 = 8;
-sidefront = 109;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 27;
-v2 = 48;
-sidefront = 107;
-dontpegbottom = true;
-blocking = true;
-dontpegtop = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 50;
-v2 = 24;
-sidefront = 102;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 66;
-v2 = 67;
-sidefront = 51;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 45;
-v2 = 39;
-sidefront = 84;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 57;
-v2 = 68;
-sidefront = 95;
-sideback = 90;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 56;
-v2 = 69;
-sidefront = 32;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 70;
-v2 = 71;
-sidefront = 26;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 72;
-v2 = 46;
-sidefront = 169;
-sideback = 175;
-twosided = true;
-blockmonsters = true;
-blockfloaters = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 43;
-v2 = 73;
-sidefront = 21;
-sideback = 46;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 73;
-v2 = 33;
-sidefront = 74;
-sideback = 45;
-impact = true;
-twosided = true;
-}
-
-linedef
-{
-v1 = 74;
-v2 = 75;
-sidefront = 89;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 28;
-v2 = 76;
-sidefront = 173;
-sideback = 94;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 77;
-v2 = 62;
-sidefront = 25;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 71;
-v2 = 78;
-sidefront = 68;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 42;
-v2 = 33;
-sidefront = 4;
-dontpegbottom = true;
-blocking = true;
-dontpegtop = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 79;
-v2 = 80;
-sidefront = 70;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 81;
-v2 = 79;
-sidefront = 71;
-sideback = 72;
-id = 6;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 62;
-v2 = 82;
-sidefront = 24;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 83;
-v2 = 63;
-sidefront = 35;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 67;
-v2 = 59;
-sidefront = 77;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 84;
-v2 = 6;
-sidefront = 34;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 15;
-v2 = 26;
-sidefront = 76;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 60;
-v2 = 49;
-sidefront = 81;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 85;
-v2 = 77;
-sidefront = 101;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 86;
-v2 = 64;
-sidefront = 105;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 58;
-v2 = 87;
-sidefront = 108;
-sideback = 1;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 88;
-v2 = 61;
-sidefront = 55;
-sideback = 165;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 5;
-v2 = 84;
-sidefront = 53;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 89;
-v2 = 70;
-sidefront = 63;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 53;
-v2 = 65;
-sidefront = 106;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 28;
-v2 = 73;
-sidefront = 86;
-sideback = 80;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 90;
-v2 = 74;
-sidefront = 92;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 7;
-v2 = 91;
-sidefront = 135;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 75;
-v2 = 54;
-sidefront = 88;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 92;
-v2 = 93;
-sidefront = 36;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 94;
-v2 = 95;
-sidefront = 100;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 20;
-v2 = 14;
-sidefront = 112;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 82;
-v2 = 83;
-sidefront = 73;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 63;
-v2 = 19;
-sidefront = 99;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 96;
-v2 = 81;
-sidefront = 96;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 97;
-v2 = 98;
-sidefront = 97;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 99;
-v2 = 57;
-sidefront = 40;
-sideback = 38;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 25;
-v2 = 66;
-sidefront = 66;
-blocking = true;
-impact = true;
 }
 
 linedef
 {
 v1 = 26;
 v2 = 27;
-sidefront = 58;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 100;
-v2 = 72;
-sidefront = 113;
-sideback = 98;
-twosided = true;
-blockmonsters = true;
-blockfloaters = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 30;
-v2 = 51;
-sidefront = 176;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 91;
-v2 = 101;
-sidefront = 91;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 87;
-v2 = 99;
-sidefront = 33;
-sideback = 30;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 76;
-v2 = 48;
-sidefront = 75;
-sideback = 65;
-impact = true;
+sidefront = 216;
+sideback = 53;
 twosided = true;
 }
 
 linedef
 {
-v1 = 43;
-v2 = 76;
-sidefront = 31;
-sideback = 29;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 90;
-v2 = 7;
-sidefront = 134;
-sideback = 50;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 61;
-v2 = 16;
-sidefront = 0;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 102;
-v2 = 103;
-sidefront = 110;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 52;
-v2 = 89;
-sidefront = 161;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 55;
-v2 = 85;
-sidefront = 37;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 54;
-v2 = 21;
-sidefront = 111;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 101;
-v2 = 90;
-sidefront = 79;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 80;
-v2 = 96;
-sidefront = 115;
-sideback = 116;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 98;
-v2 = 104;
-sidefront = 117;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 80;
-v2 = 97;
-sidefront = 118;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 105;
-v2 = 106;
-sidefront = 119;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 106;
-v2 = 96;
-sidefront = 120;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 107;
-v2 = 108;
+v1 = 28;
+v2 = 29;
 sidefront = 121;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 109;
-v2 = 110;
-sidefront = 122;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 111;
-v2 = 112;
-sidefront = 123;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 113;
-v2 = 114;
-sidefront = 124;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 114;
-v2 = 115;
-sidefront = 125;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 116;
-v2 = 117;
-sidefront = 126;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 118;
-v2 = 119;
-sidefront = 127;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 120;
-v2 = 121;
-sidefront = 128;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 122;
-v2 = 123;
-sidefront = 129;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 112;
-v2 = 122;
-sidefront = 130;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 124;
-v2 = 125;
-sidefront = 131;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 126;
-v2 = 102;
-sidefront = 132;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 108;
-v2 = 127;
-sidefront = 133;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 10;
-v2 = 128;
-sidefront = 196;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 129;
-v2 = 130;
-sidefront = 136;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 130;
-v2 = 131;
-sidefront = 137;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 104;
-v2 = 113;
-sidefront = 138;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 132;
-v2 = 120;
-sidefront = 139;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 133;
-v2 = 131;
-sidefront = 140;
-sideback = 141;
+sideback = 111;
 twosided = true;
-blocking = true;
-impact = true;
+dontdraw = true;
 }
 
 linedef
 {
-v1 = 1;
-v2 = 118;
-sidefront = 142;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 110;
-v2 = 134;
-sidefront = 143;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 133;
-v2 = 135;
-sidefront = 144;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 136;
-v2 = 137;
-sidefront = 145;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 137;
-v2 = 138;
-sidefront = 146;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 138;
-v2 = 139;
-sidefront = 147;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 139;
-v2 = 116;
-sidefront = 148;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 140;
-v2 = 105;
-sidefront = 149;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 117;
-v2 = 126;
-sidefront = 150;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 119;
-v2 = 111;
-sidefront = 151;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 103;
-v2 = 92;
-sidefront = 152;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 93;
-v2 = 141;
-sidefront = 153;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 123;
-v2 = 109;
-sidefront = 154;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 125;
-v2 = 136;
-sidefront = 155;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 121;
-v2 = 107;
-sidefront = 156;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 135;
-v2 = 140;
-sidefront = 157;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 141;
-v2 = 129;
-sidefront = 158;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 115;
-v2 = 132;
-sidefront = 159;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 142;
-v2 = 124;
-sidefront = 160;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 47;
-v2 = 100;
-sidefront = 16;
-sideback = 15;
+v1 = 29;
+v2 = 30;
+sidefront = 218;
+sideback = 86;
+id = 15;
 twosided = true;
-blockmonsters = true;
-blockfloaters = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 143;
-v2 = 142;
-sidefront = 162;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 134;
-v2 = 144;
-sidefront = 163;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 144;
-v2 = 145;
-sidefront = 164;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 69;
-v2 = 94;
-sidefront = 78;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 95;
-v2 = 86;
-sidefront = 67;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 146;
-v2 = 143;
-sidefront = 168;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 88;
-v2 = 40;
-sidefront = 114;
 blocking = true;
 dontdraw = true;
-impact = true;
 }
 
 linedef
 {
-v1 = 145;
-v2 = 147;
-sidefront = 170;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 145;
-v2 = 143;
-sidefront = 171;
-sideback = 172;
+v1 = 31;
+v2 = 32;
+sidefront = 160;
+sideback = 114;
 twosided = true;
-impact = true;
+}
+
+linedef
+{
+v1 = 31;
+v2 = 33;
+sidefront = 233;
+blocking = true;
+}
+
+linedef
+{
+v1 = 34;
+v2 = 35;
+sidefront = 220;
+sideback = 228;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 35;
+v2 = 36;
+sidefront = 151;
+sideback = 43;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 37;
+v2 = 38;
+sidefront = 70;
+blocking = true;
+}
+
+linedef
+{
+v1 = 25;
+v2 = 39;
+sidefront = 6;
+blocking = true;
 }
 
 linedef
 {
 v1 = 17;
-v2 = 12;
-sidefront = 14;
-sideback = 11;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 147;
-v2 = 146;
-sidefront = 174;
+v2 = 40;
+sidefront = 27;
 blocking = true;
-impact = true;
 }
 
 linedef
 {
-v1 = 78;
-v2 = 29;
-sidefront = 6;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 22;
-v2 = 55;
-sidefront = 177;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 148;
-v2 = 0;
-sidefront = 178;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 128;
-v2 = 88;
-sidefront = 179;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 149;
-v2 = 148;
-sidefront = 180;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 127;
-v2 = 150;
-sidefront = 181;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 150;
-v2 = 151;
-sidefront = 182;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 99;
-v2 = 10;
-sidefront = 183;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 152;
-v2 = 87;
-sidefront = 184;
-sideback = 185;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 68;
-v2 = 149;
-sidefront = 186;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 153;
-v2 = 99;
-sidefront = 187;
-dontpegbottom = true;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 151;
-v2 = 153;
-sidefront = 188;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 151;
-v2 = 149;
-sidefront = 189;
-sideback = 190;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 11;
-v2 = 152;
-sidefront = 191;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 153;
-v2 = 57;
-sidefront = 192;
-sideback = 193;
-twosided = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 152;
-v2 = 68;
-sidefront = 194;
-dontpegbottom = true;
-blocking = true;
-impact = true;
-}
-
-linedef
-{
-v1 = 75;
-v2 = 154;
-sidefront = 205;
-sideback = 207;
+v1 = 4;
+v2 = 41;
+sidefront = 32;
+sideback = 89;
 twosided = true;
 }
 
 linedef
 {
-v1 = 154;
-v2 = 90;
-sidefront = 206;
-sideback = 208;
+v1 = 42;
+v2 = 43;
+sidefront = 248;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 44;
+v2 = 45;
+sidefront = 67;
+blocking = true;
+}
+
+linedef
+{
+v1 = 32;
+v2 = 46;
+sidefront = 42;
+sideback = 50;
 twosided = true;
 }
 
 linedef
 {
-v1 = 155;
-v2 = 156;
-sidefront = 209;
-sideback = 213;
+v1 = 47;
+v2 = 48;
+sidefront = 124;
+sideback = 204;
 twosided = true;
 }
 
 linedef
 {
-v1 = 156;
-v2 = 157;
-sidefront = 210;
-sideback = 216;
+v1 = 49;
+v2 = 50;
+sidefront = 163;
+blocking = true;
+}
+
+linedef
+{
+v1 = 41;
+v2 = 38;
+sidefront = 19;
+sideback = 26;
 twosided = true;
 }
 
 linedef
 {
-v1 = 157;
-v2 = 158;
-sidefront = 211;
-sideback = 215;
+v1 = 19;
+v2 = 51;
+sidefront = 235;
+sideback = 28;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
 {
-v1 = 158;
-v2 = 155;
-sidefront = 212;
-sideback = 214;
-twosided = true;
+v1 = 52;
+v2 = 53;
+sidefront = 158;
+blocking = true;
 }
 
 linedef
 {
 v1 = 7;
-v2 = 159;
-sidefront = 217;
-sideback = 219;
+v2 = 54;
+sidefront = 215;
+blocking = true;
+}
+
+linedef
+{
+v1 = 55;
+v2 = 56;
+sidefront = 271;
+sideback = 161;
 twosided = true;
 }
 
 linedef
 {
-v1 = 159;
-v2 = 84;
-sidefront = 218;
-sideback = 220;
+v1 = 46;
+v2 = 57;
+sidefront = 130;
+sideback = 225;
 twosided = true;
 }
 
 linedef
 {
-v1 = 160;
-v2 = 85;
-sidefront = 221;
-sideback = 223;
+v1 = 58;
+v2 = 59;
+sidefront = 260;
+sideback = 96;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 13;
+v2 = 60;
+sidefront = 234;
+blocking = true;
+}
+
+linedef
+{
+v1 = 9;
+v2 = 46;
+sidefront = 31;
+sideback = 62;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 61;
+v2 = 2;
+sidefront = 227;
+blocking = true;
+}
+
+linedef
+{
+v1 = 55;
+v2 = 26;
+sidefront = 105;
+sideback = 254;
 twosided = true;
 }
 
 linedef
 {
 v1 = 62;
-v2 = 160;
-sidefront = 222;
-sideback = 224;
-twosided = true;
-}
-
-linedef
-{
-v1 = 20;
-v2 = 161;
-sidefront = 225;
-sideback = 227;
-twosided = true;
-}
-
-linedef
-{
-v1 = 161;
 v2 = 63;
-sidefront = 226;
-sideback = 228;
-twosided = true;
+sidefront = 68;
+blocking = true;
 }
 
 linedef
 {
-v1 = 162;
-v2 = 17;
-sidefront = 229;
-sideback = 232;
+v1 = 64;
+v2 = 65;
+sidefront = 101;
+sideback = 171;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
 {
-v1 = 12;
-v2 = 163;
-sidefront = 230;
-sideback = 234;
-twosided = true;
-}
-
-linedef
-{
-v1 = 163;
-v2 = 162;
-sidefront = 231;
-sideback = 233;
-twosided = true;
-}
-
-linedef
-{
-v1 = 10;
-v2 = 164;
-sidefront = 235;
-sideback = 238;
-twosided = true;
-}
-
-linedef
-{
-v1 = 164;
-v2 = 165;
-sidefront = 236;
-sideback = 240;
-twosided = true;
-}
-
-linedef
-{
-v1 = 165;
-v2 = 11;
-sidefront = 237;
-sideback = 239;
-twosided = true;
-}
-
-linedef
-{
-v1 = 166;
-v2 = 108;
-sidefront = 241;
-sideback = 246;
-twosided = true;
-}
-
-linedef
-{
-v1 = 127;
-v2 = 167;
-sidefront = 242;
-sideback = 250;
-twosided = true;
-}
-
-linedef
-{
-v1 = 167;
-v2 = 168;
-sidefront = 243;
-sideback = 249;
-twosided = true;
-}
-
-linedef
-{
-v1 = 168;
-v2 = 51;
-sidefront = 244;
-sideback = 248;
-twosided = true;
-}
-
-linedef
-{
-v1 = 52;
-v2 = 166;
-sidefront = 245;
-sideback = 247;
-twosided = true;
-}
-
-linedef
-{
-v1 = 169;
-v2 = 170;
-sidefront = 251;
-sideback = 256;
-twosided = true;
-}
-
-linedef
-{
-v1 = 170;
-v2 = 0;
-sidefront = 252;
-sideback = 260;
-twosided = true;
-}
-
-linedef
-{
-v1 = 1;
-v2 = 171;
-sidefront = 253;
-sideback = 259;
-twosided = true;
-}
-
-linedef
-{
-v1 = 171;
-v2 = 64;
-sidefront = 254;
-sideback = 258;
-twosided = true;
-}
-
-linedef
-{
-v1 = 2;
-v2 = 169;
-sidefront = 255;
-sideback = 257;
-twosided = true;
-}
-
-linedef
-{
-v1 = 102;
-v2 = 172;
-sidefront = 261;
-sideback = 265;
-twosided = true;
-}
-
-linedef
-{
-v1 = 172;
-v2 = 36;
-sidefront = 262;
-sideback = 268;
-twosided = true;
-}
-
-linedef
-{
-v1 = 53;
-v2 = 173;
-sidefront = 263;
-sideback = 267;
-twosided = true;
-}
-
-linedef
-{
-v1 = 173;
-v2 = 126;
-sidefront = 264;
-sideback = 266;
-twosided = true;
-}
-
-linedef
-{
-v1 = 92;
-v2 = 174;
-sidefront = 269;
-sideback = 273;
-twosided = true;
-}
-
-linedef
-{
-v1 = 174;
-v2 = 25;
-sidefront = 270;
-sideback = 276;
-twosided = true;
-}
-
-linedef
-{
-v1 = 66;
-v2 = 175;
-sidefront = 271;
-sideback = 275;
-twosided = true;
-}
-
-linedef
-{
-v1 = 175;
-v2 = 103;
-sidefront = 272;
-sideback = 274;
-twosided = true;
-}
-
-linedef
-{
-v1 = 167;
-v2 = 150;
-sidefront = 277;
-sideback = 280;
-twosided = true;
-}
-
-linedef
-{
-v1 = 148;
-v2 = 170;
-sidefront = 278;
-sideback = 281;
-twosided = true;
-}
-
-linedef
-{
-v1 = 170;
-v2 = 167;
-sidefront = 279;
-sideback = 282;
-twosided = true;
-}
-
-linedef
-{
-v1 = 104;
-v2 = 176;
-sidefront = 283;
-sideback = 286;
-twosided = true;
-}
-
-linedef
-{
-v1 = 176;
-v2 = 107;
-sidefront = 284;
-sideback = 287;
-twosided = true;
-}
-
-linedef
-{
-v1 = 166;
-v2 = 104;
-sidefront = 285;
-sideback = 288;
-twosided = true;
-}
-
-linedef
-{
-v1 = 118;
-v2 = 177;
-sidefront = 289;
-sideback = 292;
-twosided = true;
-}
-
-linedef
-{
-v1 = 177;
-v2 = 109;
-sidefront = 290;
-sideback = 293;
-twosided = true;
-}
-
-linedef
-{
-v1 = 110;
-v2 = 171;
-sidefront = 291;
-sideback = 294;
-twosided = true;
-}
-
-linedef
-{
-v1 = 178;
-v2 = 70;
-sidefront = 295;
-sideback = 297;
-twosided = true;
-}
-
-linedef
-{
-v1 = 89;
-v2 = 166;
-sidefront = 303;
-sideback = 302;
-twosided = true;
-}
-
-linedef
-{
-v1 = 168;
-v2 = 30;
-sidefront = 304;
-sideback = 301;
-twosided = true;
-}
-
-linedef
-{
-v1 = 29;
-v2 = 179;
-sidefront = 305;
-sideback = 300;
-twosided = true;
-}
-
-linedef
-{
-v1 = 179;
-v2 = 78;
-sidefront = 306;
-sideback = 299;
-twosided = true;
-}
-
-linedef
-{
-v1 = 71;
-v2 = 178;
-sidefront = 296;
-sideback = 298;
-twosided = true;
-}
-
-linedef
-{
-v1 = 180;
-v2 = 56;
-sidefront = 307;
-sideback = 309;
-twosided = true;
-}
-
-linedef
-{
-v1 = 3;
-v2 = 169;
-sidefront = 315;
-sideback = 314;
-twosided = true;
-}
-
-linedef
-{
-v1 = 171;
-v2 = 86;
-sidefront = 316;
-sideback = 313;
-twosided = true;
-}
-
-linedef
-{
-v1 = 95;
-v2 = 181;
-sidefront = 317;
-sideback = 312;
-twosided = true;
-}
-
-linedef
-{
-v1 = 181;
-v2 = 94;
-sidefront = 318;
-sideback = 311;
-twosided = true;
-}
-
-linedef
-{
-v1 = 69;
-v2 = 180;
-sidefront = 308;
-sideback = 310;
-twosided = true;
-}
-
-linedef
-{
-v1 = 174;
-v2 = 24;
-sidefront = 319;
-sideback = 320;
-twosided = true;
-}
-
-linedef
-{
-v1 = 50;
-v2 = 182;
-sidefront = 326;
-sideback = 325;
-twosided = true;
-}
-
-linedef
-{
-v1 = 182;
-v2 = 49;
-sidefront = 327;
-sideback = 324;
-twosided = true;
-}
-
-linedef
-{
-v1 = 60;
-v2 = 183;
-sidefront = 328;
-sideback = 323;
-twosided = true;
-}
-
-linedef
-{
-v1 = 183;
-v2 = 59;
-sidefront = 329;
-sideback = 322;
+v1 = 27;
+v2 = 66;
+sidefront = 240;
+sideback = 192;
 twosided = true;
 }
 
 linedef
 {
 v1 = 67;
-v2 = 175;
-sidefront = 330;
-sideback = 321;
+v2 = 68;
+sidefront = 52;
+sideback = 249;
 twosided = true;
 }
 
 linedef
 {
-v1 = 184;
-v2 = 185;
-sidefront = 331;
-sideback = 334;
+v1 = 35;
+v2 = 69;
+sidefront = 90;
+sideback = 164;
+id = 12;
+twosided = true;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 70;
+v2 = 10;
+sidefront = 36;
+blocking = true;
+}
+
+linedef
+{
+v1 = 71;
+v2 = 18;
+sidefront = 140;
+sideback = 4;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 72;
+v2 = 73;
+sidefront = 21;
+blocking = true;
+}
+
+linedef
+{
+v1 = 39;
+v2 = 41;
+sidefront = 236;
+blocking = true;
+}
+
+linedef
+{
+v1 = 50;
+v2 = 31;
+sidefront = 109;
+sideback = 56;
 twosided = true;
 }
 
 linedef
 {
-v1 = 185;
-v2 = 144;
-sidefront = 332;
-sideback = 336;
+v1 = 41;
+v2 = 74;
+sidefront = 85;
+blocking = true;
+}
+
+linedef
+{
+v1 = 32;
+v2 = 8;
+sidefront = 110;
+sideback = 75;
 twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 75;
+v2 = 32;
+sidefront = 102;
+sideback = 270;
+twosided = true;
+}
+
+linedef
+{
+v1 = 73;
+v2 = 76;
+sidefront = 115;
+blocking = true;
+}
+
+linedef
+{
+v1 = 60;
+v2 = 31;
+sidefront = 47;
+blocking = true;
+}
+
+linedef
+{
+v1 = 77;
+v2 = 3;
+sidefront = 208;
+sideback = 210;
+twosided = true;
+}
+
+linedef
+{
+v1 = 33;
+v2 = 78;
+sidefront = 97;
+sideback = 272;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 79;
+v2 = 80;
+sidefront = 168;
+sideback = 87;
+twosided = true;
+}
+
+linedef
+{
+v1 = 81;
+v2 = 64;
+sidefront = 136;
+sideback = 201;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 6;
+v2 = 77;
+sidefront = 135;
+sideback = 0;
+twosided = true;
+}
+
+linedef
+{
+v1 = 82;
+v2 = 52;
+sidefront = 191;
+blocking = true;
+}
+
+linedef
+{
+v1 = 83;
+v2 = 84;
+sidefront = 176;
+blocking = true;
+}
+
+linedef
+{
+v1 = 39;
+v2 = 82;
+sidefront = 126;
+sideback = 194;
+twosided = true;
+blocking = true;
+}
+
+linedef
+{
+v1 = 76;
+v2 = 61;
+sidefront = 178;
+sideback = 172;
+special = 80;
+id = 9;
+arg0 = 3001;
+twosided = true;
+playeruse = true;
+repeatspecial = true;
+}
+
+linedef
+{
+v1 = 53;
+v2 = 85;
+sidefront = 138;
+blocking = true;
+}
+
+linedef
+{
+v1 = 70;
+v2 = 44;
+sidefront = 273;
+sideback = 38;
+twosided = true;
+}
+
+linedef
+{
+v1 = 86;
+v2 = 87;
+sidefront = 12;
+sideback = 92;
+twosided = true;
+}
+
+linedef
+{
+v1 = 88;
+v2 = 89;
+sidefront = 119;
+blocking = true;
+}
+
+linedef
+{
+v1 = 90;
+v2 = 35;
+sidefront = 16;
+sideback = 95;
+id = 12;
+twosided = true;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 91;
+v2 = 92;
+sidefront = 198;
+sideback = 46;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 46;
+v2 = 60;
+sidefront = 134;
+sideback = 30;
+twosided = true;
+}
+
+linedef
+{
+v1 = 93;
+v2 = 94;
+sidefront = 22;
+sideback = 80;
+twosided = true;
+}
+
+linedef
+{
+v1 = 11;
+v2 = 44;
+sidefront = 72;
+blocking = true;
+}
+
+linedef
+{
+v1 = 95;
+v2 = 34;
+sidefront = 148;
+sideback = 69;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 48;
+v2 = 88;
+sidefront = 125;
+sideback = 259;
+twosided = true;
+}
+
+linedef
+{
+v1 = 96;
+v2 = 97;
+sidefront = 195;
+sideback = 44;
+twosided = true;
+}
+
+linedef
+{
+v1 = 2;
+v2 = 73;
+sidefront = 212;
+sideback = 99;
+twosided = true;
+}
+
+linedef
+{
+v1 = 98;
+v2 = 90;
+sidefront = 145;
+sideback = 256;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 99;
+v2 = 100;
+sidefront = 252;
+sideback = 144;
+twosided = true;
+}
+
+linedef
+{
+v1 = 84;
+v2 = 62;
+sidefront = 74;
+sideback = 73;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 69;
+v2 = 101;
+sidefront = 265;
+blocking = true;
+}
+
+linedef
+{
+v1 = 66;
+v2 = 102;
+sidefront = 7;
+sideback = 180;
+twosided = true;
+}
+
+linedef
+{
+v1 = 103;
+v2 = 104;
+sidefront = 214;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 63;
+v2 = 83;
+sidefront = 149;
+sideback = 88;
+special = 80;
+id = 7;
+twosided = true;
+playeruse = true;
+repeatspecial = true;
+monsteractivate = true;
+arg0 = 3002;
+}
+
+linedef
+{
+v1 = 54;
+v2 = 70;
+sidefront = 244;
+blocking = true;
+}
+
+linedef
+{
+v1 = 105;
+v2 = 106;
+sidefront = 156;
+sideback = 166;
+twosided = true;
+}
+
+linedef
+{
+v1 = 107;
+v2 = 108;
+sidefront = 49;
+blocking = true;
+}
+
+linedef
+{
+v1 = 74;
+v2 = 57;
+sidefront = 193;
+sideback = 122;
+twosided = true;
+}
+
+linedef
+{
+v1 = 60;
+v2 = 74;
+sidefront = 77;
+sideback = 213;
+twosided = true;
+}
+
+linedef
+{
+v1 = 109;
+v2 = 110;
+sidefront = 37;
+blocking = true;
+}
+
+linedef
+{
+v1 = 111;
+v2 = 112;
+sidefront = 10;
+sideback = 137;
+twosided = true;
+}
+
+linedef
+{
+v1 = 43;
+v2 = 103;
+sidefront = 11;
+special = 160;
+arg0 = 668;
+arg1 = 1;
+arg3 = 255;
+blocking = true;
+arg2 = 2;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 108;
+v2 = 62;
+sidefront = 20;
+blocking = true;
+}
+
+linedef
+{
+v1 = 101;
+v2 = 113;
+sidefront = 199;
+sideback = 177;
+twosided = true;
+}
+
+linedef
+{
+v1 = 114;
+v2 = 115;
+sidefront = 251;
+sideback = 219;
+twosided = true;
+}
+
+linedef
+{
+v1 = 1;
+v2 = 86;
+sidefront = 183;
+blocking = true;
+}
+
+linedef
+{
+v1 = 50;
+v2 = 109;
+sidefront = 266;
+blocking = true;
+}
+
+linedef
+{
+v1 = 116;
+v2 = 117;
+sidefront = 93;
+sideback = 167;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 118;
+v2 = 119;
+sidefront = 253;
+sideback = 82;
+twosided = true;
+}
+
+linedef
+{
+v1 = 120;
+v2 = 37;
+sidefront = 63;
+blocking = true;
+}
+
+linedef
+{
+v1 = 121;
+v2 = 95;
+sidefront = 139;
+sideback = 61;
+twosided = true;
+}
+
+linedef
+{
+v1 = 92;
+v2 = 122;
+sidefront = 246;
+sideback = 223;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 30;
+v2 = 123;
+sidefront = 179;
+sideback = 221;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 23;
+v2 = 4;
+sidefront = 104;
+sideback = 154;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 104;
+v2 = 42;
+sidefront = 78;
+special = 160;
+arg0 = 669;
+arg1 = 1;
+arg3 = 255;
+blocking = true;
+arg2 = 2;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 123;
+v2 = 28;
+sidefront = 242;
+sideback = 237;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 124;
+v2 = 71;
+sidefront = 230;
+sideback = 127;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 89;
+v2 = 90;
+sidefront = 165;
+sideback = 202;
+id = 12;
+twosided = true;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 89;
+v2 = 69;
+sidefront = 146;
+sideback = 239;
+twosided = true;
+}
+
+linedef
+{
+v1 = 110;
+v2 = 125;
+sidefront = 112;
+blocking = true;
+}
+
+linedef
+{
+v1 = 126;
+v2 = 78;
+sidefront = 274;
+blocking = true;
+}
+
+linedef
+{
+v1 = 101;
+v2 = 94;
+sidefront = 81;
+blocking = true;
+}
+
+linedef
+{
+v1 = 127;
+v2 = 5;
+sidefront = 91;
+sideback = 269;
+twosided = true;
+}
+
+linedef
+{
+v1 = 16;
+v2 = 69;
+sidefront = 33;
+blocking = true;
+}
+
+linedef
+{
+v1 = 13;
+v2 = 24;
+sidefront = 250;
+sideback = 217;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 128;
+v2 = 49;
+sidefront = 100;
+blocking = true;
+}
+
+linedef
+{
+v1 = 129;
+v2 = 6;
+sidefront = 48;
+blocking = true;
+}
+
+linedef
+{
+v1 = 53;
+v2 = 39;
+sidefront = 243;
+sideback = 245;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 102;
+v2 = 130;
+sidefront = 187;
+sideback = 65;
+twosided = true;
+}
+
+linedef
+{
+v1 = 36;
+v2 = 98;
+sidefront = 76;
+sideback = 40;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 40;
+v2 = 47;
+sidefront = 123;
+sideback = 262;
+twosided = true;
+}
+
+linedef
+{
+v1 = 131;
+v2 = 99;
+sidefront = 143;
+sideback = 118;
+twosided = true;
+}
+
+linedef
+{
+v1 = 130;
+v2 = 132;
+sidefront = 84;
+sideback = 35;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 67;
+v2 = 133;
+sidefront = 209;
+sideback = 224;
+twosided = true;
+}
+
+linedef
+{
+v1 = 133;
+v2 = 134;
+sidefront = 197;
+sideback = 170;
+twosided = true;
+}
+
+linedef
+{
+v1 = 16;
+v2 = 29;
+sidefront = 106;
+sideback = 268;
+id = 15;
+twosided = true;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 38;
+v2 = 82;
+sidefront = 231;
+blocking = true;
+}
+
+linedef
+{
+v1 = 132;
+v2 = 135;
+sidefront = 232;
+sideback = 103;
+twosided = true;
+}
+
+linedef
+{
+v1 = 33;
+v2 = 12;
+sidefront = 60;
+blocking = true;
+}
+
+linedef
+{
+v1 = 15;
+v2 = 120;
+sidefront = 54;
+blocking = true;
+}
+
+linedef
+{
+v1 = 136;
+v2 = 75;
+sidefront = 18;
+sideback = 129;
+twosided = true;
+}
+
+linedef
+{
+v1 = 137;
+v2 = 91;
+sidefront = 142;
+sideback = 64;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 49;
+v2 = 33;
+sidefront = 159;
+sideback = 188;
+twosided = true;
+blocking = true;
+}
+
+linedef
+{
+v1 = 68;
+v2 = 136;
+sidefront = 51;
+sideback = 58;
+twosided = true;
+}
+
+linedef
+{
+v1 = 122;
+v2 = 20;
+sidefront = 182;
+sideback = 261;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 134;
+v2 = 111;
+sidefront = 206;
+sideback = 98;
+twosided = true;
+}
+
+linedef
+{
+v1 = 138;
+v2 = 139;
+sidefront = 153;
+sideback = 267;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 140;
+v2 = 141;
+sidefront = 34;
+sideback = 5;
+twosided = true;
+dontdraw = true;
 }
 
 linedef
 {
 v1 = 142;
-v2 = 184;
-sidefront = 333;
-sideback = 335;
+v2 = 105;
+sidefront = 14;
+sideback = 25;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 125;
+v2 = 107;
+sidefront = 66;
+blocking = true;
+}
+
+linedef
+{
+v1 = 143;
+v2 = 48;
+sidefront = 169;
+sideback = 13;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 139;
+v2 = 137;
+sidefront = 147;
+sideback = 226;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 84;
+v2 = 0;
+sidefront = 255;
+blocking = true;
+}
+
+linedef
+{
+v1 = 45;
+v2 = 14;
+sidefront = 264;
+blocking = true;
+}
+
+linedef
+{
+v1 = 21;
+v2 = 138;
+sidefront = 132;
+sideback = 241;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 51;
+v2 = 81;
+sidefront = 229;
+sideback = 247;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 74;
+v2 = 24;
+sidefront = 150;
+blocking = true;
+}
+
+linedef
+{
+v1 = 57;
+v2 = 4;
+sidefront = 185;
+sideback = 23;
+twosided = true;
+}
+
+linedef
+{
+v1 = 113;
+v2 = 93;
+sidefront = 108;
+sideback = 71;
+twosided = true;
+}
+
+linedef
+{
+v1 = 144;
+v2 = 112;
+sidefront = 203;
+sideback = 207;
+twosided = true;
+}
+
+linedef
+{
+v1 = 56;
+v2 = 144;
+sidefront = 196;
+sideback = 79;
+twosided = true;
+}
+
+linedef
+{
+v1 = 65;
+v2 = 124;
+sidefront = 189;
+sideback = 222;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 87;
+v2 = 72;
+sidefront = 257;
+sideback = 116;
+twosided = true;
+}
+
+linedef
+{
+v1 = 126;
+v2 = 85;
+sidefront = 157;
+sideback = 258;
+dontdraw = true;
+twosided = true;
+}
+
+linedef
+{
+v1 = 57;
+v2 = 22;
+sidefront = 83;
+sideback = 131;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 78;
+v2 = 128;
+sidefront = 3;
+blocking = true;
+}
+
+linedef
+{
+v1 = 40;
+v2 = 88;
+sidefront = 57;
+blocking = true;
+}
+
+linedef
+{
+v1 = 94;
+v2 = 16;
+sidefront = 133;
+blocking = true;
+}
+
+linedef
+{
+v1 = 145;
+v2 = 30;
+sidefront = 173;
+sideback = 263;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 47;
+v2 = 145;
+sidefront = 8;
+sideback = 94;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 29;
+v2 = 142;
+sidefront = 128;
+sideback = 107;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 105;
+v2 = 93;
+sidefront = 17;
+sideback = 9;
+twosided = true;
+}
+
+linedef
+{
+v1 = 90;
+v2 = 143;
+sidefront = 162;
+sideback = 120;
+twosided = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 30;
+v2 = 17;
+sidefront = 39;
+sideback = 45;
+id = 15;
+twosided = true;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 113;
+v2 = 95;
+sidefront = 211;
+sideback = 184;
+twosided = true;
+}
+
+linedef
+{
+v1 = 89;
+v2 = 17;
+sidefront = 15;
+blocking = true;
+}
+
+linedef
+{
+v1 = 85;
+v2 = 146;
+sidefront = 275;
+blocking = true;
+}
+
+linedef
+{
+v1 = 146;
+v2 = 147;
+sidefront = 276;
+blocking = true;
+}
+
+linedef
+{
+v1 = 147;
+v2 = 148;
+sidefront = 277;
+blocking = true;
+}
+
+linedef
+{
+v1 = 148;
+v2 = 149;
+sidefront = 278;
+blocking = true;
+}
+
+linedef
+{
+v1 = 149;
+v2 = 150;
+sidefront = 279;
+blocking = true;
+}
+
+linedef
+{
+v1 = 150;
+v2 = 151;
+sidefront = 280;
+blocking = true;
+}
+
+linedef
+{
+v1 = 151;
+v2 = 126;
+sidefront = 281;
+blocking = true;
+}
+
+linedef
+{
+v1 = 151;
+v2 = 146;
+sidefront = 282;
+sideback = 283;
+twosided = true;
+}
+
+linedef
+{
+v1 = 100;
+v2 = 152;
+sidefront = 284;
+sideback = 285;
+twosided = true;
+}
+
+linedef
+{
+v1 = 120;
+v2 = 100;
+sidefront = 288;
+sideback = 291;
+twosided = true;
+}
+
+linedef
+{
+v1 = 153;
+v2 = 14;
+sidefront = 290;
+sideback = 289;
+twosided = true;
+}
+
+linedef
+{
+v1 = 153;
+v2 = 131;
+sidefront = 286;
+sideback = 287;
+twosided = true;
+}
+
+linedef
+{
+v1 = 152;
+v2 = 127;
+sidefront = 292;
+sideback = 293;
+twosided = true;
+}
+
+linedef
+{
+v1 = 37;
+v2 = 152;
+sidefront = 297;
+sideback = 296;
+twosided = true;
+}
+
+linedef
+{
+v1 = 152;
+v2 = 154;
+sidefront = 298;
+sideback = 295;
+twosided = true;
+}
+
+linedef
+{
+v1 = 154;
+v2 = 23;
+sidefront = 299;
+sideback = 294;
+twosided = true;
+}
+
+linedef
+{
+v1 = 153;
+v2 = 155;
+sidefront = 302;
+sideback = 305;
+twosided = true;
+}
+
+linedef
+{
+v1 = 155;
+v2 = 28;
+sidefront = 303;
+sideback = 307;
+twosided = true;
+}
+
+linedef
+{
+v1 = 135;
+v2 = 153;
+sidefront = 300;
+sideback = 301;
+twosided = true;
+}
+
+linedef
+{
+v1 = 28;
+v2 = 135;
+sidefront = 304;
+sideback = 306;
+twosided = true;
+}
+
+linedef
+{
+v1 = 135;
+v2 = 45;
+sidefront = 308;
+sideback = 309;
 twosided = true;
 }
 
 sidedef
 {
-sector = 31;
-texturemiddle = "DRDC37";
+sector = 43;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 30;
+}
+
+sidedef
+{
+sector = 27;
+}
+
+sidedef
+{
+sector = 34;
+texturemiddle = "DRDC11";
+offsetx_mid = 20;
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = -1;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsetx = 1;
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRDC29";
+offsetx_bottom = 13;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 62;
 }
 
 sidedef
@@ -3977,79 +3150,767 @@ sector = 3;
 
 sidedef
 {
-sector = 0;
+sector = 42;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 7;
-texturemiddle = "DRDC10";
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 1;
 }
 
 sidedef
 {
-sector = 22;
-texturemiddle = "DRDC10";
-offsetx = 8;
-offsetx_mid = 16;
+sector = 1;
 }
 
 sidedef
 {
-sector = 7;
-texturemiddle = "DRDC10";
-offsetx = -8;
-offsetx_mid = 48;
+sector = 43;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 46;
-texturemiddle = "DRDC32";
-offsetx_bottom = 55;
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
 }
 
 sidedef
 {
 sector = 24;
-texturemiddle = "DRDC47";
-offsetx_mid = -45;
 }
 
 sidedef
 {
-sector = 31;
-texturemiddle = "DRDC37";
+sector = 27;
+texturemiddle = "DRDC29";
 }
 
 sidedef
 {
-sector = 22;
-offsetx = 40;
+sector = 35;
+texturemiddle = "DRPGZ002";
+texturebottom = "DRDC27";
+offsetx_bottom = -63;
+offsety_bottom = 32.000000;
 }
 
 sidedef
 {
-sector = 7;
-texturetop = "DRDC0";
+sector = 24;
 }
 
 sidedef
 {
-sector = 7;
+sector = 43;
+}
+
+sidedef
+{
+sector = 4;
+texturebottom = "SLIME14";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC38";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC28";
+}
+
+sidedef
+{
+sector = 24;
+}
+
+sidedef
+{
+sector = 33;
+texturebottom = "DRDC11";
+offsetx = 63;
+offsetx_bottom = 11;
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRDC29";
+scalex_bottom = 0.700000;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 16;
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 3;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = -1;
+}
+
+sidedef
+{
+sector = 41;
+texturebottom = "DRDC11";
+offsetx_bottom = 11;
+}
+
+sidedef
+{
+sector = 9;
+}
+
+sidedef
+{
+sector = 8;
+}
+
+sidedef
+{
+sector = 32;
+}
+
+sidedef
+{
+sector = 27;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsetx = 1;
+offsety_bottom = 32;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 21;
+texturetop = "DRDC10";
+texturemiddle = "DRDC10";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC29";
+scalex_mid = 0.700000;
+}
+
+sidedef
+{
+sector = 21;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 3;
+texturemiddle = "DRPGZ002";
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 2;
+offsetx = 63;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 30;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 2;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 28;
+texturemiddle = "DRDC27";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 8;
+texturebottom = "DRDC11";
+offsetx = 191;
+offsetx_bottom = 11;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 38;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DRDC11";
 }
 
 sidedef
 {
 sector = 11;
-offsetx = 48;
+texturemiddle = "DRDC29";
 }
 
 sidedef
 {
-sector = 53;
-texturemiddle = "DRDC32";
-offsetx_bottom = 37;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 40;
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = -1;
+scalex_bottom = 0.720000;
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRDC29";
+offsetx_bottom = -1;
+offsety_bottom = 2;
+}
+
+sidedef
+{
+sector = 0;
+texturebottom = "DRDC27";
+offsetx = 1;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 7;
+texturemiddle = "DRDC29";
+scalex_mid = 0.700000;
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC38";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC38";
+}
+
+sidedef
+{
+sector = 19;
+texturemiddle = "DRDC10";
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 16;
+texturemiddle = "DRDC29";
+offsetx_mid = 14;
+}
+
+sidedef
+{
+sector = 15;
+}
+
+sidedef
+{
+sector = 21;
+texturemiddle = "DRDC10";
+offsetx_mid = -16;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 19;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 35;
+}
+
+sidedef
+{
+sector = 10;
+texturebottom = "MFLR8_2";
+}
+
+sidedef
+{
+sector = 1;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 33;
+}
+
+sidedef
+{
+sector = 15;
+}
+
+sidedef
+{
+sector = 15;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 3;
+offsetx = 1;
+}
+
+sidedef
+{
+sector = 33;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 12;
+}
+
+sidedef
+{
+sector = 32;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 30;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 42;
+offsetx = 1;
+}
+
+sidedef
+{
+sector = 25;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 16;
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "DRPGZ002";
+texturebottom = "DRDC27";
+offsety_bottom = 32.000000;
+}
+
+sidedef
+{
+sector = 41;
+texturebottom = "DRDC11";
+offsetx_bottom = 23;
+}
+
+sidedef
+{
+sector = 22;
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRPGZ002";
+wrapmidtex = true;
+offsety_mid = -1;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 5;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRPGZ002";
+wrapmidtex = true;
+offsety_mid = -1;
+}
+
+sidedef
+{
+sector = 34;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 34;
+texturemiddle = "CGR_MSG";
+}
+
+sidedef
+{
+sector = 12;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 43;
+offsetx = 127;
+}
+
+sidedef
+{
+sector = 33;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 31;
+}
+
+sidedef
+{
+sector = 24;
+texturemiddle = "DRPGZ002";
+texturebottom = "DRDC27";
+offsety_bottom = 32.000000;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 36;
+texturebottom = "SLIME14";
+}
+
+sidedef
+{
+sector = 8;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 8;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 26;
+texturemiddle = "DRDC10";
+}
+
+sidedef
+{
+sector = 22;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC27";
+}
+
+sidedef
+{
+sector = 38;
+}
+
+sidedef
+{
+sector = 31;
+texturemiddle = "DRDC29";
+offsetx = 1;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 23;
+}
+
+sidedef
+{
+sector = 9;
+}
+
+sidedef
+{
+sector = 3;
+texturemiddle = "DRDC29";
+offsetx = 63;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 31;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 18;
+texturemiddle = "DRPGZ010";
+texturebottom = "MFLR8_2";
+offsety = 2;
+offsetx_mid = -6;
+offsety_mid = -4;
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = -1;
+scalex_bottom = 0.720000;
+}
+
+sidedef
+{
+sector = 24;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 9;
+}
+
+sidedef
+{
+sector = 9;
+offsetx = 127;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 12;
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 24;
+texturemiddle = "DRDC29";
+offsetx = 1;
 }
 
 sidedef
@@ -4059,254 +3920,166 @@ sector = 2;
 
 sidedef
 {
-sector = 6;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 8;
-texturetop = "DRDC0";
-scalex_top = -1;
-}
-
-sidedef
-{
-sector = 29;
-texturemiddle = "DRDC47";
-offsetx_mid = 32;
-offsety_mid = -6;
-}
-
-sidedef
-{
-sector = 5;
-}
-
-sidedef
-{
-sector = 19;
-texturemiddle = "DRDC37";
-offsetx_mid = 59;
+sector = 13;
 }
 
 sidedef
 {
 sector = 12;
-texturetop = "DRDC10";
-offsetx = 24;
-}
-
-sidedef
-{
-sector = 20;
-texturemiddle = "DRDC32";
-offsetx_bottom = 5;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 5;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 27;
-texturemiddle = "DRDC35";
-}
-
-sidedef
-{
-sector = 42;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 4;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 14;
-}
-
-sidedef
-{
-sector = 12;
-offsetx = 16;
-}
-
-sidedef
-{
-sector = 3;
-}
-
-sidedef
-{
-sector = 7;
-texturetop = "DRDC0";
-offsetx = 24;
 }
 
 sidedef
 {
 sector = 43;
-texturemiddle = "DRDC32";
 }
 
 sidedef
 {
-sector = 15;
-texturetop = "DRDC1";
-offsetx = 32;
-scalex_top = -1;
-}
-
-sidedef
-{
-sector = 25;
-texturemiddle = "DRDC47";
-offsety_mid = -6;
-}
-
-sidedef
-{
-sector = 5;
-texturemiddle = "DRDC10";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 31;
-}
-
-sidedef
-{
-sector = 29;
-texturemiddle = "DRDC48";
-scalex_mid = -1;
-}
-
-sidedef
-{
-sector = 3;
-}
-
-sidedef
-{
-sector = 24;
-texturemiddle = "DRDC47";
-offsetx_mid = 32;
-}
-
-sidedef
-{
-sector = 14;
-texturetop = "DRPGZ003";
-offsetx = 8;
-}
-
-sidedef
-{
-sector = 3;
+sector = 20;
+texturemiddle = "DRDC11";
+offsetx_mid = 33;
 }
 
 sidedef
 {
 sector = 0;
-texturetop = "DRDC5";
-scalex_top = -1;
+texturebottom = "DRDC27";
+offsetx = 1;
+offsety_bottom = 32;
+}
+
+sidedef
+{
+sector = 12;
 }
 
 sidedef
 {
 sector = 21;
+texturetop = "DRDC0";
+}
+
+sidedef
+{
+sector = 12;
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 10;
+}
+
+sidedef
+{
+sector = 38;
+offsetx = 43;
+}
+
+sidedef
+{
+sector = 35;
+}
+
+sidedef
+{
+sector = 5;
+}
+
+sidedef
+{
+sector = 12;
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 0;
 }
 
 sidedef
 {
 sector = 19;
-texturetop = "DRDC34";
+texturetop = "drdc9";
+offsetx_top = -1;
 }
 
 sidedef
 {
-sector = 22;
+sector = 10;
+texturemiddle = "DRDC29";
 }
 
 sidedef
 {
-sector = 22;
+sector = 35;
 }
 
 sidedef
 {
-sector = 47;
-texturemiddle = "DRDC32";
-offsetx_bottom = 55;
-}
-
-sidedef
-{
-sector = 8;
-texturemiddle = "DRDC10";
-offsetx = -8;
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 24;
-texturemiddle = "DRDC47";
+sector = 43;
+texturemiddle = "DRDC27";
 offsetx_mid = 13;
 }
 
 sidedef
 {
-sector = 29;
+sector = 12;
+texturebottom = "DRDC72";
 }
 
 sidedef
 {
-sector = 54;
-texturemiddle = "DRDC32";
-offsetx_bottom = 46;
+sector = 41;
 }
 
 sidedef
 {
-sector = 48;
-texturemiddle = "DRDC32";
-offsetx_bottom = 37;
+sector = 33;
 }
 
 sidedef
 {
-sector = 29;
-texturemiddle = "DRDC47";
-offsetx_mid = 32;
-offsety_mid = -6;
+sector = 24;
+texturebottom = "DRDC27";
+offsetx = 1;
+offsety_bottom = 32;
 }
 
 sidedef
 {
-sector = 6;
+sector = 37;
+}
+
+sidedef
+{
+sector = 18;
+texturemiddle = "DRDC11";
+offsetx_mid = 14;
+}
+
+sidedef
+{
+sector = 34;
+texturemiddle = "DRPGZ010";
+texturebottom = "MFLR8_2";
+offsety = 2;
+offsetx_mid = -6;
+offsety_mid = -4;
+}
+
+sidedef
+{
+sector = 2;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 33;
 }
 
 sidedef
@@ -4316,61 +4089,259 @@ sector = 31;
 
 sidedef
 {
+sector = 36;
+texturemiddle = "DRDC11";
+offsetx_mid = 33;
+}
+
+sidedef
+{
+sector = 5;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 31;
+texturemiddle = "DRPGZ002";
+texturebottom = "DRDC27";
+offsetx_bottom = -62;
+offsety_bottom = 32.000000;
+}
+
+sidedef
+{
 sector = 24;
-texturemiddle = "DRDC47";
-offsetx_mid = 32;
+texturebottom = "DRDC27";
+offsetx = 3;
+}
+
+sidedef
+{
+sector = 20;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsetx_bottom = -1;
+offsety_bottom = 32;
+}
+
+sidedef
+{
+sector = 31;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = -1;
+scalex_bottom = 0.720000;
+}
+
+sidedef
+{
+sector = 6;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 3;
+}
+
+sidedef
+{
+sector = 12;
+}
+
+sidedef
+{
+sector = 14;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 19;
+texturetop = "DRDC10";
+texturemiddle = "DRDC10";
+offsetx_mid = 48;
+}
+
+sidedef
+{
+sector = 15;
+}
+
+sidedef
+{
+sector = 26;
+texturetop = "DRDC8";
+offsetx_top = -1;
+}
+
+sidedef
+{
+sector = 23;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 16;
+offsetx = 255;
+}
+
+sidedef
+{
+sector = 12;
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC27";
+offsetx_mid = -32;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
 sector = 32;
-texturemiddle = "DRDC32";
-offsetx_bottom = 5;
-}
-
-sidedef
-{
-sector = 8;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 37;
-}
-
-sidedef
-{
-sector = 52;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 14;
+offsetx = 191;
 }
 
 sidedef
 {
 sector = 29;
+texturebottom = "DRDC38";
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 60;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 44;
 }
 
 sidedef
 {
-sector = 33;
-texturemiddle = "DRDC32";
-offsetx_bottom = 55;
+sector = 36;
+texturemiddle = "DRPGZ010";
+offsetx_mid = -6;
+offsety_mid = 1;
+scaley_mid = 0.900000;
+}
+
+sidedef
+{
+sector = 12;
+}
+
+sidedef
+{
+sector = 38;
+texturemiddle = "DRDC38";
+}
+
+sidedef
+{
+sector = 18;
+texturemiddle = "CGR_MSG";
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 32;
+}
+
+sidedef
+{
+sector = 4;
+texturemiddle = "DRPGZ010";
+offsetx_mid = -6;
+offsety_mid = 1;
+scaley_mid = 0.900000;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRPGZ004";
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 52;
+}
+
+sidedef
+{
+sector = 12;
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 0;
+offsetx = 63;
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRDC29";
+scalex_bottom = 0.700000;
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = -1;
+}
+
+sidedef
+{
+sector = 5;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
+sector = 43;
+offsetx = 1;
 }
 
 sidedef
@@ -4380,43 +4351,474 @@ sector = 11;
 
 sidedef
 {
-sector = 34;
-texturemiddle = "DRDC32";
-offsetx_bottom = 14;
+sector = 12;
+texturebottom = "DRDC72";
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 14;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 19;
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 23;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 33;
 }
 
 sidedef
 {
-sector = 28;
-texturemiddle = "DRDC47";
-offsety_mid = -6;
+sector = 13;
 }
 
 sidedef
 {
-sector = 16;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 54;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 0;
+}
+
+sidedef
+{
+sector = 26;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 9;
+}
+
+sidedef
+{
+sector = 1;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC27";
+offsetx_mid = 32;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx = 1;
+offsetx_bottom = 31;
+}
+
+sidedef
+{
+sector = 10;
+}
+
+sidedef
+{
+sector = 23;
+texturemiddle = "DRPGZ002";
+texturebottom = "DRDC27";
+offsetx_bottom = -1;
+offsety_bottom = 32.000000;
+}
+
+sidedef
+{
+sector = 31;
+texturebottom = "DRDC27";
+offsetx = 1;
+offsetx_bottom = -63;
+offsety_bottom = 32;
+}
+
+sidedef
+{
+sector = 0;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+offsetx_bottom = 63;
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx = 127;
+offsetx_bottom = 11;
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 26;
 texturemiddle = "DRDC10";
 offsetx_mid = 48;
 }
 
 sidedef
 {
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 12;
+}
+
+sidedef
+{
+sector = 12;
+}
+
+sidedef
+{
+sector = 4;
+texturemiddle = "DRDC11";
+offsetx_mid = 27;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 12;
+}
+
+sidedef
+{
+sector = 36;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 10;
+texturemiddle = "DRDC29";
+offsetx = 31;
+}
+
+sidedef
+{
+sector = 12;
+}
+
+sidedef
+{
+sector = 4;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC28";
+}
+
+sidedef
+{
+sector = 27;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 31;
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 23;
+}
+
+sidedef
+{
+sector = 18;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC27";
+offsetx_mid = 13;
+}
+
+sidedef
+{
+sector = 20;
+}
+
+sidedef
+{
+sector = 12;
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 27;
+texturebottom = "DRDC38";
+scalex_bottom = 0.720000;
+offsetx_bottom = -1;
+}
+
+sidedef
+{
+sector = 1;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 22;
+}
+
+sidedef
+{
+sector = 20;
+texturebottom = "MFLR8_2";
+}
+
+sidedef
+{
+sector = 31;
+offsetx = 1;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx_bottom = 41;
+}
+
+sidedef
+{
+sector = 3;
+texturebottom = "DRDC27";
+offsetx = 1;
+offsetx_bottom = -2;
+offsety_bottom = 32;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC27";
+offsetx_mid = -45;
+}
+
+sidedef
+{
+sector = 42;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 20;
+}
+
+sidedef
+{
+sector = 11;
+}
+
+sidedef
+{
+sector = 20;
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 11;
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC27";
+offsety = 32;
+}
+
+sidedef
+{
+sector = 40;
+texturemiddle = "DRDC29";
+offsety_mid = 2;
+}
+
+sidedef
+{
+sector = 0;
+texturemiddle = "DRDC29";
+}
+
+sidedef
+{
+sector = 43;
+texturemiddle = "DRDC29";
+offsetx_mid = -1;
+}
+
+sidedef
+{
+sector = 29;
+texturebottom = "DRDC38";
+}
+
+sidedef
+{
+sector = 30;
+texturemiddle = "DRPGZ002";
+}
+
+sidedef
+{
 sector = 16;
-texturetop = "DRDC8";
+}
+
+sidedef
+{
+sector = 42;
+texturebottom = "DRDC11";
+offsetx = 255;
+offsetx_bottom = 11;
+}
+
+sidedef
+{
+sector = 43;
+}
+
+sidedef
+{
+sector = 20;
+}
+
+sidedef
+{
+sector = 43;
+texturebottom = "DOORTRAK";
+}
+
+sidedef
+{
+sector = 20;
+texturemiddle = "DRDC11";
+offsetx_mid = 52;
+}
+
+sidedef
+{
+sector = 37;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 17;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 17;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 17;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 17;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 17;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 37;
+texturemiddle = "DRDC11";
 }
 
 sidedef
@@ -4426,280 +4828,62 @@ sector = 17;
 
 sidedef
 {
-sector = 5;
-texturemiddle = "DRDC0";
+sector = 37;
 }
 
 sidedef
 {
-sector = 8;
-texturetop = "DRDC0";
-offsetx = 48;
-scalex_top = -1;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx = 2;
+offsetx_bottom = 41;
 }
 
 sidedef
 {
 sector = 7;
-texturetop = "DRDC0";
-offsetx = 48;
+offsetx = 1;
 }
 
 sidedef
 {
-sector = 29;
-texturemiddle = "DRDC47";
-offsetx_mid = 13;
-offsety_mid = -6;
+sector = 42;
+texturebottom = "DRDC11";
+offsetx = 127;
+offsetx_bottom = 12;
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 5;
+sector = 38;
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 23;
+sector = 38;
 }
 
 sidedef
 {
-sector = 9;
-texturemiddle = "DRDC10";
-offsetx_mid = 48;
+sector = 40;
 }
 
 sidedef
 {
-sector = 12;
-offsetx = 16;
+sector = 38;
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 60;
+sector = 7;
 }
 
 sidedef
 {
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 60;
-}
-
-sidedef
-{
-sector = 10;
-texturetop = "DRPGZ003";
-offsetx = 24;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 5;
-}
-
-sidedef
-{
-sector = 24;
-texturemiddle = "DRDC47";
-offsetx_mid = -13;
-}
-
-sidedef
-{
-sector = 8;
-texturetop = "DRDC0";
-offsetx = 16;
-scalex_top = -1;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-texturemiddle = "DRDC48";
-}
-
-sidedef
-{
-sector = 13;
-texturemiddle = "DRDC47";
-offsety_mid = -6;
-}
-
-sidedef
-{
-sector = 10;
-}
-
-sidedef
-{
-sector = 9;
-texturemiddle = "DRDC0";
-}
-
-sidedef
-{
-sector = 13;
-texturemiddle = "DRDC35";
-}
-
-sidedef
-{
-sector = 24;
-texturemiddle = "DRDC47";
-}
-
-sidedef
-{
-sector = 11;
-}
-
-sidedef
-{
-sector = 1;
-texturetop = "DRDC1";
-offsetx = -24;
-offsety = -40;
-scalex_top = -1;
-}
-
-sidedef
-{
-sector = 16;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 7;
-}
-
-sidedef
-{
-sector = 6;
-}
-
-sidedef
-{
-sector = 28;
-texturemiddle = "DRDC35";
-}
-
-sidedef
-{
-sector = 50;
-texturemiddle = "DRDC32";
-offsetx_bottom = 55;
-}
-
-sidedef
-{
-sector = 27;
-texturemiddle = "DRDC47";
-offsetx_mid = -43;
-offsety_mid = -6;
-scalex_mid = -1;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 23;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 32;
-}
-
-sidedef
-{
-sector = 8;
-}
-
-sidedef
-{
-sector = 49;
-texturemiddle = "DRDC32";
-offsetx_bottom = 46;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 23;
-}
-
-sidedef
-{
-sector = 11;
-texturemiddle = "DRDC10";
-offsetx = 8;
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 10;
-texturetop = "DRPGZ003";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_bottom = 46;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC30";
-}
-
-sidedef
-{
-sector = 0;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 29;
-texturemiddle = "DRDC47";
-offsety_mid = -6;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 19;
-texturemiddle = "DRDC37";
+sector = 41;
+texturebottom = "DRDC11";
+offsetx = 44;
+offsetx_bottom = 41;
 }
 
 sidedef
@@ -4709,1018 +4893,6 @@ sector = 16;
 
 sidedef
 {
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = -45;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 13;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 32;
-}
-
-sidedef
-{
-sector = 38;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 40;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 41;
-texturemiddle = "DRDC32";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = -1;
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = 31;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 32;
-}
-
-sidedef
-{
-sector = 41;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = 7;
-}
-
-sidedef
-{
-sector = 41;
-texturemiddle = "DRDC32";
-offsetx_mid = 6;
-}
-
-sidedef
-{
-sector = 41;
-texturemiddle = "DRDC32";
-offsetx_mid = 3;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 33;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 20;
-texturemiddle = "DRDC32";
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 9;
-}
-
-sidedef
-{
-sector = 9;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = -16;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = -33;
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = 3;
-}
-
-sidedef
-{
-sector = 18;
-texturemiddle = "DRPGZ010";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRPGZ010";
-}
-
-sidedef
-{
-sector = 40;
-texturemiddle = "DRDC32";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 7;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = -1;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 6;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 11;
-}
-
-sidedef
-{
-sector = 41;
-texturemiddle = "DRDC32";
-offsetx_mid = 12;
-}
-
-sidedef
-{
-sector = 34;
-texturemiddle = "DRDC32";
-offsetx_mid = -1;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 41;
-texturemiddle = "DRDC32";
-offsetx_mid = 32;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = 39;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = -45;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 11;
-}
-
-sidedef
-{
-sector = 39;
-texturemiddle = "DRDC32";
-offsetx_mid = -16;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = -13;
-}
-
-sidedef
-{
-sector = 44;
-texturemiddle = "DRDC32";
-offsetx_bottom = 37;
-}
-
-sidedef
-{
-sector = 51;
-texturemiddle = "DRDC32";
-offsetx_mid = -45;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-offsetx_mid = 12;
-}
-
-sidedef
-{
-sector = 51;
-texturemiddle = "DRDC32";
-offsetx_mid = 77;
-}
-
-sidedef
-{
-sector = 19;
-}
-
-sidedef
-{
-sector = 55;
-texturemiddle = "DRDC32";
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 23;
-texturemiddle = "DRDC10";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 23;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 51;
-}
-
-sidedef
-{
-sector = 23;
-}
-
-sidedef
-{
-sector = 12;
-texturetop = "DRDC10";
-offsetx = 24;
-}
-
-sidedef
-{
-sector = 23;
-texturemiddle = "DRDC0";
-}
-
-sidedef
-{
-sector = 6;
-}
-
-sidedef
-{
-sector = 45;
-texturemiddle = "DRDC32";
-offsetx_bottom = 46;
-}
-
-sidedef
-{
-sector = 0;
-texturemiddle = "DRDC10";
-offsetx_mid = 49;
-}
-
-sidedef
-{
-sector = 37;
-texturemiddle = "DRDC32";
-offsetx_mid = 2;
-}
-
-sidedef
-{
-sector = 31;
-texturemiddle = "DRDC37";
-}
-
-sidedef
-{
-sector = 35;
-texturemiddle = "DRDC32";
-offsetx_mid = -45;
-}
-
-sidedef
-{
-sector = 36;
-texturemiddle = "DRDC32";
-offsetx_mid = 17;
-}
-
-sidedef
-{
-sector = 35;
-texturemiddle = "DRDC32";
-offsetx_mid = 77;
-}
-
-sidedef
-{
-sector = 15;
-texturemiddle = "DRDC10";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 15;
-texturetop = "DRDC1";
-scalex_top = -1;
-}
-
-sidedef
-{
-sector = 10;
-offsetx = 32;
-}
-
-sidedef
-{
-sector = 1;
-texturemiddle = "DRDC10";
-offsetx_mid = 48;
-}
-
-sidedef
-{
-sector = 14;
-texturemiddle = "DRDC10";
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 1;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 35;
-}
-
-sidedef
-{
-sector = 1;
-}
-
-sidedef
-{
-sector = 15;
-texturemiddle = "DRDC10";
-}
-
-sidedef
-{
-sector = 1;
-texturetop = "DRDC1";
-offsetx = -64;
-offsety = -40;
-scalex_top = -1;
-}
-
-sidedef
-{
-sector = 14;
-offsetx = 40;
-}
-
-sidedef
-{
-sector = 10;
-texturemiddle = "DRDC10";
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 32;
-texturemiddle = "DRDC32";
-offsetx_mid = 16;
-}
-
-sidedef
-{
-sector = 31;
-texturemiddle = "DRDC37";
-}
-
-sidedef
-{
-sector = 15;
-}
-
-sidedef
-{
-sector = 30;
-}
-
-sidedef
-{
-sector = 31;
-texturemiddle = "DRDC37";
-}
-
-sidedef
-{
-sector = 31;
-texturemiddle = "DRDC37";
-}
-
-sidedef
-{
-sector = 31;
-texturemiddle = "DRDC37";
-}
-
-sidedef
-{
-sector = 25;
-texturemiddle = "DRDC35";
-}
-
-sidedef
-{
-sector = 29;
-texturemiddle = "DRDC47";
-offsetx_mid = -13;
-offsety_mid = -6;
-}
-
-sidedef
-{
-sector = 29;
-texturemiddle = "DRDC47";
-offsetx_mid = -45;
-offsety_mid = -6;
-}
-
-sidedef
-{
-sector = 13;
-}
-
-sidedef
-{
-sector = 13;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 26;
-}
-
-sidedef
-{
-sector = 26;
-}
-
-sidedef
-{
-sector = 26;
-}
-
-sidedef
-{
-sector = 26;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 25;
-}
-
-sidedef
-{
-sector = 25;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 27;
-}
-
-sidedef
-{
-sector = 27;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 28;
-}
-
-sidedef
-{
-sector = 28;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 29;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 31;
-}
-
-sidedef
-{
-sector = 31;
-}
-
-sidedef
-{
-sector = 31;
-}
-
-sidedef
-{
-sector = 30;
-}
-
-sidedef
-{
-sector = 30;
-}
-
-sidedef
-{
-sector = 30;
-}
-
-sidedef
-{
-sector = 31;
-}
-
-sidedef
-{
-sector = 31;
-}
-
-sidedef
-{
-sector = 31;
-}
-
-sidedef
-{
-sector = 20;
-}
-
-sidedef
-{
-sector = 20;
-}
-
-sidedef
-{
-sector = 20;
-}
-
-sidedef
-{
-sector = 20;
-}
-
-sidedef
-{
-sector = 20;
-}
-
-sidedef
-{
-sector = 38;
-}
-
-sidedef
-{
-sector = 44;
-}
-
-sidedef
-{
-sector = 45;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 36;
-}
-
-sidedef
-{
-sector = 32;
-}
-
-sidedef
-{
-sector = 32;
-}
-
-sidedef
-{
-sector = 32;
-}
-
-sidedef
-{
-sector = 32;
-}
-
-sidedef
-{
-sector = 32;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 48;
-}
-
-sidedef
-{
-sector = 49;
-}
-
-sidedef
-{
-sector = 40;
-}
-
-sidedef
-{
-sector = 37;
-}
-
-sidedef
-{
-sector = 33;
-}
-
-sidedef
-{
-sector = 33;
-}
-
-sidedef
-{
-sector = 33;
-}
-
-sidedef
-{
-sector = 33;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 34;
-}
-
-sidedef
-{
-sector = 34;
-}
-
-sidedef
-{
-sector = 34;
-}
-
-sidedef
-{
-sector = 34;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 54;
-}
-
-sidedef
-{
-sector = 47;
-}
-
-sidedef
-{
-sector = 35;
-}
-
-sidedef
-{
-sector = 35;
-}
-
-sidedef
-{
-sector = 35;
-}
-
-sidedef
-{
-sector = 36;
-}
-
-sidedef
-{
-sector = 37;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 38;
-}
-
-sidedef
-{
-sector = 38;
-}
-
-sidedef
-{
-sector = 38;
-}
-
-sidedef
-{
-sector = 39;
-}
-
-sidedef
-{
-sector = 39;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 40;
-}
-
-sidedef
-{
-sector = 40;
-}
-
-sidedef
-{
-sector = 40;
-}
-
-sidedef
-{
 sector = 41;
 }
 
@@ -5731,7 +4903,12 @@ sector = 41;
 
 sidedef
 {
-sector = 55;
+sector = 16;
+}
+
+sidedef
+{
+sector = 7;
 }
 
 sidedef
@@ -5746,57 +4923,51 @@ sector = 42;
 
 sidedef
 {
-sector = 55;
+sector = 39;
+texturebottom = "DRDC11";
+offsetx = 63;
+offsetx_bottom = 12;
 }
 
 sidedef
 {
-sector = 55;
+sector = 40;
+offsetx = 63;
 }
 
 sidedef
 {
-sector = 55;
+sector = 39;
 }
 
 sidedef
 {
-sector = 55;
+sector = 39;
 }
 
 sidedef
 {
-sector = 55;
+sector = 39;
 }
 
 sidedef
 {
-sector = 55;
+sector = 42;
 }
 
 sidedef
 {
-sector = 44;
+sector = 42;
 }
 
 sidedef
 {
-sector = 45;
+sector = 42;
 }
 
 sidedef
 {
-sector = 46;
-}
-
-sidedef
-{
-sector = 46;
-}
-
-sidedef
-{
-sector = 43;
+sector = 40;
 }
 
 sidedef
@@ -5804,756 +4975,688 @@ sidedef
 sector = 43;
 }
 
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 48;
-}
-
-sidedef
-{
-sector = 49;
-}
-
-sidedef
-{
-sector = 50;
-}
-
-sidedef
-{
-sector = 50;
-}
-
-sidedef
-{
-sector = 47;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 52;
-}
-
-sidedef
-{
-sector = 52;
-}
-
-sidedef
-{
-sector = 53;
-}
-
-sidedef
-{
-sector = 53;
-}
-
-sidedef
-{
-sector = 54;
-}
-
-sidedef
-{
-sector = 51;
-}
-
-sidedef
-{
-sector = 51;
-}
-
-sidedef
-{
-sector = 51;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
-sidedef
-{
-sector = 55;
-}
-
 sector
 {
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
 heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-xpanningceiling = 27;
-rotationceiling = 90;
-lightceiling = -32;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC53";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "FLAT3";
-lightlevel = 175;
-id = 5;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT20";
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 25;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC10";
-textureceiling = "FLAT20";
-heightceiling = 40;
-lightlevel = 175;
-id = 5;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC10";
-textureceiling = "FLAT20";
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC10";
-textureceiling = "FLAT20";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC63";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC10";
-textureceiling = "FLAT20";
-heightceiling = 40;
-lightlevel = 175;
-id = 5;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT3";
-heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 25;
-xpanningceiling = 27;
-rotationceiling = 90;
-}
-
-sector
-{
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT20";
-lightlevel = 175;
-id = 4;
-rotationfloor = 90;
-xpanningfloor = 25;
-}
-
-sector
-{
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT3";
-heightceiling = 64;
-lightlevel = 175;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 175;
-hidden = true;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC54";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "FLAT3";
-heightceiling = -8;
-lightlevel = 175;
-id = 12;
-hidden = true;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "FLAT20";
-lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
-}
-
-sector
-{
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT3";
-heightceiling = 64;
-lightlevel = 144;
-rotationfloor = 90;
-xpanningfloor = 25;
-xpanningceiling = 27;
-rotationceiling = 90;
-}
-
-sector
-{
-texturefloor = "FLOOR0_5";
-textureceiling = "FLAT3";
-heightceiling = 64;
+texturefloor = "MIDSPACE";
+textureceiling = "MIDSPACE";
+heightfloor = -1;
 lightlevel = 0;
-xpanningfloor = 64;
-rotationfloor = 90;
+id = 13;
+xscaleceiling = 10;
+yscaleceiling = 10;
+xscalefloor = 2;
+yscalefloor = 2;
+hidden = true;
+xpanningceiling = 32.000000;
+ypanningceiling = 32.000000;
+xpanningfloor = 32.000000;
+ypanningfloor = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC68";
-textureceiling = "DRDC63";
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightfloor = -1;
 heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 180;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC68";
-textureceiling = "DRDC63";
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
 heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC68";
-textureceiling = "DRDC63";
+texturefloor = "DRDC11";
+textureceiling = "DRDC57";
+heightfloor = -1;
 heightceiling = 64;
-lightlevel = 175;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
 rotationfloor = 90;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC68";
-textureceiling = "DRDC63";
+texturefloor = "DRDC71";
+textureceiling = "DRDC72";
 heightceiling = 64;
-lightlevel = 175;
-rotationfloor = 90;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+rotationfloor = 180;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+texturefloor = "DRDC10";
+textureceiling = "FLAT20";
+lightlevel = 175;
+id = 15;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+hidden = true;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
 heightceiling = 64;
-lightlevel = 175;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
 rotationfloor = 90;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC67";
+texturefloor = "DRDC11";
 textureceiling = "DRDC53";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 669;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightfloor = -1;
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 180;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "MFLR8_2";
+textureceiling = "DRDC11";
+heightfloor = -1;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC29";
+textureceiling = "DRDC13";
+heightfloor = 64;
 heightceiling = 64;
 lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+rotationfloor = 270.000000;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
+texturefloor = "DRDC11";
+textureceiling = "DRDC52";
+heightfloor = 64;
 heightceiling = 64;
 lightlevel = 175;
-rotationfloor = 90;
-xpanningfloor = 1.000000;
+id = 100;
+moreids = "666";
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+rotationfloor = 180;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC67";
-textureceiling = "DRDC54";
+texturefloor = "DRDC10";
+textureceiling = "FLAT20";
+lightlevel = 175;
+id = 666;
+xpanningfloor = 32.000000;
+rotationfloor = 270;
+hidden = true;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+xpanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
 heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
 }
 
 sector
 {
-texturefloor = "DRDC67";
-textureceiling = "DRDC54";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC54";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "SLIME15";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "SLIME15";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "SLIME15";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "SLIME15";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "SLIME15";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "SLIME15";
-textureceiling = "SLIME15";
-heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 25;
-rotationfloor = 90;
-}
-
-sector
-{
-texturefloor = "DRDC67";
+texturefloor = "DRDC11";
 textureceiling = "DRDC51";
 heightceiling = 64;
-lightlevel = 125;
-xpanningceiling = 27;
-rotationceiling = 90;
-xpanningfloor = 1.000000;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
 rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "MFLR8_2";
+textureceiling = "DRDC56";
+heightfloor = -3;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "MFLR8_2";
+textureceiling = "DRDC57";
+heightfloor = -3;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
+heightfloor = 1;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 90;
+rotationfloor = 90;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "MFLR8_2";
+textureceiling = "DRDC11";
+heightfloor = -3;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
+heightfloor = 1;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+ypanningfloor = 32.000000;
+rotationceiling = 90;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+xpanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC52";
+heightfloor = 64;
+heightceiling = 64;
+lightlevel = 175;
+id = 100;
+moreids = "666";
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+rotationfloor = 180;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC53";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 669;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC10";
+textureceiling = "FLAT20";
+lightlevel = 175;
+id = 666;
+xpanningfloor = 32.000000;
+rotationfloor = 270;
+hidden = true;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+xpanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
+heightfloor = 1;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+rotationfloor = 180;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 175;
+id = 668;
+moreids = "666";
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+rotationfloor = 180.000000;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC72";
+heightfloor = 8;
+heightceiling = 64;
+lightlevel = 175;
+id = 666;
+xpanningfloor = 48.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+rotationfloor = 270.000000;
+ypanningfloor = 40.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+rotationfloor = 180;
+ypanningfloor = 32.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC71";
+textureceiling = "DRDC61";
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightfloor = -1;
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 180;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC53";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 669;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "MFLR8_2";
+textureceiling = "DRDC57";
+heightfloor = -3;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC53";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 669;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270.000000;
+ypanningfloor = 32.000000;
+rotationfloor = 90.000000;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC57";
+heightfloor = -1;
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "MFLR8_2";
+textureceiling = "DRDC57";
+heightfloor = -3;
+heightceiling = 64;
+lightlevel = 255;
+id = 666;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC52";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC52";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightfloor = -32;
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 255;
+id = 668;
+xpanningfloor = 32.000000;
+xpanningceiling = 32.000000;
+rotationceiling = 270;
+ypanningfloor = 32.000000;
+rotationfloor = 90;
+ypanningceiling = 32.000000;
 }
 
