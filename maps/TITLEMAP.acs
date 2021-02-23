@@ -9,20 +9,36 @@ Script "onCinematicShadersLoad" (bool forced) {
 	ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "DoubleVisionShader", "desaturation", 1.0);
 }
 
-Script 666 ENTER{
-    SetHudSize(640, 400, 0);
-    SetFont("bigfont");
-    //SetFont("smallfont");
-    //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+Script 666 ENTER {
+// 	ACS_NamedExecuteWait("Splash", 0);
+	ACS_NamedExecuteWait("Main", 0);
+}
+
+Script "Splash" (void) {
 	FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 9.0);
     SetHudSize(1024, 768, false);
     SetFont("DISC");
     HudMessage(s:"A"; HUDMSG_FADEINOUT, 1, CR_BLACK, 512.0, 384.0, 3.0, 3.0, 3.0);
     Delay(35 * 9);
-    SetMusic("D_E1M1");
+	FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 3.0);
+}
+
+Script "Main" (void) {
+	SetMusic("D_E1M1");
     ACS_Execute(1000, 0);
 	ChangeCamera(1, 1, 0);
-	FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 3.0);
+	Delay(35 * 1);
+	SetHudSize(300, 164, false);
+	SetFont("M_DOOM");
+	HudMessage(s:"A"; HUDMSG_FADEINOUT, 1, CR_BLACK, 150.0, -0.25, 999.0, 1.0, 999.0);
+	Delay(34 * 2);
+	SetFont("M_DOOM");
+	HudMessage(s:"A"; HUDMSG_FADEINOUT | HUDMSG_ALPHA, 1, CR_BLACK, 150.0, -0.25, 999.0, 0.0, 999.0, 0.5);
+	Delay(35 * 1);
+	SetFont("smallfont");
+	HudMessage(s:"DRRP v0.5.0 - Brew Update"; HUDMSG_FADEINOUT, 2, CR_RED, 150.0, 80.0, 999.0, 1.0, 999.0);
+	Delay(35 * 2);
+	HudMessage(s:"DRRP v0.5.0 - Brew Update"; HUDMSG_FADEINOUT | HUDMSG_ALPHA, 2, CR_WHITE, 150.0, 80.0, 999.0, 0.0, 999.0, 0.5);
 }
 
 script 1000 (void) {
