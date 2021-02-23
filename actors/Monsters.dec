@@ -147,6 +147,11 @@ Actor Troop: ChaingunGuy_BaseDRRP 10264 {
     Tag "$DRRP_M_TROOP"
     Health 55
     Translation "32:47=163:167"
+
+    SeeSound "monsters/troop/sight"
+    PainSound "monsters/troop/pain"
+    DeathSound "monsters/troop/death"
+    ActiveSound "monsters/troop/active"
 }
 
 Actor Commando: ChaingunGuy_BaseDRRP 10364 {
@@ -176,6 +181,11 @@ Actor Assassin: ChaingunGuy_BaseDRRP replaces ChaingunGuy 10464 {
     Obituary "$DRRP_OB_ASSASIN"
     Tag "$DRRP_M_ASSASSIN"
     Health 260
+
+    SeeSound "monsters/assassin/sight"
+    PainSound "monsters/assassin/pain"
+    DeathSound "monsters/assassin/death"
+    ActiveSound "monsters/assassin/active"
 
     States {
     Missile:
