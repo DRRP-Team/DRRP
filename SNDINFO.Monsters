@@ -347,4 +347,26 @@
 
 // Viles
 
+/// Infernis
+    monsters/infernis/sight            dsvilsit
+    monsters/infernis/active           dsvilact
+    monsters/infernis/pain             dsvipain
+    monsters/infernis/death            dsvildth
+
+    $pitchset monsters/infernis/sight  1.1
+    $pitchset monsters/infernis/active 1.1
+    $pitchset monsters/infernis/pain   1.1
+    $pitchset monsters/infernis/death  1.1
+
+/// Apollyon
+    monsters/apollyon/sight            dsvilsit
+    monsters/apollyon/active           dsvilact
+    monsters/apollyon/pain             dsvipain
+    monsters/apollyon/death            dsvildth
+
+    $pitchset monsters/apollyon/sight  0.9
+    $pitchset monsters/apollyon/active 0.9
+    $pitchset monsters/apollyon/pain   0.9
+    $pitchset monsters/apollyon/death  0.9
+
 // -Hells

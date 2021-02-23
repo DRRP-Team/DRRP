@@ -686,6 +686,11 @@ Actor Infernis: ArchVile_BaseDRRP 10273 {
     Tag "$DRRP_M_INFERNIS"
     Health 180
     Translation  "48:79=192:207", "128:143=192:207", "13:15=240:247", "144:151=240:247", "236:239=240:247", "144:151=240:247", "208:223=192:207", "0:2=247:247"
+
+    SeeSound "monsters/infernis/sight"
+    PainSound "monsters/infernis/pain"
+    DeathSound "monsters/infernis/death"
+    ActiveSound "monsters/infernis/active"
 }
 
 Actor DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile 10373 {
@@ -707,6 +712,11 @@ Actor Apollyon: ArchVile_BaseDRRP 10473 {
     Tag "$DRRP_M_APOLLYON"
     Health 700
     Translation "64:79=32:47", "48:63=16:31", "128:143=16:39", "236:239=44:47", "13:15=45:47", "144:151=32:39" // "16:223=%[0.00, 0.00, 0.00]:[2.00, 0.78, 0.78]"
+
+    SeeSound "monsters/apollyon/sight"
+    PainSound "monsters/apollyon/pain"
+    DeathSound "monsters/apollyon/death"
+    ActiveSound "monsters/apollyon/active"
 }
 
 
