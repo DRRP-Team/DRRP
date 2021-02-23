@@ -197,7 +197,7 @@ Actor Revenant_BaseDRRP: Revenant {
         SKEL K 10 A_FaceTarget
         Goto See
     Death:
-        SKEL L 7 A_SpawnItem( "RocketAmmo" )
+        SKEL L 7
         SKEL M 7 A_SpawnItem( "DRRPExplosion", 0, 38 )
         SKEL M 0 A_Jump( 256, "DeathReal" ) // For final monster cast.
         SKEL N 7 A_Scream
