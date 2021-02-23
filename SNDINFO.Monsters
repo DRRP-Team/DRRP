@@ -247,6 +247,28 @@
 
 // Cacodemons
 
+/// Malwrath
+    monsters/malwrath/sight            dscacsit
+    monsters/malwrath/active           dsdmact
+    monsters/malwrath/pain             dsdmpain
+    monsters/malwrath/death            dscacdth
+
+    $pitchset monsters/malwrath/sight  1.1
+    $pitchset monsters/malwrath/active 1.1
+    $pitchset monsters/malwrath/pain   1.1
+    $pitchset monsters/malwrath/death  1.1
+
+/// Wretched
+    monsters/wretched/sight            dscacsit
+    monsters/wretched/active           dsdmact
+    monsters/wretched/pain             dsdmpain
+    monsters/wretched/death            dscacdth
+
+    $pitchset monsters/wretched/sight  0.9
+    $pitchset monsters/wretched/active 0.9
+    $pitchset monsters/wretched/pain   0.9
+    $pitchset monsters/wretched/death  0.9
+
 // Revenants
 
 // Elementals

@@ -372,6 +372,11 @@ Actor Malwrath: Cacodemon_BaseDRRP 10262 {
     Health 195
     Translation "168:191=161:167", "16:47=160:165", "112:127=181:191", "192:207=168:191", "240:247=[0,0,0]:[176,0,0]"
 
+    SeeSound "monsters/malwrath/sight"
+    PainSound "monsters/malwrath/pain"
+    DeathSound "monsters/malwrath/death"
+    ActiveSound "monsters/malwrath/active"
+
     States {
     Missile:
         HEAD BC 5 A_FaceTarget
@@ -416,6 +421,11 @@ Actor Wretched: Cacodemon_BaseDRRP 10462 {
     Tag "$DRRP_M_WRETCHED"
     Health 650
     Translation "168:191=193:207", "167:167=244:244", "16:47=193:201", "192:207=168:184", "240:242=185:191", "223:223=207:207", "0:2=246:246"
+
+    SeeSound "monsters/wretched/sight"
+    PainSound "monsters/wretched/pain"
+    DeathSound "monsters/wretched/death"
+    ActiveSound "monsters/wretched/active"
 
     States {
     Missile:
