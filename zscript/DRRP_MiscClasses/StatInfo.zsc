@@ -26,6 +26,7 @@ class LevelStatsNotifierHandler: StaticEventHandler {
 
         switch ( doneType ) {
             case LSN_AllMonsters:
+                console.printf( "[Unsafe] MapsMonstersDone[ 0 ]: " .. MapsMonstersDone[ 0 ] );
                 arraySize = MapsMonstersDone.Size();
 
                 for ( int i = 0; i < arraySize - 1; i++ )
@@ -56,8 +57,12 @@ class LevelStatsNotifierHandler: StaticEventHandler {
     override void WorldLoaded( WorldEvent e ) {
         // Check for new game:
         if ( !level.totaltime || e.IsSaveGame ) {
+            console.printf( "WorldLoaded(). BFR MapsMonstersDone.Size(); " .. MapsMonstersDone.Size() );
+            console.printf( "WorldLoaded(). BFR MapsSecretsDone.Size(); " .. MapsSecretsDone.Size() );
             MapsMonstersDone.Clear();
             MapsSecretsDone.Clear();
+            console.printf( "WorldLoaded(). AFT MapsMonstersDone.Size(); " .. MapsMonstersDone.Size() );
+            console.printf( "WorldLoaded(). AFT MapsSecretsDone.Size(); " .. MapsSecretsDone.Size() );
         }
 
         curMapDoneMask  = LSN_AllMonsters * ( level.total_monsters == level.killed_monsters );
