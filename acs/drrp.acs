@@ -132,6 +132,8 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
 // Player's bloody damage flash visual effect.
 int flashMessageID = 30;
 Script "BloodFlashVisual" ( int flashType, int receivedDamage ) {
+	if (!GetCVar("drrp_enable_blood_flashes")) Terminate;
+
 	if ( flashType == 0 ) flashType = Random(1, 4);
 
     if ( flashType > 0 && flashType < 4 ) {
