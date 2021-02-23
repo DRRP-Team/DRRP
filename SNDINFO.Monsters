@@ -319,6 +319,32 @@
 
 // Cubuses
 
+/// Behemoth
+    monsters/behemoth/sight            dsmansit
+    monsters/behemoth/active           dsposact
+    monsters/behemoth/pain             dsmnpain
+    monsters/behemoth/raiseguns        dsmanatk
+    monsters/behemoth/death            dsmandth
+
+    $pitchset monsters/behemoth/sight     1.1
+    $pitchset monsters/behemoth/active    1.1
+    $pitchset monsters/behemoth/pain      1.1
+    $pitchset monsters/behemoth/raiseguns 1.1
+    $pitchset monsters/behemoth/death     1.1
+
+/// Druj
+    monsters/druj/sight            dsmansit
+    monsters/druj/active           dsposact
+    monsters/druj/pain             dsmnpain
+    monsters/druj/raiseguns        dsmanatk
+    monsters/druj/death            dsmandth
+
+    $pitchset monsters/druj/sight     0.9
+    $pitchset monsters/druj/active    0.9
+    $pitchset monsters/druj/pain      0.9
+    $pitchset monsters/druj/raiseguns 0.9
+    $pitchset monsters/druj/death     0.9
+
 // Viles
 
 // -Hells
