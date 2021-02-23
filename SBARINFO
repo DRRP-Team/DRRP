@@ -17,13 +17,13 @@ statusbar normal { // Standard Doom Status bar
     drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 44, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, DRRPBasicArmor, 221, 171;
 
-    /*IfHealth 100 % {
+    IfHealth 100 % {
         drawnumber 3, HUDFONT_DOOM, Blue, health, 90, 171;
-    } else IfHealth not 10 % {
+    } else IfHealth not 35 % {
         drawnumber 3, HUDFONT_DOOM, Red, health, 90, 171;
     } else {
-        drawnumber 3, HUDFONT_DOOM, untranslated, health, 90, 171;
-    }*/
+        drawnumber 3, HUDFONT_DOOM, Gray, health, 90, 171;
+    }
 
     DrawSwitchableImage KeySlot 1, "nullimage", "STKEYS2", 239, 169; // Red
     DrawSwitchableImage KeySlot 2, "nullimage", "STKEYS0", 239, 177; // Blue
@@ -58,22 +58,26 @@ statusbar normal { // Standard Doom Status bar
     }
 }
 
-statusbar fullscreen, fullscreenoffsets // ZDoom HUD
-{
-    //health
+statusbar fullscreen, fullscreenoffsets {// ZDoom HUD
+    // Health
     drawimage "MEDIA0", 20, -2, centerbottom;
-    drawnumber 2147483647, HUDFONT_DOOM, untranslated, health, drawshadow, 82, -20;
+    IfHealth 100 % {
+        drawnumber 3, HUDFONT_DOOM, Blue, health, drawshadow, 82, -20;
+    } else IfHealth not 35 % {
+        drawnumber 3, HUDFONT_DOOM, Red, health, drawshadow, 82, -20;
+    } else {
+        drawnumber 3, HUDFONT_DOOM, Gray, health, drawshadow, 82, -20;
+    }
 
-    //armor
+    // Armor
     drawimage "BON2A0", 20, -24, centerbottom;
-    drawnumber 2147483647, HUDFONT_DOOM, untranslated, DRRPBasicArmor, drawshadow, 82, -39;
+    drawnumber 3, HUDFONT_DOOM, untranslated, DRRPBasicArmor, drawshadow, 82, -39;
 
-    //ammo
+    // Ammo
     drawimage ammoicon1, -14, -4, centerbottom;
     drawnumber 2147483647, HUDFONT_DOOM, untranslated, ammo1, drawshadow, -25, -20;
 
-    usesammo
-    {
+    usesammo {
         //secondary ammo and inventory
         usessecondaryammo
         {
@@ -91,21 +95,16 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
                 drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, HUDFONT_DOOM, -14, -21, -26, -38, untranslated;
             }
         }
-    }
-    else // no ammo but inventory
-    {
+    } else { // no ammo but inventory
         inventorybarnotvisible
         {
             drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, HUDFONT_DOOM, -14, -3, -26, -20, untranslated;
         }
     }
 
-    gamemode deathmatch
-    {
+    gamemode deathmatch {
         drawnumber 2147483647, HUDFONT_DOOM, untranslated, frags, drawshadow, -3, 1;
-    }
-    else
-    {
+    } else {
         // let's hope no mod ever uses 100 keys...
         drawkeybar 100, vertical, reverserows, auto, -10, 2, 0, 3, auto;
     }
