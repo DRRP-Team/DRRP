@@ -77,7 +77,7 @@ Actor ZombiePvt: ZombieMan_BaseDRRP replaces ZombieMan 10274 {
     States {
     Missile:
         POSS E 10 A_FaceTarget
-        POSS F 8 A_CustomBulletAttack( 22.5, 0, 1, Random( 3, 6 ) * 3 + 2, "BulletPuff", 0, CBAF_NORANDOM )
+        POSS F 8 Bright A_CustomBulletAttack( 22.5, 0, 1, Random( 3, 6 ) * 3 + 2, "BulletPuff", 0, CBAF_NORANDOM )
         POSS E 8
         Goto See
     }
@@ -95,7 +95,7 @@ Actor ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy 10374 {
     States {
     Missile:
         SPOS E 10 A_FaceTarget
-        SPOS F 10 A_CustomBulletAttack( 22.5, 0, 3, Random( 2, 6 ) * 3 + 1, "BulletPuff", 0, CBAF_NORANDOM )
+        SPOS F 10 Bright A_CustomBulletAttack( 22.5, 0, 3, Random( 2, 6 ) * 3 + 1, "BulletPuff", 0, CBAF_NORANDOM )
         SPOS E 10
         Goto See
     }
@@ -114,7 +114,7 @@ Actor ZombieCpt: ZombieMan_BaseDRRP 10474 {
     Missile:
         POSS E 10 A_FaceTarget
         POSS E 0 A_FaceTarget
-        POSS FFF 3 A_CustomBulletAttack( 22.5, 0, 1, Random( 2, 6 ) * 4 + 2, "BulletPuff", 0, CBAF_NORANDOM )
+        POSS FFF 3 Bright A_CustomBulletAttack( 22.5, 0, 1, Random( 2, 6 ) * 4 + 2, "BulletPuff", 0, CBAF_NORANDOM )
         POSS E 8
         POSS E 8 A_Jump( 195, "See" )
         Loop
