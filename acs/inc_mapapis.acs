@@ -51,6 +51,7 @@ Script 3005 (void) { // WIP Level
 Script 3006 (void) { // Jammed door
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3006");
     if((ClassifyActor(0) & ACTOR_PLAYER) && GetWeapon() == "DRRPAxe") {
+		ClearLineSpecial();
         Radius_Quake2(0, 1, 17, 0, 128, "");
         Delay(17);
         Ceiling_RaiseToNearest(0, 4096);
