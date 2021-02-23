@@ -13,9 +13,17 @@ statusbar normal { // Standard Doom Status bar
     drawimage "STBAR", 0, 168;
     drawimage "STTPRCNT", 90, 171;
     drawimage "STTPRCNT", 221, 171;
-    drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 44, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, health, 90, 171;
+    drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 44, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, DRRPBasicArmor, 221, 171;
+
+    /*IfHealth 100 % {
+        drawnumber 3, HUDFONT_DOOM, Blue, health, 90, 171;
+    } else IfHealth not 10 % {
+        drawnumber 3, HUDFONT_DOOM, Red, health, 90, 171;
+    } else {
+        drawnumber 3, HUDFONT_DOOM, untranslated, health, 90, 171;
+    }*/
 
     DrawSwitchableImage KeySlot 1, "nullimage", "STKEYS2", 239, 169; // Red
     DrawSwitchableImage KeySlot 2, "nullimage", "STKEYS0", 239, 177; // Blue
