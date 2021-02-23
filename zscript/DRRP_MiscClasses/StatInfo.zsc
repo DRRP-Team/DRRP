@@ -14,8 +14,8 @@ enum ELevelStatsNotifier {
 
 class LevelStatsNotifierHandler: StaticEventHandler {
 
-    Array<String> MapsMonstersDone;
-    Array<String> MapsSecretsDone;
+    private Array<String> MapsMonstersDone;
+    private Array<String> MapsSecretsDone;
     uint curMapDoneMask;
 
     // ZScript cannot return a pointer to the dynamic array, 
@@ -55,7 +55,7 @@ class LevelStatsNotifierHandler: StaticEventHandler {
 
     override void WorldLoaded( WorldEvent e ) {
         // Check for new game:
-        if ( !level.totaltime ) {
+        if ( !level.totaltime || e.IsSaveGame ) {
             MapsMonstersDone.Clear();
             MapsSecretsDone.Clear();
         }
