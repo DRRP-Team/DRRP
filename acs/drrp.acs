@@ -129,8 +129,11 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     Delay(2);
 }
 
+const int BLOOD_FLASH_ID = 30;
+const int BLOOD_FLASH_LAYERS = 2;
+
 // Player's bloody damage flash visual effect.
-int flashMessageID = 30;
+int flashMessageID = BLOOD_FLASH_ID;
 Script "BloodFlashVisual" ( int flashType, int receivedDamage ) {
 	if (!GetCVar("drrp_enable_blood_flashes")) Terminate;
 
@@ -138,14 +141,11 @@ Script "BloodFlashVisual" ( int flashType, int receivedDamage ) {
 
     if ( flashType > 0 && flashType < 4 ) {
         // Cyclic HudMessage id:
-        if ( flashMessageID > 50 || flashMessageID < 30 )
-            flashMessageID = 30;
-        else
-            flashMessageID++;
+		flashMessageID = ((flashMessageID + 1) % BLOOD_FLASH_LAYERS) + BLOOD_FLASH_ID;
 
         SetHudSize( 64, 64, false );
         SetFont( StrParam( s:"SPLASH_", i:flashType ) );
-        HudMessage( s: "a"; HUDMSG_FADEOUT | HUDMSG_ALPHA, flashMessageID, CR_GRAY, 32.0, 32.0, 0.33, 0.5, 0.5);
+        HudMessage( s: "a"; HUDMSG_FADEOUT | HUDMSG_ALPHA, flashMessageID, CR_GRAY, 32.0, 32.0, 0.33, 0.5, 0.3);
     }
 }
 
