@@ -6814,7 +6814,7 @@ y = -188.000;
 vertex
 {
 x = 704.000;
-y = -128.000;
+y = -176.000;
 }
 
 vertex
@@ -6826,6 +6826,18 @@ y = -184.000;
 vertex
 {
 x = 768.000;
+y = -128.000;
+}
+
+vertex
+{
+x = 768.000;
+y = -176.000;
+}
+
+vertex
+{
+x = 704.000;
 y = -128.000;
 }
 
@@ -6844,7 +6856,7 @@ y = -188.000;
 vertex
 {
 x = 576.000;
-y = -128.000;
+y = -176.000;
 }
 
 vertex
@@ -6861,13 +6873,43 @@ y = -128.000;
 
 vertex
 {
+x = 640.000;
+y = -176.000;
+}
+
+vertex
+{
+x = 576.000;
+y = -128.000;
+}
+
+vertex
+{
 x = 576.000;
 y = -64.000;
 }
 
 vertex
 {
+x = 592.000;
+y = -64.000;
+}
+
+vertex
+{
 x = 640.000;
+y = -64.000;
+}
+
+vertex
+{
+x = -64.000;
+y = 384.000;
+}
+
+vertex
+{
+x = 720.000;
 y = -64.000;
 }
 
@@ -7395,6 +7437,12 @@ y = 432.000;
 
 vertex
 {
+x = -576.000;
+y = 448.000;
+}
+
+vertex
+{
 x = -320.000;
 y = 992.000;
 }
@@ -7809,6 +7857,12 @@ y = 640.000;
 
 vertex
 {
+x = -320.000;
+y = 640.000;
+}
+
+vertex
+{
 x = -576.000;
 y = 320.000;
 }
@@ -7918,6 +7972,12 @@ y = 704.000;
 vertex
 {
 x = 128.000;
+y = 1024.000;
+}
+
+vertex
+{
+x = 160.000;
 y = 1024.000;
 }
 
@@ -8158,13 +8218,13 @@ y = 124.000;
 vertex
 {
 x = 321.000;
-y = 128.000;
+y = 129.000;
 }
 
 vertex
 {
 x = 321.000;
-y = 192.000;
+y = 191.000;
 }
 
 vertex
@@ -8769,8 +8829,20 @@ y = 960.000;
 
 vertex
 {
+x = 148.000;
+y = 960.000;
+}
+
+vertex
+{
 x = 192.000;
 y = 960.000;
+}
+
+vertex
+{
+x = 192.000;
+y = 912.000;
 }
 
 vertex
@@ -9033,8 +9105,134 @@ y = -319.000;
 
 vertex
 {
-x = -64.000;
+x = 624.000;
+y = -64.000;
+}
+
+vertex
+{
+x = 592.000;
+y = -176.000;
+}
+
+vertex
+{
+x = 624.000;
+y = -176.000;
+}
+
+vertex
+{
+x = 752.000;
+y = -64.000;
+}
+
+vertex
+{
+x = 720.000;
+y = -176.000;
+}
+
+vertex
+{
+x = 752.000;
+y = -176.000;
+}
+
+vertex
+{
+x = 384.000;
+y = 192.000;
+}
+
+vertex
+{
+x = -192.000;
+y = 512.000;
+}
+
+vertex
+{
+x = -128.000;
+y = 512.000;
+}
+
+vertex
+{
+x = -192.000;
 y = 384.000;
+}
+
+vertex
+{
+x = -448.000;
+y = 832.000;
+}
+
+vertex
+{
+x = -384.000;
+y = 832.000;
+}
+
+vertex
+{
+x = -320.000;
+y = 768.000;
+}
+
+vertex
+{
+x = -320.000;
+y = 704.000;
+}
+
+vertex
+{
+x = -256.000;
+y = 704.000;
+}
+
+vertex
+{
+x = -256.000;
+y = 640.000;
+}
+
+vertex
+{
+x = -192.000;
+y = 640.000;
+}
+
+vertex
+{
+x = 128.000;
+y = 980.000;
+}
+
+vertex
+{
+x = 172.000;
+y = 988.000;
+}
+
+vertex
+{
+x = 144.000;
+y = 944.000;
+}
+
+vertex
+{
+x = 180.000;
+y = 952.000;
+}
+
+vertex
+{
+x = 224.000;
+y = 920.000;
 }
 
 linedef
@@ -13190,7 +13388,7 @@ dontdraw = true;
 linedef
 {
 v1 = 452;
-v2 = 451;
+v2 = 453;
 sidefront = 611;
 blocking = true;
 dontdraw = true;
@@ -13198,8 +13396,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 450;
-v2 = 453;
+v1 = 454;
+v2 = 455;
 sidefront = 612;
 blocking = true;
 dontdraw = true;
@@ -13238,7 +13436,7 @@ secret = true;
 
 linedef
 {
-v1 = 454;
+v1 = 456;
 v2 = 413;
 sidefront = 618;
 blocking = true;
@@ -13248,7 +13446,7 @@ dontdraw = true;
 linedef
 {
 v1 = 340;
-v2 = 454;
+v2 = 456;
 sidefront = 619;
 sideback = 620;
 special = 80;
@@ -13261,7 +13459,7 @@ playeruse = true;
 linedef
 {
 v1 = 341;
-v2 = 455;
+v2 = 457;
 sidefront = 621;
 blocking = true;
 dontdraw = true;
@@ -13269,8 +13467,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 456;
-v2 = 454;
+v1 = 458;
+v2 = 456;
 sidefront = 622;
 dontpegbottom = true;
 blocking = true;
@@ -13279,8 +13477,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 457;
-v2 = 456;
+v1 = 459;
+v2 = 460;
 sidefront = 623;
 blocking = true;
 dontdraw = true;
@@ -13288,8 +13486,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 455;
-v2 = 458;
+v1 = 461;
+v2 = 462;
 sidefront = 624;
 blocking = true;
 dontdraw = true;
@@ -13306,7 +13504,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 456;
+v1 = 458;
 v2 = 341;
 sidefront = 626;
 sideback = 627;
@@ -13318,8 +13516,8 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 458;
-v2 = 459;
+v1 = 462;
+v2 = 463;
 sidefront = 628;
 blocking = true;
 dontdraw = true;
@@ -13327,8 +13525,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 459;
-v2 = 457;
+v1 = 464;
+v2 = 459;
 sidefront = 629;
 blocking = true;
 dontdraw = true;
@@ -13336,17 +13534,17 @@ dontdraw = true;
 
 linedef
 {
-v1 = 455;
-v2 = 457;
-sidefront = 630;
-sideback = 631;
+v1 = 465;
+v2 = 316;
+sidefront = 634;
+sideback = 630;
 twosided = true;
 }
 
 linedef
 {
-v1 = 453;
-v2 = 460;
+v1 = 455;
+v2 = 466;
 sidefront = 632;
 blocking = true;
 dontdraw = true;
@@ -13354,7 +13552,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 460;
+v1 = 467;
 v2 = 452;
 sidefront = 633;
 blocking = true;
@@ -13363,16 +13561,16 @@ dontdraw = true;
 
 linedef
 {
-v1 = 450;
-v2 = 452;
-sidefront = 634;
-sideback = 635;
+v1 = 319;
+v2 = 465;
+sidefront = 635;
+sideback = 631;
 twosided = true;
 }
 
 linedef
 {
-v1 = 461;
+v1 = 468;
 v2 = 364;
 sidefront = 636;
 sideback = 637;
@@ -13383,7 +13581,7 @@ dontdraw = true;
 linedef
 {
 v1 = 26;
-v2 = 462;
+v2 = 469;
 sidefront = 638;
 sideback = 639;
 twosided = true;
@@ -13392,7 +13590,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 463;
+v1 = 470;
 v2 = 27;
 sidefront = 640;
 blocking = true;
@@ -13400,8 +13598,8 @@ blocking = true;
 
 linedef
 {
-v1 = 462;
-v2 = 461;
+v1 = 469;
+v2 = 468;
 sidefront = 641;
 sideback = 642;
 twosided = true;
@@ -13411,7 +13609,7 @@ dontdraw = true;
 linedef
 {
 v1 = 26;
-v2 = 464;
+v2 = 471;
 sidefront = 643;
 blocking = true;
 }
@@ -13419,7 +13617,7 @@ blocking = true;
 linedef
 {
 v1 = 323;
-v2 = 465;
+v2 = 472;
 sidefront = 644;
 sideback = 645;
 twosided = true;
@@ -13428,8 +13626,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 465;
-v2 = 466;
+v1 = 472;
+v2 = 473;
 sidefront = 646;
 sideback = 647;
 twosided = true;
@@ -13438,8 +13636,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 466;
-v2 = 464;
+v1 = 473;
+v2 = 471;
 sidefront = 648;
 sideback = 649;
 twosided = true;
@@ -13475,7 +13673,7 @@ blocking = true;
 linedef
 {
 v1 = 344;
-v2 = 467;
+v2 = 474;
 sidefront = 655;
 blocking = true;
 playeruse = true;
@@ -13484,8 +13682,8 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 467;
-v2 = 468;
+v1 = 474;
+v2 = 475;
 sidefront = 656;
 blocking = true;
 playeruse = true;
@@ -13494,7 +13692,7 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 468;
+v1 = 475;
 v2 = 337;
 sidefront = 657;
 blocking = true;
@@ -13504,7 +13702,7 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 469;
+v1 = 476;
 v2 = 333;
 sidefront = 658;
 blocking = true;
@@ -13513,7 +13711,7 @@ blocking = true;
 linedef
 {
 v1 = 338;
-v2 = 469;
+v2 = 476;
 sidefront = 659;
 blocking = true;
 }
@@ -13529,7 +13727,7 @@ blocking = true;
 linedef
 {
 v1 = 239;
-v2 = 470;
+v2 = 477;
 sidefront = 661;
 blocking = true;
 }
@@ -13537,7 +13735,7 @@ blocking = true;
 linedef
 {
 v1 = 231;
-v2 = 470;
+v2 = 477;
 sidefront = 662;
 sideback = 663;
 twosided = true;
@@ -13545,7 +13743,7 @@ twosided = true;
 
 linedef
 {
-v1 = 470;
+v1 = 477;
 v2 = 230;
 sidefront = 664;
 blocking = true;
@@ -13553,7 +13751,7 @@ blocking = true;
 
 linedef
 {
-v1 = 471;
+v1 = 478;
 v2 = 40;
 sidefront = 665;
 blocking = true;
@@ -13561,7 +13759,7 @@ blocking = true;
 
 linedef
 {
-v1 = 472;
+v1 = 479;
 v2 = 231;
 sidefront = 666;
 blocking = true;
@@ -13581,8 +13779,8 @@ secret = true;
 
 linedef
 {
-v1 = 473;
-v2 = 474;
+v1 = 480;
+v2 = 481;
 sidefront = 669;
 blocking = true;
 dontdraw = true;
@@ -13590,8 +13788,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 474;
-v2 = 472;
+v1 = 481;
+v2 = 479;
 sidefront = 670;
 blocking = true;
 dontdraw = true;
@@ -13600,7 +13798,7 @@ dontdraw = true;
 linedef
 {
 v1 = 233;
-v2 = 472;
+v2 = 479;
 sidefront = 671;
 sideback = 672;
 twosided = true;
@@ -13610,8 +13808,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 475;
-v2 = 476;
+v1 = 482;
+v2 = 483;
 sidefront = 673;
 blocking = true;
 dontdraw = true;
@@ -13619,8 +13817,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 477;
-v2 = 478;
+v1 = 484;
+v2 = 485;
 sidefront = 674;
 blocking = true;
 dontdraw = true;
@@ -13628,8 +13826,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 479;
-v2 = 480;
+v1 = 486;
+v2 = 487;
 sidefront = 675;
 blocking = true;
 dontdraw = true;
@@ -13637,8 +13835,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 481;
-v2 = 482;
+v1 = 488;
+v2 = 489;
 sidefront = 676;
 blocking = true;
 dontdraw = true;
@@ -13646,8 +13844,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 476;
-v2 = 481;
+v1 = 483;
+v2 = 488;
 sidefront = 677;
 blocking = true;
 dontdraw = true;
@@ -13655,8 +13853,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 478;
-v2 = 475;
+v1 = 485;
+v2 = 482;
 sidefront = 678;
 blocking = true;
 dontdraw = true;
@@ -13664,8 +13862,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 480;
-v2 = 477;
+v1 = 487;
+v2 = 484;
 sidefront = 679;
 blocking = true;
 dontdraw = true;
@@ -13673,8 +13871,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 482;
-v2 = 479;
+v1 = 489;
+v2 = 486;
 sidefront = 680;
 blocking = true;
 dontdraw = true;
@@ -13683,7 +13881,7 @@ dontdraw = true;
 linedef
 {
 v1 = 41;
-v2 = 473;
+v2 = 480;
 sidefront = 681;
 blocking = true;
 dontdraw = true;
@@ -13692,7 +13890,7 @@ dontdraw = true;
 linedef
 {
 v1 = 233;
-v2 = 473;
+v2 = 480;
 sidefront = 682;
 sideback = 683;
 twosided = true;
@@ -13701,7 +13899,7 @@ twosided = true;
 linedef
 {
 v1 = 233;
-v2 = 471;
+v2 = 478;
 sidefront = 684;
 blocking = true;
 dontdraw = true;
@@ -13709,7 +13907,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 483;
+v1 = 490;
 v2 = 225;
 sidefront = 685;
 blocking = true;
@@ -13719,7 +13917,7 @@ dontdraw = true;
 linedef
 {
 v1 = 85;
-v2 = 484;
+v2 = 491;
 sidefront = 686;
 blocking = true;
 dontdraw = true;
@@ -13728,7 +13926,7 @@ dontdraw = true;
 linedef
 {
 v1 = 45;
-v2 = 485;
+v2 = 492;
 sidefront = 687;
 blocking = true;
 dontdraw = true;
@@ -13737,7 +13935,7 @@ dontdraw = true;
 linedef
 {
 v1 = 45;
-v2 = 486;
+v2 = 493;
 sidefront = 688;
 sideback = 689;
 twosided = true;
@@ -13747,8 +13945,8 @@ secret = true;
 
 linedef
 {
-v1 = 484;
-v2 = 487;
+v1 = 491;
+v2 = 494;
 sidefront = 690;
 blocking = true;
 dontdraw = true;
@@ -13756,8 +13954,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 487;
-v2 = 483;
+v1 = 494;
+v2 = 490;
 sidefront = 691;
 blocking = true;
 dontdraw = true;
@@ -13765,7 +13963,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 485;
+v1 = 492;
 v2 = 240;
 sidefront = 692;
 blocking = true;
@@ -13774,7 +13972,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 488;
+v1 = 495;
 v2 = 72;
 sidefront = 693;
 sideback = 694;
@@ -13785,7 +13983,7 @@ blocking = true;
 linedef
 {
 v1 = 203;
-v2 = 489;
+v2 = 496;
 sidefront = 695;
 sideback = 696;
 twosided = true;
@@ -13794,8 +13992,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 489;
-v2 = 490;
+v1 = 496;
+v2 = 497;
 sidefront = 697;
 sideback = 698;
 twosided = true;
@@ -13804,8 +14002,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 490;
-v2 = 491;
+v1 = 497;
+v2 = 498;
 sidefront = 699;
 sideback = 700;
 twosided = true;
@@ -13814,8 +14012,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 491;
-v2 = 492;
+v1 = 498;
+v2 = 499;
 sidefront = 701;
 sideback = 702;
 twosided = true;
@@ -13824,8 +14022,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 492;
-v2 = 493;
+v1 = 499;
+v2 = 500;
 sidefront = 703;
 sideback = 704;
 twosided = true;
@@ -13834,7 +14032,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 493;
+v1 = 500;
 v2 = 88;
 sidefront = 705;
 sideback = 706;
@@ -13854,7 +14052,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 494;
+v1 = 501;
 v2 = 167;
 sidefront = 709;
 sideback = 710;
@@ -13864,15 +14062,15 @@ twosided = true;
 linedef
 {
 v1 = 192;
-v2 = 495;
+v2 = 502;
 sidefront = 711;
 blocking = true;
 }
 
 linedef
 {
-v1 = 496;
-v2 = 497;
+v1 = 503;
+v2 = 504;
 sidefront = 712;
 sideback = 713;
 twosided = true;
@@ -13881,7 +14079,7 @@ twosided = true;
 linedef
 {
 v1 = 368;
-v2 = 463;
+v2 = 470;
 sidefront = 714;
 sideback = 715;
 twosided = true;
@@ -13907,7 +14105,7 @@ blocking = true;
 linedef
 {
 v1 = 161;
-v2 = 498;
+v2 = 505;
 sidefront = 718;
 sideback = 719;
 twosided = true;
@@ -13916,8 +14114,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 498;
-v2 = 499;
+v1 = 505;
+v2 = 506;
 sidefront = 720;
 sideback = 721;
 twosided = true;
@@ -13926,8 +14124,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 499;
-v2 = 500;
+v1 = 506;
+v2 = 507;
 sidefront = 722;
 sideback = 723;
 twosided = true;
@@ -13936,8 +14134,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 500;
-v2 = 501;
+v1 = 507;
+v2 = 508;
 sidefront = 724;
 sideback = 725;
 twosided = true;
@@ -13946,8 +14144,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 501;
-v2 = 502;
+v1 = 508;
+v2 = 509;
 sidefront = 726;
 sideback = 727;
 twosided = true;
@@ -13956,8 +14154,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 502;
-v2 = 503;
+v1 = 509;
+v2 = 510;
 sidefront = 728;
 sideback = 729;
 twosided = true;
@@ -13966,7 +14164,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 503;
+v1 = 510;
 v2 = 191;
 sidefront = 730;
 sideback = 731;
@@ -13977,7 +14175,7 @@ dontdraw = true;
 linedef
 {
 v1 = 307;
-v2 = 504;
+v2 = 511;
 sidefront = 732;
 sideback = 733;
 twosided = true;
@@ -13986,8 +14184,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 504;
-v2 = 505;
+v1 = 511;
+v2 = 512;
 sidefront = 734;
 sideback = 735;
 twosided = true;
@@ -13996,8 +14194,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 505;
-v2 = 506;
+v1 = 512;
+v2 = 513;
 sidefront = 736;
 sideback = 737;
 twosided = true;
@@ -14006,8 +14204,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 506;
-v2 = 507;
+v1 = 513;
+v2 = 514;
 sidefront = 738;
 sideback = 739;
 twosided = true;
@@ -14016,8 +14214,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 507;
-v2 = 508;
+v1 = 514;
+v2 = 515;
 sidefront = 740;
 sideback = 741;
 twosided = true;
@@ -14026,7 +14224,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 508;
+v1 = 515;
 v2 = 304;
 sidefront = 742;
 sideback = 743;
@@ -14037,7 +14235,7 @@ dontdraw = true;
 linedef
 {
 v1 = 304;
-v2 = 509;
+v2 = 516;
 sidefront = 744;
 sideback = 745;
 twosided = true;
@@ -14046,8 +14244,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 509;
-v2 = 510;
+v1 = 516;
+v2 = 517;
 sidefront = 746;
 sideback = 747;
 twosided = true;
@@ -14056,8 +14254,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 510;
-v2 = 511;
+v1 = 517;
+v2 = 518;
 sidefront = 748;
 sideback = 749;
 twosided = true;
@@ -14066,8 +14264,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 511;
-v2 = 512;
+v1 = 518;
+v2 = 519;
 sidefront = 750;
 sideback = 751;
 twosided = true;
@@ -14076,8 +14274,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 512;
-v2 = 513;
+v1 = 519;
+v2 = 520;
 sidefront = 752;
 sideback = 753;
 twosided = true;
@@ -14086,7 +14284,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 513;
+v1 = 520;
 v2 = 307;
 sidefront = 754;
 sideback = 755;
@@ -14144,7 +14342,7 @@ blocking = true;
 
 linedef
 {
-v1 = 514;
+v1 = 521;
 v2 = 362;
 sidefront = 762;
 sideback = 763;
@@ -14155,7 +14353,7 @@ blocking = true;
 linedef
 {
 v1 = 52;
-v2 = 515;
+v2 = 522;
 sidefront = 764;
 sideback = 765;
 twosided = true;
@@ -14164,8 +14362,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 515;
-v2 = 516;
+v1 = 522;
+v2 = 523;
 sidefront = 766;
 sideback = 767;
 twosided = true;
@@ -14174,8 +14372,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 516;
-v2 = 517;
+v1 = 523;
+v2 = 524;
 sidefront = 768;
 sideback = 769;
 twosided = true;
@@ -14184,8 +14382,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 517;
-v2 = 518;
+v1 = 524;
+v2 = 525;
 sidefront = 770;
 sideback = 771;
 twosided = true;
@@ -14194,8 +14392,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 518;
-v2 = 519;
+v1 = 525;
+v2 = 526;
 sidefront = 772;
 sideback = 773;
 twosided = true;
@@ -14204,7 +14402,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 519;
+v1 = 526;
 v2 = 362;
 sidefront = 774;
 sideback = 775;
@@ -14215,7 +14413,7 @@ dontdraw = true;
 linedef
 {
 v1 = 362;
-v2 = 520;
+v2 = 527;
 sidefront = 776;
 sideback = 777;
 twosided = true;
@@ -14224,8 +14422,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 520;
-v2 = 521;
+v1 = 527;
+v2 = 528;
 sidefront = 778;
 sideback = 779;
 twosided = true;
@@ -14234,7 +14432,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 521;
+v1 = 528;
 v2 = 61;
 sidefront = 780;
 sideback = 781;
@@ -14271,14 +14469,14 @@ blocking = true;
 linedef
 {
 v1 = 366;
-v2 = 522;
+v2 = 529;
 sidefront = 786;
 blocking = true;
 }
 
 linedef
 {
-v1 = 522;
+v1 = 529;
 v2 = 127;
 sidefront = 787;
 blocking = true;
@@ -14287,7 +14485,7 @@ blocking = true;
 linedef
 {
 v1 = 356;
-v2 = 523;
+v2 = 530;
 sidefront = 788;
 sideback = 789;
 twosided = true;
@@ -14298,15 +14496,15 @@ repeatspecial = true;
 linedef
 {
 v1 = 133;
-v2 = 524;
+v2 = 531;
 sidefront = 790;
 blocking = true;
 }
 
 linedef
 {
-v1 = 524;
-v2 = 525;
+v1 = 531;
+v2 = 532;
 sidefront = 791;
 special = 74;
 arg0 = 11;
@@ -14317,7 +14515,7 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 525;
+v1 = 532;
 v2 = 366;
 sidefront = 792;
 blocking = true;
@@ -14326,7 +14524,7 @@ blocking = true;
 linedef
 {
 v1 = 132;
-v2 = 522;
+v2 = 529;
 sidefront = 793;
 sideback = 794;
 special = 247;
@@ -14340,7 +14538,7 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 523;
+v1 = 530;
 v2 = 126;
 sidefront = 795;
 blocking = true;
@@ -14349,7 +14547,7 @@ blocking = true;
 linedef
 {
 v1 = 128;
-v2 = 526;
+v2 = 533;
 sidefront = 796;
 blocking = true;
 }
@@ -14357,22 +14555,22 @@ blocking = true;
 linedef
 {
 v1 = 124;
-v2 = 527;
+v2 = 534;
 sidefront = 797;
 blocking = true;
 }
 
 linedef
 {
-v1 = 528;
-v2 = 529;
+v1 = 535;
+v2 = 536;
 sidefront = 798;
 blocking = true;
 }
 
 linedef
 {
-v1 = 530;
+v1 = 537;
 v2 = 320;
 sidefront = 799;
 blocking = true;
@@ -14396,8 +14594,8 @@ blocking = true;
 
 linedef
 {
-v1 = 527;
-v2 = 531;
+v1 = 534;
+v2 = 538;
 sidefront = 802;
 sideback = 803;
 twosided = true;
@@ -14406,16 +14604,16 @@ blocking = true;
 
 linedef
 {
-v1 = 527;
-v2 = 532;
+v1 = 534;
+v2 = 539;
 sidefront = 804;
 blocking = true;
 }
 
 linedef
 {
-v1 = 532;
-v2 = 528;
+v1 = 539;
+v2 = 535;
 sidefront = 805;
 blocking = true;
 }
@@ -14430,7 +14628,7 @@ blocking = true;
 
 linedef
 {
-v1 = 531;
+v1 = 538;
 v2 = 130;
 sidefront = 807;
 blocking = true;
@@ -14438,8 +14636,8 @@ blocking = true;
 
 linedef
 {
-v1 = 529;
-v2 = 531;
+v1 = 536;
+v2 = 538;
 sidefront = 808;
 blocking = true;
 }
@@ -14447,14 +14645,14 @@ blocking = true;
 linedef
 {
 v1 = 131;
-v2 = 533;
+v2 = 540;
 sidefront = 809;
 blocking = true;
 }
 
 linedef
 {
-v1 = 534;
+v1 = 541;
 v2 = 213;
 sidefront = 810;
 blocking = true;
@@ -14462,8 +14660,8 @@ blocking = true;
 
 linedef
 {
-v1 = 533;
-v2 = 534;
+v1 = 540;
+v2 = 541;
 sidefront = 811;
 blocking = true;
 }
@@ -14471,7 +14669,7 @@ blocking = true;
 linedef
 {
 v1 = 326;
-v2 = 535;
+v2 = 542;
 sidefront = 812;
 blocking = true;
 }
@@ -14479,7 +14677,7 @@ blocking = true;
 linedef
 {
 v1 = 104;
-v2 = 536;
+v2 = 543;
 sidefront = 813;
 sideback = 814;
 twosided = true;
@@ -14488,8 +14686,8 @@ blocking = true;
 
 linedef
 {
-v1 = 537;
-v2 = 538;
+v1 = 544;
+v2 = 545;
 sidefront = 815;
 blocking = true;
 }
@@ -14497,63 +14695,63 @@ blocking = true;
 linedef
 {
 v1 = 105;
-v2 = 539;
+v2 = 546;
 sidefront = 816;
 blocking = true;
 }
 
 linedef
 {
-v1 = 539;
-v2 = 540;
+v1 = 546;
+v2 = 547;
 sidefront = 817;
 blocking = true;
 }
 
 linedef
 {
-v1 = 541;
-v2 = 542;
+v1 = 548;
+v2 = 549;
 sidefront = 818;
 blocking = true;
 }
 
 linedef
 {
-v1 = 540;
-v2 = 543;
+v1 = 547;
+v2 = 550;
 sidefront = 819;
 blocking = true;
 }
 
 linedef
 {
-v1 = 543;
-v2 = 544;
+v1 = 550;
+v2 = 551;
 sidefront = 820;
 blocking = true;
 }
 
 linedef
 {
-v1 = 544;
-v2 = 537;
+v1 = 551;
+v2 = 544;
 sidefront = 821;
 blocking = true;
 }
 
 linedef
 {
-v1 = 538;
-v2 = 545;
+v1 = 545;
+v2 = 552;
 sidefront = 822;
 blocking = true;
 }
 
 linedef
 {
-v1 = 546;
-v2 = 538;
+v1 = 553;
+v2 = 554;
 sidefront = 823;
 sideback = 824;
 twosided = true;
@@ -14562,73 +14760,17 @@ blocking = true;
 
 linedef
 {
-v1 = 547;
-v2 = 548;
+v1 = 555;
+v2 = 556;
 sidefront = 825;
 blocking = true;
 }
 
 linedef
 {
-v1 = 545;
-v2 = 549;
-sidefront = 826;
-blocking = true;
-}
-
-linedef
-{
-v1 = 549;
-v2 = 550;
-sidefront = 827;
-blocking = true;
-}
-
-linedef
-{
-v1 = 551;
-v2 = 552;
-sidefront = 828;
-blocking = true;
-}
-
-linedef
-{
-v1 = 550;
-v2 = 553;
-sidefront = 829;
-blocking = true;
-}
-
-linedef
-{
-v1 = 553;
-v2 = 554;
-sidefront = 830;
-blocking = true;
-}
-
-linedef
-{
-v1 = 554;
-v2 = 555;
-sidefront = 831;
-blocking = true;
-}
-
-linedef
-{
-v1 = 555;
-v2 = 556;
-sidefront = 832;
-blocking = true;
-}
-
-linedef
-{
-v1 = 556;
+v1 = 552;
 v2 = 557;
-sidefront = 833;
+sidefront = 826;
 blocking = true;
 }
 
@@ -14636,15 +14778,7 @@ linedef
 {
 v1 = 557;
 v2 = 558;
-sidefront = 834;
-blocking = true;
-}
-
-linedef
-{
-v1 = 558;
-v2 = 559;
-sidefront = 835;
+sidefront = 827;
 blocking = true;
 }
 
@@ -14652,14 +14786,78 @@ linedef
 {
 v1 = 559;
 v2 = 560;
-sidefront = 836;
+sidefront = 828;
+blocking = true;
+}
+
+linedef
+{
+v1 = 558;
+v2 = 561;
+sidefront = 829;
 blocking = true;
 }
 
 linedef
 {
 v1 = 561;
-v2 = 559;
+v2 = 562;
+sidefront = 830;
+blocking = true;
+}
+
+linedef
+{
+v1 = 562;
+v2 = 563;
+sidefront = 831;
+blocking = true;
+}
+
+linedef
+{
+v1 = 563;
+v2 = 564;
+sidefront = 832;
+blocking = true;
+}
+
+linedef
+{
+v1 = 564;
+v2 = 565;
+sidefront = 833;
+blocking = true;
+}
+
+linedef
+{
+v1 = 565;
+v2 = 566;
+sidefront = 834;
+blocking = true;
+}
+
+linedef
+{
+v1 = 566;
+v2 = 567;
+sidefront = 835;
+blocking = true;
+}
+
+linedef
+{
+v1 = 567;
+v2 = 568;
+sidefront = 836;
+blocking = true;
+}
+
+linedef
+{
+v1 = 569;
+v2 = 567;
 sidefront = 837;
 sideback = 838;
 twosided = true;
@@ -14668,65 +14866,9 @@ blocking = true;
 
 linedef
 {
-v1 = 560;
-v2 = 562;
-sidefront = 839;
-blocking = true;
-}
-
-linedef
-{
-v1 = 562;
-v2 = 563;
-sidefront = 840;
-blocking = true;
-}
-
-linedef
-{
-v1 = 563;
-v2 = 564;
-sidefront = 841;
-blocking = true;
-}
-
-linedef
-{
-v1 = 564;
-v2 = 565;
-sidefront = 842;
-blocking = true;
-}
-
-linedef
-{
-v1 = 565;
-v2 = 566;
-sidefront = 843;
-blocking = true;
-}
-
-linedef
-{
-v1 = 567;
-v2 = 568;
-sidefront = 844;
-blocking = true;
-}
-
-linedef
-{
-v1 = 566;
-v2 = 569;
-sidefront = 845;
-blocking = true;
-}
-
-linedef
-{
-v1 = 569;
+v1 = 568;
 v2 = 570;
-sidefront = 846;
+sidefront = 839;
 blocking = true;
 }
 
@@ -14734,7 +14876,7 @@ linedef
 {
 v1 = 570;
 v2 = 571;
-sidefront = 847;
+sidefront = 840;
 blocking = true;
 }
 
@@ -14742,7 +14884,7 @@ linedef
 {
 v1 = 571;
 v2 = 572;
-sidefront = 848;
+sidefront = 841;
 blocking = true;
 }
 
@@ -14750,7 +14892,7 @@ linedef
 {
 v1 = 572;
 v2 = 573;
-sidefront = 849;
+sidefront = 842;
 blocking = true;
 }
 
@@ -14758,23 +14900,7 @@ linedef
 {
 v1 = 573;
 v2 = 574;
-sidefront = 850;
-blocking = true;
-}
-
-linedef
-{
-v1 = 574;
-v2 = 547;
-sidefront = 851;
-blocking = true;
-}
-
-linedef
-{
-v1 = 548;
-v2 = 575;
-sidefront = 852;
+sidefront = 843;
 blocking = true;
 }
 
@@ -14782,7 +14908,15 @@ linedef
 {
 v1 = 575;
 v2 = 576;
-sidefront = 853;
+sidefront = 844;
+blocking = true;
+}
+
+linedef
+{
+v1 = 574;
+v2 = 577;
+sidefront = 845;
 blocking = true;
 }
 
@@ -14790,6 +14924,70 @@ linedef
 {
 v1 = 577;
 v2 = 578;
+sidefront = 846;
+blocking = true;
+}
+
+linedef
+{
+v1 = 578;
+v2 = 579;
+sidefront = 847;
+blocking = true;
+}
+
+linedef
+{
+v1 = 579;
+v2 = 580;
+sidefront = 848;
+blocking = true;
+}
+
+linedef
+{
+v1 = 580;
+v2 = 581;
+sidefront = 849;
+blocking = true;
+}
+
+linedef
+{
+v1 = 581;
+v2 = 582;
+sidefront = 850;
+blocking = true;
+}
+
+linedef
+{
+v1 = 582;
+v2 = 555;
+sidefront = 851;
+blocking = true;
+}
+
+linedef
+{
+v1 = 556;
+v2 = 583;
+sidefront = 852;
+blocking = true;
+}
+
+linedef
+{
+v1 = 583;
+v2 = 584;
+sidefront = 853;
+blocking = true;
+}
+
+linedef
+{
+v1 = 585;
+v2 = 586;
 sidefront = 854;
 blocking = true;
 dontdraw = true;
@@ -14797,16 +14995,16 @@ dontdraw = true;
 
 linedef
 {
-v1 = 579;
-v2 = 580;
+v1 = 587;
+v2 = 588;
 sidefront = 855;
 blocking = true;
 }
 
 linedef
 {
-v1 = 581;
-v2 = 579;
+v1 = 589;
+v2 = 587;
 sidefront = 856;
 sideback = 857;
 twosided = true;
@@ -14815,72 +15013,72 @@ blocking = true;
 
 linedef
 {
-v1 = 580;
-v2 = 582;
+v1 = 588;
+v2 = 590;
 sidefront = 858;
 blocking = true;
 }
 
 linedef
 {
-v1 = 582;
-v2 = 583;
+v1 = 590;
+v2 = 591;
 sidefront = 859;
 blocking = true;
 }
 
 linedef
 {
-v1 = 583;
-v2 = 584;
+v1 = 591;
+v2 = 592;
 sidefront = 860;
 blocking = true;
 }
 
 linedef
 {
-v1 = 584;
-v2 = 585;
+v1 = 592;
+v2 = 593;
 sidefront = 861;
 blocking = true;
 }
 
 linedef
 {
-v1 = 585;
-v2 = 586;
+v1 = 593;
+v2 = 594;
 sidefront = 862;
 blocking = true;
 }
 
 linedef
 {
-v1 = 586;
-v2 = 587;
+v1 = 594;
+v2 = 595;
 sidefront = 863;
 blocking = true;
 }
 
 linedef
 {
-v1 = 587;
-v2 = 588;
+v1 = 595;
+v2 = 596;
 sidefront = 864;
 blocking = true;
 }
 
 linedef
 {
-v1 = 588;
-v2 = 589;
+v1 = 596;
+v2 = 597;
 sidefront = 865;
 blocking = true;
 }
 
 linedef
 {
-v1 = 590;
-v2 = 588;
+v1 = 598;
+v2 = 596;
 sidefront = 866;
 sideback = 867;
 twosided = true;
@@ -14889,31 +15087,31 @@ blocking = true;
 
 linedef
 {
-v1 = 589;
-v2 = 591;
+v1 = 597;
+v2 = 599;
 sidefront = 868;
 blocking = true;
 }
 
 linedef
 {
-v1 = 591;
-v2 = 530;
+v1 = 599;
+v2 = 537;
 sidefront = 869;
 blocking = true;
 }
 
 linedef
 {
-v1 = 552;
-v2 = 592;
+v1 = 560;
+v2 = 600;
 sidefront = 870;
 blocking = true;
 }
 
 linedef
 {
-v1 = 542;
+v1 = 549;
 v2 = 321;
 sidefront = 871;
 blocking = true;
@@ -14921,8 +15119,8 @@ blocking = true;
 
 linedef
 {
-v1 = 535;
-v2 = 551;
+v1 = 542;
+v2 = 559;
 sidefront = 872;
 blocking = true;
 }
@@ -14937,15 +15135,15 @@ blocking = true;
 
 linedef
 {
-v1 = 593;
-v2 = 594;
+v1 = 601;
+v2 = 602;
 sidefront = 874;
 blocking = true;
 }
 
 linedef
 {
-v1 = 595;
+v1 = 603;
 v2 = 129;
 sidefront = 875;
 sideback = 876;
@@ -14955,8 +15153,8 @@ blocking = true;
 
 linedef
 {
-v1 = 596;
-v2 = 595;
+v1 = 604;
+v2 = 603;
 sidefront = 877;
 sideback = 878;
 twosided = true;
@@ -14965,7 +15163,7 @@ blocking = true;
 
 linedef
 {
-v1 = 594;
+v1 = 602;
 v2 = 129;
 sidefront = 879;
 blocking = true;
@@ -14973,81 +15171,9 @@ blocking = true;
 
 linedef
 {
-v1 = 597;
-v2 = 593;
-sidefront = 880;
-blocking = true;
-}
-
-linedef
-{
-v1 = 598;
-v2 = 597;
-sidefront = 881;
-blocking = true;
-}
-
-linedef
-{
-v1 = 592;
-v2 = 541;
-sidefront = 882;
-blocking = true;
-}
-
-linedef
-{
-v1 = 599;
-v2 = 598;
-sidefront = 883;
-blocking = true;
-}
-
-linedef
-{
-v1 = 600;
-v2 = 599;
-sidefront = 884;
-blocking = true;
-}
-
-linedef
-{
-v1 = 601;
-v2 = 600;
-sidefront = 885;
-blocking = true;
-}
-
-linedef
-{
-v1 = 602;
-v2 = 601;
-sidefront = 886;
-blocking = true;
-}
-
-linedef
-{
-v1 = 603;
-v2 = 602;
-sidefront = 887;
-blocking = true;
-}
-
-linedef
-{
-v1 = 604;
-v2 = 603;
-sidefront = 888;
-blocking = true;
-}
-
-linedef
-{
 v1 = 605;
-v2 = 604;
-sidefront = 889;
+v2 = 601;
+sidefront = 880;
 blocking = true;
 }
 
@@ -15055,7 +15181,15 @@ linedef
 {
 v1 = 606;
 v2 = 605;
-sidefront = 890;
+sidefront = 881;
+blocking = true;
+}
+
+linedef
+{
+v1 = 600;
+v2 = 548;
+sidefront = 882;
 blocking = true;
 }
 
@@ -15063,7 +15197,7 @@ linedef
 {
 v1 = 607;
 v2 = 606;
-sidefront = 891;
+sidefront = 883;
 blocking = true;
 }
 
@@ -15071,7 +15205,7 @@ linedef
 {
 v1 = 608;
 v2 = 607;
-sidefront = 892;
+sidefront = 884;
 blocking = true;
 }
 
@@ -15079,7 +15213,7 @@ linedef
 {
 v1 = 609;
 v2 = 608;
-sidefront = 893;
+sidefront = 885;
 blocking = true;
 }
 
@@ -15087,7 +15221,7 @@ linedef
 {
 v1 = 610;
 v2 = 609;
-sidefront = 894;
+sidefront = 886;
 blocking = true;
 }
 
@@ -15095,7 +15229,7 @@ linedef
 {
 v1 = 611;
 v2 = 610;
-sidefront = 895;
+sidefront = 887;
 blocking = true;
 }
 
@@ -15103,14 +15237,78 @@ linedef
 {
 v1 = 612;
 v2 = 611;
-sidefront = 896;
+sidefront = 888;
 blocking = true;
 }
 
 linedef
 {
 v1 = 613;
+v2 = 612;
+sidefront = 889;
+blocking = true;
+}
+
+linedef
+{
+v1 = 614;
+v2 = 613;
+sidefront = 890;
+blocking = true;
+}
+
+linedef
+{
+v1 = 615;
 v2 = 614;
+sidefront = 891;
+blocking = true;
+}
+
+linedef
+{
+v1 = 616;
+v2 = 615;
+sidefront = 892;
+blocking = true;
+}
+
+linedef
+{
+v1 = 617;
+v2 = 616;
+sidefront = 893;
+blocking = true;
+}
+
+linedef
+{
+v1 = 618;
+v2 = 617;
+sidefront = 894;
+blocking = true;
+}
+
+linedef
+{
+v1 = 619;
+v2 = 618;
+sidefront = 895;
+blocking = true;
+}
+
+linedef
+{
+v1 = 620;
+v2 = 619;
+sidefront = 896;
+blocking = true;
+}
+
+linedef
+{
+v1 = 621;
+v2 = 622;
 sidefront = 897;
 blocking = true;
 dontdraw = true;
@@ -15118,16 +15316,16 @@ dontdraw = true;
 
 linedef
 {
-v1 = 615;
-v2 = 612;
+v1 = 623;
+v2 = 624;
 sidefront = 898;
 blocking = true;
 }
 
 linedef
 {
-v1 = 568;
-v2 = 615;
+v1 = 576;
+v2 = 623;
 sidefront = 899;
 blocking = true;
 }
@@ -15135,7 +15333,7 @@ blocking = true;
 linedef
 {
 v1 = 383;
-v2 = 567;
+v2 = 575;
 sidefront = 900;
 blocking = true;
 }
@@ -15158,8 +15356,8 @@ blocking = true;
 
 linedef
 {
-v1 = 616;
-v2 = 617;
+v1 = 625;
+v2 = 626;
 sidefront = 903;
 sideback = 904;
 twosided = true;
@@ -15167,8 +15365,8 @@ twosided = true;
 
 linedef
 {
-v1 = 576;
-v2 = 618;
+v1 = 584;
+v2 = 627;
 sidefront = 905;
 blocking = true;
 dontdraw = true;
@@ -15176,8 +15374,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 576;
-v2 = 579;
+v1 = 584;
+v2 = 587;
 sidefront = 906;
 sideback = 907;
 special = 80;
@@ -15189,8 +15387,8 @@ playeruse = true;
 
 linedef
 {
-v1 = 614;
-v2 = 619;
+v1 = 622;
+v2 = 628;
 sidefront = 908;
 blocking = true;
 dontdraw = true;
@@ -15198,8 +15396,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 619;
-v2 = 618;
+v1 = 628;
+v2 = 627;
 sidefront = 909;
 sideback = 910;
 special = 80;
@@ -15211,8 +15409,8 @@ playeruse = true;
 
 linedef
 {
-v1 = 619;
-v2 = 579;
+v1 = 628;
+v2 = 587;
 sidefront = 911;
 blocking = true;
 dontdraw = true;
@@ -15220,8 +15418,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 618;
-v2 = 620;
+v1 = 627;
+v2 = 629;
 sidefront = 912;
 blocking = true;
 dontdraw = true;
@@ -15229,8 +15427,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 620;
-v2 = 577;
+v1 = 629;
+v2 = 585;
 sidefront = 913;
 blocking = true;
 dontdraw = true;
@@ -15240,8 +15438,8 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 621;
-v2 = 622;
+v1 = 630;
+v2 = 631;
 sidefront = 914;
 blocking = true;
 dontdraw = true;
@@ -15249,8 +15447,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 623;
-v2 = 624;
+v1 = 632;
+v2 = 633;
 sidefront = 915;
 blocking = true;
 dontdraw = true;
@@ -15258,8 +15456,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 625;
-v2 = 626;
+v1 = 634;
+v2 = 635;
 sidefront = 916;
 blocking = true;
 dontdraw = true;
@@ -15267,8 +15465,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 627;
-v2 = 625;
+v1 = 636;
+v2 = 634;
 sidefront = 917;
 blocking = true;
 dontdraw = true;
@@ -15276,8 +15474,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 628;
-v2 = 629;
+v1 = 637;
+v2 = 638;
 sidefront = 918;
 blocking = true;
 dontdraw = true;
@@ -15285,8 +15483,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 630;
-v2 = 631;
+v1 = 639;
+v2 = 640;
 sidefront = 919;
 sideback = 920;
 twosided = true;
@@ -15295,8 +15493,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 632;
-v2 = 633;
+v1 = 641;
+v2 = 642;
 sidefront = 957;
 sideback = 921;
 twosided = true;
@@ -15304,8 +15502,8 @@ twosided = true;
 
 linedef
 {
-v1 = 629;
-v2 = 623;
+v1 = 638;
+v2 = 632;
 sidefront = 923;
 blocking = true;
 dontdraw = true;
@@ -15313,7 +15511,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 622;
+v1 = 631;
 v2 = 12;
 sidefront = 924;
 blocking = true;
@@ -15323,7 +15521,7 @@ dontdraw = true;
 linedef
 {
 v1 = 13;
-v2 = 627;
+v2 = 636;
 sidefront = 925;
 blocking = true;
 dontdraw = true;
@@ -15331,8 +15529,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 626;
-v2 = 634;
+v1 = 635;
+v2 = 643;
 sidefront = 926;
 blocking = true;
 dontdraw = true;
@@ -15340,8 +15538,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 634;
-v2 = 635;
+v1 = 643;
+v2 = 644;
 sidefront = 927;
 blocking = true;
 dontdraw = true;
@@ -15349,8 +15547,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 635;
-v2 = 636;
+v1 = 645;
+v2 = 646;
 sidefront = 928;
 blocking = true;
 dontdraw = true;
@@ -15358,8 +15556,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 636;
-v2 = 637;
+v1 = 646;
+v2 = 647;
 sidefront = 929;
 blocking = true;
 dontdraw = true;
@@ -15367,8 +15565,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 637;
-v2 = 638;
+v1 = 647;
+v2 = 648;
 sidefront = 930;
 blocking = true;
 dontdraw = true;
@@ -15376,8 +15574,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 638;
-v2 = 639;
+v1 = 648;
+v2 = 649;
 sidefront = 931;
 blocking = true;
 dontdraw = true;
@@ -15385,8 +15583,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 639;
-v2 = 640;
+v1 = 649;
+v2 = 650;
 sidefront = 932;
 blocking = true;
 dontdraw = true;
@@ -15394,8 +15592,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 641;
-v2 = 642;
+v1 = 651;
+v2 = 652;
 sidefront = 933;
 blocking = true;
 dontdraw = true;
@@ -15403,8 +15601,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 642;
-v2 = 643;
+v1 = 652;
+v2 = 653;
 sidefront = 934;
 blocking = true;
 dontdraw = true;
@@ -15412,8 +15610,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 644;
-v2 = 645;
+v1 = 654;
+v2 = 655;
 sidefront = 1275;
 sideback = 944;
 twosided = true;
@@ -15421,8 +15619,8 @@ twosided = true;
 
 linedef
 {
-v1 = 643;
-v2 = 646;
+v1 = 653;
+v2 = 656;
 sidefront = 936;
 blocking = true;
 dontdraw = true;
@@ -15430,7 +15628,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 646;
+v1 = 656;
 v2 = 18;
 sidefront = 937;
 blocking = true;
@@ -15440,7 +15638,7 @@ dontdraw = true;
 linedef
 {
 v1 = 18;
-v2 = 647;
+v2 = 657;
 sidefront = 938;
 blocking = true;
 dontdraw = true;
@@ -15448,8 +15646,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 647;
-v2 = 648;
+v1 = 657;
+v2 = 658;
 sidefront = 939;
 blocking = true;
 dontdraw = true;
@@ -15457,8 +15655,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 648;
-v2 = 633;
+v1 = 658;
+v2 = 642;
 sidefront = 940;
 blocking = true;
 dontdraw = true;
@@ -15466,8 +15664,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 633;
-v2 = 649;
+v1 = 642;
+v2 = 659;
 sidefront = 941;
 blocking = true;
 dontdraw = true;
@@ -15475,8 +15673,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 649;
-v2 = 650;
+v1 = 659;
+v2 = 660;
 sidefront = 942;
 blocking = true;
 dontdraw = true;
@@ -15484,8 +15682,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 650;
-v2 = 628;
+v1 = 660;
+v2 = 637;
 sidefront = 943;
 blocking = true;
 dontdraw = true;
@@ -15493,8 +15691,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 651;
-v2 = 644;
+v1 = 661;
+v2 = 654;
 sidefront = 1285;
 sideback = 935;
 twosided = true;
@@ -15502,8 +15700,8 @@ twosided = true;
 
 linedef
 {
-v1 = 578;
-v2 = 652;
+v1 = 586;
+v2 = 662;
 sidefront = 945;
 sideback = 946;
 special = 80;
@@ -15517,8 +15715,8 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 624;
-v2 = 652;
+v1 = 633;
+v2 = 662;
 sidefront = 947;
 dontpegbottom = true;
 blocking = true;
@@ -15527,8 +15725,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 624;
-v2 = 653;
+v1 = 633;
+v2 = 663;
 sidefront = 948;
 sideback = 949;
 id = 9;
@@ -15538,7 +15736,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 578;
+v1 = 586;
 v2 = 16;
 sidefront = 950;
 dontpegbottom = true;
@@ -15549,7 +15747,7 @@ dontdraw = true;
 linedef
 {
 v1 = 16;
-v2 = 621;
+v2 = 630;
 sidefront = 951;
 blocking = true;
 dontdraw = true;
@@ -15557,8 +15755,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 652;
-v2 = 613;
+v1 = 662;
+v2 = 621;
 sidefront = 952;
 blocking = true;
 dontdraw = true;
@@ -15566,8 +15764,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 654;
-v2 = 629;
+v1 = 664;
+v2 = 638;
 sidefront = 953;
 sideback = 954;
 twosided = true;
@@ -15575,8 +15773,8 @@ twosided = true;
 
 linedef
 {
-v1 = 648;
-v2 = 655;
+v1 = 658;
+v2 = 665;
 sidefront = 956;
 sideback = 30;
 twosided = true;
@@ -15584,8 +15782,8 @@ twosided = true;
 
 linedef
 {
-v1 = 650;
-v2 = 656;
+v1 = 660;
+v2 = 666;
 sidefront = 958;
 sideback = 922;
 twosided = true;
@@ -15593,7 +15791,7 @@ twosided = true;
 
 linedef
 {
-v1 = 653;
+v1 = 663;
 v2 = 15;
 sidefront = 959;
 sideback = 960;
@@ -15608,8 +15806,8 @@ repeatspecial = true;
 
 linedef
 {
-v1 = 657;
-v2 = 658;
+v1 = 667;
+v2 = 668;
 sidefront = 961;
 sideback = 962;
 twosided = true;
@@ -15617,8 +15815,8 @@ twosided = true;
 
 linedef
 {
-v1 = 659;
-v2 = 660;
+v1 = 669;
+v2 = 670;
 sidefront = 963;
 sideback = 964;
 twosided = true;
@@ -15627,8 +15825,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 660;
-v2 = 661;
+v1 = 670;
+v2 = 671;
 sidefront = 965;
 sideback = 966;
 twosided = true;
@@ -15637,8 +15835,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 661;
-v2 = 662;
+v1 = 671;
+v2 = 672;
 sidefront = 967;
 sideback = 968;
 twosided = true;
@@ -15647,8 +15845,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 662;
-v2 = 663;
+v1 = 672;
+v2 = 673;
 sidefront = 969;
 sideback = 970;
 twosided = true;
@@ -15657,8 +15855,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 664;
-v2 = 665;
+v1 = 674;
+v2 = 675;
 sidefront = 971;
 sideback = 972;
 twosided = true;
@@ -15667,8 +15865,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 665;
-v2 = 666;
+v1 = 675;
+v2 = 676;
 sidefront = 973;
 sideback = 974;
 twosided = true;
@@ -15677,8 +15875,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 667;
-v2 = 668;
+v1 = 677;
+v2 = 678;
 sidefront = 975;
 sideback = 976;
 twosided = true;
@@ -15687,8 +15885,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 668;
-v2 = 669;
+v1 = 678;
+v2 = 679;
 sidefront = 977;
 sideback = 978;
 twosided = true;
@@ -15697,8 +15895,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 669;
-v2 = 670;
+v1 = 679;
+v2 = 680;
 sidefront = 979;
 sideback = 980;
 twosided = true;
@@ -15707,8 +15905,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 670;
-v2 = 659;
+v1 = 680;
+v2 = 669;
 sidefront = 981;
 sideback = 982;
 twosided = true;
@@ -15726,8 +15924,8 @@ twosided = true;
 
 linedef
 {
-v1 = 671;
-v2 = 672;
+v1 = 681;
+v2 = 682;
 sidefront = 990;
 sideback = 988;
 twosided = true;
@@ -15735,7 +15933,7 @@ twosided = true;
 
 linedef
 {
-v1 = 672;
+v1 = 682;
 v2 = 42;
 sidefront = 989;
 sideback = 985;
@@ -15744,8 +15942,8 @@ twosided = true;
 
 linedef
 {
-v1 = 673;
-v2 = 671;
+v1 = 683;
+v2 = 681;
 sidefront = 1301;
 sideback = 987;
 twosided = true;
@@ -15761,8 +15959,8 @@ blocking = true;
 
 linedef
 {
-v1 = 674;
-v2 = 675;
+v1 = 684;
+v2 = 685;
 sidefront = 992;
 sideback = 993;
 twosided = true;
@@ -15778,7 +15976,7 @@ blocking = true;
 
 linedef
 {
-v1 = 676;
+v1 = 686;
 v2 = 272;
 sidefront = 995;
 blocking = true;
@@ -15787,7 +15985,7 @@ blocking = true;
 linedef
 {
 v1 = 274;
-v2 = 676;
+v2 = 686;
 sidefront = 996;
 blocking = true;
 }
@@ -15802,7 +16000,7 @@ blocking = true;
 
 linedef
 {
-v1 = 677;
+v1 = 687;
 v2 = 243;
 sidefront = 998;
 sideback = 999;
@@ -15821,7 +16019,7 @@ twosided = true;
 linedef
 {
 v1 = 265;
-v2 = 678;
+v2 = 688;
 sidefront = 1002;
 sideback = 1003;
 twosided = true;
@@ -15838,7 +16036,7 @@ blocking = true;
 linedef
 {
 v1 = 171;
-v2 = 523;
+v2 = 530;
 sidefront = 1005;
 blocking = true;
 }
@@ -15846,7 +16044,7 @@ blocking = true;
 linedef
 {
 v1 = 357;
-v2 = 494;
+v2 = 501;
 sidefront = 1006;
 sideback = 1007;
 twosided = true;
@@ -15854,8 +16052,8 @@ twosided = true;
 
 linedef
 {
-v1 = 679;
-v2 = 680;
+v1 = 689;
+v2 = 690;
 sidefront = 1008;
 sideback = 1151;
 twosided = true;
@@ -15863,8 +16061,8 @@ twosided = true;
 
 linedef
 {
-v1 = 681;
-v2 = 682;
+v1 = 691;
+v2 = 692;
 sidefront = 1010;
 sideback = 1011;
 twosided = true;
@@ -15872,8 +16070,8 @@ twosided = true;
 
 linedef
 {
-v1 = 683;
-v2 = 684;
+v1 = 693;
+v2 = 694;
 sidefront = 1016;
 sideback = 1014;
 twosided = true;
@@ -15881,8 +16079,8 @@ twosided = true;
 
 linedef
 {
-v1 = 685;
-v2 = 686;
+v1 = 695;
+v2 = 696;
 sidefront = 1012;
 sideback = 1018;
 twosided = true;
@@ -15890,8 +16088,8 @@ twosided = true;
 
 linedef
 {
-v1 = 686;
-v2 = 683;
+v1 = 696;
+v2 = 693;
 sidefront = 1017;
 sideback = 1019;
 twosided = true;
@@ -15899,8 +16097,8 @@ twosided = true;
 
 linedef
 {
-v1 = 684;
-v2 = 685;
+v1 = 694;
+v2 = 695;
 sidefront = 1013;
 sideback = 1015;
 twosided = true;
@@ -15908,8 +16106,8 @@ twosided = true;
 
 linedef
 {
-v1 = 687;
-v2 = 688;
+v1 = 697;
+v2 = 698;
 sidefront = 1021;
 sideback = 1150;
 twosided = true;
@@ -15917,8 +16115,8 @@ twosided = true;
 
 linedef
 {
-v1 = 684;
-v2 = 689;
+v1 = 694;
+v2 = 699;
 sidefront = 1023;
 sideback = 1024;
 twosided = true;
@@ -15926,8 +16124,8 @@ twosided = true;
 
 linedef
 {
-v1 = 689;
-v2 = 690;
+v1 = 699;
+v2 = 700;
 sidefront = 1022;
 sideback = 1026;
 twosided = true;
@@ -15935,8 +16133,8 @@ twosided = true;
 
 linedef
 {
-v1 = 690;
-v2 = 685;
+v1 = 700;
+v2 = 695;
 sidefront = 1025;
 sideback = 1027;
 twosided = true;
@@ -15944,8 +16142,8 @@ twosided = true;
 
 linedef
 {
-v1 = 691;
-v2 = 692;
+v1 = 701;
+v2 = 702;
 sidefront = 1028;
 sideback = 1029;
 twosided = true;
@@ -15953,7 +16151,7 @@ twosided = true;
 
 linedef
 {
-v1 = 693;
+v1 = 703;
 v2 = 175;
 sidefront = 1030;
 blocking = true;
@@ -15970,7 +16168,7 @@ twosided = true;
 
 linedef
 {
-v1 = 686;
+v1 = 696;
 v2 = 217;
 sidefront = 1170;
 sideback = 1033;
@@ -15979,8 +16177,8 @@ twosided = true;
 
 linedef
 {
-v1 = 694;
-v2 = 695;
+v1 = 704;
+v2 = 705;
 sidefront = 1035;
 sideback = 1036;
 twosided = true;
@@ -15988,8 +16186,8 @@ twosided = true;
 
 linedef
 {
-v1 = 696;
-v2 = 697;
+v1 = 706;
+v2 = 707;
 sidefront = 1037;
 sideback = 1038;
 twosided = true;
@@ -15997,8 +16195,8 @@ twosided = true;
 
 linedef
 {
-v1 = 698;
-v2 = 699;
+v1 = 708;
+v2 = 709;
 sidefront = 1039;
 sideback = 1040;
 twosided = true;
@@ -16006,8 +16204,8 @@ twosided = true;
 
 linedef
 {
-v1 = 700;
-v2 = 701;
+v1 = 710;
+v2 = 711;
 sidefront = 1041;
 sideback = 1042;
 twosided = true;
@@ -16015,8 +16213,8 @@ twosided = true;
 
 linedef
 {
-v1 = 702;
-v2 = 703;
+v1 = 712;
+v2 = 713;
 sidefront = 1043;
 sideback = 1044;
 twosided = true;
@@ -16024,8 +16222,8 @@ twosided = true;
 
 linedef
 {
-v1 = 704;
-v2 = 705;
+v1 = 714;
+v2 = 715;
 sidefront = 1045;
 sideback = 1046;
 twosided = true;
@@ -16033,8 +16231,8 @@ twosided = true;
 
 linedef
 {
-v1 = 706;
-v2 = 707;
+v1 = 716;
+v2 = 717;
 sidefront = 1047;
 sideback = 1048;
 twosided = true;
@@ -16042,16 +16240,16 @@ twosided = true;
 
 linedef
 {
-v1 = 708;
-v2 = 709;
+v1 = 718;
+v2 = 719;
 sidefront = 1049;
 blocking = true;
 }
 
 linedef
 {
-v1 = 710;
-v2 = 708;
+v1 = 720;
+v2 = 718;
 sidefront = 1050;
 blocking = true;
 }
@@ -16059,14 +16257,14 @@ blocking = true;
 linedef
 {
 v1 = 24;
-v2 = 711;
+v2 = 721;
 sidefront = 1051;
 blocking = true;
 }
 
 linedef
 {
-v1 = 709;
+v1 = 719;
 v2 = 19;
 sidefront = 1052;
 blocking = true;
@@ -16074,16 +16272,16 @@ blocking = true;
 
 linedef
 {
-v1 = 711;
-v2 = 710;
+v1 = 721;
+v2 = 720;
 sidefront = 1053;
 blocking = true;
 }
 
 linedef
 {
-v1 = 709;
-v2 = 711;
+v1 = 719;
+v2 = 721;
 sidefront = 1054;
 sideback = 1055;
 twosided = true;
@@ -16093,14 +16291,14 @@ dontdraw = true;
 linedef
 {
 v1 = 20;
-v2 = 712;
+v2 = 722;
 sidefront = 1056;
 blocking = true;
 }
 
 linedef
 {
-v1 = 713;
+v1 = 723;
 v2 = 24;
 sidefront = 1057;
 blocking = true;
@@ -16109,7 +16307,7 @@ blocking = true;
 linedef
 {
 v1 = 20;
-v2 = 713;
+v2 = 723;
 sidefront = 1058;
 sideback = 1059;
 twosided = true;
@@ -16118,23 +16316,23 @@ dontdraw = true;
 
 linedef
 {
-v1 = 712;
-v2 = 463;
+v1 = 722;
+v2 = 470;
 sidefront = 1060;
 blocking = true;
 }
 
 linedef
 {
-v1 = 464;
-v2 = 713;
+v1 = 471;
+v2 = 723;
 sidefront = 1061;
 blocking = true;
 }
 
 linedef
 {
-v1 = 712;
+v1 = 722;
 v2 = 322;
 sidefront = 1062;
 sideback = 1063;
@@ -16144,8 +16342,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 714;
-v2 = 715;
+v1 = 724;
+v2 = 725;
 sidefront = 1064;
 sideback = 1065;
 special = 80;
@@ -16158,8 +16356,8 @@ playercross = true;
 
 linedef
 {
-v1 = 716;
-v2 = 717;
+v1 = 726;
+v2 = 727;
 sidefront = 1066;
 sideback = 1067;
 special = 80;
@@ -16172,8 +16370,8 @@ playercross = true;
 
 linedef
 {
-v1 = 718;
-v2 = 719;
+v1 = 728;
+v2 = 729;
 sidefront = 1068;
 sideback = 1069;
 twosided = true;
@@ -16181,8 +16379,8 @@ twosided = true;
 
 linedef
 {
-v1 = 720;
-v2 = 721;
+v1 = 730;
+v2 = 731;
 sidefront = 1070;
 sideback = 1071;
 twosided = true;
@@ -16191,8 +16389,8 @@ secret = true;
 
 linedef
 {
-v1 = 722;
-v2 = 723;
+v1 = 732;
+v2 = 733;
 sidefront = 1072;
 sideback = 1073;
 twosided = true;
@@ -16200,8 +16398,8 @@ twosided = true;
 
 linedef
 {
-v1 = 724;
-v2 = 725;
+v1 = 734;
+v2 = 735;
 sidefront = 1074;
 sideback = 1075;
 twosided = true;
@@ -16209,8 +16407,8 @@ twosided = true;
 
 linedef
 {
-v1 = 726;
-v2 = 727;
+v1 = 736;
+v2 = 737;
 sidefront = 1076;
 sideback = 1077;
 twosided = true;
@@ -16218,8 +16416,8 @@ twosided = true;
 
 linedef
 {
-v1 = 728;
-v2 = 729;
+v1 = 738;
+v2 = 739;
 sidefront = 1078;
 sideback = 1079;
 twosided = true;
@@ -16227,8 +16425,8 @@ twosided = true;
 
 linedef
 {
-v1 = 730;
-v2 = 731;
+v1 = 740;
+v2 = 741;
 sidefront = 1080;
 sideback = 1081;
 twosided = true;
@@ -16236,8 +16434,8 @@ twosided = true;
 
 linedef
 {
-v1 = 732;
-v2 = 733;
+v1 = 742;
+v2 = 743;
 sidefront = 1082;
 sideback = 1083;
 twosided = true;
@@ -16245,8 +16443,8 @@ twosided = true;
 
 linedef
 {
-v1 = 734;
-v2 = 735;
+v1 = 744;
+v2 = 745;
 sidefront = 1084;
 sideback = 1088;
 twosided = true;
@@ -16254,8 +16452,8 @@ twosided = true;
 
 linedef
 {
-v1 = 735;
-v2 = 736;
+v1 = 745;
+v2 = 746;
 sidefront = 1085;
 sideback = 1091;
 twosided = true;
@@ -16263,8 +16461,8 @@ twosided = true;
 
 linedef
 {
-v1 = 736;
-v2 = 737;
+v1 = 746;
+v2 = 747;
 sidefront = 1086;
 sideback = 1090;
 twosided = true;
@@ -16272,8 +16470,8 @@ twosided = true;
 
 linedef
 {
-v1 = 737;
-v2 = 734;
+v1 = 747;
+v2 = 744;
 sidefront = 1087;
 sideback = 1089;
 twosided = true;
@@ -16281,8 +16479,8 @@ twosided = true;
 
 linedef
 {
-v1 = 738;
-v2 = 739;
+v1 = 748;
+v2 = 749;
 sidefront = 1092;
 sideback = 1095;
 twosided = true;
@@ -16290,7 +16488,7 @@ twosided = true;
 
 linedef
 {
-v1 = 739;
+v1 = 749;
 v2 = 73;
 sidefront = 1093;
 sideback = 1097;
@@ -16300,7 +16498,7 @@ twosided = true;
 linedef
 {
 v1 = 82;
-v2 = 738;
+v2 = 748;
 sidefront = 1094;
 sideback = 1096;
 twosided = true;
@@ -16309,7 +16507,7 @@ twosided = true;
 linedef
 {
 v1 = 235;
-v2 = 740;
+v2 = 750;
 sidefront = 1098;
 sideback = 1101;
 twosided = true;
@@ -16317,8 +16515,8 @@ twosided = true;
 
 linedef
 {
-v1 = 740;
-v2 = 741;
+v1 = 750;
+v2 = 751;
 sidefront = 1099;
 sideback = 1103;
 twosided = true;
@@ -16326,7 +16524,7 @@ twosided = true;
 
 linedef
 {
-v1 = 741;
+v1 = 751;
 v2 = 238;
 sidefront = 1100;
 sideback = 1102;
@@ -16335,8 +16533,8 @@ twosided = true;
 
 linedef
 {
-v1 = 742;
-v2 = 743;
+v1 = 752;
+v2 = 753;
 sidefront = 1104;
 sideback = 1108;
 twosided = true;
@@ -16344,8 +16542,8 @@ twosided = true;
 
 linedef
 {
-v1 = 743;
-v2 = 744;
+v1 = 753;
+v2 = 754;
 sidefront = 1105;
 sideback = 1111;
 twosided = true;
@@ -16353,8 +16551,8 @@ twosided = true;
 
 linedef
 {
-v1 = 744;
-v2 = 745;
+v1 = 754;
+v2 = 755;
 sidefront = 1106;
 sideback = 1110;
 twosided = true;
@@ -16362,8 +16560,8 @@ twosided = true;
 
 linedef
 {
-v1 = 745;
-v2 = 742;
+v1 = 755;
+v2 = 752;
 sidefront = 1107;
 sideback = 1109;
 twosided = true;
@@ -16371,8 +16569,8 @@ twosided = true;
 
 linedef
 {
-v1 = 746;
-v2 = 747;
+v1 = 756;
+v2 = 757;
 sidefront = 1112;
 sideback = 1116;
 twosided = true;
@@ -16380,8 +16578,8 @@ twosided = true;
 
 linedef
 {
-v1 = 747;
-v2 = 748;
+v1 = 757;
+v2 = 758;
 sidefront = 1113;
 sideback = 1119;
 twosided = true;
@@ -16389,7 +16587,7 @@ twosided = true;
 
 linedef
 {
-v1 = 748;
+v1 = 758;
 v2 = 305;
 sidefront = 1114;
 sideback = 1118;
@@ -16399,7 +16597,7 @@ twosided = true;
 linedef
 {
 v1 = 305;
-v2 = 746;
+v2 = 756;
 sidefront = 1115;
 sideback = 1117;
 twosided = true;
@@ -16407,8 +16605,8 @@ twosided = true;
 
 linedef
 {
-v1 = 749;
-v2 = 750;
+v1 = 759;
+v2 = 760;
 sidefront = 1120;
 sideback = 1124;
 twosided = true;
@@ -16416,8 +16614,8 @@ twosided = true;
 
 linedef
 {
-v1 = 750;
-v2 = 751;
+v1 = 760;
+v2 = 761;
 sidefront = 1121;
 sideback = 1127;
 twosided = true;
@@ -16425,8 +16623,8 @@ twosided = true;
 
 linedef
 {
-v1 = 751;
-v2 = 752;
+v1 = 761;
+v2 = 762;
 sidefront = 1122;
 sideback = 1126;
 twosided = true;
@@ -16434,8 +16632,8 @@ twosided = true;
 
 linedef
 {
-v1 = 752;
-v2 = 749;
+v1 = 762;
+v2 = 759;
 sidefront = 1123;
 sideback = 1125;
 twosided = true;
@@ -16443,8 +16641,8 @@ twosided = true;
 
 linedef
 {
-v1 = 753;
-v2 = 754;
+v1 = 763;
+v2 = 764;
 sidefront = 1128;
 sideback = 1132;
 twosided = true;
@@ -16452,8 +16650,8 @@ twosided = true;
 
 linedef
 {
-v1 = 754;
-v2 = 755;
+v1 = 764;
+v2 = 765;
 sidefront = 1129;
 sideback = 1135;
 twosided = true;
@@ -16461,8 +16659,8 @@ twosided = true;
 
 linedef
 {
-v1 = 755;
-v2 = 756;
+v1 = 765;
+v2 = 766;
 sidefront = 1130;
 sideback = 1134;
 twosided = true;
@@ -16470,8 +16668,8 @@ twosided = true;
 
 linedef
 {
-v1 = 756;
-v2 = 753;
+v1 = 766;
+v2 = 763;
 sidefront = 1131;
 sideback = 1133;
 twosided = true;
@@ -16479,8 +16677,8 @@ twosided = true;
 
 linedef
 {
-v1 = 757;
-v2 = 758;
+v1 = 767;
+v2 = 768;
 sidefront = 1136;
 sideback = 1140;
 twosided = true;
@@ -16488,8 +16686,8 @@ twosided = true;
 
 linedef
 {
-v1 = 758;
-v2 = 759;
+v1 = 768;
+v2 = 769;
 sidefront = 1137;
 sideback = 1143;
 twosided = true;
@@ -16497,8 +16695,8 @@ twosided = true;
 
 linedef
 {
-v1 = 759;
-v2 = 760;
+v1 = 769;
+v2 = 770;
 sidefront = 1138;
 sideback = 1142;
 twosided = true;
@@ -16506,8 +16704,8 @@ twosided = true;
 
 linedef
 {
-v1 = 760;
-v2 = 757;
+v1 = 770;
+v2 = 767;
 sidefront = 1139;
 sideback = 1141;
 twosided = true;
@@ -16515,8 +16713,8 @@ twosided = true;
 
 linedef
 {
-v1 = 666;
-v2 = 667;
+v1 = 676;
+v2 = 677;
 sidefront = 1144;
 sideback = 1145;
 twosided = true;
@@ -16525,8 +16723,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 688;
-v2 = 666;
+v1 = 698;
+v2 = 676;
 sidefront = 1154;
 sideback = 1149;
 twosided = true;
@@ -16534,8 +16732,8 @@ twosided = true;
 
 linedef
 {
-v1 = 663;
-v2 = 664;
+v1 = 673;
+v2 = 674;
 sidefront = 1146;
 sideback = 1147;
 twosided = true;
@@ -16544,8 +16742,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 666;
-v2 = 663;
+v1 = 676;
+v2 = 673;
 sidefront = 1020;
 sideback = 1148;
 twosided = true;
@@ -16553,8 +16751,8 @@ twosided = true;
 
 linedef
 {
-v1 = 663;
-v2 = 761;
+v1 = 673;
+v2 = 771;
 sidefront = 1155;
 sideback = 1153;
 twosided = true;
@@ -16562,8 +16760,8 @@ twosided = true;
 
 linedef
 {
-v1 = 761;
-v2 = 679;
+v1 = 771;
+v2 = 689;
 sidefront = 1009;
 sideback = 1152;
 twosided = true;
@@ -16571,7 +16769,7 @@ twosided = true;
 
 linedef
 {
-v1 = 684;
+v1 = 694;
 v2 = 188;
 sidefront = 1156;
 sideback = 1158;
@@ -16581,7 +16779,7 @@ twosided = true;
 linedef
 {
 v1 = 164;
-v2 = 689;
+v2 = 699;
 sidefront = 1157;
 sideback = 1159;
 twosided = true;
@@ -16589,7 +16787,7 @@ twosided = true;
 
 linedef
 {
-v1 = 690;
+v1 = 700;
 v2 = 165;
 sidefront = 1160;
 sideback = 1161;
@@ -16598,7 +16796,7 @@ twosided = true;
 
 linedef
 {
-v1 = 689;
+v1 = 699;
 v2 = 169;
 sidefront = 1162;
 sideback = 1163;
@@ -16615,7 +16813,7 @@ blocking = true;
 
 linedef
 {
-v1 = 495;
+v1 = 502;
 v2 = 165;
 sidefront = 1165;
 blocking = true;
@@ -16624,7 +16822,7 @@ blocking = true;
 linedef
 {
 v1 = 170;
-v2 = 495;
+v2 = 502;
 sidefront = 1166;
 sideback = 1167;
 twosided = true;
@@ -16642,7 +16840,7 @@ twosided = true;
 linedef
 {
 v1 = 58;
-v2 = 683;
+v2 = 693;
 sidefront = 1169;
 sideback = 1034;
 twosided = true;
@@ -16650,7 +16848,7 @@ twosided = true;
 
 linedef
 {
-v1 = 686;
+v1 = 696;
 v2 = 186;
 sidefront = 1172;
 sideback = 1173;
@@ -16660,7 +16858,7 @@ twosided = true;
 linedef
 {
 v1 = 166;
-v2 = 690;
+v2 = 700;
 sidefront = 1174;
 sideback = 1175;
 twosided = true;
@@ -16669,7 +16867,7 @@ twosided = true;
 linedef
 {
 v1 = 177;
-v2 = 693;
+v2 = 703;
 sidefront = 1176;
 blocking = true;
 }
@@ -16677,7 +16875,7 @@ blocking = true;
 linedef
 {
 v1 = 176;
-v2 = 685;
+v2 = 695;
 sidefront = 1177;
 sideback = 1179;
 twosided = true;
@@ -16702,7 +16900,7 @@ blocking = true;
 
 linedef
 {
-v1 = 762;
+v1 = 772;
 v2 = 162;
 sidefront = 1182;
 sideback = 1184;
@@ -16712,7 +16910,7 @@ twosided = true;
 linedef
 {
 v1 = 160;
-v2 = 762;
+v2 = 772;
 sidefront = 1183;
 sideback = 1185;
 twosided = true;
@@ -16729,7 +16927,7 @@ blocking = true;
 linedef
 {
 v1 = 161;
-v2 = 762;
+v2 = 772;
 sidefront = 1189;
 sideback = 1192;
 twosided = true;
@@ -16737,8 +16935,8 @@ twosided = true;
 
 linedef
 {
-v1 = 682;
-v2 = 763;
+v1 = 692;
+v2 = 773;
 sidefront = 1187;
 sideback = 1188;
 twosided = true;
@@ -16746,8 +16944,8 @@ twosided = true;
 
 linedef
 {
-v1 = 762;
-v2 = 682;
+v1 = 772;
+v2 = 692;
 sidefront = 1190;
 sideback = 1193;
 twosided = true;
@@ -16755,7 +16953,7 @@ twosided = true;
 
 linedef
 {
-v1 = 682;
+v1 = 692;
 v2 = 227;
 sidefront = 1191;
 sideback = 1194;
@@ -16765,7 +16963,7 @@ twosided = true;
 linedef
 {
 v1 = 95;
-v2 = 758;
+v2 = 768;
 sidefront = 1195;
 sideback = 1197;
 twosided = true;
@@ -16773,7 +16971,7 @@ twosided = true;
 
 linedef
 {
-v1 = 758;
+v1 = 768;
 v2 = 204;
 sidefront = 1196;
 sideback = 1198;
@@ -16783,7 +16981,7 @@ twosided = true;
 linedef
 {
 v1 = 90;
-v2 = 757;
+v2 = 767;
 sidefront = 1199;
 sideback = 1201;
 twosided = true;
@@ -16791,7 +16989,7 @@ twosided = true;
 
 linedef
 {
-v1 = 757;
+v1 = 767;
 v2 = 114;
 sidefront = 1200;
 sideback = 1202;
@@ -16800,8 +16998,8 @@ twosided = true;
 
 linedef
 {
-v1 = 764;
-v2 = 654;
+v1 = 774;
+v2 = 664;
 sidefront = 1203;
 sideback = 1204;
 twosided = true;
@@ -16810,8 +17008,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 656;
-v2 = 764;
+v1 = 666;
+v2 = 774;
 sidefront = 1213;
 sideback = 1210;
 twosided = true;
@@ -16819,8 +17017,8 @@ twosided = true;
 
 linedef
 {
-v1 = 764;
-v2 = 765;
+v1 = 774;
+v2 = 775;
 sidefront = 1216;
 sideback = 1209;
 twosided = true;
@@ -16828,8 +17026,8 @@ twosided = true;
 
 linedef
 {
-v1 = 765;
-v2 = 645;
+v1 = 775;
+v2 = 655;
 sidefront = 1217;
 sideback = 1208;
 twosided = true;
@@ -16837,8 +17035,8 @@ twosided = true;
 
 linedef
 {
-v1 = 766;
-v2 = 764;
+v1 = 776;
+v2 = 774;
 sidefront = 1205;
 sideback = 1206;
 twosided = true;
@@ -16847,8 +17045,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 645;
-v2 = 766;
+v1 = 655;
+v2 = 776;
 sidefront = 1218;
 sideback = 1207;
 twosided = true;
@@ -16856,8 +17054,8 @@ twosided = true;
 
 linedef
 {
-v1 = 766;
-v2 = 632;
+v1 = 776;
+v2 = 641;
 sidefront = 1214;
 sideback = 1212;
 twosided = true;
@@ -16865,8 +17063,8 @@ twosided = true;
 
 linedef
 {
-v1 = 632;
-v2 = 656;
+v1 = 641;
+v2 = 666;
 sidefront = 1215;
 sideback = 1211;
 twosided = true;
@@ -16874,8 +17072,8 @@ twosided = true;
 
 linedef
 {
-v1 = 655;
-v2 = 651;
+v1 = 665;
+v2 = 661;
 sidefront = 1219;
 sideback = 1223;
 twosided = true;
@@ -16883,8 +17081,8 @@ twosided = true;
 
 linedef
 {
-v1 = 651;
-v2 = 767;
+v1 = 661;
+v2 = 777;
 sidefront = 1220;
 sideback = 1226;
 twosided = true;
@@ -16892,7 +17090,7 @@ twosided = true;
 
 linedef
 {
-v1 = 767;
+v1 = 777;
 v2 = 17;
 sidefront = 1221;
 sideback = 1225;
@@ -16902,7 +17100,7 @@ twosided = true;
 linedef
 {
 v1 = 17;
-v2 = 655;
+v2 = 665;
 sidefront = 1222;
 sideback = 1224;
 twosided = true;
@@ -16911,7 +17109,7 @@ twosided = true;
 linedef
 {
 v1 = 14;
-v2 = 768;
+v2 = 778;
 sidefront = 1227;
 sideback = 1228;
 twosided = true;
@@ -16920,7 +17118,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 769;
+v1 = 779;
 v2 = 14;
 sidefront = 1233;
 sideback = 1237;
@@ -16930,7 +17128,7 @@ twosided = true;
 linedef
 {
 v1 = 14;
-v2 = 770;
+v2 = 780;
 sidefront = 1234;
 sideback = 1240;
 twosided = true;
@@ -16938,8 +17136,8 @@ twosided = true;
 
 linedef
 {
-v1 = 770;
-v2 = 771;
+v1 = 780;
+v2 = 781;
 sidefront = 1235;
 sideback = 1242;
 twosided = true;
@@ -16947,8 +17145,8 @@ twosided = true;
 
 linedef
 {
-v1 = 768;
-v2 = 772;
+v1 = 778;
+v2 = 782;
 sidefront = 1229;
 sideback = 1230;
 twosided = true;
@@ -16957,8 +17155,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 771;
-v2 = 768;
+v1 = 781;
+v2 = 778;
 sidefront = 1236;
 sideback = 1241;
 twosided = true;
@@ -16966,8 +17164,8 @@ twosided = true;
 
 linedef
 {
-v1 = 768;
-v2 = 773;
+v1 = 778;
+v2 = 783;
 sidefront = 1231;
 sideback = 1239;
 twosided = true;
@@ -16975,8 +17173,8 @@ twosided = true;
 
 linedef
 {
-v1 = 773;
-v2 = 769;
+v1 = 783;
+v2 = 779;
 sidefront = 1232;
 sideback = 1238;
 twosided = true;
@@ -16984,8 +17182,8 @@ twosided = true;
 
 linedef
 {
-v1 = 774;
-v2 = 775;
+v1 = 784;
+v2 = 785;
 sidefront = 1243;
 sideback = 1247;
 twosided = true;
@@ -16993,8 +17191,8 @@ twosided = true;
 
 linedef
 {
-v1 = 775;
-v2 = 776;
+v1 = 785;
+v2 = 786;
 sidefront = 1244;
 sideback = 1250;
 twosided = true;
@@ -17002,8 +17200,8 @@ twosided = true;
 
 linedef
 {
-v1 = 776;
-v2 = 777;
+v1 = 787;
+v2 = 788;
 sidefront = 1245;
 sideback = 1249;
 twosided = true;
@@ -17011,8 +17209,8 @@ twosided = true;
 
 linedef
 {
-v1 = 777;
-v2 = 774;
+v1 = 789;
+v2 = 784;
 sidefront = 1246;
 sideback = 1248;
 twosided = true;
@@ -17020,8 +17218,8 @@ twosided = true;
 
 linedef
 {
-v1 = 771;
-v2 = 626;
+v1 = 781;
+v2 = 635;
 sidefront = 1251;
 sideback = 1254;
 twosided = true;
@@ -17029,8 +17227,8 @@ twosided = true;
 
 linedef
 {
-v1 = 636;
-v2 = 776;
+v1 = 646;
+v2 = 787;
 sidefront = 1252;
 sideback = 1255;
 twosided = true;
@@ -17038,8 +17236,8 @@ twosided = true;
 
 linedef
 {
-v1 = 775;
-v2 = 771;
+v1 = 785;
+v2 = 781;
 sidefront = 1253;
 sideback = 1256;
 twosided = true;
@@ -17047,8 +17245,8 @@ twosided = true;
 
 linedef
 {
-v1 = 640;
-v2 = 641;
+v1 = 650;
+v2 = 651;
 sidefront = 1257;
 blocking = true;
 dontdraw = true;
@@ -17056,8 +17254,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 767;
-v2 = 777;
+v1 = 777;
+v2 = 789;
 sidefront = 1258;
 sideback = 1261;
 twosided = true;
@@ -17065,8 +17263,8 @@ twosided = true;
 
 linedef
 {
-v1 = 777;
-v2 = 640;
+v1 = 789;
+v2 = 650;
 sidefront = 1259;
 sideback = 1263;
 twosided = true;
@@ -17074,7 +17272,7 @@ twosided = true;
 
 linedef
 {
-v1 = 646;
+v1 = 656;
 v2 = 17;
 sidefront = 1260;
 sideback = 1262;
@@ -17083,8 +17281,8 @@ twosided = true;
 
 linedef
 {
-v1 = 645;
-v2 = 773;
+v1 = 655;
+v2 = 783;
 sidefront = 1272;
 sideback = 1276;
 twosided = true;
@@ -17092,8 +17290,8 @@ twosided = true;
 
 linedef
 {
-v1 = 772;
-v2 = 778;
+v1 = 782;
+v2 = 790;
 sidefront = 1264;
 sideback = 1265;
 twosided = true;
@@ -17102,8 +17300,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 773;
-v2 = 772;
+v1 = 783;
+v2 = 782;
 sidefront = 1273;
 sideback = 1279;
 twosided = true;
@@ -17111,8 +17309,8 @@ twosided = true;
 
 linedef
 {
-v1 = 772;
-v2 = 774;
+v1 = 782;
+v2 = 784;
 sidefront = 1277;
 sideback = 1280;
 twosided = true;
@@ -17120,8 +17318,8 @@ twosided = true;
 
 linedef
 {
-v1 = 778;
-v2 = 630;
+v1 = 790;
+v2 = 639;
 sidefront = 1266;
 sideback = 1267;
 twosided = true;
@@ -17130,8 +17328,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 774;
-v2 = 778;
+v1 = 784;
+v2 = 790;
 sidefront = 1278;
 sideback = 1282;
 twosided = true;
@@ -17139,8 +17337,8 @@ twosided = true;
 
 linedef
 {
-v1 = 631;
-v2 = 644;
+v1 = 640;
+v2 = 654;
 sidefront = 1268;
 sideback = 1269;
 twosided = true;
@@ -17149,8 +17347,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 778;
-v2 = 631;
+v1 = 790;
+v2 = 640;
 sidefront = 1274;
 sideback = 1281;
 twosided = true;
@@ -17158,8 +17356,8 @@ twosided = true;
 
 linedef
 {
-v1 = 631;
-v2 = 651;
+v1 = 640;
+v2 = 661;
 sidefront = 1284;
 sideback = 1283;
 twosided = true;
@@ -17167,8 +17365,8 @@ twosided = true;
 
 linedef
 {
-v1 = 644;
-v2 = 766;
+v1 = 654;
+v2 = 776;
 sidefront = 1270;
 sideback = 1271;
 twosided = true;
@@ -17178,7 +17376,7 @@ dontdraw = true;
 linedef
 {
 v1 = 57;
-v2 = 469;
+v2 = 476;
 sidefront = 1286;
 sideback = 1287;
 twosided = true;
@@ -17196,7 +17394,7 @@ twosided = true;
 linedef
 {
 v1 = 93;
-v2 = 779;
+v2 = 791;
 sidefront = 1290;
 sideback = 1292;
 twosided = true;
@@ -17204,7 +17402,7 @@ twosided = true;
 
 linedef
 {
-v1 = 779;
+v1 = 791;
 v2 = 290;
 sidefront = 1291;
 sideback = 1293;
@@ -17222,7 +17420,7 @@ twosided = true;
 
 linedef
 {
-v1 = 486;
+v1 = 493;
 v2 = 225;
 sidefront = 1296;
 sideback = 1297;
@@ -17234,7 +17432,7 @@ secret = true;
 linedef
 {
 v1 = 42;
-v2 = 471;
+v2 = 478;
 sidefront = 1298;
 sideback = 1299;
 twosided = true;
@@ -17244,8 +17442,8 @@ secret = true;
 
 linedef
 {
-v1 = 486;
-v2 = 673;
+v1 = 493;
+v2 = 683;
 sidefront = 1300;
 sideback = 986;
 twosided = true;
@@ -17253,7 +17451,7 @@ twosided = true;
 
 linedef
 {
-v1 = 780;
+v1 = 792;
 v2 = 71;
 sidefront = 1302;
 sideback = 1305;
@@ -17263,7 +17461,7 @@ twosided = true;
 linedef
 {
 v1 = 69;
-v2 = 706;
+v2 = 716;
 sidefront = 1303;
 sideback = 1307;
 twosided = true;
@@ -17271,8 +17469,8 @@ twosided = true;
 
 linedef
 {
-v1 = 706;
-v2 = 781;
+v1 = 716;
+v2 = 793;
 sidefront = 1304;
 sideback = 1306;
 twosided = true;
@@ -17280,8 +17478,8 @@ twosided = true;
 
 linedef
 {
-v1 = 781;
-v2 = 780;
+v1 = 793;
+v2 = 792;
 sidefront = 1308;
 sideback = 1309;
 twosided = true;
@@ -17289,8 +17487,8 @@ twosided = true;
 
 linedef
 {
-v1 = 782;
-v2 = 781;
+v1 = 794;
+v2 = 793;
 sidefront = 1314;
 sideback = 1311;
 twosided = true;
@@ -17298,7 +17496,7 @@ twosided = true;
 
 linedef
 {
-v1 = 781;
+v1 = 793;
 v2 = 314;
 sidefront = 1316;
 sideback = 1310;
@@ -17308,7 +17506,7 @@ twosided = true;
 linedef
 {
 v1 = 327;
-v2 = 707;
+v2 = 717;
 sidefront = 1317;
 sideback = 1313;
 twosided = true;
@@ -17316,8 +17514,8 @@ twosided = true;
 
 linedef
 {
-v1 = 707;
-v2 = 782;
+v1 = 717;
+v2 = 794;
 sidefront = 1315;
 sideback = 1312;
 twosided = true;
@@ -17325,8 +17523,8 @@ twosided = true;
 
 linedef
 {
-v1 = 596;
-v2 = 783;
+v1 = 604;
+v2 = 795;
 sidefront = 1318;
 sideback = 1320;
 twosided = true;
@@ -17334,7 +17532,7 @@ twosided = true;
 
 linedef
 {
-v1 = 783;
+v1 = 795;
 v2 = 129;
 sidefront = 1319;
 sideback = 1321;
@@ -17344,7 +17542,7 @@ twosided = true;
 linedef
 {
 v1 = 435;
-v2 = 748;
+v2 = 758;
 sidefront = 1322;
 sideback = 1324;
 twosided = true;
@@ -17352,7 +17550,7 @@ twosided = true;
 
 linedef
 {
-v1 = 748;
+v1 = 758;
 v2 = 302;
 sidefront = 1323;
 sideback = 1325;
@@ -17371,7 +17569,7 @@ twosided = true;
 linedef
 {
 v1 = 408;
-v2 = 746;
+v2 = 756;
 sidefront = 1328;
 sideback = 1329;
 twosided = true;
@@ -17379,7 +17577,7 @@ twosided = true;
 
 linedef
 {
-v1 = 747;
+v1 = 757;
 v2 = 444;
 sidefront = 1330;
 sideback = 1331;
@@ -17388,7 +17586,7 @@ twosided = true;
 
 linedef
 {
-v1 = 784;
+v1 = 796;
 v2 = 292;
 sidefront = 1332;
 sideback = 1333;
@@ -17397,8 +17595,8 @@ twosided = true;
 
 linedef
 {
-v1 = 784;
-v2 = 747;
+v1 = 796;
+v2 = 757;
 sidefront = 1334;
 sideback = 1335;
 twosided = true;
@@ -17415,7 +17613,7 @@ blocking = true;
 linedef
 {
 v1 = 287;
-v2 = 785;
+v2 = 797;
 sidefront = 1337;
 sideback = 1340;
 twosided = true;
@@ -17423,8 +17621,8 @@ twosided = true;
 
 linedef
 {
-v1 = 785;
-v2 = 746;
+v1 = 797;
+v2 = 756;
 sidefront = 1338;
 sideback = 1341;
 twosided = true;
@@ -17442,7 +17640,7 @@ twosided = true;
 linedef
 {
 v1 = 93;
-v2 = 786;
+v2 = 798;
 sidefront = 1343;
 sideback = 1345;
 twosided = true;
@@ -17450,7 +17648,7 @@ twosided = true;
 
 linedef
 {
-v1 = 786;
+v1 = 798;
 v2 = 290;
 sidefront = 1344;
 sideback = 1346;
@@ -17459,8 +17657,8 @@ twosided = true;
 
 linedef
 {
-v1 = 784;
-v2 = 785;
+v1 = 796;
+v2 = 797;
 sidefront = 1347;
 sideback = 1348;
 twosided = true;
@@ -17468,7 +17666,7 @@ twosided = true;
 
 linedef
 {
-v1 = 526;
+v1 = 533;
 v2 = 119;
 sidefront = 1349;
 blocking = true;
@@ -17484,8 +17682,8 @@ blocking = true;
 
 linedef
 {
-v1 = 526;
-v2 = 787;
+v1 = 533;
+v2 = 799;
 sidefront = 1351;
 sideback = 1353;
 twosided = true;
@@ -17493,7 +17691,7 @@ twosided = true;
 
 linedef
 {
-v1 = 787;
+v1 = 799;
 v2 = 102;
 sidefront = 1352;
 sideback = 1354;
@@ -17503,7 +17701,7 @@ twosided = true;
 linedef
 {
 v1 = 115;
-v2 = 787;
+v2 = 799;
 sidefront = 1355;
 sideback = 1357;
 twosided = true;
@@ -17511,7 +17709,7 @@ twosided = true;
 
 linedef
 {
-v1 = 787;
+v1 = 799;
 v2 = 120;
 sidefront = 1356;
 sideback = 1358;
@@ -17545,8 +17743,8 @@ twosided = true;
 
 linedef
 {
-v1 = 680;
-v2 = 788;
+v1 = 690;
+v2 = 800;
 sidefront = 1367;
 sideback = 1363;
 twosided = true;
@@ -17554,8 +17752,8 @@ twosided = true;
 
 linedef
 {
-v1 = 680;
-v2 = 789;
+v1 = 690;
+v2 = 801;
 sidefront = 1364;
 sideback = 1370;
 twosided = true;
@@ -17563,8 +17761,8 @@ twosided = true;
 
 linedef
 {
-v1 = 790;
-v2 = 791;
+v1 = 802;
+v2 = 803;
 sidefront = 1365;
 sideback = 1369;
 twosided = true;
@@ -17572,8 +17770,8 @@ twosided = true;
 
 linedef
 {
-v1 = 791;
-v2 = 792;
+v1 = 803;
+v2 = 804;
 sidefront = 1366;
 sideback = 1368;
 twosided = true;
@@ -17581,8 +17779,8 @@ twosided = true;
 
 linedef
 {
-v1 = 793;
-v2 = 788;
+v1 = 805;
+v2 = 800;
 sidefront = 1371;
 sideback = 1372;
 twosided = true;
@@ -17590,8 +17788,8 @@ twosided = true;
 
 linedef
 {
-v1 = 794;
-v2 = 793;
+v1 = 806;
+v2 = 805;
 sidefront = 1386;
 sideback = 1380;
 twosided = true;
@@ -17599,8 +17797,8 @@ twosided = true;
 
 linedef
 {
-v1 = 789;
-v2 = 795;
+v1 = 801;
+v2 = 807;
 sidefront = 1373;
 sideback = 1374;
 twosided = true;
@@ -17608,8 +17806,8 @@ twosided = true;
 
 linedef
 {
-v1 = 793;
-v2 = 789;
+v1 = 805;
+v2 = 801;
 sidefront = 1390;
 sideback = 1379;
 twosided = true;
@@ -17617,8 +17815,8 @@ twosided = true;
 
 linedef
 {
-v1 = 789;
-v2 = 796;
+v1 = 801;
+v2 = 808;
 sidefront = 1391;
 sideback = 1385;
 twosided = true;
@@ -17626,8 +17824,8 @@ twosided = true;
 
 linedef
 {
-v1 = 796;
-v2 = 797;
+v1 = 808;
+v2 = 809;
 sidefront = 1392;
 sideback = 1384;
 twosided = true;
@@ -17635,8 +17833,8 @@ twosided = true;
 
 linedef
 {
-v1 = 795;
-v2 = 790;
+v1 = 807;
+v2 = 802;
 sidefront = 1375;
 sideback = 1376;
 twosided = true;
@@ -17644,8 +17842,8 @@ twosided = true;
 
 linedef
 {
-v1 = 797;
-v2 = 795;
+v1 = 809;
+v2 = 807;
 sidefront = 1393;
 sideback = 1383;
 twosided = true;
@@ -17653,8 +17851,8 @@ twosided = true;
 
 linedef
 {
-v1 = 792;
-v2 = 793;
+v1 = 804;
+v2 = 805;
 sidefront = 1377;
 sideback = 1378;
 twosided = true;
@@ -17662,8 +17860,8 @@ twosided = true;
 
 linedef
 {
-v1 = 795;
-v2 = 792;
+v1 = 807;
+v2 = 804;
 sidefront = 1389;
 sideback = 1394;
 twosided = true;
@@ -17671,8 +17869,8 @@ twosided = true;
 
 linedef
 {
-v1 = 792;
-v2 = 798;
+v1 = 804;
+v2 = 810;
 sidefront = 1387;
 sideback = 1382;
 twosided = true;
@@ -17680,8 +17878,8 @@ twosided = true;
 
 linedef
 {
-v1 = 798;
-v2 = 794;
+v1 = 810;
+v2 = 806;
 sidefront = 1388;
 sideback = 1381;
 twosided = true;
@@ -17690,7 +17888,7 @@ twosided = true;
 linedef
 {
 v1 = 144;
-v2 = 799;
+v2 = 811;
 sidefront = 1395;
 sideback = 1396;
 twosided = true;
@@ -17698,7 +17896,7 @@ twosided = true;
 
 linedef
 {
-v1 = 799;
+v1 = 811;
 v2 = 130;
 sidefront = 1397;
 sideback = 1398;
@@ -17707,8 +17905,8 @@ twosided = true;
 
 linedef
 {
-v1 = 788;
-v2 = 687;
+v1 = 800;
+v2 = 697;
 sidefront = 1399;
 sideback = 1400;
 twosided = true;
@@ -17716,8 +17914,8 @@ twosided = true;
 
 linedef
 {
-v1 = 679;
-v2 = 800;
+v1 = 689;
+v2 = 812;
 sidefront = 1401;
 sideback = 1403;
 twosided = true;
@@ -17725,8 +17923,8 @@ twosided = true;
 
 linedef
 {
-v1 = 800;
-v2 = 790;
+v1 = 812;
+v2 = 802;
 sidefront = 1402;
 sideback = 1406;
 twosided = true;
@@ -17734,8 +17932,8 @@ twosided = true;
 
 linedef
 {
-v1 = 791;
-v2 = 801;
+v1 = 803;
+v2 = 813;
 sidefront = 1407;
 sideback = 1405;
 twosided = true;
@@ -17743,8 +17941,8 @@ twosided = true;
 
 linedef
 {
-v1 = 801;
-v2 = 687;
+v1 = 813;
+v2 = 697;
 sidefront = 1408;
 sideback = 1404;
 twosided = true;
@@ -17752,7 +17950,7 @@ twosided = true;
 
 linedef
 {
-v1 = 800;
+v1 = 812;
 v2 = 117;
 sidefront = 1409;
 sideback = 1411;
@@ -17762,7 +17960,7 @@ twosided = true;
 linedef
 {
 v1 = 116;
-v2 = 802;
+v2 = 814;
 sidefront = 1410;
 sideback = 1412;
 twosided = true;
@@ -17770,7 +17968,7 @@ twosided = true;
 
 linedef
 {
-v1 = 790;
+v1 = 802;
 v2 = 117;
 sidefront = 1413;
 sideback = 1414;
@@ -17779,8 +17977,8 @@ twosided = true;
 
 linedef
 {
-v1 = 802;
-v2 = 801;
+v1 = 814;
+v2 = 813;
 sidefront = 1415;
 sideback = 1416;
 twosided = true;
@@ -17788,8 +17986,8 @@ twosided = true;
 
 linedef
 {
-v1 = 791;
-v2 = 802;
+v1 = 803;
+v2 = 814;
 sidefront = 1417;
 sideback = 1418;
 twosided = true;
@@ -17798,7 +17996,7 @@ twosided = true;
 linedef
 {
 v1 = 135;
-v2 = 662;
+v2 = 672;
 sidefront = 1419;
 sideback = 1421;
 twosided = true;
@@ -17806,8 +18004,8 @@ twosided = true;
 
 linedef
 {
-v1 = 662;
-v2 = 761;
+v1 = 672;
+v2 = 771;
 sidefront = 1423;
 sideback = 1422;
 twosided = true;
@@ -17815,8 +18013,8 @@ twosided = true;
 
 linedef
 {
-v1 = 688;
-v2 = 667;
+v1 = 698;
+v2 = 677;
 sidefront = 1424;
 sideback = 1425;
 twosided = true;
@@ -17824,7 +18022,7 @@ twosided = true;
 
 linedef
 {
-v1 = 667;
+v1 = 677;
 v2 = 134;
 sidefront = 1420;
 sideback = 1426;
@@ -17833,7 +18031,7 @@ twosided = true;
 
 linedef
 {
-v1 = 688;
+v1 = 698;
 v2 = 130;
 sidefront = 1427;
 sideback = 1428;
@@ -17842,8 +18040,8 @@ twosided = true;
 
 linedef
 {
-v1 = 536;
-v2 = 616;
+v1 = 543;
+v2 = 625;
 sidefront = 1429;
 sideback = 1430;
 twosided = true;
@@ -17852,8 +18050,8 @@ blocking = true;
 
 linedef
 {
-v1 = 617;
-v2 = 595;
+v1 = 626;
+v2 = 603;
 sidefront = 1431;
 sideback = 1432;
 twosided = true;
@@ -17862,7 +18060,7 @@ twosided = true;
 linedef
 {
 v1 = 104;
-v2 = 803;
+v2 = 815;
 sidefront = 1433;
 sideback = 1441;
 twosided = true;
@@ -17870,8 +18068,8 @@ twosided = true;
 
 linedef
 {
-v1 = 803;
-v2 = 536;
+v1 = 815;
+v2 = 543;
 sidefront = 1434;
 sideback = 1442;
 twosided = true;
@@ -17879,8 +18077,8 @@ twosided = true;
 
 linedef
 {
-v1 = 536;
-v2 = 804;
+v1 = 543;
+v2 = 816;
 sidefront = 1435;
 sideback = 1443;
 twosided = true;
@@ -17888,8 +18086,8 @@ twosided = true;
 
 linedef
 {
-v1 = 804;
-v2 = 616;
+v1 = 816;
+v2 = 625;
 sidefront = 1436;
 sideback = 1444;
 twosided = true;
@@ -17897,8 +18095,8 @@ twosided = true;
 
 linedef
 {
-v1 = 616;
-v2 = 805;
+v1 = 625;
+v2 = 817;
 sidefront = 1437;
 sideback = 1448;
 twosided = true;
@@ -17906,8 +18104,8 @@ twosided = true;
 
 linedef
 {
-v1 = 805;
-v2 = 617;
+v1 = 817;
+v2 = 626;
 sidefront = 1438;
 sideback = 1447;
 twosided = true;
@@ -17915,8 +18113,8 @@ twosided = true;
 
 linedef
 {
-v1 = 617;
-v2 = 806;
+v1 = 626;
+v2 = 818;
 sidefront = 1439;
 sideback = 1445;
 twosided = true;
@@ -17924,8 +18122,8 @@ twosided = true;
 
 linedef
 {
-v1 = 806;
-v2 = 595;
+v1 = 818;
+v2 = 603;
 sidefront = 1440;
 sideback = 1446;
 twosided = true;
@@ -17934,7 +18132,7 @@ twosided = true;
 linedef
 {
 v1 = 122;
-v2 = 807;
+v2 = 819;
 sidefront = 1449;
 sideback = 1452;
 twosided = true;
@@ -17942,8 +18140,8 @@ twosided = true;
 
 linedef
 {
-v1 = 807;
-v2 = 808;
+v1 = 819;
+v2 = 820;
 sidefront = 1450;
 sideback = 1454;
 twosided = true;
@@ -17951,7 +18149,7 @@ twosided = true;
 
 linedef
 {
-v1 = 808;
+v1 = 820;
 v2 = 277;
 sidefront = 1451;
 sideback = 1453;
@@ -17960,8 +18158,8 @@ twosided = true;
 
 linedef
 {
-v1 = 807;
-v2 = 809;
+v1 = 819;
+v2 = 821;
 sidefront = 1455;
 sideback = 1458;
 twosided = true;
@@ -17969,8 +18167,8 @@ twosided = true;
 
 linedef
 {
-v1 = 809;
-v2 = 810;
+v1 = 821;
+v2 = 822;
 sidefront = 1456;
 sideback = 1460;
 twosided = true;
@@ -17978,8 +18176,8 @@ twosided = true;
 
 linedef
 {
-v1 = 810;
-v2 = 808;
+v1 = 822;
+v2 = 820;
 sidefront = 1457;
 sideback = 1459;
 twosided = true;
@@ -17987,8 +18185,8 @@ twosided = true;
 
 linedef
 {
-v1 = 809;
-v2 = 811;
+v1 = 821;
+v2 = 823;
 sidefront = 1461;
 sideback = 1464;
 twosided = true;
@@ -17996,8 +18194,8 @@ twosided = true;
 
 linedef
 {
-v1 = 811;
-v2 = 812;
+v1 = 823;
+v2 = 824;
 sidefront = 1462;
 sideback = 1466;
 twosided = true;
@@ -18005,8 +18203,8 @@ twosided = true;
 
 linedef
 {
-v1 = 812;
-v2 = 810;
+v1 = 824;
+v2 = 822;
 sidefront = 1463;
 sideback = 1465;
 twosided = true;
@@ -18014,8 +18212,8 @@ twosided = true;
 
 linedef
 {
-v1 = 811;
-v2 = 813;
+v1 = 823;
+v2 = 825;
 sidefront = 1467;
 sideback = 1470;
 twosided = true;
@@ -18023,8 +18221,8 @@ twosided = true;
 
 linedef
 {
-v1 = 813;
-v2 = 814;
+v1 = 825;
+v2 = 826;
 sidefront = 1468;
 sideback = 1472;
 twosided = true;
@@ -18032,8 +18230,8 @@ twosided = true;
 
 linedef
 {
-v1 = 814;
-v2 = 812;
+v1 = 826;
+v2 = 824;
 sidefront = 1469;
 sideback = 1471;
 twosided = true;
@@ -18041,7 +18239,7 @@ twosided = true;
 
 linedef
 {
-v1 = 813;
+v1 = 825;
 v2 = 259;
 sidefront = 1473;
 sideback = 1475;
@@ -18051,7 +18249,7 @@ twosided = true;
 linedef
 {
 v1 = 353;
-v2 = 814;
+v2 = 826;
 sidefront = 1474;
 sideback = 1476;
 twosided = true;
@@ -18060,7 +18258,7 @@ twosided = true;
 linedef
 {
 v1 = 332;
-v2 = 814;
+v2 = 826;
 sidefront = 1477;
 sideback = 1478;
 twosided = true;
@@ -18069,7 +18267,7 @@ twosided = true;
 linedef
 {
 v1 = 409;
-v2 = 812;
+v2 = 824;
 sidefront = 1479;
 sideback = 1480;
 twosided = true;
@@ -18078,7 +18276,7 @@ twosided = true;
 linedef
 {
 v1 = 410;
-v2 = 810;
+v2 = 822;
 sidefront = 1481;
 sideback = 1482;
 twosided = true;
@@ -18086,7 +18284,7 @@ twosided = true;
 
 linedef
 {
-v1 = 809;
+v1 = 821;
 v2 = 413;
 sidefront = 1483;
 sideback = 1485;
@@ -18096,7 +18294,7 @@ twosided = true;
 linedef
 {
 v1 = 414;
-v2 = 811;
+v2 = 823;
 sidefront = 1484;
 sideback = 1486;
 twosided = true;
@@ -18104,8 +18302,8 @@ twosided = true;
 
 linedef
 {
-v1 = 813;
-v2 = 815;
+v1 = 825;
+v2 = 827;
 sidefront = 1487;
 sideback = 1488;
 twosided = true;
@@ -18113,7 +18311,7 @@ twosided = true;
 
 linedef
 {
-v1 = 815;
+v1 = 827;
 v2 = 417;
 sidefront = 1489;
 sideback = 1490;
@@ -18122,8 +18320,8 @@ twosided = true;
 
 linedef
 {
-v1 = 815;
-v2 = 816;
+v1 = 827;
+v2 = 828;
 sidefront = 1491;
 sideback = 1493;
 twosided = true;
@@ -18131,7 +18329,7 @@ twosided = true;
 
 linedef
 {
-v1 = 816;
+v1 = 828;
 v2 = 259;
 sidefront = 1492;
 sideback = 1494;
@@ -18141,7 +18339,7 @@ twosided = true;
 linedef
 {
 v1 = 261;
-v2 = 817;
+v2 = 829;
 sidefront = 1495;
 blocking = true;
 }
@@ -18157,7 +18355,7 @@ blocking = true;
 linedef
 {
 v1 = 261;
-v2 = 818;
+v2 = 830;
 sidefront = 1499;
 sideback = 1502;
 twosided = true;
@@ -18165,8 +18363,8 @@ twosided = true;
 
 linedef
 {
-v1 = 678;
-v2 = 819;
+v1 = 688;
+v2 = 831;
 sidefront = 1497;
 sideback = 1498;
 twosided = true;
@@ -18174,8 +18372,8 @@ twosided = true;
 
 linedef
 {
-v1 = 818;
-v2 = 678;
+v1 = 830;
+v2 = 688;
 sidefront = 1500;
 sideback = 1503;
 twosided = true;
@@ -18183,7 +18381,7 @@ twosided = true;
 
 linedef
 {
-v1 = 678;
+v1 = 688;
 v2 = 280;
 sidefront = 1501;
 sideback = 1504;
@@ -18208,7 +18406,7 @@ blocking = true;
 
 linedef
 {
-v1 = 818;
+v1 = 830;
 v2 = 262;
 sidefront = 1507;
 sideback = 1508;
@@ -18235,7 +18433,7 @@ twosided = true;
 
 linedef
 {
-v1 = 817;
+v1 = 829;
 v2 = 347;
 sidefront = 1513;
 blocking = true;
@@ -18251,7 +18449,7 @@ blocking = true;
 
 linedef
 {
-v1 = 817;
+v1 = 829;
 v2 = 252;
 sidefront = 1515;
 sideback = 1517;
@@ -18261,7 +18459,7 @@ twosided = true;
 linedef
 {
 v1 = 345;
-v2 = 818;
+v2 = 830;
 sidefront = 1516;
 sideback = 1518;
 twosided = true;
@@ -18269,19 +18467,580 @@ twosided = true;
 
 linedef
 {
-v1 = 319;
-v2 = 820;
+v1 = 463;
+v2 = 832;
 sidefront = 1519;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 463;
+v2 = 833;
+sidefront = 1520;
 sideback = 1521;
+special = 181;
+arg1 = 1;
+twosided = true;
+arg0 = 1;
+}
+
+linedef
+{
+v1 = 832;
+v2 = 464;
+sidefront = 1522;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 834;
+v2 = 832;
+sidefront = 1524;
+sideback = 1523;
+special = 181;
+arg1 = 1;
+twosided = true;
+arg0 = 1;
+}
+
+linedef
+{
+v1 = 466;
+v2 = 835;
+sidefront = 1525;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 466;
+v2 = 836;
+sidefront = 1526;
+sideback = 1527;
+special = 181;
+arg1 = 1;
+twosided = true;
+arg0 = 1;
+}
+
+linedef
+{
+v1 = 835;
+v2 = 467;
+sidefront = 1528;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 837;
+v2 = 835;
+sidefront = 1530;
+sideback = 1529;
+special = 181;
+arg1 = 1;
+twosided = true;
+arg0 = 1;
+}
+
+linedef
+{
+v1 = 457;
+v2 = 461;
+sidefront = 1531;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 833;
+v2 = 457;
+sidefront = 1532;
+sideback = 1533;
 twosided = true;
 }
 
 linedef
 {
-v1 = 820;
-v2 = 316;
-sidefront = 1520;
-sideback = 1522;
+v1 = 460;
+v2 = 458;
+sidefront = 1534;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 834;
+v2 = 460;
+sidefront = 1535;
+sideback = 1536;
+twosided = true;
+}
+
+linedef
+{
+v1 = 450;
+v2 = 454;
+sidefront = 1537;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 450;
+v2 = 836;
+sidefront = 1538;
+sideback = 1539;
+twosided = true;
+}
+
+linedef
+{
+v1 = 453;
+v2 = 451;
+sidefront = 1540;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 837;
+v2 = 453;
+sidefront = 1541;
+sideback = 1542;
+twosided = true;
+}
+
+linedef
+{
+v1 = 686;
+v2 = 838;
+sidefront = 1543;
+sideback = 1545;
+twosided = true;
+}
+
+linedef
+{
+v1 = 838;
+v2 = 291;
+sidefront = 1544;
+sideback = 1546;
+twosided = true;
+}
+
+linedef
+{
+v1 = 838;
+v2 = 267;
+sidefront = 1547;
+sideback = 1548;
+twosided = true;
+}
+
+linedef
+{
+v1 = 838;
+v2 = 295;
+sidefront = 1549;
+sideback = 1550;
+twosided = true;
+}
+
+linedef
+{
+v1 = 839;
+v2 = 598;
+sidefront = 1551;
+sideback = 1554;
+twosided = true;
+}
+
+linedef
+{
+v1 = 597;
+v2 = 840;
+sidefront = 1552;
+sideback = 1556;
+twosided = true;
+}
+
+linedef
+{
+v1 = 840;
+v2 = 839;
+sidefront = 1553;
+sideback = 1555;
+twosided = true;
+}
+
+linedef
+{
+v1 = 321;
+v2 = 839;
+sidefront = 1557;
+sideback = 1560;
+twosided = true;
+}
+
+linedef
+{
+v1 = 840;
+v2 = 537;
+sidefront = 1558;
+sideback = 1561;
+twosided = true;
+}
+
+linedef
+{
+v1 = 320;
+v2 = 549;
+sidefront = 1559;
+sideback = 1562;
+twosided = true;
+}
+
+linedef
+{
+v1 = 841;
+v2 = 548;
+sidefront = 1563;
+sideback = 1565;
+twosided = true;
+}
+
+linedef
+{
+v1 = 319;
+v2 = 841;
+sidefront = 1564;
+sideback = 1566;
+twosided = true;
+}
+
+linedef
+{
+v1 = 568;
+v2 = 842;
+sidefront = 1567;
+sideback = 1570;
+twosided = true;
+}
+
+linedef
+{
+v1 = 842;
+v2 = 843;
+sidefront = 1568;
+sideback = 1572;
+twosided = true;
+}
+
+linedef
+{
+v1 = 843;
+v2 = 569;
+sidefront = 1569;
+sideback = 1571;
+twosided = true;
+}
+
+linedef
+{
+v1 = 843;
+v2 = 589;
+sidefront = 1573;
+sideback = 1576;
+twosided = true;
+}
+
+linedef
+{
+v1 = 589;
+v2 = 844;
+sidefront = 1574;
+sideback = 1577;
+twosided = true;
+}
+
+linedef
+{
+v1 = 844;
+v2 = 569;
+sidefront = 1575;
+sideback = 1578;
+twosided = true;
+}
+
+linedef
+{
+v1 = 588;
+v2 = 844;
+sidefront = 1579;
+sideback = 1580;
+twosided = true;
+}
+
+linedef
+{
+v1 = 845;
+v2 = 844;
+sidefront = 1581;
+sideback = 1584;
+twosided = true;
+}
+
+linedef
+{
+v1 = 588;
+v2 = 846;
+sidefront = 1582;
+sideback = 1586;
+twosided = true;
+}
+
+linedef
+{
+v1 = 846;
+v2 = 845;
+sidefront = 1583;
+sideback = 1585;
+twosided = true;
+}
+
+linedef
+{
+v1 = 624;
+v2 = 620;
+sidefront = 1587;
+blocking = true;
+}
+
+linedef
+{
+v1 = 624;
+v2 = 845;
+sidefront = 1588;
+sideback = 1591;
+twosided = true;
+}
+
+linedef
+{
+v1 = 846;
+v2 = 847;
+sidefront = 1589;
+sideback = 1592;
+twosided = true;
+}
+
+linedef
+{
+v1 = 847;
+v2 = 623;
+sidefront = 1590;
+sideback = 1593;
+twosided = true;
+}
+
+linedef
+{
+v1 = 846;
+v2 = 592;
+sidefront = 1594;
+sideback = 1597;
+twosided = true;
+}
+
+linedef
+{
+v1 = 593;
+v2 = 848;
+sidefront = 1595;
+sideback = 1598;
+twosided = true;
+}
+
+linedef
+{
+v1 = 848;
+v2 = 847;
+sidefront = 1596;
+sideback = 1599;
+twosided = true;
+}
+
+linedef
+{
+v1 = 576;
+v2 = 847;
+sidefront = 1600;
+sideback = 1603;
+twosided = true;
+}
+
+linedef
+{
+v1 = 848;
+v2 = 598;
+sidefront = 1601;
+sideback = 1604;
+twosided = true;
+}
+
+linedef
+{
+v1 = 598;
+v2 = 575;
+sidefront = 1602;
+sideback = 1605;
+twosided = true;
+}
+
+linedef
+{
+v1 = 848;
+v2 = 594;
+sidefront = 1606;
+sideback = 1607;
+twosided = true;
+}
+
+linedef
+{
+v1 = 570;
+v2 = 842;
+sidefront = 1608;
+sideback = 1609;
+twosided = true;
+}
+
+linedef
+{
+v1 = 554;
+v2 = 545;
+sidefront = 1610;
+sideback = 1611;
+twosided = true;
+blocking = true;
+}
+
+linedef
+{
+v1 = 550;
+v2 = 554;
+sidefront = 1612;
+sideback = 1613;
+twosided = true;
+}
+
+linedef
+{
+v1 = 644;
+v2 = 645;
+sidefront = 1614;
+blocking = true;
+dontdraw = true;
+}
+
+linedef
+{
+v1 = 788;
+v2 = 789;
+sidefront = 1615;
+sideback = 1616;
+twosided = true;
+}
+
+linedef
+{
+v1 = 644;
+v2 = 849;
+sidefront = 1619;
+sideback = 1622;
+twosided = true;
+}
+
+linedef
+{
+v1 = 849;
+v2 = 850;
+sidefront = 1620;
+sideback = 1624;
+twosided = true;
+}
+
+linedef
+{
+v1 = 786;
+v2 = 787;
+sidefront = 1617;
+sideback = 1618;
+twosided = true;
+}
+
+linedef
+{
+v1 = 850;
+v2 = 786;
+sidefront = 1621;
+sideback = 1623;
+twosided = true;
+}
+
+linedef
+{
+v1 = 786;
+v2 = 851;
+sidefront = 1628;
+sideback = 1627;
+twosided = true;
+}
+
+linedef
+{
+v1 = 851;
+v2 = 852;
+sidefront = 1629;
+sideback = 1626;
+twosided = true;
+}
+
+linedef
+{
+v1 = 852;
+v2 = 788;
+sidefront = 1630;
+sideback = 1625;
+twosided = true;
+}
+
+linedef
+{
+v1 = 788;
+v2 = 853;
+sidefront = 1631;
+sideback = 1633;
+twosided = true;
+}
+
+linedef
+{
+v1 = 853;
+v2 = 650;
+sidefront = 1632;
+sideback = 1634;
 twosided = true;
 }
 
@@ -18702,7 +19461,7 @@ texturemiddle = "DRDC10";
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = -13.000000;
 }
@@ -18715,13 +19474,13 @@ texturebottom = "DRDC11";
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturebottom = "DRDC11";
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC32";
 offsetx = -13;
 offsetx_mid = 32.000000;
@@ -18736,6 +19495,7 @@ texturemiddle = "DRPGZ002";
 sidedef
 {
 sector = 164;
+texturetop = "DRDC51";
 texturemiddle = "DRPGZ002";
 texturebottom = "DRDC67";
 }
@@ -18760,6 +19520,7 @@ sidedef
 {
 sector = 104;
 texturemiddle = "DRDC32";
+offsetx = 13;
 offsetx_mid = 57.000000;
 }
 
@@ -18791,7 +19552,7 @@ offsetx_mid = 16.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 }
 
@@ -18803,7 +19564,7 @@ texturemiddle = "DRDC33";
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC32";
 }
 
@@ -19063,7 +19824,7 @@ scalex_mid = -1.000000;
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 }
 
@@ -20044,7 +20805,7 @@ texturemiddle = "DRDC34";
 
 sidedef
 {
-sector = 171;
+sector = 248;
 texturemiddle = "DRDC11";
 offsetx_mid = 17.000000;
 }
@@ -20323,7 +21084,7 @@ offsetx = 63;
 
 sidedef
 {
-sector = 68;
+sector = 231;
 texturemiddle = "DRDC43A";
 scalex_mid = -1.000000;
 }
@@ -20361,7 +21122,7 @@ offsetx_mid = 16.000000;
 
 sidedef
 {
-sector = 68;
+sector = 229;
 texturemiddle = "DRDC43A";
 scalex_mid = -1.000000;
 }
@@ -20520,7 +21281,7 @@ texturemiddle = "DRDC32";
 
 sidedef
 {
-sector = 68;
+sector = 231;
 texturemiddle = "DRDC43A";
 offsetx = 32;
 offsetx_mid = 32.000000;
@@ -20529,7 +21290,7 @@ scalex_mid = -1.000000;
 
 sidedef
 {
-sector = 68;
+sector = 229;
 texturemiddle = "DRDC43A";
 offsetx_mid = 32.000000;
 scalex_mid = -1.000000;
@@ -20557,7 +21318,7 @@ offsetx_mid = 48.000000;
 
 sidedef
 {
-sector = 68;
+sector = 230;
 texturemiddle = "DRDC43A";
 offsetx_mid = 32.000000;
 }
@@ -20790,7 +21551,7 @@ texturemiddle = "DRDC34";
 
 sidedef
 {
-sector = 226;
+sector = 100;
 texturemiddle = "DRDC32";
 offsetx_mid = 35.000000;
 }
@@ -20835,13 +21596,13 @@ texturemiddle = "DRDC10";
 
 sidedef
 {
-sector = 226;
+sector = 100;
 texturemiddle = "DRPGZ002";
 }
 
 sidedef
 {
-sector = 171;
+sector = 235;
 texturetop = "DRDC52";
 texturemiddle = "DRPGZ002";
 texturebottom = "DRDC72";
@@ -20866,7 +21627,7 @@ sector = 15;
 
 sidedef
 {
-sector = 171;
+sector = 248;
 texturemiddle = "DRDC11";
 offsetx_mid = 61.000000;
 }
@@ -20934,13 +21695,14 @@ texturebottom = "DRDC11";
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC32";
+offsetx = 26;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = 31.000000;
 }
@@ -20953,7 +21715,7 @@ texturemiddle = "DRDC34";
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC33";
 }
 
@@ -20994,6 +21756,7 @@ sidedef
 {
 sector = 164;
 texturemiddle = "DRDC32";
+offsety = -8;
 offsetx_mid = 32.000000;
 }
 
@@ -21049,7 +21812,7 @@ offsetx_mid = -12.000000;
 
 sidedef
 {
-sector = 225;
+sector = 99;
 texturemiddle = "DRDC41A";
 offsetx_mid = -26.000000;
 scalex_mid = -1.000000;
@@ -21253,7 +22016,7 @@ offsetx_bottom = -8.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRPGZ002";
 offsetx_mid = -32.000000;
 offsety_mid = -8.000000;
@@ -21416,7 +22179,7 @@ offsetx_mid = 32.000000;
 
 sidedef
 {
-sector = 171;
+sector = 248;
 texturemiddle = "DRDC11";
 offsetx_mid = 62.000000;
 }
@@ -22269,19 +23032,19 @@ offsetx_mid = 48.000000;
 sidedef
 {
 sector = 95;
-texturemiddle = "DRDC10";
+texturemiddle = "DRDC11";
 offsetx_mid = 16.000000;
 }
 
 sidedef
 {
-sector = 93;
+sector = 228;
 texturemiddle = "DRDC11";
 }
 
 sidedef
 {
-sector = 100;
+sector = 227;
 texturemiddle = "DRDC11";
 offsetx = 48;
 }
@@ -22335,7 +23098,7 @@ sector = 98;
 
 sidedef
 {
-sector = 96;
+sector = 225;
 texturemiddle = "DRDC11";
 offsetx = 56;
 offsetx_mid = 48.000000;
@@ -22344,19 +23107,19 @@ offsetx_mid = 48.000000;
 sidedef
 {
 sector = 98;
-texturemiddle = "DRDC10";
+texturemiddle = "DRDC11";
 offsetx_mid = 16.000000;
 }
 
 sidedef
 {
-sector = 96;
+sector = 226;
 texturemiddle = "DRDC11";
 }
 
 sidedef
 {
-sector = 99;
+sector = 96;
 texturemiddle = "DRDC11";
 offsetx = 48;
 }
@@ -22369,7 +23132,7 @@ texturemiddle = "DRDC11";
 
 sidedef
 {
-sector = 96;
+sector = 225;
 texturetop = "DRDC11";
 offsetx = 56;
 }
@@ -22381,46 +23144,50 @@ sector = 98;
 
 sidedef
 {
-sector = 99;
-texturemiddle = "DRDC11";
-}
-
-sidedef
-{
-sector = 99;
-texturemiddle = "DRDC11";
-}
-
-sidedef
-{
 sector = 96;
+texturemiddle = "DRDC11";
 }
 
 sidedef
 {
-sector = 99;
-}
-
-sidedef
-{
-sector = 100;
+sector = 226;
 texturemiddle = "DRDC11";
 }
 
 sidedef
 {
 sector = 100;
-texturemiddle = "DRDC11";
-}
-
-sidedef
-{
-sector = 93;
 }
 
 sidedef
 {
 sector = 100;
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 228;
+texturemiddle = "DRDC11";
+}
+
+sidedef
+{
+sector = 236;
+texturetop = "DRDC52";
+texturebottom = "DRDC72";
+}
+
+sidedef
+{
+sector = 236;
+texturetop = "DRDC52";
+texturebottom = "DRDC72";
 }
 
 sidedef
@@ -22532,6 +23299,7 @@ sidedef
 {
 sector = 164;
 texturemiddle = "DRDC32";
+offsety = -8;
 offsetx_mid = 13.000000;
 }
 
@@ -23235,7 +24003,7 @@ offsetx_mid = 17.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC32";
 offsetx = 9;
 offsetx_mid = 54.000000;
@@ -23243,7 +24011,7 @@ offsetx_mid = 54.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC33";
 offsetx = 32;
 offsetx_mid = 32.000000;
@@ -23253,6 +24021,7 @@ sidedef
 {
 sector = 82;
 texturemiddle = "DRDC32";
+offsetx = 58;
 offsetx_mid = 45.000000;
 }
 
@@ -23260,19 +24029,20 @@ sidedef
 {
 sector = 104;
 texturemiddle = "DRDC32";
+offsetx = 32;
 offsetx_mid = 32.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRPGZ002";
 offsety_mid = -8.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRPGZ002";
 offsetx_mid = 32.000000;
 offsety_mid = -8.000000;
@@ -23280,7 +24050,7 @@ offsety_mid = -8.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
@@ -23292,7 +24062,7 @@ offsetx_bottom = 56.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
@@ -23304,7 +24074,7 @@ offsetx_bottom = 41.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
@@ -23316,7 +24086,7 @@ offsetx_bottom = 31.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
@@ -23328,7 +24098,7 @@ offsetx_bottom = 4.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
@@ -23340,7 +24110,7 @@ offsetx_bottom = 51.000000;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
@@ -23501,14 +24271,14 @@ texturemiddle = "DRDC11";
 
 sidedef
 {
-sector = 171;
+sector = 232;
 texturemiddle = "DRDC11";
 offsetx_mid = 11.000000;
 }
 
 sidedef
 {
-sector = 226;
+sector = 100;
 texturemiddle = "DRDC11";
 offsetx_mid = 60.000000;
 }
@@ -23585,7 +24355,7 @@ texturemiddle = "DRDC11";
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = 27.000000;
 }
@@ -23598,7 +24368,8 @@ texturemiddle = "DRPGZ002";
 
 sidedef
 {
-sector = 171;
+sector = 242;
+texturetop = "DRDC51";
 texturemiddle = "DRPGZ002";
 texturebottom = "DRDC72";
 offsetx = 22;
@@ -23606,273 +24377,273 @@ offsetx = 22;
 
 sidedef
 {
-sector = 171;
+sector = 251;
 texturemiddle = "DRDC11";
 offsetx_mid = 48.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 36.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 9.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 235;
 texturemiddle = "DRDC11";
 offsetx_mid = 43.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 58.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 251;
 texturemiddle = "DRDC11";
 offsetx_mid = 26.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 251;
 texturemiddle = "DRDC11";
 offsetx_mid = 58.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 57.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRPGZ002";
 offsety = -8;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRPGZ002";
-offsetx = -16;
+offsetx = 48;
 offsety = -8;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 28.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 27.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 50.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = 16.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 33.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 57.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 31.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 55.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 16.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 50.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 14.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 233;
 texturemiddle = "DRDC11";
 offsetx_mid = 44.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 233;
 texturemiddle = "DRPGZ002";
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
+texturetop = "DRDC57";
 texturemiddle = "DRPGZ002";
-offsety = -8;
 }
 
 sidedef
 {
-sector = 171;
+sector = 238;
 texturemiddle = "DRDC11";
 offsetx_mid = 46.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 50.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 35.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 34.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 43.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 245;
 texturemiddle = "DRDC11";
 offsetx_mid = 62.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 6.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 44.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 33.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 9.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 44.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 13.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 48.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 60.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturemiddle = "DRDC11";
 offsetx_mid = 60.000000;
 }
@@ -23885,70 +24656,71 @@ texturemiddle = "DRDC10";
 
 sidedef
 {
-sector = 171;
+sector = 239;
 texturemiddle = "DRDC11";
 offsetx_mid = 24.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 239;
 texturemiddle = "DRPGZ002";
-offsety = -8;
 }
 
 sidedef
 {
-sector = 171;
+sector = 250;
+texturetop = "DRDC57";
 texturemiddle = "DRPGZ002";
+offsety = 8;
 offsety_mid = -8.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 244;
 texturemiddle = "DRDC11";
 offsetx_mid = 13.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 244;
 texturemiddle = "DRDC11";
 offsetx_mid = 60.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 244;
 texturemiddle = "DRDC11";
 offsetx_mid = 36.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 243;
 texturemiddle = "DRDC11";
 offsetx_mid = 26.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 249;
 texturemiddle = "DRDC11";
 offsetx_mid = 63.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 247;
 texturemiddle = "DRDC11";
 offsetx_mid = 55.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 247;
 texturemiddle = "DRDC11";
 offsetx_mid = 31.000000;
 }
@@ -23964,61 +24736,63 @@ sidedef
 {
 sector = 171;
 texturemiddle = "DRPGZ002";
+offsety = 8;
 offsety_mid = -8.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 247;
 texturemiddle = "DRPGZ002";
+offsety = 8;
 offsety_mid = -8.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 234;
 texturemiddle = "DRDC11";
 offsetx_mid = 35.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 234;
 texturemiddle = "DRDC11";
 offsetx_mid = 38.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = 55.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 232;
 texturemiddle = "DRDC11";
 offsetx_mid = 11.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = 59.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC32";
 offsetx_mid = 36.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 62.000000;
 }
@@ -24037,7 +24811,8 @@ texturemiddle = "DRPGZ002";
 
 sidedef
 {
-sector = 171;
+sector = 242;
+texturetop = "DRDC57";
 texturemiddle = "DRPGZ002";
 texturebottom = "DRDC72";
 }
@@ -24050,126 +24825,126 @@ texturemiddle = "DRPGZ002";
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 30.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 43.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 27.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturemiddle = "DRDC11";
 offsetx_mid = 11.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 49.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 16.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 58.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 8.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 17.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 46.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 62.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 51.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 3.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 62.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 46.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 46.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 5.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturemiddle = "DRDC11";
 offsetx_mid = 28.000000;
 }
@@ -24182,21 +24957,21 @@ texturemiddle = "DRDC11";
 
 sidedef
 {
-sector = 171;
+sector = 241;
 texturemiddle = "DRDC11";
 offsetx_mid = 22.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 246;
 texturemiddle = "DRDC11";
 offsetx_mid = 14.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 248;
 texturemiddle = "DRDC11";
 offsetx_mid = 30.000000;
 }
@@ -24224,7 +24999,7 @@ sector = 205;
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturebottom = "DRDC72";
 offsetx = 22;
 }
@@ -24237,7 +25012,7 @@ texturemiddle = "DRDC11";
 
 sidedef
 {
-sector = 171;
+sector = 250;
 texturetop = "DRDC11";
 offsetx_mid = 28.000000;
 }
@@ -24377,32 +25152,37 @@ texturemiddle = "DRDC27";
 
 sidedef
 {
-sector = 147;
+sector = 252;
 texturemiddle = "DRDC27";
+offsety = -8;
 }
 
 sidedef
 {
-sector = 152;
+sector = 254;
 texturemiddle = "DRDC27";
+offsety = -8;
 }
 
 sidedef
 {
-sector = 152;
+sector = 254;
 texturemiddle = "DRDC27";
+offsety = -8;
 }
 
 sidedef
 {
-sector = 152;
+sector = 254;
 texturemiddle = "DRDC27";
+offsety = -8;
 }
 
 sidedef
 {
-sector = 152;
+sector = 254;
 texturemiddle = "DRDC27";
+offsety = -8;
 }
 
 sidedef
@@ -24774,7 +25554,7 @@ sector = 65;
 
 sidedef
 {
-sector = 68;
+sector = 231;
 texturemiddle = "DRDC43A";
 offsetx = 32;
 }
@@ -24800,7 +25580,7 @@ offsetx = 1;
 
 sidedef
 {
-sector = 68;
+sector = 229;
 texturemiddle = "DRDC43A";
 offsetx = 80;
 offsetx_mid = 48.000000;
@@ -25089,14 +25869,14 @@ sector = 194;
 
 sidedef
 {
-sector = 171;
+sector = 247;
 texturemiddle = "DRPGZ004";
 offsety_mid = -8.000000;
 }
 
 sidedef
 {
-sector = 171;
+sector = 247;
 }
 
 sidedef
@@ -25234,18 +26014,19 @@ sector = 178;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 }
 
 sidedef
 {
 sector = 210;
 texturemiddle = "DRPGZ002";
+offsety = 8;
 offsety_mid = -8.000000;
 }
 
@@ -25953,6 +26734,7 @@ sector = 115;
 sidedef
 {
 sector = 113;
+texturebottom = "DRDC72";
 }
 
 sidedef
@@ -25968,6 +26750,7 @@ sector = 1;
 sidedef
 {
 sector = 113;
+texturebottom = "DRDC72";
 }
 
 sidedef
@@ -26193,22 +26976,23 @@ sector = 149;
 
 sidedef
 {
-sector = 148;
+sector = 253;
+}
+
+sidedef
+{
+sector = 253;
 }
 
 sidedef
 {
 sector = 148;
+texturebottom = "DRDC62X";
 }
 
 sidedef
 {
-sector = 148;
-}
-
-sidedef
-{
-sector = 148;
+sector = 253;
 }
 
 sidedef
@@ -26223,7 +27007,14 @@ sector = 157;
 
 sidedef
 {
-sector = 152;
+sector = 254;
+offsetx = 16;
+}
+
+sidedef
+{
+sector = 147;
+offsetx = 44;
 }
 
 sidedef
@@ -26233,12 +27024,8 @@ sector = 147;
 
 sidedef
 {
-sector = 147;
-}
-
-sidedef
-{
-sector = 147;
+sector = 252;
+texturebottom = "DRDC62X";
 }
 
 sidedef
@@ -26253,7 +27040,7 @@ sector = 149;
 
 sidedef
 {
-sector = 152;
+sector = 254;
 }
 
 sidedef
@@ -26432,6 +27219,7 @@ texturemiddle = "DRPGZ002";
 sidedef
 {
 sector = 164;
+texturetop = "DRDC51";
 texturemiddle = "DRPGZ002";
 texturebottom = "DRDC67";
 }
@@ -26444,6 +27232,7 @@ sector = 10;
 sidedef
 {
 sector = 164;
+texturetop = "DRDC51";
 texturebottom = "DRDC67";
 }
 
@@ -26482,7 +27271,7 @@ texturebottom = "DRDC68";
 sidedef
 {
 sector = 166;
-texturetop = "DRDC62";
+texturetop = "DRDC63X";
 texturebottom = "DRDC62";
 }
 
@@ -26545,7 +27334,7 @@ sector = 169;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturetop = "DRDC52";
 texturebottom = "DRDC72";
 }
@@ -26570,7 +27359,7 @@ offsetx = 63;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturetop = "DRDC52";
 texturebottom = "DRDC72";
 }
@@ -26582,21 +27371,21 @@ sector = 26;
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturetop = "DRDC52";
 texturebottom = "DRDC72";
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturetop = "DRDC52";
 texturebottom = "DRDC72";
 }
 
 sidedef
 {
-sector = 171;
+sector = 236;
 texturetop = "DRDC52";
 }
 
@@ -26632,13 +27421,15 @@ sector = 167;
 
 sidedef
 {
-sector = 171;
+sector = 242;
+texturetop = "DRDC57";
 texturebottom = "DRDC72";
 }
 
 sidedef
 {
-sector = 171;
+sector = 242;
+texturetop = "DRDC57";
 texturebottom = "DRDC72";
 }
 
@@ -26755,12 +27546,12 @@ texturebottom = "DRDC67";
 
 sidedef
 {
-sector = 68;
+sector = 231;
 }
 
 sidedef
 {
-sector = 68;
+sector = 231;
 }
 
 sidedef
@@ -27265,7 +28056,8 @@ offsetx = 40;
 
 sidedef
 {
-sector = 171;
+sector = 242;
+texturetop = "DRDC51";
 texturemiddle = "DRPGZ002";
 texturebottom = "DRDC72";
 offsetx = -2;
@@ -27279,7 +28071,7 @@ offsetx = 48;
 
 sidedef
 {
-sector = 171;
+sector = 242;
 texturebottom = "DRDC72";
 offsetx = 56;
 }
@@ -27357,6 +28149,7 @@ offsetx = 6;
 sidedef
 {
 sector = 204;
+texturetop = "DRDC51";
 texturebottom = "DRDC72";
 offsetx = 11;
 }
@@ -27364,12 +28157,14 @@ offsetx = 11;
 sidedef
 {
 sector = 204;
+texturetop = "DRDC51";
 texturebottom = "DRDC72";
 }
 
 sidedef
 {
 sector = 205;
+texturetop = "DRDC51";
 texturebottom = "DRDC72";
 offsetx = 8;
 }
@@ -27377,6 +28172,7 @@ offsetx = 8;
 sidedef
 {
 sector = 205;
+texturetop = "DRDC51";
 texturebottom = "DRDC72";
 offsetx = 31;
 }
@@ -27444,6 +28240,7 @@ sector = 207;
 sidedef
 {
 sector = 207;
+texturetop = "DRDC57";
 texturebottom = "DRDC72";
 }
 
@@ -27577,12 +28374,14 @@ sector = 210;
 sidedef
 {
 sector = 215;
+texturetop = "DRDC57";
 texturebottom = "DRDC72";
 }
 
 sidedef
 {
 sector = 217;
+texturetop = "DRDC57";
 texturebottom = "DRDC72";
 }
 
@@ -27718,7 +28517,7 @@ sector = 219;
 
 sidedef
 {
-sector = 225;
+sector = 99;
 }
 
 sidedef
@@ -27774,21 +28573,36 @@ sector = 224;
 
 sidedef
 {
+sector = 99;
+}
+
+sidedef
+{
+sector = 225;
+texturemiddle = "DRDC11";
+offsetx = 16;
+}
+
+sidedef
+{
+sector = 96;
+}
+
+sidedef
+{
 sector = 225;
 }
 
 sidedef
 {
-sector = 171;
-texturetop = "DRDC52";
-texturebottom = "DRDC72";
+sector = 226;
+texturemiddle = "DRDC11";
+offsetx = 48;
 }
 
 sidedef
 {
-sector = 171;
-texturetop = "DRDC52";
-texturebottom = "DRDC72";
+sector = 225;
 }
 
 sidedef
@@ -27798,7 +28612,620 @@ sector = 226;
 
 sidedef
 {
+sector = 93;
+texturemiddle = "DRDC11";
+offsetx = 16;
+}
+
+sidedef
+{
+sector = 227;
+}
+
+sidedef
+{
+sector = 93;
+}
+
+sidedef
+{
+sector = 228;
+texturemiddle = "DRDC11";
+offsetx = 48;
+}
+
+sidedef
+{
+sector = 93;
+}
+
+sidedef
+{
+sector = 228;
+}
+
+sidedef
+{
+sector = 96;
+texturemiddle = "DRDC11";
+offsetx = 64;
+offsetx_mid = 48.000000;
+}
+
+sidedef
+{
+sector = 96;
+}
+
+sidedef
+{
+sector = 225;
+texturetop = "DRDC11";
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 225;
+texturemiddle = "DRDC11";
+offsetx = 48;
+}
+
+sidedef
+{
+sector = 225;
+texturetop = "DRDC11";
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
 sector = 226;
+}
+
+sidedef
+{
+sector = 227;
+texturemiddle = "DRDC11";
+offsetx = 64;
+offsetx_mid = 48.000000;
+}
+
+sidedef
+{
+sector = 93;
+texturetop = "DRDC11";
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 227;
+}
+
+sidedef
+{
+sector = 93;
+texturemiddle = "DRDC11";
+offsetx = 48;
+}
+
+sidedef
+{
+sector = 93;
+texturetop = "DRDC11";
+texturebottom = "DRDC11";
+}
+
+sidedef
+{
+sector = 228;
+}
+
+sidedef
+{
+sector = 68;
+}
+
+sidedef
+{
+sector = 231;
+}
+
+sidedef
+{
+sector = 229;
+}
+
+sidedef
+{
+sector = 229;
+}
+
+sidedef
+{
+sector = 68;
+}
+
+sidedef
+{
+sector = 230;
+}
+
+sidedef
+{
+sector = 230;
+}
+
+sidedef
+{
+sector = 231;
+}
+
+sidedef
+{
+sector = 171;
+}
+
+sidedef
+{
+sector = 171;
+}
+
+sidedef
+{
+sector = 171;
+}
+
+sidedef
+{
+sector = 248;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 232;
+}
+
+sidedef
+{
+sector = 234;
+}
+
+sidedef
+{
+sector = 232;
+}
+
+sidedef
+{
+sector = 232;
+}
+
+sidedef
+{
+sector = 232;
+}
+
+sidedef
+{
+sector = 248;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 234;
+}
+
+sidedef
+{
+sector = 235;
+}
+
+sidedef
+{
+sector = 235;
+}
+
+sidedef
+{
+sector = 235;
+}
+
+sidedef
+{
+sector = 236;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 236;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 233;
+}
+
+sidedef
+{
+sector = 233;
+}
+
+sidedef
+{
+sector = 233;
+}
+
+sidedef
+{
+sector = 238;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 237;
+}
+
+sidedef
+{
+sector = 250;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 237;
+}
+
+sidedef
+{
+sector = 237;
+}
+
+sidedef
+{
+sector = 237;
+}
+
+sidedef
+{
+sector = 250;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 239;
+}
+
+sidedef
+{
+sector = 242;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 239;
+}
+
+sidedef
+{
+sector = 240;
+}
+
+sidedef
+{
+sector = 240;
+}
+
+sidedef
+{
+sector = 240;
+}
+
+sidedef
+{
+sector = 240;
+}
+
+sidedef
+{
+sector = 242;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 241;
+}
+
+sidedef
+{
+sector = 244;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 242;
+texturemiddle = "DRDC11";
+offsetx = 32;
+offsetx_mid = 22.000000;
+}
+
+sidedef
+{
+sector = 241;
+}
+
+sidedef
+{
+sector = 241;
+}
+
+sidedef
+{
+sector = 241;
+}
+
+sidedef
+{
+sector = 242;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 243;
+}
+
+sidedef
+{
+sector = 246;
+}
+
+sidedef
+{
+sector = 243;
+}
+
+sidedef
+{
+sector = 243;
+}
+
+sidedef
+{
+sector = 243;
+}
+
+sidedef
+{
+sector = 244;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 249;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 245;
+}
+
+sidedef
+{
+sector = 245;
+}
+
+sidedef
+{
+sector = 245;
+}
+
+sidedef
+{
+sector = 245;
+}
+
+sidedef
+{
+sector = 246;
+}
+
+sidedef
+{
+sector = 247;
+}
+
+sidedef
+{
+sector = 248;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 247;
+}
+
+sidedef
+{
+sector = 249;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 238;
+}
+
+sidedef
+{
+sector = 250;
+}
+
+sidedef
+{
+sector = 242;
+texturetop = "DRDC57";
+texturemiddle = "DRPGZ002";
+offsetx = 16;
+}
+
+sidedef
+{
+sector = 251;
+texturemiddle = "DRPGZ002";
+offsetx = -16;
+}
+
+sidedef
+{
+sector = 242;
+texturetop = "DRDC57";
+}
+
+sidedef
+{
+sector = 251;
+}
+
+sidedef
+{
+sector = 252;
+texturemiddle = "DRDC27";
+offsetx = 32;
+offsety = -8;
+}
+
+sidedef
+{
+sector = 253;
+offsetx = 48;
+}
+
+sidedef
+{
+sector = 152;
+}
+
+sidedef
+{
+sector = 148;
+texturebottom = "DRDC62X";
+offsetx = 20;
+}
+
+sidedef
+{
+sector = 252;
+}
+
+sidedef
+{
+sector = 147;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 147;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 147;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 252;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 252;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 252;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 148;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 148;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 148;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 253;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 253;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 253;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 152;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 152;
+texturebottom = "DRDC62X";
+}
+
+sidedef
+{
+sector = 254;
+texturetop = "DRDC62X";
+}
+
+sidedef
+{
+sector = 254;
+texturetop = "DRDC62X";
 }
 
 sector
@@ -27918,7 +29345,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -27936,7 +29362,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -27944,7 +29369,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -27959,7 +29383,7 @@ rotationfloor = 90.000000;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+textureceiling = "DRDC62X";
 heightceiling = 64;
 lightlevel = 125;
 rotationfloor = 90.000000;
@@ -27970,7 +29394,7 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 180.000000;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -27996,13 +29420,13 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 180.000000;
+rotationfloor = 90.000000;
 }
 
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+textureceiling = "DRDC62X";
 heightceiling = 61;
 lightlevel = 125;
 rotationfloor = 180.000000;
@@ -28071,7 +29495,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28097,7 +29520,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28134,7 +29556,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28164,7 +29585,6 @@ textureceiling = "FLAT20";
 heightfloor = -8;
 heightceiling = -8;
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28284,6 +29704,7 @@ textureceiling = "FLAT20";
 heightfloor = -8;
 heightceiling = -8;
 lightlevel = 125;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -28326,7 +29747,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28378,7 +29798,7 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 180.000000;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -28395,7 +29815,7 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 180.000000;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -28429,7 +29849,7 @@ rotationfloor = 180.000000;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+textureceiling = "DRDC63X";
 heightceiling = 64;
 lightlevel = 125;
 rotationfloor = 180.000000;
@@ -28476,7 +29896,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28534,7 +29953,6 @@ texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 125;
 id = 3;
-rotationfloor = 90.000000;
 }
 
 sector
@@ -28686,7 +30104,7 @@ lightlevel = 125;
 
 sector
 {
-texturefloor = "RROCK04";
+texturefloor = "DRDC11";
 textureceiling = "DRDC11";
 heightfloor = -8;
 heightceiling = -8;
@@ -28698,8 +30116,8 @@ sector
 {
 texturefloor = "DRDC11";
 textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 56;
+heightfloor = 8;
+heightceiling = 40;
 lightlevel = 125;
 rotationfloor = 90.000000;
 }
@@ -28715,7 +30133,7 @@ lightlevel = 125;
 
 sector
 {
-texturefloor = "RROCK04";
+texturefloor = "DRDC11";
 textureceiling = "DRDC11";
 heightfloor = -8;
 heightceiling = -8;
@@ -28726,22 +30144,21 @@ rotationfloor = 180.000000;
 
 sector
 {
-texturefloor = "DRDC11";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 56;
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
 lightlevel = 125;
 rotationfloor = 90.000000;
 }
 
 sector
 {
-texturefloor = "DRDC11";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 56;
-lightlevel = 125;
-rotationfloor = 90.000000;
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
 }
 
 sector
@@ -29114,7 +30531,7 @@ rotationfloor = 180.000000;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+textureceiling = "DRDC62X";
 heightceiling = 61;
 lightlevel = 125;
 rotationfloor = 180.000000;
@@ -29185,6 +30602,1031 @@ rotationceiling = 180.000000;
 
 sector
 {
+texturefloor = "DRDC54";
+textureceiling = "DRDC11";
+heightfloor = 2;
+heightceiling = 72;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC57";
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC62X";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC69";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 65;
+lightlevel = 221;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC69";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 65;
+lightlevel = 221;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC69";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 65;
+lightlevel = 221;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC69";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 65;
+lightlevel = 221;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC69";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 65;
+lightlevel = 221;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC63X";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC63X";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC63X";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC63X";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC52";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC67";
+textureceiling = "DRDC51";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC57";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC51";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC52";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC72";
+textureceiling = "DRDC11";
+heightceiling = 72;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 56;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC11";
+heightfloor = 8;
+heightceiling = 40;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC11";
+heightfloor = 8;
+heightceiling = 40;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC11";
+textureceiling = "DRDC11";
+heightfloor = 8;
+heightceiling = 40;
+lightlevel = 125;
+rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC63X";
+heightceiling = 64;
+lightlevel = 125;
+rotationfloor = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC11";
+heightfloor = -8;
+heightceiling = 72;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "DRDC57";
+heightfloor = -8;
+heightceiling = 64;
+lightlevel = 100;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
+texturefloor = "DRDC52";
+textureceiling = "DRDC11";
+heightfloor = 4;
+heightceiling = 72;
+lightlevel = 135;
+rotationfloor = 180.000000;
+rotationceiling = 180.000000;
+}
+
+sector
+{
 texturefloor = "RROCK04";
 textureceiling = "DRDC54";
 heightceiling = 64;
@@ -29195,735 +31637,11 @@ rotationceiling = 180.000000;
 
 sector
 {
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 135;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC11";
+texturefloor = "DRDC51";
 textureceiling = "DRDC11";
-heightfloor = -8;
+heightfloor = 8;
 heightceiling = 72;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC11";
-heightceiling = 72;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC11";
-textureceiling = "DRDC62";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC63X";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC63X";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC63X";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC69";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 65;
-lightlevel = 221;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC69";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 65;
-lightlevel = 221;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC69";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 65;
-lightlevel = 221;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC69";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 65;
-lightlevel = 221;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC69";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 65;
-lightlevel = 221;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC63X";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC63X";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC63X";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC63X";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "DRDC67";
-textureceiling = "DRDC51";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 100;
-rotationfloor = 180.000000;
-rotationceiling = 180.000000;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC11";
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC51";
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC52";
-heightfloor = -8;
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "RROCK04";
-textureceiling = "DRDC11";
-heightfloor = -8;
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC11";
-heightceiling = 72;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC63X";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC63X";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 125;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC68";
-textureceiling = "DRDC62";
-heightceiling = 64;
-lightlevel = 125;
-rotationfloor = 90.000000;
-}
-
-sector
-{
-texturefloor = "DRDC72";
-textureceiling = "DRDC52";
-heightceiling = 64;
-lightlevel = 100;
+lightlevel = 135;
 rotationfloor = 180.000000;
 rotationceiling = 180.000000;
 }
