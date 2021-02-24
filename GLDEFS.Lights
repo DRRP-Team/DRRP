@@ -141,3 +141,15 @@ Object SparkFlare_P4 { Frame SPKP { Light PurpleSparkFlare } }
 Object SparkFlare_P5 { Frame SPKP { Light PurpleSparkFlare } }
 Object SparkFlare_P6 { Frame SPKP { Light PurpleSparkFlare } }
 // end Sparks
+
+
+PointLight CANDLE {
+    color 1.0 1.0 0.3
+    size 24
+    offset 0 16 0
+    attenuate 1
+}
+
+Object DRRPCandle {
+    Frame CAND { Light CANDLE }
+}

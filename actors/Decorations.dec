@@ -662,3 +662,8 @@ Actor DRRPShittyFog 10765 {
 Actor DRRPNonSolidMeat5 : NonSolidMeat5 replaces NonSolidMeat5 {
     Tag "$DRRP_D_NONSOLIDMEATS"
 }
+
+Actor DRRPCandle : Candlestick replaces Candlestick {
+    Tag "$DRRP_D_CANDLE"
+}
+
