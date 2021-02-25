@@ -135,7 +135,7 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
         //+SPECTRAL;
         //-ISMONSTER;
         //-COUNTKILL;
-        -SOLID;
+        +SOLID;
         -PUSHABLE;
         -SHOOTABLE;
         +NOBLOOD;
@@ -167,6 +167,15 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
         fireActorDamageMax = 4;
         fireActorDamageTicks = 3;
     } // of override void BeginPlay()
+
+    override bool CanCollideWith( Actor other, bool passive ) {
+        if ( other is "PlayerPawn"
+            || other.bMISSILE == true ) {
+            return false;
+        }
+
+        return true;
+    } // of override bool CanCollideWith( Actor other, bool passive )
 
     override void Tick() {
         damageNearestPlayers();
