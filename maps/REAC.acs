@@ -186,15 +186,21 @@ script 103 (void){//Pregate
     AmbientSound(localizeSound("bet/made"), 200);
 }
 
-script 104 (void){//Kronos
+script 104 (void){ // Kronos
     ACS_NamedExecuteWait("window", 0, getString(11));
+	//
+	ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
+	TeleportOther(ActivatorTID(), 12, 1);
+	ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
+	//
     AmbientSound(localizeSound("bet/destroy"), 200);
+	Thing_Remove(10);
     Delay(50);
     ACS_NamedExecute("transformation", 0, 10);
     Delay(5);
     Radius_Quake(8, 43, 0, 20, 0);
     ThrustThing(192, 30, 1, 0);
-    Thing_Remove(10);
+	Thing_Remove(11);
     SpawnSpotForced("Kronos", 555, 0, 0);
 }
 
