@@ -167,7 +167,10 @@ Actor DRRPRod : ExplosiveBarrel 10704 {
     Scale 0.6
     Health 666
     Mass 10000000
+    Height 64
+
     DamageFactor DRRPFireExtDmg, 0.0
+
     States {
         Spawn:
             ROD1 ABCDEF 2
@@ -200,6 +203,9 @@ Actor DRRPRodTrash {
     Scale 0.6
     Health 10
     Mass 10000000
+
+    Height 48
+
     DamageFactor DRRPFireExtDmg, 0.0
 
     States {
