@@ -163,6 +163,8 @@ Actor DRRPChair 10750 {
 Actor DRRPRod : ExplosiveBarrel 10704 {
     //$Category DDecorations
 
+    +CANNOTPUSH
+
     Tag "$DRRP_E_POWERCOUPLING"
     Scale 0.6
     Health 666
@@ -200,6 +202,7 @@ Actor DRRPRodTrash {
     +SOLID
     +SHOOTABLE
     +NOBLOOD
+    +CANNOTPUSH
 
     Tag "$DRRP_E_POWERCOUPLING"
     Scale 0.6
