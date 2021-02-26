@@ -12081,6 +12081,54 @@ x = 324.000;
 y = -452.000;
 }
 
+vertex
+{
+x = 128.000;
+y = 1280.000;
+}
+
+vertex
+{
+x = 576.000;
+y = 1280.000;
+}
+
+vertex
+{
+x = 704.000;
+y = 1248.000;
+}
+
+vertex
+{
+x = 704.000;
+y = 1280.000;
+}
+
+vertex
+{
+x = 736.000;
+y = 1248.000;
+}
+
+vertex
+{
+x = 768.000;
+y = 1248.000;
+}
+
+vertex
+{
+x = 768.000;
+y = 1280.000;
+}
+
+vertex
+{
+x = 800.000;
+y = 1248.000;
+}
+
 linedef
 {
 v1 = 0;
@@ -12095,8 +12143,9 @@ linedef
 v1 = 2;
 v2 = 3;
 sidefront = 1;
+sideback = 2367;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12151,8 +12200,9 @@ linedef
 v1 = 12;
 v2 = 13;
 sidefront = 8;
+sideback = 2369;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12160,8 +12210,9 @@ linedef
 v1 = 14;
 v2 = 15;
 sidefront = 9;
+sideback = 2364;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12169,8 +12220,9 @@ linedef
 v1 = 16;
 v2 = 17;
 sidefront = 10;
+sideback = 2360;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12226,8 +12278,9 @@ linedef
 v1 = 7;
 v2 = 24;
 sidefront = 16;
+sideback = 2355;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12265,8 +12318,9 @@ linedef
 v1 = 3;
 v2 = 30;
 sidefront = 22;
+sideback = 2366;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12274,8 +12328,9 @@ linedef
 v1 = 31;
 v2 = 18;
 sidefront = 23;
+sideback = 2358;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12292,8 +12347,9 @@ linedef
 v1 = 34;
 v2 = 16;
 sidefront = 25;
+sideback = 2361;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12310,8 +12366,9 @@ linedef
 v1 = 24;
 v2 = 37;
 sidefront = 27;
+sideback = 2354;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12328,8 +12385,9 @@ linedef
 v1 = 39;
 v2 = 40;
 sidefront = 29;
+sideback = 2352;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12346,8 +12404,9 @@ linedef
 v1 = 30;
 v2 = 14;
 sidefront = 32;
+sideback = 2365;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12355,8 +12414,9 @@ linedef
 v1 = 17;
 v2 = 31;
 sidefront = 33;
+sideback = 2359;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12383,8 +12443,9 @@ linedef
 v1 = 37;
 v2 = 39;
 sidefront = 37;
+sideback = 2353;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12462,8 +12523,9 @@ linedef
 v1 = 54;
 v2 = 12;
 sidefront = 46;
+sideback = 2370;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12480,8 +12542,9 @@ linedef
 v1 = 26;
 v2 = 56;
 sidefront = 48;
-blocking = true;
+sideback = 2377;
 dontdraw = true;
+twosided = true;
 }
 
 linedef
@@ -12517,8 +12580,9 @@ linedef
 v1 = 13;
 v2 = 2;
 sidefront = 53;
+sideback = 2368;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12535,8 +12599,9 @@ linedef
 v1 = 60;
 v2 = 54;
 sidefront = 55;
+sideback = 2371;
 id = 666;
-blocking = true;
+twosided = true;
 }
 
 linedef
@@ -12634,8 +12699,9 @@ linedef
 v1 = 67;
 v2 = 27;
 sidefront = 67;
-blocking = true;
+sideback = 2373;
 dontdraw = true;
+twosided = true;
 }
 
 linedef
@@ -12643,8 +12709,9 @@ linedef
 v1 = 68;
 v2 = 67;
 sidefront = 68;
-blocking = true;
+sideback = 2374;
 dontdraw = true;
+twosided = true;
 }
 
 linedef
@@ -12652,8 +12719,9 @@ linedef
 v1 = 69;
 v2 = 68;
 sidefront = 69;
-blocking = true;
+sideback = 2375;
 dontdraw = true;
+twosided = true;
 }
 
 linedef
@@ -12661,8 +12729,9 @@ linedef
 v1 = 56;
 v2 = 69;
 sidefront = 70;
-blocking = true;
+sideback = 2376;
 dontdraw = true;
+twosided = true;
 }
 
 linedef
@@ -26320,6 +26389,118 @@ sideback = 2349;
 twosided = true;
 }
 
+linedef
+{
+v1 = 1229;
+v2 = 40;
+sidefront = 2351;
+blocking = true;
+}
+
+linedef
+{
+v1 = 7;
+v2 = 1229;
+sidefront = 2356;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1230;
+v2 = 18;
+sidefront = 2357;
+blocking = true;
+}
+
+linedef
+{
+v1 = 34;
+v2 = 1230;
+sidefront = 2362;
+blocking = true;
+}
+
+linedef
+{
+v1 = 60;
+v2 = 15;
+sidefront = 2363;
+blocking = true;
+}
+
+linedef
+{
+v1 = 26;
+v2 = 27;
+sidefront = 2372;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1231;
+v2 = 1232;
+sidefront = 2378;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1233;
+v2 = 1231;
+sidefront = 2380;
+special = 160;
+blocking = true;
+arg0 = 667;
+arg1 = 1;
+arg3 = 255;
+}
+
+linedef
+{
+v1 = 1232;
+v2 = 1233;
+sidefront = 2379;
+special = 160;
+blocking = true;
+arg0 = 666;
+arg1 = 1;
+arg3 = 255;
+}
+
+linedef
+{
+v1 = 1234;
+v2 = 1235;
+sidefront = 2381;
+blocking = true;
+}
+
+linedef
+{
+v1 = 1236;
+v2 = 1234;
+sidefront = 2383;
+special = 160;
+blocking = true;
+arg0 = 667;
+arg1 = 1;
+arg3 = 255;
+}
+
+linedef
+{
+v1 = 1235;
+v2 = 1236;
+sidefront = 2382;
+special = 160;
+blocking = true;
+arg0 = 666;
+arg1 = 1;
+arg3 = 255;
+}
+
 sidedef
 {
 sector = 5;
@@ -26331,8 +26512,8 @@ offsetx_mid = 46;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 }
 
 sidedef
@@ -26378,8 +26559,8 @@ offsetx_mid = 60;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 offsetx = 4;
 offsetx_mid = 16;
 }
@@ -26387,15 +26568,15 @@ offsetx_mid = 16;
 sidedef
 {
 sector = 2;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 }
 
 sidedef
 {
 sector = 2;
-texturemiddle = "DRDC27";
-texturebottom = "DRDC40";
+texturetop = "DRDC27";
+texturebottom = "DRDC27";
 offsetx = 16;
 }
 
@@ -26436,8 +26617,7 @@ texturebottom = "DRDC35";
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
 }
 
 sidedef
@@ -26478,8 +26658,8 @@ offsetx = 128;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 offsetx = 3;
 offsetx_mid = 32;
 }
@@ -26487,8 +26667,8 @@ offsetx_mid = 32;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC27";
-texturebottom = "DRDC40";
+texturetop = "DRDC27";
+texturebottom = "DRDC27";
 offsetx_mid = 32;
 }
 
@@ -26502,7 +26682,8 @@ offsetx = 27;
 sidedef
 {
 sector = 2;
-texturemiddle = "DRDC27";
+texturetop = "DRDC27";
+texturebottom = "DRDC27";
 offsetx = 62;
 offsetx_mid = 51;
 }
@@ -26518,8 +26699,7 @@ offsetx_mid = 32;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
 offsetx_mid = 32;
 }
 
@@ -26534,8 +26714,7 @@ offsetx_mid = 35;
 sidedef
 {
 sector = 1;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
 offsetx_mid = 3;
 }
 
@@ -26553,8 +26732,8 @@ sector = 2;
 sidedef
 {
 sector = 2;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 offsetx = 3;
 offsetx_mid = 60;
 }
@@ -26562,8 +26741,8 @@ offsetx_mid = 60;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC27";
-texturebottom = "DRDC40";
+texturetop = "DRDC27";
+texturebottom = "DRDC27";
 offsetx = 16;
 offsetx_mid = 16.000000;
 }
@@ -26590,8 +26769,7 @@ offsetx_mid = 51;
 sidedef
 {
 sector = 1;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
 offsetx_mid = 60;
 }
 
@@ -26659,8 +26837,8 @@ offsetx_mid = 63;
 sidedef
 {
 sector = 5;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 offsetx = 15;
 }
 
@@ -26674,7 +26852,6 @@ texturebottom = "DRDC40";
 sidedef
 {
 sector = 6;
-texturemiddle = "DRDC11";
 }
 
 sidedef
@@ -26707,8 +26884,8 @@ offsetx_mid = 18;
 sidedef
 {
 sector = 3;
-texturemiddle = "DRDC32";
-texturebottom = "DRDC40";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 offsetx_mid = 32;
 }
 
@@ -26722,7 +26899,8 @@ offsetx = 8;
 sidedef
 {
 sector = 5;
-texturemiddle = "DRDC32";
+texturetop = "DRDC32";
+texturebottom = "DRDC32";
 offsetx_mid = 51;
 }
 
@@ -26807,25 +26985,21 @@ texturebottom = "DRDC11";
 sidedef
 {
 sector = 6;
-texturemiddle = "DRDC11";
 }
 
 sidedef
 {
 sector = 6;
-texturemiddle = "DRDC11";
 }
 
 sidedef
 {
 sector = 6;
-texturemiddle = "DRDC11";
 }
 
 sidedef
 {
 sector = 6;
-texturemiddle = "DRDC11";
 }
 
 sidedef
@@ -39359,6 +39533,7 @@ sidedef
 {
 sector = 60;
 texturemiddle = "DRPGZ002";
+offsety_mid = -64.000000;
 }
 
 sidedef
@@ -39370,6 +39545,7 @@ sidedef
 {
 sector = 60;
 texturemiddle = "DRPGZ002";
+offsety_mid = -64.000000;
 }
 
 sidedef
@@ -41557,6 +41733,183 @@ sidedef
 sector = 273;
 }
 
+sidedef
+{
+sector = 274;
+texturemiddle = "DRDC32";
+}
+
+sidedef
+{
+sector = 274;
+}
+
+sidedef
+{
+sector = 274;
+}
+
+sidedef
+{
+sector = 274;
+}
+
+sidedef
+{
+sector = 274;
+}
+
+sidedef
+{
+sector = 274;
+texturemiddle = "RPWAL23";
+}
+
+sidedef
+{
+sector = 275;
+texturemiddle = "RPWAL23";
+}
+
+sidedef
+{
+sector = 275;
+}
+
+sidedef
+{
+sector = 275;
+}
+
+sidedef
+{
+sector = 275;
+}
+
+sidedef
+{
+sector = 275;
+}
+
+sidedef
+{
+sector = 275;
+texturemiddle = "DRDC34";
+}
+
+sidedef
+{
+sector = 276;
+texturemiddle = "DRDC32";
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 276;
+}
+
+sidedef
+{
+sector = 277;
+texturemiddle = "RPWAL23";
+}
+
+sidedef
+{
+sector = 277;
+}
+
+sidedef
+{
+sector = 277;
+}
+
+sidedef
+{
+sector = 277;
+}
+
+sidedef
+{
+sector = 277;
+}
+
+sidedef
+{
+sector = 277;
+}
+
+sidedef
+{
+sector = 278;
+texturemiddle = "STONE2";
+}
+
+sidedef
+{
+sector = 278;
+texturemiddle = "STONE2";
+}
+
+sidedef
+{
+sector = 278;
+texturemiddle = "STONE2";
+}
+
+sidedef
+{
+sector = 279;
+texturemiddle = "STONE2";
+}
+
+sidedef
+{
+sector = 279;
+texturemiddle = "STONE2";
+}
+
+sidedef
+{
+sector = 279;
+texturemiddle = "STONE2";
+}
+
 sector
 {
 texturefloor = "DRDC68";
@@ -41570,7 +41923,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 150;
 id = 667;
 }
@@ -41579,7 +41933,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 150;
 id = 667;
 }
@@ -41588,7 +41943,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 125;
 id = 666;
 }
@@ -41597,7 +41953,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 150;
 id = 667;
 }
@@ -41606,7 +41963,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 150;
 id = 667;
 }
@@ -41642,7 +42000,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 200;
 special = 843;
 id = 666;
@@ -42150,7 +42509,8 @@ sector
 {
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
-heightceiling = 64;
+heightfloor = -64;
+heightceiling = 128;
 lightlevel = 125;
 special = 848;
 id = 666;
@@ -44490,5 +44850,50 @@ heightceiling = 64;
 lightlevel = 120;
 rotationfloor = 90.000000;
 xpanningfloor = -32.000000;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+lightlevel = 150;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+lightlevel = 150;
+}
+
+sector
+{
+texturefloor = "RROCK04";
+textureceiling = "BLOOD1";
+heightfloor = -128;
+heightceiling = -63;
+lightlevel = 125;
+}
+
+sector
+{
+texturefloor = "DRDC62";
+textureceiling = "DRDC62";
+heightfloor = 64;
+heightceiling = 72;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC68";
+heightfloor = -8;
 }
 
