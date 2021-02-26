@@ -140,8 +140,7 @@ script 101 (void){//Core
 			SpawnSpot("Explosion", 668);
             SpawnSpotForced("Cyberdemon", 667, 696, 192);
             SetThingSpecial(696, 80, 102); // Activate cut-scene on Cyber death
-			print(s:getStringIndex(20));
-			ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(20)); // Note about Cyberdemon
+			//ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(20)); // Note about Cyberdemon // On GZDoom v4.5.0 throws an error :/
 			// Disabled reactor texture
             SetLineTexture(665, LINE_FRONT, TEXTURE_MIDDLE, "DRDC49");
             SetLineTexture(666, LINE_FRONT, TEXTURE_MIDDLE, "DRDC50");
