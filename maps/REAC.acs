@@ -150,9 +150,9 @@ script 101 (void){//Core
 Script 102 (void) { // End
     AmbientSound("monsters/cyberdemon/death", 255);
     SpawnSpot("Explosion", 666);
-    SetLineTexture(665, LINE_FRONT, TEXTURE_TOP, "REAC1");
-    SetLineTexture(666, LINE_FRONT, TEXTURE_TOP, "REAC2");
-    SetLineTexture(667, LINE_FRONT, TEXTURE_TOP, "REAC1");
+    SetLineTexture(665, LINE_FRONT, TEXTURE_MIDDLE, "REAC1");
+    SetLineTexture(666, LINE_FRONT, TEXTURE_MIDDLE, "REAC2");
+    SetLineTexture(667, LINE_FRONT, TEXTURE_MIDDLE, "REAC1");
     AmbientSound("teleport/tohell", 255);
     Delay(15);
     FadeRange(0, 0, 0, 0.0, 255, 128, 0, 1.0, 0.5);
@@ -198,10 +198,23 @@ script 104 (void){ // Kronos
     Delay(50);
     ACS_NamedExecute("transformation", 0, 10);
     Delay(5);
-    Radius_Quake(8, 43, 0, 20, 0);
-    ThrustThing(192, 30, 1, 0);
+    ACS_NamedExecuteWait("drpgquake", 0, 43, 8);
+    // ThrustThing(192, 30, 1, 0); // Used to push player back in lava room
 	Thing_Remove(11);
-    SpawnSpotForced("Kronos", 555, 0, 0);
+    SpawnSpotForced("Kronos", 555, 596, 0);
+	SetThingSpecial(596, 80, 105);
+}
+
+Script 105 (void) { // On Kronos Die
+	Thing_Remove(546); // Remove lava and fire
+	SpawnSpot("Explosion", 545);
+	ACS_NamedExecuteWait("drpgquake", 0, 100, 12);
+	
+	// Remove wall
+	SetLineBlocking(545, OFF);
+    Line_SetBlocking(545, OFF, BLOCKF_PROJECTILES | BLOCKF_HITSCAN);
+    SetLineTexture(545, SIDE_FRONT, TEXTURE_MIDDLE, "");
+    SetLineTexture(54, SIDE_BACK, TEXTURE_MIDDLE, "");
 }
 
 int lavacomputercounter = 0;
