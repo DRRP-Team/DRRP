@@ -85,47 +85,61 @@ script 101 (void){//Core
             AmbientSound(localizeSound("voice/hireactemp"), 127);
             Delay(43*2);
             SpawnSpot("Explosion", 666);
+			SpawnSpot("Explosion", 668);
             Delay(5);
             SpawnSpot("Explosion", 666);
+			SpawnSpot("Explosion", 668);
             ActivatorSound(localizeSound("voice/god"), 255);
             SpawnSpot("Explosion", 666);
+			SpawnSpot("Explosion", 668);
             Delay(43);
             SpawnSpot("Explosion", 666);
+			SpawnSpot("Explosion", 668);
             FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
             Radius_Quake(12, 24, 0, 10, 0);
             AmbientSound("techno/poweron", 127);
             //Too many explosions
             FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
             // SetLineTexture(664, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11"); // Grates
-            SetLineTexture(665, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
-            SetLineTexture(666, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
-            SetLineTexture(667, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            //SetLineTexture(665, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            //SetLineTexture(666, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
+            //SetLineTexture(667, SIDE_FRONT, TEXTURE_MIDDLE, "DRDC11");
             Radius_Quake(12, 64, 50, 10, 667);
             FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
             Thing_Remove(32);
-            Floor_LowerByValue(666, 128, 128);
-            Floor_LowerByValue(667, 128, 128);
+			
+			// Remove 3D floors
+			FloorAndCeiling_RaiseByValue(6, 128, 256); // Ceiling
+			FloorAndCeiling_LowerByValue(7, 128, 256); // Floor
+
+            //Floor_LowerByValue(666, 128, 128);
+            //Floor_LowerByValue(667, 128, 128);
             //Ceiling_RaiseByValue(666, 128, 64);
+			
             Radius_Quake(12, 43, 0, 10, 0);
             SpawnSpot("Explosion", 666);
+			SpawnSpot("Explosion", 668);
             AmbientSound("techno/poweron", 127);
             Delay(15);
             Radius_Quake(12, 43, 0, 5, 0);
             SpawnSpot("Explosion", 666);
+			SpawnSpot("Explosion", 668);
             FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
             AmbientSound("monsters/cyberdemon/sigh1", 127); //Activate cut-scene
-            Ceiling_LowerByValue(667, 128, 128); //Replace with 3D floor
+            //Ceiling_LowerByValue(667, 128, 128); //Replace with 3D floor
             Delay(43*2);
             SpawnSpot("Explosion", 666);
             AmbientSound("monsters/cyberdemon/sigh2", 200);
             Radius_Quake(12, 43, 5, 10, 0);
             SpawnSpot("Explosion", 666);
             SpawnSpot("Explosion", 667);
+			SpawnSpot("Explosion", 668);
             SpawnSpotForced("Cyberdemon", 667, 696, 192);
-            SetThingSpecial(696, 80, 102);
-            SetLineTexture(665, LINE_FRONT, TEXTURE_TOP, "DRDC49");
-            SetLineTexture(666, LINE_FRONT, TEXTURE_TOP, "DRDC50");
-            SetLineTexture(667, LINE_FRONT, TEXTURE_TOP, "DRDC49");
+            SetThingSpecial(696, 80, 102); // Activate cut-scene on Cyber death
+			// Disabled reactor texture
+            SetLineTexture(665, LINE_FRONT, TEXTURE_MIDDLE, "DRDC49");
+            SetLineTexture(666, LINE_FRONT, TEXTURE_MIDDLE, "DRDC50");
+            SetLineTexture(667, LINE_FRONT, TEXTURE_MIDDLE, "DRDC49");
             ACS_Terminate(1001, 0);
             Delay(43);
             ActivatorSound(localizeSound("voice/wtf"), 255);
@@ -143,6 +157,9 @@ Script 102 (void) { // End
     Delay(15);
     FadeRange(0, 0, 0, 0.0, 255, 128, 0, 1.0, 0.5);
     Delay(15);
+	SetLineTexture(0, LINE_FRONT, TEXTURE_TOP, "REAC2");
+	SetLineTexture(0, LINE_FRONT, TEXTURE_BOTTOM, "REAC2");
+	SetLineTexture(0, LINE_FRONT, TEXTURE_MIDDLE, "REAC2");
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", true);
     if(GetCVar("drrp_enable_lut_shader")) RBShader = true;
     FadeRange(255, 128, 0, 1.0, 255, 128, 0, 0.0, 0.5);
