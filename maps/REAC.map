@@ -4623,6 +4623,31 @@ renderstyle = "";
 height = 32;
 }
 
+thing
+{
+x = 1504.000;
+y = 736.000;
+type = 10502;
+angle = 270;
+id = 10;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+skill6 = true;
+skill7 = true;
+skill8 = true;
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+class4 = true;
+class5 = true;
+}
+
 vertex
 {
 x = 532.000;
@@ -10074,13 +10099,13 @@ y = 1216.500;
 vertex
 {
 x = -63.000;
-y = -680.000;
+y = -688.000;
 }
 
 vertex
 {
 x = -1.000;
-y = -680.000;
+y = -688.000;
 }
 
 vertex

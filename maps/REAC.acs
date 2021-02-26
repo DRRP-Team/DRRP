@@ -190,6 +190,12 @@ script 104 (void){ // Kronos
     ACS_NamedExecuteWait("window", 0, getString(11));
 	//
 	ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
+	TeleportOther(ActivatorTID(), 673, 1);
+	ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
+	//
+	Delay(22);
+	//
+	ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
 	TeleportOther(ActivatorTID(), 12, 1);
 	ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
 	//
