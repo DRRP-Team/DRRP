@@ -5,7 +5,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-// Compile game.acs!
+// Compile drrp.acs!
 
 // Map APIs 3000 - 3999
 
@@ -73,6 +73,7 @@ Script 3007 (int doorf, int doorb) { // Door Unlocker
 Script 3008 (int time, int intensivity) { // DRPG Quake
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3008");
     if(intensivity <= 0) intensivity = 1;
+	if(time < 29) time = 29;
 
     Radius_Quake(4 * intensivity, time / 29, 0, 1024, 0);
 }

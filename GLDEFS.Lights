@@ -14,8 +14,8 @@ FlickerLight FIRELIGHT {
 }
 
 Object DRRPFire {
-    frame FIRE {
-        light FIRELIGHT
+    Frame FIRE {
+        Light FIRELIGHT
     }
 }
 // end Fire
@@ -30,14 +30,29 @@ PointLight LAVALIGHT {
 
 Object DRRPLava {
     Frame LAVA {
-        light LAVALIGHT
+        Light LAVALIGHT
     }
 
     Frame TNT1 {
-        light LAVALIGHT
+        Light LAVALIGHT
     }
 }
 // end Lava
+
+// Rod
+FlickerLight RodLight {
+    color 0 128 255
+    size 32
+    secondarySize 64
+    chance 0.5
+}
+
+Object DRRPRod {
+    Frame ROD1 {
+        Light RodLight
+    }
+}
+// end Rod
 
 // Alarm1
 PulseLight Alarm1Light {
@@ -55,37 +70,37 @@ Object DRRPAlarm1 {
 // end Alarm1
 
 // Spark lights
-    Pointlight WhiteSparkFlare {
+    PointLight WhiteSparkFlare {
         Color 1.0 1.0 1.0
         Size 12
     }
 
-    Pointlight RedSparkFlare {
+    PointLight RedSparkFlare {
         Color 0.4 0.0 0.0
         Size 12
     }
 
-    Pointlight OrangeSparkFlare {
+    PointLight OrangeSparkFlare {
         Color 0.8 0.4 0.0
         Size 12
     }
 
-    Pointlight YellowSparkFlare {
+    PointLight YellowSparkFlare {
         Color 1.0 1.0 0.0
         Size 12
     }
 
-    Pointlight GreenSparkFlare {
+    PointLight GreenSparkFlare {
         Color 0.0 1.0 0.0
         Size 12
     }
 
-    Pointlight BlueSparkFlare {
+    PointLight BlueSparkFlare {
         Color 0.0 0.0 0.8
         Size 12
     }
 
-    Pointlight PurpleSparkFlare {
+    PointLight PurpleSparkFlare {
         Color 0.5 0.0 0.5
         Size 12
     }

@@ -166,11 +166,17 @@ Actor DRRPChair 10750 {
 Actor DRRPRod : ExplosiveBarrel 10704 {
     //$Category DDecorations
 
+    +CANNOTPUSH
+
     Tag "$DRRP_E_POWERCOUPLING"
     Scale 0.6
     Health 666
     Mass 10000000
+    Height 64
+    Radius 25
+
     DamageFactor DRRPFireExtDmg, 0.0
+
     States {
         Spawn:
             ROD1 ABCDEF 2
@@ -198,11 +204,17 @@ Actor DRRPRod : ExplosiveBarrel 10704 {
 Actor DRRPRodTrash {
     +SOLID
     +SHOOTABLE
+    +NOBLOOD
+    +CANNOTPUSH
 
     Tag "$DRRP_E_POWERCOUPLING"
     Scale 0.6
     Health 10
     Mass 10000000
+
+    Height 48
+    Radius 25
+
     DamageFactor DRRPFireExtDmg, 0.0
 
     States {
