@@ -89,7 +89,7 @@ Actor DRRPLight1 10713 {
     -SOLID
     +NOGRAVITY
 
-    Alpha 0.5
+    Alpha 0.7
     Renderstyle Add
     Height 0    // For skip infobar tag handling.
     Radius 0
@@ -118,8 +118,11 @@ Actor DRRPLight1 10713 {
 
 Actor DRRPLight2: DRRPLight1 10714 {
     //$Category DDecorations
-    Args 255, 255, 255, 64
     +SPAWNCEILING
+
+    Args 255, 255, 255, 64
+
+    Alpha 0.7
 
     States {
         Spawn:
