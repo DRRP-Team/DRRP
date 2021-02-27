@@ -1014,6 +1014,13 @@ Material Texture DRDC71 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
+Material Texture DRDC55x {
+    //normal "materials/normal/drdc11.png"
+    //specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drdc55x.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
 Material Texture DRDC61 {
     //normal "materials/normal/drdc11.png"
     //specular "materials/specular/drdc11.png"
