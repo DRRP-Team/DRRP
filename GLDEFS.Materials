@@ -929,6 +929,8 @@ Material Texture DRDC53 {
 
 Material Texture DRDC63 {
     BrightMap   "materials/emission/drdc53.png"
+    Texture tex_heightmap   "materials/height/drdc62.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 
