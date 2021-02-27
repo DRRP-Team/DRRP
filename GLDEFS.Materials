@@ -139,6 +139,13 @@ Material Texture DRDC36 {
     Texture tex_heightmap   "materials/height/drdc34.png"
     shader                  "shaders/parallax_pbr.fp"
 }
+// Red metallic flat
+Material Texture DRDC65 {
+    normal "materials/normal/drdc34.png"
+    specular "materials/white.png"
+    Texture tex_heightmap   "materials/height/drdc34.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
 // Animations
     Material Texture DRDC36b {
         normal "materials/normal/drdc34.png"
@@ -861,36 +868,32 @@ Material Texture DRDC32 {
     shader                  "shaders/parallax_pbr.fp"
 }
 
-// Reactor floor animation
-Material Texture RROCK04 {
-    normal   "materials/normal/RROCK04.png"
-    Texture tex_heightmap   "materials/height/RROCK04.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
-
-Material Texture RROCK05 {
-    normal   "materials/normal/RROCK04.png"
-    Texture tex_heightmap   "materials/height/RROCK04.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
-
-Material Texture RROCK06 {
-    normal   "materials/normal/RROCK04.png"
-    Texture tex_heightmap   "materials/height/RROCK04.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
-
-Material Texture RROCK07 {
-    normal   "materials/normal/RROCK04.png"
-    Texture tex_heightmap   "materials/height/RROCK04.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
-
-Material Texture RROCK08 {
-    normal   "materials/normal/RROCK04.png"
-    Texture tex_heightmap   "materials/height/RROCK04.png"
-    shader                  "shaders/parallax_pbr.fp"
-}
+// Rock floor animation
+    Material Texture RROCK04 {
+        normal   "materials/normal/RROCK04.png"
+        Texture tex_heightmap   "materials/height/RROCK04.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+    Material Texture RROCK05 {
+        normal   "materials/normal/RROCK04.png"
+        Texture tex_heightmap   "materials/height/RROCK04.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+    Material Texture RROCK06 {
+        normal   "materials/normal/RROCK04.png"
+        Texture tex_heightmap   "materials/height/RROCK04.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+    Material Texture RROCK07 {
+        normal   "materials/normal/RROCK04.png"
+        Texture tex_heightmap   "materials/height/RROCK04.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
+    Material Texture RROCK08 {
+        normal   "materials/normal/RROCK04.png"
+        Texture tex_heightmap   "materials/height/RROCK04.png"
+        shader                  "shaders/parallax_pbr.fp"
+    }
 
 Material Texture MFLR8_1 {
     normal   "materials/normal/MFLR8_1.png"
@@ -938,4 +941,22 @@ Material Texture DRDC58 {
 
 Material Texture DRDC60 {
     BrightMap   "materials/emission/drdc55.png"
+}
+
+
+// Grounds
+
+// Brown ground
+Material Texture DRDC56 {
+    normal "materials/normal/drdc11.png"
+    specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drdc11.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+// Pink ground
+Material Texture DRDC64 {
+    normal "materials/normal/drdc11.png"
+    specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drdc11.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
