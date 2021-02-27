@@ -937,6 +937,8 @@ Material Texture DRDC63 {
 // Circlular lights
 Material Texture DRDC55 {
     BrightMap   "materials/emission/drdc55.png"
+    Texture tex_heightmap   "materials/height/drdc61.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture DRDC58 {
@@ -993,5 +995,12 @@ Material Texture DRDC71 {
     //normal "materials/normal/drdc11.png"
     //specular "materials/specular/drdc11.png"
     Texture tex_heightmap   "materials/height/drdc71.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture DRDC61 {
+    //normal "materials/normal/drdc11.png"
+    //specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drdc61.png"
     shader                  "shaders/parallax_pbr.fp"
 }
