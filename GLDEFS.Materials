@@ -923,6 +923,8 @@ Material Texture SC77_01 {
 // Rectangular lights
 Material Texture DRDC53 {
     BrightMap   "materials/emission/drdc53.png"
+    Texture tex_heightmap   "materials/height/drdc53.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture DRDC63 {
@@ -958,5 +960,15 @@ Material Texture DRDC64 {
     normal "materials/normal/drdc11.png"
     specular "materials/specular/drdc11.png"
     Texture tex_heightmap   "materials/height/drdc11.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+
+// Ceilings
+
+Material Texture DRDC51 {
+    //normal "materials/normal/drdc11.png"
+    //specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drdc51.png"
     shader                  "shaders/parallax_pbr.fp"
 }
