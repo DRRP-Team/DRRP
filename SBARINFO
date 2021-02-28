@@ -11,28 +11,33 @@ monospacefonts true, "0";
 
 statusbar normal { // Standard Doom Status bar
     drawimage "STBAR", 0, 168;
-    drawimage "STTPRCNT", 90, 171;
-    drawimage "STTPRCNT", 221, 171;
-    drawnumber 3, HUDFONT_DOOM, untranslated, health, 90, 171;
     drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 44, 171;
     IsSelected "HellHoundGun", "CerberusGun" {
         drawnumber 3, HUDFONT_DOOM, Green, DRRPBasicArmor, drawshadow, 221, 171;
+        drawstring "bigfont", Green, "%", 233, 173;
     } else IsSelected "DemonWolfGun" {
         drawnumber 3, HUDFONT_DOOM, Green, DRRPBasicArmor, drawshadow, 221, 171;
+        drawstring "bigfont", Green, "%", 233, 173;
     } else InInventory "DRRPBasicArmor", 1 {
         drawnumber 3, HUDFONT_DOOM, Gray, DRRPBasicArmor, 221, 171;
+        drawstring "bigfont", Gray, "%", 233, 173;
     } else {
         drawnumber 3, HUDFONT_DOOM, Red, DRRPBasicArmor, 221, 171;
+        drawstring "bigfont", Red, "%", 233, 173;
     }
 
     IfInvulnerable {
         drawnumber 3, HUDFONT_DOOM, Gold, health, 90, 171;
+        drawstring "bigfont", Gold, "%", 102, 173;
     } else IfHealth 100 % {
         drawnumber 3, HUDFONT_DOOM, Blue, health, 90, 171;
+        drawstring "bigfont", Blue, "%", 102, 173;
     } else IfHealth not 35 % {
         drawnumber 3, HUDFONT_DOOM, Red, health, 90, 171;
+        drawstring "bigfont", Red, "%", 102, 173;
     } else {
         drawnumber 3, HUDFONT_DOOM, Gray, health, 90, 171;
+        drawstring "bigfont", Gray, "%", 102, 173;
     }
 
     DrawSwitchableImage KeySlot 1, "nullimage", "STKEYS2", 239, 169; // Red
