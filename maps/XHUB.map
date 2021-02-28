@@ -29565,6 +29565,7 @@ sector = 232;
 sidedef
 {
 sector = 234;
+texturetop = "DRDC57";
 }
 
 sidedef
@@ -29591,6 +29592,7 @@ texturetop = "DRDC57";
 sidedef
 {
 sector = 234;
+texturetop = "DRDC57";
 }
 
 sidedef
@@ -31066,6 +31068,7 @@ sector
 texturefloor = "RROCK04";
 textureceiling = "DRDC11";
 heightfloor = -8;
+heightceiling = -8;
 lightlevel = 117;
 rotationfloor = 180.000000;
 rotationceiling = 180.000000;
