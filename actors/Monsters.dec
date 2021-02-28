@@ -14,6 +14,9 @@
 Actor Hellhound: Dog_BaseDRRP replaces MBFHelperDog 10246 {
     //$Category DMonsters
     //$Sprite DOGSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title HellHound
 
     Health 40
     Tag "$DRRP_M_HELLHOUND"
@@ -23,6 +26,9 @@ Actor Hellhound: Dog_BaseDRRP replaces MBFHelperDog 10246 {
 Actor Cerberus: Dog_BaseDRRP 10346 {
     //$Category DMonsters
     //$Sprite DOGSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Cerberus
 
     Tag "$DRRP_M_CERBERUS"
     Obituary "$DRRP_OB_CEREBRUS"
@@ -44,6 +50,9 @@ Actor Cerberus: Dog_BaseDRRP 10346 {
 Actor DemonWolf: Dog_BaseDRRP 10446 {
     //$Category DMonsters
     //$Sprite DOGSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Demon Wolf
 
     Tag "$DRRP_M_DEMONWOLF"
     Obituary "$DRRP_OB_DEMONWOLF"
@@ -68,6 +77,9 @@ Actor DemonWolf: Dog_BaseDRRP 10446 {
 Actor ZombiePvt: ZombieMan_BaseDRRP replaces ZombieMan 10274 {
     //$Category DMonsters
     //$Sprite POSSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Zombie Pvt
 
     Obituary "$DRRP_OB_ZOMBIEPVT"
     Tag "$DRRP_M_ZOMBIEPVT"
@@ -91,6 +103,9 @@ Actor ZombiePvt: ZombieMan_BaseDRRP replaces ZombieMan 10274 {
 Actor ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy 10374 {
     //$Category DMonsters
     //$Sprite POSSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Zombie Lt
 
     Obituary "$DRRP_OB_ZOMBIELT"
     Tag "$DRRP_M_ZOMBIELT"
@@ -109,6 +124,9 @@ Actor ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy 10374 {
 Actor ZombieCpt: ZombieMan_BaseDRRP 10474 {
     //$Category DMonsters
     //$Sprite POSSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Zombie Cpt
 
     Obituary "$DRRP_OB_ZOMBIECPT"
     Tag "$DRRP_M_ZOMBIECPT"
@@ -137,6 +155,9 @@ Actor ZombieCpt: ZombieMan_BaseDRRP 10474 {
 Actor Troop: ChaingunGuy_BaseDRRP 10264 {
     //$Category DMonsters
     //$Sprite CPOSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Troop
 
     Obituary "$DRRP_OB_TROOP"
     Tag "$DRRP_M_TROOP"
@@ -152,6 +173,10 @@ Actor Troop: ChaingunGuy_BaseDRRP 10264 {
 Actor Commando: ChaingunGuy_BaseDRRP 10364 {
     //$Category DMonsters
     //$Sprite CPOSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Commando
+
     const int ChanceFailAttackRightBack = 192;
 
     Obituary "$DRRP_OB_COMMANDO"
@@ -171,6 +196,10 @@ Actor Commando: ChaingunGuy_BaseDRRP 10364 {
 Actor Assassin: ChaingunGuy_BaseDRRP replaces ChaingunGuy 10464 {
     //$Category DMonsters
     //$Sprite CPOSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Assassin
+
     const int ChanceFailAttackRightBack = 160;
 
     Obituary "$DRRP_OB_ASSASIN"
@@ -197,6 +226,9 @@ Actor Assassin: ChaingunGuy_BaseDRRP replaces ChaingunGuy 10464 {
 Actor Impling: DoomImp_BaseDRRP 10260 {
     //$Category DMonsters
     //$Sprite TROOA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Impling
 
     Obituary "$DRRP_OB_IMPLING"
     HitObituary "$DRRP_OBM_IMPLING"
@@ -213,6 +245,9 @@ Actor Impling: DoomImp_BaseDRRP 10260 {
 Actor DRRPImp: DoomImp_BaseDRRP replaces DoomImp 10360 {
     //$Category DMonsters
     //$Sprite TROOA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Imp
 
     Obituary "$DRRP_OB_IMP"
     HitObituary "$DRRP_OBM_IMP"
@@ -223,6 +258,9 @@ Actor DRRPImp: DoomImp_BaseDRRP replaces DoomImp 10360 {
 Actor ImpLord: DoomImp_BaseDRRP 10460 {
     //$Category DMonsters
     //$Sprite TROOA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Imp Lord
 
     Obituary "$DRRP_OB_IMPLORD"
     HitObituary "$DRRP_OBM_IMPLORD"
@@ -246,6 +284,9 @@ Actor DRRPDoomImpBall: DoomImpBall replaces DoomImpBall {
 Actor Phantom: LostSoul_BaseDRRP 10263 {
     //$Category DMonsters
     //$Sprite SKULA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Phantom
 
     Obituary "$DRRP_OB_PHANTOM"
     Tag "$DRRP_M_PHANTOM"
@@ -262,6 +303,9 @@ Actor Phantom: LostSoul_BaseDRRP 10263 {
 Actor DRRPLostSoul: LostSoul_BaseDRRP replaces LostSoul 10363 {
     //$Category DMonsters
     //$Sprite SKULA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Lost Soul
 
     Obituary "$DRRP_OB_LOSTSOUL"
     Tag "$DRRP_M_LOSTSOUL"
@@ -272,6 +316,9 @@ Actor DRRPLostSoul: LostSoul_BaseDRRP replaces LostSoul 10363 {
 Actor Nightmare: LostSoul_BaseDRRP 10463 {
     //$Category DMonsters
     //$Sprite SKULA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Nightmare
 
     Obituary "$DRRP_OB_NIGHTMARE"
     Tag "$DRRP_M_NIGHTMARE"
@@ -291,6 +338,9 @@ Actor Nightmare: LostSoul_BaseDRRP 10463 {
 Actor BullDemon: Demon_BaseDRRP 10259 {
     //$Category DMonsters
     //$Sprite SARGA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Bull Demon
 
     Obituary "$DRRP_OB_BULLDEMON"
     Tag "$DRRP_M_BULLDEMON"
@@ -314,6 +364,9 @@ Actor BullDemon: Demon_BaseDRRP 10259 {
 Actor Belphegor: Demon_BaseDRRP 10359 { //FIXME: id
     //$Category DMonsters
     //$Sprite SARGA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Belphegor
 
     Obituary "$DRRP_OB_BELPHEGOR"
     Tag "$DRRP_M_BELPHEGOR"
@@ -346,6 +399,9 @@ Actor Belphegor: Demon_BaseDRRP 10359 { //FIXME: id
 Actor Pinky: Demon_BaseDRRP replaces Demon 10459 { //FIXME: id
     //$Category DMonsters
     //$Sprite SARGA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Pinky
 
     Obituary "$DRRP_OB_PINKY"
     Tag "$DRRP_M_PINKY"
@@ -365,6 +421,9 @@ Actor Pinky: Demon_BaseDRRP replaces Demon 10459 { //FIXME: id
 Actor Malwrath: Cacodemon_BaseDRRP 10262 {
     //$Category DMonsters
     //$Sprite HEADA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Malwrath
 
     Obituary "$DRRP_OB_MALWRATH"
     HitObituary "$DRRP_OBM_MALWRATH"
@@ -393,6 +452,9 @@ Actor Malwrath: Cacodemon_BaseDRRP 10262 {
 Actor DRRPCacodemon: Cacodemon_BaseDRRP replaces Cacodemon 10362 {
     //$Category DMonsters
     //$Sprite HEADA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Cacodemon
 
     Obituary "$DRRP_OB_CACODEMON"
     HitObituary "$DRRP_OBM_CACODEMON"
@@ -415,6 +477,9 @@ Actor DRRPCacodemon: Cacodemon_BaseDRRP replaces Cacodemon 10362 {
 Actor Wretched: Cacodemon_BaseDRRP 10462 {
     //$Category DMonsters
     //$Sprite HEADA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Wretched
 
     Obituary "$DRRP_OB_WRETCHED"
     HitObituary "$DRRP_OBM_WRETCHED"
@@ -461,6 +526,9 @@ Actor DRRPWretchedBall: CacodemonBall {
 Actor Ghoul: Revenant_BaseDRRP 10277 {
     //$Category DMonsters
     //$Sprite SKELA1D1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Ghoul
 
     Obituary "$DRRP_OB_GHOUL"
     HitObituary "$DRRP_OBM_GHOUL"
@@ -486,6 +554,9 @@ Actor Ghoul: Revenant_BaseDRRP 10277 {
 Actor Fiend: Revenant_BaseDRRP 10377 {
     //$Category DMonsters
     //$Sprite SKELA1D1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Fiend
 
     Obituary "$DRRP_OB_FIEND"
     HitObituary "$DRRP_OBM_FIEND"
@@ -506,6 +577,9 @@ Actor Fiend: Revenant_BaseDRRP 10377 {
 Actor DRRPRevenant: Revenant_BaseDRRP replaces Revenant 10477 { // Huesos (Spanish)
     //$Category DMonsters
     //$Sprite SKELA1D1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Revenant
 
     Obituary "$DRRP_OB_REVENANT"
     HitObituary "$DRRP_OBM_REVENANT"
@@ -539,6 +613,9 @@ Actor DRRPRevenantTracer: RevenantTracer replaces RevenantTracer {
 Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
     //$Category DMonsters
     //$Sprite PAINA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Pain Elemental
 
     Obituary "$DRRP_OB_PAINELEMENTAL"
     HitObituary "$DRRP_OBM_PAINELEMENTAL"
@@ -570,6 +647,9 @@ Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
 Actor Rahovart: PainElemental_BaseDRRP 10379 {
     //$Category DMonsters
     //$Sprite PAINA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Rahovart
 
     Obituary "$DRRP_OB_RAHOVART"
     HitObituary "$DRRP_OBM_RAHOVART"
@@ -597,6 +677,9 @@ Actor Rahovart: PainElemental_BaseDRRP 10379 {
 Actor Beholder: PainElemental_BaseDRRP 10479 {
     //$Category DMonsters
     //$Sprite PAINA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Beholder
 
     Obituary "$DRRP_OB_BEHOLDER"
     HitObituary "$DRRP_OBM_BEHOLDER"
@@ -634,6 +717,9 @@ Actor Beholder: PainElemental_BaseDRRP 10479 {
 Actor Behemoth: Fatso_BaseDRRP 10278 {
     //$Category DMonsters
     //$Sprite FATTA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Behemoth
 
     Obituary "$DRRP_OB_BEHEMOTH"
     Tag "$DRRP_M_BEHEMOTH"
@@ -649,6 +735,9 @@ Actor Behemoth: Fatso_BaseDRRP 10278 {
 Actor Mancubus: Fatso_BaseDRRP replaces Fatso 10378 {
     //$Category DMonsters
     //$Sprite FATTA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Mancubus
 
     Obituary "$DRRP_OB_MANCUBUS"
     Tag "$DRRP_M_MANCUBUS"
@@ -658,6 +747,9 @@ Actor Mancubus: Fatso_BaseDRRP replaces Fatso 10378 {
 Actor Druj: Fatso_BaseDRRP 10478 {
     //$Category DMonsters
     //$Sprite FATTA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Druj
 
     Tag "$DRRP_M_DRUJ"
     Obituary "$DRRP_OB_DRUJ"
@@ -679,6 +771,10 @@ Actor DRRPFatShot: FatShot replaces FatShot {
 Actor Infernis: ArchVile_BaseDRRP 10273 {
     //$Category DMonsters
     //$Sprite VILEA1D1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Infernis
+
     const int vileInitialDamage = 12;
     const int vileBlastDamageNRadius = 40;
 
@@ -696,6 +792,9 @@ Actor Infernis: ArchVile_BaseDRRP 10273 {
 Actor DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile 10373 {
     //$Category DMonsters
     //$Sprite VILEA1D1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title ArchVile
 
     Obituary "$DRRP_OB_ARCHVILE"
     Tag "$DRRP_M_ARCHVILE"
@@ -705,6 +804,10 @@ Actor DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile 10373 {
 Actor Apollyon: ArchVile_BaseDRRP 10473 {
     //$Category DMonsters
     //$Sprite VILEA1D1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Apollyon
+
     const int vileInitialDamage = 25;
     const int vileBlastDamageNRadius = 75;
 
@@ -728,6 +831,9 @@ Actor Apollyon: ArchVile_BaseDRRP 10473 {
 Actor DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell 10280 {
     //$Category DMonsters
     //$Sprite BOSSA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Baron
 
     Obituary "$DRRP_OB_BARON"
     HitObituary "$DRRP_OBM_BARON"
@@ -738,6 +844,9 @@ Actor DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell 10280 {
 Actor DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight 10380 {
     //$Category DMonsters
     //$Sprite BOS2A1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Hell Knight
 
     Obituary "$DRRP_OB_HELLKNIGHT"
     HitObituary "$DRRP_OBM_HELLKNIGHT"
@@ -756,6 +865,9 @@ Actor DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight 10380 {
 Actor Ogre: HellKnight_BaseDRRP 10480 {
     //$Category DMonsters
     //$Sprite BOS2A1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Ogre
 
     Obituary "$DRRP_OB_OGRE"
     HitObituary "$DRRP_OBM_OGRE"
@@ -789,6 +901,9 @@ Actor DRRPBaronBall: BaronBall replaces BaronBall {
 Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
     //$Category DMonsters
     //$Sprite CYBRA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Cyberdemon
 
     +LOOKALLAROUND
 
@@ -802,6 +917,9 @@ Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
 Actor Kronos 10391 {
     //$Category DMonsters
     //$Sprite KRONA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Kronos
 
     MONSTER
     +LOOKALLAROUND
