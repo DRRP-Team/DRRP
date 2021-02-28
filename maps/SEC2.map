@@ -10694,13 +10694,13 @@ y = -801.000;
 vertex
 {
 x = -1247.000;
-y = -929.000;
+y = -991.000;
 }
 
 vertex
 {
 x = -1247.000;
-y = -991.000;
+y = -929.000;
 }
 
 vertex
@@ -19943,8 +19943,8 @@ linedef
 {
 v1 = 633;
 v2 = 634;
-sidefront = 897;
-sideback = 898;
+sidefront = 898;
+sideback = 897;
 twosided = true;
 dontdraw = true;
 }
@@ -29322,6 +29322,7 @@ v2 = 1249;
 sidefront = 2566;
 sideback = 2568;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -29331,6 +29332,7 @@ v2 = 630;
 sidefront = 2567;
 sideback = 2569;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -29340,6 +29342,7 @@ v2 = 1250;
 sidefront = 2570;
 sideback = 2572;
 twosided = true;
+dontdraw = true;
 }
 
 linedef
@@ -29349,6 +29352,7 @@ v2 = 626;
 sidefront = 2571;
 sideback = 2573;
 twosided = true;
+dontdraw = true;
 }
 
 sidedef
