@@ -38,10 +38,10 @@ class RPGSystemHandler: EventHandler {
     const DDGI_DefaultMonster_C = "50, 100"; // 150% as 40%+20% == 60%.
 
 
-    const DDGI_Zombieman   = "Clips4xSpawner, DRRPShell, Clip, " .. DDGI_DefaultMonster;
+    const DDGI_Zombieman   = "Clips4xSpawner, DRRPShell, DRRPClip, " .. DDGI_DefaultMonster;
     const DDGI_Zombieman_C = "6, 30, 64, " .. DDGI_DefaultMonster_C;
 
-    const DDGI_Chaingunner   = "Clips4xSpawner, Clip, " .. DDGI_DefaultMonster;
+    const DDGI_Chaingunner   = "Clips4xSpawner, DRRPClip, " .. DDGI_DefaultMonster;
     const DDGI_Chaingunner_C = "33, 67, " .. DDGI_DefaultMonster_C;
 
     const DDGI_Cacodemon   = "LargeMedikit, SmallMedikit, " .. DDGI_DefaultMonster;
@@ -53,7 +53,7 @@ class RPGSystemHandler: EventHandler {
     const DDGI_Revenant   = "Rockets4xSpawner, RocketAmmo, " .. DDGI_DefaultMonster;
     const DDGI_Revenant_C = "6, 94, " .. DDGI_DefaultMonster_C;
 
-    const DDGI_Fatso   = "Cells4xSpawner, Cell, " .. DDGI_DefaultMonster;
+    const DDGI_Fatso   = "Cells4xSpawner, DRRPCell, " .. DDGI_DefaultMonster;
     const DDGI_Fatso_C = "6, 94, " .. DDGI_DefaultMonster_C;
 
     const DDGI_ArchVile   = "GoldCredit, LargeMedikit, SmallMedikit, " .. DDGI_DefaultMonster;
