@@ -376,7 +376,7 @@ class DRRPShopPlayerAgility: DRRPShopPlayerAccuracy {
     }
 }
 
-class DRRPShopPlayerDefence: DRRPShopPlayerAccuracy {
+class DRRPShopPlayerDefense: DRRPShopPlayerAccuracy {
     override void BeginPlay() {
         thisFeatureType = RPG_Defence;
     }
