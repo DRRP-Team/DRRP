@@ -508,16 +508,18 @@ Actor Wretched: Cacodemon_BaseDRRP 10462 {
 Actor DRRPMalwrathBall: CacodemonBall {
     Damage (2 * Random( 3, 8 ) + 3)
     Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231"
+    Scale 0.8
 }
 
 Actor DRRPCacodemonBall: CacodemonBall replaces CacodemonBall {
     Damage (4 * Random( 3, 10 ) + 7)
-    Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231"
+    Scale 1.0
 }
 
 Actor DRRPWretchedBall: CacodemonBall {
     Damage (7 * Random( 5, 10 ) + 10)
-    Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231"
+    Translation "168:191=193:207", "167:167=244:244", "16:47=193:201", "192:207=168:184", "240:242=185:191", "223:223=207:207", "0:2=246:246"
+    Scale 1.2
 }
 
 
