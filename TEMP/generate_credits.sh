@@ -7,4 +7,4 @@ HEIGHT=3400
 
 chromium-browser --headless --hide-scrollbars --window-size=1008,$HEIGHT --screenshot="$TMP" "$DIR/Credits.html"
 
-convert "$TMP" -fuzz 50% -transparent cyan "$OUTPUT" && rm "$TMP"
+convert "$TMP" -fuzz 25% -transparent black -channel A -blur 1x1 "$OUTPUT" && rm "$TMP"
