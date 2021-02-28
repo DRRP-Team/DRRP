@@ -9,6 +9,8 @@
 Actor DRRPGreenCard : DoomKey 10622 {
     //$Category Keys
     //$Sprite GKEYB0
+    //$Colour #00FF00
+    //$Title Green Keycard
 
     Tag                     "$DRRP_I_GREENKEY"
     Inventory.PickupMessage "$DRRP_I_GOT_GREENKEY"
@@ -45,6 +47,10 @@ Actor DRRPRedCard : RedCard replaces RedCard {
 Actor SmallMedikit : DRRPBaseMedikit replaces Medikit 10600 {
     //$Category Items
     //$Sprite MEDIA0
+    //$Colour RGB(100, 100, 200)
+    //$Icon "health"
+    //$NotAngled
+    //$Title Small Medikit
 
     +FLOORCLIP
     +INVENTORY.INVBAR
@@ -67,6 +73,10 @@ Actor SmallMedikit : DRRPBaseMedikit replaces Medikit 10600 {
 Actor LargeMedikit : SmallMedikit 10601 {
     //$Category Items
     //$Sprite MEDIA0
+    //$Colour RGB(100, 100, 200)
+    //$Icon "health"
+    //$NotAngled
+    //$Title Large Medikit
 
     Tag                     "$DRRP_I_LGMEDKIT"
     Health                  75
@@ -96,6 +106,10 @@ Actor DRRPCell : Cell replaces Cell {
 Actor Balloon : Ammo 10610 {
     //$Category DAmmo
     //$Sprite BALLA0
+    //$Colour RGB(180, 150, 50)
+    //$Icon "ammo"
+    //$NotAngled
+    //$Title Halon Can
 
     Tag                     "$DRRP_I_HALONCAN"
     Scale                   2.0
@@ -116,6 +130,12 @@ Actor Balloon : Ammo 10610 {
 
 Actor Balloons4xSpawner 10611 {
     //$Category DAmmo
+    //$Colour RGB(180, 150, 50)
+    //$Icon "ammo"
+    //$NotAngled
+    //$Title Halon Cans
+
+    Radius 32
 
     States {
         Spawn:
@@ -131,6 +151,8 @@ Actor Balloons4xSpawner 10611 {
 }
 
 Actor Clips4xSpawner: Balloons4xSpawner replaces ClipBox 10612 {
+    //$Title 4x Clips Spawner
+
     States {
         Spawn:
             TNT1 A 0
@@ -145,6 +167,8 @@ Actor Clips4xSpawner: Balloons4xSpawner replaces ClipBox 10612 {
 }
 
 Actor Shells4xSpawner: Balloons4xSpawner replaces ShellBox 10613 {
+    //$Title 4x Shells Spawner
+
     States {
         Spawn:
             TNT1 A 0
@@ -159,6 +183,8 @@ Actor Shells4xSpawner: Balloons4xSpawner replaces ShellBox 10613 {
 }
 
 Actor Cells4xSpawner: Balloons4xSpawner replaces CellPack 10614 {
+    //$Title 4x Cells Spawner
+
     States {
         Spawn:
             TNT1 A 0
@@ -173,6 +199,8 @@ Actor Cells4xSpawner: Balloons4xSpawner replaces CellPack 10614 {
 }
 
 Actor Rockets4xSpawner: Balloons4xSpawner replaces RocketBox {
+    //$Title 4x Rockets Spawner
+
     States {
         Spawn:
             TNT1 A 0
@@ -191,6 +219,9 @@ Actor Rockets4xSpawner: Balloons4xSpawner replaces RocketBox {
 Actor Credit : Inventory 10620 {
     //$Category Items
     //$Sprite CREDA0
+    //$Colour #00FF00
+    //$Title Green Credit
+    //$NotAngled
 
     +DROPPED
     +NOTDMATCH
@@ -212,6 +243,9 @@ Actor Credit : Inventory 10620 {
 Actor GoldCredit : CustomInventory 10621 {
     //$Category Items
     //$Sprite CREDB0
+    //$Colour #00FF00
+    //$Title Gold Credit
+    //$NotAngled
 
     +DROPPED
     +NOTDMATCH
@@ -234,6 +268,9 @@ Actor GoldCredit : CustomInventory 10621 {
 Actor DRRPBerserkItem : CustomInventory replaces Berserk 10623 {
     //$Category Items
     //$Sprite BERSH0
+    //$Icon "powerup
+    //$Colour RGB(220, 100, 220)
+    //$Title Berserk
 
     +COUNTITEM
     +INVENTORY.INVBAR
@@ -295,6 +332,9 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
 Actor DogCollar : CustomInventory 10624 {
     //$Category Items
     //$Sprite DOGCA0
+    //$Colour #FFFF00
+    //$Title Dog Collar
+    //$NotAngled
 
     +INVENTORY.INVBAR
 
