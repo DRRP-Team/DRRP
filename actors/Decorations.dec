@@ -9,6 +9,13 @@
 
 Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Barrel
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
+
+    +BLOOD
 
     Tag "$DRRP_E_BARREL"
     Health 1
@@ -36,6 +43,11 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
 
 Actor DRRPTable 10702 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Table
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
     +NOBLOODDECALS
@@ -55,7 +67,11 @@ Actor DRRPTable 10702 {
 }
 
 Actor DRRPYellowLamp : Column replaces Column {
-    //$Category DDecorations
+    //$Category DLights
+    //$NotAngled
+    //$Title Yellow Lamp
+    //$IsDecoration
+    //$Icon "light"
 
     Args 255, 255, 204, 96
     Tag "$DRRP_E_YELLOWLAMP"
@@ -71,7 +87,11 @@ Actor DRRPYellowLamp : Column replaces Column {
 }
 
 Actor DRRPBlueLamp : DRRPYellowLamp 10703 {
-    //$Category DDecorations
+    //$Category DLights
+    //$NotAngled
+    //$Title Blue Lamp
+    //$IsDecoration
+    //$Icon "light"
 
     Args 204, 204, 255, 96
     Tag "$DRRP_E_BLUELAMP"
@@ -79,7 +99,11 @@ Actor DRRPBlueLamp : DRRPYellowLamp 10703 {
 }
 
 Actor DRRPLight1 10713 {
-    //$Category DDecorations
+    //$Category DLights
+    //$NotAngled
+    //$Title Light for Lamps
+    //$IsDecoration
+    //$Icon "light"
 
     const float minAlpha = 0.1;
     const float maxAlpha = 0.5;
@@ -117,7 +141,12 @@ Actor DRRPLight1 10713 {
 }
 
 Actor DRRPLight2: DRRPLight1 10714 {
-    //$Category DDecorations
+    //$Category DLights
+    //$NotAngled
+    //$Title Light for Ceilings
+    //$IsDecoration
+    //$Icon "light"
+
     +SPAWNCEILING
 
     Args 255, 255, 255, 64
@@ -135,7 +164,10 @@ Actor DRRPLight2: DRRPLight1 10714 {
 }
 
 Actor DRRPLight3: DRRPLight1 10715 {
-    //$Category DDecorations
+    //$Title DRRPLight 3
+    //$NotAngled
+    //$IsDecoration
+    //$Icon "light"
 
     States {
         Spawn:
@@ -148,6 +180,11 @@ Actor DRRPLight3: DRRPLight1 10715 {
 
 Actor DRRPChair 10750 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Chair
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
     +NOTAUTOAIMED
@@ -165,6 +202,11 @@ Actor DRRPChair 10750 {
 
 Actor DRRPRod : ExplosiveBarrel 10704 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Rod
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +CANNOTPUSH
 
@@ -230,6 +272,11 @@ Actor DRRPRodTrash {
 
 Actor DRRPCrate 10705 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Crate
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
     +SHOOTABLE
@@ -269,7 +316,14 @@ Actor DRRPCrate 10705 {
     }
 }
 
-Actor DRRPYellowCrate : DRRPCrate 10766 {}
+Actor DRRPYellowCrate : DRRPCrate 10766 {
+    //$Category DDecorations
+    //$NotAngled
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
+    //$Title Yellow Crate
+}
 
 Actor DRRPCrateShard {
     -SOLID
@@ -314,6 +368,11 @@ Actor DRRPCrateShard {
 
 Actor DRRPWardrobe 10706  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Cabinet
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
     +NOBLOODDECALS
@@ -334,6 +393,11 @@ Actor DRRPWardrobe 10706  {
 
 Actor DRRPBed 10707  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Bed
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
 
@@ -351,6 +415,11 @@ Actor DRRPBed 10707  {
 
 Actor DRRPBed_WithoutSprite: DRRPBed 10711 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Bed without sprite
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "tnt1a0"
 
     States {
         Spawn:
@@ -361,6 +430,11 @@ Actor DRRPBed_WithoutSprite: DRRPBed 10711 {
 
 Actor DRRPEnter 10712  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Enter Table
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     -SOLID
 
@@ -378,6 +452,11 @@ Actor DRRPEnter 10712  {
 
 Actor DRRPExit 10708  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Exit Table
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     -SOLID
 
@@ -395,6 +474,11 @@ Actor DRRPExit 10708  {
 
 Actor DRRPSink 10709  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Sink
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
     +SHOOTABLE
@@ -420,6 +504,11 @@ Actor DRRPSink 10709  {
 
 Actor DRRPToilet 10710 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Toilet
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +SOLID
     +SHOOTABLE
@@ -467,6 +556,11 @@ Actor DRRPAqueductFountain {
 
 Actor DRRPCEFEcon 10743  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Alarm 3
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     -SOLID
 
@@ -481,6 +575,11 @@ Actor DRRPCEFEcon 10743  {
 }
 Actor DRRPCEFRcon: DRRPCEFEcon 10744 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Alarm 4
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     Tag "$DRRP_D_ALARM"
 
@@ -493,6 +592,11 @@ Actor DRRPCEFRcon: DRRPCEFEcon 10744 {
 
 Actor DRRPAlarm1 10745  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Alarm 1
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +NOCLIP
     +NOGRAVITY
@@ -513,6 +617,11 @@ Actor DRRPAlarm1 10745  {
 
 Actor DRRPAlarm2: KlaxonWarningLight 10746  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title Alarm 2
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     Tag "$DRRP_D_ALARM"
     States {
@@ -524,6 +633,11 @@ Actor DRRPAlarm2: KlaxonWarningLight 10746  {
 
 Actor DRRPLightningactor777 19689 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     -SOLID
 
@@ -538,6 +652,11 @@ Actor DRRPLightningactor777 19689 {
 
 Actor DRRPTunnelLights 19691 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     +NOGRAVITY
     +NOCLIP
@@ -559,6 +678,11 @@ Actor DRRPTunnelLights 19691 {
 
 Actor DRRPRubbleSmall 19692 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     +FORCEXYBILLBOARD
     -SOLID
@@ -586,6 +710,11 @@ Actor DRRPRubbleSmall 19692 {
 
 Actor DRRPRubbleMedium : DRRPRubbleSmall 1332 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     +SOLID
     +SHOOTABLE
@@ -605,6 +734,11 @@ Actor DRRPRubbleMedium : DRRPRubbleSmall 1332 {
 
 Actor DRRPRubbleLarge : DRRPRubbleMedium 1333 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     Radius 64
     Height 56
@@ -620,6 +754,11 @@ Actor DRRPRubbleLarge : DRRPRubbleMedium 1333 {
 
 Actor DRRPCeilLamp1 1316 {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     +NOGRAVITY
     +NOCLIP
@@ -637,6 +776,11 @@ Actor DRRPCeilLamp1 1316 {
 
 Actor DRRPCeilLamp2: DRRPCeilLamp1 1317  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     States {
         Spawn:
@@ -647,6 +791,11 @@ Actor DRRPCeilLamp2: DRRPCeilLamp1 1317  {
 
 Actor DRRPCeilLamp3: DRRPCeilLamp1 1726  {
     //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
 
     States {
         Spawn:
@@ -658,6 +807,11 @@ Actor DRRPCeilLamp3: DRRPCeilLamp1 1726  {
 Actor DRRPShittyFog 10765 {
     //$Category DDecorations
     //$Sprite STEML0
+    //$NotAngled
+    //$Title Fog
+    //$IsDecoration
+    //$Colour #AAAAAA
+    //$Icon "particle2"
 
     +NOBLOCKMAP
     +FORCEXYBILLBOARD
