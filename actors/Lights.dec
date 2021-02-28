@@ -1,0 +1,174 @@
+/**
+ * Copyright (c) 2017-2021 DRRP-Team
+ *
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+Actor DRRPYellowLamp : Column replaces Column {
+    //$Category DLights
+    //$NotAngled
+    //$Title Yellow Lamp
+    //$IsDecoration
+    //$Icon "light"
+
+    Args 255, 255, 204, 96
+    Tag "$DRRP_E_YELLOWLAMP"
+    Radius 20
+
+    States {
+        Spawn:
+            COLU A 0 // TID in the next line is for the lamp glow removing:
+            TNT1 A 0 A_SpawnItemEx( "DRRPLight1", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER, 0, tid )
+            TNT1 A 0 A_SpawnItemEx( "DRRPLightWrapper", 0, 0, 40, 0, 0, 0, 0, SXF_SETMASTER | SXF_TRANSFERSPECIAL, 0, tid )
+            Goto Super::Spawn
+    }
+}
+
+Actor DRRPBlueLamp : DRRPYellowLamp 10703 {
+    //$Category DLights
+    //$NotAngled
+    //$Title Blue Lamp
+    //$IsDecoration
+    //$Icon "light"
+
+    Args 204, 204, 255, 96
+    Tag "$DRRP_E_BLUELAMP"
+    Translation "224:231=192:195", "160:167=196:199"
+}
+
+Actor DRRPLight1 10713 {
+    //$Category DLights
+    //$NotAngled
+    //$Title Light for Lamps
+    //$IsDecoration
+    //$Icon "light"
+
+    const float minAlpha = 0.1;
+    const float maxAlpha = 0.5;
+    const float maxDiffAlpha = 0.03;
+    var int user_glowwarpcounter;
+
+    -SOLID
+    +NOGRAVITY
+
+    Alpha 0.7
+    Renderstyle Add
+    Height 0    // For skip infobar tag handling.
+    Radius 0
+
+    States {
+        Spawn: // Set spawn origin to master (lamp):
+            GLOW A 0 Bright
+            GLOW A 1 Bright {
+                A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 );
+                A_Warp( AAPTR_MASTER, 0, 0, 40 );
+                user_glowwarpcounter = 10;
+            }
+            GLOW AAA 1 Bright A_Warp( AAPTR_MASTER, 0, 0, 40 )
+        SpawnLoop:
+            GLOW A 1 Bright {
+                A_SetTranslucent( clamp( alpha + FRandom( -maxDiffAlpha, maxDiffAlpha ), minAlpha, maxAlpha ), 1 );
+                A_Warp( AAPTR_MASTER, 0, 0, 40 );
+            }
+            GLOW AAA 1 Bright A_Warp( AAPTR_MASTER, 0, 0, 40 )
+            GLOW A 0 A_JumpIf( --user_glowWarpCounter > 0, "SpawnLoop" )
+        SpawnLoopEnd:
+            GLOW A 4 Bright A_SetTranslucent( clamp( alpha + FRandom( -maxDiffAlpha, maxDiffAlpha ), minAlpha, maxAlpha ), 1 )
+            Wait
+    }
+}
+
+Actor DRRPLight2: DRRPLight1 10714 {
+    //$Category DLights
+    //$NotAngled
+    //$Title Light for Ceilings
+    //$IsDecoration
+    //$Icon "light"
+
+    +SPAWNCEILING
+
+    Args 255, 255, 255, 64
+
+    Alpha 0.7
+
+    States {
+        Spawn:
+            GLOW B 0 Bright
+            GLOW B 0 Bright A_SpawnItemEx( "DRRPLightWrapper", 0, 0, -32, 0, 0, 0, 0, SXF_TRANSFERSPECIAL, 0, TID )
+            GLOW B 0 Bright A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 )
+            GLOW B -1 Bright
+            Stop
+    }
+}
+
+Actor DRRPLight3: DRRPLight1 10715 {
+    //$Title DRRPLight 3
+    //$NotAngled
+    //$IsDecoration
+    //$Icon "light"
+
+    States {
+        Spawn:
+            GLOW C 0 Bright
+            GLOW C 0 Bright A_SetTranslucent( FRandom( minAlpha, maxAlpha ), 1 )
+            GLOW C -1 Bright
+            Stop
+    }
+}
+
+Actor DRRPCeilLamp1 1316 {
+    //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
+
+    +NOGRAVITY
+    +NOCLIP
+    +SOLID
+    +SPAWNCEILING
+    Radius 8
+    Height 32
+    Scale 0.25
+    States {
+        Spawn:
+            ULGT A 1 Bright
+            Loop
+    }
+}
+
+Actor DRRPCeilLamp2: DRRPCeilLamp1 1317  {
+    //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
+
+    States {
+        Spawn:
+            ULGT D 1 Bright
+            Loop
+    }
+}
+
+Actor DRRPCeilLamp3: DRRPCeilLamp1 1726  {
+    //$Category DDecorations
+    //$NotAngled
+    //$Title DEPRECATED
+    //$IsDecoration
+    //$Colour #FFFFFF
+    //$Icon "minus"
+
+    States {
+        Spawn:
+            ULGT C 1 Bright
+            Loop
+    }
+}
+
+Actor DRRPCandle : Candlestick replaces Candlestick {
+    Tag "$DRRP_D_CANDLE"
+}
