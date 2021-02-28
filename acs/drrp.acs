@@ -162,7 +162,7 @@ Script "transformation"(int tid, int timedelay) {
     Delay(timedelay || 2);
 }
 
-#define NUM_POM_TEXTURES 55
+#define NUM_POM_TEXTURES 79
 str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "DRDC1",
     "DRDC0",
@@ -219,7 +219,32 @@ str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "CGR_M1A",
     "CGR_M2A",
     "CGR_M2B",
-    "compam"
+    "compam",
+    // Flats
+    "DRDC51",
+    "DRDC52",
+    "DRDC53",
+    "DRDC54",
+    "DRDC55",
+    "DRDC55x",
+    "DRDC56",
+    "DRDC57",
+    "DRDC58",
+    "DRDC58x",
+    "DRDC59",
+    "DRDC60",
+    "DRDC61",
+    "DRDC61x",
+    "DRDC62",
+    "DRDC62x",
+    "DRDC63",
+    "DRDC63x",
+    "DRDC64",
+    "DRDC65",
+    "DRDC67",
+    "DRDC68",
+    "DRDC71",
+    "DRDC72"
 };
 
 Script "updateshaders" (bool forced) ENTER {
