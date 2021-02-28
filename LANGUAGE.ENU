@@ -1,5 +1,5 @@
 /**
- *Copyright (c) 2018-2019 DRRP-Team
+ *Copyright (c) 2018-2021 DRRP-Team
  *
  *This software is released under the MIT License.
  *https://opensource.org/licenses/MIT
@@ -322,6 +322,7 @@
     DRRP_D_MENU_DRRPMENU_FLASHLIGHT = "Flashlight";
     DRRP_D_MENU_DRRPMENU_SHADERS    = "Shaders";
     DRRP_D_MENU_DRRPMENU_LANGUAGE   = "Language";
+    DRRP_D_MENU_DRRPMENU_PERFORMANCE= "Performance";
     DRRP_D_MENU_DRRPMENU_MISC       = "Misc";
 
     DRRP_D_KEYBINDINGS_TITLE        = "DRRP key bindings";
@@ -332,6 +333,7 @@
 
     DRRP_D_MENU_MISC_FREELOOK       = "Disable freelook";
     DRRP_D_MENU_MISC_DEBUGMODE      = "DRRP Debug Mode";
+    DRRP_D_MENU_BFLASH_ENABLE       = "Enable blood splashes";
 
     DRRP_D_MENU_LANGUAGE_TITLE      = "Language";
     DRRP_D_MENU_STATINFO_TITLE      = "Statistic";
@@ -368,6 +370,9 @@
     DRRP_D_MENU_SHADERS_CINEMATIC   = "Enable cinematic shaders";
     DRRP_D_MENU_SHADERS_LUT         = "> Enable lut tonemap shaders";
     DRRP_D_MENU_SHADERS_APPLY       = "Apply changes";
+
+    DRRP_D_MENU_PERFORMANCE_APPLYNEEDED  = "Required to apply changes";
+    DRRP_D_MENU_PERFORMANCE_NEWMAPNEEDED = "Will be applied at the next map";
     
     DRRP_D_PASSCODE_WRONG           = "Wrong passcode";
 
@@ -406,6 +411,9 @@
     DRRP_D_FOUNTAIN                 = "Fountain";
     DRRP_D_ALARM                    = "Alarm";
     DRRP_D_SPARKS                   = "Sparks";
+    DRRP_D_DEADMARINE               = "Dead marine";
+    DRRP_D_NONSOLIDMEATS            = "Meat";
+    DRRP_D_CANDLE                   = "Candle";
 
     DRRP_D_TMAP_PRESENTS            = "DRRP-Team presents";
     DRRP_D_TMAP_DRRP                = "\cgD\cdR\cbR\chP";
@@ -565,6 +573,12 @@
     DRRP_OBM_GHOUL           = "%o couldn't evade a Fiend's fist.";
     DRRP_OB_REVENANT         = "%o couldn't evade a Revenant's rocket.";
     DRRP_OBM_GHOUL           = "%o couldn't evade a Revenant's fist.";
+    DRRP_OB_BEHOLDER         = "%o was discovered and stopped by the Beholder.";
+    DRRP_OBM_BEHOLDER        = "%o peered into the close eye of the Beholder.";
+    DRRP_OB_RAHOVART         = "%o was garbled by Rahovart.";
+    DRRP_OBM_RAHOVART        = "%o was seduced by Rahovart.";
+    DRRP_OB_PAINELEMENTAL    = "%o died of the induced pain shock of a Pain Elemental.";
+    DRRP_OBM_PAINELEMENTAL   = "%o tasted pain next to the Pain Elemental.";
     DRRP_OB_BEHEMOTH         = "%o was sqashed by a Behemoth.";
     DRRP_OB_MANCUBUS         = "%o was sqashed by a Mancubus.";
     DRRP_OB_DRUJ             = "%o was sqashed by a Druj.";
