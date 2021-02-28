@@ -50,8 +50,9 @@ class DRRPPlayer: DoomPlayer {
         Super.PlayerThink();
 
         // Play sound on low health.
-        if ( !( level.time % 70 ) && ( health / double( playerStats[ RPG_MaxHealth ] ) < 0.1 ) ) {
+        if ( !( level.time % 70 ) && ( health / double( playerStats[ RPG_MaxHealth ] ) < 0.35 ) ) {
             S_Sound( "player/lowhp", CHAN_BODY );
+            A_SetBlend( "AA0000", 0.2, 5 );
         }
     } // of override void PlayerThink() {
 
