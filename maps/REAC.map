@@ -4650,9 +4650,10 @@ class5 = true;
 
 thing
 {
-x = -736.000;
-y = -96.000;
-type = 10714;
+x = 416.000;
+y = 288.000;
+type = 10265;
+arg1 = 255;
 coop = true;
 dm = true;
 single = true;
@@ -4661,7 +4662,9 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+height = 64;
 renderstyle = "";
+arg0 = 1;
 }
 
 thing
@@ -4685,8 +4688,8 @@ arg0 = 1;
 
 thing
 {
-x = 416.000;
-y = 288.000;
+x = -736.000;
+y = -96.000;
 type = 10265;
 arg1 = 255;
 coop = true;
@@ -26432,6 +26435,24 @@ sideback = 2431;
 twosided = true;
 }
 
+linedef
+{
+v1 = 211;
+v2 = 1231;
+sidefront = 2435;
+sideback = 2434;
+twosided = true;
+}
+
+linedef
+{
+v1 = 1234;
+v2 = 208;
+sidefront = 2436;
+sideback = 2437;
+twosided = true;
+}
+
 sidedef
 {
 sector = 5;
@@ -28087,7 +28108,7 @@ texturemiddle = "DRDC10";
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRDC25";
 }
 
@@ -28123,25 +28144,25 @@ texturemiddle = "DRDC25";
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRDC25";
 }
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRDC25";
 }
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRDC25";
 }
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRDC25";
 }
 
@@ -28152,7 +28173,7 @@ sector = 32;
 
 sidedef
 {
-sector = 35;
+sector = 283;
 }
 
 sidedef
@@ -28241,7 +28262,7 @@ offsetx_mid = 16;
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRDC25";
 }
 
@@ -35646,20 +35667,20 @@ texturemiddle = "DRPGZ003";
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRPGZ003";
 }
 
 sidedef
 {
-sector = 35;
+sector = 283;
 offsetx = 40;
 offsety = -24;
 }
 
 sidedef
 {
-sector = 35;
+sector = 283;
 texturemiddle = "DRPGZ003";
 offsetx = 40;
 offsety = -24;
@@ -35667,7 +35688,7 @@ offsety = -24;
 
 sidedef
 {
-sector = 35;
+sector = 283;
 }
 
 sidedef
@@ -42139,7 +42160,27 @@ sector = 282;
 
 sidedef
 {
+sector = 283;
+}
+
+sidedef
+{
 sector = 35;
+}
+
+sidedef
+{
+sector = 283;
+}
+
+sidedef
+{
+sector = 283;
+}
+
+sidedef
+{
+sector = 283;
 }
 
 sidedef
@@ -42154,7 +42195,7 @@ sector = 35;
 
 sidedef
 {
-sector = 35;
+sector = 283;
 }
 
 sector
@@ -42470,7 +42511,7 @@ sector
 texturefloor = "DRDC68";
 textureceiling = "DRDC62";
 heightceiling = 64;
-lightlevel = 255;
+lightlevel = 129;
 rotationfloor = 90;
 xpanningfloor = -32;
 }
@@ -42496,9 +42537,9 @@ rotationfloor = 90;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+textureceiling = "DRDC62X";
 heightceiling = 64;
-lightlevel = 255;
+lightlevel = 128;
 rotationfloor = 90;
 xpanningfloor = -32;
 }
@@ -42517,9 +42558,9 @@ color_floor = 291328;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC62";
+textureceiling = "DRDC62X";
 heightceiling = 64;
-lightlevel = 255;
+lightlevel = 130;
 rotationfloor = 90;
 xpanningfloor = -32;
 }
@@ -45177,9 +45218,19 @@ heightceiling = 152;
 sector
 {
 texturefloor = "DRDC68";
-textureceiling = "DRDC63";
+textureceiling = "DRDC63X";
 heightceiling = 64;
-lightlevel = 255;
+lightlevel = 131;
+rotationfloor = 90;
+xpanningfloor = -32;
+}
+
+sector
+{
+texturefloor = "DRDC68";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 128;
 rotationfloor = 90;
 xpanningfloor = -32;
 }
