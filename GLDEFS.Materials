@@ -1072,7 +1072,7 @@ Material Texture DRDC58x {
 }
 
 Material Texture DRDC59 {
-    normal "materials/normal/drdc59.png"
+    normal "materials/normal/drdc57.png"
     //specular "materials/specular/drdc11.png"
     Texture tex_heightmap   "materials/height/drdc57.png"
     shader                  "shaders/parallax_pbr.fp"
