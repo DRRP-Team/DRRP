@@ -57,6 +57,7 @@ Actor DoomRPGPlayer: DRRPPlayer {
     Player.StartItem "DRRPPistol"
     Player.StartItem "Clip", 16
     Player.StartItem "DRRPDamageAbsorber"
+    Player.StartItem "Backpack"
 
     States {
         Pain:
