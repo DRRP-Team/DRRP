@@ -11,6 +11,11 @@
 
 Actor DRRPAxe_DecorateSummoner 10557 {
     //$Category DWeapons
+    //$Colour RGB(220, 180, 100)
+    //$Tag Axe
+    //$Icon "weapon"
+    //$NotAngled
+
     Scale 0.65
     Tag "$DRRP_W_AXE"
     States {
@@ -31,6 +36,11 @@ Actor DRRPAxePuff : BulletPuff {
 
 Actor DRRPFireExt_DecorateSummoner 10556 {
     //$Category DWeapons
+    //$Colour RGB(220, 180, 100)
+    //$Tag Fire extingusher
+    //$Icon "weapon"
+    //$NotAngled
+
     Tag "$DRRP_W_FIREEXT"
     Scale 0.5
     States {
