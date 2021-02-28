@@ -9,12 +9,18 @@ Actor DRRPFire_Decorate: DRRPFire 10250 {
     //$Category Damage
     //$Sprite FIREA0
     //$Title Fire
+    //$Colour #FFAA00
+    //$NotAngled
+    //$Icon "hilight"
 }
 
 Actor DRRPLava_Decorate: DRRPLava 10251 {
     //$Category Damage
     //$Sprite LAVAA0
     //$Title Lava pool
+    //$Colour #FFAA00
+    //$NotAngled
+    //$Icon "hilight"
 }
 
 Actor Explosion_Decorate: DRRPExplosion {
@@ -22,5 +28,5 @@ Actor Explosion_Decorate: DRRPExplosion {
 }
 
 Actor Explosion : DRRPExplosion {
-    // Used in maps.    
+    // Used in maps (ACS).    
 }
