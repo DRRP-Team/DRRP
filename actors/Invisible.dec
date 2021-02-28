@@ -160,3 +160,7 @@ Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
 Actor DRRPDamageTestDoll : DRRPDamageDoll 10901 { // Written in ZScript
     //$Category Invisible
 }
+
+Actor DRRPLightWrapper_Spawner : DRRPLightWrapper 10902 {
+    //$Category Invisible
+}
