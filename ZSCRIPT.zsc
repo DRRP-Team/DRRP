@@ -46,6 +46,15 @@ class DRRPPlayer: DoomPlayer {
         Super.BeginPlay();
     }
 
+    override void PlayerThink() {
+        Super.PlayerThink();
+
+        // Play sound on low health.
+        if ( !( level.time % 70 ) && ( health / double( playerStats[ RPG_MaxHealth ] ) < 0.1 ) ) {
+            S_Sound( "player/lowhp", CHAN_BODY );
+        }
+    } // of override void PlayerThink() {
+
 
     /* Static get/set features methods (usually for ACS) */
     static int GetFeatureStatic( Actor activator, int type ) {
