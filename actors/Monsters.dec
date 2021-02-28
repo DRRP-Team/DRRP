@@ -841,6 +841,8 @@ Actor DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell 10280 {
     HitObituary "$DRRP_OBM_BARON"
     Tag "$DRRP_M_BARON"
     Health 1200
+
+    Translation "112:127=160:167"
 }
 
 Actor DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight 10380 {
@@ -859,7 +861,7 @@ Actor DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight 10380 {
     Melee:
     Missile:
         BOS2 EF 8 A_FaceTarget
-        BOS2 G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 9 * Random( 1, 8 ) + 6, "baron/melee" )
+        BOS2 G 8 A_CustomComboAttack( "DRRPHellKnightBall", 32, 9 * Random( 1, 8 ) + 6, "baron/melee" )
         Goto See
     }
 }
@@ -886,13 +888,23 @@ Actor Ogre: HellKnight_BaseDRRP 10480 {
     Melee:
     Missile:
         BOS2 EF 8 A_FaceTarget
-        BOS2 G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 7 * Random( 2, 7 ) + 4, "baron/melee" )
+        BOS2 G 8 A_CustomComboAttack( "DRRPOgreBall", 32, 7 * Random( 2, 7 ) + 4, "baron/melee" )
         Goto See
     }
 }
 
+Actor DRRPOgreBall: BaronBall {
+    Damage (8 * Random( 1, 8 ))
+    Translation "112:127=176:191", "128:143=%[0.00,0.00,0.00]:[0.77,0.82,0.64]", "144:151=%[0.00,0.00,0.00]:[0.80,0.85,0.65]", "48:63=%[0.00,0.00,0.00]:[0.76,0.82,0.64]", "13:15=%[0.00,0.00,0.00]:[0.65,0.69,0.54]"
+}
+
+Actor DRRPHellKnightBall: BaronBall {
+    Damage (8 * Random( 1, 8 ))
+}
+
 Actor DRRPBaronBall: BaronBall replaces BaronBall {
     Damage (8 * Random( 1, 8 ))
+    Translation "112:127=160:167"
 }
 
 
