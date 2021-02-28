@@ -204,7 +204,7 @@ Actor DRRPDoor : DRRPInfo 10815 {
     Tag "Door"
 }
 
-Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
+/*Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
@@ -215,8 +215,8 @@ Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
     -SOLID
     -SHOOTABLE
 
-    Tag "Morthimer McMare Fix This!"
-}
+    Tag "Morthimer McMare Fix This! \n\n [McM]: OK, as you wish..."
+}*/
 
 Actor DRRPDamageTestDoll : DRRPDamageDoll 10901 { // Written in ZScript
     //$Category Invisible
@@ -228,10 +228,14 @@ Actor DRRPDamageTestDoll : DRRPDamageDoll 10901 { // Written in ZScript
 
 Actor DRRPLightWrapper_Spawner : DRRPLightWrapper 10902 {
     //$Category DLight
-    //$Colour #555555
+    //$Colour #555555                               
     //$NotAngled
     //$Icon "tnt1a0"
     //$Title Light Wrapper
 }
 
-Actor InformatorActor: DRRPInformatorActor 10667 {}
+Actor InformatorActor: DRRPInformatorActor 10900 {
+    //$Category Invisible
+    //$Arg1 "DRRP" string index.
+    //$Arg2 Get string from level: 0=<cur>, 1=INTRO, 2=HUB, 3..9=SEC1..7, 10=XHUB, 11=REAC
+}

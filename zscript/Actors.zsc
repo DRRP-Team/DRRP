@@ -279,13 +279,62 @@ class DRRPLightWrapper: Actor {
 
 
 class DRRPInformatorActor: Actor {
-    String informString; // As args[ 0 ].
+    String informString; // As number in args[ 0 ].
+
+    Default {
+        +SOLID;
+        Height 32;
+        Radius 16;
+    }
+
+    // "LineTrace()" (see "Infobar.zsc") cannot find actors without flag "+SOLID".
+    override bool CanCollideWith( Actor other, bool passive ) {
+        return false;
+    }
 
     override void PostBeginPlay() {
-        informString = "" .. ACS_ScriptCall( "getString", args[ 0 ] );
+        String levelPrefix = "";
+
+        int levelnum = ( args[ 1 ] == 0 )? level.levelnum : args[ 1 ];
+
+        switch ( levelnum ) {
+            case 1: 
+                levelPrefix = "INTRO";
+                break;
+            case 2: 
+                levelPrefix = "HUB";
+                break;
+            case 10: 
+                levelPrefix = "XHUB";
+                break;
+            case 11: 
+                levelPrefix = "REAC";
+                break;
+            case 12: 
+                levelPrefix = "CREDITS";
+                break;
+            case 99: 
+                levelPrefix = "TESTMAP"; // Has it any strings?
+                break;
+            case 254: 
+                levelPrefix = "D_TMAP"; // "[T]itle [map]".
+                break;
+            case 255: 
+                levelPrefix = "B"; // "[B]ase".
+                break;
+            default:
+                if ( levelnum >= 3 && levelnum <= 9 )
+                    levelPrefix = "SEC" .. ( levelnum - 2 );
+                break;
+        }
+
+        informString = StringTable.Localize( "$DRRP_" .. levelPrefix .. "_" .. args[ 0 ] );
+
+        //console.printf( "\"" .. informString .. "\" as: " .. "$DRRP_" .. levelPrefix .. "_" .. args[ 0 ] );
         Super.PostBeginPlay();
     }
-}
+
+} // of class DRRPInformatorActor: Actor {
 
 class DRRPDamageDoll: DRRPPlayer {
     Default {
