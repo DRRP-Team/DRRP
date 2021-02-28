@@ -6,6 +6,11 @@
  */
 
 Actor BlackHole 10666 {
+    //$Category Environment
+    //$Title Black hole
+    //$NotAngled
+    //$Colour #555555
+
     +NOBLOCKMAP
     +DONTHARMSPECIES
     +NODAMAGETHRUST
@@ -23,8 +28,6 @@ Actor BlackHole 10666 {
             Loop
     }
 }
-
-Actor InformatorActor: DRRPInformatorActor 10667 {}
 
 Actor DRRPParticle : Blood {
     -SOLID
@@ -675,6 +678,8 @@ Actor PurpleSparkSpawner : AbstractSpark {
 
 // TODO: Optimize sounds (It can be separated)
 Actor SteamSpawner : SwitchableDecoration 10000 {
+    //$Category Environment
+
     +NOBLOCKMAP
     +NOGRAVITY
     +NOINTERACTION
