@@ -15,8 +15,6 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
     //$Colour #AAAAAA
     //$Icon "particle2"
 
-    +BLOOD
-
     Tag "$DRRP_E_BARREL"
     Health 1
     Radius 32
