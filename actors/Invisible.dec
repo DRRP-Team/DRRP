@@ -12,7 +12,7 @@ Actor DRRPShop 10555 {
     //$Sprite STEMA0
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Shop
 
 
@@ -34,7 +34,7 @@ Actor DRRPTrigger : DRRPCharacter 10554 {
     //$Icon STEMA0
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Trigger
 
     -SOLID
@@ -60,7 +60,7 @@ Actor DRRPWall : DRRPInfo 10801 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Steel wall"
 }
@@ -69,7 +69,7 @@ Actor DRRPSplat : DRRPInfo 10802 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Splat"    
 }
@@ -78,7 +78,7 @@ Actor DRRPSplatPentagram : DRRPSplat 10803 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Splat Pentagram"
 }
@@ -87,7 +87,7 @@ Actor DRRPSplatDie : DRRPSplat 10804 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Splat Die"
 }
@@ -96,7 +96,7 @@ Actor DRRPWallXBrace : DRRPInfo 10805 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "X-brace"
 }
@@ -105,7 +105,7 @@ Actor DRRPWallTech : DRRPInfo 10806 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Wall Tech"
 }
@@ -114,7 +114,7 @@ Actor DRRPDamagedStucco : DRRPInfo 10807 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Damaged Stucco"
 }
@@ -123,7 +123,7 @@ Actor DRRPBars : DRRPInfo 10808 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Bars"
 }
@@ -132,7 +132,7 @@ Actor DRRPWallSideSupports : DRRPInfo 10809 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Wall Side Supports"    
 }
@@ -141,7 +141,7 @@ Actor DRRPDamagedSteelWall : DRRPInfo 10810 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Damaged Steel Wall"    
 }
@@ -150,7 +150,7 @@ Actor DRRPBurnedSteelWall : DRRPInfo 10811 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Burned Steel Wall"
 }
@@ -159,7 +159,7 @@ Actor DRRPBrokenTubeWall : DRRPInfo 10812 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
 
     Tag "Broken Tube Wall"
 }
@@ -169,7 +169,7 @@ Actor DRRPNull : DRRPTrigger 10814 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Null Actor
 
     +SPECTRAL
@@ -182,7 +182,7 @@ Actor DRRPStatusBar : DRRPInfo 10813 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     
     -USESPECIAL
     Tag "Status bar message"
@@ -192,7 +192,7 @@ Actor DRRPComputer : DRRPTrigger 10816 {
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Computer
 
     Tag "$DRRP_E_COMPUTER"
@@ -208,7 +208,7 @@ Actor DRRPDevNotifier 10900 { // TODO: Write me in ZScript
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Dev Notifier
 
     +SPECTRAL
@@ -222,7 +222,7 @@ Actor DRRPDamageTestDoll : DRRPDamageDoll 10901 { // Written in ZScript
     //$Category Invisible
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Damage Test Doll
 }
 
@@ -230,6 +230,6 @@ Actor DRRPLightWrapper_Spawner : DRRPLightWrapper 10902 {
     //$Category DLight
     //$Colour #555555
     //$NotAngled
-    //$Icon "particle2"
+    //$Icon "tnt1a0"
     //$Title Light Wrapper
 }
