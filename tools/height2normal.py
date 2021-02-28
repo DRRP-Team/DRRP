@@ -9,7 +9,7 @@ import scipy.ndimage
 import scipy.misc
 from scipy import ndimage
 import argparse
-
+from matplotlib.pyplot import imread, imsave
 
 def smooth_gaussian(im, sigma):
     if sigma == 0:
@@ -99,7 +99,7 @@ def main():
     input_file = args.input_file
     output_file = args.output_file
 
-    im = ndimage.imread(input_file)
+    im = imread(input_file)
 
     if im.ndim == 3:
         im_grey = np.zeros((im.shape[0],im.shape[1])).astype(float)
@@ -112,7 +112,7 @@ def main():
 
     normal_map = compute_normal_map(sobel_x, sobel_y, intensity)
 
-    scipy.misc.imsave(output_file, normal_map)
+    imsave(output_file, normal_map)
 
 
 if __name__ == "__main__":
