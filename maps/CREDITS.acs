@@ -41,6 +41,10 @@ Script "skip" (void) {
     skip = true;
 }
 
+Script 666 (void) {
+    Teleport_NewMap(99, 0, 0);
+}
+
 int state = 0;
 
 script 101 (void){//Core
@@ -62,6 +66,7 @@ script 101 (void){//Core
             AmbientSound(localizeSound("core/c4"), 127);
             state++;
             Print(s:"Press F12");
+            HudMessage(s:"Press F12!"; HUDMSG_FADEINOUT, 2, CR_GOLD, 0.5, 0.5, 1);
             break;
         default:
             Print(s:"Press F12");
