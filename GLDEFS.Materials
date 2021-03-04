@@ -220,6 +220,15 @@ Material Texture RPWAL23 {
 // Reactor portal animation
 Material Texture REAC1 {
     BrightMap "materials/emission/reac1_brt.png"
+    normal "materials/normal/drdc22.png"
+    Texture tex_heightmap   "materials/height/drdc22.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture DRDC49 {
+    normal "materials/normal/drdc22.png"
+    Texture tex_heightmap   "materials/height/drdc22.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture REAC2 {
