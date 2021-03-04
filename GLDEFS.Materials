@@ -1091,3 +1091,15 @@ Material Texture DRDC72 {
     Texture tex_heightmap   "materials/height/drdc72.png"
     shader                  "shaders/parallax_pbr.fp"
 }
+
+
+
+// Decals
+
+
+Material Texture DRPGZ002 {
+    normal "materials/normal/drpgz002.png"
+    //specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drpgz002.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
