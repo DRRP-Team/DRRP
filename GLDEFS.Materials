@@ -172,13 +172,17 @@ Material Texture DRDC65 {
 // Cyan scute 1
 Material Texture DRDC37 {
     normal "materials/normal/drdc37.png"
-    specular "materials/specular/drdc37.png"
+    //specular "materials/specular/drdc37.png"
+    Texture tex_heightmap   "materials/height/drdc37.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Cyan scute 2
 Material Texture DRDC38 {
     normal "materials/normal/drdc38.png"
-    specular "materials/specular/drdc38.png"
+    //specular "materials/specular/drdc38.png"
+    Texture tex_heightmap   "materials/height/drdc38.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Horizontal pipes

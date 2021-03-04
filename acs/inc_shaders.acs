@@ -33,7 +33,7 @@ str CINEMATIC_SHADERS[] = {
     "REAC"
 };
 
-#define NUM_POM_TEXTURES 88
+#define NUM_POM_TEXTURES 90
 str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "DRDC1",
     "DRDC0",
@@ -44,6 +44,8 @@ str POM_TEXTURES[NUM_POM_TEXTURES] = {
     "DRDC28",
     "DRDC34",
     "DRDC35",
+    "DRDC37", // Cyan 1
+    "DRDC38", // Cyan 2
     "DRDC42",
     "DRDC41", // Tunnels
     "DRDC41A",
