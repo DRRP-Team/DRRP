@@ -87,6 +87,8 @@ Material Texture DRDC16 {
 Material Texture DRDC21 {
     normal "materials/normal/drdc21.png"
     specular "materials/specular/drdc21.png"
+    Texture tex_heightmap   "materials/height/drdc21.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Brown bricks
