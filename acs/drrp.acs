@@ -162,90 +162,6 @@ Script "transformation"(int tid, int timedelay) {
     Delay(timedelay || 2);
 }
 
-#include "materials.cfg.acs"
-
-Script "updateshaders" (bool forced) ENTER {
-    bool isHelmetEnabled = GetCVar("drrp_enable_helmet_shader");
-    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
-
-    if(!isPomEnabled) {
-        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
-            ReplaceTextures(POM_TEXTURES[i], StrParam(s:"NP_", s:POM_TEXTURES[i]));
-        }
-    } else if(forced) { // Only if called from menudef
-        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
-            ReplaceTextures(StrParam(s:"NP_", s:POM_TEXTURES[i]), POM_TEXTURES[i]);
-        }
-    }
-
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HelmetShader", isHelmetEnabled);
-
-    ACS_NamedExecuteAlways("onCinematicShadersReload", 0, forced);
-}
-
-// This hook called on change cinematic shaders' CVAR
-// Redefine it in your map
-Script "onCinematicShadersLoad" (bool forced) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEFAULT Script onCinematicShadersUnload");
-}
-
-Script "onCinematicShadersUnload" (bool forced) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEPRECATED Script onCinematicShadersUnload");
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false);
-}
-
-#define CINEMATIC_SHADERS_COUNT 20
-str CINEMATIC_SHADERS[] = { "RadialBlurShader", "TITLEMAP", "INTRO", "HUB", "SEC1",
-                            "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_Before",
-                            "SEC7_After", "XHUB", "REAC", "HeatHaze", "FilmGrain",
-                            "XHUBGrain", "DefaultLut", "BCFilter", "DoubleVisionShader" };
-
-// This hook must not be redefined but it can be.
-// Using to disable all cinematic shaders and (if they're enabled) enable map specific ones.
-Script "onCinematicShadersReload" (bool forced) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script onCinematicShadersReload");
-
-    // Disable all cinematic shaders
-    for(int i = 0; i < CINEMATIC_SHADERS_COUNT; i++) {
-        ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
-    }
-
-    ACS_NamedExecute("playerDamageTimer", 0); // Recalculate damage shader
-
-    // Enable map specific ones if cinematic shader support is enabled
-    if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
-}
-
-float playerDamageTimer = 0;
-
-// NOTE: This script must be executed as ACS_NamedExecuteAlways
-Script "onPlayerDamage" (void) {
-    // TODO: Use player health
-    // But we can't get the max player's HP from here :(
-    // OK: Enable shader
-    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", true);
-    // OK: Timed disable shader
-    playerDamageTimer += 5.0;
-    ACS_NamedExecute("playerDamageTimer", 0);
-}
-
-const int PLAYER_DAMAGE_TICK_VALUE = 3;
-
-// This script decreases the playerDamageTimer value and intensivity of the damage shader
-Script "playerDamageTimer" (void) {
-    while (playerDamageTimer > 0) {
-        playerDamageTimer -= 1.0;
-        // OK: Set shader intensivity related to the damage value and the player's health
-
-        ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "DoubleVisionShader",
-                    "distortion", fclamp(playerDamageTimer, 1.0, 5.0));
-
-        Delay(PLAYER_DAMAGE_TICK_VALUE);
-    }
-
-    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);
-}
-
 /**
  * RPG System
  */
@@ -286,47 +202,6 @@ Script "LevelDoneNotifierVisual" ( void ) {
     }
 }
 
-/*Script "LevelStatsNotifier" ENTER {
-    int  monsterstotal,
-         secretstotal       = GetLevelInfo(LEVELINFO_TOTAL_SECRETS);
-
-    bool monsters = false,
-         secrets  = false;
-
-    if (secretstotal == 0)  secrets = true;
-
-    while (true) {
-        monsterstotal       = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
-
-        int monsterskilled  = GetLevelInfo(LEVELINFO_KILLED_MONSTERS);
-        int secretsfound    = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
-
-        if (monsterstotal && monsterskilled == monsterstotal && !monsters) {
-            SetFont("BIGFONT");
-            HudMessage(l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
-            LocalAmbientSound("COMPLETE", 115);
-            monsters = true;
-            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 10);
-        }
-
-        if (secretsfound == secretstotal && !secrets) {
-            SetFont("BIGFONT");
-            HudMessage(l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
-            LocalAmbientSound("SECRETS", 115);
-            secrets = true;
-            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 10);
-        }
-
-        if (monsters && secrets) {
-            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 25);
-            GiveInventory("Credit", 25);
-            break;
-        };
-
-        Delay(17);
-    }
-}*/
-
 Script "levelUp" (bool windowOnly) {
     int pLevel = ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Level);
 
@@ -351,3 +226,4 @@ Script "levelUp" (bool windowOnly) {
 
 #include "flashlight.inc.acs"
 #include "mapapis.inc.acs"
+#include "shaders.inc.acs"

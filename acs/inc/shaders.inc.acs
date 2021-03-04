@@ -1,0 +1,202 @@
+/**
+ * Copyright (c) 2017-2021 DRRP-Team
+ *
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+// Compile drrp.acs!
+
+#define CINEMATIC_SHADERS_COUNT 20
+str CINEMATIC_SHADERS[] = {
+    // Cinematic shaders
+    "RadialBlurShader",
+    "HeatHaze",
+    "FilmGrain",
+    "XHUBGrain",
+    "BCFilter",
+    "DoubleVisionShader",
+    // Luts for sectors
+    "DefaultLut",
+    "TITLEMAP",
+    "INTRO",
+    "HUB",
+    "SEC1",
+    "SEC2",
+    "SEC3",
+    "SEC4",
+    "SEC5",
+    "SEC6",
+    "SEC7_Before",
+    "SEC7_After",
+    "XHUB",
+    "REAC"
+};
+
+#define NUM_POM_TEXTURES 85
+str POM_TEXTURES[NUM_POM_TEXTURES] = {
+    "DRDC1",
+    "DRDC0",
+    "DRDC24",
+    "DRDC25",
+    "DRDC26",
+    "DRDC28",
+    "DRDC34",
+    "DRDC35",
+    "DRDC42",
+    "DRDC41", // Tunnels
+    "DRDC41A",
+    "DRDC43",
+    "DRDC43A",
+    "DRDC45",
+    "DRDC45A",
+    "DRDC47",
+    "DRDC47A", // // Tunnels
+    "DRDC44",
+    "DRDC46",
+    "DRDC48",
+    "DRDC2",
+    "DRDC3",
+    "DRDC4",
+    "DRDC5",
+    "DRDC6",
+    "DRDC9",
+    "DRDC8",
+    "DRDC27",
+    "DRDC32",
+    "RROCK04",
+    "RROCK05",
+    "RROCK06",
+    "RROCK07",
+    "RROCK08",
+    "DRDC11",
+    "DRDC12",
+    "SC77_01",
+    "MFLR8_1",
+    "METAL1",
+    "DRDC39",
+    "DRDC40",
+    // Computers
+    "DRDC30",
+    "DRDC31",
+    "CGR_CAPT",
+    "CGR_CRSR",
+    "CGR_EMPT",
+    "CGR_LC1",
+    "CGR_MSG",
+    "CGR_OFF",
+    "CGR_TXT1",
+    "CGR_UAC",
+    "CGR_M1A",
+    "CGR_M2A",
+    "CGR_M2B",
+    "compam",
+    // Flats
+    "DRDC51",
+    "DRDC52",
+    "DRDC53",
+    "DRDC54",
+    "DRDC55",
+    "DRDC55x",
+    "DRDC56",
+    "DRDC57",
+    "DRDC58",
+    "DRDC58x",
+    "DRDC59",
+    "DRDC60",
+    "DRDC61",
+    "DRDC61x",
+    "DRDC62",
+    "DRDC62x",
+    "DRDC63",
+    "DRDC63x",
+    "DRDC64",
+    "DRDC65",
+    "DRDC67",
+    "DRDC68",
+    "DRDC71",
+    "DRDC72",
+    // Decals
+    "DRPGZ002",
+    "DRPGZ004",
+    "DRPGZ005",
+    "DRPGZb05",
+    "DRPGZc05",
+    "DRPGZ006",
+};
+
+Script "updateshaders" (bool forced) ENTER {
+    bool isHelmetEnabled = GetCVar("drrp_enable_helmet_shader");
+    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
+
+    if(!isPomEnabled) {
+        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
+            ReplaceTextures(POM_TEXTURES[i], StrParam(s:"NP_", s:POM_TEXTURES[i]));
+        }
+    } else if(forced) { // Only if called from menudef
+        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
+            ReplaceTextures(StrParam(s:"NP_", s:POM_TEXTURES[i]), POM_TEXTURES[i]);
+        }
+    }
+
+    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HelmetShader", isHelmetEnabled);
+
+    ACS_NamedExecuteAlways("onCinematicShadersReload", 0, forced);
+}
+
+// This hook called on change cinematic shaders' CVAR
+// Redefine it in your map
+Script "onCinematicShadersLoad" (bool forced) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEFAULT Script onCinematicShadersUnload");
+}
+
+Script "onCinematicShadersUnload" (bool forced) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEPRECATED Script onCinematicShadersUnload");
+    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false);
+}
+
+// This hook must not be redefined but it can be.
+// Using to disable all cinematic shaders and (if they're enabled) enable map specific ones.
+Script "onCinematicShadersReload" (bool forced) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script onCinematicShadersReload");
+
+    // Disable all cinematic shaders
+    for(int i = 0; i < CINEMATIC_SHADERS_COUNT; i++) {
+        ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
+    }
+
+    ACS_NamedExecute("playerDamageTimer", 0); // Recalculate damage shader
+
+    // Enable map specific ones if cinematic shader support is enabled
+    if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
+}
+
+float playerDamageTimer = 0;
+
+// NOTE: This script must be executed as ACS_NamedExecuteAlways
+Script "onPlayerDamage" (void) {
+    // TODO: Use player health
+    // But we can't get the max player's HP from here :(
+    // OK: Enable shader
+    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", true);
+    // OK: Timed disable shader
+    playerDamageTimer += 5.0;
+    ACS_NamedExecute("playerDamageTimer", 0);
+}
+
+const int PLAYER_DAMAGE_TICK_VALUE = 3;
+
+// This script decreases the playerDamageTimer value and intensivity of the damage shader
+Script "playerDamageTimer" (void) {
+    while (playerDamageTimer > 0) {
+        playerDamageTimer -= 1.0;
+        // OK: Set shader intensivity related to the damage value and the player's health
+
+        ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "DoubleVisionShader",
+                    "distortion", fclamp(playerDamageTimer, 1.0, 5.0));
+
+        Delay(PLAYER_DAMAGE_TICK_VALUE);
+    }
+
+    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);
+}
