@@ -31,7 +31,7 @@ zip -r -9 ../DRRPvX.Y.Z.pk3 .
 echo "Building DRRPvX.Y.Z_GZDoom3xPatch.pk3..."
 
 mkdir GZDoom3xPatch
-cp -R ../TEMP/GZDoom3xPatch GZDoom3xPatch
+cp -R ../TEMP/GZDoom3xPatch/* GZDoom3xPatch
 cd GZDoom3xPatch
 zip -r -9 ../../DRRPvX.Y.Z_GZDoom3xPatch.pk3 .
 cd ../
@@ -39,7 +39,7 @@ cd ../
 echo "Building DRRPvX.Y.Z_GZDoom440PlusPatch.pk3..."
 
 mkdir GZDoom440PlusPatch
-cp -R ../TEMP/GZDoom440PlusPatch GZDoom440PlusPatch
+cp -R ../TEMP/GZDoom440PlusPatch/* GZDoom440PlusPatch
 cd GZDoom440PlusPatch
 zip -r -9 ../../DRRPvX.Y.Z_GZDoom440PlusPatch.pk3 .
 cd ../
