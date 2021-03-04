@@ -1096,10 +1096,29 @@ Material Texture DRDC72 {
 
 // Decals
 
-
+// X
 Material Texture DRPGZ002 {
     normal "materials/normal/drpgz002.png"
     //specular "materials/specular/drdc11.png"
     Texture tex_heightmap   "materials/height/drpgz002.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture DRPGZ004 {
+    Texture tex_heightmap   "materials/height/pushed.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+// Pentagram
+Material Texture DRPGZ005 {
+    Texture tex_heightmap   "materials/height/pushed.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+Material Texture DRPGZb05 {
+    Texture tex_heightmap   "materials/height/pushed.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+Material Texture DRPGZc05 {
+    Texture tex_heightmap   "materials/height/pushed.png"
     shader                  "shaders/parallax_pbr.fp"
 }
