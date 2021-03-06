@@ -38,8 +38,15 @@ with open(DIR + NEW) as _in:
     for row in rows:
         _enu, sid, comment, _, _rus = row
 
-        enu.write(f'    {sid} = "{_enu}";' + (f' // {comment}' if comment else '') + '\n')
+        enu.write('    %s = "%s";' % (sid, _enu))
+        if comment:
+            enu.write(' // %s' % comment)
+        enu.write('\n')
+
         if rus:
-            rus.write(f'    {sid} = "{_rus}";' + (f' // {comment}' if comment else '') + '\n')
+            rus.write('    %s = "%s";' % (sid, _rus))
+            if comment:
+                rus.write(' // %s' % comment)
+            rus.write('\n')
 
 print('Updated!')
