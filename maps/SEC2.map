@@ -29544,6 +29544,7 @@ v2 = 234;
 sidefront = 2563;
 sideback = 2564;
 twosided = true;
+dontdraw = true;
 }
 
 sidedef
@@ -31731,7 +31732,6 @@ sidedef
 {
 sector = 135;
 texturemiddle = "DRDC10";
-offsety = -8;
 offsetx_mid = 48.000000;
 }
 
@@ -32236,7 +32236,7 @@ texturemiddle = "DRDC10";
 sidedef
 {
 sector = 27;
-texturemiddle = "DRDC11";
+texturemiddle = "DRDC10";
 }
 
 sidedef
@@ -33051,7 +33051,7 @@ sidedef
 {
 sector = 6;
 texturemiddle = "DRDC10";
-offsetx = 8;
+offsetx = -16;
 }
 
 sidedef
@@ -38654,6 +38654,7 @@ sidedef
 {
 sector = 327;
 texturetop = "DRDC57";
+offsety = -45;
 }
 
 sidedef
@@ -38666,7 +38667,7 @@ sidedef
 {
 sector = 330;
 texturetop = "DRDC57";
-offsetx = 12;
+offsety = -38;
 }
 
 sidedef
@@ -43542,7 +43543,8 @@ sidedef
 {
 sector = 152;
 texturetop = "DRDC57";
-offsetx = 44;
+offsetx = 32;
+offsety = -48;
 }
 
 sidedef
