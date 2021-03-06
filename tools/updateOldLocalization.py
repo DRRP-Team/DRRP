@@ -1,4 +1,8 @@
+#!/usr/bin/python3
 import csv
+import sys
+
+DIR = sys.path[0] + '/../'
 
 NEW = 'LANGUAGE.CSV'
 
@@ -14,8 +18,8 @@ COPYRIGHT = '''/**
 
 '''
 
-enu = open(ENU, 'w')
-rus = open(RUS, 'w', encoding='cp1251', errors='replace', newline='')
+enu = open(DIR + ENU, 'w')
+rus = open(DIR + RUS, 'w', encoding='cp1251', errors='replace', newline='')
 
 enu.write(COPYRIGHT)
 rus.write(COPYRIGHT)
@@ -26,7 +30,7 @@ rus.write('[rus]\n')
 enu.write('\n')
 rus.write('\n')
 
-with open(NEW) as _in:
+with open(DIR + NEW) as _in:
     rows = csv.reader(_in)
     rows.__next__()
     rows.__next__()
