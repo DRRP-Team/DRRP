@@ -18,6 +18,9 @@ COPYRIGHT = '''/**
 
 '''
 
+def escapeQuotes(string):
+    return string.replace('"', '\\"')
+
 enu = open(DIR + ENU, 'w')
 rus = open(DIR + RUS, 'w', encoding='cp1251', errors='replace', newline='')
 
@@ -38,15 +41,16 @@ with open(DIR + NEW) as _in:
     for row in rows:
         _enu, sid, comment, _, _rus = row
 
-        enu.write('    %s = "%s";' % (sid, _enu))
+        enu.write('    %s = "%s";' % (sid, escapeQuotes(_enu)))
         if comment:
             enu.write(' // %s' % comment)
         enu.write('\n')
 
         if rus:
-            rus.write('    %s = "%s";' % (sid, _rus))
+            rus.write('    %s = "%s";' % (sid, escapeQuotes(_rus)))
             if comment:
                 rus.write(' // %s' % comment)
             rus.write('\n')
 
 print('Updated!')
+
