@@ -170,6 +170,7 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
 
     override bool CanCollideWith( Actor other, bool passive ) {
         if ( other is "PlayerPawn"
+            || other is "LostSoul"
             || other.bMISSILE == true ) {
             return false;
         }
