@@ -1,0 +1,23 @@
+Model DRRPLava_Decorate { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "lava.md3" // Model index, model file
+    Scale 10.0 10.0 10.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "LAVAA0.png" // Model index, texture
+    FrameIndex LAVA A 0 0 // sprite, frame, model index, model frame
+
+    Skin 0 "LAVAB0.png"
+    FrameIndex LAVA B 0 0
+
+    Skin 0 "LAVAC0.png"
+    FrameIndex LAVA C 0 0
+
+    Skin 0 "LAVAD0.png"
+    FrameIndex LAVA D 0 0
+}
