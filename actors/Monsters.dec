@@ -246,7 +246,7 @@ Actor Impling: DoomImp_BaseDRRP 10260 {
         Melee:
         Missile:
             TROO EF 8 A_FaceTarget
-            TROO G 6 A_CustomComboAttack("DRRPImplingBall", 32, 1 * random(1, 8), "imp/melee")
+            TROO G 6 A_CustomComboAttack("DRRPImplingBall", 32, 1 * random(5, 8), "imp/melee")
             Goto See
     }
 }
@@ -267,7 +267,7 @@ Actor DRRPImp: DoomImp_BaseDRRP replaces DoomImp 10360 {
         Melee:
         Missile:
             TROO EF 8 A_FaceTarget
-            TROO G 6 A_CustomComboAttack("DRRPImpBall", 32, 3 * random(1, 8), "imp/melee")
+            TROO G 6 A_CustomComboAttack("DRRPImpBall", 32, 3 * random(5, 8), "imp/melee")
             Goto See
     }
 }
@@ -295,7 +295,7 @@ Actor ImpLord: DoomImp_BaseDRRP 10460 {
         Melee:
         Missile:
             TROO EF 8 A_FaceTarget
-            TROO G 6 A_CustomComboAttack("DRRPImpLordBall", 32, 6 * random(1, 8), "imp/melee")
+            TROO G 6 A_CustomComboAttack("DRRPImpLordBall", 32, 6 * random(5, 8), "imp/melee")
             Goto See
     }
 }
@@ -401,7 +401,26 @@ Actor BullDemon: Demon_BaseDRRP 10259 {
     }
 }
 
-Actor Belphegor: Demon_BaseDRRP 10359 { //FIXME: id
+Actor Pinky: Demon_BaseDRRP replaces Demon 10459 {
+    //$Category DMonsters
+    //$Sprite SARGA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Pinky
+
+    Obituary "$DRRP_OB_PINKY"
+    Tag "$DRRP_M_PINKY"
+    Health 225
+
+    States {
+    Melee:
+        SARG EF 8 Fast A_FaceTarget
+        SARG G 8 Fast A_CustomMeleeAttack( 4 * Random( 1, 10 ) )
+        Goto See
+    }
+}
+
+Actor Belphegor: Demon_BaseDRRP 10359 {
     //$Category DMonsters
     //$Sprite SARGA1
     //$Colour RGB(200, 0, 0)
@@ -432,25 +451,6 @@ Actor Belphegor: Demon_BaseDRRP 10359 { //FIXME: id
     Melee:
         SARG EF 8 Fast A_FaceTarget
         SARG G 8 Fast A_CustomMeleeAttack( 4 * Random( 4, 10 ) + 7 )
-        Goto See
-    }
-}
-
-Actor Pinky: Demon_BaseDRRP replaces Demon 10459 { //FIXME: id
-    //$Category DMonsters
-    //$Sprite SARGA1
-    //$Colour RGB(200, 0, 0)
-    //$Angled
-    //$Title Pinky
-
-    Obituary "$DRRP_OB_PINKY"
-    Tag "$DRRP_M_PINKY"
-    Health 225
-
-    States {
-    Melee:
-        SARG EF 8 Fast A_FaceTarget
-        SARG G 8 Fast A_CustomMeleeAttack( 4 * Random( 1, 10 ) )
         Goto See
     }
 }
@@ -650,71 +650,6 @@ Actor DRRPRevenantTracer: RevenantTracer replaces RevenantTracer {
 
 // Pain Elementals --------------------------------------------------------------------
 // [McM]: Really? The mightiest pain elemental has least DoomEdNum?
-//FIXME: id
-
-Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
-    //$Category DMonsters
-    //$Sprite PAINA1
-    //$Colour RGB(200, 0, 0)
-    //$Angled
-    //$Title Pain Elemental
-
-    Obituary "$DRRP_OB_PAINELEMENTAL"
-    HitObituary "$DRRP_OBM_PAINELEMENTAL"
-    Tag "$DRRP_M_PAINELEMENTAL"
-    Health 660
-
-    SeeSound "monsters/painelemental/sight"
-    PainSound "monsters/painelemental/pain"
-    DeathSound "monsters/painelemental/death"
-    ActiveSound "monsters/painelemental/active"
-
-    States {
-    Death:
-        PAIN H 8 Bright
-        PAIN I 8 Bright { 
-            A_Scream;
-            A_NoBlocking;
-            A_DRRP_PainSpawnSoul( "Nightmare" );
-        }
-        PAIN J 8 Bright
-        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "Nightmare" )
-        PAIN L 8 Bright
-        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "Nightmare" )
-        PAIN Z -1
-        Stop
-    }
-}
-
-Actor Rahovart: PainElemental_BaseDRRP 10379 {
-    //$Category DMonsters
-    //$Sprite PAINA1
-    //$Colour RGB(200, 0, 0)
-    //$Angled
-    //$Title Rahovart
-
-    Obituary "$DRRP_OB_RAHOVART"
-    HitObituary "$DRRP_OBM_RAHOVART"
-    Tag "$DRRP_M_RAHOVART"
-    Health 420
-    Translation "128:143=%[0.00,0.00,0.00]:[0.39,0.53,1.72]", "13:15=9:10", "64:79=%[0.00,0.00,0.00]:[0.47,0.61,1.79]", "13:15=%[0.00,0.00,0.00]:[0.12,0.22,1.14]", "236:239=%[0.00,0.00,0.00]:[0.22,0.31,1.01]", "1:2=12:12", "167:167=12:12", "165:165=159:159"
-
-    States {
-    Death:
-        PAIN H 8 Bright
-        PAIN I 8 Bright { 
-            A_Scream;
-            A_NoBlocking;
-            A_DRRP_PainSpawnSoul( "DRRPLostSoul" );
-        }
-        PAIN J 8 Bright
-        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "DRRPLostSoul" )
-        PAIN L 8 Bright
-        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "DRRPLostSoul" )
-        PAIN Z -1
-        Stop
-    }
-}
 
 Actor Beholder: PainElemental_BaseDRRP 10479 {
     //$Category DMonsters
@@ -751,10 +686,75 @@ Actor Beholder: PainElemental_BaseDRRP 10479 {
     }
 }
 
+Actor Rahovart: PainElemental_BaseDRRP 10379 {
+    //$Category DMonsters
+    //$Sprite PAINA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Rahovart
+
+    Obituary "$DRRP_OB_RAHOVART"
+    HitObituary "$DRRP_OBM_RAHOVART"
+    Tag "$DRRP_M_RAHOVART"
+    Health 420
+    Translation "128:143=%[0.00,0.00,0.00]:[0.39,0.53,1.72]", "13:15=9:10", "64:79=%[0.00,0.00,0.00]:[0.47,0.61,1.79]", "13:15=%[0.00,0.00,0.00]:[0.12,0.22,1.14]", "236:239=%[0.00,0.00,0.00]:[0.22,0.31,1.01]", "1:2=12:12", "167:167=12:12", "165:165=159:159"
+
+    States {
+    Death:
+        PAIN H 8 Bright
+        PAIN I 8 Bright { 
+            A_Scream;
+            A_NoBlocking;
+            A_DRRP_PainSpawnSoul( "DRRPLostSoul" );
+        }
+        PAIN J 8 Bright
+        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "DRRPLostSoul" )
+        PAIN L 8 Bright
+        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "DRRPLostSoul" )
+        PAIN Z -1
+        Stop
+    }
+}
+
+Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
+    //$Category DMonsters
+    //$Sprite PAINA1
+    //$Colour RGB(200, 0, 0)
+    //$Angled
+    //$Title Pain Elemental
+
+    Obituary "$DRRP_OB_PAINELEMENTAL"
+    HitObituary "$DRRP_OBM_PAINELEMENTAL"
+    Tag "$DRRP_M_PAINELEMENTAL"
+    Health 660
+
+    SeeSound "monsters/painelemental/sight"
+    PainSound "monsters/painelemental/pain"
+    DeathSound "monsters/painelemental/death"
+    ActiveSound "monsters/painelemental/active"
+
+    States {
+    Death:
+        PAIN H 8 Bright
+        PAIN I 8 Bright { 
+            A_Scream;
+            A_NoBlocking;
+            A_DRRP_PainSpawnSoul( "Nightmare" );
+        }
+        PAIN J 8 Bright
+        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "Nightmare" )
+        PAIN L 8 Bright
+        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "Nightmare" )
+        PAIN Z -1
+        Stop
+    }
+}
+
+
 
 // Mancubuses -------------------------------------------------------------------------
 // Dull joke by UsernameAK: "Minecraft -- cube world".
-// - PROPHESSOR laughs
+// <PROPHESSOR> *laughs*
 
 Actor Behemoth: Fatso_BaseDRRP 10278 {
     //$Category DMonsters
@@ -959,7 +959,6 @@ Actor DRRPBaronBall: BaronBall replaces BaronBall {
 
 // Cyberdemon & Kronos ----------------------------------------------------------------
 
-// TODO: 
 Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
     //$Category DMonsters
     //$Sprite CYBRA1

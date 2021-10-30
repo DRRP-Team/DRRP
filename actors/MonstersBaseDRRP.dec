@@ -294,14 +294,6 @@ Actor BaronOfHell_BaseDRRP: BaronOfHell {
     +LOOKALLAROUND
 
     DamageFactor DRRPShotgunDmg, 5.0
-
-    States {
-    Melee:
-    Missile:
-        BOSS EF 8 A_FaceTarget
-        BOSS G 8 A_CustomComboAttack( "DRRPBaronBall", 32, 10 * Random( 4, 9 ), "baron/melee" )
-        Goto See
-    }
 }
 
 Actor HellKnight_BaseDRRP: HellKnight {
