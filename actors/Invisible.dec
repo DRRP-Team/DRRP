@@ -15,11 +15,12 @@ Actor DRRPShop 10555 {
     //$Icon "tnt1a0"
     //$Title Shop
 
-
     -SOLID
 
     Height 64
     Radius 33
+
+    Tag "$DRRP_B_ID240"
 
     States {
         Spawn:
