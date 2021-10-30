@@ -8,6 +8,8 @@
 ClearPlayerClasses
 AddPlayerClass DoomRPGPlayer
 
+alias levelup "netevent DRRP_LevelUp_Attributes 0 1"
+
 addkeysection "$DRRP_D_KEYBINDINGS_TITLE" DRRPKeySection
     addmenukey "$DRRP_D_KEYBINDINGS_FLASHLIGHT" toggleflashlight
     alias toggleflashlight "pukename toggleflashlight"
