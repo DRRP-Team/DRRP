@@ -19,7 +19,7 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
     }
 
     override void BeginPlay() {
-        armorAmountGive = 2;
+        armorAmountGive = 4;
     }
 
     override void Touch( Actor toucher ) {
