@@ -376,7 +376,7 @@ Actor DogCollar : CustomInventory 10624 {
 
 Actor DRRPHealthVial: Health replaces HealthBonus {
     Tag "$DRRP_I_HEALTHVIAL"
-    Inventory.Amount 1
+    Inventory.Amount 4
     Inventory.PickupMessage "$DRRP_I_GOT_HEALTHVIAL"
 
     States {
