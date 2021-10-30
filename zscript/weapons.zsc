@@ -31,21 +31,22 @@ class DRRPAxe: Weapon {
         Ready:
             GAXU A 0;
             GAXU A 1 A_ReFire();
-            GAXU A 1 A_PlaySound( "weapon/axe/swing", CHAN_WEAPON );
-            GAXU CEGI 1;
+            GAXU C 1 A_PlaySound( "weapon/axe/swing", CHAN_WEAPON );
+            GAXU EGI 1;
             GAXU K 1 A_ReFire( "Fire.PreReady" );
             GAXU KMOQSUW 1;
             GAXU YA 1 A_ReFire();
             GAXR CEG 1;
         AxeReady:
+            GAXR I 1 A_ReFire( "FireHold" );
+        AxeReadyLoop:
             GAXR I 1 A_WeaponReady();
             Loop;
         Select:
             TNT1 A 0 A_Raise( 99 );
             Loop;
         Deselect:
-            GAXW ABC 2;
-            GAXW DEF 1;
+            GAXW ACE 2;
             TNT1 A 4;
         Deselect1:
             TNT1 A 0 A_Lower( 99 );
@@ -53,23 +54,22 @@ class DRRPAxe: Weapon {
         Fire.PreReady:
             GAXW A 0 A_PlaySound( "weapon/axe/swing", CHAN_WEAPON );
         Fire:
-            GAXW ACJ 2;
+            GAXW ACJ 1;
         FireHoldReturn:
-            GAXW JNQ 2;
+            GAXW JN 1;
             GAXW R 2 { pitch -= 0.3; }
         FireHold:
             GAXW R 2;
-            GAXF A 2 A_Refire( "FireHold" );
-            GAXF C 1 { pitch += 1.5; }
+            GAXF A 2 A_ReFire( "FireHold" );
+            // On release
+            GAXF C 3 { pitch += 1.5; }
             GAXF F 1 { pitch += 1.5; S_Sound( "weapon/axe/swing", CHAN_WEAPON ); }
-            GAXF FGG 1 { pitch += 1.5; }
-            GAXF H 3 A_CustomPunch( DRRPPlayer( self ).getRPGAttackDamage( 4, 15 ) + 3, TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
-            GAXF IK 1 { pitch += 1.5; }
-            GAXD FED 1 { pitch -= 1.2; }
-            GAXD C 1 { pitch -= 1.6; }
-            GAXD B 1 {
-                pitch -= 1.6;
-                A_Refire( "FireHoldReturn" );
+            GAXF FGH 1 { pitch += 1.5; }
+            GAXF I 2 A_CustomPunch( DRRPPlayer( self ).getRPGAttackDamage( 4, 15 ) + 3, TRUE, 0, "DRRPAxePuff", 80, 0, 0, "ArmorBonus" );
+            GAXF J 1 { pitch += 4.5; }
+            GAXD EDD 1 { pitch -= 1.905; }
+            GAXD CBA 1 {
+                pitch -= 2;
             }
             Goto AxeReady;
     }
