@@ -817,8 +817,7 @@ Actor Infernis: ArchVile_BaseDRRP 10273 {
     //$Angled
     //$Title Infernis
 
-    const int vileInitialDamage = 12;
-    const int vileBlastDamageNRadius = 40;
+    const int vileInitialDamage = 20;
 
     Obituary "$DRRP_OB_INFERNIS"
     Tag "$DRRP_M_INFERNIS"
@@ -838,6 +837,8 @@ Actor DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile 10373 {
     //$Angled
     //$Title ArchVile
 
+    const int vileInitialDamage = 40;
+
     Obituary "$DRRP_OB_ARCHVILE"
     Tag "$DRRP_M_ARCHVILE"
     Health 385
@@ -850,8 +851,7 @@ Actor Apollyon: ArchVile_BaseDRRP 10473 {
     //$Angled
     //$Title Apollyon
 
-    const int vileInitialDamage = 25;
-    const int vileBlastDamageNRadius = 75;
+    const int vileInitialDamage = 60;
 
     Obituary "$DRRP_OB_APOLLYON"
     Tag "$DRRP_M_APOLLYON"

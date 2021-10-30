@@ -259,7 +259,7 @@ Actor Fatso_BaseDRRP: Fatso {
 
 Actor ArchVile_BaseDRRP: ArchVile {
     const int vileInitialDamage = 10;
-    const int vileBlastDamageNRadius = 45;
+    const int vileBlastDamageNRadius = 0; // We don't need in DRRP for *viles explosive damage
 
     Scale 0.7
     Speed 7 // Doom's default: 15.
