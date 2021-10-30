@@ -8,9 +8,12 @@
 class DRRPAxe: Weapon {
     Default {
         //$Category DWeapons
+
         +WEAPON.NOALERT;
         +WEAPON.NOAUTOFIRE;
         +WEAPON.MELEEWEAPON;
+        +INVENTORY.UNDROPPABLE;
+
         Tag "$DRRP_W_AXE";
         Scale 0.65;
         Obituary "%o was chopped by %k";
@@ -78,6 +81,9 @@ class DRRPFireExt: Weapon {
         Obituary "%o was extinguished by %k";
         Scale 0.5;
 
+        +SPECTRAL;
+        +INVENTORY.UNDROPPABLE;
+
         Inventory.Icon "FEXTI0";
         Inventory.PickupSound "misc/i_pkup";
         Inventory.Pickupmessage "$DRRP_W_FIREEXTPICKUP";
@@ -85,7 +91,6 @@ class DRRPFireExt: Weapon {
         Weapon.AmmoGive 40;
         Weapon.AmmoType "Balloon";
         Weapon.SelectionOrder 100;
-        +SPECTRAL;
         DamageType "DRRPFireExtDmg";
     }
 
@@ -171,8 +176,10 @@ class DRRPFireExt: Weapon {
 class FireExtPuff: Actor {
     Default {
         PROJECTILE;
+
         +FORCEXYBILLBOARD;
         +SPECTRAL;
+
         Height 5;
         Radius 5;
         Alpha 0.85;
@@ -241,10 +248,12 @@ class FireExtPuffNoDamage: FireExtPuff {
 
 class DRRPPistol: Pistol replaces Pistol {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPClipDmg";
         Decal "BulletChip";
         Weapon.SelectionOrder 70;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -274,11 +283,13 @@ class DRRPPistol: Pistol replaces Pistol {
 
 class DRRPShotgun: Shotgun replaces Shotgun {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
         Weapon.AmmoType "DRRPShell";
         Weapon.SelectionOrder 40;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -354,11 +365,13 @@ class DRRPShellBox: DRRPShell replaces ShellBox {
 
 class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPShotgunDmg";
         Decal "BulletChip";
         Weapon.AmmoType "DRRPShell";
         Weapon.SelectionOrder 10;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -419,10 +432,12 @@ class DRRPSuperShotgun : SuperShotgun replaces SuperShotgun {
 
 class DRRPChaingun: Chaingun replaces Chaingun {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPClipDmg";
         Decal "BulletChip";
         Weapon.SelectionOrder 30;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -480,9 +495,11 @@ class DRRPChaingun: Chaingun replaces Chaingun {
 
 class DRRPRocketLauncher: RocketLauncher replaces RocketLauncher {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPRocketDmg";
         Weapon.SelectionOrder 60;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -545,10 +562,12 @@ class DRRPRocket: Rocket replaces Rocket {
 
 class DRRPPlasmagun: PlasmaRifle replaces PlasmaRifle {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.ALWAYSPICKUP;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPPlasmaDmg";
         Weapon.SelectionOrder 20;
-        +INVENTORY.ALWAYSPICKUP;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -603,10 +622,12 @@ class DRRPPlasmaBall: PlasmaBall replaces PlasmaBall {
 
 class DRRPBFG9000: BFG9000 replaces BFG9000 {
     Default {
+        +WEAPON.NOAUTOAIM;
+        +INVENTORY.UNDROPPABLE;
+
         DamageType "DRRPPlasmaDmg";
         Weapon.AmmoUse 30;
         Weapon.SelectionOrder 50;
-        +WEAPON.NOAUTOAIM;
     }
 
     States {
@@ -684,6 +705,8 @@ class HellHoundHealth : Ammo {
 class HellHoundGun: Weapon {
     Default {
         +WEAPON.WIMPY_WEAPON;
+        +INVENTORY.UNDROPPABLE;
+
         //Tag "$DRRP_W_HELLHOUND";
         //Inventory.PickupSound "weapons/fireext/pick";
         //Inventory.PickupMessage "$DRRP_W_HELLHOUNDPICKUP";
