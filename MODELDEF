@@ -72,3 +72,18 @@ Model DRRPCrate { // Name of actor in DECORATE
     // FrameIndex CRT3 G 0 13 // sprite, frame, model index, model frame
     // FrameIndex CRT3 H 0 13 // sprite, frame, model index, model frame
 }
+
+Model DRRPBed { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "bed.md3" // Model index, model file
+    Scale 15.0 12.0 15.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "BEDSA0.png" // Model index, texture
+    FrameIndex BEDS A 0 0 // sprite, frame, model index, model frame
+}
