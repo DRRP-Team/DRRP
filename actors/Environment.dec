@@ -748,26 +748,26 @@ Actor SteamSpawner : SwitchableDecoration 10000 {
             TNT1 A 0 A_JumpIf(Args[0] > 1, "Forward")
             TNT1 A 0 A_JumpIf(Args[1] > 0, "UpBurst")
             TNT1 A 0 A_JumpIf(Args[3] > 0, 2)
-            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_AUTO, 1.0, true, ATTN_STATIC, false)
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 1.0, true, ATTN_STATIC, false)
             TNT1 A 1 A_SpawnItemEx("SteamParticle", 0, 0, 1, (0.1)*Random(0, 4), 0, (0.1)*Random(35, 40), Random(0, 360), 128)
             Loop
         Down:
             TNT1 A 0 A_JumpIf(Args[1] > 0, "DownBurst")
             TNT1 A 0 A_JumpIf(Args[3] > 0, 2)
-            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_AUTO, 1.0, true, ATTN_STATIC, false)
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 1.0, true, ATTN_STATIC, false)
             TNT1 A 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(0, 4), 0, (-0.1)*Random(35, 40), Random(0, 360), 128)
             Loop
         Forward:
             TNT1 A 0 A_JumpIf(Args[1] > 0, "ForwardBurst")
             TNT1 A 0 A_JumpIf(Args[3] > 0, 2)
-            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_AUTO, 1.0, true, ATTN_STATIC, false)
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 1.0, true, ATTN_STATIC, false)
             TNT1 A 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(35, 40), 0, (0.1)*Random(-5, 5), Random(-8, 8), 128)
             Loop
         UpBurst:
             TNT1 A 1 A_Jump(Args[2]/16, 2)
             Loop
             TNT1 A 0 A_JumpIf(Args[3] > 0, 2)
-            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_AUTO, 1.0, false, ATTN_STATIC, false)
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 1.0, false, ATTN_STATIC, false)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 1, (0.1)*Random(0, 4), 0, (0.1)*Random(35, 40), Random(0, 360), 128)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 1, (0.1)*Random(0, 4), 0, (0.1)*Random(35, 40), Random(0, 360), 128)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 1, (0.1)*Random(0, 4), 0, (0.1)*Random(35, 40), Random(0, 360), 128)
@@ -776,7 +776,7 @@ Actor SteamSpawner : SwitchableDecoration 10000 {
             TNT1 A 1 A_Jump(Args[2]/16, 1)
             Loop
             TNT1 A 0 A_JumpIf(Args[3] > 0, 2)
-            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_AUTO, 1.0, false, ATTN_STATIC, false)
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 1.0, false, ATTN_STATIC, false)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(0, 4), 0, (-0.1)*Random(35, 40), Random(0, 360), 128)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(0, 4), 0, (-0.1)*Random(35, 40), Random(0, 360), 128)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(0, 4), 0, (-0.1)*Random(35, 40), Random(0, 360), 128)
@@ -785,7 +785,7 @@ Actor SteamSpawner : SwitchableDecoration 10000 {
             TNT1 A 1 A_Jump(Args[2]/16, 1)
             Loop
             TNT1 A 0 A_JumpIf(Args[3] > 0, 2)
-            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_AUTO, 1.0, false, ATTN_STATIC, false)
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 1.0, false, ATTN_STATIC, false)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(35, 40), 0, (0.1)*Random(-5, 5), Random(-8, 8), 128)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(35, 40), 0, (0.1)*Random(-5, 5), Random(-8, 8), 128)
             TNT1 AAAAAAAAAA 1 A_SpawnItemEx("SteamParticle", 0, 0, 0, (0.1)*Random(35, 40), 0, (0.1)*Random(-5, 5), Random(-8, 8), 128)
@@ -824,6 +824,21 @@ Actor SteamParticle {
             STEM L 2 A_SetTranslucent(0.05, 1)
             Stop
     }
+}
+
+Actor LavaSteamSpawner: SteamSpawner {
+    States {
+        Spawn:
+        Active:
+            TNT1 A 0 A_PlaySound("Steam/Loop", CHAN_VOICE, 0.05, true, ATTN_STATIC, false)
+            TNT1 A 6 A_SpawnItemEx("LavaSteamParticle", 0, 0, 0, (0.1)*Random(0, 4), 0, (0.1)*Random(10, 15), Random(0, 360), 128)
+    }
+}
+
+Actor LavaSteamParticle: SteamParticle {
+    Alpha 0.05
+    Scale 0.8
+    Translation "0:255=#[255,160,64]" 
 }
 
 
