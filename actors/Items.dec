@@ -287,7 +287,7 @@ Actor DRRPBerserkItem : CustomInventory replaces Berserk 10623 {
         Spawn:
             SOUL ABCDCB 6 Bright
             Loop
-        Use:        
+        Use:
             TNT1 A 0 A_GiveInventory("DRRPBerserkGiver")
             TNT1 A 0 HealThing(100, 0)
             //TNT1 A 0 A_SelectWeapon("DRRPAxe") // Fist
@@ -300,6 +300,8 @@ Actor DRRPPowerTripleDamage: PowerDamage {
 }
 
 Actor DRRPBerserkGiver: PowerupGiver {
+    -INVENTORY.INVBAR
+
     Powerup.Type DRRPPowerTripleDamage
     Powerup.Duration -60
     Powerup.Color 127, 0, 0, 0.33
