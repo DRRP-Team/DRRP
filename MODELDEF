@@ -36,3 +36,18 @@ Model DRRPWardrobe { // Name of actor in DECORATE
     Skin 0 "DCABA0.png" // Model index, texture
     FrameIndex DCAB A 0 0 // sprite, frame, model index, model frame
 }
+
+Model DRRPCrate { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "crate.md3" // Model index, model file
+    Scale 10.0 10.0 12.0
+
+    // Define material
+    Path "sprites/decorations/crates"
+
+    // Define animation
+    
+    Skin 0 "crateuv.png" // Model index, texture
+    FrameIndex CRAT A 0 0 // sprite, frame, model index, model frame
+}
