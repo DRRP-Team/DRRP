@@ -32,11 +32,15 @@ version "2.5"
 
 
 class DRRPPlayer: DoomPlayer {
+
     static const String dogNames[] = { "HellHound", "Cerberus", "DemonWolf" };
 
     int playerStats[ _RPG_Quantity ]; //Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength, MaxArmor;
 
+    int lowHealthTimer;
+
     override void BeginPlay() {
+        lowHealthTimer = -1;
         playerStats[ RPG_Experience ] = playerStats[ RPG_Accuracy ] = 0;
         playerStats[ RPG_Agility ] = playerStats[ RPG_Defence ] = playerStats[ RPG_Strength ] = 0;
         playerStats[ RPG_Level ] = 1;
@@ -50,9 +54,18 @@ class DRRPPlayer: DoomPlayer {
         Super.PlayerThink();
 
         // Play sound on low health.
-        if ( !( level.time % 70 ) && ( health / double( playerStats[ RPG_MaxHealth ] ) < 0.35 ) ) {
-            S_Sound( "player/lowhp", CHAN_BODY );
-            A_SetBlend( "AA0000", 0.2, 5 );
+        int TICKS_BETWEEN_LOW_HEALTH_SOUND = 70; // <PROPHESSOR> why can't I make it static const?
+        bool isLowHealth = health / double( playerStats[ RPG_MaxHealth ] ) < 0.35;
+        if (isLowHealth) {
+            lowHealthTimer += 1;
+            lowHealthTimer %= TICKS_BETWEEN_LOW_HEALTH_SOUND;
+
+            if ( !lowHealthTimer ) {
+                S_Sound( "player/lowhp", CHAN_BODY );
+                A_SetBlend( "AA0000", 0.2, 5 );
+            }
+        } else if (lowHealthTimer != -1) {
+            lowHealthTimer = -1;
         }
     } // of override void PlayerThink() {
 
