@@ -1743,13 +1743,12 @@ thing
 x = -352.000;
 y = 32.000;
 type = 10251;
-angle = 90;
+angle = 45;
 id = 309;
 height = 8.000000;
 arg0 = 255;
 arg1 = 128;
 arg3 = 1;
-arg4 = 1;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -1764,16 +1763,15 @@ comment = "9:21";
 
 thing
 {
-x = -24.000;
-y = 232.000;
+x = -32.000;
+y = 224.000;
 type = 10251;
-angle = 90;
+angle = 315;
 id = 466;
 height = 8.000000;
 arg0 = 255;
 arg1 = 128;
 arg3 = 1;
-arg4 = 1;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -1791,13 +1789,12 @@ thing
 x = 928.000;
 y = 288.000;
 type = 10251;
-angle = 90;
+angle = 180;
 id = 946;
 height = 8.000000;
 arg0 = 255;
 arg1 = 128;
 arg3 = 1;
-arg4 = 1;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -2660,15 +2657,14 @@ comment = "15:10";
 
 thing
 {
-x = -200.000;
+x = -208.000;
 y = 864.000;
 type = 10251;
-angle = 180;
+angle = 90;
 id = 361;
 arg0 = 255;
 arg1 = 128;
 arg3 = 1;
-arg4 = 1;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -2872,7 +2868,7 @@ comment = "7:17";
 thing
 {
 x = -600.000;
-y = 232.000;
+y = 224.000;
 type = 10251;
 angle = 90;
 id = 178;
@@ -2880,7 +2876,6 @@ height = 8.000000;
 arg0 = 255;
 arg1 = 128;
 arg3 = 1;
-arg4 = 1;
 skill1 = true;
 skill2 = true;
 skill3 = true;
@@ -3993,7 +3988,6 @@ thing
 x = -416.000;
 y = 800.000;
 type = 10251;
-angle = 90;
 id = 466;
 height = 8.000000;
 arg0 = 255;
@@ -4546,6 +4540,29 @@ single = true;
 coop = true;
 dm = true;
 renderstyle = "";
+}
+
+thing
+{
+x = 32.000;
+y = 160.000;
+type = 10251;
+angle = 90;
+id = 466;
+height = 8.000000;
+arg0 = 255;
+arg1 = 128;
+arg3 = 1;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+single = true;
+coop = true;
+dm = true;
+renderstyle = "";
+comment = "14:18";
 }
 
 vertex
@@ -15359,6 +15376,7 @@ sideback = 838;
 twosided = true;
 blocking = true;
 dontdraw = true;
+wrapmidtex = true;
 }
 
 linedef
@@ -15507,6 +15525,7 @@ sideback = 857;
 twosided = true;
 blocking = true;
 secret = true;
+wrapmidtex = true;
 }
 
 linedef
@@ -15582,6 +15601,7 @@ sideback = 867;
 twosided = true;
 blocking = true;
 dontdraw = true;
+wrapmidtex = true;
 }
 
 linedef
@@ -17875,6 +17895,7 @@ sidefront = 1260;
 sideback = 1261;
 twosided = true;
 dontdraw = true;
+wrapmidtex = true;
 }
 
 linedef
@@ -25321,6 +25342,8 @@ sidedef
 {
 sector = 233;
 texturemiddle = "DRPGZ002";
+offsety_mid = -8.000000;
+wrapmidtex = true;
 }
 
 sidedef
@@ -25328,6 +25351,8 @@ sidedef
 sector = 242;
 texturetop = "DRDC57";
 texturemiddle = "DRPGZ002";
+wrapmidtex = true;
+offsety_mid = -8.000000;
 }
 
 sidedef
@@ -25452,6 +25477,7 @@ sidedef
 {
 sector = 239;
 texturemiddle = "DRPGZ002";
+offsety_mid = -8.000000;
 }
 
 sidedef
@@ -25460,7 +25486,7 @@ sector = 250;
 texturetop = "DRDC57";
 texturemiddle = "DRPGZ002";
 offsety = 8;
-offsety_mid = -8.000000;
+offsety_mid = -16.000000;
 }
 
 sidedef
@@ -25524,7 +25550,7 @@ sidedef
 sector = 171;
 texturemiddle = "DRPGZ002";
 offsety = 8;
-offsety_mid = -8.000000;
+offsety_mid = -16.000000;
 }
 
 sidedef
@@ -25532,7 +25558,7 @@ sidedef
 sector = 247;
 texturemiddle = "DRPGZ002";
 offsety = 8;
-offsety_mid = -8.000000;
+offsety_mid = -16.000000;
 }
 
 sidedef
