@@ -456,6 +456,7 @@ script 59 (int arg0, int arg1, int arg2) { //X=26 Y=29 START=L_207 END=L_227 UNK
     if(arg2 == 3) ACS_NamedExecuteWait("lockwindow", 0, getString(28), getString(27), 59); // ( USE IF_VAR( 4 ) ) PASSCODE_OR_HALT PASS=27 MSG=28
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) DOOR_UNLOCK LINE=11
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) DOOR_OPEN LINE=11
+    if(arg2 == 3) Autosave();
     if(arg2 == 3) ACS_Execute(3000, 0, 202, 201);
     if(arg2 == 3) ACS_Execute(3002, 0, 3);
     if(arg2 == 3) SpawnForced("Nightmare", getMediumX(228), getMediumY(220), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=2 STATE=0

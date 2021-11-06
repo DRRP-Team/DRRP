@@ -15221,8 +15221,10 @@ v1 = 290;
 v2 = 298;
 sidefront = 402;
 sideback = 403;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -21744,6 +21746,17 @@ blocking = true;
 dontdraw = true;
 }
 
+linedef
+{
+v1 = 391;
+v2 = 397;
+sidefront = 1497;
+sideback = 1496;
+special = 15;
+twosided = true;
+playercross = true;
+}
+
 sidedef
 {
 sector = 248;
@@ -25286,7 +25299,7 @@ sector = 100;
 
 sidedef
 {
-sector = 21;
+sector = 262;
 texturemiddle = "DRDC10";
 offsetx = -16;
 offsetx_mid = -7.000000;
@@ -25301,7 +25314,7 @@ offsetx_mid = 16.000000;
 
 sidedef
 {
-sector = 21;
+sector = 262;
 texturemiddle = "DRDC10";
 }
 
@@ -25313,7 +25326,7 @@ texturemiddle = "DRDC10";
 
 sidedef
 {
-sector = 21;
+sector = 262;
 texturetop = "DRDC1";
 scalex_top = -1.000000;
 }
@@ -30699,6 +30712,16 @@ sidedef
 sector = 160;
 }
 
+sidedef
+{
+sector = 21;
+}
+
+sidedef
+{
+sector = 262;
+}
+
 sector
 {
 texturefloor = "DRDC67";
@@ -33473,5 +33496,18 @@ heightceiling = 64;
 lightlevel = 255;
 rotationceiling = 90.000000;
 rotationfloor = 90.000000;
+}
+
+sector
+{
+texturefloor = "FLAT4";
+textureceiling = "DRDC62";
+heightceiling = 64;
+lightlevel = 175;
+xpanningfloor = 25.000000;
+rotationfloor = 90.000000;
+xscalefloor = 6.000000;
+yscalefloor = 6.000000;
+rotationceiling = 90.000000;
 }
 

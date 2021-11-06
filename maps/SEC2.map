@@ -14789,8 +14789,10 @@ v1 = 58;
 v2 = 59;
 sidefront = 70;
 sideback = 71;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -19295,8 +19297,10 @@ v1 = 545;
 v2 = 541;
 sidefront = 796;
 sideback = 797;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -22169,8 +22173,10 @@ v1 = 828;
 v2 = 829;
 sidefront = 1228;
 sideback = 1229;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef

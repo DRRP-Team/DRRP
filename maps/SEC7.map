@@ -63358,8 +63358,10 @@ v1 = 57;
 v2 = 1255;
 sidefront = 1493;
 sideback = 1494;
+special = 15;
 twosided = true;
 dontpegtop = true;
+playercross = true;
 }
 
 linedef
@@ -89127,7 +89129,9 @@ v1 = 2765;
 v2 = 2730;
 sidefront = 6028;
 sideback = 6029;
+special = 15;
 twosided = true;
+playercross = true;
 }
 
 linedef

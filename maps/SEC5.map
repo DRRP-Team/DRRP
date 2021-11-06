@@ -17947,8 +17947,10 @@ v1 = 221;
 v2 = 217;
 sidefront = 268;
 sideback = 269;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -19745,7 +19747,9 @@ v1 = 365;
 v2 = 343;
 sidefront = 510;
 sideback = 511;
+special = 15;
 twosided = true;
+playercross = true;
 }
 
 linedef
@@ -20000,8 +20004,10 @@ v1 = 447;
 v2 = 442;
 sidefront = 547;
 sideback = 548;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -24066,8 +24072,10 @@ v1 = 860;
 v2 = 856;
 sidefront = 1087;
 sideback = 1088;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -25890,8 +25898,10 @@ v1 = 601;
 v2 = 605;
 sidefront = 1413;
 sideback = 1414;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
