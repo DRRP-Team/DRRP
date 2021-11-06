@@ -13,37 +13,37 @@ enum ELevelStatsNotifier {
 }
 
 class LevelStatsNotifierHandler: StaticEventHandler {
-
-    private Array<String> MapsMonstersDone;
-    private Array<String> MapsSecretsDone;
     uint curMapDoneMask;
 
     // ZScript cannot return a pointer to the dynamic array, 
     //so "ui Array<String> GetAllDoneMapNamesArray()" is impossible.
     ui String GetAllDoneMapNamesArray( int doneType, String outIfNone = "", String separator = "\n" ) {
-        return "Not working in GZDoom 4+";
         String outStr = "";
         int arraySize;
 
+        if ( !playeringame[ 0 ] || !players[ 0 ].mo ) return "Not in game";
+
+        DRRPPlayer player = DRRPPlayer( players[ 0 ].mo );
+
         switch ( doneType ) {
             case LSN_AllMonsters:
-                arraySize = MapsMonstersDone.Size();
+                arraySize = player.MapsMonstersDone.Size();
 
                 for ( int i = 0; i < arraySize - 1; i++ )
-                    outStr = outStr .. MapsMonstersDone[ i ] .. separator;
+                    outStr = outStr .. player.MapsMonstersDone[ i ] .. separator;
 
                 if ( arraySize )
-                    outStr = outStr .. MapsMonstersDone[ arraySize - 1 ];
+                    outStr = outStr .. player.MapsMonstersDone[ arraySize - 1 ];
 
                 break;
             case LSN_AllSecrets:
-                arraySize = MapsSecretsDone.Size();
+                arraySize = player.MapsSecretsDone.Size();
 
                 for ( int i = 0; i < arraySize - 1; i++ )
-                    outStr = outStr .. MapsMonstersDone[ i ] .. separator;
+                    outStr = outStr .. player.MapsMonstersDone[ i ] .. separator;
 
                 if ( arraySize )
-                    outStr = outStr .. MapsSecretsDone[ arraySize - 1 ];
+                    outStr = outStr .. player.MapsSecretsDone[ arraySize - 1 ];
 
                 break;
             default:
@@ -56,9 +56,11 @@ class LevelStatsNotifierHandler: StaticEventHandler {
 
     override void WorldLoaded( WorldEvent e ) {
         // Check for new game:
-        if ( !level.totaltime || e.IsSaveGame ) {
-            MapsMonstersDone.Clear();
-            MapsSecretsDone.Clear();
+        if ( ( !level.totaltime || e.IsSaveGame ) && playeringame[ 0 ] && players[ 0 ].mo ) {
+            DRRPPlayer player = DRRPPlayer( players[ 0 ].mo );
+
+            player.MapsMonstersDone.Clear();
+            player.MapsSecretsDone.Clear();
         }
 
         curMapDoneMask  = LSN_AllMonsters * ( level.total_monsters == level.killed_monsters );
@@ -68,27 +70,27 @@ class LevelStatsNotifierHandler: StaticEventHandler {
     }
 
     override void WorldTick() {
-        if ( !( level.maptime % 3 ) ) {
+        if ( !( level.maptime % 3 ) && playeringame[ 0 ] && players[ 0 ].mo ) {
+            DRRPPlayer player = DRRPPlayer( players[ 0 ].mo );
+
             bool callDoneSequence = false;
 
             // All monsters killed check:
             if ( !( curMapDoneMask & LSN_AllMonsters ) && level.total_monsters == level.killed_monsters ) {
-                MapsMonstersDone.Push( level.LevelName );
+                player.MapsMonstersDone.Push( level.LevelName );
                 curMapDoneMask |= LSN_AllMonsters;
                 callDoneSequence = true;
             }
 
             // All secrets found check:
             if ( !( curMapDoneMask & LSN_AllSecrets ) && level.total_secrets == level.found_secrets ) {
-                MapsSecretsDone.Push( level.LevelName );
+                player.MapsSecretsDone.Push( level.LevelName );
                 curMapDoneMask |= LSN_AllSecrets;
                 callDoneSequence = true;
             }
 
             // Done sequence:
-            if ( callDoneSequence && playeringame[ 0 ] && players[ 0 ].mo ) {
-                DRRPPlayer player = DRRPPlayer( players[ 0 ].mo );
-
+            if ( callDoneSequence ) {
                 // If secrets OR monsters OR both:
                 if ( curMapDoneMask & LSN_Both )
                     player.AddFeature( RPG_Experience, 10 );

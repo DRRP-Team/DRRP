@@ -39,6 +39,9 @@ class DRRPPlayer: DoomPlayer {
 
     int lowHealthTimer;
 
+    Array<String> MapsMonstersDone;
+    Array<String> MapsSecretsDone;
+
     override void BeginPlay() {
         lowHealthTimer = -1;
         playerStats[ RPG_Experience ] = playerStats[ RPG_Accuracy ] = 0;
