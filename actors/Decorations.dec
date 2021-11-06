@@ -94,6 +94,7 @@ Actor DRRPRod : ExplosiveBarrel 10704 {
     //$Colour #AAAAAA
     //$Icon "particle2"
 
+    -NOBLOOD
     +CANNOTPUSH
 
     Tag "$DRRP_E_POWERCOUPLING"
@@ -102,13 +103,19 @@ Actor DRRPRod : ExplosiveBarrel 10704 {
     Mass 10000000
     Height 64
     Radius 25
+    PainChance 256
 
+    BloodType "BlueSparkBlood"
+    BloodColor "Black"
     DamageFactor DRRPFireExtDmg, 0.0
 
     States {
         Spawn:
             ROD1 ABCDEF 2
             Loop
+        Pain:
+            ROD1 A 0 A_PlaySound("World/Spark", CHAN_VOICE, 1.0, false, ATTN_STATIC)
+            Goto Spawn
         Death:
             ROD2 AB 1
             ROD2 C  1  Bright A_SpawnItem("DRRPExplosion", 0, 38)

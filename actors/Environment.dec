@@ -676,6 +676,57 @@ Actor PurpleSparkSpawner : AbstractSpark {
     }
 }
 
+
+Actor AbstractSparkBlood : SwitchableDecoration {
+    +NoBlockMap
+    +NoGravity
+    +NoInteraction
+    +ClientSideOnly
+
+    Tag "$DRRP_D_SPARKS"
+    Height 8
+    Radius 4
+}
+
+Actor BlueSparkBlood : AbstractSparkBlood {
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_Jump(256, 1, 2, 3, 4, 5, 6)
+            TNT1 A 1 A_SpawnItemEx("SparkFlare_B1", 0, 0, 0, 0, 0, 0, 0, 128)
+            Goto SpawnSparks
+            TNT1 A 1 A_SpawnItemEx("SparkFlare_B2", 0, 0, 0, 0, 0, 0, 0, 128)
+            Goto SpawnSparks
+            TNT1 A 1 A_SpawnItemEx("SparkFlare_B3", 0, 0, 0, 0, 0, 0, 0, 128)
+            Goto SpawnSparks
+            TNT1 A 1 A_SpawnItemEx("SparkFlare_B4", 0, 0, 0, 0, 0, 0, 0, 128)
+            Goto SpawnSparks
+            TNT1 A 1 A_SpawnItemEx("SparkFlare_B5", 0, 0, 0, 0, 0, 0, 0, 128)
+            Goto SpawnSparks
+            TNT1 A 1 A_SpawnItemEx("SparkFlare_B6", 0, 0, 0, 0, 0, 0, 0, 128)
+            Goto SpawnSparks
+        SpawnSparks:
+            TNT1 AA 0 A_CustomMissile("Spark_B1", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B2", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B3", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B4", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B5", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B6", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B7", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B8", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B9", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B10", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B11", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B12", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B13", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B14", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B15", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 AA 0 A_CustomMissile("Spark_B16", 0, 0, Random(-23, 23), 2, Random(157, 203))
+            TNT1 A 1
+            Stop
+    }
+}
+
 // TODO: Optimize sounds (It can be separated)
 Actor SteamSpawner : SwitchableDecoration 10000 {
     //$Category Environment
@@ -852,6 +903,7 @@ Actor Spark_W1 {
     +Missile
     +NoBlockMap
     +LowGravity
+    +ThruActors
 
     Height 1
     Radius 2
