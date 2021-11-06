@@ -35,8 +35,9 @@ class DRRPAxe: Weapon {
             GAXU EGI 1;
             GAXU K 1 A_ReFire( "Fire.PreReady" );
             GAXU KMOQSUW 1;
-            GAXU YA 1 A_ReFire();
-            GAXR CEG 1;
+            GAXU Y 1 A_ReFire();
+            GAXW A 1 A_ReFire();
+            GAXR CEC 1;
         AxeReady:
             GAXR I 1 A_ReFire( "FireHold" );
         AxeReadyLoop:
