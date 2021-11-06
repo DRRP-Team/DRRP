@@ -21,6 +21,7 @@ class LevelStatsNotifierHandler: StaticEventHandler {
     // ZScript cannot return a pointer to the dynamic array, 
     //so "ui Array<String> GetAllDoneMapNamesArray()" is impossible.
     ui String GetAllDoneMapNamesArray( int doneType, String outIfNone = "", String separator = "\n" ) {
+        return "Not working in GZDoom 4+";
         String outStr = "";
         int arraySize;
 
