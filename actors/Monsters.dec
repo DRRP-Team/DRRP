@@ -58,6 +58,7 @@ Actor DemonWolf: Dog_BaseDRRP 10446 {
     Obituary "$DRRP_OB_DEMONWOLF"
     Health 190
     Translation "64:79=197:200"
+    Scale 1.25
 
     ActiveSound "monsters/demonwolf/see"
     SeeSound    "monsters/demonwolf/bark"
