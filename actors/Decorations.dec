@@ -202,13 +202,21 @@ Actor DRRPCrate 10705 {
     }
 }
 
-Actor DRRPYellowCrate : DRRPCrate 10766 {
+Actor DRRPYellowCrate 10766 {
     //$Category DDecorations
     //$NotAngled
     //$IsDecoration
     //$Colour #AAAAAA
     //$Icon "particle2"
     //$Title Yellow Crate
+
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_SpawnItemEx("DRRPCrate", 0, 0, 0, 0, 0, 0, GetAngle(0), SXF_TRANSFERSPECIAL)
+            Stop
+    }
+
 }
 
 Actor DRRPCrateShard {
