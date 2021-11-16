@@ -87,3 +87,18 @@ Model DRRPBed { // Name of actor in DECORATE
     Skin 0 "BEDSA0.png" // Model index, texture
     FrameIndex BEDS A 0 0 // sprite, frame, model index, model frame
 }
+
+Model DRRPTable { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "table.md3" // Model index, model file
+    Scale 12.0 12.0 13.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "DRTBA0.png" // Model index, texture
+    FrameIndex DRTB A 0 0 // sprite, frame, model index, model frame
+}
