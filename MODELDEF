@@ -102,3 +102,18 @@ Model DRRPTable { // Name of actor in DECORATE
     Skin 0 "DRTBA0.png" // Model index, texture
     FrameIndex DRTB A 0 0 // sprite, frame, model index, model frame
 }
+
+Model DRRPChair { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "chair.md3" // Model index, model file
+    Scale 10.0 10.0 10.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "CHAIA0.png" // Model index, texture
+    FrameIndex CHAI A 0 0 // sprite, frame, model index, model frame
+}
