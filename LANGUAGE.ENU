@@ -392,6 +392,7 @@
     DRRP_D_DEADMARINE = "Dead marine";
     DRRP_D_NONSOLIDMEATS = "Meat";
     DRRP_D_CANDLE = "Candle";
+    DRRP_D_GIBS = "Scraps";
     DRRP_D_TMAP_PRESENTS = "DRRP-Team presents";
     DRRP_D_TMAP_DRRP = "\cgD\cdR\cbR\chP";
     DRRP_D_TMAP_DRPGRP = "\cgDooM \cdRPG \cbRemake \chProject";
@@ -1160,9 +1161,9 @@
     DRRP_SEC5_27 = "Zzz.. Wha? Oh,\nyou again. What?!\nYou need help\nwith a database?\nWell, everything\nI know I learned\nfrom an online\ntutorial. Let me\npull it up here\non this computer.\nOk, done. Use the\ncomputer to the\nleft to teach\nyourself database\nadministration.";
     DRRP_SEC5_28 = "Hrm. It looks\nlike part of the\nfile is cor-\nrupted. Oh well.\nYou already know\nenough to do ba-\nsics like re-\ntrieving data.";
     DRRP_SEC5_29 = "System offline.";
-    DRRP_SEC5_30 = "I learned how to\nuse databases.";
-    DRRP_SEC5_31 = "Learn Databases\n*Chapt 1 *\nThe SELECT state-\nment is used to\nacquire data from\na table in a da-\ntabase, basic\nsyntax is as fol-\nlows: SELECT col-\numn_names FROM\ntable_name. More\nadvanced usage of\nthe SELECT state-\nment is covered\nin later chap-\nters.";
-    DRRP_SEC5_32 = "*Chapt 2 *\nThe INSERT st4t\n3m*&#!~ .*&\n[FILE CORRUPTED]";
+    DRRP_SEC5_30 = "I learned how to\nuse databases."; // Fixed by PROPHESSOR
+    DRRP_SEC5_31 = "Learn Databases\n*Chapt 1 *\nThe SELECT state-\nment is used to\nacquire data from\na table in a da-\ntabase, basic\nsyntax is as fol-\nlows: SELECT col-\numn_names FROM\ntable_name. More\nadvanced usage of\nthe SELECT state-\nment is covered\nin later chap-\nters."; // Fixed by PROPHESSOR
+    DRRP_SEC5_32 = "*Chapt 2 *\nThe INSERT st4t\n3m*&#!~ .*&\n[FILE CORRUPTED]"; // Fixed by PROPHESSOR
     DRRP_SEC5_33 = "[FILE CORRUPTED]";
     DRRP_SEC5_34 = "Jeez, I think I'm\nlost. Wish my\nwife was here,\nshe'd ask someone\nfor directions.";
     DRRP_SEC5_35 = "What I'd give for\nan automap about\nnow.";

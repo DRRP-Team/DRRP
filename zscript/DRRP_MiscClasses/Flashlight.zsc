@@ -87,11 +87,13 @@ class ActorHeadLight : Spotlight {
 
     override void Activate(Actor activator) {
         updateFromCvars();
+        A_PlaySound("flashlight/on", 127);
         on = true;
         super.Activate(activator);
     }
 
     override void DeActivate(Actor activator) {
+        A_PlaySound("flashlight/off", 127);
         on = false;
         super.DeActivate(activator);
     }

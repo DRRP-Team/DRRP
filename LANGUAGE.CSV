@@ -1,5 +1,5 @@
 default,Identifier,Remarks,Filter,ru
-DRRP v0.5.0,DRRP_D_DRRPVERSION,,,
+DRRP v0.5.x,DRRP_D_DRRPVERSION,,,
 %1 damage!,DRRP_B_ID0,Серые поля не используются в DRRP,,%1 урона!
 %1 attacks%2,DRRP_B_ID1,,,%1 атакует%2
 %1 took %2 damage!,DRRP_B_ID2,,,%1 получил %2 урона!
@@ -385,6 +385,7 @@ Sparks,DRRP_D_SPARKS,,,Искры
 Dead marine,DRRP_D_DEADMARINE,,,Мертвый морпех
 Meat,DRRP_D_NONSOLIDMEATS,,,Мясо
 Candle,DRRP_D_CANDLE,,,Свеча
+Scraps,DRRP_D_GIBS,,,Ошметки
 DRRP-Team presents,DRRP_D_TMAP_PRESENTS,,,DRRP-Team представляет
 \cgD\cdR\cbR\chP,DRRP_D_TMAP_DRRP,,,\cgD\cdR\cbR\chP
 \cgDooM \cdRPG \cbRemake \chProject,DRRP_D_TMAP_DRPGRP,,,\cgDooM \cdRPG \cbRemake \chProject
@@ -1080,11 +1081,11 @@ GoodDoc99 has\nsigned off.,DRRP_SEC4_24,Fixed by PROPHESSOR,,GoodDoc99\nвыше
 [E-BOOK]\nStabilization\nTechniques for\nRifts in the\nSpace/Time\nContinuum\n*Chapter 1*\n...,DRRP_SEC4_26,,,[ЭЛ.КНИГА]\nМетоды Стабили-\nзации Трещин в\nПространственно/\nВременном Конти-\nнууме\n*Глава 1*\n...
 [E-BOOK]\nBeginner's Guide\nto Controlled\nHydrocon Cata-\nlyzation\n*Chapter 1*\n...,DRRP_SEC4_27,Fixed by PROPHESSOR,,[ЭЛ.КНИГА]\nРуководство для\nновичков: Управ-\nление катализацией\nсистемы Гидрокон\n*Глава 1*\n...
 [E-BOOK]\nMore Power to\nYou: Energy\nStrategies for\nProjects Needing\nInordinate\nAmounts of Power\n*Chapter 1*\n...,DRRP_SEC4_28,Fixed by PROPHESSOR,,"[ЭЛ.КНИГА]\nБольше Энергии:\nЭнергитические\nстратегии для\nпроектов,\nнуждающихся в\nчерезмерном\nколичестве\nэнергии\n*Глава 1*\n..."
-"[E-BOOK]\nHow to Get People\nto Like You, Even\nif you are a\nCrazed, Diaboli-\ncal Lunatic\n*Chapter 1*\n...",DRRP_SEC4_29,Fixed by PROPHESSOR,,"[ЭЛ.КНИГА]\nКак нравиться людям, даже если вы\nотбитый на голову\n*Глава 1*\n..."
-Probability that\nexploding waste\nbarrels will de-\nstroy a JC-107\nType-A titanium\nreinforced door:\nCalculating...,DRRP_SEC4_30,Fixed by PROPHESSOR,,Взрыв огнеопасных\nотходов уничтожит\nтитановую укре-пленнную дверь\nJC-107 тип А\nс вероятностью:\nВычисление...
+"[E-BOOK]\nHow to Get People\nto Like You, Even\nif you are a\nCrazed, Diaboli-\ncal Lunatic\n*Chapter 1*\n...",DRRP_SEC4_29,Fixed by PROPHESSOR,,"[ЭЛ.КНИГА]\nКак нравиться людям,\nдаже если вы\nотбитый на голову\n*Глава 1*\n..."
+Probability that\nexploding waste\nbarrels will de-\nstroy a JC-107\nType-A titanium\nreinforced door:\nCalculating...,DRRP_SEC4_30,Fixed by PROPHESSOR,,Взрыв огнеопасных\nотходов уничтожит\nтитановую укре-\nпленнную дверь\nJC-107 тип А\nс вероятностью:\nВычисление...
 12%,DRRP_SEC4_31,,,
 System offline.,DRRP_SEC4_32,,,Система отключена
-"Welcome! This is\nthe oldest part\nof the base.\nBuilt in 2112,\nthe surrounding\nstructures and\ntunnels made up\nUAC's first per-\nmanent Martian\nsettlement. This\narea is now only\nused to store\nhazardous waste.",DRRP_SEC4_33,Fixed by PROPHESSOR,,"Добро пожаловать!\nЭто самая старая\nчасть базы,\nпостроенная в\n2112 году. Эти\nмодули и туннели\nбыли первыми\nМарсианскими\nпоселениями UAC. Сейчас эта зона\nиспользуется для\nхранения опасных\nотходов."
+"Welcome! This is\nthe oldest part\nof the base.\nBuilt in 2112,\nthe surrounding\nstructures and\ntunnels made up\nUAC's first per-\nmanent Martian\nsettlement. This\narea is now only\nused to store\nhazardous waste.",DRRP_SEC4_33,Fixed by PROPHESSOR,,"Добро пожаловать!\nЭто самая старая\nчасть базы,\nпостроенная в\n2112 году. Эти\nмодули и туннели\nбыли первыми\nМарсианскими\nпоселениями UAC.\nСейчас эта зона\nиспользуется для\nхранения опасных\nотходов."
 We've been having\ncomputer prob-\nlems. The latest\nglitch has locked\nour main door out\nof here back to\nJunction. Maybe\nyou can help us\nget it open.,DRRP_SEC4_34,,,У нас проблемы\nс компьютером.\nПоследняя пробле-\nма заперла глав-\nную дверь от сюда\nназад к Переходу.\nВозможно ты смо-\nжешь помочь нам\nоткрыть ее
 "Go talk to Dr.\nKelvin, he's\nworking on the\ncomputer trying\nto get the door\nopen. The door is\ndown the hall on\nthe right.",DRRP_SEC4_35,,,"Иди и поговори\nс Др. Келвином,\nон работает на\nкомпьютере, про-\nбует открыть две-\nрь. Дверь вниз по\nхоллу справа"
 This is stupid!\nIt'll never work.,DRRP_SEC4_36,,,Это тупо!\nЭто не сработает
@@ -1148,14 +1149,14 @@ What was Jensen\ndoing here any-\nway? Wasn't he\nfired weeks ago?,DRRP_SEC5_21,
 Get the passcode\ndatabase.,DRRP_SEC5_22,,,Найди базу дан-\nных паролей
 There's a room up\nahead that has a\ndatabase of pass-\ncodes used in\nthis sector.\nYou'd probably\nfind it helpful.,DRRP_SEC5_23,,,"Впереди есть ком-\nната, в которой\nсодержится база\nданных паролей,\nиспользуемых в\nэтом секторе.\nВероятно они тебе\nпонадобятся"
 "Ok, move along\nnow. I'm going\nback to sleep.",DRRP_SEC5_24,,,"Ну вот, теперь\nиди один. А я\nпойду дальше\nспать"
-Zzz...,DRRP_SEC5_25,,,zzz...
-Zzz...\nZzz...,DRRP_SEC5_26,,,zzz...\nzzz...
-"Zzz.. Wha? Oh,\nyou again. What?!\nYou need help\nwith a database?\nWell, everything\nI know I learned\nfrom an online\ntutorial. Let me\npull it up here\non this computer.\nOk, done. Use the\ncomputer to the\nleft to teach\nyourself database\nadministration.",DRRP_SEC5_27,,,"zzz.. А? А, это\nты. Что?! Нужна\nпомощь с базой\nданных? Что ж,\nвсе что я знаю, я\nпрочитал в онлайн\nруководстве.\nПозволь мне сде-\nлать это на этом\nкомпьютере. Все.\nИспользуй компью-\nтер слева, чтобы\nознакомиться с\nбазой данных\nадминистрации"
+Zzz...,DRRP_SEC5_25,,,
+Zzz...\nZzz...,DRRP_SEC5_26,,,
+"Zzz.. Wha? Oh,\nyou again. What?!\nYou need help\nwith a database?\nWell, everything\nI know I learned\nfrom an online\ntutorial. Let me\npull it up here\non this computer.\nOk, done. Use the\ncomputer to the\nleft to teach\nyourself database\nadministration.",DRRP_SEC5_27,,,"Zzz.. А? А, это\nты. Что?! Нужна\nпомощь с базой\nданных? Что ж,\nвсе что я знаю, я\nпрочитал в онлайн\nруководстве.\nПозволь мне сде-\nлать это на этом\nкомпьютере. Все.\nИспользуй компью-\nтер слева, чтобы\nознакомиться с\nбазой данных\nадминистрации"
 Hrm. It looks\nlike part of the\nfile is cor-\nrupted. Oh well.\nYou already know\nenough to do ba-\nsics like re-\ntrieving data.,DRRP_SEC5_28,,,"Хмм. Похоже, что\nчасть файла пов-\nреждена. Хорошо.\nТы уже знаешь\nдостаточно, чтобы\nслегка восстано-\nвить данные"
 System offline.,DRRP_SEC5_29,,,Система отключена
-I learned how to\nuse databases.,DRRP_SEC5_30,,,Я научился ис-\nпользовать базу\nданных
-"Learn Databases\n*Chapt 1 *\nThe SELECT state-\nment is used to\nacquire data from\na table in a da-\ntabase, basic\nsyntax is as fol-\nlows: SELECT col-\numn_names FROM\ntable_name. More\nadvanced usage of\nthe SELECT state-\nment is covered\nin later chap-\nters.",DRRP_SEC5_31,,,"Изучение базы\nданных\n*Глава 1 *\nФункция ВblБОР\nиспользуется для\nполучения данных\nсписка в базе\nданных, основной\nсинтаксис: ВblБОР\nколона_имя И3\nсписок_имя. Более\nрасширенное ис-\nпользование\nВblБОРА скрыто в\nпредыдущих главах"
-*Chapt 2 *\nThe INSERT st4t\n3m*&#!~ .*&\n[FILE CORRUPTED],DRRP_SEC5_32,,,*Глава 2 *\nВСТАВИТb э4о\n3м*&#!~ .*&\n[ФАЙЛ ПОВРЕЖДЕН]
+I learned how to\nuse databases.,DRRP_SEC5_30,Fixed by PROPHESSOR,,Я научился ис-\nпользовать базы\nданных
+"Learn Databases\n*Chapt 1 *\nThe SELECT state-\nment is used to\nacquire data from\na table in a da-\ntabase, basic\nsyntax is as fol-\nlows: SELECT col-\numn_names FROM\ntable_name. More\nadvanced usage of\nthe SELECT state-\nment is covered\nin later chap-\nters.",DRRP_SEC5_31,Fixed by PROPHESSOR,,Изучение баз данных\n*Глава 1 *\nФункция SELECT\nиспользуется для\nполучения списка\nданных из базы.\nСинтаксис:\nSELECT колонка\nFROM таблица.\nБолее детально\nпро использование\nкоманды SELECT\nрассказано в после-\nдующих главах.
+*Chapt 2 *\nThe INSERT st4t\n3m*&#!~ .*&\n[FILE CORRUPTED],DRRP_SEC5_32,Fixed by PROPHESSOR,,*Глава 2 *\nINSERT э4о\n3м*&#!~ .*&\n[ФАЙЛ ПОВРЕЖДЕН]
 [FILE CORRUPTED],DRRP_SEC5_33,,,[ФАЙЛ ПОВРЕЖДЕН]
 "Jeez, I think I'm\nlost. Wish my\nwife was here,\nshe'd ask someone\nfor directions.",DRRP_SEC5_34,,,"Боже, я думаю, я\nпотерялся. Как\nбы я хотел, чтобы\nмоя жена была\nздесь, она бы\nспросила дорогу"
 What I'd give for\nan automap about\nnow.,DRRP_SEC5_35,,,Что я теперь за-\nсуну в автокарту

@@ -304,6 +304,7 @@ script 31 (int arg0, int arg1, int arg2) { //X=6 Y=13 START=L_152 END=L_152 UNKN
 script 32 (int arg0, int arg1, int arg2) { //X=25 Y=13 START=L_153 END=L_156 UNKN=2097152 UNKN2=0
     int sgenid0 = 869; // [x=27, y=5]
     int sgenid1 = -813; // [x=25, y=13]
+    if(arg2 == 0) Autosave();
     if(arg2 == 0) SpawnForced("DRRPBaronOfHell", getMediumX(180), getMediumY(116), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=46 STATE=0
     if(arg2 == 0) SpawnForced("DRRPBaronOfHell", getMediumX(228), getMediumY(116), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=47 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=27 Y=5 VAL=1

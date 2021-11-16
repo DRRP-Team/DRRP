@@ -895,7 +895,6 @@ thing
 x = -1728.000;
 y = -64.000;
 type = 10705;
-angle = 90;
 id = 35;
 skill1 = true;
 skill2 = true;
@@ -920,7 +919,6 @@ thing
 x = -1728.000;
 y = -128.000;
 type = 10705;
-angle = 90;
 id = 36;
 skill1 = true;
 skill2 = true;
@@ -995,7 +993,6 @@ thing
 x = -1728.000;
 y = -192.000;
 type = 10705;
-angle = 90;
 id = 37;
 skill1 = true;
 skill2 = true;
@@ -1542,7 +1539,7 @@ thing
 x = -1600.000;
 y = -640.000;
 type = 10702;
-angle = 135;
+angle = 270;
 id = 108;
 skill1 = true;
 skill2 = true;
@@ -1724,7 +1721,7 @@ thing
 x = -1536.000;
 y = -1152.000;
 type = 10702;
-angle = 180;
+angle = 90;
 id = 148;
 skill1 = true;
 skill2 = true;
@@ -1749,7 +1746,7 @@ thing
 x = -1536.000;
 y = -1216.000;
 type = 10750;
-angle = 180;
+angle = 90;
 id = 149;
 skill1 = true;
 skill2 = true;
@@ -3401,7 +3398,7 @@ thing
 x = -896.000;
 y = -1280.000;
 type = 10705;
-angle = 90;
+angle = 270;
 id = 470;
 skill1 = true;
 skill2 = true;
@@ -3426,7 +3423,7 @@ thing
 x = -896.000;
 y = -1312.000;
 type = 10705;
-angle = 90;
+angle = 270;
 id = 471;
 skill1 = true;
 skill2 = true;
@@ -3451,7 +3448,7 @@ thing
 x = -960.000;
 y = -1344.000;
 type = 10705;
-angle = 90;
+angle = 45;
 id = 439;
 skill1 = true;
 skill2 = true;
@@ -3545,7 +3542,7 @@ thing
 x = -896.000;
 y = -512.000;
 type = 10705;
-angle = 90;
+angle = 315;
 id = 458;
 skill1 = true;
 skill2 = true;
@@ -3570,7 +3567,7 @@ thing
 x = -896.000;
 y = -576.000;
 type = 10705;
-angle = 90;
+angle = 45;
 id = 459;
 skill1 = true;
 skill2 = true;
@@ -3973,7 +3970,7 @@ thing
 x = -448.000;
 y = -1088.000;
 type = 10702;
-angle = 180;
+angle = 90;
 id = 691;
 height = 32.000000;
 skill1 = true;
@@ -14792,8 +14789,10 @@ v1 = 58;
 v2 = 59;
 sidefront = 70;
 sideback = 71;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -19298,8 +19297,10 @@ v1 = 545;
 v2 = 541;
 sidefront = 796;
 sideback = 797;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef
@@ -22172,8 +22173,10 @@ v1 = 828;
 v2 = 829;
 sidefront = 1228;
 sideback = 1229;
+special = 15;
 twosided = true;
 dontdraw = true;
+playercross = true;
 }
 
 linedef

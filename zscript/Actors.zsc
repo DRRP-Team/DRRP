@@ -19,7 +19,7 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
     }
 
     override void BeginPlay() {
-        armorAmountGive = 1;
+        armorAmountGive = 4;
     }
 
     override void Touch( Actor toucher ) {
@@ -171,13 +171,15 @@ class DRRPExtraDamageGib: Actor {
     int rollingDelay, curRollingDelay;
 
     Default {
-        Radius 4;
-        Height 4;
-        -SOLID;
-        -SHOOTABLE;
         +BOUNCEONWALLS;
         +BOUNCEONFLOORS;
         +BOUNCEONCEILINGS;
+        -SOLID;
+        -SHOOTABLE;
+
+        Radius 4;
+        Height 4;
+        Tag "$DRRP_D_GIBS";
     }
 
     States {

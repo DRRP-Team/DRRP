@@ -628,6 +628,7 @@ script 99 (int arg0, int arg1, int arg2) { //X=25 Y=29 START=L_347 END=L_363 UNK
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=25 Y=29
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid1, 9); // ( USE IF_VAR( 1 ) ) SET_VAR X=0 Y=23 VAL=9
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid2, 9); // ( USE IF_VAR( 1 ) ) SET_VAR X=24 Y=28 VAL=9
+    if(arg2 == 1) Autosave();
     if(arg2 == 1) SpawnForced("Fiend", getMediumX(148), getMediumY(180), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=5 STATE=0
     if(arg2 == 1) SpawnForced("Fiend", getMediumX(116), getMediumY(204), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=6 STATE=0
     if(arg2 == 1) SpawnForced("Pinky", getMediumX(44), getMediumY(188), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=7 STATE=0

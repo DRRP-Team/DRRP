@@ -67,6 +67,7 @@ Script 1 (int id)  { // Computers handler
             break;
         case 4:
             ACS_NamedExecuteWait("window", 0, getString(12));
+            Autosave();
             AmbientSound(localizeSound("bet/earth"), 200);
             Delay(45*2);
             SetLineBlocking(664, OFF);
@@ -107,6 +108,7 @@ Script 101 (void) { // On Rod destroy
             AmbientSound(localizeSound("core/c3"), 127);
             break;
         case 3:
+            Autosave();
             AmbientSound(localizeSound("core/c4"), 127);
             ACS_Terminate(667, 0);
             Radius_Quake(12, 43, 0, 10, 0);
@@ -178,6 +180,7 @@ Script 101 (void) { // On Rod destroy
 }
 
 Script 102 (void) { // On Cyber Die
+    Autosave();
     AmbientSound("monsters/cyberdemon/death", 255);
     SpawnSpot("Explosion", 666);
 
@@ -231,6 +234,7 @@ script 104 (void){ // Kronos
     //
     ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
     TeleportOther(ActivatorTID(), 12, 1);
+    Autosave();
     ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
     //
     AmbientSound(localizeSound("bet/destroy"), 200);

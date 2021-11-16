@@ -81,30 +81,38 @@ vec2 ParallaxMap(mat3 tbn) {
     return finalTexCoords; 
 }
 
-Material ProcessMaterial() {
+// For GZDoom 4.5.0+
+void SetupMaterial(inout Material material) {
     mat3 tbn = GetTBN();
     vec2 texCoord = ParallaxMap(tbn);
 
-    Material material;
-#if defined(PBR)
-    material.Base = getTexel(texCoord) * texture(aotexture, texCoord).r;
-#else
     material.Base = getTexel(texCoord);
-#endif
-    
-    material.Normal = GetBumpedNormal(tbn, texCoord);
+       material.Normal = GetBumpedNormal(tbn, texCoord);
+
 #if defined(SPECULAR)
     material.Specular = texture(speculartexture, texCoord).rgb;
     material.Glossiness = uSpecularMaterial.x;
     material.SpecularLevel = uSpecularMaterial.y;
 #endif
+
 #if defined(PBR)
+    material.Base *= texture(aotexture, texCoord).r;
     material.Metallic = texture(metallictexture, texCoord).r;
     material.Roughness = texture(roughnesstexture, texCoord).r;
-    //material.AO = texture(aotexture, texCoord).r;
+    material.AO = texture(aotexture, texCoord).r;
 #endif
-#if defined(BRIGHTMAP)
-    material.Bright = texture(brighttexture, texCoord);
+
+#ifndef NO_LAYERS
+       if ((uTextureMode & TEXF_Brightmap) != 0)
+               material.Bright = texture(brighttexture, texCoord.st);
+               
+       if ((uTextureMode & TEXF_Detailmap) != 0)
+       {
+               vec4 Detail = texture(detailtexture, texCoord.st * uDetailParms.xy) * uDetailParms.z;
+               material.Base *= Detail;
+       }
+       
+       if ((uTextureMode & TEXF_Glowmap) != 0)
+               material.Glow = texture(glowtexture, texCoord.st);
 #endif
-    return material;
 }
