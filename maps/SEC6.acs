@@ -255,7 +255,7 @@ script 37 (int arg0, int arg1, int arg2) { //X=4 Y=9 START=L_100 END=L_124 UNKN=
     int sgenid2 = 137; // [x=4, y=9]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(72)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=72
     if(arg2 == 0) {
-        SetMusic("d_silenc");
+        SetMusic("");
         FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.5);
         SetThingSpecial(168, 0, 0, 0, 0, 0); // Dynamic light
         AmbientSound("techno/poweroff", 255);

@@ -68,7 +68,7 @@ script 1001 (void){
             break;
         case 3:
             lightoff = true;
-            SetMusic("d_silenc");
+            SetMusic("");
             AmbientSound("techno/poweroff", 255);
             Sector_SetFade(0, 128, 0, 0);
             Sector_SetColor(0, 0, 0, 0, 0);
@@ -527,7 +527,7 @@ script 1001 (void){
             break;
         case 3:
             lightoff = true;
-            SetMusic("d_silenc");
+            SetMusic("");
             AmbientSound("techno/poweroff", 255);
             Sector_SetFade(0, 128, 0, 0);
             Sector_SetColor(0, 0, 0, 0, 0);
