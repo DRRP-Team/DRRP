@@ -390,6 +390,7 @@ Actor DRRPSink 10709  {
     Health 50
     Scale 0.8
     PainChance 256
+    RadiusDamageFactor 0
     Mass 0x7FFFFFFF
     BloodColor "AA AA AA"
 
@@ -424,6 +425,7 @@ Actor DRRPToilet 10710 {
     Health 50
     Scale 0.8
     PainChance 256
+    RadiusDamageFactor 0
     Mass 0x7FFFFFFF
     BloodColor "AA AA AA"
 
