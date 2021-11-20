@@ -8,6 +8,8 @@
 //Mask: 10 + <monster_skill + 1> + <ID>: e. g., 2nd monster skill = 10300-10399.
 //So, Monsters: 10259-10499.
 
+// // %Name Column% - for DRRP Rebalance spreadsheet autoapply
+
 
 // Dogs -------------------------------------------------------------------------------
 
@@ -18,7 +20,7 @@ Actor Hellhound: Dog_BaseDRRP replaces MBFHelperDog 10246 {
     //$Angled
     //$Title HellHound
 
-    Health 40
+    Health 25 // %Dog 1%
     Tag "$DRRP_M_HELLHOUND"
     Obituary "$DRRP_OB_HELLHOUND"
 }
@@ -32,7 +34,7 @@ Actor Cerberus: Dog_BaseDRRP 10346 {
 
     Tag "$DRRP_M_CERBERUS"
     Obituary "$DRRP_OB_CEREBRUS"
-    Health 90
+    Health 65 // %Dog 2%
     Translation "64:79=32:47"
 
     ActiveSound  "monsters/cerberus/see"
@@ -56,7 +58,7 @@ Actor DemonWolf: Dog_BaseDRRP 10446 {
 
     Tag "$DRRP_M_DEMONWOLF"
     Obituary "$DRRP_OB_DEMONWOLF"
-    Health 190
+    Health 145 // %Dog 3%
     Translation "64:66=[82,89,148]:[82,89,148]", "67:70=[49,60,107]:[82,89,148]", "71:73=[49,60,107]:[49,60,107]", "74:76=[33,36,74]:[33,36,74]", "77:79=[16,16,41]:[16,16,41]", "107:107=185:185"
     Scale 1.25
 
@@ -84,7 +86,7 @@ Actor ZombiePvt: ZombieMan_BaseDRRP replaces ZombieMan 10274 {
 
     Obituary "$DRRP_OB_ZOMBIEPVT"
     Tag "$DRRP_M_ZOMBIEPVT"
-    Health 35
+    Health 35 // %Zombie 1%
     Translation "16:47=152:159"
 
     SeeSound "monsters/zombiepvt/sight"
@@ -110,7 +112,7 @@ Actor ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy 10374 {
 
     Obituary "$DRRP_OB_ZOMBIELT"
     Tag "$DRRP_M_ZOMBIELT"
-    Health 75
+    Health 75 // %Zombie 2%
     Translation "96:111=%[0.00,0.00,0.00]:[0.98,1.25,1.76]", "16:47=%[0.00,0.00,0.00]:[0.31,0.59,0.94]", "48:79=%[0.00,0.00,0.00]:[0.80,0.93,1.16]", "178:178=181:181", "168:175=193:193", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[0.76,0.95,1.28]" 
 
     States {
@@ -131,7 +133,7 @@ Actor ZombieCpt: ZombieMan_BaseDRRP 10474 {
 
     Obituary "$DRRP_OB_ZOMBIECPT"
     Tag "$DRRP_M_ZOMBIECPT"
-    Health 155
+    Health 155 // %Zombie 3%
     Translation "101:106=@94[144,22,16]", "26:47=@97[173,25,25]", "48:79=@19[123,16,16]", "176:191=185:185", "168:175=173:173", "160:167=%[0.00,0.00,0.00]:[1.55,0.02,0.06]", "208:223=67:67", "120:125=@52[0,128,0]"
 
     SeeSound "monsters/zombiecpt/sight"
@@ -162,7 +164,7 @@ Actor Troop: ChaingunGuy_BaseDRRP 10264 {
 
     Obituary "$DRRP_OB_TROOP"
     Tag "$DRRP_M_TROOP"
-    Health 55
+    Health 45 // %Commando 1%
     Translation "32:47=163:167"
 
     SeeSound "monsters/troop/sight"
@@ -182,7 +184,7 @@ Actor Commando: ChaingunGuy_BaseDRRP 10364 {
 
     Obituary "$DRRP_OB_COMMANDO"
     Tag "$DRRP_M_COMMANDO"
-    Health 130
+    Health 75 // %Commando 2%
     Translation "16:47=197:207"
 
     States {
@@ -205,7 +207,7 @@ Actor Assassin: ChaingunGuy_BaseDRRP replaces ChaingunGuy 10464 {
 
     Obituary "$DRRP_OB_ASSASIN"
     Tag "$DRRP_M_ASSASSIN"
-    Health 260
+    Health 170 // %Commando 3%
 
     SeeSound "monsters/assassin/sight"
     PainSound "monsters/assassin/pain"
@@ -234,7 +236,7 @@ Actor Impling: DoomImp_BaseDRRP 10260 {
     Obituary "$DRRP_OB_IMPLING"
     HitObituary "$DRRP_OBM_IMPLING"
     Tag "$DRRP_M_IMPLING"
-    Health 50
+    Health 40 // %Imp 1%
     Scale 0.9
     Translation "64:79=117:127", "61:63=127:127"
 
@@ -262,7 +264,7 @@ Actor DRRPImp: DoomImp_BaseDRRP replaces DoomImp 10360 {
     Obituary "$DRRP_OB_IMP"
     HitObituary "$DRRP_OBM_IMP"
     Tag "$DRRP_M_IMP"
-    Health 115
+    Health 80 // %Imp 2%
 
     States {
         Melee:
@@ -283,7 +285,7 @@ Actor ImpLord: DoomImp_BaseDRRP 10460 {
     Obituary "$DRRP_OB_IMPLORD"
     HitObituary "$DRRP_OBM_IMPLORD"
     Tag "$DRRP_M_IMPLORD"
-    Health 290
+    Health 165 // %Imp 3%
     Scale 1.1
     Translation "169:191=112:127", "64:79=177:191", "191:191=127:127"
 
@@ -328,7 +330,7 @@ Actor Phantom: LostSoul_BaseDRRP 10263 {
 
     Obituary "$DRRP_OB_PHANTOM"
     Tag "$DRRP_M_PHANTOM"
-    Health 40
+    Health 35 // %Soul 1%
     Damage (Random( 1, 3 ) * 8 + 3)
     Translation "128:151=152:159", "64:79=152:159"
 
@@ -347,7 +349,7 @@ Actor DRRPLostSoul: LostSoul_BaseDRRP replaces LostSoul 10363 {
 
     Obituary "$DRRP_OB_LOSTSOUL"
     Tag "$DRRP_M_LOSTSOUL"
-    Health 150
+    Health 75 // %Soul 2%
     Damage (Random( 2, 3 ) * 8 + 5)
     DamageFactor DRRPFireExtDmg, 15.0
 }
@@ -361,7 +363,7 @@ Actor Nightmare: LostSoul_BaseDRRP 10463 {
 
     Obituary "$DRRP_OB_NIGHTMARE"
     Tag "$DRRP_M_NIGHTMARE"
-    Health 350
+    Health 155 // %Soul 3%
     Damage (Random( 1, 3 ) * 8 + 15)
     Translation "128:151=195:207", "64:79=200:207"
     DamageFactor DRRPFireExtDmg, 20.0
@@ -385,7 +387,7 @@ Actor BullDemon: Demon_BaseDRRP 10259 {
 
     Obituary "$DRRP_OB_BULLDEMON"
     Tag "$DRRP_M_BULLDEMON"
-    Health 85
+    Health 60 // %Bull 1%
     Translation "213:223=162:164", "27:47=[74,65,24]:[74,65,24]", "27:37=[115,105,57]:[115,105,57]", "27:33=[156,142,99]:[156,142,99]", "21:26=[189,178,132]:[189,178,132]", "16:20=[214,203,173]:[214,203,173]"
 
     SeeSound "monsters/bulldemon/sight"
@@ -411,7 +413,7 @@ Actor Pinky: Demon_BaseDRRP replaces Demon 10459 {
 
     Obituary "$DRRP_OB_PINKY"
     Tag "$DRRP_M_PINKY"
-    Health 225
+    Health 100 // %Bull 2%
 
     States {
     Melee:
@@ -430,7 +432,7 @@ Actor Belphegor: Demon_BaseDRRP 10359 {
 
     Obituary "$DRRP_OB_BELPHEGOR"
     Tag "$DRRP_M_BELPHEGOR"
-    Health 375
+    Health 190 // %Bull 3%
     Translation "16:47=%[0.00,0.00,0.00]:[0.57,0.77,1.41]"
 
     SeeSound "monsters/belphegor/sight"
@@ -469,7 +471,7 @@ Actor Malwrath: Cacodemon_BaseDRRP 10262 {
     Obituary "$DRRP_OB_MALWRATH"
     HitObituary "$DRRP_OBM_MALWRATH"
     Tag "$DRRP_M_MALWRATH"
-    Health 195
+    Health 50 // %Cacodemon 1%
     Translation "168:191=161:167", "16:47=160:165", "112:127=181:191", "192:207=168:191", "240:247=[0,0,0]:[176,0,0]"
 
     SeeSound "monsters/malwrath/sight"
@@ -500,7 +502,7 @@ Actor DRRPCacodemon: Cacodemon_BaseDRRP replaces Cacodemon 10362 {
     Obituary "$DRRP_OB_CACODEMON"
     HitObituary "$DRRP_OBM_CACODEMON"
     Tag "$DRRP_M_CACODEMON"
-    Health 365
+    Health 80 // %Cacodemon 2%
 
     States {
     Missile:
@@ -525,7 +527,7 @@ Actor Wretched: Cacodemon_BaseDRRP 10462 {
     Obituary "$DRRP_OB_WRETCHED"
     HitObituary "$DRRP_OBM_WRETCHED"
     Tag "$DRRP_M_WRETCHED"
-    Health 650
+    Health 175 // %Cacodemon 3%
     Translation "168:191=193:207", "167:167=244:244", "16:47=193:201", "192:207=168:184", "240:242=185:191", "223:223=207:207", "0:2=246:246"
 
     SeeSound "monsters/wretched/sight"
@@ -576,7 +578,7 @@ Actor Ghoul: Revenant_BaseDRRP 10277 {
     Obituary "$DRRP_OB_GHOUL"
     HitObituary "$DRRP_OBM_GHOUL"
     Tag "$DRRP_M_GHOUL"
-    Health 130
+    Health 70 // %Revenant 1%
     Translation "133:138=[115,48,49]:[181,117,115]", "80:87=@100[181,117,115]", "88:92=@100[156,65,66]", "93:95=@100[115,48,49]", "4:4=@42[181,117,115]", "32:35=[24,134,16]:[24,134,16]", "36:39=[24,134,16]:[24,134,16]", "40:47=[41,105,8]:[41,105,8]", "232:235=[41,105,8]:[60,158,11]", "128:138=@100[179,74,75]", "128:167=@50[179,74,75]"
 
     SeeSound "monsters/ghoul/sight"
@@ -604,7 +606,7 @@ Actor Fiend: Revenant_BaseDRRP 10377 {
     Obituary "$DRRP_OB_FIEND"
     HitObituary "$DRRP_OBM_FIEND"
     Tag "$DRRP_M_FIEND"
-    Health 310
+    Health 100 // %Revenant 2%
     Translation "80:87=@77[33,32,74]", "88:92=@85[33,32,74]", "93:95=@77[33,32,74]", "4:4=@41[33,32,74]", "32:39=[132,16,82]:[153,18,95]", "40:47=[107,12,90]:[107,12,90]", "232:235=[153,18,95]:[191,22,119]", "128:143=@77[48,55,140]", "144:151=@100[48,55,140]", "152:159=@100[57,65,165]", "160:167=@60[57,65,165]", "64:79=[102,139,163]:[27,26,64]"
 
     States {
@@ -627,7 +629,7 @@ Actor DRRPRevenant: Revenant_BaseDRRP replaces Revenant 10477 { // Huesos (Spani
     Obituary "$DRRP_OB_REVENANT"
     HitObituary "$DRRP_OBM_REVENANT"
     Tag "$DRRP_M_REVENANT"
-    Health 630
+    Health 200 // %Revenant 3%
 
     SeeSound "monsters/revenant/sight"
     PainSound "monsters/revenant/pain"
@@ -662,7 +664,7 @@ Actor Beholder: PainElemental_BaseDRRP 10479 {
     Obituary "$DRRP_OB_BEHOLDER"
     HitObituary "$DRRP_OBM_BEHOLDER"
     Tag "$DRRP_M_BEHOLDER"
-    Health 230
+    Health 60 // %Pain Elemental 1%
     Translation "128:143=%[0.00,0.00,0.00]:[0.92,1.18,0.66]", "13:15=9:10", "64:79=%[0.00,0.00,0.00]:[0.97,1.20,0.62]", "13:15=%[0.00,0.00,0.00]:[0.80,1.02,0.51]", "236:239=%[0.00,0.00,0.00]:[0.66,0.83,0.49]", "1:2=12:12", "167:167=12:12", "165:165=159:159"
 
     SeeSound "monsters/beholder/sight"
@@ -697,7 +699,7 @@ Actor Rahovart: PainElemental_BaseDRRP 10379 {
     Obituary "$DRRP_OB_RAHOVART"
     HitObituary "$DRRP_OBM_RAHOVART"
     Tag "$DRRP_M_RAHOVART"
-    Health 420
+    Health 90 // %Pain Elemental 2%
     Translation "128:143=%[0.00,0.00,0.00]:[0.39,0.53,1.72]", "13:15=9:10", "64:79=%[0.00,0.00,0.00]:[0.47,0.61,1.79]", "13:15=%[0.00,0.00,0.00]:[0.12,0.22,1.14]", "236:239=%[0.00,0.00,0.00]:[0.22,0.31,1.01]", "1:2=12:12", "167:167=12:12", "165:165=159:159"
 
     States {
@@ -727,7 +729,7 @@ Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
     Obituary "$DRRP_OB_PAINELEMENTAL"
     HitObituary "$DRRP_OBM_PAINELEMENTAL"
     Tag "$DRRP_M_PAINELEMENTAL"
-    Health 660
+    Health 185 // %Pain Elemental 3%
 
     SeeSound "monsters/painelemental/sight"
     PainSound "monsters/painelemental/pain"
@@ -753,7 +755,7 @@ Actor DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental 10279 {
 
 
 
-// Mancubuses -------------------------------------------------------------------------
+// ManCubuses -------------------------------------------------------------------------
 // Dull joke by UsernameAK: "Minecraft -- cube world".
 // <PROPHESSOR> *laughs*
 
@@ -766,7 +768,7 @@ Actor Behemoth: Fatso_BaseDRRP 10278 {
 
     Obituary "$DRRP_OB_BEHEMOTH"
     Tag "$DRRP_M_BEHEMOTH"
-    Health 320
+    Health 90 // %Mancubus 1%
     Translation "48:79=%[0.00,0.00,0.00]:[0.95,0.89,1.83]", "128:143=%[0.00,0.00,0.00]:[1.02,1.04,1.57]", "112:127=176:191", "160:167=%[0.00,0.00,0.00]:[1.02,0.94,1.91]", "212:223=%[0.00,0.00,0.00]:[0.90,0.82,1.84]", "13:15=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "236:239=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "144:151=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "176:191=%[0.00,0.00,0.00]:[0.83,0.83,2.00]", "16:47=%[0.00,0.00,0.00]:[2.00,0.00,0.00]"
 
     SeeSound "monsters/behemoth/sight"
@@ -784,7 +786,7 @@ Actor Mancubus: Fatso_BaseDRRP replaces Fatso 10378 {
 
     Obituary "$DRRP_OB_MANCUBUS"
     Tag "$DRRP_M_MANCUBUS"
-    Health 700
+    Health 120 // %Mancubus 2%
 }
 
 Actor Druj: Fatso_BaseDRRP 10478 {
@@ -796,7 +798,7 @@ Actor Druj: Fatso_BaseDRRP 10478 {
 
     Tag "$DRRP_M_DRUJ"
     Obituary "$DRRP_OB_DRUJ"
-    Health 1024
+    Health 220 // %Mancubus 3%
     Translation "48:79=16:45", "144:151=16:45", "144:151=16:45", "236:239=46:46", "13:15=46:46", "141:141=46:46", "138:138=46:46", "142:142=45:45", "143:143=45:45", "16:47=176:189"
 
     SeeSound "monsters/druj/sight"
@@ -822,7 +824,7 @@ Actor Infernis: ArchVile_BaseDRRP 10273 {
 
     Obituary "$DRRP_OB_INFERNIS"
     Tag "$DRRP_M_INFERNIS"
-    Health 180
+    Health 55 // %Vile 1%
     Translation  "48:79=192:207", "128:143=192:207", "13:15=240:247", "144:151=240:247", "236:239=240:247", "144:151=240:247", "208:223=192:207", "0:2=247:247"
 
     SeeSound "monsters/infernis/sight"
@@ -842,7 +844,7 @@ Actor DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile 10373 {
 
     Obituary "$DRRP_OB_ARCHVILE"
     Tag "$DRRP_M_ARCHVILE"
-    Health 385
+    Health 85 // %Vile 2%
 }
 
 Actor Apollyon: ArchVile_BaseDRRP 10473 {
@@ -856,7 +858,7 @@ Actor Apollyon: ArchVile_BaseDRRP 10473 {
 
     Obituary "$DRRP_OB_APOLLYON"
     Tag "$DRRP_M_APOLLYON"
-    Health 700
+    Health 180 // %Vile 3%
     Translation "64:79=32:47", "48:63=16:31", "128:143=16:39", "236:239=44:47", "13:15=45:47", "144:151=32:39" // "16:223=%[0.00, 0.00, 0.00]:[2.00, 0.78, 0.78]"
 
     SeeSound "monsters/apollyon/sight"
@@ -881,7 +883,7 @@ Actor Ogre: HellKnight_BaseDRRP 10480 {
     Obituary "$DRRP_OB_OGRE"
     HitObituary "$DRRP_OBM_OGRE"
     Tag "$DRRP_M_OGRE"
-    Health 290
+    Health 80 // %Baron 1%
     Translation "112:127=176:191", "128:143=%[0.00,0.00,0.00]:[0.77,0.82,0.64]", "144:151=%[0.00,0.00,0.00]:[0.80,0.85,0.65]", "48:63=%[0.00,0.00,0.00]:[0.76,0.82,0.64]", "13:15=%[0.00,0.00,0.00]:[0.65,0.69,0.54]"
 
     SeeSound "monsters/ogre/sight"
@@ -908,7 +910,7 @@ Actor DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight 10380 {
     Obituary "$DRRP_OB_HELLKNIGHT"
     HitObituary "$DRRP_OBM_HELLKNIGHT"
     Tag "$DRRP_M_HELLKNIGHT"
-    Health 550
+    Health 110 // %Baron 2%
 
     States {
     Melee:
@@ -929,7 +931,7 @@ Actor DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell 10280 {
     Obituary "$DRRP_OB_BARON"
     HitObituary "$DRRP_OBM_BARON"
     Tag "$DRRP_M_BARON"
-    Health 1200
+    Health 210 // %Baron 3%
 
     Translation "112:127=160:167"
 
@@ -973,7 +975,7 @@ Actor DRRPCyberdemon : Cyberdemon replaces Cyberdemon 10390 {
 
     Obituary "$DRRP_OB_CYBERDEMON"
     Tag "$DRRP_M_CYBERDEMON"
-    Health 6666
+    Health 1666 // %Cyberdemon 1%
 }
 
 Actor Kronos 10391 {
@@ -990,7 +992,7 @@ Actor Kronos 10391 {
     +FLOAT
     Radius      24
     Height      56
-    Health      3666 // Original: 344..572
+    Health      666 // %Kronos 1% // Original: 344..572
     PainChance  127
     Speed       20
     Scale       0.43
