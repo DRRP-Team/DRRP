@@ -41,7 +41,7 @@ Actor DRRPBarrel : ExplosiveBarrel replaces ExplosiveBarrel  10701 {
 
 Actor DRRPTable 10702 {
     //$Category DDecorations
-    //$NotAngled
+    //$Angled
     //$Title Table
     //$IsDecoration
     //$Colour #AAAAAA
@@ -66,7 +66,7 @@ Actor DRRPTable 10702 {
 
 Actor DRRPChair 10750 {
     //$Category DDecorations
-    //$NotAngled
+    //$Angled
     //$Title Chair
     //$IsDecoration
     //$Colour #AAAAAA
@@ -390,6 +390,7 @@ Actor DRRPSink 10709  {
     Health 50
     Scale 0.8
     PainChance 256
+    RadiusDamageFactor 0
     Mass 0x7FFFFFFF
     BloodColor "AA AA AA"
 
@@ -424,6 +425,7 @@ Actor DRRPToilet 10710 {
     Health 50
     Scale 0.8
     PainChance 256
+    RadiusDamageFactor 0
     Mass 0x7FFFFFFF
     BloodColor "AA AA AA"
 
