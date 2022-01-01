@@ -10,7 +10,7 @@ ENU = 'LANGUAGE.ENU'
 RUS = 'TEMP/GZDoom3xPatch/LANGUAGE.RUS'
 
 COPYRIGHT = '''/**
- * Copyright (c) 2018-2021 DRRP-Team
+ * Copyright (c) 2018-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
