@@ -67,7 +67,7 @@ Sector 5,DRRP_B_ID63,,,Сектор 5
 Sector 6,DRRP_B_ID64,,,Сектор 6
 Sector 7,DRRP_B_ID65,,,Сектор 7
 Nothing to use,DRRP_B_ID66,,,Нет цели
-Turn passed.,DRRP_B_ID67,,,Пропущен поворот
+Turn passed.,DRRP_B_ID67,,,Пропущен ход
 Gained %1 armor,DRRP_B_ID68,,,Найдено %1 брони
 Gained %1 health,DRRP_B_ID69,,,Найдено %1 здор.
 Accuracy: +,DRRP_B_ID70,,,Точность: +
@@ -269,7 +269,7 @@ doomrpg.com/blues,DRRP_B_ID265,,,"~~ ОСНОВНОЕ ~~~~~\nС помощью �
 "\nYou've beaten the\ndemons from Hell,\nbut we've seen\nbetter. Find out\nmore by visiting:",DRRP_B_ID266,,,~~ ПРАВА ~~~~~~~~\n(с) 2ОО5\n?r ?о?g?аFе\nВсе права\nзащищены.\n1993-2ОО5\n?r ?о?g?аFе\nИздатель WАМЙАТ\nПеревод\nна русский\nБОзКО ТИМОФЕз\ng63О@l?tg.Fw\n\nБольшое спасибо\n[ji]\n\n
 doomrpg.com/spire,DRRP_B_ID267,,,"~~ ОБ ИГРЕ ~~~~~~\nВерсия:\n`\nПоддержка:\nDеlр@?аhrаg.соh\n\nВ игре ЙООМ вы\nсразитесь с мон-\nстрами, решите\nголоволомки и\nсблизитесь с\nперсонажами для\nрешения проблемы\nисследовательской\nстанции на Марсе\n\n"
 "\nYou've finished\nthe game, barely.\nThere's still much\nto discover. For a\nlittle inspiration\nto do better next\ntime, visit:",DRRP_B_ID268,,,~~ ДВИЖЕНИЕ ~~~~~\n2 Вперед\n8 Назад\n1 Влево\n3 Вправо\n4 Налево/Стр.врх\n6 Направо/Стр.внз\n\n
-doomrpg.com/hound,DRRP_B_ID269,,,~~ ДРУГОЕ ~~~~~~~\n5 Атака\n7 След. Оружие\n* Пред. Оружие\n9 Проп. поворота\n# Автокарта\nО Меню\n\n
+doomrpg.com/hound,DRRP_B_ID269,,,~~ ДРУГОЕ ~~~~~~~\n5 Атака\n7 След. Оружие\n* Пред. Оружие\n9 Проп. ход\n# Автокарта\nО Меню\n\n
 "\nWe're sorry, an error has occurred. Please try starting the application again.",DRRP_B_ID270,,,"\nWe're sorry, an error has occurred. Please try starting the application again."
 Error Details:\n%1%2,DRRP_B_ID271,,,Error Details:\n%1%2
 You have been\ndispatched in re-\nsponse to a dis-\ntress call from\nUnion Aerospace\nCorporation's re-\nsearch facility\non Mars. The base\nis under attack,DRRP_B_ID272,,,You have been\ndispatched in re-\nsponse to a dis-\ntress call from\nUnion Aerospace\nCorporation's re-\nsearch facility\non Mars. The base\nis under attack
@@ -919,7 +919,7 @@ You'll find use-\nful equipment be-\nhind this door\nbut you need the\ngreen key
 Having trouble\nfinding the green\nkeycard? You\nwon't find it in\nthis sector.\nYou'll likely\nfind the green\nkeycard in a\nlater sector.\nYou'll need to\ntravel back here\nto open this\ndoor.,DRRP_SEC1_50,,,"Проблемы с поис-\nком зеленого\nключа? В этом\nсекторе его нет.\n Возможно\nты найдешь зеле-\nную ключкарту в\nследующих сек-\nторах. Тебе при-\nдется вернуться\nсюда, чтобы от-\nкрыть эти дверь"
 You can re-enter\nthis sector from\nJunction even af-\nter successfully\ncompleting it. By\nrevisiting pre-\nviously completed\nsectors you can\nuncover addition-\nal secrets and\nbuild strength by\nacquiring equip-\nment and fighting\nmonsters.,DRRP_SEC1_51,,,"Сюда можно вер-\nнуться из Пере-\nхода в любое время,\nдаже если этот сек-\nтор пройден. Если\nвернуться в уже\nпройденные секто-\nра, то в них мож-\nно найти дополни-\nтельные секреты,\nувеличить силу\nпокупкой снаряже-\nния и повышением\nуровня за сраже-\nние с демонами"
 Super secret\npasscode: **7*,DRRP_SEC1_52,,,Супер секретный\nпароль: **7*
-[Combat Guide]\nTip 099: You can\nskip a combat\nturn by pressing\nthe 9 button\nwhile engaging an\nenemy. Use this\nstrategically to\ndraw an enemy\ninto your line of\nfire.,DRRP_SEC1_53,,,"[Боевой совет]\n#099: Не бойтесь\nотступать и атако-\nвать из укрытия,\nесли у противника\nпреимущество."
+[Combat Guide]\nTip 099: Don't be\nafraid to retreat\nand attack from\ncover if the enemy\nhas the advantage.,DRRP_SEC1_53,,,"[Боевой совет]\n#099: Не бойтесь\nотступать и атако-\nвать из укрытия,\nесли у противника\nпреимущество."
 "[Combat Guide]\nTip 164: Explod-\ning barrels can\ndamage enemies,\nbut be careful as\nexploding barrels\ncan also hurt\nyou.",DRRP_SEC1_54,Fixed by PROPHESSOR,,"[Гид Боя]\nСовет 164:\nВзрывные баки\nмогут навредить\nврагам, но если\nбыть не осторож-\nным, то и тебе"
 Segment Fault:\n&o0r _4s5%0D3 2 25,DRRP_SEC1_55,,,Ошибка сегмента:\n&вОрь_4к5%От3 2 25
 Sector 2,DRRP_SEC2_0,,,Сектор 2
@@ -1456,3 +1456,4 @@ Door opened.,DRRP_REAC_17,,,Дверь открыта
 Logged in as root.\n# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.,DRRP_REAC_18,,,Login root\n\n# scp /map.dat .\nСохранение...\nВсе.\nВы получили\nданные карты
 Map data already\ndownloaded.,DRRP_REAC_19,,,Данные карты\nуже загружены
 "The portal to\nHell has closed,\nbut one last\ncreature made it\nthrough...",DRRP_REAC_20,,,"Портал в Ад зак-\nрыт, но одна\nтварь все же\nпробралась..."
+[Dr. Guerard] Now\nI'll show you who\nyou're really\ndealing with!,DRRP_REAC_21,,,"[Др. Герард]\nСейчас я тебе\nпокажу, с кем\nты столкнулся\nна самом деле!"
