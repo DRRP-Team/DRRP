@@ -5,9 +5,6 @@
  * https://opensource.org/licenses/MIT
  */
 
-//Mask: 10 + <monster_skill + 1> + <ID>: e. g., 2nd monster skill = 10300-10399.
-//So, Monsters: 10259-10499.
-
 // // %Name Column% - for DRRP Rebalance spreadsheet autoapply
 
 
@@ -121,7 +118,7 @@ class ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy {
 
         Obituary "$DRRP_OB_ZOMBIELT";
         Tag "$DRRP_M_ZOMBIELT";
-        Health 75;; // %Zombie 2%
+        Health 75; // %Zombie 2%
         Translation "96:111=%[0.00,0.00,0.00]:[0.98,1.25,1.76]", "16:47=%[0.00,0.00,0.00]:[0.31,0.59,0.94]", "48:79=%[0.00,0.00,0.00]:[0.80,0.93,1.16]", "178:178=181:181", "168:175=193:193", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[0.76,0.95,1.28]" ;
 	}
 

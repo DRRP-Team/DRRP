@@ -1,6 +1,8 @@
 
 DoomEdNums {
-	// Monsters:
+	// Mask: 10 + <monster_skill + 1> + <ID_in_original_game>.
+	//So, Monsters == 10200..10499 and 2nd monster skill == 10300..10399.
+	//Bosses are excluded from the skill legend.
 
 	10246 = Hellhound
 	10346 = Cerberus
