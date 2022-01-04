@@ -11,6 +11,8 @@ version "2.5"
 #include "zscript/Actors.zsc"
 #include "zscript/Weapons.zsc"
 
+#include "zscript/MonstersBaseDRRP.zsc"
+
 // APIs
 #include "zscript/DRRP_API/APIWeapons.zsc"
 #include "zscript/DRRP_API/APIConversation.zsc"
