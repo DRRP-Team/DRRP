@@ -199,6 +199,12 @@ class Cacodemon_BaseDRRP: Cacodemon {
     }
 }
 
+class DRRPRevenantTracer: RevenantTracer replaces RevenantTracer {
+    Default {
+        DamageFunction (6 * Random( 1, 8 ));
+    }
+}
+
 class Revenant_BaseDRRP: Revenant {
     Default {
         Scale 0.74;

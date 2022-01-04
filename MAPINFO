@@ -8,4 +8,5 @@
 include MapInfos/GameInfo.txt    // Game information lump (exclude "StartupTitle");
 include MapInfos/MapsInfo.txt    // Maps, clusters, intermissions, e. t. c. lump;
 include MapInfos/DmgTypes.txt    // Damage types lump;
-include MapInfos/Intermis.txt    // Intermissions lump.
+include MapInfos/Intermis.txt    // Intermissions lump;
+include MapInfos/DoomEdNm.txt 	 // DoomEdNumbers.
