@@ -68,6 +68,7 @@ OptionMenu "Misc" {
     Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
     Option "$DRRP_D_MENU_GIBS_ENABLE",  "drrp_enable_extended_gibs", "ONOFF"
     Option "$DRRP_D_MENU_BFLASH_ENABLE",  "drrp_enable_blood_flashes", "ONOFF"
+    Option "Low health indicator (blinks/sounds)",  "drrp_enable_low_health_indicator", "ONOFF"
     Option "$DRRP_D_MENU_LIGHTS_TYPE", "drrp_lights_wrapper_type", LightsWrapperType
     StaticText " "
     Option "$DRRP_D_MENU_MISC_FREELOOK", "sv_freelook", "YesNo"
