@@ -325,6 +325,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
             Loop
         Use:
             TNT1 A 0
+            TNT1 A 0 A_SetBlend( "7777FF", 0.5, 17 )
             TNT1 A 0 HealThing( 999 )
             TNT1 A 0 A_GiveInventory( "DRRPBasicArmor", 999 )
             Stop
