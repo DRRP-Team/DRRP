@@ -240,6 +240,7 @@ class DRRPExplosion: Actor { // Has Decorate heir (DRRPExplosion_Decorate).
     }
 }
 
+/*
 class DRRPGeneralRandomSpawner: RandomSpawner {
     Default {
         DropItem "DRRPHealthVial";  // 33% of 40%;
@@ -292,3 +293,4 @@ class DRRPGeneralRandomSpawner: RandomSpawner {
     } // of override void PostSpawn( Actor spawned ) {
 
 } // of class DRRPGeneralRandomSpawner: RandomSpawner {
+*/
