@@ -47,6 +47,7 @@ III) 40%:
 */
 
 
+
 class Dog_BaseDRRP: MBFHelperDog {
     Default {
         +LOOKALLAROUND;
@@ -199,11 +200,6 @@ class Cacodemon_BaseDRRP: Cacodemon {
     }
 }
 
-class DRRPRevenantTracer: RevenantTracer replaces RevenantTracer {
-    Default {
-        DamageFunction (6 * Random( 1, 8 ));
-    }
-}
 
 class Revenant_BaseDRRP: Revenant {
     Default {
@@ -238,33 +234,83 @@ class Revenant_BaseDRRP: Revenant {
     }
 }
 
-class PainShot: FatShot {
-    Default {
-        Damage 2;
-    }
-}
+class PainElemental_BaseDRRP: PainElemental {
+    class<Actor> painDeathSkillSpawnClass;
+    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
-class PainElemental_BaseDRRP: PainElemental_ZSPatch {
-    const baseDamage = 10;
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+    Property SkullClassSpawn: painDeathSkillSpawnClass;
 
     Default {
         +LOOKALLAROUND;
 
         DamageFactor "DRRPFireDmg", 0.0;
         DamageFactor "DRRPPhysicalDmg", 2.0;
+        MeleeRange 48.0;
+        PainElemental_BaseDRRP.MinDamage 10;
+        PainElemental_BaseDRRP.MaxDamage 20;
+        PainElemental_BaseDRRP.MeleeMinDamage 10;
+        PainElemental_BaseDRRP.MeleeMaxDamage 20;
+        PainElemental_BaseDRRP.SkullClassSpawn "DRRPLostSoul";
     }
 
+
+    // Lost souls and its derivatives must not die right after default A_PainDie() spawning.
+    action void A_DRRP_PainSpawnSoul( class<Actor> spawnee ) {
+        if ( target && IsFriend( target ) ) // And I thought you were my friend!
+            bFriendly = false;
+
+        A_PainAttack( spawnee );
+    } // of action void A_DRRP_PainDie( class<Actor> spawnee ) {
+
+    void A_DRRP_PainAttack( void ) {
+        if ( target ) {
+            if ( CheckMeleeRange() ) {
+                A_CustomMeleeAttack( Random( DRRPMeleeMinDamage, DRRPMeleeMaxDamage ) );
+            } else {
+                DRRPBaseProjectile projectile;
+                A_FaceTarget();
+
+                if ( projectile = DRRPBaseProjectile( SpawnMissile( target, "DRRPPainShot" ) ) )
+                    projectile.SetDRRPDamage( DRRPMinDamage, DRRPMaxDamage );
+            }
+        }
+    } // of void A_DRRP_PainShot( void ) {
+
     States {
+    Melee:
     Missile:
         PAIN D 5 A_FaceTarget;
         PAIN E 5 A_FaceTarget;
         PAIN F 5 Bright A_FaceTarget;
-        PAIN F 0 Bright A_CustomComboAttack("PainShot", 32, 2 * Random(1, 5));
+        PAIN F 0 Bright A_DRRP_PainAttack();
         Goto See;
+    Death:
+        PAIN H 8 Bright;
+        PAIN I 8 Bright {
+            A_Scream();
+            A_NoBlocking();
+            A_DRRP_PainSpawnSoul( painDeathSkillSpawnClass );
+        }
+        PAIN J 8 Bright;
+        PAIN K 8 Bright A_DRRP_PainSpawnSoul( painDeathSkillSpawnClass );
+        PAIN L 8 Bright;
+        PAIN M 8 Bright A_DRRP_PainSpawnSoul( painDeathSkillSpawnClass );
+        PAIN Z -1;
+        Stop;
     }
 }
 
 class Fatso_BaseDRRP: Fatso {
+    int fatAttackCounter;
+    int DRRPMinDamage, DRRPMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+
     Default {
         Scale 0.92;
         Radius 30;
@@ -272,24 +318,59 @@ class Fatso_BaseDRRP: Fatso {
         +LOOKALLAROUND;
 
         DamageFactor "DRRPRocketDmg", 2.5;
+        Fatso_BaseDRRP.MinDamage 10;
+        Fatso_BaseDRRP.MinDamage 20;
     }
+
+    void A_DRRP_FatPrepare( void ) {
+        fatAttackCounter = 0;
+    }
+
+    void A_DRRP_FatAttack( void ) {
+        if ( target ) {
+            double angle1;
+            DRRPBaseProjectile fatMissile;
+
+            switch ( fatAttackCounter ) {
+                case 0: angle1 = -11.25; break;
+                case 1: angle1 = 0.0; break;
+                case 2: default: angle1 = -5.625; break;
+            }
+
+            A_FaceTarget();
+
+            for ( int i = 0; i < 2; i++ ) {
+                if ( fatMissile = DRRPBaseProjectile( SpawnMissile( target, "DRRPFatShot" ) ) ) {
+                    fatMissile.angle += angle1 + i * 11.25;
+                    fatMissile.VelFromAngle();
+                    fatMissile.SetDRRPDamage( DRRPMinDamage, DRRPMaxDamage );
+                }
+            }
+
+            fatAttackCounter++;
+        }
+    } // of void A_DRRP_FatAttack( void ) {
 
     States {
     Missile:
-        FATT G 20 A_FatRaise;
-        FATT H 10 Bright A_FatAttack1( "DRRPFatShot" );
+        FATT G 20 {
+            A_FatRaise();
+            A_DRRP_FatPrepare();
+        }
+        FATT H 10 Bright A_DRRP_FatAttack();
         FATT IG 5 A_FaceTarget;
-        FATT H 10 Bright A_FatAttack2( "DRRPFatShot" );
+        FATT H 10 Bright A_DRRP_FatAttack();
         FATT IG 5 A_FaceTarget;
-        FATT H 10 Bright A_FatAttack3( "DRRPFatShot" );
+        FATT H 10 Bright A_DRRP_FatAttack();
         FATT IG 5 A_FaceTarget;
         Goto See;
     }
 }
 
 class ArchVile_BaseDRRP: ArchVile {
-    const vileInitialDamage = 10;
-    const vileBlastDamageNRadius = 0; // We don't need in DRRP for *viles explosive damage
+    int vileMinDamage, vileMaxDamage;
+    Property MinDamage: vileMinDamage;
+    Property MaxDamage: vileMaxDamage;
 
     Default {
         Scale 0.7;
@@ -299,6 +380,8 @@ class ArchVile_BaseDRRP: ArchVile {
         DamageFactor "DRRPAxeDmg", 10.0;
         DamageFactor "DRRPFireExtDmg", 4.0;
         DamageFactor "DRRPFireDmg", 0.0;
+        ArchVile_BaseDRRP.MinDamage 10;
+        ArchVile_BaseDRRP.MaxDamage 20;
     }
 
     States {
@@ -314,7 +397,7 @@ class ArchVile_BaseDRRP: ArchVile {
         VILE G 10 Bright A_FaceTarget;
         VILE H 8 Bright A_VileTarget;
         VILE IJKLMN 8 Bright A_FaceTarget;
-        VILE O 8 Bright A_VileAttack( "vile/stop", vileInitialDamage, vileBlastDamageNRadius, vileBlastDamageNRadius, 0.2 );
+        VILE O 8 Bright A_VileAttack( "vile/stop", Random( vileMinDamage, vileMaxDamage ), 0, 1, 0.2 );
         VILE P 20 Bright;
         Goto See;
     }

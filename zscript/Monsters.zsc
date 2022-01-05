@@ -325,27 +325,6 @@ class ImpLord: DoomImp_BaseDRRP {
 }
 
 
-class DRRPImplingBall: DoomImpBall {
-    Default {
-        DamageFunction (Random( 1, 3 ) * 3 + 3);
-        Scale 0.5;
-    }
-}
-
-class DRRPImpBall: DoomImpBall replaces DoomImpBall {
-    Default {
-        DamageFunction (Random( 1, 3 ) * 6 + 3);
-    }
-}
-
-class DRRPImpLordBall: DoomImpBall {
-    Default {
-        DamageFunction (Random( 1, 3 ) * 9 + 3);
-        Scale 1.5;
-    }
-}
-
-
 // Lost souls -------------------------------------------------------------------------
 
 class Phantom: LostSoul_BaseDRRP {
@@ -592,29 +571,6 @@ class Wretched: Cacodemon_BaseDRRP {
     }
 }
 
-class DRRPMalwrathBall: CacodemonBall {
-    Default {
-        DamageFunction (Random( 2, 5 ));
-        Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231";
-        Scale 0.8;
-    }
-}
-
-class DRRPCacodemonBall: CacodemonBall replaces CacodemonBall {
-    Default {
-        DamageFunction (4 * Random( 3, 10 ) + 7);
-        Scale 1.0;
-    }
-}
-
-class DRRPWretchedBall: CacodemonBall {
-    Default {
-        DamageFunction (7 * Random( 5, 10 ) + 10);
-        Translation "168:191=193:207", "167:167=244:244", "16:47=193:201", "192:207=168:184", "240:242=185:191", "223:223=207:207", "0:2=246:246";
-        Scale 1.2;
-    }
-}
-
 
 // Revenants --------------------------------------------------------------------------
 
@@ -703,7 +659,6 @@ class DRRPRevenant: Revenant_BaseDRRP replaces Revenant { // Huesos (Spanish)
 }
 
 
-
 // Pain Elementals --------------------------------------------------------------------
 // [McM]: Really? The mightiest pain elemental has least DoomEdNum?
 
@@ -725,22 +680,12 @@ class Beholder: PainElemental_BaseDRRP {
         PainSound "monsters/beholder/pain";
         DeathSound "monsters/beholder/death";
         ActiveSound "monsters/beholder/active";
-    }
 
-    States {
-    Death:
-        PAIN H 8 Bright;
-        PAIN I 8 Bright {
-            A_Scream();
-            A_NoBlocking();
-            A_DRRP_PainSpawnSoul( "Phantom" );
-        }
-        PAIN J 8 Bright;
-        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "Phantom" );
-        PAIN L 8 Bright;
-        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "Phantom" );
-        PAIN Z -1;
-        Stop;
+        PainElemental_BaseDRRP.MinDamage 10;
+        PainElemental_BaseDRRP.MaxDamage 25;
+        PainElemental_BaseDRRP.MeleeMinDamage 5;
+        PainElemental_BaseDRRP.MeleeMaxDamage 35;
+        PainElemental_BaseDRRP.SkullClassSpawn "Phantom";
     }
 }
 
@@ -757,22 +702,12 @@ class Rahovart: PainElemental_BaseDRRP {
         Tag "$DRRP_M_RAHOVART";
         Health 90; // %Pain Elemental 2%
         Translation "128:143=%[0.00,0.00,0.00]:[0.39,0.53,1.72]", "13:15=9:10", "64:79=%[0.00,0.00,0.00]:[0.47,0.61,1.79]", "13:15=%[0.00,0.00,0.00]:[0.12,0.22,1.14]", "236:239=%[0.00,0.00,0.00]:[0.22,0.31,1.01]", "1:2=12:12", "167:167=12:12", "165:165=159:159";
-    }
 
-    States {
-    Death:
-        PAIN H 8 Bright;
-        PAIN I 8 Bright {
-            A_Scream();
-            A_NoBlocking();
-            A_DRRP_PainSpawnSoul( "DRRPLostSoul" );
-        }
-        PAIN J 8 Bright;
-        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "DRRPLostSoul" );
-        PAIN L 8 Bright;
-        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "DRRPLostSoul" );
-        PAIN Z -1;
-        Stop;
+        PainElemental_BaseDRRP.MinDamage 10;
+        PainElemental_BaseDRRP.MaxDamage 45;
+        PainElemental_BaseDRRP.MeleeMinDamage 10;
+        PainElemental_BaseDRRP.MeleeMaxDamage 50;
+        PainElemental_BaseDRRP.SkullClassSpawn "DRRPLostSoul";
     }
 }
 
@@ -793,25 +728,14 @@ class DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental {
         PainSound "monsters/painelemental/pain";
         DeathSound "monsters/painelemental/death";
         ActiveSound "monsters/painelemental/active";
-    }
 
-    States {
-    Death:
-        PAIN H 8 Bright;
-        PAIN I 8 Bright {
-            A_Scream();
-            A_NoBlocking();
-            A_DRRP_PainSpawnSoul( "Nightmare" );
-        }
-        PAIN J 8 Bright;
-        PAIN K 8 Bright A_DRRP_PainSpawnSoul( "Nightmare" );
-        PAIN L 8 Bright;
-        PAIN M 8 Bright A_DRRP_PainSpawnSoul( "Nightmare" );
-        PAIN Z -1;
-        Stop;
+        PainElemental_BaseDRRP.MinDamage 20;
+        PainElemental_BaseDRRP.MaxDamage 55;
+        PainElemental_BaseDRRP.MeleeMinDamage 15;
+        PainElemental_BaseDRRP.MeleeMaxDamage 70;
+        PainElemental_BaseDRRP.SkullClassSpawn "Nightmare";
     }
 }
-
 
 
 // ManCubuses -------------------------------------------------------------------------
@@ -835,6 +759,8 @@ class Behemoth: Fatso_BaseDRRP {
         PainSound "monsters/behemoth/pain";
         DeathSound "monsters/behemoth/death";
         ActiveSound "monsters/behemoth/active";
+        Fatso_BaseDRRP.MinDamage 15;
+        Fatso_BaseDRRP.MaxDamage 40;
     }
 }
 
@@ -849,6 +775,8 @@ class Mancubus: Fatso_BaseDRRP replaces Fatso {
         Obituary "$DRRP_OB_MANCUBUS";
         Tag "$DRRP_M_MANCUBUS";
         Health 120; // %Mancubus 2%
+        Fatso_BaseDRRP.MinDamage 25;
+        Fatso_BaseDRRP.MaxDamage 75;
     }
 }
 
@@ -869,20 +797,14 @@ class Druj: Fatso_BaseDRRP {
         PainSound "monsters/druj/pain";
         DeathSound "monsters/druj/death";
         ActiveSound "monsters/druj/active";
-    }
-}
-
-class DRRPFatShot: FatShot replaces FatShot {
-    Default {
-        DamageFunction (8 * Random( 1, 8 ));
+        Fatso_BaseDRRP.MinDamage 30;
+        Fatso_BaseDRRP.MaxDamage 130;
     }
 }
 
 // Arch-Viles -------------------------------------------------------------------------
 
 class Infernis: ArchVile_BaseDRRP {
-    const vileInitialDamage = 20;
-
     Default {
         //$Category DMonsters
         //$Sprite VILEA1D1
@@ -899,12 +821,12 @@ class Infernis: ArchVile_BaseDRRP {
         PainSound "monsters/infernis/pain";
         DeathSound "monsters/infernis/death";
         ActiveSound "monsters/infernis/active";
+        ArchVile_BaseDRRP.MinDamage 10;
+        ArchVile_BaseDRRP.MaxDamage 30;
     }
 }
 
 class DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile {
-    const vileInitialDamage = 40;
-
     Default {
         //$Category DMonsters
         //$Sprite VILEA1D1
@@ -915,12 +837,12 @@ class DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile {
         Obituary "$DRRP_OB_ARCHVILE";
         Tag "$DRRP_M_ARCHVILE";
         Health 85; // %Vile 2%
+        ArchVile_BaseDRRP.MinDamage 35;
+        ArchVile_BaseDRRP.MaxDamage 65;
     }
 }
 
 class Apollyon: ArchVile_BaseDRRP {
-    const vileInitialDamage = 60;
-
     Default {
         //$Category DMonsters
         //$Sprite VILEA1D1
@@ -937,6 +859,8 @@ class Apollyon: ArchVile_BaseDRRP {
         PainSound "monsters/apollyon/pain";
         DeathSound "monsters/apollyon/death";
         ActiveSound "monsters/apollyon/active";
+        ArchVile_BaseDRRP.MinDamage 60;
+        ArchVile_BaseDRRP.MaxDamage 90;
     }
 }
 
@@ -1022,27 +946,6 @@ class DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell {
             Goto See;
     }
 }
-
-class DRRPOgreBall: BaronBall {
-    Default {
-        DamageFunction (2 * Random( 5, 8 ));
-        Translation "112:127=176:191", "128:143=%[0.00,0.00,0.00]:[0.77,0.82,0.64]", "144:151=%[0.00,0.00,0.00]:[0.80,0.85,0.65]", "48:63=%[0.00,0.00,0.00]:[0.76,0.82,0.64]", "13:15=%[0.00,0.00,0.00]:[0.65,0.69,0.54]";
-    }
-}
-
-class DRRPHellKnightBall: BaronBall {
-    Default {
-        DamageFunction (4 * Random( 5, 8 ));
-    }
-}
-
-class DRRPBaronBall: BaronBall replaces BaronBall {
-    Default {
-        DamageFunction (8 * Random( 5, 8 ));
-        Translation "112:127=160:167";
-    }
-}
-
 
 
 // Cyberdemon & Kronos ----------------------------------------------------------------
@@ -1134,4 +1037,4 @@ class Kronos: Actor {
             KRON Z -1;
             Stop;
     }
-}
+} // of class Kronos: Actor {

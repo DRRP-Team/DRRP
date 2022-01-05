@@ -14,19 +14,6 @@ class DRRPCharacter_ZSPatch: Actor {
     }
 }
 
-class PainElemental_ZSPatch: PainElemental {
-
-    // Lost souls and its derivatives must not die right after default A_PainDie() spawning.
-    action void A_DRRP_PainSpawnSoul( class<Actor> spawnee ) {
-
-        if ( target && IsFriend( target ) ) // And I thought you were my friend!
-            bFriendly = false;
-
-        A_PainAttack( spawnee );
-    } // of action void A_DRRP_PainDie( class<Actor> spawnee ) {
-
-}
-
 
 class DRRPBaseMedikit: HealthPickup {
 
