@@ -21,8 +21,8 @@ class Hellhound: Dog_BaseDRRP replaces MBFHelperDog {
         Health 25; // %Dog 1%
         Tag "$DRRP_M_HELLHOUND";
         Obituary "$DRRP_OB_HELLHOUND";
-        Dog_BaseDRRP.MeleeMinDamage 5;
-        Dog_BaseDRRP.MeleeMaxDamage 17;
+        Dog_BaseDRRP.MeleeMinDamage 5; // %Dog 1 MeleeMinDamage%
+        Dog_BaseDRRP.MeleeMaxDamage 17; // %Dog 1 MeleeMaxDamage%
     }
 }
 
@@ -42,8 +42,8 @@ class Cerberus: Dog_BaseDRRP {
         ActiveSound  "monsters/cerberus/see";
         SeeSound     "monsters/cerberus/bark";
         AttackSound  "monsters/cerberus/bark";
-        Dog_BaseDRRP.MeleeMinDamage 9;
-        Dog_BaseDRRP.MeleeMaxDamage 18;
+        Dog_BaseDRRP.MeleeMinDamage 9; // %Dog 2 MeleeMinDamage%
+        Dog_BaseDRRP.MeleeMaxDamage 18; // %Dog 2 MeleeMaxDamage%
     }
 }
 
@@ -64,8 +64,8 @@ class DemonWolf: Dog_BaseDRRP {
         ActiveSound "monsters/demonwolf/see";
         SeeSound    "monsters/demonwolf/bark";
         AttackSound "monsters/demonwolf/bark";
-        Dog_BaseDRRP.MeleeMinDamage 13;
-        Dog_BaseDRRP.MeleeMaxDamage 40;
+        Dog_BaseDRRP.MeleeMinDamage 13; // %Dog 3 MeleeMinDamage%
+        Dog_BaseDRRP.MeleeMaxDamage 40; // %Dog 3 MeleeMaxDamage%
     }
 }
 
@@ -89,8 +89,9 @@ class ZombiePvt: ZombieMan_BaseDRRP replaces ZombieMan {
         PainSound "monsters/zombiepvt/pain";
         DeathSound "monsters/zombiepvt/death";
         ActiveSound "monsters/zombiepvt/active";
-        ZombieMan_BaseDRRP.MinDamage 11; // Shoots one bullet.
-        ZombieMan_BaseDRRP.MaxDamage 20;
+        // Shoots one bullet.
+        ZombieMan_BaseDRRP.MinDamage 11; // %Zombie 1 MinDamage%
+        ZombieMan_BaseDRRP.MaxDamage 20; // %Zombie 1 MaxDamage%
     }
 }
 
@@ -106,8 +107,9 @@ class ZombieLt: ShotgunGuy_BaseDRRP replaces ShotgunGuy {
         Tag "$DRRP_M_ZOMBIELT";
         Health 75; // %Zombie 2%
         Translation "96:111=%[0.00,0.00,0.00]:[0.98,1.25,1.76]", "16:47=%[0.00,0.00,0.00]:[0.31,0.59,0.94]", "48:79=%[0.00,0.00,0.00]:[0.80,0.93,1.16]", "178:178=181:181", "168:175=193:193", "208:223=%[0.00,0.00,0.00]:[0.83,1.03,1.28]", "160:167=%[0.00,0.00,0.00]:[0.76,0.95,1.28]" ;
-        ShotgunGuy_BaseDRRP.MinDamage 4; // Shoots three bullets, every has its own random damage.
-        ShotgunGuy_BaseDRRP.MaxDamage 19;
+        // Shoots three bullets, every has its own random damage.
+        ShotgunGuy_BaseDRRP.MinDamage 4; // %Zombie 2 MinDamage%
+        ShotgunGuy_BaseDRRP.MaxDamage 19; // %Zombie 2 MaxDamage%
     }
 }
 
@@ -128,8 +130,9 @@ class ZombieCpt: ZombieMan_BaseDRRP {
         PainSound "monsters/zombiecpt/pain";
         DeathSound "monsters/zombiecpt/death";
         ActiveSound "monsters/zombiecpt/active";
-        ZombieMan_BaseDRRP.MinDamage 15; // Shoots one bullet.
-        ZombieMan_BaseDRRP.MaxDamage 28;
+        // Shoots one bullet.
+        ZombieMan_BaseDRRP.MinDamage 15; // %Zombie 3 MinDamage%
+        ZombieMan_BaseDRRP.MaxDamage 28; // %Zombie 3 MaxDamage%
     }
 }
 
@@ -153,8 +156,8 @@ class Troop: ChaingunGuy_BaseDRRP {
         PainSound "monsters/troop/pain";
         DeathSound "monsters/troop/death";
         ActiveSound "monsters/troop/active";
-        ChaingunGuy_BaseDRRP.MinDamage 1;
-        ChaingunGuy_BaseDRRP.MaxDamage 9;
+        ChaingunGuy_BaseDRRP.MinDamage 1; // %Commando 1 MinDamage%
+        ChaingunGuy_BaseDRRP.MaxDamage 9; // %Commando 1 MaxDamage%
         ChaingunGuy_BaseDRRP.BackfireChance 32; // (0 = totally avoid backfire) .. (255 = backfire always after pain).
     }
 }
@@ -171,8 +174,8 @@ class Commando: ChaingunGuy_BaseDRRP {
         Tag "$DRRP_M_COMMANDO";
         Health 75; // %Commando 2%
         Translation "16:47=197:207";
-        ChaingunGuy_BaseDRRP.MinDamage 3;
-        ChaingunGuy_BaseDRRP.MaxDamage 17;
+        ChaingunGuy_BaseDRRP.MinDamage 3; // %Commando 2 MinDamage%
+        ChaingunGuy_BaseDRRP.MaxDamage 17; // %Commando 2 MaxDamage%
         ChaingunGuy_BaseDRRP.BackfireChance 64;
     }
 }
@@ -193,8 +196,8 @@ class Assassin: ChaingunGuy_BaseDRRP replaces ChaingunGuy {
         PainSound "monsters/assassin/pain";
         DeathSound "monsters/assassin/death";
         ActiveSound "monsters/assassin/active";
-        ChaingunGuy_BaseDRRP.MinDamage 5;
-        ChaingunGuy_BaseDRRP.MaxDamage 23;
+        ChaingunGuy_BaseDRRP.MinDamage 5; // %Commando 3 MinDamage%
+        ChaingunGuy_BaseDRRP.MaxDamage 23; // %Commando 3 MaxDamage%
         ChaingunGuy_BaseDRRP.BackfireChance 96;
     }
 }
@@ -221,10 +224,10 @@ class Impling: DoomImp_BaseDRRP {
         PainSound "monsters/impling/pain";
         DeathSound "monsters/impling/death";
         ActiveSound "monsters/impling/active";
-        DoomImp_BaseDRRP.MinDamage 6;
-        DoomImp_BaseDRRP.MaxDamage 12;
-        DoomImp_BaseDRRP.MeleeMinDamage 5;
-        DoomImp_BaseDRRP.MeleeMaxDamage 10;
+        DoomImp_BaseDRRP.MinDamage 6; // %Imp 1 MinDamage%
+        DoomImp_BaseDRRP.MaxDamage 12; // %Imp 1 MaxDamage%
+        DoomImp_BaseDRRP.MeleeMinDamage 5; // %Imp 1 MeleeMinDamage%
+        DoomImp_BaseDRRP.MeleeMaxDamage 10; // %Imp 1 MeleeMaxDamage%
     }
 }
 
@@ -240,10 +243,10 @@ class DRRPImp: DoomImp_BaseDRRP replaces DoomImp {
         HitObituary "$DRRP_OBM_IMP";
         Tag "$DRRP_M_IMP";
         Health 80; // %Imp 2%
-        DoomImp_BaseDRRP.MinDamage 9;
-        DoomImp_BaseDRRP.MaxDamage 25;
-        DoomImp_BaseDRRP.MeleeMinDamage 15;
-        DoomImp_BaseDRRP.MeleeMaxDamage 30;
+        DoomImp_BaseDRRP.MinDamage 9; // %Imp 2 MinDamage%
+        DoomImp_BaseDRRP.MaxDamage 25; // %Imp 2 MaxDamage%
+        DoomImp_BaseDRRP.MeleeMinDamage 15; // %Imp 2 MeleeMinDamage%
+        DoomImp_BaseDRRP.MeleeMaxDamage 30; // %Imp 2 MeleeMaxDamage%
     }
 }
 
@@ -266,10 +269,10 @@ class ImpLord: DoomImp_BaseDRRP {
         PainSound "monsters/implord/pain";
         DeathSound "monsters/implord/death";
         ActiveSound "monsters/implord/active";
-        DoomImp_BaseDRRP.MinDamage 15;
-        DoomImp_BaseDRRP.MaxDamage 40;
-        DoomImp_BaseDRRP.MeleeMinDamage 30;
-        DoomImp_BaseDRRP.MeleeMaxDamage 48;
+        DoomImp_BaseDRRP.MinDamage 15; // %Imp 3 MinDamage%
+        DoomImp_BaseDRRP.MaxDamage 40; // %Imp 3 MaxDamage%
+        DoomImp_BaseDRRP.MeleeMinDamage 30; // %Imp 3 MeleeMinDamage%
+        DoomImp_BaseDRRP.MeleeMaxDamage 48; // %Imp 3 MeleeMaxDamage%
     }
 }
 
@@ -287,7 +290,9 @@ class Phantom: LostSoul_BaseDRRP {
         Obituary "$DRRP_OB_PHANTOM";
         Tag "$DRRP_M_PHANTOM";
         Health 35; // %Soul 1%
-        DamageFunction (Random( 1, 3 ) * 8 + 3); // [McM]: Is this formula necessary to be splitted into "MinDamage..MaxDamage"?
+        DamageFunction (Random( 1, 3 ) * 8 + 3);
+        // [McM]: Is this formula necessary to be splitted into "MinDamage..MaxDamage"?
+        // [PRO]: Sure. I've already calculated it. You can use DRRP Balance spreadsheet values
         Translation "128:151=152:159", "64:79=152:159";
 
         AttackSound "monsters/phantom/melee";
@@ -356,8 +361,8 @@ class BullDemon: Demon_BaseDRRP {
         PainSound "monsters/bulldemon/pain";
         DeathSound "monsters/bulldemon/death";
         ActiveSound "monsters/bulldemon/active";
-        Demon_BaseDRRP.MeleeMinDamage 4;
-        Demon_BaseDRRP.MeleeMaxDamage 28;
+        Demon_BaseDRRP.MeleeMinDamage 4; // %Bull 1 MeleeMinDamage%
+        Demon_BaseDRRP.MeleeMaxDamage 28; // %Bull 1 MeleeMaxDamage%
     }
 }
 
@@ -372,8 +377,8 @@ class Pinky: Demon_BaseDRRP replaces Demon {
         Obituary "$DRRP_OB_PINKY";
         Tag "$DRRP_M_PINKY";
         Health 100; // %Bull 2%
-        Demon_BaseDRRP.MeleeMinDamage 8;
-        Demon_BaseDRRP.MeleeMaxDamage 40;
+        Demon_BaseDRRP.MeleeMinDamage 8; // %Bull 2 MeleeMinDamage%
+        Demon_BaseDRRP.MeleeMaxDamage 40; // %Bull 2 MeleeMaxDamage%
     }
 }
 
@@ -395,8 +400,8 @@ class Belphegor: Demon_BaseDRRP {
         PainSound "monsters/belphegor/pain";
         DeathSound "monsters/belphegor/death";
         ActiveSound "monsters/belphegor/active";
-        Demon_BaseDRRP.MeleeMinDamage 23;
-        Demon_BaseDRRP.MeleeMaxDamage 47;
+        Demon_BaseDRRP.MeleeMinDamage 23; // %Bull 3 MeleeMinDamage%
+        Demon_BaseDRRP.MeleeMaxDamage 47; // %Bull 3 MeleeMaxDamage%
     }
 
     States {
@@ -433,10 +438,10 @@ class Malwrath: Cacodemon_BaseDRRP {
         PainSound "monsters/malwrath/pain";
         DeathSound "monsters/malwrath/death";
         ActiveSound "monsters/malwrath/active";
-        Cacodemon_BaseDRRP.MinDamage 3;
-        Cacodemon_BaseDRRP.MaxDamage 9;
-        Cacodemon_BaseDRRP.MeleeMinDamage 2;
-        Cacodemon_BaseDRRP.MeleeMaxDamage 7;
+        Cacodemon_BaseDRRP.MinDamage 3; // %Cacodemon 1 MinDamage%
+        Cacodemon_BaseDRRP.MaxDamage 9; // %Cacodemon 1 MaxDamage%
+        Cacodemon_BaseDRRP.MeleeMinDamage 2; // %Cacodemon 1 MeleeMinDamage%
+        Cacodemon_BaseDRRP.MeleeMaxDamage 7; // %Cacodemon 1 MeleeMaxDamage%
         Cacodemon_BaseDRRP.BallType "DRRPMalwrathBall";
     }
 }
@@ -453,10 +458,10 @@ class DRRPCacodemon: Cacodemon_BaseDRRP replaces Cacodemon {
         HitObituary "$DRRP_OBM_CACODEMON";
         Tag "$DRRP_M_CACODEMON";
         Health 80; // %Cacodemon 2%
-        Cacodemon_BaseDRRP.MinDamage 19;
-        Cacodemon_BaseDRRP.MaxDamage 47;
-        Cacodemon_BaseDRRP.MeleeMinDamage 15;
-        Cacodemon_BaseDRRP.MeleeMaxDamage 45;
+        Cacodemon_BaseDRRP.MinDamage 19; // %Cacodemon 1 MinDamage%
+        Cacodemon_BaseDRRP.MaxDamage 47; // %Cacodemon 1 MaxDamage%
+        Cacodemon_BaseDRRP.MeleeMinDamage 15; // %Cacodemon 1 MeleeMinDamage%
+        Cacodemon_BaseDRRP.MeleeMaxDamage 45; // %Cacodemon 1 MeleeMaxDamage%
         Cacodemon_BaseDRRP.BallType "DRRPCacodemonBall";
     }
 }
@@ -479,10 +484,10 @@ class Wretched: Cacodemon_BaseDRRP {
         PainSound "monsters/wretched/pain";
         DeathSound "monsters/wretched/death";
         ActiveSound "monsters/wretched/active";
-        Cacodemon_BaseDRRP.MinDamage 45;
-        Cacodemon_BaseDRRP.MaxDamage 80;
-        Cacodemon_BaseDRRP.MeleeMinDamage 20;
-        Cacodemon_BaseDRRP.MeleeMaxDamage 80;
+        Cacodemon_BaseDRRP.MinDamage 45; // %Cacodemon 3 MinDamage%
+        Cacodemon_BaseDRRP.MaxDamage 80; // %Cacodemon 3 MaxDamage%
+        Cacodemon_BaseDRRP.MeleeMinDamage 20; // %Cacodemon 3 MeleeMinDamage%
+        Cacodemon_BaseDRRP.MeleeMaxDamage 80; // %Cacodemon 3 MeleeMaxDamage%
         Cacodemon_BaseDRRP.BallType "DRRPWretchedBall";
     }
 }
@@ -509,10 +514,10 @@ class Ghoul: Revenant_BaseDRRP {
         DeathSound "monsters/ghoul/death";
         ActiveSound "monsters/ghoul/active";
 
-        Revenant_BaseDRRP.MinDamage 7;
-        Revenant_BaseDRRP.MaxDamage 29;
-        Revenant_BaseDRRP.MeleeMinDamage 5;
-        Revenant_BaseDRRP.MeleeMaxDamage 32;
+        Revenant_BaseDRRP.MinDamage 7; // %Revenant 1 MinDamage%
+        Revenant_BaseDRRP.MaxDamage 29; // %Revenant 1 MaxDamage%
+        Revenant_BaseDRRP.MeleeMinDamage 5; // %Revenant 1 MeleeMinDamage%
+        Revenant_BaseDRRP.MeleeMaxDamage 32; // %Revenant 1 MeleeMaxDamage%
     }
 }
 
@@ -529,10 +534,10 @@ class Fiend: Revenant_BaseDRRP {
         Tag "$DRRP_M_FIEND";
         Health 100; // %Revenant 2%
         Translation "80:87=@77[33,32,74]", "88:92=@85[33,32,74]", "93:95=@77[33,32,74]", "4:4=@41[33,32,74]", "32:39=[132,16,82]:[153,18,95]", "40:47=[107,12,90]:[107,12,90]", "232:235=[153,18,95]:[191,22,119]", "128:143=@77[48,55,140]", "144:151=@100[48,55,140]", "152:159=@100[57,65,165]", "160:167=@60[57,65,165]", "64:79=[102,139,163]:[27,26,64]";
-        Revenant_BaseDRRP.MinDamage 15;
-        Revenant_BaseDRRP.MaxDamage 40;
-        Revenant_BaseDRRP.MeleeMinDamage 13;
-        Revenant_BaseDRRP.MeleeMaxDamage 50;
+        Revenant_BaseDRRP.MinDamage 15; // %Revenant 2 MinDamage%
+        Revenant_BaseDRRP.MaxDamage 40; // %Revenant 2 MaxDamage%
+        Revenant_BaseDRRP.MeleeMinDamage 13; // %Revenant 2 MeleeMinDamage%
+        Revenant_BaseDRRP.MeleeMaxDamage 50; // %Revenant 2 MeleeMaxDamage%
     }
 }
 
@@ -554,10 +559,10 @@ class DRRPRevenant: Revenant_BaseDRRP replaces Revenant {
         PainSound "monsters/revenant/pain";
         DeathSound "monsters/revenant/death";
         ActiveSound "monsters/revenant/active";
-        Revenant_BaseDRRP.MinDamage 25;
-        Revenant_BaseDRRP.MaxDamage 80;
-        Revenant_BaseDRRP.MeleeMinDamage 22;
-        Revenant_BaseDRRP.MeleeMaxDamage 90;
+        Revenant_BaseDRRP.MinDamage 25; // %Revenant 3 MinDamage%
+        Revenant_BaseDRRP.MaxDamage 80; // %Revenant 3 MaxDamage%
+        Revenant_BaseDRRP.MeleeMinDamage 22; // %Revenant 3 MeleeMinDamage%
+        Revenant_BaseDRRP.MeleeMaxDamage 90; // %Revenant 3 MeleeMaxDamage%
     }
 }
 
@@ -584,10 +589,10 @@ class Beholder: PainElemental_BaseDRRP {
         DeathSound "monsters/beholder/death";
         ActiveSound "monsters/beholder/active";
 
-        PainElemental_BaseDRRP.MinDamage 10;
-        PainElemental_BaseDRRP.MaxDamage 25;
-        PainElemental_BaseDRRP.MeleeMinDamage 5;
-        PainElemental_BaseDRRP.MeleeMaxDamage 35;
+        PainElemental_BaseDRRP.MinDamage 10; // %Pain Elemental 1 MinDamage%
+        PainElemental_BaseDRRP.MaxDamage 25; // %Pain Elemental 1 MaxDamage%
+        PainElemental_BaseDRRP.MeleeMinDamage 5; // %Pain Elemental 1 MeleeMinDamage%
+        PainElemental_BaseDRRP.MeleeMaxDamage 35; // %Pain Elemental 1 MeleeMaxDamage%
         PainElemental_BaseDRRP.SkullClassSpawn "Phantom";
     }
 }
@@ -606,10 +611,10 @@ class Rahovart: PainElemental_BaseDRRP {
         Health 90; // %Pain Elemental 2%
         Translation "128:143=%[0.00,0.00,0.00]:[0.39,0.53,1.72]", "13:15=9:10", "64:79=%[0.00,0.00,0.00]:[0.47,0.61,1.79]", "13:15=%[0.00,0.00,0.00]:[0.12,0.22,1.14]", "236:239=%[0.00,0.00,0.00]:[0.22,0.31,1.01]", "1:2=12:12", "167:167=12:12", "165:165=159:159";
 
-        PainElemental_BaseDRRP.MinDamage 10;
-        PainElemental_BaseDRRP.MaxDamage 45;
-        PainElemental_BaseDRRP.MeleeMinDamage 10;
-        PainElemental_BaseDRRP.MeleeMaxDamage 50;
+        PainElemental_BaseDRRP.MinDamage 10; // %Pain Elemental 2 MinDamage%
+        PainElemental_BaseDRRP.MaxDamage 45; // %Pain Elemental 2 MaxDamage%
+        PainElemental_BaseDRRP.MeleeMinDamage 10; // %Pain Elemental 2 MeleeMinDamage%
+        PainElemental_BaseDRRP.MeleeMaxDamage 50; // %Pain Elemental 2 MeleeMaxDamage%
         PainElemental_BaseDRRP.SkullClassSpawn "DRRPLostSoul";
     }
 }
@@ -632,10 +637,10 @@ class DRRPPainElemental: PainElemental_BaseDRRP replaces PainElemental {
         DeathSound "monsters/painelemental/death";
         ActiveSound "monsters/painelemental/active";
 
-        PainElemental_BaseDRRP.MinDamage 20;
-        PainElemental_BaseDRRP.MaxDamage 55;
-        PainElemental_BaseDRRP.MeleeMinDamage 15;
-        PainElemental_BaseDRRP.MeleeMaxDamage 70;
+        PainElemental_BaseDRRP.MinDamage 20; // %Pain Elemental 3 MinDamage%
+        PainElemental_BaseDRRP.MaxDamage 55; // %Pain Elemental 3 MaxDamage%
+        PainElemental_BaseDRRP.MeleeMinDamage 15; // %Pain Elemental 3 MeleeMinDamage%
+        PainElemental_BaseDRRP.MeleeMaxDamage 70; // %Pain Elemental 3 MeleeMaxDamage%
         PainElemental_BaseDRRP.SkullClassSpawn "Nightmare";
     }
 }
@@ -662,8 +667,8 @@ class Behemoth: Fatso_BaseDRRP {
         PainSound "monsters/behemoth/pain";
         DeathSound "monsters/behemoth/death";
         ActiveSound "monsters/behemoth/active";
-        Fatso_BaseDRRP.MinDamage 15;
-        Fatso_BaseDRRP.MaxDamage 40;
+        Fatso_BaseDRRP.MinDamage 15; // %Mancubus 1 MinDamage%
+        Fatso_BaseDRRP.MaxDamage 40; // %Mancubus 1 MaxDamage%
     }
 }
 
@@ -678,8 +683,8 @@ class Mancubus: Fatso_BaseDRRP replaces Fatso {
         Obituary "$DRRP_OB_MANCUBUS";
         Tag "$DRRP_M_MANCUBUS";
         Health 120; // %Mancubus 2%
-        Fatso_BaseDRRP.MinDamage 25;
-        Fatso_BaseDRRP.MaxDamage 75;
+        Fatso_BaseDRRP.MinDamage 25; // %Mancubus 2 MinDamage%
+        Fatso_BaseDRRP.MaxDamage 75; // %Mancubus 2 MaxDamage%
     }
 }
 
@@ -700,8 +705,8 @@ class Druj: Fatso_BaseDRRP {
         PainSound "monsters/druj/pain";
         DeathSound "monsters/druj/death";
         ActiveSound "monsters/druj/active";
-        Fatso_BaseDRRP.MinDamage 30;
-        Fatso_BaseDRRP.MaxDamage 130;
+        Fatso_BaseDRRP.MinDamage 30; // %Mancubus 3 MinDamage%
+        Fatso_BaseDRRP.MaxDamage 130; // %Mancubus 3 MaxDamage%
     }
 }
 
@@ -724,8 +729,8 @@ class Infernis: ArchVile_BaseDRRP {
         PainSound "monsters/infernis/pain";
         DeathSound "monsters/infernis/death";
         ActiveSound "monsters/infernis/active";
-        ArchVile_BaseDRRP.MinDamage 10;
-        ArchVile_BaseDRRP.MaxDamage 30;
+        ArchVile_BaseDRRP.MinDamage 10; // %Vile 1 MinDamage%
+        ArchVile_BaseDRRP.MaxDamage 30; // %Vile 1 MaxDamage%
     }
 }
 
@@ -740,8 +745,8 @@ class DRRPArchVile: ArchVile_BaseDRRP replaces ArchVile {
         Obituary "$DRRP_OB_ARCHVILE";
         Tag "$DRRP_M_ARCHVILE";
         Health 85; // %Vile 2%
-        ArchVile_BaseDRRP.MinDamage 35;
-        ArchVile_BaseDRRP.MaxDamage 65;
+        ArchVile_BaseDRRP.MinDamage 35; // %Vile 2 MinDamage%
+        ArchVile_BaseDRRP.MaxDamage 65; // %Vile 2 MaxDamage%
     }
 }
 
@@ -762,8 +767,8 @@ class Apollyon: ArchVile_BaseDRRP {
         PainSound "monsters/apollyon/pain";
         DeathSound "monsters/apollyon/death";
         ActiveSound "monsters/apollyon/active";
-        ArchVile_BaseDRRP.MinDamage 60;
-        ArchVile_BaseDRRP.MaxDamage 90;
+        ArchVile_BaseDRRP.MinDamage 60; // %Vile 3 MinDamage%
+        ArchVile_BaseDRRP.MaxDamage 90; // %Vile 3 MaxDamage%
     }
 }
 
@@ -791,10 +796,10 @@ class Ogre: HellKnight_BaseDRRP {
         ActiveSound "monsters/ogre/active";
         PainSound "monsters/ogre/pain";
         DeathSound "monsters/ogre/death";
-        HellKnight_BaseDRRP.MinDamage 10;
-        HellKnight_BaseDRRP.MaxDamage 26;
-        HellKnight_BaseDRRP.MeleeMinDamage 8;
-        HellKnight_BaseDRRP.MeleeMaxDamage 26;
+        HellKnight_BaseDRRP.MinDamage 10; // %Baron 1 MinDamage%
+        HellKnight_BaseDRRP.MaxDamage 26; // %Baron 1 MaxDamage%
+        HellKnight_BaseDRRP.MeleeMinDamage 8; // %Baron 1 MeleeMinDamage%
+        HellKnight_BaseDRRP.MeleeMaxDamage 26; // %Baron 1 MeleeMaxDamage%
         HellKnight_BaseDRRP.BallType "DRRPOgreBall";
     }
 
@@ -812,10 +817,10 @@ class DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight {
         HitObituary "$DRRP_OBM_HELLKNIGHT";
         Tag "$DRRP_M_HELLKNIGHT";
         Health 110; // %Baron 2%
-        HellKnight_BaseDRRP.MinDamage 20;
-        HellKnight_BaseDRRP.MaxDamage 43;
-        HellKnight_BaseDRRP.MeleeMinDamage 16;
-        HellKnight_BaseDRRP.MeleeMaxDamage 40;
+        HellKnight_BaseDRRP.MinDamage 20; // %Baron 2 MinDamage%
+        HellKnight_BaseDRRP.MaxDamage 43; // %Baron 2 MaxDamage%
+        HellKnight_BaseDRRP.MeleeMinDamage 16; // %Baron 2 MeleeMinDamage%
+        HellKnight_BaseDRRP.MeleeMaxDamage 40; // %Baron 2 MeleeMaxDamage%
         HellKnight_BaseDRRP.BallType "DRRPHellKnightBall";
     }
 }
@@ -834,10 +839,10 @@ class DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell {
         Health 210; // %Baron 3%
 
         Translation "112:127=160:167";
-        BaronOfHell_BaseDRRP.MinDamage 40;
-        BaronOfHell_BaseDRRP.MaxDamage 64;
-        BaronOfHell_BaseDRRP.MeleeMinDamage 32;
-        BaronOfHell_BaseDRRP.MeleeMaxDamage 80;
+        BaronOfHell_BaseDRRP.MinDamage 40; // %Baron 3 MinDamage%
+        BaronOfHell_BaseDRRP.MaxDamage 64; // %Baron 3 MaxDamage%
+        BaronOfHell_BaseDRRP.MeleeMinDamage 32; // %Baron 3 MeleeMinDamage%
+        BaronOfHell_BaseDRRP.MeleeMaxDamage 80; // %Baron 3 MeleeMaxDamage%
     }
 }
 
@@ -846,8 +851,8 @@ class DRRPBaronOfHell: BaronOfHell_BaseDRRP replaces BaronOfHell {
 // Cyberdemon & Kronos ----------------------------------------------------------------
 
 class DRRPCyberdemon: Cyberdemon replaces Cyberdemon {
-    const cyberRocketMinDamage = 60;
-    const cyberRocketMaxDamage = 60;
+    const cyberRocketMinDamage = 60; // %Cyberdemon 1 MinDamage%
+    const cyberRocketMaxDamage = 60; // %Cyberdemon 1 MaxDamage%
 
     Default {
         //$Category DMonsters
@@ -882,8 +887,9 @@ class DRRPCyberdemon: Cyberdemon replaces Cyberdemon {
 }
 
 class Kronos: Actor {
-    const kronosMeleeMinDamage = 1; // It's fast as a train, actually.
-    const kronosMeleeMaxDamage = 10;
+    // It's fast as a train, actually.
+    const kronosMeleeMinDamage = 1; // %Kronos 1 MeleeMinDamage%
+    const kronosMeleeMaxDamage = 10; // %Kronos 1 MeleeMaxDamage%
 
     Default {
         //$Category DMonsters
