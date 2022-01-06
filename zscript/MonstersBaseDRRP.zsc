@@ -48,7 +48,7 @@ III) 40%:
 
 
 
-class Dog_BaseDRRP: MBFHelperDog {
+class Dog_BaseDRRP: MBFHelperDog abstract {
     Default {
         +LOOKALLAROUND;
 
@@ -72,7 +72,7 @@ class Dog_BaseDRRP: MBFHelperDog {
     }
 }
 
-class ZombieMan_BaseDRRP: ZombieMan {
+class ZombieMan_BaseDRRP: ZombieMan abstract {
     Default {
         DropItem "Clip", 0, 0;
         +LOOKALLAROUND;
@@ -89,7 +89,7 @@ class ZombieMan_BaseDRRP: ZombieMan {
     }
 }
 
-class ShotgunGuy_BaseDRRP: ShotgunGuy {
+class ShotgunGuy_BaseDRRP: ShotgunGuy abstract {
     Default {
         DropItem "DRRPShell", 0, 0;
         +LOOKALLAROUND;
@@ -106,7 +106,7 @@ class ShotgunGuy_BaseDRRP: ShotgunGuy {
     }
 }
 
-class ChaingunGuy_BaseDRRP: ChaingunGuy {
+class ChaingunGuy_BaseDRRP: ChaingunGuy abstract {
     const ChanceFailAttackRightBack = 224;
 
     Default {
@@ -135,7 +135,7 @@ class ChaingunGuy_BaseDRRP: ChaingunGuy {
     }
 }
 
-class DoomImp_BaseDRRP: DoomImp {
+class DoomImp_BaseDRRP: DoomImp abstract {
     Default {
         +LOOKALLAROUND;
 
@@ -143,7 +143,7 @@ class DoomImp_BaseDRRP: DoomImp {
     }
 }
 
-class LostSoul_BaseDRRP: LostSoul {
+class LostSoul_BaseDRRP: LostSoul abstract {
     Default {
         Health 150;
         Species "LostSoul_BaseDRRP, Phantom, DRRPLostSoul, Nightmare";
@@ -181,7 +181,7 @@ class LostSoul_BaseDRRP: LostSoul {
     }
 }
 
-class Demon_BaseDRRP: Demon {
+class Demon_BaseDRRP: Demon abstract {
     Default {
         +LOOKALLAROUND;
         DamageFactor "DRRPRocketDmg", 0.5;
@@ -201,7 +201,7 @@ class Cacodemon_BaseDRRP: Cacodemon {
 }
 
 
-class Revenant_BaseDRRP: Revenant {
+class Revenant_BaseDRRP: Revenant abstract {
     Default {
         Scale 0.74;
         +LOOKALLAROUND;
@@ -234,7 +234,7 @@ class Revenant_BaseDRRP: Revenant {
     }
 }
 
-class PainElemental_BaseDRRP: PainElemental {
+class PainElemental_BaseDRRP: PainElemental abstract {
     class<Actor> painDeathSkillSpawnClass;
     int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
@@ -304,7 +304,7 @@ class PainElemental_BaseDRRP: PainElemental {
     }
 }
 
-class Fatso_BaseDRRP: Fatso {
+class Fatso_BaseDRRP: Fatso abstract {
     int fatAttackCounter;
     int DRRPMinDamage, DRRPMaxDamage;
 
@@ -367,7 +367,7 @@ class Fatso_BaseDRRP: Fatso {
     }
 }
 
-class ArchVile_BaseDRRP: ArchVile {
+class ArchVile_BaseDRRP: ArchVile abstract {
     int vileMinDamage, vileMaxDamage;
     Property MinDamage: vileMinDamage;
     Property MaxDamage: vileMaxDamage;
@@ -403,7 +403,7 @@ class ArchVile_BaseDRRP: ArchVile {
     }
 }
 
-class BaronOfHell_BaseDRRP: BaronOfHell {
+class BaronOfHell_BaseDRRP: BaronOfHell abstract {
     Default {
         Scale 0.85;
         +LOOKALLAROUND;
@@ -412,7 +412,7 @@ class BaronOfHell_BaseDRRP: BaronOfHell {
     }
 }
 
-class HellKnight_BaseDRRP: HellKnight {
+class HellKnight_BaseDRRP: HellKnight abstract {
     Default {
         Scale 0.85;
         +LOOKALLAROUND;
