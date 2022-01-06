@@ -29,6 +29,11 @@ class RPGSystemHandler: EventHandler {
     }
 
 
+    static String squeezeVector3( vector3 vec ) {
+        return "(" .. int( vec.x ) .. ", " .. int( vec.y ) .. ", " .. int( vec.z ) .. ")";
+    }
+
+
     /* Monsters and crates random death drop data and chooser. */
 
     // RandomSpawner has no master field by default, so we're spawn 
@@ -147,17 +152,21 @@ class RPGSystemHandler: EventHandler {
         }
 
 
-        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
 
-        if ( DebugCVar && DebugCVar.GetBool() ) {
-            if ( !thing )
-                console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no thing." );
-            else if ( !deathData )
-                console.printf( "#RPGSystemHandler::setDRRPDeathDataItem. Warning: no deathData item." );
-            else
-                console.printf( "#RPGSystemHandler::setDRRPDeathDataItem( Actor " .. thing.GetClassName()
-                    .. " <" .. thing .. "> ). Death data: [ ExpGain: "
-                    .. deathData.ExpGain .. ", DRRPDropItem: " .. deathData.DRRPDropItem .. " ]." );
+        if ( debugCVar && debugCVar.GetBool() ) {
+            String debugMessage = "";
+
+            if ( !thing ) {
+                debugMessage = TEXTCOLOR_FIRE .. "Warning: no thing";
+            } else if ( !deathData ) {
+                debugMessage = TEXTCOLOR_FIRE .. "Warning: no deathData item";
+            } else {
+                debugMessage = String.Format( "%-30s", thing.GetClassName() .. " at " .. squeezeVector3( thing.pos ) ) .. ": " .. TEXTCOLOR_SAPPHIRE .. "exp "
+                    .. deathData.ExpGain .. "\c-, " .. TEXTCOLOR_TEAL .. "DropItem " .. ( deathData.DRRPDropItem? ( TEXTCOLOR_ICE .. deathData.DRRPDropItem.GetClassName() ) : "NULL" ) .. "\c-";
+            }
+
+            console.printf( TEXTCOLOR_DARKGRAY .. "RPGHndlr::setDeathData(). \c-" .. debugMessage .. "\c-." );
         }
 
     } // of virtual void setDRRPDeathDataItem( Actor thing, int expGain, String deathDropNames, String deathDropChances ) {
@@ -229,7 +238,7 @@ class RPGSystemHandler: EventHandler {
         // Experience drop.
         if ( damageSource is "DoomRPGPlayer" ) {
             DRRPPlayer player = DRRPPlayer( damageSource );
-            
+
             // There's automatic call "netevent DRRP_Exp_Check" under "SetFeature()".
             if ( deathData ) {
                 player.AddFeature( RPG_Experience, deathData.ExpGain, true );
@@ -247,8 +256,13 @@ class RPGSystemHandler: EventHandler {
     /* Give xp to killer player and drop random items on some DRRP actors death. */
     override void WorldThingDamaged( WorldEvent e ) {
         if ( e.Thing && e.Inflictor && e.DamageSource ) {
-            if ( e.Thing.health <= 0 )
+            if ( e.Thing.health <= 0 ) {
                 DoRPGDeath( e.Thing, e.DamageSource );
+
+                CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+                if ( debugCVar && debugCVar.GetBool() )
+                    console.printf( TEXTCOLOR_DARKGRAY .. "RPGHndlr::ThingDamaged(). \c-Call to DoRGPDeath( \cUvictim\c- " .. e.Thing.GetClassName() .. TEXTCOLOR_OLIVE .. " at " .. squeezeVector3( e.Thing.pos ) .. "\c-, \cUattacker\c- " .. e.DamageSource.GetClassName() .. " )." );
+            }
         }
 
         Super.WorldThingDamaged( e );
@@ -311,14 +325,6 @@ class DRRPDamageAbsorber: Inventory {
             return;
 
         Inventory armor = DRRPPlayer( owner ).FindInventory( "DRRPBasicArmor" );
-        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
-
-        if ( DebugCVar && DebugCVar.GetBool() ) {
-            if ( armor )
-                console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Pre-damage). Armor amount: " .. armor.Amount .. "; damage: " .. damage .. "; type: " .. damageType .. "." );
-            else
-                console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Pre-damage). No armor; damage: " .. damage .. "; type: " .. damageType .. "." );
-        }
 
         if ( armor ) {
             if ( ( newdamage = DRRPPlayer( owner ).getRPGDefenceDamage( damage, damageType ) ) == damage )
@@ -330,11 +336,11 @@ class DRRPDamageAbsorber: Inventory {
         } else
             newdamage = DRRPPlayer( owner ).getRPGDefenceDamage( damage, damageType );
 
+        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+
         if ( DebugCVar && DebugCVar.GetBool() ) {
-            if ( armor )
-                console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). Armor amount: " .. armor.Amount .. "; newdamage: " .. newdamage .. "." );
-            else
-                console.printf( "#" .. self.GetClassName() .. "::AbsorbDamage (Post-damage). No armor; newdamage: " .. newdamage .. "." );
+            String armorStrPlaceholder = ( armor? ( "-(armor amount " .. armor.Amount .. ")->" ) : "-(no armor)->" );
+            console.printf( TEXTCOLOR_DARKGRAY .. "#" .. self.GetClassName() .. "::AbsorbDamage aft. \c-Damage " .. damage .. armorStrPlaceholder .. TEXTCOLOR_RED .. newdamage .. "\c-." );
         }
     }
 } // of class DRRPDamageAbsorber: Inventory {
