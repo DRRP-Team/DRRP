@@ -62,17 +62,17 @@ class DRRPStaticMonsterWrapper abstract play {
       int prjMinDmg, int prjMaxDmg      : minimal and maximal limits of the new projectile random damage to set to.
       int meleeMinDmg, int meleeMaxDmg  : minimal and maximal limits of the melee. To clear melee attack set the "meleeMaxDmg" to zero value.
     */
-    static DRRPBaseProjectile A_ComboAttack( Actor spawner, class<DRRPBaseProjectile> prjClass, int prjMinDmg, int prjMaxDmg, int meleeMinDmg = 0, int meleeMaxDmg = 0 ) {
+    static DRRPBaseProjectile A_ComboAttack( Actor spawner, class<DRRPBaseProjectile> prjClass, float prjMinDmg, float prjMaxDmg, float meleeMinDmg = 0, float meleeMaxDmg = 0 ) {
         DRRPBaseProjectile newProjectile = NULL;
 
         if ( spawner.target ) {
             if ( meleeMaxDmg != 0 && spawner.CheckMeleeRange() ) {
-                spawner.A_CustomMeleeAttack( Random( meleeMinDmg, meleeMaxDmg ) );
+                spawner.A_CustomMeleeAttack( Random( int(meleeMinDmg), int(meleeMaxDmg) ) );
             } else {
                 spawner.A_FaceTarget();
 
                 if ( newProjectile = DRRPBaseProjectile( spawner.SpawnMissile( spawner.target, prjClass ) ) )
-                    newProjectile.SetDRRPDamage( prjMinDmg, prjMaxDmg );
+                    newProjectile.SetDRRPDamage( int(prjMinDmg), int(prjMaxDmg) );
             }
         }
 
@@ -83,7 +83,7 @@ class DRRPStaticMonsterWrapper abstract play {
 
 
 class Dog_BaseDRRP: MBFHelperDog abstract {
-    int DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MeleeMinDamage: DRRPMeleeMinDamage;
     Property MeleeMaxDamage: DRRPMeleeMaxDamage;
@@ -114,7 +114,7 @@ class Dog_BaseDRRP: MBFHelperDog abstract {
 }
 
 class ZombieMan_BaseDRRP: ZombieMan abstract {
-    int DRRPMinDamage, DRRPMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -138,7 +138,7 @@ class ZombieMan_BaseDRRP: ZombieMan abstract {
 }
 
 class ShotgunGuy_BaseDRRP: ShotgunGuy abstract {
-    int DRRPMinDamage, DRRPMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -162,7 +162,7 @@ class ShotgunGuy_BaseDRRP: ShotgunGuy abstract {
 }
 
 class ChaingunGuy_BaseDRRP: ChaingunGuy abstract {
-    int DRRPMinDamage, DRRPMaxDamage, backfireChance;
+    float DRRPMinDamage, DRRPMaxDamage, backfireChance;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -196,7 +196,7 @@ class ChaingunGuy_BaseDRRP: ChaingunGuy abstract {
 }
 
 class DoomImp_BaseDRRP: DoomImp abstract {
-    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -266,7 +266,7 @@ class LostSoul_BaseDRRP: LostSoul abstract {
 }
 
 class Demon_BaseDRRP: Demon abstract {
-    int DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MeleeMinDamage: DRRPMeleeMinDamage;
     Property MeleeMaxDamage: DRRPMeleeMaxDamage;
@@ -291,7 +291,7 @@ class Demon_BaseDRRP: Demon abstract {
 
 class Cacodemon_BaseDRRP: Cacodemon {
     class<DRRPBaseProjectile> ballType;
-    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -331,7 +331,7 @@ class Cacodemon_BaseDRRP: Cacodemon {
 
 
 class Revenant_BaseDRRP: Revenant abstract {
-    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -388,7 +388,7 @@ class Revenant_BaseDRRP: Revenant abstract {
 
 class PainElemental_BaseDRRP: PainElemental abstract {
     class<Actor> painDeathSkillSpawnClass;
-    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -448,7 +448,7 @@ class PainElemental_BaseDRRP: PainElemental abstract {
 
 class Fatso_BaseDRRP: Fatso abstract {
     int fatAttackCounter;
-    int DRRPMinDamage, DRRPMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
@@ -546,7 +546,7 @@ class ArchVile_BaseDRRP: ArchVile abstract {
 }
 
 class HellKnight_BaseDRRP: HellKnight abstract {
-    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
     class<DRRPBaseProjectile> ballType;
 
     Property MinDamage: DRRPMinDamage;
@@ -582,7 +582,7 @@ class HellKnight_BaseDRRP: HellKnight abstract {
 }
 
 class BaronOfHell_BaseDRRP: BaronOfHell abstract {
-    int DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    float DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
 
     Property MinDamage: DRRPMinDamage;
     Property MaxDamage: DRRPMaxDamage;
