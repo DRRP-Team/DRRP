@@ -10,8 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Fetch balance
-        shell: python3
-        run: ./tools/updateBalance.py
+        shell: bash
+        run: ./tools/updateBalance.sh
       - name: Commit and push
         uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
         with:
