@@ -1,0 +1,60 @@
+name: Update balance
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Update balance
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Fetch balance
+        shell: python3
+        run: ./tools/updateBalance.py
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        with:
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          # Default: '.'
+          # add: '.'
+
+          # The name of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_name: Balance bot
+
+          # The email of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_email: githubaction@drrpofficial.tk
+
+          # Name of the branch to use, if different from the one that triggered the workflow
+          # Default: the branch that triggered the run
+          # branch: master
+
+          # The local path to the directory where your repository is located. You should use actions/checkout first to set it up
+          # Default: '.'
+          # cwd: '.'
+
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions (name of the workflow)'
+          message: "Update balance"
+
+          # The flag used on the pull strategy
+          # Default: '--no-rebase'
+          # pull_strategy: '--rebase'
+
+          # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
+          # Default: true
+          push: true
+
+          # The arguments for the `git rm` command (see the paragraph below for more info)
+          # Default: ''
+          # remove: ''
+
+          # Whether to use the --signoff option on `git commit` (only `true` and `false` are accepted)
+          # Default: false
+          # signoff: false
+
+          # Arguments for the git tag command (the tag name always needs to be the first word not preceded by an hyphen)
+          # Default: ''
+          # tag: ''
