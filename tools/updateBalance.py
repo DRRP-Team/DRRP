@@ -27,6 +27,12 @@ def getCsvPage(gid):
 
     return csv.reader(response.iter_lines(decode_unicode=True))
 
+def getRegex(prop, monsterclass, monsterlevel): return '(\d+)(;?\s*)//(\s*%%%s %d %s%%)' % (monsterclass, monsterlevel, prop)
+
+def getRegexReplace(new_value): return '%d\\2//\\3' % new_value
+
+def replaceValue(filecontent, prop, monsterclass, monsterlevel, new_value):
+    return re.sub(getRegex(prop, monsterclass, monsterlevel), getRegexReplace(new_value), filecontent)
 
 # Update monsters health
 
@@ -73,19 +79,12 @@ def updateMonstersHealth():
         content = file.read()
 
     for row in health_table:
-        content = replaceMonsterHealth(content, *row)
+        content = replaceValue(content, 'Health', *row)
 
     with open(DIR + FILE_MONSTERS, 'w') as file:
         file.write(content)
 
     print("Monsters Health Updated!")
 
-
-def getMHealthRegex(monsterclass, monsterlevel): return '(\d+)(\s*)//(\s*%%%s %d%%)' % (monsterclass, monsterlevel)
-
-def getMHealthRegexReplace(newmonsterhealth): return '%d\\2//\\3' % newmonsterhealth
-
-def replaceMonsterHealth(filecontent, monsterclass, monsterlevel, newmonsterhealth):
-    return re.sub(getMHealthRegex(monsterclass, monsterlevel), getMHealthRegexReplace(newmonsterhealth), filecontent)
 
 updateMonstersHealth()
