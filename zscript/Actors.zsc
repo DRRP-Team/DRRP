@@ -122,11 +122,10 @@ class DRRPActorsHandler: EventHandler {
         if ( DebugCVar && DebugCVar.GetBool() ) {
             String thing = e.Thing? e.Thing.GetClassName() .. "" : "NULL";
             String damageSource = e.DamageSource? e.DamageSource.GetClassName() .. "" : "NULL";
-            String inflictor = e.Inflictor? " through " .. e.Inflictor.GetClassName()  : "";
+            String inflictor = e.Inflictor? "=>" .. e.Inflictor.GetClassName()  : "";
 
-            console.printf( "#DRRPActorsHandler::WorldThingDamaged(). "
-                            .. "Damage \c[Fire]" .. e.Damage .. " \c-(as \c[Yellow]" .. e.DamageType 
-                            .. "\c-) to " .. thing .. " from " .. damageSource .. inflictor );
+            console.printf( TEXTCOLOR_DARKGRAY .. "DRRPActorsHandler::ThingDamaged(): \cX"
+                            .. e.Damage .. "\c- to " .. thing .. " (newhp " .. e.thing.health .. ") from " .. damageSource .. inflictor .. TEXTCOLOR_GRAY .. " (type " .. e.DamageType .. ")\c-." );
         }
 
         Super.WorldThingDamaged( e );
