@@ -288,6 +288,8 @@ Actor DRRPBerserkItem : CustomInventory replaces Berserk 10623 {
             SOUL ABCDCB 6 Bright
             Loop
         Use:
+            TNT1 A 0 A_SetBlend( "FF0000", 0.5, 25 )
+            TNT1 A 0 A_PlaySound( "misc/p_pkup", 127 )
             TNT1 A 0 A_GiveInventory("DRRPBerserkGiver")
             TNT1 A 0 HealThing(100, 0)
             //TNT1 A 0 A_SelectWeapon("DRRPAxe") // Fist
@@ -326,6 +328,7 @@ Actor InventorySoulsphere : CustomInventory replaces Soulsphere {
         Use:
             TNT1 A 0
             TNT1 A 0 A_SetBlend( "7777FF", 0.5, 17 )
+            TNT1 A 0 A_PlaySound( "misc/p_pkup", 127 )
             TNT1 A 0 HealThing( 999 )
             TNT1 A 0 A_GiveInventory( "DRRPBasicArmor", 999 )
             Stop
