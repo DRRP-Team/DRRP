@@ -10,9 +10,10 @@ proph.DEBUG = False
 
 CSV_URL = "https://docs.google.com/spreadsheets/d/1iSDhgSsMNdXCU_ly_6RKTImMCVE9hu1L2Mn4_El_yRs/export?format=csv&id=1iSDhgSsMNdXCU_ly_6RKTImMCVE9hu1L2Mn4_El_yRs"
 GID_MONSTERS_HEALTH = 47473635
+GID_MONSTERS_DAMAGES = 1366787516
 
 # From DRRP root
-FILE_MONSTERS = '/actors/Monsters.dec'
+FILE_MONSTERS = '/zscript/Monsters.zsc'
 
 # Absolute path to DRRP root
 DIR = sys.path[0] + '/..'
@@ -86,5 +87,70 @@ def updateMonstersHealth():
 
     print("Monsters Health Updated!")
 
+# Update monsters damages
+
+def toInt(*args):
+    return List(args).map(lambda val: val and int(val)).filter()
+
+def getMonstersDamages():
+    ''' { monsterclass: List(...levelhealth) } '''
+    rows = List(getCsvPage(GID_MONSTERS_DAMAGES))
+
+    header, l1min, l2min, l3min, l1max, l2max, l3max = List(rows[:7]).map(List)
+
+    assert((header[0], l1min[0], l2min[0], l3min[0], l1max[0], l2max[0], l3max[0]) == ('Class', '1 Level Min', '2 Level Min', '3 Level Min', '1 Level Max', '2 Level Max', '3 Level Max'))
+
+    classes = {}
+
+    for i, classname in header.filter().items():
+        if classname == 'Class': continue
+
+        monsterclass = List()
+
+        monsterclass.append(toInt(l1min[i], l1max[i]))
+        monsterclass.append(toInt(l2min[i], l2max[i]))
+        monsterclass.append(toInt(l3min[i], l3max[i]))
+
+        classes[classname] = monsterclass
+
+    debug(classes)
+
+    return classes
+
+def generateMonstersDamagesTable():
+    ''' List<[monsterclass: str, monsterlevelid: int, damagetype: str, damage: int]> '''
+    table = List()
+
+    monsters = getMonstersDamages()
+
+    for monsterclass in monsters:
+        monster = monsters[monsterclass]
+
+        for levelid, damages in monster.items():
+            if not damages: continue
+            table.append([monsterclass, levelid + 1, 'MinDamage',damages[0]])
+            table.append([monsterclass, levelid + 1, 'MeleeMinDamage',damages[0]])
+            table.append([monsterclass, levelid + 1, 'MaxDamage',damages[1]])
+            table.append([monsterclass, levelid + 1, 'MeleeMaxDamage',damages[1]])
+            debug(table[-4:])
+
+    return table
+
+def updateMonstersDamages():
+    damage_table = generateMonstersDamagesTable()
+
+    with open(DIR + FILE_MONSTERS, 'r') as file:
+        content = file.read()
+
+    for monsterclass, monsterlevel, damagetype, damage in damage_table:
+        content = replaceValue(content, damagetype, monsterclass, monsterlevel, damage)
+
+    with open(DIR + FILE_MONSTERS, 'w') as file:
+        file.write(content)
+
+    print("Monsters Damages Updated!")
+
+# Execute
 
 updateMonstersHealth()
+updateMonstersDamages()
