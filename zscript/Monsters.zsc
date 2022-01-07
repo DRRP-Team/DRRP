@@ -299,8 +299,8 @@ class Phantom: LostSoul_BaseDRRP {
         PainSound "monsters/phantom/pain";
         DeathSound "monsters/phantom/death";
         ActiveSound "monsters/phantom/active";
-        LostSoul_BaseDRRP.MeleeMinDamage 8; // %Soul 1 MeleeMinDamage%
-        LostSoul_BaseDRRP.MeleeMaxDamage 23; // %Soul 1 MeleeMaxDamage%
+        LostSoul_BaseDRRP.MeleeMinDamage 3; // %Soul 1 MeleeMinDamage%
+        LostSoul_BaseDRRP.MeleeMaxDamage 7; // %Soul 1 MeleeMaxDamage%
     }
 }
 
@@ -317,8 +317,8 @@ class DRRPLostSoul: LostSoul_BaseDRRP replaces LostSoul {
         Health 75; // %Soul 2 Health%
         //DamageFunction (Random( 2, 3 ) * 8 + 5);
         DamageFactor "DRRPFireExtDmg", 15.0;
-        LostSoul_BaseDRRP.MeleeMinDamage 11; // %Soul 2 MeleeMinDamage%
-        LostSoul_BaseDRRP.MeleeMaxDamage 33; // %Soul 2 MeleeMaxDamage%
+        LostSoul_BaseDRRP.MeleeMinDamage 10; // %Soul 2 MeleeMinDamage%
+        LostSoul_BaseDRRP.MeleeMaxDamage 15; // %Soul 2 MeleeMaxDamage%
     }
 }
 
@@ -341,8 +341,8 @@ class Nightmare: LostSoul_BaseDRRP {
         PainSound "monsters/nightmare/pain";
         DeathSound "monsters/nightmare/death";
         ActiveSound "monsters/nightmare/active";
-        LostSoul_BaseDRRP.MeleeMinDamage 16; // %Soul 3 MeleeMinDamage%
-        LostSoul_BaseDRRP.MeleeMaxDamage 55; // %Soul 3 MeleeMaxDamage%
+        LostSoul_BaseDRRP.MeleeMinDamage 20; // %Soul 3 MeleeMinDamage%
+        LostSoul_BaseDRRP.MeleeMaxDamage 25; // %Soul 3 MeleeMaxDamage%
     }
 }
 
