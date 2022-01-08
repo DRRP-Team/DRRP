@@ -156,8 +156,8 @@ class Troop: ChaingunGuy_BaseDRRP {
         PainSound "monsters/troop/pain";
         DeathSound "monsters/troop/death";
         ActiveSound "monsters/troop/active";
-        ChaingunGuy_BaseDRRP.MinDamage 2; // %Commando 1 MinDamage%
-        ChaingunGuy_BaseDRRP.MaxDamage 0.5 * 10; // %Commando 1 MaxDamage%
+        ChaingunGuy_BaseDRRP.MinDamage 1; // %Commando 1 MinDamage%
+        ChaingunGuy_BaseDRRP.MaxDamage 0.5 * 6; // %Commando 1 MaxDamage%
         ChaingunGuy_BaseDRRP.BackfireChance 32; // (0 = totally avoid backfire) .. (255 = backfire always after pain).
     }
 }
@@ -174,8 +174,8 @@ class Commando: ChaingunGuy_BaseDRRP {
         Tag "$DRRP_M_COMMANDO";
         Health 75; // %Commando 2 Health%
         Translation "16:47=197:207";
-        ChaingunGuy_BaseDRRP.MinDamage 6; // %Commando 2 MinDamage%
-        ChaingunGuy_BaseDRRP.MaxDamage 0.5 * 15; // %Commando 2 MaxDamage%
+        ChaingunGuy_BaseDRRP.MinDamage 3; // %Commando 2 MinDamage%
+        ChaingunGuy_BaseDRRP.MaxDamage 0.5 * 10; // %Commando 2 MaxDamage%
         ChaingunGuy_BaseDRRP.BackfireChance 64;
     }
 }
@@ -196,8 +196,8 @@ class Assassin: ChaingunGuy_BaseDRRP replaces ChaingunGuy {
         PainSound "monsters/assassin/pain";
         DeathSound "monsters/assassin/death";
         ActiveSound "monsters/assassin/active";
-        ChaingunGuy_BaseDRRP.MinDamage 10; // %Commando 3 MinDamage%
-        ChaingunGuy_BaseDRRP.MaxDamage 0.5 * 25; // %Commando 3 MaxDamage%
+        ChaingunGuy_BaseDRRP.MinDamage 5; // %Commando 3 MinDamage%
+        ChaingunGuy_BaseDRRP.MaxDamage 0.5 * 15; // %Commando 3 MaxDamage%
         ChaingunGuy_BaseDRRP.BackfireChance 96;
     }
 }
