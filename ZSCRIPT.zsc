@@ -41,6 +41,8 @@ class DRRPPlayer: DoomPlayer {
     Array<String> MapsMonstersDone;
     Array<String> MapsSecretsDone;
 
+    vector3 PreFreezeVel;
+
     override void BeginPlay() {
         lowHealthTimer = -1;
         playerStats[ RPG_Experience ] = playerStats[ RPG_Accuracy ] = 0;
