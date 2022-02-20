@@ -81,9 +81,9 @@ const fixed HUD_RIGHT = 0.2;
 // ACS based DRPG Window
 
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
-const int SCALE = 2; // The bigger - the bigger
 
 Script "window"(str _Text) { // s: -> str
+    int SCALE = GetCVar("drrp_window_scale");
     // This crutch fixes the GZDoom Encoding bug in russian translation
     // https://trello.com/c/Yjn7YM8b
     str Text;
