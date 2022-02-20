@@ -26,10 +26,12 @@ statusbar normal { // Standard Doom Status bar
         drawstring "bigfont", Red, "%", 233, 173;
     }
 
-    IfInvulnerable {
-        drawnumber 3, HUDFONT_DOOM, Gold, health, 90, 171;
-        drawstring "bigfont", Gold, "%", 102, 173;
-    } else IfHealth 100 % {
+    // We get invulnerability each time the dialog window is shown
+    //IfInvulnerable {
+    //    drawnumber 3, HUDFONT_DOOM, Gold, health, 90, 171;
+    //    drawstring "bigfont", Gold, "%", 102, 173;
+    //} else
+    IfHealth 100 % {
         drawnumber 3, HUDFONT_DOOM, Blue, health, 90, 171;
         drawstring "bigfont", Blue, "%", 102, 173;
     } else IfHealth not 35 % {
@@ -76,9 +78,11 @@ statusbar normal { // Standard Doom Status bar
 statusbar fullscreen, fullscreenoffsets {// ZDoom HUD
     // Health
     drawimage "MEDIA0", 20, -2, centerbottom;
-    IfInvulnerable {
-        drawnumber 3, HUDFONT_DOOM, Gold, health, drawshadow, 82, -20;
-    } else IfHealth 100 % {
+    // We get invulnerability each time the dialog window is shown
+    //IfInvulnerable {
+    //    drawnumber 3, HUDFONT_DOOM, Gold, health, drawshadow, 82, -20;
+    //} else
+    IfHealth 100 % {
         drawnumber 3, HUDFONT_DOOM, Blue, health, drawshadow, 82, -20;
     } else IfHealth not 35 % {
         drawnumber 3, HUDFONT_DOOM, Red, health, drawshadow, 82, -20;
