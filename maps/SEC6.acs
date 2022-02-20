@@ -34,6 +34,10 @@ Script 666 ENTER{
     ACS_Execute(1000, 0);
 }
 
+Script 667 (void) {
+    Thing_Remove(87); // Last Jensen
+}
+
 script 1000 (void) {
     AmbientSound("ambient/drone1", 127);
     Delay(34*3);
