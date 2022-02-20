@@ -69,7 +69,7 @@ OptionMenu "Misc" {
     Option "$DRRP_D_MENU_GIBS_ENABLE",  "drrp_enable_extended_gibs", "ONOFF"
     Option "$DRRP_D_MENU_BFLASH_ENABLE",  "drrp_enable_blood_flashes", "ONOFF"
     Option "$DRRP_D_MENU_LIGHTS_TYPE", "drrp_lights_wrapper_type", LightsWrapperType
-    Option "$DRRP_D_MENU_WINDOW_SCALE", "drrp_window_scale", WindowScaleType
+    Slider "$DRRP_D_MENU_WINDOW_SCALE", "drrp_window_scale", 1.0, 3.0, 0.25, 2
     StaticText " "
     Option "$DRRP_D_MENU_MISC_FREELOOK", "sv_freelook", "YesNo"
     Option "$DRRP_D_MENU_MISC_DEBUGMODE", "drrp_debug_mode", "OnOff"
@@ -79,12 +79,6 @@ OptionValue "LightsWrapperType" {
     0, "$DRRP_D_MENU_LIGHTS_NONE"
     1, "$DRRP_D_MENU_LIGHTS_NORMAL"
     2, "$DRRP_D_MENU_LIGHTS_ATTENUATED"
-}
-
-OptionValue "WindowScaleType" {
-    1, "$DRRP_D_MENU_WINDOW_NORMAL"
-    2, "$DRRP_D_MENU_WINDOW_BIG"
-    3, "$DRRP_D_MENU_WINDOW_BIGGER"
 }
 
 OptionValue "FlashlightLocationOptions" {
