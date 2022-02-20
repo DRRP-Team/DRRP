@@ -37,6 +37,14 @@ script 777 ENTER {
     ACS_Execute(3012, 0, 5); // You can use flashlight
 }
 
+// Remove scientists
+Script 778 (void) {
+    Thing_Remove(514); // Guerard here
+    Thing_Remove(51); // Guerard if skipped transformation scene
+    Thing_Remove(117); // Transformation guy on scene skip
+    Thing_Remove(789); // Jensen
+}
+
 script 1 (int arg0, int arg1, int arg2) { //X=26 Y=1 START=L_0 END=L_0 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=272
 }
