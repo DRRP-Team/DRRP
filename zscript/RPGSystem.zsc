@@ -293,6 +293,8 @@ class RPGSystemHandler: EventHandler {
             if ( player.GetFeature( RPG_Experience ) >= player.GetFeature( RPG_NextLevelXP ) )
                 EventHandler.SendNetworkEvent( "DRRP_LevelUp_Attributes", e.Args[ 0 ] );
 
+        } else if ( e.name ~== "DRRP_Levelfreeze" ) {
+            ConversationController.SetGlobalfreeze( !!e.args[ 0 ] );
         }
 
         Super.NetworkProcess( e );

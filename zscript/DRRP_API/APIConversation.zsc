@@ -8,7 +8,7 @@
 class ConversationController play {
     static int GetArgument(int lineID) {
         if(lineID < 0) return GetActorArgument(-lineID);
-    
+
         LineIdIterator it = LineIdIterator.Create(lineID);
         int itLineID      = it.Next();
 
@@ -30,7 +30,7 @@ class ConversationController play {
             Line convLine = level.Lines[itLineID];
             convLine.args[4] = lineArg;
         }
-        
+
         return true;
     }
 
@@ -56,4 +56,24 @@ class ConversationController play {
 
         return false;
     }
+
+    static void SetGlobalfreeze( bool freezeset ) {
+        if ( !multiplayer ) {
+            for ( int i = 0; i < MAXPLAYERS; i++ ) {
+                if ( playeringame[ i ] && players[ i ].mo ) {
+                    DRRPPlayer player = DRRPPlayer( players[ i ].mo );
+
+                    if ( freezeset ) {
+                        player.PreFreezeVel = player.vel;
+                        player.A_Stop();
+                    } else {
+                        player.vel = player.PreFreezeVel;
+                    }
+                }
+            } // of for ( int i = 0; i < MAXPLAYERS; i++ ) {}
+
+            level.frozen = freezeset;
+        }
+
+    } // of static void SetGlobalfreeze( bool freezeset ) {}
 }

@@ -353,9 +353,10 @@ script 68 (int arg0, int arg1, int arg2) { //X=3 Y=21 START=L_148 END=L_169 UNKN
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=3 Y=21
     if(arg2 == 4) if(CheckInventory("Credit") < 10) { ACS_NamedExecuteWait("window", 0, getString(30)); terminate; } // ( USE IF_VAR( 8 ) ) CHECK_STAT_OR_SHOW_MONOLOG STR=30 AMOUNT=10 STAT=2
     if(arg2 == 4) TakeInventory("Credit", 10); // ( USE IF_VAR( 8 ) ) DEC_STAT AMOUNT=10 STAT=2
-    if(arg2 == 4) Thing_Remove(51); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=1 Y=19
     if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( USE IF_VAR( 8 ) ) SET_VAR X=1 Y=19 VAL=4
     if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(31)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG_WITH_SOUND STR=31
+    if(arg2 == 4) SpawnForced("TeleportFog", -1760.0, -352.0, 0);
+    if(arg2 == 4) Thing_Remove(51); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=1 Y=19
     if(arg2 == 4) ACS_NamedExecute("transformation", 0, 117); // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35 // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 4) Delay(12); // ( USE IF_VAR( 8 ) ) SLEEP MSEC=350
     if(arg2 == 4) Thing_Remove(117); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=3 Y=21

@@ -64,9 +64,34 @@ Script "fireextfade" (int mode) {
     }
 }
 
+function fixed toFixed(int value) {
+    return value << 16;
+}
+
+function int toInt(fixed value) {
+    return value >> 16;
+}
+
+function int toFloor(fixed value) {
+    if (value < 10000) {
+        return value;
+    }
+
+    return toInt(value);
+}
+
+const fixed HUD_CENTER = 0.0;
+const fixed HUD_TOP = 0.1;
+const fixed HUD_BOTTOM = 0.2;
+const fixed HUD_LEFT = 0.1;
+const fixed HUD_RIGHT = 0.2;
+
 // ACS based DRPG Window
 
+const int SYM_HEIGHT = 9; // Symbol's height is 12px
+
 Script "window"(str _Text) { // s: -> str
+    fixed SCALE = GetCVar("drrp_window_scale");
     // This crutch fixes the GZDoom Encoding bug in russian translation
     // https://trello.com/c/Yjn7YM8b
     str Text;
@@ -78,8 +103,6 @@ Script "window"(str _Text) { // s: -> str
             Text = StrParam(s:Text, c:_Text[i]);
     }
 
-    const int SYM_HEIGHT = 12; // Symbol's height is 12px
-
     Delay(2);
 
     int ReadedKey;
@@ -89,6 +112,7 @@ Script "window"(str _Text) { // s: -> str
 
     Thing_Stop(0); // TID_Player -> 0
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
     While(TRUE) {
         if(ReadedKey & BT_FORWARD && ScrollY > 0) {
@@ -100,13 +124,27 @@ Script "window"(str _Text) { // s: -> str
             Delay(4);
         }
 
-        SetHudSize(640, 480, true);
+        SetHudSize(toFloor(640.0 / SCALE), toFloor(480.0 / SCALE), true);
         SetHUDClipRect(0, 0, 0, 0, 0);
         SetFont("M_WINDOW");
-        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 324.0, 320.1, 1);
+        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
+            toFixed(toFloor(320.0 / SCALE) - 80) + HUD_LEFT, // x
+            toFixed(toFloor(260.0 / SCALE) - 5) + HUD_TOP, // y
+            1);
         SetFont("smallfont");
-        SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
-        HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
+        SetHudClipRect(
+            toFloor(320.0 / SCALE) - 80, // x
+            toFloor(260.0 / SCALE), // y
+            160 - 2, // width
+            SYM_HEIGHT * 7 + 1, // height
+            0, true);
+        HudMessage(s: Text;
+            HUDMSG_PLAIN, // type
+            -10000001, // id
+            CR_WHITE, // color
+            toFixed(toFloor(320.0 / SCALE) - 76) + HUD_LEFT, // x
+            toFixed(toFloor(260.0 / SCALE) - ScrollY) + HUD_TOP, // y
+            1); // alpha
         SetHudSize(0, 0, false);
         Delay(1);
 
@@ -121,6 +159,7 @@ Script "window"(str _Text) { // s: -> str
     HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
@@ -209,6 +248,8 @@ Script "levelUp" (bool windowOnly) {
         ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Level, pLevel);
     }
 
+    ScriptCall("ConversationController", "SetGlobalFreeze", true);
+
     ActivatorSound("player/levelup", 127);
     ACS_NamedExecuteWait("window", 0, StrParam(
         s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
@@ -220,6 +261,8 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
         l:"DRRP_B_ID77"));                  // Health restored.
+
+    ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
 
