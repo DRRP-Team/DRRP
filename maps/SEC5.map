@@ -7377,7 +7377,7 @@ y = 928.000;
 type = 9800;
 angle = 270;
 id = 652;
-height = 48.000000;
+height = 56;
 arg0 = 255;
 arg1 = 100;
 arg2 = 100;
@@ -28712,6 +28712,18 @@ twosided = true;
 dontdraw = true;
 }
 
+linedef
+{
+v1 = 42;
+v2 = 432;
+sidefront = 1913;
+sideback = 1914;
+special = 80;
+twosided = true;
+arg0 = 667;
+playercross = true;
+}
+
 sidedef
 {
 sector = 88;
@@ -29235,7 +29247,7 @@ texturemiddle = "DRDC27";
 
 sidedef
 {
-sector = 72;
+sector = 340;
 texturemiddle = "DRDC24";
 }
 
@@ -30876,7 +30888,7 @@ texturetop = "DRDC25";
 
 sidedef
 {
-sector = 72;
+sector = 340;
 texturemiddle = "DRDC24";
 }
 
@@ -34127,7 +34139,7 @@ offsetx_mid = 33.000000;
 
 sidedef
 {
-sector = 72;
+sector = 340;
 texturetop = "DRDC6";
 offsetx_top = -1.000000;
 }
@@ -34280,7 +34292,7 @@ sector = 332;
 
 sidedef
 {
-sector = 72;
+sector = 340;
 texturemiddle = "DRDC24";
 offsetx_mid = 61.000000;
 }
@@ -34990,7 +35002,7 @@ offsetx_mid = 7.000000;
 
 sidedef
 {
-sector = 72;
+sector = 340;
 texturemiddle = "DRDC24";
 }
 
@@ -40297,6 +40309,16 @@ sidedef
 sector = 282;
 }
 
+sidedef
+{
+sector = 72;
+}
+
+sidedef
+{
+sector = 340;
+}
+
 sector
 {
 texturefloor = "DRDC24";
@@ -40335,8 +40357,8 @@ sector
 {
 texturefloor = "EXITSIGN";
 textureceiling = "FLAT20";
-heightfloor = 48;
-heightceiling = 64;
+heightfloor = 56;
+heightceiling = 72;
 lightlevel = 176;
 hidden = true;
 rotationfloor = 270.000000;
@@ -43179,5 +43201,13 @@ texturefloor = "DRDC73";
 textureceiling = "DRDC56";
 heightceiling = 72;
 lightlevel = 208;
+}
+
+sector
+{
+texturefloor = "DRDC24";
+textureceiling = "DRDC24";
+heightceiling = 64;
+lightlevel = 128;
 }
 
