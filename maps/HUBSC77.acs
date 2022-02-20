@@ -87,7 +87,7 @@ Script 666 ENTER {
     //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     ACS_Execute(1000, 0);
     ACS_Execute(1001, 0);
-    //ACS_Execute(3005, 0); // WIP level
+    ACS_Execute(3005, 0); // WIP level
     ACS_Execute(3004, 0); // Give automap
     current_stage = stage();
 }
