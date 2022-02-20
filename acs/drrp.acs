@@ -246,6 +246,8 @@ Script "levelUp" (bool windowOnly) {
         ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Level, pLevel);
     }
 
+    ScriptCall("ConversationController", "SetGlobalFreeze", true);
+
     ActivatorSound("player/levelup", 127);
     ACS_NamedExecuteWait("window", 0, StrParam(
         s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
@@ -257,6 +259,8 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
         l:"DRRP_B_ID77"));                  // Health restored.
+
+    ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
 
