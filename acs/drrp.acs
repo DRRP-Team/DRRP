@@ -64,7 +64,24 @@ Script "fireextfade" (int mode) {
     }
 }
 
+function fixed toFixed(int value) {
+    return value << 16;
+}
+
+function int toInt(fixed value) {
+    return value >> 16;
+}
+
+const fixed HUD_CENTER = 0.0;
+const fixed HUD_TOP = 0.1;
+const fixed HUD_BOTTOM = 0.2;
+const fixed HUD_LEFT = 0.1;
+const fixed HUD_RIGHT = 0.2;
+
 // ACS based DRPG Window
+
+const int SYM_HEIGHT = 9; // Symbol's height is 12px
+const int SCALE = 2; // The bigger - the bigger
 
 Script "window"(str _Text) { // s: -> str
     // This crutch fixes the GZDoom Encoding bug in russian translation
@@ -77,8 +94,6 @@ Script "window"(str _Text) { // s: -> str
         else
             Text = StrParam(s:Text, c:_Text[i]);
     }
-
-    const int SYM_HEIGHT = 12; // Symbol's height is 12px
 
     Delay(2);
 
@@ -100,13 +115,27 @@ Script "window"(str _Text) { // s: -> str
             Delay(4);
         }
 
-        SetHudSize(640, 480, true);
+        SetHudSize(640 / SCALE, 480 / SCALE, true);
         SetHUDClipRect(0, 0, 0, 0, 0);
         SetFont("M_WINDOW");
-        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 324.0, 320.1, 1);
+        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
+            toFixed(320 / SCALE - 80) + HUD_LEFT, // x
+            toFixed(260 / SCALE - 5) + HUD_TOP, // y
+            1);
         SetFont("smallfont");
-        SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
-        HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
+        SetHudClipRect(
+            320 / SCALE - 80, // x
+            260 / SCALE, // y
+            160 - 2, // width
+            SYM_HEIGHT * 7 + 1, // height
+            0, true);
+        HudMessage(s: Text;
+            HUDMSG_PLAIN, // type
+            -10000001, // id
+            CR_WHITE, // color
+            toFixed(320 / SCALE - 76) + HUD_LEFT, // x
+            toFixed(260 / SCALE - ScrollY) + HUD_TOP, // y
+            1); // alpha
         SetHudSize(0, 0, false);
         Delay(1);
 
