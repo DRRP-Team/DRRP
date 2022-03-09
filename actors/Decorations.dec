@@ -237,9 +237,12 @@ Actor DRRPCrateShard {
     Radius 2
     Height 3
     BounceFactor 0.3
+    // TID 14523
+
     States {
     Spawn:
         BPRT A 0
+        BPRT A 0 Thing_ChangeTID(0, 14523)
         BPRT A 0 A_SetScale(FRandomPick(-0.75, -0.5, 0.5, 0.75), FRandomPick(-0.75, -0.5, 0.5, 0.75))
         BPRT A 0 A_Jump(255, "Type1", "Type2", "Type3", "Type4", "Type5", "Type6")
     Type1:
