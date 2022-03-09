@@ -611,7 +611,7 @@ Pickep up a large medikit.,DRRP_I_GOT_LGMEDKIT,,,Подобрана больша
 Soulsphere!,DRRP_I_GOT_SOULSPHERE,,,Сфера душ!
 Berserk!,DRRP_I_GOT_BERSERKER,,,Берсерк!
 Pickep up a dog collar.,DRRP_I_GOT_DOGCOLLAR,,,Подобран собачий ошейник.
-Civilian,DRRP_E_CIVILIAN,,,Штатский
+Civilian,DRRP_E_CIVILIAN,,,Сотрудник
 Scientist,DRRP_E_SCIENTIST,,,Ученый
 Marine,DRRP_E_MARINE,,,Морпех
 Dr. Guerard,DRRP_E_DRGUERARD,,,Доктор Герард
@@ -637,14 +637,14 @@ Green Door,DRRP_E_GREENDOOR,,,Зеленая дверь
 Yellow Door,DRRP_E_YELLOWDOOR,,,Желтая дверь
 Exit Door,DRRP_E_EXITDOOR,,,Выход
 Locked Door,DRRP_E_LOCKEDDOOR,,,Закрытая дверь
-Unlocked Door,DRRP_E_UNLOCKEDDOOR,,,
+Unlocked Door,DRRP_E_UNLOCKEDDOOR,,,Открытая дверь
 Portal,DRRP_E_PORTAL,,,Портал
 Computer,DRRP_E_COMPUTER,,,Терминал
 Item Vendor,DRRP_E_ITEMVENDOR,,,Item Vendor
 broken,DRRP_E_BROKEN,,,сломан
 broken,DRRP_E_BROKEN_W,,,сломана
 broken,DRRP_E_BROKEN_I,,,сломано
-Entrance,DRRP_INTRO_0,,,Вход
+Tutorial,DRRP_INTRO_0,,,Обучение
 /junction.bsp,DRRP_INTRO_1,,,/junction.bsp
 Enter Junction,DRRP_INTRO_2,,,В Переход
 ,DRRP_INTRO_3,,,
@@ -796,14 +796,14 @@ I heard Dr. Gue-\nrard got Dr. Jen-\nsen fired. Not\nsure I believe\nthat though
 Kronos is going\nto kill us all!,DRRP_HUB_53,,,Кронос собирается\nвсех нас убить!
 Rumor is that\nJensen was fired\nfor security\nbreaches but\nGuerard may have\nhad something to\ndo with it.,DRRP_HUB_54,,,"Ходят слухи, что\nДженсена уволили\nиз-за нарушений\nбезопасности, но\nвозможно, просто\nГерард постарался"
 Have you met Kro-\nnos? I've been\nhere for years\nbut have never\nmet him.,DRRP_HUB_55,,,"Встречал Кроноса?\nЯ слышу о нем уже\nгоды, но так и не\nвстречал"
-Lots of equipment\nhas disappeared.\nHope it turns up\nintact.,DRRP_HUB_56,,,Довольно много\nснаряжения про-\nпало. Надеюсь они\nвсе еще нетронуты
+Lots of equipment\nhas disappeared.\nHope it turns up\nintact.,DRRP_HUB_56,,,"Пропало много\nоборудования.\nНадеюсь, оно в целости."
 The scientists at\nthis facility are\ninsane!,DRRP_HUB_57,,,Ученые здесь про-\nсто сумасшедшие!
 "Oh, you have the\nblue keycard?\nJensen had it\nwhen we arrested\nhim. Hope Guerard\ndoesn't come\nlooking for it.",DRRP_HUB_58,,,"У тебя есть синий\nключкарта? Ключ\nбыл у Дженсена,\nкогда его аресто-\nвали. Надеюсь,\nГерард не придет\nискать его"
 Someone told me\nthey saw Guerard\ntransform into\nsome kind of hor-\nrible creature. I\nwonder what that\nis all about.,DRRP_HUB_59,,,"Кто-то рассказал\nмне, что видели\nкак Герард прев-\nратился в какое-\nто ужасное созда-\nние. Я удивляюсь,\nо чем все это"
 I don't know who\nto trust anymore.,DRRP_HUB_60,,,Я незнаю теперь\nкому верить
 I won't tell any-\none you have the\ncard. I don't\ntrust Guerard.\nI'd rather you\nhave it than him.,DRRP_HUB_61,,,"Я никому не\nскажу, что у тебя\nесть ключ. Я не\nдоверяю Герарду.\nЛучше пусть будет\nу тебя, чем у\nнего"
 I'm beginning to\nwonder if anyone\nwill make it out\nof here alive.,DRRP_HUB_62,,,"Я удивлюсь, если\nкто-нибудь выбе-\nрется от сюда\nживым"
-I was working in\nSector 5 as part\nof the unit that\narrested Dr. Jen-\nsen. I remember\nhe was fired sev-\neral weeks ago so\nI'm not sure why\nhe's still at\nthis facility.,DRRP_HUB_63,,,"Я работал в Сек-\nторе 5 когда час-\nть отряда аресто-\nвала Др. Дженсена\nПомнится, его\nуволили несколько\nнедель назад, и я\nне уверен, почему\nвсе еще здесь"
+I was working in\nSector 5 as part\nof the unit that\narrested Dr. Jen-\nsen. I remember\nhe was fired sev-\neral weeks ago so\nI'm not sure why\nhe's still at\nthis facility.,DRRP_HUB_63,,,"Я работал в Секторе 5 в составе группы,\nкоторая арестовала\nДр. Дженсена.\nЯ помню, как его\nуволили несколько\nнедель назад, поэтому\nя не понимаю, что он\nздесь до сих пор\nделает."
 I need to get\ninto the green\nzone but I mis-\nplaced my green\nkeycard.,DRRP_HUB_64,,,"Мне нужно добра-\nться до зеленной\nзоны, но я поте-\nрял свою зеленную\nключкарту"
 You found my\ngreen keycard!\nKeep it. You need\nit more than I\ndo.,DRRP_HUB_65,,,Ты нашел мою\nзеленную ключ-\nкарту! Держи. Она\nтебе нужнее
 I'm freaked. I\nhave a feeling\nsomething really\nbad is about to\nhappen.,DRRP_HUB_66,,,"У меня такое чув-\nство, что прои-\nзойдет что-то\nплохое"
@@ -913,7 +913,7 @@ Door passcode\nsomehow related\nto October 10th.,DRRP_SEC1_41,,,Дверной �
 No more email.,DRRP_SEC1_43,,,Письма закончились
 1010,DRRP_SEC1_44,,,
 [Door lock\noverride]\nEnter code:,DRRP_SEC1_45,,,[Дверной замок\nзаперт]\nВведите пароль:\n
-[Dr. Guerard]\nYou look like you\ncould use some\nhelp. Here's some\nextra health to\nget you ready for\nwhatever lies\nahead!,DRRP_SEC1_46,,,"[Др. Герард]\nТы неважно выглядишь,\n морпех. Вот, это\nпоможет поднять\nтебя на ноги!"
+[Dr. Guerard]\nYou look like you\ncould use some\nhelp. Here's some\nextra health to\nget you ready for\nwhatever lies\nahead!,DRRP_SEC1_46,,,"[Др. Герард]\nТы неважно\nвыглядишь, морпех.\nВот, это поможет\nподнять тебя на ноги!"
 [Dr. Guerard]\nIt's not impor-\ntant how I got\nhere ahead of\nyou. It's best\nyou just keep\nmoving.,DRRP_SEC1_47,,,"[Др. Герард]\nНеважно, как я\nдобрался сюда\nвперед тебя. Луч-\nше всего продол-\nжать идти"
 "[Dr. Guerard]\nPlease, just\nkeep moving.",DRRP_SEC1_48,,,"[Др. Герард]\nПожалуйста,\nпродолжай идти"
 You'll find use-\nful equipment be-\nhind this door\nbut you need the\ngreen keycard to\nget in. Come back\nhere when you get\nthe green key-\ncard.,DRRP_SEC1_49,,,"3а этой дверью\nможно найти все-\nвозможное снаря-\nжение, но нужен\nзеленый ключ.\nВернись сюда,\nкогда найдёшь его.\n"
@@ -974,8 +974,8 @@ Panel opened.,DRRP_SEC2_47,,,Панель открыта
 Panel open.,DRRP_SEC2_48,,,Панель открыта
 Ore Processing:\nTerminal offline,DRRP_SEC2_49,,,Обработка Руды:\nТерминал отключен
 Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nAn Information\nSecurity staffer\ncame in the other\nday for an audit\nof the lab. It's\nstrange... I've\nbeen with UAC's\nAdvanced Research\nDepartment for\nover 7 years and\nthis is a first.,DRRP_SEC2_50,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nШтатный сотрудник\nИнформационной\nБезопасности при-\nшел на днях для\nревизии лаборато-\nрии. Это стран-\nно... Я в Отделе\nИсследования ОАК\nболее 7 лет, и\nтакого еще не\nбыло"
-Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nWoot! Going to\nNew Vegas for my\nday off. I'm down\n500 UAC credits\nfor the year but\nI'll make it up!,DRRP_SEC2_51,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nСобираюсь в Новый\nЛас-Вегас на\nувольнение. У\nменя меньше 5ОО\nОАК кредитов, но\nя сделаю это!"
-Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nI don't trust Dr.\nGuerard. I saw\nhim put a handful\nof Hydrocon vials\ninto his lab\ncoat. I've re-\nported the activ-\nity to personnel\nbut nothing has\ncome of it. The\nrecent lab audits\nindicate we're\nlosing a lot of\nsupplies and I\ndon't want the\nblamed for Mr.\nSticky Fingers!,DRRP_SEC2_52,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nЯ не верю Др. Ге-\nрарду. Я видел,\nкак он положил\nнесколько гидро-\nконных бутылей\nсебе лабораторный\nхалат. Я сообщил\nоб этом персона-\nлу, но в пустую.\nНедавняя ревизия\nлаборатории по-\nказала, что у нас\nпропало немного\nзапасов!"
+Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nWoot! Going to\nNew Vegas for my\nday off. I'm down\n500 UAC credits\nfor the year but\nI'll make it up!,DRRP_SEC2_51,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nФух! Собираюсь в\nНью Вегас на\nвыходные. Я за год\nпотерял 500 UAC\nкредитов, но я\nотыграюсь!"
+Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nI don't trust Dr.\nGuerard. I saw\nhim put a handful\nof Hydrocon vials\ninto his lab\ncoat. I've re-\nported the activ-\nity to personnel\nbut nothing has\ncome of it. The\nrecent lab audits\nindicate we're\nlosing a lot of\nsupplies and I\ndon't want the\nblamed for Mr.\nSticky Fingers!,DRRP_SEC2_52,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nЯ не доверяю\nДр. Герарду.\nЯ видел, как он\nсунул несколько\nсклянок Гидрокона\nсебе в халат. Я\nдоложил об этом,\nно без толку.\nНедавняя ревизия\nпоказала, что у нас\nнедостача запасов\nи я не хочу отвечать\nза этого клептомана!"
 End of log.,DRRP_SEC2_53,,,Конец журнала
 Super secret\npasscode: ***9,DRRP_SEC2_54,,,Супер секретный\nпароль: ***9
 5555,DRRP_SEC2_55,,,
@@ -1017,7 +1017,7 @@ You'll need to\nunlock that door.\nThe passcode is\n5551.,DRRP_SEC3_30,,,Теб�
 Security lock-\ndown in effect.\nEnter passcode:\n,DRRP_SEC3_32,,,Безопасная изоля-\nция в процессе.\nВведите пароль:\n
 Door unlocked.,DRRP_SEC3_33,,,Дверь открыта
 Guerard says ig-\nnore the door on\nthe right.,DRRP_SEC3_34,,,Герард сказал не\nсоваться в дверь\nсправа
-"Searching...\nConnecting...\nIncoming message:\nFrom: Dr. Guerard\nMarine, ignore\nthe door up ahead\non you right.\nThat area is un-\nder lockdown but\nthe door may be\nunlocked, the\nsystems are act-\ning up all over.\nI suggest you\njust move along.",DRRP_SEC3_35,,,"Поиск...\nСоединение...\nСообщение:\nОт: Др. Герард\nМорпех, не суйся\nв дверь прямо\nперед тобой спра-\nва. Это зона изо-\nлирована, но две-\nрь может быть от-\nкрыта, системы\nреагируют на все\nподряд. Я советую\nтебе идти одному"
+"Searching...\nConnecting...\nIncoming message:\nFrom: Dr. Guerard\nMarine, ignore\nthe door up ahead\non you right.\nThat area is un-\nder lockdown but\nthe door may be\nunlocked, the\nsystems are act-\ning up all over.\nI suggest you\njust move along.",DRRP_SEC3_35,,,"Поиск...\nСоединение...\nСообщение:\nОт: Др. Герард\nМорпех, не заходи\nв дверь справа. Эта\nзона на карантине,\nно дверь может быть\nоткрыта из-за сбоя\nсистемы доступа.\nЯ рекомендую\nдвигаться дальше."
 [Dr. Guerard]\nContinue down the\nhall and ignore\nthe door.,DRRP_SEC3_36,,,[Др. Герард]\nПродолжай спус-\nкаться и не захо-\nди в дверь
 ...,DRRP_SEC3_37,,,...
 "[Mr. Nadira]\nYou're not\nauthorized to be\nin here, soldier!",DRRP_SEC3_38,,,"[Мр. Надира]\nУ тебя нет до-\nпуска, что бы\nбыть здесь, сол-\nдат!"
