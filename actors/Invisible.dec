@@ -240,3 +240,7 @@ Actor InformatorActor: DRRPInformatorActor 10900 {
     //$Arg1 "DRRP" string index.
     //$Arg2 Get string from level: 0=<cur>, 1=INTRO, 2=HUB, 3..9=SEC1..7, 10=XHUB, 11=REAC
 }
+
+Actor DRRPMapSpotGravity : MapSpotGravity replaces MapSpotGravity {
+    Tag "$DRRP_EMPTY"
+}
