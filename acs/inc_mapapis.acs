@@ -55,7 +55,7 @@ Script 3006 (void) { // Jammed door
         LocalAmbientSound("door/break", 127);
         Radius_Quake2(0, 1, 17, 0, 128, "");
         Delay(17);
-        Ceiling_RaiseToNearest(0, 4096);
+        Ceiling_RaiseToNearest(0, 128);
     }
 }
 
