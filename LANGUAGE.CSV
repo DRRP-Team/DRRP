@@ -628,7 +628,7 @@ Blue Lamp,DRRP_E_BLUELAMP,,,Синяя лампа
 Table,DRRP_E_TABLE,,,Стол
 Bunk Beds,DRRP_E_BUNKBEDS,,,Двухъярусная койка
 Crate,DRRP_E_CRATE,,,Ящик
-Jammed Door,DRRP_E_JAMMEDDOOR,,,Помятая дверь
+Jammed Door,DRRP_E_JAMMEDDOOR,,,Заклинившая дверь
 Weak Wall,DRRP_E_WEAKWALL,,,Тонкая стена
 Door,DRRP_E_DOOR,,,Дверь
 Red Door,DRRP_E_REDDOOR,,,Красная дверь
@@ -886,7 +886,7 @@ Doo$*&::::\nunl***ed,DRRP_SEC1_15,,,Две$*&::::\nотк***та
 W!dg3+ wa5 h3r3,DRRP_SEC1_16,,,Ш!дж3+ ша5 н3я3
 Do!!!!##23$\nun(0*c3d,DRRP_SEC1_17,,,Дв!!!!##23$\nот(О*ы3а
 ..#.#...nl.....d,DRRP_SEC1_18,,,..#.#...тк.....а
-Спросите у стод,DRRP_SEC1_19,Translated by Amon,,"Спроси у этого\nсотрудника, насчет\nпароля от двери."
+Спросите у стод,DRRP_SEC1_19,Translated by Amon,,"Спроси у\nсотрудника, насчет\nпароля от двери."
 "[Dr. Guerard]\nHello again.\nA door north of\nthis position\nleads back to\nJunction, but it\nis locked. Ask\nthat guy if he\nhas the code for\ndoor.",DRRP_SEC1_20,Translated by Amon,,"[Др. Герард]\nПривет еще раз.\nДверь на севере\nведет назад,\nв Переход, но\nона закрыта. \nСпроси этого\nпарня, есть ли\nу него код \nот двери."
 [Dr. Guerard]\nTry to get the\npasscode for the\ndoor out of that\ncivilian worker.,DRRP_SEC1_21,Translated by Amon,,[Др. Герард]\nПопробуй узнать\nкод от двери у\nэтого сотрудника.
 [Dr. Guerard]\nHe said I have\nthe code? I've\nnever even been\ndown here until\nthe invasion! Try\noffering him some\ncredits; he might\nbe more helpful.,DRRP_SEC1_22,Translated by Amon,,"[Др. Герард]\nОн говорит, что у\nменя есть код?\nЯ здесь никогда\nне был до \nвторжения! \nПопробуй предложить\nему несколько \nкредитов за пароль."
@@ -914,7 +914,7 @@ No more email.,DRRP_SEC1_43,,,Письма закончились.
 1010,DRRP_SEC1_44,,,
 [Door lock\noverride]\nEnter code:,DRRP_SEC1_45,Translated by Amon,,[Дверной замок\nзаблокирован]\nВведите пароль:
 [Dr. Guerard]\nYou look like you\ncould use some\nhelp. Here's some\nextra health to\nget you ready for\nwhatever lies\nahead!,DRRP_SEC1_46,Translated by Amon,,"[Др. Герард]\nТы неважно\nвыглядишь, морпех.\nВот, это поможет\nподнять тебя на ноги!"
-[Dr. Guerard]\nIt's not impor-\ntant how I got\nhere ahead of\nyou. It's best\nyou just keep\nmoving.,DRRP_SEC1_47,Translated by Amon,,"[Др. Герард]\nНеважно, как я\nдобрался сюда\nвперед тебя. \nПросто иди\nдальше."
+[Dr. Guerard]\nIt's not impor-\ntant how I got\nhere ahead of\nyou. It's best\nyou just keep\nmoving.,DRRP_SEC1_47,Translated by Amon,,"[Др. Герард]\nНеважно, как я\nдобрался сюда\nраньше тебя. \nПросто иди\nдальше."
 "[Dr. Guerard]\nPlease, just\nkeep moving.",DRRP_SEC1_48,Translated by Amon,,"[Др. Герард]\nПожалуйста,\nпродолжай идти."
 You'll find use-\nful equipment be-\nhind this door\nbut you need the\ngreen keycard to\nget in. Come back\nhere when you get\nthe green key-\ncard.,DRRP_SEC1_49,Translated by Amon,,"3а этой дверью\nможно найти \nвсевозможное \nснаряжение, но \nнужна зеленая\nключ-карта.\nВернись сюда,\nкогда найдёшь её."
 Having trouble\nfinding the green\nkeycard? You\nwon't find it in\nthis sector.\nYou'll likely\nfind the green\nkeycard in a\nlater sector.\nYou'll need to\ntravel back here\nto open this\ndoor.,DRRP_SEC1_50,Translated by Amon,,"Проблемы с\nпоиском зеленой\nключ-карты? В этом\nсекторе её нет.\nВозможно, ты \nнайдешь зеленую \nключ-карту в\nследующих \nсекторах. Тебе \nпридется вернуться\nсюда, чтобы \nоткрыть эту дверь."
@@ -927,61 +927,61 @@ Sector 2,DRRP_SEC2_0,,,Сектор 2
 /junction.bsp,DRRP_SEC2_1,,,/junction.bsp
 Enter Junction,DRRP_SEC2_2,,,В Переход
 ,DRRP_SEC2_3,,,
-Someone changed\nthe code on this\ndoor without\ntelling me. The\nnew code may have\nsomething to do\nwith the layout\nof these tunnels.\nI wish I had an\nautomap.,DRRP_SEC2_4,,,"Кто-то изменил\nпароль этой две-\nри, не сказав\nмне. Новый пароль\nможет иметь какое\n-то отношение к\nрасположению этих\nтуннелей. Мне\nжаль, что у меня\nнет автокарты"
-I don't know the\ncode! See if you\ncan figure it out\nby looking at\nyour automap.,DRRP_SEC2_5,,,"Я не знаю пароль!\nПосмотри, может\nты поймешь его,\nиспользуя твою\nавтокарту"
-The supervisors\nin this area have\nbeen acting weird\nlately. It might\nhave something to\ndo with that high\nlevel guy that's\nbeen coming\naround.,DRRP_SEC2_6,,,"Смотрители в этой\nзоне действовали\nсверхdестественно\nв последнее вре-\nмя. Это могло бы\nиметь отношение к\nтому парню с вы-\nсоким уровнем,\nкоторый проходил\nздесь"
-I'll stay here\nand see what else\nhas been changed.,DRRP_SEC2_7,,,"Я останусь здесь,\nи посмотрю что\nеще было изменено"
+Someone changed\nthe code on this\ndoor without\ntelling me. The\nnew code may have\nsomething to do\nwith the layout\nof these tunnels.\nI wish I had an\nautomap.,DRRP_SEC2_4,Translated by Amon,,"Кто-то изменил\nпароль этой\nдвери, не сказав\nмне. Новый пароль\nможет иметь \nкакое-то отношение \nк расположению \nэтих туннелей. \nЖаль, что у меня \nнет автокарты."
+I don't know the\ncode! See if you\ncan figure it out\nby looking at\nyour automap.,DRRP_SEC2_5,Translated by Amon,,"Я не знаю пароль!\nПосмотри, может\nты поймешь его,\nвзглянув на \nавтокарту."
+The supervisors\nin this area have\nbeen acting weird\nlately. It might\nhave something to\ndo with that high\nlevel guy that's\nbeen coming\naround.,DRRP_SEC2_6,Translated by Amon,,"Смотрители в этой\nзоне в последнее \nвремя ведут \nсебя странно. \nВозможно, это \nимеет какое-то\nк тому парню,\nс высоким уровнем\nдопуска, который \nприходил сюда."
+I'll stay here\nand see what else\nhas been changed.,DRRP_SEC2_7,Translated by Amon,,"Я останусь здесь,\nи посмотрю что\nеще изменилось."
 1337,DRRP_SEC2_8,,,
-[Door lock\noverride]\nEnter code:,DRRP_SEC2_9,,,[Дверь заперта]\nВведите пароль:\n
-Access granted!,DRRP_SEC2_10,,,Доступ разрешен!
-Door unlocked.,DRRP_SEC2_11,,,Дверь открыта
-Ore Processing,DRRP_SEC2_12,,,Обработка Руды
-Use code 042 for\nmaintenance ser-\nvice door access.,DRRP_SEC2_13,,,Используй пароль\nО42 для доступа к\nдвери техобслу-\nживания
-"Oh, God! You\nstartled me! Can\nyou get us out of\nthis? My mainte-\nnance passcode is\n042. Use it to\naccess terminals\nin the off-site\nbackup room.",DRRP_SEC2_14,,,О боже! Ты пора-\nжаешь меня! Ты\nможешь вытащить\nнас отсюда? Мой\nпароль обслужива-\nния - О42. Ис-\nпользуй его для\nдоступа в терми-\nналы резервной\nкомнате
-"Please, hurry! Go\nto the off-site\nbackup room and\nfind the mainte-\nnance service\ndoor. Use code\n042.",DRRP_SEC2_15,,,"Прошу, быстрее!\nИди в резервную\nкомнату на задней\nстороне, и найди\nдверь техобслужи-\nвания. Пароль О42"
-Offsite Backup,DRRP_SEC2_16,,,3адняя Сторона
-Maint. Access,DRRP_SEC2_17,,,Обслуж. Доступ
+[Door lock\noverride]\nEnter code:,DRRP_SEC2_9,Translated by Amon,,[Дверной замок\nзаблокирован]\nВведите пароль:
+Access granted!,DRRP_SEC2_10,Translated by Amon,,Доступ разрешен!
+Door unlocked.,DRRP_SEC2_11,Translated by Amon,,Дверь открыта.
+Ore Processing,DRRP_SEC2_12,Translated by Amon,,Переработка руды.
+Use code 042 for\nmaintenance ser-\nvice door access.,DRRP_SEC2_13,Translated by Amon,,Используй пароль\n042 для доступа в \nзону технического\nобслуживания.
+"Oh, God! You\nstartled me! Can\nyou get us out of\nthis? My mainte-\nnance passcode is\n042. Use it to\naccess terminals\nin the off-site\nbackup room.",DRRP_SEC2_14,Translated by Amon,,О боже! Ты меня\nнапугал! Ты\nможешь вытащить\nнас отсюда? \nМой пароль \nобслуживания - 042.\nИспользуй его для\nдоступа к \nтерминалам\nв резервной \nкомнате.\n
+"Please, hurry! Go\nto the off-site\nbackup room and\nfind the mainte-\nnance service\ndoor. Use code\n042.",DRRP_SEC2_15,Translated by Amon,,"Прошу, быстрее!\nИди в резервную\nкомнату и найди\nдверь, в зону \nтехнического\nобслуживания.\nПароль - 042."
+Offsite Backup,DRRP_SEC2_16,Translated by Amon,,Внешнее \nрезервное \nкопирование.
+Maint. Access,DRRP_SEC2_17,Translated by Amon,,Доступ к\nтехническому\nобслуживанию.
 042,DRRP_SEC2_18,,,
-[Maint. Access]\nEnter code:,DRRP_SEC2_19,,,[Обслуж. Доступ]\nВведите пароль:\n
-Maint. door opened!,DRRP_SEC2_20,,,Обслуж. дверь\nоткрыта!
-Maint. door open.,DRRP_SEC2_21,,,Обслуж. дверь\nоткрыта
-"Connecting.......\nIncoming\ncommunication...\nMarine, is that\nyou? It's Dr.\nGuerard. I may be\nable to send you\ninformation as\nyou make your way\nthrough the base,\nso be sure to be\non the lookout\nfor my messages\non computer ter-\nminals. Looks\nlike you'll have\nto get through\nOre Processing to\nget out of the\nsector you're in\nnow. There, I've\nunlocked the en-\ntrance door for\nyou.",DRRP_SEC2_22,,,"Соединение.......\nВходящая информа-\nция.......\nМорпех, это ты?\nЭто Др. Герард. Я\nмогу посылать\nтебе информацию,\nпока ты будешь\nгулять по базе,\nтак что, почаще\nпроверяй компью-\nтерные терминалы.\nПохоже, что тебе\nпридется пройти\nОбработку Руды,\nчтобы выйти из\nсектора в котором\nты сейчас нахо-\nдишься. Там, я\nоткрыл для тебя\nвходную дверь"
-Get moving! Head\nback to Ore Proc-\nessing.,DRRP_SEC2_23,,,Теперь иди!\nСледуй к Обработ-\nке Руды
+[Maint. Access]\nEnter code:,DRRP_SEC2_19,Translated by Amon,,[Техобслуживание]\nВведите пароль:
+Maint. door opened!,DRRP_SEC2_20,Translated by Amon,,Дверь открыта!
+Maint. door open.,DRRP_SEC2_21,Translated by Amon,,Дверь открыта.
+"Connecting.......\nIncoming\ncommunication...\nMarine, is that\nyou? It's Dr.\nGuerard. I may be\nable to send you\ninformation as\nyou make your way\nthrough the base,\nso be sure to be\non the lookout\nfor my messages\non computer ter-\nminals. Looks\nlike you'll have\nto get through\nOre Processing to\nget out of the\nsector you're in\nnow. There, I've\nunlocked the en-\ntrance door for\nyou.",DRRP_SEC2_22,Translated by Amon,,"Соединение.......\nВходящая \nинформация.......\nМорпех, это ты?\nЭто Др. Герард. Я\nмогу посылать\nтебе информацию,\nпока ты будешь\nгулять по базе,\nтак что, почаще\nпроверяй \nкомпьютерные \nтерминалы.\nПохоже, что тебе\nпридется пройти\nчерез зону \nпереработки руды,\nчтобы выйти из\nсектора, в котором\nты сейчас \nнаходишься. Я \nоткрыл для тебя\nвходную дверь."
+Get moving! Head\nback to Ore Proc-\nessing.,DRRP_SEC2_23,Translated by Amon,,Теперь иди!\nСледуй к зоне\nпереработки руды.
 "[Email]\nTo: P. Marks\nFrom: X. Murray:\nFor the love of\nall things holy,\nman! will you\nstop leeving your\neqipmint\naround in pasaje-\nways for everone\nto trip\non?!!!!!!!!!!\n-xavier",DRRP_SEC2_24,,,[Почта]\nКому: П. Маркс\nОт: К. Мюррей:\nво имя всех\nсвятых чувак!\nкада ты наканец\nперистаниш\nоставлять свое\nгребаное\nоборудование\nв проходе?!!!!!!!!\n-ксавьер
 "[Email]\nTo: X. Murray\nFrom: P. Marks:\nMurray, two words\nfor you: spell\ncheck. Wait,\nhere's two more:\nshift key.\n-Paul",DRRP_SEC2_25,,,"[Почта]\nКому: К. Мюррей\nОт: П. Маркс:\nМюррей, всего\nодно слово:\nПравописание.\nХотя нет, еще два:\nкнопка Shift\n-Пол"
-[Email]\nTo: P. Marks\nFrom: X. Murray:\nheres 2 for u\nmarks - ur dead!!\n-xavier,DRRP_SEC2_26,,,[Почта]\nКому: П. Маркс\nОт: К. Мюррей:\nа вот те мои два:\n ти\nтруп!!\n-ксавьер
-[Email]\nTo: Maint. staff\nFrom:Dir. Branson\nMarks and Murray\nhave been sus-\npended for brawl-\ning on the job.\n-Jeb,DRRP_SEC2_27,,,[Почта]\nКому: Тех. персонал\nОт: Дир. Бренсон\nМаркс и Мюррей\nвременно отстра-\nнены из-за ссоры\nна работе\n-зеб
-No more email.,DRRP_SEC2_28,,,Письма закончились
-Logged in as root.\n# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.,DRRP_SEC2_29,,,Login root\n\n# scp /map.dat .\nСохранение...\nВсе.\nВы получили\nданные карты
-Map data already\ndownloaded.,DRRP_SEC2_30,,,Данные карты\nуже загружены
-"[Email]\nTo: T. Brown II\nFrom: D. Kramer\nSorry I missed\nyour birthday.\nCan't get any\ngame consoles,\nbut I think\nyou'll like what\nI got. Left it in\nthe other hidden\nroom; it's\nless ""virtual.""\n-Dave",DRRP_SEC2_31,,,"[Почта]\nКому: Т. Браун ЩЩ\nОт: Д. Крамер\nПрости, я пропу-\nстил твой день\nрождения. Не\nнашел ни одной\nигровой консоли,\nя подумал, что ты\nобрадуешься тем,\nчто я достал.\nОставил в другой\nскрытой комнате;\nэто менее ""вирту-\nальное""\n-Дейв"
-[Email]\nTo: D. Kramer\nFrom: T. Brown II\nWhat other hidden\nroom?\n-Ted,DRRP_SEC2_32,,,[Почта]\nКому: Д. Крамер\nОт: Т. Браун ЩЩ\nКакая другая\nкомната?\n-Тэд
-[Email]\nTo: T. Brown II\nFrom: D. Kramer\nIt's just inside\nOre Processing.,DRRP_SEC2_33,,,"[Почта]\nКому: Т. Браун ЩЩ\nОт: Д. Крамер\nНу, она внутри\nОбработки Руды"
-"We're in serious\ntrouble, Marine!\nThis processor\nlooks like it's\ngoing to overload\nand take down the\nwhole power grid\nfor this sector.\nLet me think for\na moment...",DRRP_SEC2_34,,,"У нас серьезные\nпроблемы, Морпех!\nЭтот процессор\nпохоже перегружен\nи вырубает целые\nветви энергии в\nэтом секторе. Дай\nмне подумать..."
-Get 10 armor\npoints and give\nthem to the\nscientist.,DRRP_SEC2_35,,,Собери 1О единиц\nброни и отдай их\nученому
-Yes! I think I\ncan use the alloy\nin your armor\nshards to cause a\nlocal short to\navert the over-\nload. Ten should\ndo it. [Engage\nscientist again\nto give him 10\narmor shards],DRRP_SEC2_36,,,"Да! Я полагаю,\nчто смогу исполь-\nзовать сплав\nячеек брони для\nпредотвращения\nперегрузки. 1О\nштук должно хва-\nтить [Принеси\nученому 1О единиц\nброни]"
-You don't have\nenough armor\nshards. Try to\nfind some more\naround here.\nHurry! We don't\nhave much time.,DRRP_SEC2_37,,,"У тебя недоста-\nточно брони. Да-\nвай, осмотрись\nздесь вокруг.\nЖивее! У нас мало\nвремени"
-Access panel code\nis 988.,DRRP_SEC2_38,,,Пароль панели\nдоступа - 988
-"OK, I've got your\nshards. Now use\nthe computer in\nthe alcove by the\nentrance to open\nthe access panel\nand I'll insert\nthe alloy. The\ncomputer should\nbe finished with\nits backup by\nnow. The panel\naccess code is\n988.",DRRP_SEC2_39,,,"Спасибо за броню.\nТеперь используй\nкомпьютер, чтобы\nоткрыть панель\nдоступа, а я\nзасуну сплав.\nПароль панели\nдоступа - 988"
-988 should be the\npanel access\ncode.,DRRP_SEC2_40,,,988 - скорей все-\nго это пароль\nпанели доступа
-"All right, Ma-\nrine, I've gone\nthrough the ac-\ncess panel and am\ninside the proc-\nessor now. Come\nback to the proc-\nessor; I may need\nsome help.",DRRP_SEC2_41,,,"Хорошо, Морпех, я\nпрошел панель\nдоступа. Воз-\nвращайся к про-\nцессору; мне\nпонадобится по-\nмощь"
-"I'm about done\nplacing the\nshards... hey, I\nthought this\nproblem was\ncaused by the in-\nvasion but on\ncloser look, it\nlooks like\nsabota-...",DRRP_SEC2_42,,,"Я о размещении\nброни... я думал,\nчто эта проблема\nбыла вызвана вто-\nржением, но с\nблизкого взгляда,\nэто напоминает\nсабота-..."
-Ore Processing:\nBacking up...,DRRP_SEC2_43,,,Обработка Руды:\nРезервное\nкопирование...
-"No, the other\ncomputer.",DRRP_SEC2_44,,,"Нет, другой\nкомпьютер"
+[Email]\nTo: P. Marks\nFrom: X. Murray:\nheres 2 for u\nmarks - ur dead!!\n-xavier,DRRP_SEC2_26,,,[Почта]\nКому: П. Маркс\nОт: К. Мюррей:\nа вот те мои два:\nти труп!!\n-ксавьер
+[Email]\nTo: Maint. staff\nFrom:Dir. Branson\nMarks and Murray\nhave been sus-\npended for brawl-\ning on the job.\n-Jeb,DRRP_SEC2_27,Translated by Amon,,[Почта]\nКому: Тех. персонал\nОт: Дир. Бренсон\nМаркс и Мюррей\nвременно \nотстранены \nиз-за ссоры \nна работе\n-Йеб
+No more email.,DRRP_SEC2_28,Translated by Amon,,Письма закончились.
+Logged in as root.\n# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.,DRRP_SEC2_29,,,Login root\n\n# scp /map.dat .\nСохранение...\nВсе.\nВы получили\nданные карты.
+Map data already\ndownloaded.,DRRP_SEC2_30,,,Данные карты\nуже загружены.
+"[Email]\nTo: T. Brown II\nFrom: D. Kramer\nSorry I missed\nyour birthday.\nCan't get any\ngame consoles,\nbut I think\nyou'll like what\nI got. Left it in\nthe other hidden\nroom; it's\nless ""virtual.""\n-Dave",DRRP_SEC2_31,Translated by Amon,,"[Почта]\nКому: Т. Браун II\nОт: Д. Крамер\nПрости, что я\nпропустил твой день\nрождения. Я не\nсмог найти ни одной\nигровой консоли,\nно я думаю, что\nтебе понравится то,\nчто я достал. \nОставил в другой\nсекретной комнате.\nэто менее \n""виртуальное""\n-Дейв"
+[Email]\nTo: D. Kramer\nFrom: T. Brown II\nWhat other hidden\nroom?\n-Ted,DRRP_SEC2_32,Translated by Amon,,[Почта]\nКому: Д. Крамер\nОт: Т. Браун II\nКакая секретная\nкомната?\n-Тэд
+[Email]\nTo: T. Brown II\nFrom: D. Kramer\nIt's just inside\nOre Processing.,DRRP_SEC2_33,Translated by Amon,,"[Почта]\nКому: Т. Браун II\nОт: Д. Крамер\nНу, она в зоне\nпереработки руды."
+"We're in serious\ntrouble, Marine!\nThis processor\nlooks like it's\ngoing to overload\nand take down the\nwhole power grid\nfor this sector.\nLet me think for\na moment...",DRRP_SEC2_34,Translated by Amon,,"У нас серьезные\nпроблемы, Морпех!\nЭтот процессор\nвыглядит так, \nбудто скоро \nперегрузится\nи отключит\nвсю энергосистему\nэтого сектора. \nДай мне подумать..."
+Get 10 armor\npoints and give\nthem to the\nscientist.,DRRP_SEC2_35,Translated by Amon,,Собери 10 единиц\nброни и отдай их\nученому.
+Yes! I think I\ncan use the alloy\nin your armor\nshards to cause a\nlocal short to\navert the over-\nload. Ten should\ndo it. [Engage\nscientist again\nto give him 10\narmor shards],DRRP_SEC2_36,Translated by Amon,,"Да! Я полагаю,\nчто смогу \nиспользовать сплав\nосколков брони,\nчтобы вызвать \nкороткое замыкание\nи предотвратить \nперегрузку. \nштук 10 должно \nхватить. \n[Поговорите с \nученым ещё раз,\nчтобы отдать ему\n10 осколков брони]"
+You don't have\nenough armor\nshards. Try to\nfind some more\naround here.\nHurry! We don't\nhave much time.,DRRP_SEC2_37,Translated by Amon,,У тебя недостаточно\nосколков брони. \nПопробуй найти \nещё несколько\nпоблизости.\nБыстрее! У нас \nочень мало времени.
+Access panel code\nis 988.,DRRP_SEC2_38,Translated by Amon,,Код доступа \nк панели - 988.
+"OK, I've got your\nshards. Now use\nthe computer in\nthe alcove by the\nentrance to open\nthe access panel\nand I'll insert\nthe alloy. The\ncomputer should\nbe finished with\nits backup by\nnow. The panel\naccess code is\n988.",DRRP_SEC2_39,Translated by Amon,,"Хорошо, у меня \nесть осколки брони.\nИспользуй компьютер\nу входа, чтобы \nоткрыть панель, а я\nвставлю сплав.\nКомпьютер \nуже должен был\nзакончить резервное\nкопирование.\nКод доступа \nк панели - 988."
+988 should be the\npanel access\ncode.,DRRP_SEC2_40,Translated by Amon,,"Скорее всего, \n988 - код, к \nпанели доступа. "
+"All right, Ma-\nrine, I've gone\nthrough the ac-\ncess panel and am\ninside the proc-\nessor now. Come\nback to the proc-\nessor; I may need\nsome help.",DRRP_SEC2_41,Translated by Amon,,"Хорошо, Морпех, я\nпрошел через панель\nи сейчас нахожусь\nвнутри процессора.\nВозвращайся назад,\nмне может \nпонадобится твоя\nпомощь."
+"I'm about done\nplacing the\nshards... hey, I\nthought this\nproblem was\ncaused by the in-\nvasion but on\ncloser look, it\nlooks like\nsabota-...",DRRP_SEC2_42,Translated by Amon,,"Я почти закончил\nрасставлять \nосколки.\nХм.. Я думал, что\nэта проблема была\nвызвана вторжением,\nно при ближайшем\nрассмотрении это\nнапоминает\nсабота-..."
+Ore Processing:\nBacking up...,DRRP_SEC2_43,,,Переработка руды:\nРезервное\nкопирование...
+"No, the other\ncomputer.",DRRP_SEC2_44,,,"Нет, другой\nкомпьютер."
 988,DRRP_SEC2_45,,,
-[Access panel]\nEnter code:,DRRP_SEC2_46,,,[Панель доступа]\nВведите пароль:\n
-Panel opened.,DRRP_SEC2_47,,,Панель открыта
-Panel open.,DRRP_SEC2_48,,,Панель открыта
-Ore Processing:\nTerminal offline,DRRP_SEC2_49,,,Обработка Руды:\nТерминал отключен
-Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nAn Information\nSecurity staffer\ncame in the other\nday for an audit\nof the lab. It's\nstrange... I've\nbeen with UAC's\nAdvanced Research\nDepartment for\nover 7 years and\nthis is a first.,DRRP_SEC2_50,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nШтатный сотрудник\nИнформационной\nБезопасности при-\nшел на днях для\nревизии лаборато-\nрии. Это стран-\nно... Я в Отделе\nИсследования UAC\nболее 7 лет, и\nтакого еще не\nбыло"
+[Access panel]\nEnter code:,DRRP_SEC2_46,Translated by Amon,,[Доступ к панели]\nВведите пароль:
+Panel opened.,DRRP_SEC2_47,,,Панель открылась.
+Panel open.,DRRP_SEC2_48,,,Панель открыта.
+Ore Processing:\nTerminal offline,DRRP_SEC2_49,,,Переработка руды:\nТерминал отключен.
+Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nAn Information\nSecurity staffer\ncame in the other\nday for an audit\nof the lab. It's\nstrange... I've\nbeen with UAC's\nAdvanced Research\nDepartment for\nover 7 years and\nthis is a first.,DRRP_SEC2_50,Translated by Amon,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nНа днях приходил\nсотрудник отдела \nинформационной\nбезопасности для\nпроверки \nлаборатории.\nЭто странно... \nЯ работаю в отделе\nпередовых \nисследований UAC\nуже более 7ми лет,\nно такого еще не видел."
 Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nWoot! Going to\nNew Vegas for my\nday off. I'm down\n500 UAC credits\nfor the year but\nI'll make it up!,DRRP_SEC2_51,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nФух! Собираюсь в\nНью Вегас на\nвыходные. Я за год\nпотерял 500 UAC\nкредитов, но я\nотыграюсь!"
 Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nI don't trust Dr.\nGuerard. I saw\nhim put a handful\nof Hydrocon vials\ninto his lab\ncoat. I've re-\nported the activ-\nity to personnel\nbut nothing has\ncome of it. The\nrecent lab audits\nindicate we're\nlosing a lot of\nsupplies and I\ndon't want the\nblamed for Mr.\nSticky Fingers!,DRRP_SEC2_52,,,"Запись в журнале\nДр. Дженсен:\n*СЕКРЕТНО*\nЯ не доверяю\nДр. Герарду.\nЯ видел, как он\nсунул несколько\nсклянок Гидрокона\nсебе в халат. Я\nдоложил об этом,\nно без толку.\nНедавняя ревизия\nпоказала, что у нас\nнедостача запасов\nи я не хочу отвечать\nза этого клептомана!"
-End of log.,DRRP_SEC2_53,,,Конец журнала
+End of log.,DRRP_SEC2_53,Translated by Amon,,Конец журнала.
 Super secret\npasscode: ***9,DRRP_SEC2_54,,,Супер секретный\nпароль: ***9
 5555,DRRP_SEC2_55,,,
-Door 55 locked.\nEnter code:,DRRP_SEC2_56,,,Дверь 55 закрыта\nВведите пароль:\n
-Door 55 unlocked.,DRRP_SEC2_57,,,Дверь 55 открыта
-Door 55,DRRP_SEC2_58,,,Дверь 55
+Door 55 locked.\nEnter code:,DRRP_SEC2_56,Translated by Amon,,Дверь 55 закрыта\nВведите пароль:
+Door 55 unlocked.,DRRP_SEC2_57,Translated by Amon,,Дверь 55 открыта.
+Door 55,DRRP_SEC2_58,Translated by Amon,,Дверь 55.
 Sector 3,DRRP_SEC3_0,,,Сектор 3
 /junction.bsp,DRRP_SEC3_1,,,/junction.bsp
 Enter Junction,DRRP_SEC3_2,,,В Переход
