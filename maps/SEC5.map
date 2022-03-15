@@ -16128,9 +16128,11 @@ linedef
 v1 = 19;
 v2 = 20;
 sidefront = 14;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -17004,7 +17006,11 @@ linedef
 v1 = 127;
 v2 = 125;
 sidefront = 138;
+special = 80;
 blocking = true;
+arg0 = 3999;
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef
@@ -17175,7 +17181,11 @@ linedef
 v1 = 136;
 v2 = 146;
 sidefront = 161;
+special = 80;
 blocking = true;
+repeatspecial = true;
+playeruse = true;
+arg0 = 3999;
 }
 
 linedef
@@ -17998,9 +18008,11 @@ linedef
 v1 = 226;
 v2 = 227;
 sidefront = 275;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -18759,9 +18771,11 @@ linedef
 v1 = 325;
 v2 = 326;
 sidefront = 379;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -19206,9 +19220,11 @@ linedef
 v1 = 366;
 v2 = 369;
 sidefront = 438;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -19468,7 +19484,11 @@ linedef
 v1 = 394;
 v2 = 393;
 sidefront = 470;
+special = 80;
 blocking = true;
+repeatspecial = true;
+playeruse = true;
+arg0 = 3999;
 }
 
 linedef
@@ -19678,9 +19698,11 @@ linedef
 v1 = 418;
 v2 = 419;
 sidefront = 501;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -19799,9 +19821,11 @@ linedef
 v1 = 427;
 v2 = 429;
 sidefront = 518;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -20163,8 +20187,12 @@ linedef
 v1 = 476;
 v2 = 477;
 sidefront = 566;
+special = 80;
 dontpegbottom = true;
 blocking = true;
+arg0 = 3999;
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef
@@ -20456,9 +20484,11 @@ linedef
 v1 = 527;
 v2 = 528;
 sidefront = 600;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -21767,9 +21797,11 @@ linedef
 v1 = 677;
 v2 = 669;
 sidefront = 772;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -22695,7 +22727,7 @@ v1 = 753;
 v2 = 762;
 sidefront = 906;
 special = 80;
-arg0 = 3000;
+arg0 = 3999;
 arg2 = 32;
 arg3 = 31;
 blocking = true;
@@ -22935,8 +22967,12 @@ linedef
 v1 = 775;
 v2 = 776;
 sidefront = 936;
+special = 80;
 blocking = true;
 dontdraw = true;
+repeatspecial = true;
+playeruse = true;
+arg0 = 3999;
 }
 
 linedef
@@ -23404,9 +23440,11 @@ linedef
 v1 = 3;
 v2 = 828;
 sidefront = 996;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -23795,9 +23833,11 @@ linedef
 v1 = 853;
 v2 = 241;
 sidefront = 1050;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
@@ -23965,9 +24005,11 @@ linedef
 v1 = 865;
 v2 = 866;
 sidefront = 1071;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0 = 3999;
 }
 
 linedef
