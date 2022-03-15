@@ -1,0 +1,102 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: Orcs & Elves II RPG (BREW) Map Format
+//   Authors: PROPHESSOR, UsernameAK, Erick194
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct FILE {
+
+
+struct HEADER {
+    char    version;
+    int     date;
+    ushort unknown;
+    uchar floor_color[3];
+    uchar ceil_color[3];
+    uchar loading_color[3];
+    uchar level_number;
+    ushort spawn_point;
+    uchar spawn_direction;
+    uint32 unknown2;
+    uchar unknown3;
+} header;
+
+uint16 bspCount;
+
+struct BSP_ITEM {
+    uchar x1;
+    uchar y1;
+    uchar x2;
+    uchar y2;
+    uchar others[6];
+} bsp_item[bspCount];
+
+uint16 linesCount;
+
+struct LSEGMENT_ITEM {
+    uchar x1;
+    uchar y1;
+    uchar x2;
+    uchar y2;
+    uchar texture_lower;
+    uchar texture_upper;
+    uint32 flags;
+} lsegment_item[linesCount];
+
+struct THINGS_HEADER {
+    uint16 thingsCount;
+    uint16 extraThingsCount;
+} things_header;
+
+struct THING_ITEM {
+    uchar x;
+    uchar y;
+    uchar id;
+    ushort flags;
+} thing_item[things_header.thingsCount];
+
+struct EXTRA_THING_ITEM {
+    uchar x;
+    uchar y;
+    uchar z;
+    uchar id;
+    uchar unknown;
+    ushort flags;
+} extra_thing_item[things_header.extraThingsCount];
+
+ushort triggersCount;
+
+struct {
+    ushort x : 5;
+    ushort y : 5;
+} triggers_coord[triggersCount];
+
+struct {
+    uint triggerID : 9;
+    uint bytecodeOffset : 11;
+    uint bytecodeLength : 10;
+    uint flags : 2;
+} triggers_ids[triggersCount];
+
+ushort bytecodeCount;
+
+struct BYTECODE_ITEM {
+    byte opcode;
+    int arg0;
+    int arg1;
+} bytecode_item[bytecodeCount];
+
+byte blockmap[512];
+
+byte floors[1024];
+
+byte ceils[1024];
+
+} file;
