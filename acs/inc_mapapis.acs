@@ -119,3 +119,7 @@ Script 3012 (int id, int time) { // Show tip
     Delay(time);
     HudMessage(s: ""; HUDMSG_PLAIN, -100001, 0, 0.5, 0.8, 1);
 }
+
+Script 3999 (void) { // Terminal dumb
+    Terminate;
+}
