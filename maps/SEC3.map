@@ -33108,8 +33108,12 @@ v1 = 36;
 v2 = 32;
 sidefront = 34;
 sideback = 35;
+special = 80;
 twosided = true;
 secret = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -33438,8 +33442,12 @@ v1 = 87;
 v2 = 86;
 sidefront = 90;
 sideback = 91;
+special = 80;
 twosided = true;
 secret = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -33666,8 +33674,12 @@ v1 = 122;
 v2 = 123;
 sidefront = 123;
 sideback = 124;
+special = 80;
 twosided = true;
 secret = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -33803,8 +33815,12 @@ v1 = 143;
 v2 = 144;
 sidefront = 141;
 sideback = 142;
+special = 80;
 twosided = true;
 dontdraw = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -34790,13 +34806,15 @@ v1 = 281;
 v2 = 282;
 sidefront = 291;
 sideback = 292;
-arg0 = 3000;
+special = 80;
+arg0 = 3999;
 arg2 = 1;
 arg3 = 2;
 twosided = true;
 dontpegtop = true;
 secret = true;
 playeruse = true;
+repeatspecial = true;
 }
 
 linedef
@@ -35220,7 +35238,11 @@ linedef
 v1 = 343;
 v2 = 344;
 sidefront = 350;
+special = 80;
 blocking = true;
+arg0 = 3999;
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef
@@ -35906,9 +35928,11 @@ v2 = 452;
 sidefront = 447;
 sideback = 448;
 special = 80;
-arg0 = 4;
+arg0 = 3999;
 twosided = true;
 secret = true;
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef
@@ -36565,8 +36589,12 @@ linedef
 v1 = 560;
 v2 = 556;
 sidefront = 540;
+special = 80;
 blocking = true;
 dontdraw = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -36658,8 +36686,12 @@ v1 = 574;
 v2 = 572;
 sidefront = 555;
 sideback = 556;
+special = 80;
 twosided = true;
 secret = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -37146,8 +37178,12 @@ v1 = 649;
 v2 = 650;
 sidefront = 624;
 sideback = 625;
+special = 80;
 twosided = true;
 secret = true;
+arg0 = 3999;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
@@ -54003,8 +54039,12 @@ v1 = 1737;
 v2 = 1739;
 sidefront = 3338;
 sideback = 3339;
+special = 80;
 twosided = true;
 secret = true;
+arg0 = 3999;
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef
