@@ -70,28 +70,8 @@ Object DRRPAlarm1 {
 // end Alarm1
 
 // Spark lights
-    PointLight WhiteSparkFlare {
-        Color 1.0 1.0 1.0
-        Size 12
-    }
-
-    PointLight RedSparkFlare {
-        Color 0.4 0.0 0.0
-        Size 12
-    }
-
     PointLight OrangeSparkFlare {
         Color 0.8 0.4 0.0
-        Size 12
-    }
-
-    PointLight YellowSparkFlare {
-        Color 1.0 1.0 0.0
-        Size 12
-    }
-
-    PointLight GreenSparkFlare {
-        Color 0.0 1.0 0.0
         Size 12
     }
 
@@ -99,27 +79,9 @@ Object DRRPAlarm1 {
         Color 0.0 0.0 0.8
         Size 12
     }
-
-    PointLight PurpleSparkFlare {
-        Color 0.5 0.0 0.5
-        Size 12
-    }
 // end Spark lights
 
 // Sparks
-Object SparkFlare_W1 { Frame SPKW { Light WhiteSparkFlare } }
-Object SparkFlare_W2 { Frame SPKW { Light WhiteSparkFlare } }
-Object SparkFlare_W3 { Frame SPKW { Light WhiteSparkFlare } }
-Object SparkFlare_W4 { Frame SPKW { Light WhiteSparkFlare } }
-Object SparkFlare_W5 { Frame SPKW { Light WhiteSparkFlare } }
-Object SparkFlare_W6 { Frame SPKW { Light WhiteSparkFlare } }
-
-Object SparkFlare_R1 { Frame SPKR { Light RedSparkFlare } }
-Object SparkFlare_R2 { Frame SPKR { Light RedSparkFlare } }
-Object SparkFlare_R3 { Frame SPKR { Light RedSparkFlare } }
-Object SparkFlare_R4 { Frame SPKR { Light RedSparkFlare } }
-Object SparkFlare_R5 { Frame SPKR { Light RedSparkFlare } }
-Object SparkFlare_R6 { Frame SPKR { Light RedSparkFlare } }
 
 Object SparkFlare_O1 { Frame SPKO { Light OrangeSparkFlare } }
 Object SparkFlare_O2 { Frame SPKO { Light OrangeSparkFlare } }
@@ -128,20 +90,6 @@ Object SparkFlare_O4 { Frame SPKO { Light OrangeSparkFlare } }
 Object SparkFlare_O5 { Frame SPKO { Light OrangeSparkFlare } }
 Object SparkFlare_O6 { Frame SPKO { Light OrangeSparkFlare } }
 
-Object SparkFlare_Y1 { Frame SPKY { Light YellowSparkFlare } }
-Object SparkFlare_Y2 { Frame SPKY { Light YellowSparkFlare } }
-Object SparkFlare_Y3 { Frame SPKY { Light YellowSparkFlare } }
-Object SparkFlare_Y4 { Frame SPKY { Light YellowSparkFlare } }
-Object SparkFlare_Y5 { Frame SPKY { Light YellowSparkFlare } }
-Object SparkFlare_Y6 { Frame SPKY { Light YellowSparkFlare } }
-
-Object SparkFlare_G1 { Frame SPKG { Light GreenSparkFlare } }
-Object SparkFlare_G2 { Frame SPKG { Light GreenSparkFlare } }
-Object SparkFlare_G3 { Frame SPKG { Light GreenSparkFlare } }
-Object SparkFlare_G4 { Frame SPKG { Light GreenSparkFlare } }
-Object SparkFlare_G5 { Frame SPKG { Light GreenSparkFlare } }
-Object SparkFlare_G6 { Frame SPKG { Light GreenSparkFlare } }
-
 Object SparkFlare_B1 { Frame SPKB { Light BlueSparkFlare } }
 Object SparkFlare_B2 { Frame SPKB { Light BlueSparkFlare } }
 Object SparkFlare_B3 { Frame SPKB { Light BlueSparkFlare } }
@@ -149,12 +97,6 @@ Object SparkFlare_B4 { Frame SPKB { Light BlueSparkFlare } }
 Object SparkFlare_B5 { Frame SPKB { Light BlueSparkFlare } }
 Object SparkFlare_B6 { Frame SPKB { Light BlueSparkFlare } }
 
-Object SparkFlare_P1 { Frame SPKP { Light PurpleSparkFlare } }
-Object SparkFlare_P2 { Frame SPKP { Light PurpleSparkFlare } }
-Object SparkFlare_P3 { Frame SPKP { Light PurpleSparkFlare } }
-Object SparkFlare_P4 { Frame SPKP { Light PurpleSparkFlare } }
-Object SparkFlare_P5 { Frame SPKP { Light PurpleSparkFlare } }
-Object SparkFlare_P6 { Frame SPKP { Light PurpleSparkFlare } }
 // end Sparks
 
 
