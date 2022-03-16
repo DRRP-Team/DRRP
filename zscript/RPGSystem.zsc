@@ -248,6 +248,7 @@ class RPGSystemHandler: EventHandler {
         // Items drop.
         if ( deathData && deathData.DRRPDropItem ) {
             Actor droppedItem = deadActor.Spawn( deathData.DRRPDropItem, deadActor.pos );
+            droppedItem.ChangeTid(14522);
             droppedItem.master = deadActor;
             droppedItem.vel = ( FRandom( -2.0, 2.0 ), FRandom( -2.0, 2.0 ), FRandom( 0.5, 4.0 ) );
         }
