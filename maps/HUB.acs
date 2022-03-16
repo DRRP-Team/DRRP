@@ -3,6 +3,7 @@
 const int CRATES_SPOT   = 18;
 const int CRATES_ID     = 19;
 const int CRATES_SHARDS = 14523;
+const int DROP_ID       = 14522;
 
 // Coordinate offset is: (960;576)
 
@@ -96,6 +97,7 @@ Script 666 ENTER {
 Script 667 RETURN {
     Thing_Remove(CRATES_ID);
     Thing_Remove(CRATES_SHARDS);
+    Thing_Remove(DROP_ID);
     SpawnSpot("DRRPCrate", CRATES_SPOT, CRATES_ID);
     ScriptCall("ConversationController", "SetArgument", -465, 0); // Reset the doctor
     if (current_stage != stage()) { // Got a new keycard
