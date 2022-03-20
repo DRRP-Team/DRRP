@@ -116,7 +116,6 @@ class DRRPExtinguisherTrigger: Inventory {
 }
 
 class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
-
     Default {
         // MONSTER;
         //+SOLID;
@@ -152,7 +151,7 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
 
     override void BeginPlay() {
         fireActorDamageMin = 1;
-        fireActorDamageMax = 4;
+        fireActorDamageMax = 3;
         fireActorDamageTicks = 3;
     } // of override void BeginPlay()
 
@@ -197,7 +196,6 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
             FIRE ABCDEFGH 2 BRIGHT;
             Loop;
     }
-
 }
 
 class DRRPExplosion: Actor { // Has Decorate heir (DRRPExplosion_Decorate).
