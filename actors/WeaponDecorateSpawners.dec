@@ -9,7 +9,7 @@
 
 // See "zscript\weapons.zsc" for all other weapon types.
 
-Actor DRRPAxe_DecorateSummoner 10557 {
+Actor DRRPAxe_DecorateSummoner : CustomInventory 10557 {
     //$Category DWeapons
     //$Colour RGB(220, 180, 100)
     //$Tag Axe
@@ -20,9 +20,11 @@ Actor DRRPAxe_DecorateSummoner 10557 {
     Tag "$DRRP_W_AXE"
     States {
         Spawn:
-            AXEI A 1
-            AXEI A 0 A_SpawnItem( "DRRPAxe" )
+            AXEI A -1
             Stop
+        Pickup:
+            AXEI A 0
+            AXEI A 0 A_GiveInventory("DRRPAxe")
     }
 }
 
@@ -34,7 +36,7 @@ Actor DRRPAxePuff : BulletPuff {
     DamageType DRRPAxeDmg
 }
 
-Actor DRRPFireExt_DecorateSummoner 10556 {
+Actor DRRPFireExt_DecorateSummoner : CustomInventory 10556 {
     //$Category DWeapons
     //$Colour RGB(220, 180, 100)
     //$Tag Fire extingusher
@@ -45,8 +47,11 @@ Actor DRRPFireExt_DecorateSummoner 10556 {
     Scale 0.5
     States {
         Spawn:
-            FEXT I 1
-            FEXT I 0 A_SpawnItem( "DRRPFireExt" )
+            FEXT I -1
+            Stop
+        Pickup:
+            FIEX A 0
+            FIEX A 0 A_GiveInventory("DRRPFireExt")
             Stop
     }
 }
