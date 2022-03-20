@@ -46,7 +46,7 @@ class DRRPFatShot: DRRPBaseProjectile {
     Default {
         Radius 8;
         Height 10;
-        Speed 20;
+        Speed 10;
         FastSpeed 35;
         SeeSound "fatso/attack";
         DeathSound "fatso/shotx";

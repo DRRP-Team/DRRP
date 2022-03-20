@@ -808,6 +808,7 @@ Actor Druj: Fatso_BaseDRRP 10478 {
 }
 
 Actor DRRPFatShot: FatShot replaces FatShot {
+    Speed 10
     Damage (8 * Random( 1, 8 ))
 }
 
