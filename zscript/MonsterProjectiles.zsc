@@ -143,6 +143,15 @@ class DRRPHellKnightBall: DRRPBaseProjectile {
         DeathSound "baron/shotx";
         Decal "BaronScorch";
     }
+
+    States {
+    Spawn:
+		BAL7 AB 4 BRIGHT;
+		Loop;
+	Death:
+		BAL7 CDE 6 BRIGHT;
+		Stop;
+    }
 }
 class DRRPOgreBall: DRRPHellKnightBall {
     Default {

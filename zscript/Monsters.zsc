@@ -809,7 +809,6 @@ class Ogre: HellKnight_BaseDRRP {
         HellKnight_BaseDRRP.MeleeMaxDamage 16; // %Baron 1 MeleeMaxDamage%
         HellKnight_BaseDRRP.BallType "DRRPOgreBall";
     }
-
 }
 
 class DRRPHellKnight: HellKnight_BaseDRRP replaces HellKnight {
