@@ -623,8 +623,8 @@ class BaronOfHell_BaseDRRP: BaronOfHell abstract {
     States {
     Melee:
     Missile:
-        BOS2 EF 8 A_FaceTarget;
-        BOS2 G 8 A_DRRP_BaronAttack; //A_CustomComboAttack( "DRRPOgreBall", 32, 2 * Random( 4, 7 ), "baron/melee" );
+        BOSS EF 8 A_FaceTarget;
+        BOSS G 8 A_DRRP_BaronAttack; //A_CustomComboAttack( "DRRPOgreBall", 32, 2 * Random( 4, 7 ), "baron/melee" );
         Goto See;
     }
 }
