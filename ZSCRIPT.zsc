@@ -116,9 +116,9 @@ class DRRPPlayer: DoomPlayer {
     }
 
     virtual void SetAgilityFeatures() {
-        self.ForwardMove1 = playerStats[ RPG_Agility ] * 0.025 + 0.6;
+        self.ForwardMove1 = playerStats[ RPG_Agility ] * 0.025 + 0.3;
         self.ForwardMove2 = self.ForwardMove1 * 0.58333;
-        self.SideMove1    = playerStats[ RPG_Agility ] * 0.025 + 0.55;
+        self.SideMove1    = playerStats[ RPG_Agility ] * 0.025 + 0.25;
         self.SideMove2    = self.SideMove1 * 0.54545;
     }
 
