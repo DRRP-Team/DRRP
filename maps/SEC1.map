@@ -29774,7 +29774,6 @@ sidefront = 2195;
 sideback = 2196;
 twosided = true;
 blocksound = true;
-midtex3d = true;
 }
 
 linedef
@@ -45442,14 +45441,12 @@ sidedef
 {
 sector = 347;
 texturemiddle = "DRPGZ010";
-offsetx = 1;
 }
 
 sidedef
 {
 sector = 40;
 texturemiddle = "DRPGZ010";
-offsetx = 32;
 }
 
 sidedef
