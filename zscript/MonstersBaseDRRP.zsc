@@ -286,6 +286,7 @@ class Demon_BaseDRRP: Demon abstract {
     Default {
         +LOOKALLAROUND;
         DamageFactor "DRRPRocketDmg", 0.5;
+        DamageFactor "DRRPShotgunDmg", 2.0;
 
         Radius 20;
         Speed 5; // 10
@@ -351,9 +352,11 @@ class Revenant_BaseDRRP: Revenant abstract {
     Property MeleeMaxDamage: DRRPMeleeMaxDamage;
 
     Default {
+        +LOOKALLAROUND;
+
         MeleeRange 48.0;
         Scale 0.74;
-        +LOOKALLAROUND;
+        Speed 5;
 
         DamageFactor "DRRPAxeDmg", 5.0;
         DamageFactor "DRRPRocketDmg", 2.0;
