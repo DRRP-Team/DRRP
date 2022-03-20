@@ -22,9 +22,19 @@ function str localizeSound(str sound) {
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
+bool wasInvasionActivated      = false;
+const int SCIENTIST_PANEL_SPOT = 1646;
+const int PANEL_SPARKS         = 1647;
+
+
 Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC2", true);
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "FilmGrain", true);
+}
+
+Script "SpawnPanelSparks" (void) {
+    if (!wasInvasionActivated) Terminate;
+    SetActorState(PANEL_SPARKS, "Active");
 }
 
 Script 666 ENTER{
@@ -206,6 +216,8 @@ script 27 (int arg0, int arg1, int arg2) { //X=9 Y=13 START=L_51 END=L_63 UNKN=6
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=19 VAL=4
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid1, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=13 Y=14 VAL=3
     if(arg2 == 2) Thing_Remove(430); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=13 Y=14
+    if(arg2 == 2) SpawnSpot("Scientist1", SCIENTIST_PANEL_SPOT, SCIENTIST_PANEL_SPOT);
+    if(arg2 == 2) SetLineTexture(SCIENTIST_PANEL_SPOT, SIDE_FRONT, TEXTURE_MIDDLE, "-");
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid2, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=11 Y=16 VAL=1
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid3, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=16 VAL=1
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid4, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=9 Y=13
@@ -272,6 +284,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
     if(arg2 == 1) {
         ACS_NamedExecuteWait("window", 0, getString(42)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=42
         Autosave();
+        wasInvasionActivated = true;
         SetMusic("D_PORTAL", 0);
         FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.7);
         AmbientSound(localizeSound("voice/powershake"), 255);
@@ -288,6 +301,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         SpawnSpot("Explosion", 561);
         SpawnSpot("Explosion", 530);
         Radius_Quake(12, 12, 1, 5, 0);
+        ACS_ExecuteAlways(3009, 0, SCIENTIST_PANEL_SPOT, true);
         Delay(43);
         AmbientSound("alarm/alarm1", 255);
         FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
@@ -337,6 +351,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         Thing_Remove(497); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=15 Y=17
         Thing_Remove(466); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=14 Y=18
         Thing_Remove(465); // ( ENTER_FROM( WlEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=14 Y=17
+        Thing_Activate(PANEL_SPARKS);
         SpawnForced("DRRPFire", getMediumX(116), getMediumY(140), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=7 STATE=0
         //Delay(12); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=350
         /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) EXPLODE X=12 Y=16 TYPE=0
@@ -438,6 +453,8 @@ script 49 (int arg0, int arg1, int arg2) { //X=9 Y=19 START=L_142 END=L_154 UNKN
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=13 VAL=4
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid1, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=13 Y=14 VAL=3
     if(arg2 == 2) Thing_Remove(430); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=13 Y=14
+    if(arg2 == 2) SpawnSpot("Scientist1", SCIENTIST_PANEL_SPOT, SCIENTIST_PANEL_SPOT);
+    if(arg2 == 2) SetLineTexture(SCIENTIST_PANEL_SPOT, SIDE_FRONT, TEXTURE_MIDDLE, "-");
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid2, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=11 Y=16 VAL=1
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid3, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=16 VAL=1
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid4, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=9 Y=19
