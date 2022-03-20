@@ -1979,18 +1979,17 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+special = 80;
+arg0str = "WeaponPickupMessage";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
 comment = "3:20";
+arg2 = 45;
 }
 
 thing
@@ -11673,14 +11672,8 @@ y = 528.000;
 
 vertex
 {
-x = 1568.000;
-y = 304.000;
-}
-
-vertex
-{
-x = 1568.000;
-y = 272.000;
+x = 1153.000;
+y = -1.000;
 }
 
 vertex
@@ -12418,12 +12411,6 @@ y = -1.000;
 vertex
 {
 x = 1151.000;
-y = -1.000;
-}
-
-vertex
-{
-x = 1153.000;
 y = -1.000;
 }
 
@@ -20144,14 +20131,10 @@ blocking = true;
 linedef
 {
 v1 = 733;
-v2 = 734;
-sidefront = 1115;
-sideback = 1116;
-special = 80;
-arg0 = 71;
+v2 = 677;
+sidefront = 1116;
+sideback = 1115;
 twosided = true;
-dontdraw = true;
-playercross = true;
 }
 
 linedef
@@ -20216,8 +20199,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 735;
-v2 = 736;
+v1 = 734;
+v2 = 735;
 sidefront = 1125;
 sideback = 1126;
 twosided = true;
@@ -20226,8 +20209,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 736;
-v2 = 737;
+v1 = 735;
+v2 = 736;
 sidefront = 1127;
 sideback = 1128;
 twosided = true;
@@ -20236,8 +20219,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 737;
-v2 = 738;
+v1 = 736;
+v2 = 737;
 sidefront = 1129;
 sideback = 1130;
 twosided = true;
@@ -20246,8 +20229,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 738;
-v2 = 735;
+v1 = 737;
+v2 = 734;
 sidefront = 1131;
 sideback = 1132;
 twosided = true;
@@ -20257,7 +20240,7 @@ dontdraw = true;
 linedef
 {
 v1 = 41;
-v2 = 739;
+v2 = 738;
 sidefront = 1133;
 sideback = 1134;
 twosided = true;
@@ -20266,8 +20249,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 739;
-v2 = 740;
+v1 = 738;
+v2 = 739;
 sidefront = 1135;
 sideback = 1136;
 twosided = true;
@@ -20276,7 +20259,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 740;
+v1 = 739;
 v2 = 44;
 sidefront = 1137;
 sideback = 1138;
@@ -20286,8 +20269,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 741;
-v2 = 742;
+v1 = 740;
+v2 = 741;
 sidefront = 1139;
 sideback = 1140;
 twosided = true;
@@ -20296,7 +20279,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 742;
+v1 = 741;
 v2 = 55;
 sidefront = 1141;
 sideback = 1142;
@@ -20307,7 +20290,7 @@ dontdraw = true;
 linedef
 {
 v1 = 53;
-v2 = 741;
+v2 = 740;
 sidefront = 1143;
 sideback = 1144;
 twosided = true;
@@ -20316,8 +20299,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 743;
-v2 = 744;
+v1 = 742;
+v2 = 743;
 sidefront = 1145;
 sideback = 1146;
 twosided = true;
@@ -20326,8 +20309,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 744;
-v2 = 745;
+v1 = 743;
+v2 = 744;
 sidefront = 1147;
 sideback = 1148;
 twosided = true;
@@ -20336,8 +20319,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 745;
-v2 = 746;
+v1 = 744;
+v2 = 745;
 sidefront = 1149;
 sideback = 1150;
 twosided = true;
@@ -20346,8 +20329,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 746;
-v2 = 743;
+v1 = 745;
+v2 = 742;
 sidefront = 1151;
 sideback = 1152;
 twosided = true;
@@ -20357,7 +20340,7 @@ dontdraw = true;
 linedef
 {
 v1 = 63;
-v2 = 743;
+v2 = 742;
 sidefront = 1153;
 sideback = 1154;
 twosided = true;
@@ -20366,8 +20349,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 746;
-v2 = 741;
+v1 = 745;
+v2 = 740;
 sidefront = 1155;
 sideback = 1156;
 twosided = true;
@@ -20376,7 +20359,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 741;
+v1 = 740;
 v2 = 56;
 sidefront = 1157;
 sideback = 1158;
@@ -20385,7 +20368,7 @@ twosided = true;
 
 linedef
 {
-v1 = 747;
+v1 = 746;
 v2 = 79;
 sidefront = 1159;
 sideback = 1160;
@@ -20406,7 +20389,7 @@ dontdraw = true;
 linedef
 {
 v1 = 78;
-v2 = 748;
+v2 = 747;
 sidefront = 1163;
 sideback = 1164;
 twosided = true;
@@ -20415,8 +20398,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 748;
-v2 = 747;
+v1 = 747;
+v2 = 746;
 sidefront = 1165;
 sideback = 1166;
 twosided = true;
@@ -20426,7 +20409,7 @@ dontdraw = true;
 linedef
 {
 v1 = 75;
-v2 = 749;
+v2 = 748;
 sidefront = 1167;
 sideback = 1168;
 twosided = true;
@@ -20435,8 +20418,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 749;
-v2 = 750;
+v1 = 748;
+v2 = 749;
 sidefront = 1169;
 sideback = 1170;
 twosided = true;
@@ -20445,7 +20428,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 750;
+v1 = 749;
 v2 = 90;
 sidefront = 1171;
 sideback = 1172;
@@ -20466,7 +20449,7 @@ dontdraw = true;
 linedef
 {
 v1 = 97;
-v2 = 751;
+v2 = 750;
 sidefront = 1175;
 sideback = 1176;
 twosided = true;
@@ -20475,7 +20458,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 752;
+v1 = 751;
 v2 = 543;
 sidefront = 1177;
 sideback = 1178;
@@ -20485,8 +20468,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 751;
-v2 = 752;
+v1 = 750;
+v2 = 751;
 sidefront = 1179;
 sideback = 1180;
 twosided = true;
@@ -20495,7 +20478,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 752;
+v1 = 751;
 v2 = 99;
 sidefront = 1181;
 sideback = 1182;
@@ -20506,7 +20489,7 @@ dontdraw = true;
 linedef
 {
 v1 = 539;
-v2 = 751;
+v2 = 750;
 sidefront = 1183;
 sideback = 1184;
 twosided = true;
@@ -20515,8 +20498,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 753;
-v2 = 754;
+v1 = 752;
+v2 = 753;
 sidefront = 1186;
 sideback = 1185;
 twosided = true;
@@ -20534,8 +20517,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 755;
-v2 = 756;
+v1 = 754;
+v2 = 755;
 sidefront = 1190;
 sideback = 1189;
 twosided = true;
@@ -20543,8 +20526,8 @@ twosided = true;
 
 linedef
 {
-v1 = 757;
-v2 = 758;
+v1 = 756;
+v2 = 757;
 sidefront = 1192;
 sideback = 1191;
 twosided = true;
@@ -20552,8 +20535,8 @@ twosided = true;
 
 linedef
 {
-v1 = 759;
-v2 = 760;
+v1 = 758;
+v2 = 759;
 sidefront = 1194;
 sideback = 1193;
 twosided = true;
@@ -20562,7 +20545,7 @@ twosided = true;
 linedef
 {
 v1 = 688;
-v2 = 761;
+v2 = 760;
 sidefront = 1196;
 sideback = 1195;
 twosided = true;
@@ -20570,8 +20553,8 @@ twosided = true;
 
 linedef
 {
-v1 = 762;
-v2 = 763;
+v1 = 761;
+v2 = 762;
 sidefront = 1198;
 sideback = 1197;
 twosided = true;
@@ -20609,7 +20592,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 764;
+v1 = 763;
 v2 = 709;
 sidefront = 1204;
 sideback = 1203;
@@ -20620,7 +20603,7 @@ dontdraw = true;
 linedef
 {
 v1 = 270;
-v2 = 765;
+v2 = 764;
 sidefront = 1207;
 sideback = 988;
 twosided = true;
@@ -20630,7 +20613,7 @@ dontdraw = true;
 linedef
 {
 v1 = 698;
-v2 = 764;
+v2 = 763;
 sidefront = 1206;
 sideback = 1205;
 twosided = true;
@@ -20649,7 +20632,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 766;
+v1 = 765;
 v2 = 22;
 sidefront = 1213;
 sideback = 947;
@@ -20659,7 +20642,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 767;
+v1 = 766;
 v2 = 245;
 sidefront = 1215;
 sideback = 1212;
@@ -20670,7 +20653,7 @@ dontdraw = true;
 linedef
 {
 v1 = 114;
-v2 = 767;
+v2 = 766;
 sidefront = 1217;
 sideback = 1216;
 twosided = true;
@@ -20690,7 +20673,7 @@ dontdraw = true;
 linedef
 {
 v1 = 259;
-v2 = 768;
+v2 = 767;
 sidefront = 1221;
 sideback = 1028;
 twosided = true;
@@ -20817,7 +20800,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 769;
+v1 = 768;
 v2 = 122;
 sidefront = 1247;
 sideback = 1248;
@@ -20858,7 +20841,7 @@ dontdraw = true;
 linedef
 {
 v1 = 544;
-v2 = 769;
+v2 = 768;
 sidefront = 1255;
 sideback = 1256;
 twosided = true;
@@ -20888,7 +20871,7 @@ dontdraw = true;
 linedef
 {
 v1 = 132;
-v2 = 770;
+v2 = 769;
 sidefront = 1261;
 sideback = 1262;
 twosided = true;
@@ -20897,7 +20880,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 770;
+v1 = 769;
 v2 = 555;
 sidefront = 1263;
 sideback = 1264;
@@ -20928,7 +20911,7 @@ dontdraw = true;
 linedef
 {
 v1 = 398;
-v2 = 771;
+v2 = 770;
 sidefront = 1269;
 sideback = 1270;
 twosided = true;
@@ -20937,8 +20920,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 771;
-v2 = 772;
+v1 = 770;
+v2 = 771;
 sidefront = 1271;
 sideback = 1272;
 twosided = true;
@@ -20947,7 +20930,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 772;
+v1 = 771;
 v2 = 146;
 sidefront = 1273;
 sideback = 1274;
@@ -20977,7 +20960,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 773;
+v1 = 772;
 v2 = 450;
 sidefront = 1279;
 blocking = true;
@@ -20986,7 +20969,7 @@ blocking = true;
 linedef
 {
 v1 = 386;
-v2 = 773;
+v2 = 772;
 sidefront = 1280;
 sideback = 1281;
 twosided = true;
@@ -20995,8 +20978,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 774;
-v2 = 773;
+v1 = 773;
+v2 = 772;
 sidefront = 1282;
 blocking = true;
 }
@@ -21004,15 +20987,15 @@ blocking = true;
 linedef
 {
 v1 = 448;
-v2 = 774;
+v2 = 773;
 sidefront = 1283;
 blocking = true;
 }
 
 linedef
 {
-v1 = 774;
-v2 = 775;
+v1 = 773;
+v2 = 774;
 sidefront = 1284;
 sideback = 1285;
 twosided = true;
@@ -21021,8 +21004,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 775;
-v2 = 776;
+v1 = 774;
+v2 = 775;
 sidefront = 1286;
 sideback = 1287;
 twosided = true;
@@ -21031,7 +21014,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 776;
+v1 = 775;
 v2 = 448;
 sidefront = 1288;
 sideback = 1289;
@@ -21081,7 +21064,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 777;
+v1 = 776;
 v2 = 366;
 sidefront = 1298;
 sideback = 1299;
@@ -21092,7 +21075,7 @@ dontdraw = true;
 linedef
 {
 v1 = 364;
-v2 = 778;
+v2 = 777;
 sidefront = 1300;
 sideback = 1301;
 twosided = true;
@@ -21101,8 +21084,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 778;
-v2 = 777;
+v1 = 777;
+v2 = 776;
 sidefront = 1302;
 sideback = 1303;
 twosided = true;
@@ -21112,7 +21095,7 @@ dontdraw = true;
 linedef
 {
 v1 = 440;
-v2 = 779;
+v2 = 778;
 sidefront = 1304;
 sideback = 1305;
 twosided = true;
@@ -21121,7 +21104,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 779;
+v1 = 778;
 v2 = 373;
 sidefront = 1306;
 sideback = 1307;
@@ -21141,7 +21124,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 779;
+v1 = 778;
 v2 = 442;
 sidefront = 1310;
 sideback = 1311;
@@ -21151,8 +21134,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 780;
-v2 = 781;
+v1 = 779;
+v2 = 780;
 sidefront = 1312;
 sideback = 1313;
 twosided = true;
@@ -21161,8 +21144,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 781;
-v2 = 782;
+v1 = 780;
+v2 = 781;
 sidefront = 1314;
 sideback = 1315;
 twosided = true;
@@ -21171,8 +21154,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 782;
-v2 = 783;
+v1 = 781;
+v2 = 782;
 sidefront = 1316;
 sideback = 1317;
 twosided = true;
@@ -21181,8 +21164,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 783;
-v2 = 780;
+v1 = 782;
+v2 = 779;
 sidefront = 1318;
 sideback = 1319;
 twosided = true;
@@ -21191,8 +21174,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 784;
-v2 = 785;
+v1 = 783;
+v2 = 784;
 sidefront = 1320;
 sideback = 1321;
 twosided = true;
@@ -21201,8 +21184,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 785;
-v2 = 786;
+v1 = 784;
+v2 = 785;
 sidefront = 1322;
 sideback = 1323;
 twosided = true;
@@ -21211,8 +21194,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 786;
-v2 = 787;
+v1 = 785;
+v2 = 786;
 sidefront = 1324;
 sideback = 1325;
 twosided = true;
@@ -21221,8 +21204,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 787;
-v2 = 784;
+v1 = 786;
+v2 = 783;
 sidefront = 1326;
 sideback = 1327;
 twosided = true;
@@ -21232,7 +21215,7 @@ dontdraw = true;
 linedef
 {
 v1 = 705;
-v2 = 788;
+v2 = 787;
 sidefront = 1328;
 sideback = 1329;
 twosided = true;
@@ -21241,8 +21224,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 788;
-v2 = 789;
+v1 = 787;
+v2 = 788;
 sidefront = 1330;
 sideback = 1331;
 twosided = true;
@@ -21251,7 +21234,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 789;
+v1 = 788;
 v2 = 695;
 sidefront = 1332;
 sideback = 1333;
@@ -21291,8 +21274,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 790;
-v2 = 791;
+v1 = 789;
+v2 = 790;
 sidefront = 1340;
 sideback = 1341;
 twosided = true;
@@ -21301,8 +21284,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 791;
-v2 = 792;
+v1 = 790;
+v2 = 791;
 sidefront = 1342;
 sideback = 1343;
 twosided = true;
@@ -21311,8 +21294,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 792;
-v2 = 793;
+v1 = 791;
+v2 = 792;
 sidefront = 1344;
 sideback = 1345;
 twosided = true;
@@ -21321,8 +21304,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 793;
-v2 = 790;
+v1 = 792;
+v2 = 789;
 sidefront = 1346;
 sideback = 1347;
 twosided = true;
@@ -21331,8 +21314,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 794;
-v2 = 790;
+v1 = 793;
+v2 = 789;
 sidefront = 1348;
 sideback = 1349;
 twosided = true;
@@ -21341,8 +21324,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 793;
-v2 = 795;
+v1 = 792;
+v2 = 794;
 sidefront = 1350;
 sideback = 1351;
 twosided = true;
@@ -21351,8 +21334,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 795;
-v2 = 794;
+v1 = 794;
+v2 = 793;
 sidefront = 1352;
 sideback = 1353;
 twosided = true;
@@ -21392,7 +21375,7 @@ dontdraw = true;
 linedef
 {
 v1 = 303;
-v2 = 796;
+v2 = 795;
 sidefront = 1360;
 sideback = 1361;
 twosided = true;
@@ -21401,7 +21384,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 796;
+v1 = 795;
 v2 = 312;
 sidefront = 1362;
 sideback = 1363;
@@ -21412,7 +21395,7 @@ dontdraw = true;
 linedef
 {
 v1 = 301;
-v2 = 797;
+v2 = 796;
 sidefront = 1364;
 sideback = 1365;
 twosided = true;
@@ -21421,7 +21404,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 797;
+v1 = 796;
 v2 = 272;
 sidefront = 1366;
 sideback = 1367;
@@ -21431,7 +21414,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 798;
+v1 = 797;
 v2 = 586;
 sidefront = 1368;
 sideback = 1369;
@@ -21442,7 +21425,7 @@ dontdraw = true;
 linedef
 {
 v1 = 587;
-v2 = 799;
+v2 = 798;
 sidefront = 1370;
 sideback = 1371;
 twosided = true;
@@ -21451,8 +21434,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 799;
-v2 = 798;
+v1 = 798;
+v2 = 797;
 sidefront = 1372;
 sideback = 1373;
 twosided = true;
@@ -21462,7 +21445,7 @@ dontdraw = true;
 linedef
 {
 v1 = 589;
-v2 = 800;
+v2 = 799;
 sidefront = 1374;
 sideback = 1375;
 twosided = true;
@@ -21471,7 +21454,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 800;
+v1 = 799;
 v2 = 615;
 sidefront = 1376;
 sideback = 1377;
@@ -21492,14 +21475,14 @@ dontdraw = true;
 linedef
 {
 v1 = 325;
-v2 = 801;
+v2 = 800;
 sidefront = 1380;
 blocking = true;
 }
 
 linedef
 {
-v1 = 801;
+v1 = 800;
 v2 = 319;
 sidefront = 1381;
 blocking = true;
@@ -21507,7 +21490,7 @@ blocking = true;
 
 linedef
 {
-v1 = 802;
+v1 = 801;
 v2 = 325;
 sidefront = 1382;
 sideback = 1383;
@@ -21517,8 +21500,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 801;
-v2 = 803;
+v1 = 800;
+v2 = 802;
 sidefront = 1384;
 sideback = 1385;
 twosided = true;
@@ -21527,8 +21510,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 803;
-v2 = 802;
+v1 = 802;
+v2 = 801;
 sidefront = 1386;
 sideback = 1387;
 twosided = true;
@@ -21537,7 +21520,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 804;
+v1 = 803;
 v2 = 323;
 sidefront = 1388;
 blocking = true;
@@ -21546,15 +21529,15 @@ blocking = true;
 linedef
 {
 v1 = 322;
-v2 = 804;
+v2 = 803;
 sidefront = 1389;
 blocking = true;
 }
 
 linedef
 {
-v1 = 804;
-v2 = 802;
+v1 = 803;
+v2 = 801;
 sidefront = 1390;
 sideback = 1391;
 twosided = true;
@@ -21563,7 +21546,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 803;
+v1 = 802;
 v2 = 322;
 sidefront = 1392;
 sideback = 1393;
@@ -21574,7 +21557,7 @@ dontdraw = true;
 linedef
 {
 v1 = 263;
-v2 = 767;
+v2 = 766;
 sidefront = 1394;
 sideback = 1395;
 twosided = true;
@@ -21583,7 +21566,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 767;
+v1 = 766;
 v2 = 693;
 sidefront = 1396;
 sideback = 1397;
@@ -21603,7 +21586,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 765;
+v1 = 764;
 v2 = 708;
 sidefront = 1400;
 sideback = 1401;
@@ -21624,7 +21607,7 @@ dontdraw = true;
 linedef
 {
 v1 = 311;
-v2 = 765;
+v2 = 764;
 sidefront = 1404;
 sideback = 1405;
 twosided = true;
@@ -21633,8 +21616,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 805;
-v2 = 806;
+v1 = 804;
+v2 = 805;
 sidefront = 1406;
 sideback = 1407;
 twosided = true;
@@ -21643,8 +21626,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 806;
-v2 = 807;
+v1 = 805;
+v2 = 806;
 sidefront = 1408;
 sideback = 1409;
 twosided = true;
@@ -21653,8 +21636,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 807;
-v2 = 808;
+v1 = 806;
+v2 = 807;
 sidefront = 1410;
 sideback = 1411;
 twosided = true;
@@ -21663,8 +21646,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 808;
-v2 = 805;
+v1 = 807;
+v2 = 804;
 sidefront = 1412;
 sideback = 1413;
 twosided = true;
@@ -21673,8 +21656,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 809;
-v2 = 810;
+v1 = 808;
+v2 = 809;
 sidefront = 1414;
 sideback = 1415;
 twosided = true;
@@ -21683,8 +21666,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 810;
-v2 = 811;
+v1 = 809;
+v2 = 810;
 sidefront = 1416;
 sideback = 1417;
 twosided = true;
@@ -21693,8 +21676,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 811;
-v2 = 812;
+v1 = 810;
+v2 = 811;
 sidefront = 1418;
 sideback = 1419;
 twosided = true;
@@ -21703,8 +21686,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 812;
-v2 = 809;
+v1 = 811;
+v2 = 808;
 sidefront = 1420;
 sideback = 1421;
 twosided = true;
@@ -21714,7 +21697,7 @@ dontdraw = true;
 linedef
 {
 v1 = 310;
-v2 = 768;
+v2 = 767;
 sidefront = 1422;
 sideback = 1423;
 twosided = true;
@@ -21723,7 +21706,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 768;
+v1 = 767;
 v2 = 711;
 sidefront = 1424;
 sideback = 1425;
@@ -21743,8 +21726,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 813;
-v2 = 766;
+v1 = 812;
+v2 = 765;
 sidefront = 1428;
 sideback = 1429;
 twosided = true;
@@ -21753,7 +21736,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 766;
+v1 = 765;
 v2 = 141;
 sidefront = 1430;
 sideback = 1431;
@@ -21774,7 +21757,7 @@ dontdraw = true;
 linedef
 {
 v1 = 624;
-v2 = 813;
+v2 = 812;
 sidefront = 1434;
 sideback = 1435;
 twosided = true;
@@ -21783,8 +21766,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 814;
-v2 = 815;
+v1 = 813;
+v2 = 814;
 sidefront = 1436;
 sideback = 1437;
 twosided = true;
@@ -21793,7 +21776,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 815;
+v1 = 814;
 v2 = 240;
 sidefront = 1438;
 sideback = 1439;
@@ -21804,7 +21787,7 @@ dontdraw = true;
 linedef
 {
 v1 = 235;
-v2 = 814;
+v2 = 813;
 sidefront = 1440;
 sideback = 1441;
 twosided = true;
@@ -21814,7 +21797,7 @@ dontdraw = true;
 linedef
 {
 v1 = 105;
-v2 = 816;
+v2 = 815;
 sidefront = 1442;
 sideback = 1443;
 twosided = true;
@@ -21823,8 +21806,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 816;
-v2 = 817;
+v1 = 815;
+v2 = 816;
 sidefront = 1444;
 sideback = 1445;
 twosided = true;
@@ -21833,7 +21816,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 817;
+v1 = 816;
 v2 = 104;
 sidefront = 1446;
 sideback = 1447;
@@ -21843,7 +21826,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 818;
+v1 = 817;
 v2 = 197;
 sidefront = 1448;
 sideback = 1449;
@@ -21854,7 +21837,7 @@ dontdraw = true;
 linedef
 {
 v1 = 206;
-v2 = 819;
+v2 = 818;
 sidefront = 1450;
 sideback = 1451;
 twosided = true;
@@ -21863,8 +21846,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 819;
-v2 = 818;
+v1 = 818;
+v2 = 817;
 sidefront = 1452;
 sideback = 1453;
 twosided = true;
@@ -21874,7 +21857,7 @@ dontdraw = true;
 linedef
 {
 v1 = 189;
-v2 = 820;
+v2 = 819;
 sidefront = 1454;
 sideback = 1455;
 twosided = true;
@@ -21883,8 +21866,8 @@ dontdraw = true;
 
 linedef
 {
-v1 = 820;
-v2 = 821;
+v1 = 819;
+v2 = 820;
 sidefront = 1456;
 sideback = 1457;
 twosided = true;
@@ -21893,7 +21876,7 @@ dontdraw = true;
 
 linedef
 {
-v1 = 821;
+v1 = 820;
 v2 = 193;
 sidefront = 1458;
 sideback = 1459;
@@ -21997,8 +21980,8 @@ blocking = true;
 
 linedef
 {
-v1 = 822;
-v2 = 823;
+v1 = 821;
+v2 = 822;
 sidefront = 1496;
 sideback = 1497;
 twosided = true;
@@ -22006,8 +21989,8 @@ twosided = true;
 
 linedef
 {
-v1 = 824;
-v2 = 825;
+v1 = 823;
+v2 = 824;
 sidefront = 1498;
 sideback = 1499;
 twosided = true;
@@ -22015,8 +21998,8 @@ twosided = true;
 
 linedef
 {
-v1 = 826;
-v2 = 827;
+v1 = 825;
+v2 = 826;
 sidefront = 1500;
 sideback = 1501;
 twosided = true;
@@ -22024,8 +22007,8 @@ twosided = true;
 
 linedef
 {
-v1 = 828;
-v2 = 829;
+v1 = 827;
+v2 = 828;
 sidefront = 1502;
 sideback = 1503;
 twosided = true;
@@ -22033,8 +22016,8 @@ twosided = true;
 
 linedef
 {
-v1 = 830;
-v2 = 831;
+v1 = 829;
+v2 = 830;
 sidefront = 1504;
 sideback = 1505;
 twosided = true;
@@ -22042,8 +22025,8 @@ twosided = true;
 
 linedef
 {
-v1 = 832;
-v2 = 833;
+v1 = 831;
+v2 = 832;
 sidefront = 1506;
 sideback = 1507;
 twosided = true;
@@ -22051,8 +22034,8 @@ twosided = true;
 
 linedef
 {
-v1 = 834;
-v2 = 835;
+v1 = 833;
+v2 = 834;
 sidefront = 1509;
 sideback = 1508;
 twosided = true;
@@ -22060,8 +22043,8 @@ twosided = true;
 
 linedef
 {
-v1 = 836;
-v2 = 837;
+v1 = 835;
+v2 = 836;
 sidefront = 1511;
 sideback = 1510;
 twosided = true;
@@ -22069,8 +22052,8 @@ twosided = true;
 
 linedef
 {
-v1 = 838;
-v2 = 839;
+v1 = 837;
+v2 = 838;
 sidefront = 1512;
 sideback = 1513;
 twosided = true;
@@ -22078,8 +22061,8 @@ twosided = true;
 
 linedef
 {
-v1 = 840;
-v2 = 841;
+v1 = 839;
+v2 = 840;
 sidefront = 1514;
 sideback = 1515;
 twosided = true;
@@ -22087,8 +22070,8 @@ twosided = true;
 
 linedef
 {
-v1 = 842;
-v2 = 843;
+v1 = 841;
+v2 = 842;
 sidefront = 1517;
 sideback = 1516;
 twosided = true;
@@ -22096,8 +22079,8 @@ twosided = true;
 
 linedef
 {
-v1 = 844;
-v2 = 845;
+v1 = 843;
+v2 = 844;
 sidefront = 1519;
 sideback = 1518;
 twosided = true;
@@ -22105,8 +22088,8 @@ twosided = true;
 
 linedef
 {
-v1 = 846;
-v2 = 847;
+v1 = 845;
+v2 = 846;
 sidefront = 1521;
 sideback = 1520;
 twosided = true;
@@ -22114,8 +22097,8 @@ twosided = true;
 
 linedef
 {
-v1 = 848;
-v2 = 849;
+v1 = 847;
+v2 = 848;
 sidefront = 1523;
 sideback = 1522;
 twosided = true;
@@ -22123,8 +22106,8 @@ twosided = true;
 
 linedef
 {
-v1 = 850;
-v2 = 851;
+v1 = 849;
+v2 = 850;
 sidefront = 1524;
 sideback = 1525;
 twosided = true;
@@ -22132,8 +22115,8 @@ twosided = true;
 
 linedef
 {
-v1 = 852;
-v2 = 853;
+v1 = 851;
+v2 = 852;
 sidefront = 1526;
 sideback = 1527;
 twosided = true;
@@ -22141,8 +22124,8 @@ twosided = true;
 
 linedef
 {
-v1 = 854;
-v2 = 855;
+v1 = 853;
+v2 = 854;
 sidefront = 1529;
 sideback = 1528;
 twosided = true;
@@ -22150,19 +22133,10 @@ twosided = true;
 
 linedef
 {
-v1 = 856;
-v2 = 857;
+v1 = 855;
+v2 = 856;
 sidefront = 1530;
 sideback = 1531;
-twosided = true;
-}
-
-linedef
-{
-v1 = 858;
-v2 = 677;
-sidefront = 1532;
-sideback = 1533;
 twosided = true;
 }
 
@@ -28826,12 +28800,14 @@ scalex_mid = -1.000000;
 
 sidedef
 {
-sector = 241;
+sector = 174;
+texturemiddle = "DRPGZ001";
 }
 
 sidedef
 {
-sector = 241;
+sector = 174;
+texturemiddle = "DRPGZ001";
 }
 
 sidedef
@@ -30960,18 +30936,6 @@ texturemiddle = "DRPGZ001";
 sidedef
 {
 sector = 175;
-}
-
-sidedef
-{
-sector = 174;
-texturemiddle = "DRPGZ001";
-}
-
-sidedef
-{
-sector = 174;
-texturemiddle = "DRPGZ001";
 }
 
 sidedef
