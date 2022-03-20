@@ -171,6 +171,7 @@ Actor Demon_BaseDRRP: Demon {
     +LOOKALLAROUND
 
     DamageFactor DRRPRocketDmg, 0.5
+    DamageFactor DRRPShotgunDmg, 1.5
 
     Radius 20
     Speed 5 // 10
