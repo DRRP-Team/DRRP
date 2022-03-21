@@ -26,6 +26,18 @@ Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC3", true);
 }
 
+Script "WeaponPickupMessage" (int strid) {
+    ACS_NamedExecuteWait("window", 0, StrParam(l:StrParam(s:"DRRP_B_ID", i:strid)));
+}
+
+Script "PickupSSG" (void) {
+    if (!CheckInventory("DRRPSuperShotgun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 49);
+}
+
+Script "PickupPlasmagun" (void) {
+    if (!CheckInventory("DRRPPlasmagun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 46);
+}
+
 Script 666 ENTER{
     SetHudSize(640, 400, 0);
     SetFont("bigfont");

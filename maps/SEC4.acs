@@ -26,6 +26,14 @@ Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC4", true);
 }
 
+Script "WeaponPickupMessage" (int strid) {
+    ACS_NamedExecuteWait("window", 0, StrParam(l:StrParam(s:"DRRP_B_ID", i:strid)));
+}
+
+Script "PickupRocketL" (void) {
+    if (!CheckInventory("DRRPRocketLauncher")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 47);
+}
+
 Script 666 ENTER{
     SetHudSize(640, 400, 0);
     SetFont("bigfont");
@@ -193,6 +201,7 @@ script 33 (int arg0, int arg1, int arg2) { //X=3 Y=9 START=L_72 END=L_72 UNKN=52
 }
 script 34 (int arg0, int arg1, int arg2) { //X=16 Y=9 START=L_73 END=L_81 UNKN=4718592 UNKN2=0
     int sgenid0 = -521; // [x=16, y=9]
+    if(arg2 == 0 && !CheckInventory("DRRPPlasmagun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 46);
     if(arg2 == 0) ACS_Execute(3002, 0, 1);
     if(arg2 == 0) ACS_Execute(3000, 0, 6, 5);
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=521

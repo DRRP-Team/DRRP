@@ -2673,17 +2673,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+arg0str = "PickupChaingun";
+special = 80;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
 }
 
 thing
@@ -3035,17 +3033,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+arg0str = "PickupSSG";
+special = 80;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
 }
 
 thing
@@ -6888,6 +6884,52 @@ single = true;
 coop = true;
 dm = true;
 renderstyle = "";
+}
+
+thing
+{
+x = -832.000;
+y = -832.000;
+type = 9001;
+angle = 270;
+id = 1646;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+class3 = true;
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+}
+
+thing
+{
+x = -832.000;
+y = -868.000;
+type = 10265;
+angle = 90;
+id = 1647;
+arg0 = 2;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+class3 = true;
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+arg1 = 255;
+height = 5;
+dormant = true;
 }
 
 vertex
@@ -24837,6 +24879,7 @@ v1 = 1026;
 v2 = 1027;
 sidefront = 1661;
 sideback = 1671;
+id = 1646;
 dontpegtop = true;
 dontpegbottom = true;
 twosided = true;
@@ -24885,7 +24928,11 @@ linedef
 v1 = 1033;
 v2 = 1030;
 sidefront = 1667;
+special = 80;
 blocking = true;
+arg0str = "SpawnPanelSparks";
+playeruse = true;
+repeatspecial = true;
 }
 
 linedef

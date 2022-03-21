@@ -89,6 +89,11 @@ Actor AbstractSpark : SwitchableDecoration {
 }
 
 Actor OrangeSparkSpawner : AbstractSpark 10265 {
+    //$Category Environment
+    //$Title Orange spark spawner
+    //$NotAngled
+    //$Colour #555555
+
     States {
     Active:
         TNT1 A 0

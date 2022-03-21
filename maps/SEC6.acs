@@ -26,6 +26,11 @@ Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "SEC6", true);
 }
 
+
+Script "WeaponPickupMessage" (int strid) {
+    ACS_NamedExecuteWait("window", 0, StrParam(l:StrParam(s:"DRRP_B_ID", i:strid)));
+}
+
 Script 666 ENTER{
     SetHudSize(640, 400, 0);
     SetFont("bigfont");
@@ -788,6 +793,7 @@ script 125 (int arg0, int arg1, int arg2) { //X=24 Y=27 START=L_356 END=L_360 UN
 script 126 (int arg0, int arg1, int arg2) { //X=5 Y=28 START=L_361 END=L_365 UNKN=2621440 UNKN2=0
     int sgenid0 = -88; // [x=2, y=24]
     int sgenid1 = -87; // [x=2, y=23]
+    if(arg2 == 0) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 43);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=2 Y=24 VAL=0
     if(arg2 == 0) SpawnForced("Scientist", getMediumX(20), getMediumY(188), 0, 87); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=16 STATE=0
     if(arg2 == 0) SetThingSpecial(87, 80, 108);
