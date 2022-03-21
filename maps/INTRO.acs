@@ -29,6 +29,10 @@ Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "INTRO", true);
 }
 
+Script "WeaponPickupMessage" (int strid) {
+    ACS_NamedExecuteWait("window", 0, StrParam(l:StrParam(s:"DRRP_B_ID", i:strid)));
+}
+
 Script 666 ENTER{
     SetHudSize(640, 400, 0);
     SetFont("bigfont");
@@ -410,6 +414,7 @@ script 70 (int arg0, int arg1, int arg2) { //X=2 Y=20 START=L_188 END=L_197 UNKN
 }
 script 71 (int arg0, int arg1, int arg2) { //X=15 Y=20 START=L_198 END=L_198 UNKN=524288 UNKN2=0
     int sgenid0 = -499; // [x=15, y=19]
+    ACS_NamedExecuteWait("WeaponPickupMessage", 0, 42);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=15 Y=19 VAL=2
 }
 script 72 (int arg0, int arg1, int arg2) { //X=17 Y=20 START=L_199 END=L_200 UNKN=1048576 UNKN2=0
