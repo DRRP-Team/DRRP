@@ -37,6 +37,18 @@ Script "SpawnPanelSparks" (void) {
     SetActorState(PANEL_SPARKS, "Active");
 }
 
+Script "WeaponPickupMessage" (int strid) {
+    ACS_NamedExecuteWait("window", 0, StrParam(l:StrParam(s:"DRRP_B_ID", i:strid)));
+}
+
+Script "PickupSSG" (void) {
+    if (!CheckInventory("DRRPSuperShotgun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 48);
+}
+
+Script "PickupChaingun" (void) {
+    if (!CheckInventory("DRRPChaingun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 44);
+}
+
 Script 666 ENTER{
     SetHudSize(640, 400, 0);
     SetFont("bigfont");
