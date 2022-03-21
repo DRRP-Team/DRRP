@@ -503,6 +503,9 @@ single = true;
 coop = true;
 dm = true;
 comment = "20:9";
+special = 80;
+renderstyle = "";
+arg0str = "PickupChaingun";
 }
 
 thing
@@ -1115,6 +1118,9 @@ single = true;
 coop = true;
 dm = true;
 comment = "3:5";
+special = 80;
+renderstyle = "";
+arg0str = "PickupShotgun";
 }
 
 thing
