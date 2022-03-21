@@ -42,7 +42,7 @@ Script "WeaponPickupMessage" (int strid) {
 }
 
 Script "PickupSSG" (void) {
-    if (!CheckInventory("DRRPSuperShotgun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 48);
+    if (!CheckInventory("DRRPSuperShotgun")) ACS_NamedExecuteWait("WeaponPickupMessage", 0, 49);
 }
 
 Script "PickupChaingun" (void) {
