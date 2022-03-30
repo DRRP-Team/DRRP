@@ -102,7 +102,7 @@ Actor ShotgunGuy_BaseDRRP: ShotgunGuy {
 Actor ChaingunGuy_BaseDRRP: ChaingunGuy {
     const int ChanceFailAttackRightBack = 224;
 
-    DropItem "Chaingun", 0, 0
+    DropItem "Chaingun", -1, 0
     DamageFactor DRRPBulletDmg, 3.0
     DamageFactor DRRPPlasmaDmg, 2.0
     +LOOKALLAROUND
