@@ -49,7 +49,7 @@
     DRRP_B_ID39 = "Health at maximum";
     DRRP_B_ID40 = "Got %1";
     DRRP_B_ID41 = "Can't hold more %1s";
-    DRRP_B_ID42 = "You got the Axe!\nZombies beware...";
+    DRRP_B_ID42 = "You got the Axe!\nZombies beware..."; // Отображается при подборе оружия
     DRRP_B_ID43 = "You got the BFG!\nWe could tell you\nwhat BFG stands\nfor, but this is\na family game.";
     DRRP_B_ID44 = "You got the\nChaingun! Precise\nand deadly, but\nit's an ammo hog.";
     DRRP_B_ID45 = "You got the Fire\nExtinguisher! It\nuses halon can-\nisters to put out\nfires.";
@@ -927,7 +927,7 @@
     DRRP_SEC1_50 = "Having trouble\nfinding the green\nkeycard? You\nwon't find it in\nthis sector.\nYou'll likely\nfind the green\nkeycard in a\nlater sector.\nYou'll need to\ntravel back here\nto open this\ndoor."; // Translated by Amon
     DRRP_SEC1_51 = "You can re-enter\nthis sector from\nJunction even af-\nter successfully\ncompleting it. By\nrevisiting pre-\nviously completed\nsectors you can\nuncover addition-\nal secrets and\nbuild strength by\nacquiring equip-\nment and fighting\nmonsters."; // Translated by Amon
     DRRP_SEC1_52 = "Super secret\npasscode: **7*";
-    DRRP_SEC1_53 = "[Combat Guide]\nTip 099: Don't be\nafraid to retreat\nand attack from\ncover if the enemy\nhas the advantage."; // Translated by Amon
+    DRRP_SEC1_53 = "[Combat Guide]\nTip 099: Don't be\nafraid to retreat\nand attack from\ncover if the enemy\nhas the advantage."; // Changed for DRRP
     DRRP_SEC1_54 = "[Combat Guide]\nTip 164: Explod-\ning barrels can\ndamage enemies,\nbut be careful as\nexploding barrels\ncan also hurt\nyou."; // Translated by Amon
     DRRP_SEC1_55 = "Segment Fault:\n&o0r _4s5%0D3 2 25";
     DRRP_SEC2_0 = "Sector 2";
