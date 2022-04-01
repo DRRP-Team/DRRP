@@ -18,6 +18,10 @@ Actor DRRPAxe_DecorateSummoner : CustomInventory 10557 {
 
     Scale 0.65
     Tag "$DRRP_W_AXE"
+    Inventory.PickupMessage "$DRRP_W_AXEPICKUP"
+    Inventory.PickupSound "weapon/axe/swing"
+
+
     States {
         Spawn:
             AXEI A -1
@@ -43,8 +47,11 @@ Actor DRRPFireExt_DecorateSummoner : CustomInventory 10556 {
     //$Icon "weapon"
     //$NotAngled
 
-    Tag "$DRRP_W_FIREEXT"
     Scale 0.5
+    Tag "$DRRP_W_FIREEXT"
+    Inventory.Pickupmessage "$DRRP_W_FIREEXTPICKUP"
+    Inventory.PickupSound "misc/w_pkup"
+
     States {
         Spawn:
             FEXT I -1
