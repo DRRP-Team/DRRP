@@ -449,7 +449,7 @@ script 77 (int arg0, int arg1, int arg2) { //X=2 Y=22 START=L_218 END=L_221 UNKN
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(32)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=32
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=2 Y=22
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(33)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=33
-    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=2 Y=22 VAL=0
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=2 Y=22 VAL=0
 }
 script 78 (int arg0, int arg1, int arg2) { //X=8 Y=22 START=L_222 END=L_225 UNKN=2097152 UNKN2=0
     int sgenid0 = -278; // [x=8, y=22]

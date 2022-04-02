@@ -13,11 +13,14 @@ Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3000");
     if(!nosound) SectorSound(localizeSound("access/grant1"), 255);
 
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
-    SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
+    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
+    str openDoorTexture = isPomEnabled ? "DRDC9" : "NP_DRDC9";
+
+    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, openDoorTexture);
+    SetLineSpecial(doorf, ACS_Execute, 3002, 0);
     if(doorb != 0) {
-        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
-        SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, openDoorTexture);
+        SetLineSpecial(doorb, ACS_Execute, 3002, 0);
     }
 }
 
@@ -59,14 +62,17 @@ Script 3006 (void) { // Jammed door
     }
 }
 
-Script 3007 (int doorf, int doorb) { // Door Unlocker
+Script 3007 (int doorf, int doorb) { // Door Locker
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3000");
 
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
+    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
+    str closedDoorTexture = isPomEnabled ? "DRDC8" : "NP_DRDC8";
+
+    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, closedDoorTexture);
     SetLineSpecial(doorf, ACS_Execute, 3001);
 
     if(doorb != 0) {
-        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, closedDoorTexture);
         SetLineSpecial(doorb, ACS_Execute, 3001);
     }
 }
