@@ -989,7 +989,7 @@ Enter Junction,DRRP_SEC3_2,,,В Переход
 Logged in as root.\n# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.,DRRP_SEC3_4,,,Login root\n\n# scp /map.dat\nСохранение...\nВы получили\nданные карты.
 Map data already\ndownloaded.,DRRP_SEC3_5,,,Данные карты\nуже загружены.
 Weapons cabinet\ncode is 7682.,DRRP_SEC3_6,,,Пароль оружейного\nшкафа: 7682
-Weapons cabinet\ncode access en-\nabled. Code: 7682,DRRP_SEC3_7,,,Кодовый доступ к\nоружейному шкафу\nактивирован.\nПароль: 7862
+Weapons cabinet\ncode access en-\nabled. Code: 7682,DRRP_SEC3_7,,,Кодовый доступ к\nоружейному шкафу\nактивирован.\nПароль: 7682
 Cabinet code\nentry restricted.,DRRP_SEC3_8,,,Ввод кода ограничен.
 7682,DRRP_SEC3_9,,,
 [Weapons Cabinet]\nEnter passcode:\n,DRRP_SEC3_10,,,[Оружейный шкаф]\nВведите пароль:\n
@@ -1001,7 +1001,7 @@ Secure closet\ndoor 2 unlocked.,DRRP_SEC3_15,,,2-я дверь отсека\nб�
 4545,DRRP_SEC3_16,,,
 North lab en-\ntrance passcode:\n,DRRP_SEC3_17,,,Введите код доступа\nк северной\nлаборатории:
 North entrance\nunlocked.,DRRP_SEC3_18,,,Вход разблокирован.
-"[Email]\nTo: Mr. Nadira\nFrom: Kronos\nHe's closing in!\nPerform a secu-\nrity lockdown\nASAP and don't\nallow any access\ninto the facil-\nity. If he man-\nages to get in,\nyou know what to\ndo. -Kronos",DRRP_SEC3_19,,,"[Почта]\nКому: Мр. Надира\nОт: Кронос\nОн приближается\nЗапусти процедуру\nизоляции как можно\nбыстрее, и не пускай\nникого на объект.\nЕсли же ему удастся\nпопасть внутрь, ты\nзнаешь, что делать."
+"[Email]\nTo: Mr. Nadira\nFrom: Kronos\nHe's closing in!\nPerform a secu-\nrity lockdown\nASAP and don't\nallow any access\ninto the facil-\nity. If he man-\nages to get in,\nyou know what to\ndo. -Kronos",DRRP_SEC3_19,,,"[Почта]\nКому: Мр. Надира\nОт: Кронос\nОн приближается!\nЗапусти процедуру\nизоляции как можно\nбыстрее, и не пускай\nникого на объект.\nЕсли же ему удастся\nпопасть внутрь, ты\nзнаешь, что делать."
 POP3 error.\nAuthentication\nfailed. Please\ncontact your\nsysadmin.,DRRP_SEC3_20,,,"POP3 error.\nAuthentication failed.\nПожалуйста,\nсвяжитесь с\nсистемным\nадминистратором. "
 North entrance\npasscode is 4545.,DRRP_SEC3_21,,,Код доступа к северной\nлаборатории: 4545
 [Email]\nTo: All Staff\nFrom: Mr. Nadira\nI've changed the\nnorth entrance\npasscode to 4545.\n-Mr. Nadira,DRRP_SEC3_22,,,[Почта]\nКому: Персоналу\nОт: Мр. Надира\nЯ изменил пароль\nот двери в северную\nлабораторию на 4545.\n-Мр. Надира
@@ -1029,8 +1029,8 @@ Weapons Cabinet,DRRP_SEC3_43,,,Оружейный Шкаф.
 WARNING: Door\nunlocked.,DRRP_SEC3_44,,,ВНИМАНИЕ:\nДверь открыта.
 741,DRRP_SEC3_45,,,
 [Cycle door]\nEnter code:,DRRP_SEC3_46,,,[Блокировка двери]\nВведите пароль:
-Door secure.,DRRP_SEC3_47,,,Управление дверью.
-Door secure.\nAccess to cycle\noperation denied.,DRRP_SEC3_48,,,Управление дверью.\nВ доступе отказано
+Door secure.,DRRP_SEC3_47,,,Терминал\nуправления дверью.
+Door secure.\nAccess to cycle\noperation denied.,DRRP_SEC3_48,,,Терминал\nуправления дверью.\nВ доступе отказано.
 "[Dr. Guerard]\nMarine, you're\ngoing to have to\ntrust me if you\nwant to make it\nout of here\nalive. I'll un-\nlock the door for\nyou.",DRRP_SEC3_49,,,"[Др. Герард]\nМорпех, тебе\nпридётся доверять\nмне, если хочешь\nвыбраться отсюда\nживым. Я открою\nдля тебя дверь."
 System offline.,DRRP_SEC3_50,,,Система отключена.
 [Mr. Nadira]\nI don't have time\nfor games. I need\nyour help and\nI promise to make\nit worth your\nwhile. I have\nsome technology\nthat you may find\nvery useful. You\nwith me?,DRRP_SEC3_51,,,"[Мр. Надира]\nУ меня нет времени\nна игры. Мне нужна\nтвоя помощь и я\nобещаю, что оно того\nстоит. У меня есть\nкое-какие технологии, \nкоторые тебе могут\nочень пригодиться.\nТы со мной?"
