@@ -45,6 +45,7 @@ Script 666 ENTER{
     //SetFont("smallfont");
     ACS_Execute(1000, 0);
     // ACS_Execute(3005, 0);
+    SetActorState(502, "Wardrobe"); // Change tag to weapons cabinet
 }
 
 script 1000 (void) {
@@ -240,6 +241,7 @@ script 41 (int arg0, int arg1, int arg2) { //X=14 Y=14 START=L_86 END=L_94 UNKN=
     int sgenid1 = -462; // [x=14, y=14]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(60)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=60
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=13 Y=18 VAL=4
+    if(arg2 == 0) SpawnForced("TeleportFog", getMediumX(108), getMediumY(148), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=11 STATE=0
     if(arg2 == 0) Thing_Remove(434); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=13 Y=18
     if(arg2 == 0) Thing_Remove(435);
     if(arg2 == 0) ACS_Execute(3000, 0, 13, 14); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) DOOR_UNLOCK LINE=181

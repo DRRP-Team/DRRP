@@ -47,14 +47,18 @@ class ConversationController play {
 
     static bool SetActorArgument(int actorID, int lineArg) {
         ActorIterator it = ActorIterator.Create(actorID);
-        Actor actor      = it.Next();
+        Actor actor      = null;
 
-        if (actor) {
+        bool found = false;
+
+        while (actor = it.Next()) {
+            if (actor.special != 80) continue;
+
+            found = true;
             actor.args[4] = lineArg;
-            return true;
         }
 
-        return false;
+        return found;
     }
 
     static void SetGlobalfreeze( bool freezeset ) {
