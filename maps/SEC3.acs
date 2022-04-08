@@ -45,6 +45,7 @@ Script 666 ENTER{
     //SetFont("smallfont");
     ACS_Execute(1000, 0);
     // ACS_Execute(3005, 0);
+    SetActorState(502, "Wardrobe"); // Change tag to weapons cabinet
 }
 
 script 1000 (void) {

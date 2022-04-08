@@ -292,6 +292,10 @@ Actor DRRPWardrobe 10706  {
         Spawn:
             DCAB A -1
             Stop
+        Wardrobe:
+            DCAB A 0
+            DCAB A -1 SetTag("$DRRP_E_WARDROBE")
+            Stop
     }
 }
 
