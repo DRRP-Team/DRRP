@@ -16885,7 +16885,6 @@ sidefront = 121;
 sideback = 122;
 special = 80;
 arg0 = 3002;
-arg2 = 3;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -16926,7 +16925,6 @@ sidefront = 127;
 sideback = 128;
 special = 80;
 arg0 = 3002;
-arg2 = 3;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -17135,7 +17133,6 @@ sideback = 156;
 special = 80;
 id = 1;
 arg0 = 3002;
-arg2 = 4;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -17331,7 +17328,6 @@ sidefront = 180;
 sideback = 181;
 special = 80;
 arg0 = 3002;
-arg2 = 5;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -17372,7 +17368,6 @@ sidefront = 186;
 sideback = 187;
 special = 80;
 arg0 = 3002;
-arg2 = 5;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -17893,7 +17888,6 @@ sidefront = 259;
 sideback = 260;
 special = 80;
 arg0 = 3002;
-arg2 = 8;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -17934,7 +17928,6 @@ sidefront = 265;
 sideback = 266;
 special = 80;
 arg0 = 3002;
-arg2 = 8;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -18848,7 +18841,6 @@ sidefront = 388;
 sideback = 389;
 special = 80;
 arg0 = 3002;
-arg2 = 10;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -18889,7 +18881,6 @@ sidefront = 394;
 sideback = 395;
 special = 80;
 arg0 = 3002;
-arg2 = 10;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -19093,7 +19084,6 @@ sideback = 422;
 special = 80;
 id = 3;
 arg0 = 3002;
-arg2 = 11;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -19180,7 +19170,6 @@ sideback = 433;
 special = 80;
 id = 5;
 arg0 = 3002;
-arg2 = 12;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -19987,7 +19976,6 @@ sideback = 542;
 special = 80;
 id = 7;
 arg0 = 3002;
-arg2 = 14;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -21516,7 +21504,6 @@ sidefront = 732;
 sideback = 733;
 special = 80;
 arg0 = 3002;
-arg2 = 16;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -21557,7 +21544,6 @@ sidefront = 738;
 sideback = 739;
 special = 80;
 arg0 = 3002;
-arg2 = 16;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -23034,7 +23020,6 @@ sideback = 946;
 special = 80;
 id = 12;
 arg0 = 3002;
-arg2 = 25;
 twosided = true;
 playeruse = true;
 repeatspecial = true;
@@ -40329,7 +40314,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 176;
-id = 27;
 }
 
 sector
@@ -40363,7 +40347,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 2;
 rotationceiling = 270.000000;
 }
 
@@ -40381,7 +40364,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 152;
-id = 18;
 rotationfloor = 90.000000;
 }
 
@@ -40455,7 +40437,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 3;
 }
 
 sector
@@ -40488,7 +40469,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 4;
 }
 
 sector
@@ -40514,7 +40494,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 6;
 rotationceiling = 180.000000;
 rotationfloor = 90.000000;
 }
@@ -40541,7 +40520,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 5;
 }
 
 sector
@@ -40576,7 +40554,6 @@ textureceiling = "FLAT20";
 heightfloor = 8;
 heightceiling = 8;
 lightlevel = 176;
-id = 28;
 rotationceiling = 90.000000;
 rotationfloor = 90.000000;
 }
@@ -40613,7 +40590,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 7;
 rotationceiling = 90.000000;
 }
 
@@ -40648,7 +40624,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 8;
 }
 
 sector
@@ -40689,7 +40664,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 13;
 }
 
 sector
@@ -40768,7 +40742,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 10;
 }
 
 sector
@@ -40803,7 +40776,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 11;
 rotationceiling = 90.000000;
 rotationfloor = 90.000000;
 }
@@ -40830,7 +40802,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 12;
 }
 
 sector
@@ -40927,7 +40898,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 14;
 rotationceiling = 90.000000;
 rotationfloor = 90.000000;
 }
@@ -40973,7 +40943,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 120;
-id = 15;
 rotationceiling = 90.000000;
 rotationfloor = 90.000000;
 }
@@ -41034,7 +41003,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 16;
 }
 
 sector
@@ -41067,7 +41035,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 17;
 }
 
 sector
@@ -41092,7 +41059,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 22;
 rotationceiling = 180.000000;
 }
 
@@ -41200,7 +41166,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 255;
-id = 24;
 hidden = true;
 }
 
@@ -41236,7 +41201,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 176;
-id = 25;
 rotationfloor = 90.000000;
 }
 
@@ -41269,7 +41233,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 175;
-id = 29;
 rotationceiling = 90.000000;
 rotationfloor = 90.000000;
 }
@@ -41315,7 +41278,6 @@ sector
 texturefloor = "DRDC10";
 textureceiling = "FLAT20";
 lightlevel = 176;
-id = 26;
 }
 
 sector
