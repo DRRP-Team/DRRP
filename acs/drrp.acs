@@ -5,56 +5,10 @@
  * https://opensource.org/licenses/MIT
  */
 
+#import "drrplib.acs"
 #include "zcommon.acs"
 
-const int SECONDS = 35; // Ticks per second
-
-// Useful functions
-
-function bool isLocalized(str string) {
-    return !!strcmp(StrParam(l:string), string);
-}
-
-function int getStringWidth(str String) {
-    int i = 0;
-    while(String[i] != '\0') { i++; }
-    return i;
-}
-
-function int getStringHeight(str String) {
-    int i      = 0;
-    int height = 0;
-
-    while(String[i] != '\0') {
-        if(String[i++] == '\n') height++;
-    }
-    return height;
-}
-
-function global str getThingName(int id, int state) {
-    Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
-    return "DRRPTODO";
-}
-
-function str localizeSound(str sound) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
-}
-
-function fixed fmax(fixed val1, fixed val2) {
-    return val1 > val2 ? val1 : val2;
-}
-
-function fixed fmin(fixed val1, fixed val2) {
-    return val1 < val2 ? val1 : val2;
-}
-
-function fixed fclamp(fixed value, fixed min, fixed max) {
-    return fmax(min, fmin(max, value));
-}
-
-// \\ Useful functions
-
+/* DEPRECATED */
 Script "fireextfade" (int mode) {
     // TODO: Use additive point light
     if(mode) {
@@ -64,64 +18,23 @@ Script "fireextfade" (int mode) {
     }
 }
 
-function fixed toFixed(int value) {
-    return value << 16;
-}
+/* ACS based DRPG Window */
 
-function int toInt(fixed value) {
-    return value >> 16;
-}
-
-function int toFloor(fixed value) {
-    if (value < 10000) {
-        return value;
-    }
-
-    return toInt(value);
-}
-
-// Can be used if you don't have enough script parameters
-function int encodeXY(int x, int y) {
-    return (x << 16) | y;
-}
-
-function int decodeX(int encoded) {
-    return encoded >> 16;
-}
-
-function int decodeY(int encoded) {
-    return encoded & 0xFFFF;
-}
-
-const fixed HUD_CENTER = 0.0;
-const fixed HUD_TOP = 0.1;
-const fixed HUD_BOTTOM = 0.2;
-const fixed HUD_LEFT = 0.1;
-const fixed HUD_RIGHT = 0.2;
-
-// ACS based DRPG Window
-
-// This crutch fixes the GZDoom Encoding bug in russian translation
-// https://trello.com/c/Yjn7YM8b
+/*
+ This crutch fixes the GZDoom Encoding bug in russian translation
+ https://trello.com/c/Yjn7YM8b
+*/
 function str fixEncodingBug(str text) {
     str output;
     int TextLen = strlen(text);
     for (int i = 0; i < TextLen; i++) {
-        if (text[i] == 0x20) // space
+        if (text[i] == 0x20) /* space */
             output = StrParam(s:output, s:" ");
         else
             output = StrParam(s:output, c:text[i]);
     }
 
     return output;
-}
-
-function int idivF(int a, int b) {
-    return toFixed(a) / toFixed(b);
-}
-
-function int idivI(int a, int b) {
-    return toFloor(idivF(a, b));
 }
 
 function float fapplyScaleF(float value) {
@@ -142,11 +55,6 @@ function int fapplyScaleI(float value) {
 
 function int iapplyScaleI(int value) {
     return toFloor(iapplyScaleF(value));
-}
-
-
-function int uniLen(str text) {
-    return StrLen(text); /* TODO: */
 }
 
 /* // String wrap processor \\ */
