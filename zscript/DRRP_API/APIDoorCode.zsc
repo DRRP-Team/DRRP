@@ -83,7 +83,7 @@ class DoorCodeInputMenu : GenericMenu {
     override void Drawer() {
         Super.Drawer();
 
-        let tex = TexMan.CheckForTexture("M_WINDOW", TexMan.Type_MiscPatch);
+        let tex = TexMan.CheckForTexture("M_DLGNSC", TexMan.Type_MiscPatch);
         if (tex.IsValid()) {
             Vector2 v = TexMan.GetScaledSize(tex);
             int x = 320;
