@@ -139,11 +139,46 @@ function int iapplyScaleI(int value) {
 
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
 
-Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
-    int posX = decodeX(enc_position);
-    int posY = decodeY(enc_position);
-    bool interactive = autocloseTicks <= 0;
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+    SetFont("M_WINDOW");
+    HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
+        toFixed(posX) + HUD_LEFT,
+        toFixed(posY - 5) + HUD_TOP,
+        1);
+    SetFont("smallfont");
+    SetHudClipRect(
+        posX,
+        posY,
+        160 - 2,
+        SYM_HEIGHT * 7 + 1,
+        0, true);
+    HudMessage(s: Text;
+        HUDMSG_PLAIN,
+        -10000001, /* id */
+        CR_WHITE,
+        toFixed(posX + 4) + HUD_LEFT,
+        toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
+        1); /* alpha */
 
+    SetHudSize(0, 0, false);
+}
+
+function void clearDialogWindow(void) {
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+}
+
+/**
+  * enc_position   - position, encoded by encodeXY(x, y).
+  *                  virtual screen size is 640x480
+  *
+  * autocloseTicks - close this window after this amount
+  *                  of ticks. If <=0, use interactive mode
+  *                  when player can scroll and close window
+  */
+Script "drawDialogWindow" (str _Text, int posX, int posY) {
     str Text = fixEncodingBug(_Text);
 
     Delay(2);
@@ -153,81 +188,49 @@ Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    if (interactive) {
-        Thing_Stop(0); // TID_Player -> 0
-        SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
-        SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
-    }
-
-    int tick = 0;
+    Thing_Stop(0); // TID_Player -> 0
+    SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
     While(TRUE) {
-        if (interactive) {
-            if(ReadedKey & BT_FORWARD && ScrollY > 0) {
-                ScrollY -= SYM_HEIGHT;
-                Delay(4);
-            }
-            if(ReadedKey & BT_BACK && ScrollY < height * SYM_HEIGHT) {
-                ScrollY += SYM_HEIGHT;
-                Delay(4);
-            }
+        if(ReadedKey & BT_FORWARD && ScrollY > 0) {
+            ScrollY--;
+            Delay(4);
+        }
+        if(ReadedKey & BT_BACK && ScrollY < height) {
+            ScrollY++;
+            Delay(4);
         }
 
-        SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
-        SetHUDClipRect(0, 0, 0, 0, 0);
-        SetFont("M_WINDOW");
-        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
-            toFixed(posX) + HUD_LEFT, // x
-            toFixed(posY - 5) + HUD_TOP, // y
-            1);
-        SetFont("smallfont");
-        SetHudClipRect(
-            posX, // x
-            posY, // y
-            160 - 2, // width
-            SYM_HEIGHT * 7 + 1, // height
-            0, true);
-        HudMessage(s: Text;
-            HUDMSG_PLAIN, // type
-            -10000001, // id
-            CR_WHITE, // color
-            toFixed(posX + 4) + HUD_LEFT, // x
-            toFixed(posY - ScrollY) + HUD_TOP, // y
-            1); // alpha
-
-        SetHudSize(0, 0, false);
+        drawDialogWindow(Text, posX, posY, ScrollY);
         Delay(1);
 
-        if (!interactive && tick >= autocloseTicks) {
+        ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
+
+        if((FirstRun == 0) && (ReadedKey & BT_USE))
             break;
-        }
-
-        tick++;
-
-        if (interactive) {
-            ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
-
-            if((FirstRun == 0) && (ReadedKey & BT_USE))
-                break;
-            if((FirstRun == 1) && !(ReadedKey & BT_USE))
-                FirstRun = 0;
-        }
+        if((FirstRun == 1) && !(ReadedKey & BT_USE))
+            FirstRun = 0;
     }
 
-    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
-    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+    clearDialogWindow();
 
-    if (interactive) {
-        SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
-        SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
-    }
+    SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
 }
 
-Script "window"(str _Text) { // s: -> str
+Script "window"(str _Text) {
     int x = iapplyScaleI(320) - 80;
     int y = iapplyScaleI(260);
 
-    ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, encodeXY(x, y), 0);
+    ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, x, y);
+}
+
+Script "tooltipwindow"(str _Text) {
+    int x = iapplyScaleI(410);// - 80;
+    int y = iapplyScaleI(10);
+
+    ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, encodeXY(x, y), 5 * SECONDS);
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
