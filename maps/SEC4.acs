@@ -360,6 +360,7 @@ script 58 (int arg0, int arg1, int arg2) { //X=15 Y=19 START=L_156 END=L_163 UNK
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(56)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=56
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=15 Y=19
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG_WITH_SOUND STR=57
+    if(arg2 == 2) SpawnForced("TeleportFog", getMediumX(124), getMediumY(124), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=12 STATE=0
     if(arg2 == 2) SpawnForced("DrGuerard", getMediumX(124), getMediumY(124), 0, 495); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=12 STATE=0
     if(arg2 == 2) SetThingSpecial(495, 80, 52);
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid1, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=15 Y=15 VAL=1
@@ -475,7 +476,7 @@ script 76 (int arg0, int arg1, int arg2) { //X=23 Y=23 START=L_225 END=L_244 UNK
     int sgenid3 = -660; // [x=20, y=20]
     int sgenid4 = -595; // [x=18, y=19]
     int sgenid5 = -659; // [x=20, y=19]
-    int sgenid6 = -560;//529; // [x=16, y=17]
+    int sgenid6 = -560;//529; // [x=16, y=17] // line replaced with dumb thing
     int sgenid7 = -759; // [x=23, y=23]
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=20 Y=22 VAL=4
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, 9); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=13 Y=20 VAL=9
