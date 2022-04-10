@@ -153,10 +153,10 @@ script 20 (int arg0, int arg1, int arg2) { //X=17 Y=6 START=L_48 END=L_48 UNKN=5
 }
 script 21 (int arg0, int arg1, int arg2) { //X=15 Y=7 START=L_49 END=L_53 UNKN=2621440 UNKN2=0
     int sgenid0 = 487; // [x=15, y=7]
-    if(arg2 == 0) SpawnForced("BullDemon", getMediumX(20), getMediumY(60), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=10 STATE=0
-    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(20), getMediumY(124), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=11 STATE=0
-    if(arg2 == 0) SpawnForced("Troop", getMediumX(52), getMediumY(124), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=12 STATE=0
-    if(arg2 == 0) SpawnForced("Impling", getMediumX(116), getMediumY(92), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=13 STATE=0
+    if(arg2 == 0) SpawnWithFog("BullDemon", getMediumX(20), getMediumY(60), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=10 STATE=0
+    if(arg2 == 0) SpawnWithFog("Malwrath", getMediumX(20), getMediumY(124), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=11 STATE=0
+    if(arg2 == 0) SpawnWithFog("Troop", getMediumX(52), getMediumY(124), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=12 STATE=0
+    if(arg2 == 0) SpawnWithFog("Impling", getMediumX(116), getMediumY(92), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=13 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) INC_VAR X=15 Y=7
 }
 script 22 (int arg0, int arg1, int arg2) { //X=2 Y=8 START=L_54 END=L_54 UNKN=524288 UNKN2=0
@@ -178,8 +178,8 @@ script 25 (int arg0, int arg1, int arg2) { //X=6 Y=9 START=L_62 END=L_69 UNKN=41
     int sgenid0 = -244; // [x=7, y=20]
     int sgenid1 = -201; // [x=6, y=9]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(18)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=18
-    if(arg2 == 0) SpawnForced("Phantom", getMediumX(100), getMediumY(116), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=7 STATE=0
-    if(arg2 == 0) SpawnForced("Phantom", getMediumX(76), getMediumY(132), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=8 STATE=0
+    if(arg2 == 0) SpawnWithFog("Phantom", getMediumX(100), getMediumY(116), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=7 STATE=0
+    if(arg2 == 0) SpawnWithFog("Phantom", getMediumX(76), getMediumY(132), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=8 STATE=0
     if(arg2 == 0) Thing_Remove(244); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=7 Y=20
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=20 VAL=2
     if(arg2 == 0) ACS_Execute(3000, 0, 11, 0, true); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=347
@@ -201,8 +201,8 @@ script 27 (int arg0, int arg1, int arg2) { //X=10 Y=9 START=L_75 END=L_82 UNKN=4
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(13)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=13
     if(arg2 == 0) ACS_Execute(3000, 0, 5, 0, true); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=311
     if(arg2 == 0) customOpenSound();
-    if(arg2 == 0) SpawnForced("Hellhound", getMediumX(124), getMediumY(132), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
-    if(arg2 == 0) SpawnForced("Hellhound", getMediumX(44), getMediumY(116), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
+    if(arg2 == 0) SpawnWithFog("Hellhound", getMediumX(124), getMediumY(132), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
+    if(arg2 == 0) SpawnWithFog("Hellhound", getMediumX(44), getMediumY(116), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=10 Y=9
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(14)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=14
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=10 Y=9
@@ -213,7 +213,7 @@ script 28 (int arg0, int arg1, int arg2) { //X=14 Y=9 START=L_83 END=L_89 UNKN=3
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(15)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=15
     if(arg2 == 0) ACS_Execute(3000, 0, 7, 0, true); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=98
     if(arg2 == 0) customOpenSound();
-    if(arg2 == 0) SpawnForced("ZombiePvt", getMediumX(76), getMediumY(132), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombiePvt", getMediumX(76), getMediumY(132), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=14 Y=9
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(16)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=16
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=14 Y=9
@@ -296,8 +296,8 @@ script 51 (int arg0, int arg1, int arg2) { //X=19 Y=15 START=L_119 END=L_119 UNK
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=216
 }
 script 52 (int arg0, int arg1, int arg2) { //X=27 Y=15 START=L_120 END=L_121 UNKN=1048576 UNKN2=0
-    if(arg2 == 0) SpawnForced("Phantom", getMediumX(164), getMediumY(108), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
-    if(arg2 == 0) SpawnForced("Phantom", getMediumX(164), getMediumY(140), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 0) SpawnWithFog("Phantom", getMediumX(164), getMediumY(108), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 0) SpawnWithFog("Phantom", getMediumX(164), getMediumY(140), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
 }
 script 53 (int arg0, int arg1, int arg2) { //X=6 Y=16 START=L_122 END=L_122 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=142
@@ -380,7 +380,7 @@ script 68 (int arg0, int arg1, int arg2) { //X=3 Y=21 START=L_148 END=L_169 UNKN
     if(arg2 == 4) ACS_NamedExecute("transformation", 0, 117); // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35 // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 4) Delay(12); // ( USE IF_VAR( 8 ) ) SLEEP MSEC=350
     if(arg2 == 4) Thing_Remove(117); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=3 Y=21
-    if(arg2 == 4) SpawnForced("Impling", getMediumX(28), getMediumY(172), 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=9 STATE=0
+    if(arg2 == 4) SpawnWithFog("Impling", getMediumX(28), getMediumY(172), 0, 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=9 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 8 ) ) FRAME ARG1=0
     if(arg2 == 4) ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(32)); // ( USE MODIFYWORLD IF_VAR( 8 ) ) NOTEBOOK_ADD STR=32
     if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid2, 1); // ( USE IF_VAR( 8 ) ) SET_VAR X=4 Y=4 VAL=1
@@ -399,7 +399,7 @@ script 70 (int arg0, int arg1, int arg2) { //X=10 Y=21 START=L_174 END=L_178 UNK
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(17)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=17
     if(arg2 == 0) ACS_Execute(3000, 0, 9, 0, true); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=344
     if(arg2 == 0) customOpenSound();
-    if(arg2 == 0) SpawnForced("BullDemon", getMediumX(44), getMediumY(116), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=6 STATE=0
+    if(arg2 == 0) SpawnWithFog("BullDemon", getMediumX(44), getMediumY(116), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=6 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=10 Y=21
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(11)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=11
 }
@@ -409,7 +409,7 @@ script 71 (int arg0, int arg1, int arg2) { //X=14 Y=21 START=L_179 END=L_183 UNK
     if(arg2 == 0) ACS_Execute(3000, 0, 3, 0, true); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=320
     if(arg2 == 0) customOpenSound();
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=14 Y=21
-    if(arg2 == 0) SpawnForced("Impling", getMediumX(60), getMediumY(116), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
+    if(arg2 == 0) SpawnWithFog("Impling", getMediumX(60), getMediumY(116), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(11)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=11
 }
 script 72 (int arg0, int arg1, int arg2) { //X=24 Y=21 START=L_184 END=L_188 UNKN=2621440 UNKN2=0

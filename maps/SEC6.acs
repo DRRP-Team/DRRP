@@ -291,7 +291,7 @@ script 37 (int arg0, int arg1, int arg2) { //X=4 Y=9 START=L_100 END=L_124 UNKN=
     if(arg2 == 0) SpawnForced("Marine", getMediumX(44), getMediumY(76), 0, 169); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=17 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=6 Y=8 VAL=1
     if(arg2 == 0) Thing_Remove(73); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=2 Y=9
-    if(arg2 == 0) SpawnForced("ZombieCpt", getMediumX(44), getMediumY(60), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieCpt", getMediumX(44), getMediumY(60), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
 	if(arg2 == 0) {
 		Thing_Hate(1, 169, 0);
 	}
@@ -639,7 +639,7 @@ script 99 (int arg0, int arg1, int arg2) { //X=5 Y=21 START=L_279 END=L_298 UNKN
     if(arg2 == 1) ACS_ExecuteAlways(3000, 0, 9, 0, 1); // ( USE IF_VAR( 1 ) ) DOOR_UNLOCK LINE=423
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=57
     if(arg2 == 1) ACS_ExecuteAlways(3002, 0, 31); // ( USE IF_VAR( 1 ) ) DOOR_OPEN LINE=423
-    if(arg2 == 1) SpawnForced("Wretched", getMediumX(52), getMediumY(172), 0, 2); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
+    if(arg2 == 1) SpawnWithFog("Wretched", getMediumX(52), getMediumY(172), 0, 2); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
 	if(arg2 == 1) {
 		Thing_Hate(2, -sgenid0, 4);
 	}

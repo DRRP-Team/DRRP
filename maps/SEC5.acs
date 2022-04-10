@@ -82,12 +82,12 @@ script 9 (int arg0, int arg1, int arg2) { //X=16 Y=5 START=L_17 END=L_17 UNKN=52
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=443
 }
 script 10 (int arg0, int arg1, int arg2) { //X=17 Y=5 START=L_18 END=L_24 UNKN=3670016 UNKN2=0
-    if(arg2 == 0) SpawnForced("Pinky", getMediumX(108), getMediumY(124), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
-    if(arg2 == 0) SpawnForced("DRRPCacodemon", getMediumX(92), getMediumY(92), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=19 STATE=0
-    if(arg2 == 0) SpawnForced("Pinky", getMediumX(76), getMediumY(44), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=20 STATE=0
-    if(arg2 == 0) SpawnForced("Fiend", getMediumX(68), getMediumY(164), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=21 STATE=0
-    if(arg2 == 0) SpawnForced("Pinky", getMediumX(116), getMediumY(76), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=22 STATE=0
-    if(arg2 == 0) SpawnForced("DRRPArchVile", getMediumX(108), getMediumY(12), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=23 STATE=0
+    if(arg2 == 0) SpawnWithFog("Pinky", getMediumX(108), getMediumY(124), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPCacodemon", getMediumX(92), getMediumY(92), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=19 STATE=0
+    if(arg2 == 0) SpawnWithFog("Pinky", getMediumX(76), getMediumY(44), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=20 STATE=0
+    if(arg2 == 0) SpawnWithFog("Fiend", getMediumX(68), getMediumY(164), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=21 STATE=0
+    if(arg2 == 0) SpawnWithFog("Pinky", getMediumX(116), getMediumY(76), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=22 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPArchVile", getMediumX(108), getMediumY(12), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=23 STATE=0
     /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=443
 }
 script 11 (int arg0, int arg1, int arg2) { //X=26 Y=5 START=L_25 END=L_25 UNKN=524288 UNKN2=536870912
@@ -356,8 +356,8 @@ script 55 (int arg0, int arg1, int arg2) { //X=28 Y=19 START=L_172 END=L_185 UNK
     if(arg2 == 3) Delay(17); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=500
     if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(117)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG_WITH_SOUND STR=117
     if(arg2 == 3) ACS_Execute(3000, 0, 14); // ( USE IF_VAR( 4 ) ) DOOR_UNLOCK LINE=313
-    if(arg2 == 3) SpawnForced("ZombieCpt", getMediumX(196), getMediumY(100), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=27 STATE=0
-    if(arg2 == 3) SpawnForced("DemonWolf", getMediumX(196), getMediumY(116), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=28 STATE=0
+    if(arg2 == 3) SpawnWithFog("ZombieCpt", getMediumX(196), getMediumY(100), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=27 STATE=0
+    if(arg2 == 3) SpawnWithFog("DemonWolf", getMediumX(196), getMediumY(116), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=28 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) DOOR_UNLOCK LINE=345
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=28 Y=19
     if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(118)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=118
@@ -417,11 +417,11 @@ script 61 (int arg0, int arg1, int arg2) { //X=0 Y=23 START=L_221 END=L_242 UNKN
     int sgenid1 = -54; // [x=1, y=22]
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(46), getString(45), 61); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=45 MSG=46
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(47)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=47
-    if(arg2 == 0) SpawnForced("DRRPCacodemon", getMediumX(68), getMediumY(204), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=13 STATE=0
-    if(arg2 == 0) SpawnForced("Pinky", getMediumX(116), getMediumY(204), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=14 STATE=0
-    if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(148), getMediumY(196), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=15 STATE=0
-    if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(148), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=16 STATE=0
-    if(arg2 == 0) SpawnForced("Fiend", getMediumX(172), getMediumY(220), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=17 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPCacodemon", getMediumX(68), getMediumY(204), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=13 STATE=0
+    if(arg2 == 0) SpawnWithFog("Pinky", getMediumX(116), getMediumY(204), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=14 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieLt", getMediumX(148), getMediumY(196), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=15 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieLt", getMediumX(148), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=16 STATE=0
+    if(arg2 == 0) SpawnWithFog("Fiend", getMediumX(172), getMediumY(220), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=17 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=0 Y=23
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(48)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=48
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=0 Y=23
@@ -491,7 +491,7 @@ script 73 (int arg0, int arg1, int arg2) { //X=31 Y=23 START=L_268 END=L_273 UNK
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(6), getString(5), 73); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=5 MSG=6
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(7)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=7
     if(arg2 == 0) ACS_Execute(3000, 0, 1); // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=130
-    if(arg2 == 0) SpawnForced("DRRPCacodemon", getMediumX(172), getMediumY(188), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPCacodemon", getMediumX(172), getMediumY(188), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=31 Y=23
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(7)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=7
 }
@@ -505,13 +505,13 @@ script 76 (int arg0, int arg1, int arg2) { //X=8 Y=25 START=L_276 END=L_276 UNKN
     /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=185
 }
 script 77 (int arg0, int arg1, int arg2) { //X=9 Y=25 START=L_277 END=L_279 UNKN=1572864 UNKN2=0
-    if(arg2 == 0) SpawnForced("Pinky", getMediumX(68), getMediumY(196), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
-    if(arg2 == 0) SpawnForced("Pinky", getMediumX(68), getMediumY(212), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
+    if(arg2 == 0) SpawnWithFog("Pinky", getMediumX(68), getMediumY(196), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
+    if(arg2 == 0) SpawnWithFog("Pinky", getMediumX(68), getMediumY(212), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) FRAME ARG1=0
 }
 script 78 (int arg0, int arg1, int arg2) { //X=11 Y=25 START=L_280 END=L_282 UNKN=1572864 UNKN2=0
-    if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(92), getMediumY(196), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
-    if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(92), getMediumY(212), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieLt", getMediumX(92), getMediumY(196), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieLt", getMediumX(92), getMediumY(212), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) FRAME ARG1=0
 }
 script 79 (int arg0, int arg1, int arg2) { //X=14 Y=25 START=L_283 END=L_283 UNKN=524288 UNKN2=0
@@ -633,14 +633,14 @@ script 99 (int arg0, int arg1, int arg2) { //X=25 Y=29 START=L_347 END=L_363 UNK
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid1, 9); // ( USE IF_VAR( 1 ) ) SET_VAR X=0 Y=23 VAL=9
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid2, 9); // ( USE IF_VAR( 1 ) ) SET_VAR X=24 Y=28 VAL=9
     if(arg2 == 1) Autosave();
-    if(arg2 == 1) SpawnForced("Fiend", getMediumX(148), getMediumY(180), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=5 STATE=0
-    if(arg2 == 1) SpawnForced("Fiend", getMediumX(116), getMediumY(204), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=6 STATE=0
-    if(arg2 == 1) SpawnForced("Pinky", getMediumX(44), getMediumY(188), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=7 STATE=0
-    if(arg2 == 1) SpawnForced("Pinky", getMediumX(36), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=8 STATE=0
-    if(arg2 == 1) SpawnForced("Pinky", getMediumX(52), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=9 STATE=0
-    if(arg2 == 1) SpawnForced("ZombieLt", getMediumX(172), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=10 STATE=0
-    if(arg2 == 1) SpawnForced("Pinky", getMediumX(172), getMediumY(228), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=11 STATE=0
-    if(arg2 == 1) SpawnForced("Cerberus", getMediumX(228), getMediumY(188), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=12 STATE=0
+    if(arg2 == 1) SpawnWithFog("Fiend", getMediumX(148), getMediumY(180), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=5 STATE=0
+    if(arg2 == 1) SpawnWithFog("Fiend", getMediumX(116), getMediumY(204), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=6 STATE=0
+    if(arg2 == 1) SpawnWithFog("Pinky", getMediumX(44), getMediumY(188), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=7 STATE=0
+    if(arg2 == 1) SpawnWithFog("Pinky", getMediumX(36), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=8 STATE=0
+    if(arg2 == 1) SpawnWithFog("Pinky", getMediumX(52), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=9 STATE=0
+    if(arg2 == 1) SpawnWithFog("ZombieLt", getMediumX(172), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=10 STATE=0
+    if(arg2 == 1) SpawnWithFog("Pinky", getMediumX(172), getMediumY(228), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=11 STATE=0
+    if(arg2 == 1) SpawnWithFog("Cerberus", getMediumX(228), getMediumY(188), 0, 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=12 STATE=0
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(32)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=32
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=25 Y=29
     if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(33)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=33
