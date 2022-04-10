@@ -159,6 +159,8 @@ Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
         SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
     }
 
+    int tick = 0;
+
     While(TRUE) {
         if (interactive) {
             if(ReadedKey & BT_FORWARD && ScrollY > 0) {
@@ -196,11 +198,17 @@ Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
         SetHudSize(0, 0, false);
         Delay(1);
 
+        if (!interactive && tick >= autocloseTicks) {
+            break;
+        }
+
+        tick++;
+
         if (interactive) {
             ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
             if((FirstRun == 0) && (ReadedKey & BT_USE))
-                Break;
+                break;
             if((FirstRun == 1) && !(ReadedKey & BT_USE))
                 FirstRun = 0;
         }
@@ -208,8 +216,11 @@ Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
 
     HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
-    SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
-    SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
+
+    if (interactive) {
+        SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
+        SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
+    }
 }
 
 Script "window"(str _Text) { // s: -> str
