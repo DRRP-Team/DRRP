@@ -80,6 +80,19 @@ function int toFloor(fixed value) {
     return toInt(value);
 }
 
+// Can be used if you don't have enough script parameters
+function int encodeXY(int x, int y) {
+    return (x << 16) | y;
+}
+
+function int decodeX(int encoded) {
+    return encoded >> 16;
+}
+
+function int decodeY(int encoded) {
+    return encoded & 0xFFFF;
+}
+
 const fixed HUD_CENTER = 0.0;
 const fixed HUD_TOP = 0.1;
 const fixed HUD_BOTTOM = 0.2;
@@ -88,20 +101,35 @@ const fixed HUD_RIGHT = 0.2;
 
 // ACS based DRPG Window
 
+// This crutch fixes the GZDoom Encoding bug in russian translation
+// https://trello.com/c/Yjn7YM8b
+function str fixEncodingBug(str text) {
+    str output;
+    int TextLen = strlen(text);
+    for (int i = 0; i < TextLen; i++) {
+        if (text[i] == 0x20) // space
+            output = StrParam(s:output, s:" ");
+        else
+            output = StrParam(s:output, c:text[i]);
+    }
+
+    return output;
+}
+
+function float applyScale(float value) {
+    fixed SCALE = GetCVar("drrp_window_scale");
+
+    return value / SCALE;
+}
+
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
 
-Script "window"(str _Text) { // s: -> str
-    fixed SCALE = GetCVar("drrp_window_scale");
-    // This crutch fixes the GZDoom Encoding bug in russian translation
-    // https://trello.com/c/Yjn7YM8b
-    str Text;
-    int TextLen = strlen(_Text);
-    for (int i = 0; i < TextLen; i++) {
-        if (_Text[i] == 0x20) // space
-            Text = StrParam(s:Text, s:" ");
-        else
-            Text = StrParam(s:Text, c:_Text[i]);
-    }
+Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
+    int posX = decodeX(enc_position);
+    int posY = decodeY(enc_position);
+    bool interactive = autocloseTicks <= 0;
+
+    str Text = fixEncodingBug(_Text);
 
     Delay(2);
 
@@ -110,31 +138,35 @@ Script "window"(str _Text) { // s: -> str
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    Thing_Stop(0); // TID_Player -> 0
-    SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
-    SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
+    if (interactive) {
+        Thing_Stop(0); // TID_Player -> 0
+        SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
+        SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
+    }
 
     While(TRUE) {
-        if(ReadedKey & BT_FORWARD && ScrollY > 0) {
-            ScrollY -= SYM_HEIGHT;
-            Delay(4);
-        }
-        if(ReadedKey & BT_BACK && ScrollY < height * SYM_HEIGHT) {
-            ScrollY += SYM_HEIGHT;
-            Delay(4);
+        if (interactive) {
+            if(ReadedKey & BT_FORWARD && ScrollY > 0) {
+                ScrollY -= SYM_HEIGHT;
+                Delay(4);
+            }
+            if(ReadedKey & BT_BACK && ScrollY < height * SYM_HEIGHT) {
+                ScrollY += SYM_HEIGHT;
+                Delay(4);
+            }
         }
 
-        SetHudSize(toFloor(640.0 / SCALE), toFloor(480.0 / SCALE), true);
+        SetHudSize(toFloor(applyScale(640.0)), toFloor(applyScale(480.0)), true);
         SetHUDClipRect(0, 0, 0, 0, 0);
         SetFont("M_WINDOW");
         HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
-            toFixed(toFloor(320.0 / SCALE) - 80) + HUD_LEFT, // x
-            toFixed(toFloor(260.0 / SCALE) - 5) + HUD_TOP, // y
+            toFixed(posX) + HUD_LEFT, // x
+            toFixed(posY - 5) + HUD_TOP, // y
             1);
         SetFont("smallfont");
         SetHudClipRect(
-            toFloor(320.0 / SCALE) - 80, // x
-            toFloor(260.0 / SCALE), // y
+            posX, // x
+            posY, // y
             160 - 2, // width
             SYM_HEIGHT * 7 + 1, // height
             0, true);
@@ -142,24 +174,34 @@ Script "window"(str _Text) { // s: -> str
             HUDMSG_PLAIN, // type
             -10000001, // id
             CR_WHITE, // color
-            toFixed(toFloor(320.0 / SCALE) - 76) + HUD_LEFT, // x
-            toFixed(toFloor(260.0 / SCALE) - ScrollY) + HUD_TOP, // y
+            toFixed(posX + 4) + HUD_LEFT, // x
+            toFixed(posY - ScrollY) + HUD_TOP, // y
             1); // alpha
+
         SetHudSize(0, 0, false);
         Delay(1);
 
-        ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
+        if (interactive) {
+            ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
-        if((FirstRun == 0) && (ReadedKey & BT_USE))
-            Break;
-        if((FirstRun == 1) && !(ReadedKey & BT_USE))
-            FirstRun = 0;
+            if((FirstRun == 0) && (ReadedKey & BT_USE))
+                Break;
+            if((FirstRun == 1) && !(ReadedKey & BT_USE))
+                FirstRun = 0;
+        }
     }
 
     HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
+}
+
+Script "window"(str _Text) { // s: -> str
+    int x = toFloor(applyScale(320.0)) - 80;
+    int y = toFloor(applyScale(260.0));
+
+    ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, encodeXY(x, y), 0);
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
