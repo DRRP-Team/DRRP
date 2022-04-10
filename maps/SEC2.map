@@ -12455,25 +12455,25 @@ y = -800.000;
 vertex
 {
 x = -80.000;
-y = -884.000;
+y = -880.000;
 }
 
 vertex
 {
 x = -80.000;
-y = -916.000;
+y = -912.000;
 }
 
 vertex
 {
 x = -72.000;
-y = -916.000;
+y = -912.000;
 }
 
 vertex
 {
 x = -72.000;
-y = -884.000;
+y = -880.000;
 }
 
 vertex
@@ -36114,8 +36114,8 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
-scalex_bottom = 0.720000;
+texturebottom = "DRDC36";
+offsetx = 13;
 offsetx_bottom = -1.000000;
 }
 
@@ -36127,7 +36127,8 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
+texturebottom = "DRDC36";
+offsetx = -7;
 offsetx_bottom = -1.000000;
 }
 
@@ -36139,7 +36140,8 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
+texturebottom = "DRDC36";
+offsetx = -7;
 offsetx_bottom = 63.000000;
 }
 
@@ -36151,9 +36153,9 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
+texturebottom = "DRDC36";
+offsetx = 12;
 offsetx_bottom = -1.000000;
-scalex_bottom = 0.720000;
 }
 
 sidedef
@@ -36368,7 +36370,8 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
+texturebottom = "DRDC36";
+offsetx = -7;
 offsetx_bottom = -1.000000;
 }
 
@@ -36380,20 +36383,8 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
-offsetx_bottom = -1.000000;
-scalex_bottom = 0.720000;
-}
-
-sidedef
-{
-sector = 97;
-}
-
-sidedef
-{
-sector = 88;
-texturebottom = "DRDC38";
+texturebottom = "DRDC36";
+offsetx = 13;
 offsetx_bottom = -1.000000;
 }
 
@@ -36405,9 +36396,22 @@ sector = 97;
 sidedef
 {
 sector = 88;
-texturebottom = "DRDC38";
+texturebottom = "DRDC36";
+offsetx = -7;
 offsetx_bottom = -1.000000;
-scalex_bottom = 0.720000;
+}
+
+sidedef
+{
+sector = 97;
+}
+
+sidedef
+{
+sector = 88;
+texturebottom = "DRDC36";
+offsetx = 13;
+offsetx_bottom = -1.000000;
 }
 
 sidedef
@@ -37566,8 +37570,7 @@ sidedef
 {
 sector = 117;
 texturemiddle = "DRDC10";
-offsetx_mid = -16.000000;
-scalex_mid = -1.000000;
+offsetx = 16;
 }
 
 sidedef
@@ -37581,7 +37584,6 @@ sidedef
 {
 sector = 118;
 texturetop = "DRDC3";
-scalex_top = -1.000000;
 }
 
 sidedef

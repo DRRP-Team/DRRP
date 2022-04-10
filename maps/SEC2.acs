@@ -576,6 +576,7 @@ script 68 (int arg0, int arg1, int arg2) { //X=25 Y=27 START=L_193 END=L_197 UNK
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(56), getString(55), 68); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=55 MSG=56
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=57
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=14
+    if(arg2 == 0) ACS_ExecuteAlways(3000, 0, 13, 14);
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=25 Y=27
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=57
 }
