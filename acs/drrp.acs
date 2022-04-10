@@ -147,9 +147,10 @@ function int iapplyScaleI(int value) {
 
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
 
-function void drawDialogFrame(int posX, int posY) {
+function void drawDialogFrame(int posX, int posY, bool scrollable) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
-    SetFont("M_WINDOW");
+    if (scrollable) SetFont("M_DLGSCR");
+    else SetFont("M_DLGNSC");
     HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
         toFixed(posX) + HUD_LEFT,
         toFixed(posY - 5) + HUD_TOP,
@@ -160,7 +161,9 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
-    drawDialogFrame(posX, posY);
+    drawDialogFrame(posX, posY, ScrollY >= 0);
+
+    if (ScrollY < 0) ScrollY = 0;
 
     SetFont("smallfont");
     SetHudClipRect(
@@ -180,11 +183,11 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
     SetHudSize(0, 0, false);
 }
 
-function void drawDialogTypingWindow(str Text, int posX, int posY, int ScrollY, int color) {
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int color) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
-    drawDialogFrame(posX, posY);
+    drawDialogFrame(posX, posY, scrollable);
 
     SetFont("smallfont");
     SetHudClipRect(
@@ -198,7 +201,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, int ScrollY, 
         -10000001, /* id */
         color,
         toFixed(posX + 4) + HUD_LEFT,
-        toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
+        toFixed(posY) + HUD_TOP,
         10.0, /* hold */
         0.01,
         1); /* fadeout */
@@ -211,11 +214,24 @@ function void clearDialogWindow(void) {
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
 }
 
+function int getColorByType(int type) {
+    switch (type) {
+        case 1: return CR_GREEN; /* Terminal */
+        case 2: return CR_RED; /* Evil */
+        case 3: return CR_YELLOW; /* Hint */
+        case 0: /* Dialogue */
+        default:
+            return CR_WHITE;
+    }
+}
+
 const int LINES_ON_SCREEN = 7;
 
-Script "window" (str _Text) {
+Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(260);
+
+    const int COLOR = getColorByType(type);
 
     str Text = fixEncodingBug(_Text);
 
@@ -226,13 +242,20 @@ Script "window" (str _Text) {
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    bool enableScroll = height > LINES_ON_SCREEN;
+    bool enableScroll = height >= LINES_ON_SCREEN;
+
+    if (!enableScroll) ScrollY = -1;
 
     Thing_Stop(0); /* TID_Player -> 0 */
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
-    drawDialogTypingWindow(Text, posX, posY, ScrollY, CR_WHITE);
+    drawDialogTypingWindow(Text,
+        posX,
+        posY,
+        enableScroll,
+        COLOR
+    );
 
     int typingDelayTimer = 0;
 
@@ -249,7 +272,7 @@ Script "window" (str _Text) {
                 Delay(4);
             }
 
-            drawDialogWindow(Text, posX, posY, ScrollY, CR_WHITE);
+            drawDialogWindow(Text, posX, posY, ScrollY, COLOR);
         }
 
         Delay(1);
@@ -268,7 +291,7 @@ Script "window" (str _Text) {
     SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
 }
 
-Script "tooltipwindow" (str _Text) {
+Script "hintwindow" (str _Text) {
     str Text = fixEncodingBug(_Text);
 
     Delay(2);
@@ -276,7 +299,7 @@ Script "tooltipwindow" (str _Text) {
     const int FINAL_POS_X = 410;
     const int FINAL_POS_Y = 10;
     const int TICKS = 5 * SECONDS;
-    const int COLOR = CR_YELLOW;
+    const int COLOR = getColorByType(3);
 
     const int ANIMATION_OFFSET = 200;
     const int ANIMATION_SPEED = 20;
@@ -299,7 +322,7 @@ Script "tooltipwindow" (str _Text) {
         drawDialogWindow(Text,
             iapplyScaleI(FINAL_POS_X + i),
             iapplyScaleI(FINAL_POS_Y),
-            0,
+            -1,
             COLOR
         );
         Delay(1);
