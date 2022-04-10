@@ -267,7 +267,7 @@ Script "window" (str _Text, int type) {
                 ScrollY--;
                 Delay(4);
             }
-            if(enableScroll && ReadedKey & BT_BACK && ScrollY < height) {
+            if(enableScroll && ReadedKey & BT_BACK && ScrollY + LINES_ON_SCREEN <= height) {
                 ScrollY++;
                 Delay(4);
             }
