@@ -147,14 +147,21 @@ function int iapplyScaleI(int value) {
 
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
 
-function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
+function void drawDialogFrame(int posX, int posY) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
-    SetHUDClipRect(0, 0, 0, 0, 0);
     SetFont("M_WINDOW");
     HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
         toFixed(posX) + HUD_LEFT,
         toFixed(posY - 5) + HUD_TOP,
         1);
+}
+
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+
+    drawDialogFrame(posX, posY);
+
     SetFont("smallfont");
     SetHudClipRect(
         posX,
@@ -168,7 +175,33 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
         color,
         toFixed(posX + 4) + HUD_LEFT,
         toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
-        1); /* alpha */
+        1); /* hold */
+
+    SetHudSize(0, 0, false);
+}
+
+function void drawDialogTypingWindow(str Text, int posX, int posY, int ScrollY, int color) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+
+    drawDialogFrame(posX, posY);
+
+    SetFont("smallfont");
+    SetHudClipRect(
+        posX,
+        posY,
+        160 - 2,
+        SYM_HEIGHT * 7 + 1,
+        0, true);
+    HudMessage(s: Text;
+        HUDMSG_TYPEON,
+        -10000001, /* id */
+        color,
+        toFixed(posX + 4) + HUD_LEFT,
+        toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
+        10.0, /* hold */
+        0.01,
+        1); /* fadeout */
 
     SetHudSize(0, 0, false);
 }
@@ -177,6 +210,8 @@ function void clearDialogWindow(void) {
     HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
 }
+
+const int LINES_ON_SCREEN = 7;
 
 Script "window" (str _Text) {
     const int posX = iapplyScaleI(320) - 80;
@@ -191,21 +226,32 @@ Script "window" (str _Text) {
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    Thing_Stop(0); // TID_Player -> 0
+    bool enableScroll = height > LINES_ON_SCREEN;
+
+    Thing_Stop(0); /* TID_Player -> 0 */
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
+    drawDialogTypingWindow(Text, posX, posY, ScrollY, CR_WHITE);
+
+    int typingDelayTimer = 0;
+
     While(TRUE) {
-        if(ReadedKey & BT_FORWARD && ScrollY > 0) {
-            ScrollY--;
-            Delay(4);
-        }
-        if(ReadedKey & BT_BACK && ScrollY < height) {
-            ScrollY++;
-            Delay(4);
+        typingDelayTimer++;
+
+        if (typingDelayTimer > 32) {
+            if(enableScroll && ReadedKey & BT_FORWARD && ScrollY > 0) {
+                ScrollY--;
+                Delay(4);
+            }
+            if(enableScroll && ReadedKey & BT_BACK && ScrollY < height) {
+                ScrollY++;
+                Delay(4);
+            }
+
+            drawDialogWindow(Text, posX, posY, ScrollY, CR_WHITE);
         }
 
-        drawDialogWindow(Text, posX, posY, ScrollY, CR_WHITE);
         Delay(1);
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
