@@ -116,11 +116,26 @@ function str fixEncodingBug(str text) {
     return output;
 }
 
-function float applyScale(float value) {
+function float fapplyScaleF(float value) {
     fixed SCALE = GetCVar("drrp_window_scale");
 
     return value / SCALE;
 }
+
+function float iapplyScaleF(int value) {
+    float val = toFixed(value);
+
+    return fapplyScaleF(val);
+}
+
+function int fapplyScaleI(float value) {
+    return toFloor(fapplyScaleF(value));
+}
+
+function int iapplyScaleI(int value) {
+    return toFloor(iapplyScaleF(value));
+}
+
 
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
 
@@ -156,7 +171,7 @@ Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
             }
         }
 
-        SetHudSize(toFloor(applyScale(640.0)), toFloor(applyScale(480.0)), true);
+        SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
         SetHUDClipRect(0, 0, 0, 0, 0);
         SetFont("M_WINDOW");
         HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
@@ -198,8 +213,8 @@ Script "drawDialogWindow" (str _Text, int enc_position, int autocloseTicks) {
 }
 
 Script "window"(str _Text) { // s: -> str
-    int x = toFloor(applyScale(320.0)) - 80;
-    int y = toFloor(applyScale(260.0));
+    int x = iapplyScaleI(320) - 80;
+    int y = iapplyScaleI(260);
 
     ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, encodeXY(x, y), 0);
 }
