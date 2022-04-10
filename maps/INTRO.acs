@@ -499,9 +499,9 @@ script 84 (int arg0, int arg1, int arg2) { //X=14 Y=25 START=L_242 END=L_245 UNK
 }
 script 85 (int arg0, int arg1, int arg2) { //X=0 Y=26 START=L_246 END=L_248 UNKN=1572864 UNKN2=0
     int sgenid0 = -26; // [x=0, y=26]
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(48)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=48
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(48), 1); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=48
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=0 Y=26
-    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(49)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=49
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(49), 1); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=49
 }
 script 86 (int arg0, int arg1, int arg2) { //X=4 Y=26 START=L_249 END=L_249 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=275

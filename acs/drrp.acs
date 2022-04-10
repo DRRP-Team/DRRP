@@ -145,7 +145,106 @@ function int iapplyScaleI(int value) {
 }
 
 
-const int SYM_HEIGHT = 9; // Symbol's height is 12px
+function int uniLen(str text) {
+    return StrLen(text); /* TODO: */
+}
+
+/* // String wrap processor \\ */
+
+const bool DEBUG_STRINGWRAP = false;
+
+function str copyString(str text) {
+    return StrLeft(text, StrLen(text));
+}
+
+function int readWordLength(str text) {
+    if (DEBUG_STRINGWRAP) print(s:"readWordLength ", s:text);
+    int i = 0;
+
+    while (true) {
+        int sym = text[i];
+
+        /* print(s:"Sym ", c:sym); */
+
+        if (sym == ' ' || sym == 0x0) return ++i;
+
+        i++;
+    }
+
+    return i;
+}
+
+function str wrapWord(str word, int maxLength) {
+    if (DEBUG_STRINGWRAP) print(s:"wrapWord ", s:word, c:' ', i:maxLength);
+
+    if (maxLength == 0) return StrParam(c:'\n', s:word);
+
+    int len = StrLen(word);
+    str output = StrLeft(word, maxLength);
+    str remaining = StrRight(word, len - maxLength);
+
+    if (output[maxLength - 1] != ' ')
+        output = StrParam(s:output, c:'-');
+
+    output = StrParam(s:output, c:'\n');
+
+    output = StrParam(s:output, s:remaining);
+
+    if (DEBUG_STRINGWRAP) print(s:"wrapWord-output ", s:output);
+
+    return output;
+}
+
+function str wrapText(str text, int maxLength) {
+    if (DEBUG_STRINGWRAP) print(s:"wrapText ", s:text, c:' ', i:maxLength);
+    int len = strlen(text);
+    int wordLen = 0;
+
+    str remaining = copyString(text);
+    str output;
+    int currentLineLength = 0;
+
+    while (wordLen <= len) {
+        wordLen = readWordLength(remaining);
+
+        str word = StrLeft(remaining, wordLen);
+        len -= wordLen;
+        remaining = StrRight(remaining, len);
+
+        if (DEBUG_STRINGWRAP) print(s:"Edge: ", i:wordLen, s:" Word: ", s:word, s:" Remaining: ", s:remaining);
+
+        int lineFullLength = currentLineLength + wordLen;
+
+        if (lineFullLength < maxLength) {
+            output = StrParam(s:output, s:word);
+            currentLineLength += wordLen;
+            if (DEBUG_STRINGWRAP) print(s:"length enough ", s:output);
+            continue;
+        }
+
+        int extraChars = lineFullLength - maxLength;
+        int charsToBeWrappedAfter = wordLen - extraChars;
+
+        if (DEBUG_STRINGWRAP) print(s:"fullLine ", i:lineFullLength, s:" extraChars ", i:extraChars, s:" after ", i:charsToBeWrappedAfter);
+
+        str wrappedWord = wrapWord(word, charsToBeWrappedAfter);
+
+        currentLineLength = extraChars;
+        output = StrParam(s:output, s:wrappedWord);
+        if (DEBUG_STRINGWRAP) print(s:"line wrapped ", s:output, s:" length ", i:currentLineLength);
+    }
+
+    return output;
+}
+
+Script "testwrapper" (str text, int maxLength) {
+    print(s:wrapText("Hello world! THis is a very long text and must to be wrapped!!!", maxLength));
+}
+
+/* \\ String wrap processor // */
+
+const int SYM_HEIGHT = 9; /* Symbol's height is 12px */
+const int WINDOW_LEN = 21;
 
 function void drawDialogFrame(int posX, int posY, bool scrollable) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
@@ -291,14 +390,14 @@ Script "window" (str _Text, int type) {
     SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
 }
 
-Script "hintwindow" (str _Text) {
-    str Text = fixEncodingBug(_Text);
+Script "hintwindow" (str _Text, int holdTicks) {
+    Log(s:_Text);
+    str Text = wrapText(fixEncodingBug(_Text), WINDOW_LEN);
 
     Delay(2);
 
     const int FINAL_POS_X = 410;
     const int FINAL_POS_Y = 10;
-    const int TICKS = 5 * SECONDS;
     const int COLOR = getColorByType(3);
 
     const int ANIMATION_OFFSET = 200;
@@ -316,7 +415,7 @@ Script "hintwindow" (str _Text) {
         Delay(1);
     }
 
-    Delay(TICKS);
+    Delay(holdTicks);
 
     for (int i = 0; i < ANIMATION_OFFSET; i+=ANIMATION_SPEED) {
         drawDialogWindow(Text,
