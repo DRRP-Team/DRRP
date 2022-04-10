@@ -152,7 +152,7 @@ script 24 (int arg0, int arg1, int arg2) { //X=25 Y=7 START=L_40 END=L_56 UNKN=8
     if(arg2 == 3) Delay(12); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=350
     if(arg2 == 3) Thing_Remove(807); // ( USE MODIFYWORLD IF_VAR( 4 ) ) HIDE_THINGS_AT X=25 Y=7
     if(arg2 == 3) SpawnForced("DRRPImp", getMediumX(204), getMediumY(60), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
-    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch <PROPHESSOR 10.04.2022> Agree :/
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=25 Y=7
     if(arg2 == 3) Delay(7); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=200

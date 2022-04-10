@@ -4155,23 +4155,19 @@ thing
 x = 1632.000;
 y = 1504.000;
 type = 10703;
-id = 808;
+id = 1808;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
 comment = "25:8";
 }
 
@@ -21156,6 +21152,28 @@ x = 1152.000;
 y = 928.000;
 type = 10814;
 id = 560;
+special = 80;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+renderstyle = "";
+comment = "16:19";
+}
+
+thing
+{
+x = 1696.000;
+y = 1632.000;
+type = 10814;
+id = 808;
 special = 80;
 skill1 = true;
 skill2 = true;
