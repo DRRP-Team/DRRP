@@ -116,8 +116,16 @@ function str fixEncodingBug(str text) {
     return output;
 }
 
+function int idivF(int a, int b) {
+    return toFixed(a) / toFixed(b);
+}
+
+function int idivI(int a, int b) {
+    return toFloor(idivF(a, b));
+}
+
 function float fapplyScaleF(float value) {
-    fixed SCALE = GetCVar("drrp_window_scale");
+    float SCALE = GetCVar("drrp_window_scale");
 
     return value / SCALE;
 }
@@ -139,7 +147,7 @@ function int iapplyScaleI(int value) {
 
 const int SYM_HEIGHT = 9; // Symbol's height is 12px
 
-function void drawDialogWindow(str Text, int posX, int posY, int ScrollY) {
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
     SetFont("M_WINDOW");
@@ -157,7 +165,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY) {
     HudMessage(s: Text;
         HUDMSG_PLAIN,
         -10000001, /* id */
-        CR_WHITE,
+        color,
         toFixed(posX + 4) + HUD_LEFT,
         toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
         1); /* alpha */
@@ -170,15 +178,10 @@ function void clearDialogWindow(void) {
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
 }
 
-/**
-  * enc_position   - position, encoded by encodeXY(x, y).
-  *                  virtual screen size is 640x480
-  *
-  * autocloseTicks - close this window after this amount
-  *                  of ticks. If <=0, use interactive mode
-  *                  when player can scroll and close window
-  */
-Script "drawDialogWindow" (str _Text, int posX, int posY) {
+Script "window" (str _Text) {
+    const int posX = iapplyScaleI(320) - 80;
+    const int posY = iapplyScaleI(260);
+
     str Text = fixEncodingBug(_Text);
 
     Delay(2);
@@ -202,7 +205,7 @@ Script "drawDialogWindow" (str _Text, int posX, int posY) {
             Delay(4);
         }
 
-        drawDialogWindow(Text, posX, posY, ScrollY);
+        drawDialogWindow(Text, posX, posY, ScrollY, CR_WHITE);
         Delay(1);
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
@@ -219,18 +222,44 @@ Script "drawDialogWindow" (str _Text, int posX, int posY) {
     SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
 }
 
-Script "window"(str _Text) {
-    int x = iapplyScaleI(320) - 80;
-    int y = iapplyScaleI(260);
+Script "tooltipwindow" (str _Text) {
+    str Text = fixEncodingBug(_Text);
 
-    ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, x, y);
-}
+    Delay(2);
 
-Script "tooltipwindow"(str _Text) {
-    int x = iapplyScaleI(410);// - 80;
-    int y = iapplyScaleI(10);
+    const int FINAL_POS_X = 410;
+    const int FINAL_POS_Y = 10;
+    const int TICKS = 5 * SECONDS;
+    const int COLOR = CR_YELLOW;
 
-    ACS_NamedExecuteWait("drawDialogWindow", 0, _Text, encodeXY(x, y), 5 * SECONDS);
+    const int ANIMATION_OFFSET = 200;
+    const int ANIMATION_SPEED = 20;
+
+    /* In animation */
+
+    for (int i = ANIMATION_OFFSET; i >= 0; i-=ANIMATION_SPEED) {
+        drawDialogWindow(Text,
+            iapplyScaleI(FINAL_POS_X + i),
+            iapplyScaleI(FINAL_POS_Y),
+            0,
+            COLOR
+        );
+        Delay(1);
+    }
+
+    Delay(TICKS);
+
+    for (int i = 0; i < ANIMATION_OFFSET; i+=ANIMATION_SPEED) {
+        drawDialogWindow(Text,
+            iapplyScaleI(FINAL_POS_X + i),
+            iapplyScaleI(FINAL_POS_Y),
+            0,
+            COLOR
+        );
+        Delay(1);
+    }
+
+    clearDialogWindow();
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
