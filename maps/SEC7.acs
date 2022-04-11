@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 // Coordinate offset is: (0;0)
@@ -18,10 +19,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - y * 8) << 16;
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {

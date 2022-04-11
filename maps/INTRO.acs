@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 function str getString(int id) {
@@ -16,13 +17,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - 448 - y * 8) << 16;
-}
-function str getThingName(int id, int dead) {
-    return "DRRPNull";
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {
@@ -537,92 +531,3 @@ script 92 (int arg0, int arg1, int arg2) { //X=8 Y=29 START=L_263 END=L_263 UNKN
 script 93 (int arg0, int arg1, int arg2) { //X=8 Y=30 START=L_264 END=L_264 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=258
 }
-
-
-/*
-
-#include "zcommon.acs"
-
-Script 666 ENTER{
-    SetHudSize(640, 400, 0);
-    SetFont("dbigfont");
-    HudMessage(l:"DRRP_B_ID56";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    ACS_Execute(1000, 0);
-}
-
-script 1000 (void) {
-    AmbientSound("ambient/drone1", 127);
-    Delay(34*3);
-    Restart;
-}
-
-script 1 (void) { // Comp
-    ActivatorSound("misc/chat2", 255);
-    Print(s:"Hello.\nWelcome to Mars.");
-    Delay(34);
-}
-
-script 3 (int id)
-{//Dialog
-    ActivatorSound("misc/chat2", 255);
-    switch (id) {
-        case 0:
-        Print(s:"\cdHi, Marine!");
-        break;
-
-        case 1:
-        Print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
-        break;
-
-        case 2:
-        Print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
-        break;
-
-        case 6:
-        ACS_Execute(3000, 0, 6, 5, 1);
-        Print(s:"\cdI've open this door!");
-        Delay(43);
-    }
-    Delay(34);
-}
-
-script 4 (void) { //Map
-    ActivatorSound("misc/chat2", 255);
-    GiveInventory("MapRevealer", 1);
-    Print(s:"\cgAutomap data was loaded!");
-    Delay(34*3);
-}
-
-script 6 (int sector)
-{//Opener
-    ActivatorSound("acess/GRANT1", 255);
-    Door_Open(sector, 128, 0);
-}
-
-script 7 (int doorf, int doorb, int nosound) {//DoorOpener
-    ACS_ExecuteAlways(3000, 0, doorf, doorb, nosound);
-}
-
-script 10 (void) { //quake
-    Radius_Quake(9, 12, 0, 10, 0);
-    Door_Open(2, 128, 0);
-}
-
-script 11 (void){//spawner
-    Door_Open(1, 128, 0);
-    SpawnSpotFacing("ZombiePvt", 20);
-    SpawnSpotFacing("Troop", 21, 0);
-    SpawnSpotFacing("Phantom", 22);
-    SpawnSpotFacing("Hellhound", 23);
-    SpawnSpotFacing("BullDemon", 24);
-}
-
-script 667 (void) {
-    if((ClassifyActor(0) & ACTOR_PLAYER) && stricmp(GetWeapon(), "DRRPAxe") == 0) {
-        Radius_Quake2(0, 1, 17, 0, 128, "");
-        Delay(17);
-        Ceiling_RaiseToNearest(0, 4096);
-    }
-}
-
-*/

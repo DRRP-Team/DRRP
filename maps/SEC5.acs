@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 function str getString(int id) {
@@ -16,10 +17,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - 320 - y * 8) << 16;
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {
@@ -657,73 +654,3 @@ script 670 (void) {
     Print(s:"You found the easter egg by PROPHESSOR");
     AmbientSound("HODSONG", 127);
 }
-/*
-script 1 (void)
-{//Comp
-ActivatorSound("misc/chat2", 255);
-Print(s:"Hello.\nWelcome to Mars.");
-  Delay(34);
-}
-
-script 3 (int id)
-{//Dialog
-ActivatorSound("misc/chat2", 255);
-    switch (id) {
-        case 0:
-        Print(s:"\cdHi, Marine!");
-        break;
-
-        case 1:
-        Print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
-        break;
-
-        case 2:
-        Print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
-        break;
-    }
-Delay(34);
-}
-
-script 4 (void)
-{ //Map
-ActivatorSound("misc/chat2", 255);
-GiveInventory("MapRevealer", 1);
-Print(s:"\cgAutomap data was loaded!");
-Delay(34*3);
-}
-
-script 5 (void)
-{//Closed
-ActivatorSound("acess/deny1", 255);
-Print(s:"\cgDoor closed!");
-Delay(34);
-}
-
-script 6 (int sector)
-{//Opener
-    ActivatorSound("acess/GRANT1", 255);
-    Door_Open(sector, 128, 0);
-}
-
-script 7 (int doorf, int doorb, int nosound) {//DoorOpener
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "drpga09");
-    SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga09b");
-    SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
-    SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
-    if(nosound == 0){
-        SectorSound("acess/grant1", 255);
-    }
-}
-
-script 8 (int doorf, int doorb, int nosound) {//DoorCloser
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "drpga10");
-    SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga10b");
-    SetLineSpecial(doorf, Door_Close, 0, 16, 105);
-    SetLineSpecial(doorb, Door_Close, 0, 16, 105);
-    }
-
-script 10 (void) { //quake
-    Radius_Quake(9, 12, 0, 10, 0);
-    Door_Open(2, 128, 0);
-}*/
-
