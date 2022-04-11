@@ -258,12 +258,16 @@ script 45 (int arg0, int arg1, int arg2) { //X=8 Y=12 START=L_116 END=L_116 UNKN
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=429
 }
 script 46 (int arg0, int arg1, int arg2) { //X=11 Y=12 START=L_117 END=L_121 UNKN=2621440 UNKN2=0
-    int sgenid0 = -364; // [x=11, y=12]
+    int sgenid0 = -589; // [x=18, y=13]
+    int sgenid1 = -587; // [x=18, y=11]
+    int sgenid2 = -364; // [x=11, y=12]
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=18 Y=13 VAL=1
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=18 Y=11 VAL=1
     if(arg2 == 0) ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(64)); // ( USE MODIFYWORLD IF_VAR( 0 ) ) NOTEBOOK_ADD STR=64
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(65)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=65
-    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=11 Y=12
+    if(arg2 == 0 || arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(65)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=65
+    if(arg2 == 0 || arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid2, 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=11 Y=12
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(66)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=66
-    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=11 Y=12 VAL=0
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid2, 3); // ( USE IF_VAR( 1 ) ) SET_VAR X=11 Y=12 VAL=0
 }
 script 47 (int arg0, int arg1, int arg2) { //X=19 Y=12 START=L_122 END=L_128 UNKN=3670016 UNKN2=0
     int sgenid0 = -589; // [x=18, y=13]
@@ -329,12 +333,8 @@ script 58 (int arg0, int arg1, int arg2) { //X=27 Y=16 START=L_153 END=L_154 UNK
     /* Not Implemented */ // ( USE MODIFYWORLD IF_VAR( 0 ) ) DOOR_OPEN LINE=38
 }
 script 59 (int arg0, int arg1, int arg2) { //X=2 Y=17 START=L_155 END=L_162 UNKN=4194304 UNKN2=0
-    int sgenid0 = -589; // [x=18, y=13]
-    int sgenid1 = -587; // [x=18, y=11]
     int sgenid2 = -81; // [x=2, y=17]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(67)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=67
-    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=18 Y=13 VAL=1
-    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=18 Y=11 VAL=1
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid2, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=2 Y=17
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(68)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=68
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid2, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=2 Y=17
