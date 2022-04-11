@@ -237,7 +237,7 @@ script 21 (int arg0, int arg1, int arg2) { //X=24 Y=20 START=L_83 END=L_96 UNKN=
     if(arg2 == 3) ACS_NamedExecute("transformation", 0, 788); // ( USE IF_VAR( 4 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 3) Delay(12); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=350
     if(arg2 == 3) Thing_Remove(788); // ( USE MODIFYWORLD IF_VAR( 4 ) ) HIDE_THINGS_AT X=24 Y=20
-    if(arg2 == 3) SpawnWithFog("ZombieCpt", getMediumX(196), getMediumY(164), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 3) SpawnForced("ZombieCpt", getMediumX(196), getMediumY(164), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=24 Y=20
 }
@@ -301,7 +301,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=18 Y=23 START=L_119 END=L_130 UNK
     if(arg2 == 2) ACS_NamedExecute("transformation", 0, 599); // ( USE IF_VAR( 2 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 2) Delay(12); // ( USE IF_VAR( 2 ) ) SLEEP MSEC=350
     if(arg2 == 2) Thing_Remove(599); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=18 Y=23
-    if(arg2 == 2) SpawnWithFog("Assassin", getMediumX(148), getMediumY(188), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=7 STATE=0
+    if(arg2 == 2) SpawnForced("Assassin", getMediumX(148), getMediumY(188), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=7 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 2 ) ) FRAME ARG1=0
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=18 Y=23
 }
@@ -379,7 +379,7 @@ script 48 (int arg0, int arg1, int arg2) { //X=17 Y=26 START=L_165 END=L_175 UNK
     if(arg2 == 2) ACS_NamedExecute("transformation", 0, 570); // ( USE IF_VAR( 2 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 2) Delay(12); // ( USE IF_VAR( 2 ) ) SLEEP MSEC=350
     if(arg2 == 2) Thing_Remove(570); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=17 Y=26
-    if(arg2 == 2) SpawnWithFog("Belphegor", getMediumX(140), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=8 STATE=0
+    if(arg2 == 2) SpawnForced("Belphegor", getMediumX(140), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=8 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 2 ) ) FRAME ARG1=0
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=17 Y=26
 }
@@ -420,7 +420,7 @@ script 55 (int arg0, int arg1, int arg2) { //X=27 Y=28 START=L_182 END=L_200 UNK
     if(arg2 == 4) ACS_NamedExecute("transformation", 0, 892); // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 4) Delay(12); // ( USE IF_VAR( 8 ) ) SLEEP MSEC=350
     if(arg2 == 4) Thing_Remove(892); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=27 Y=28
-    if(arg2 == 4) SpawnWithFog("Belphegor", getMediumX(220), getMediumY(228), 0, 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 4) SpawnForced("Belphegor", getMediumX(220), getMediumY(228), 0, 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=1 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 8 ) ) FRAME ARG1=0
     if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 8 ) ) INC_VAR X=27 Y=28
 }

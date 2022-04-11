@@ -381,7 +381,7 @@ script 68 (int arg0, int arg1, int arg2) { //X=3 Y=21 START=L_148 END=L_169 UNKN
     if(arg2 == 4) ACS_NamedExecute("transformation", 0, 117); // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35 // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 4) Delay(12); // ( USE IF_VAR( 8 ) ) SLEEP MSEC=350
     if(arg2 == 4) Thing_Remove(117); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=3 Y=21
-    if(arg2 == 4) SpawnWithFog("Impling", getMediumX(28), getMediumY(172), 0, 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=9 STATE=0
+    if(arg2 == 4) SpawnForced("Impling", getMediumX(28), getMediumY(172), 0, 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=9 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 8 ) ) FRAME ARG1=0
     if(arg2 == 4) ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(32)); // ( USE MODIFYWORLD IF_VAR( 8 ) ) NOTEBOOK_ADD STR=32
     if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid2, 1); // ( USE IF_VAR( 8 ) ) SET_VAR X=4 Y=4 VAL=1
