@@ -238,7 +238,7 @@ script 104 (void){ // Kronos
     ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
     //
     AmbientSound("voice/laugh", 200);
-    ACS_NamedExecuteWait("window", 0, getString(21));
+    ACS_NamedExecuteWait("window", 0, getString(21), 2);
     //
     AmbientSound(localizeSound("bet/destroy"), 200);
     Thing_Remove(10);
