@@ -23,6 +23,7 @@ enum RPGGetFeatureTypes {
 
 
 class RPGSystemHandler: EventHandler {
+
     override void OnRegister() {
         SetOrder( 670 );
     }
@@ -299,6 +300,7 @@ class RPGSystemHandler: EventHandler {
 
         Super.NetworkProcess( e );
     } // override void NetworkProcess( ConsoleEvent e ) {
+
 } // of class RPGSystemHandler: EventHandler {
 
 
