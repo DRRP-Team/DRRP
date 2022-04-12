@@ -236,7 +236,7 @@ const int LINES_ON_SCREEN = 7;
 
 Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
-    const int posY = iapplyScaleI(260);
+    const int posY = iapplyScaleI(322);
 
     const int COLOR = getColorByType(type);
 
