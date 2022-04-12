@@ -124,11 +124,8 @@ function str wrapText(str text, int maxLength) {
         int lineFullLength = currentLineLength + wordLen;
 
         if (lineFullLength < maxLength) {
-            print(s:"DEBUG ", s:word, c:'|');
-            // if (StrLen(word) != 0)
             output = StrParam(s:output, c: ' ', s:word);
             currentLineLength += wordLen;
-            /* if (DEBUG_STRINGWRAP) print(s:"length enough ", s:output); */
             continue;
         }
 
@@ -148,10 +145,9 @@ function str wrapText(str text, int maxLength) {
 
         str wrappedWord = wrapWord(word, charsToBeWrappedAfter);
 
-        print(s:"WrappedWord = ", s:wrappedWord, c:'|');
+        if (DEBUG_STRINGWRAP) print(s:"WrappedWord = ", s:wrappedWord, c:'|');
 
         currentLineLength = extraChars;
-        // if (StrLen(wrappedWord) != 0)
         output = StrParam(s:output, c: ' ', s:wrappedWord);
         if (DEBUG_STRINGWRAP) print(s:"line wrapped ", s:output, s:" length ", i:currentLineLength);
     }
