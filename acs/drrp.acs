@@ -5,56 +5,10 @@
  * https://opensource.org/licenses/MIT
  */
 
+#import "drrplib.acs"
 #include "zcommon.acs"
 
-const int SECONDS = 35; // Ticks per second
-
-// Useful functions
-
-function bool isLocalized(str string) {
-    return !!strcmp(StrParam(l:string), string);
-}
-
-function int getStringWidth(str String) {
-    int i = 0;
-    while(String[i] != '\0') { i++; }
-    return i;
-}
-
-function int getStringHeight(str String) {
-    int i      = 0;
-    int height = 0;
-
-    while(String[i] != '\0') {
-        if(String[i++] == '\n') height++;
-    }
-    return height;
-}
-
-function global str getThingName(int id, int state) {
-    Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
-    return "DRRPTODO";
-}
-
-function str localizeSound(str sound) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
-}
-
-function fixed fmax(fixed val1, fixed val2) {
-    return val1 > val2 ? val1 : val2;
-}
-
-function fixed fmin(fixed val1, fixed val2) {
-    return val1 < val2 ? val1 : val2;
-}
-
-function fixed fclamp(fixed value, fixed min, fixed max) {
-    return fmax(min, fmin(max, value));
-}
-
-// \\ Useful functions
-
+/* DEPRECATED */
 Script "fireextfade" (int mode) {
     // TODO: Use additive point light
     if(mode) {
@@ -64,44 +18,229 @@ Script "fireextfade" (int mode) {
     }
 }
 
-function fixed toFixed(int value) {
-    return value << 16;
-}
+/* ACS based DRPG Window */
 
-function int toInt(fixed value) {
-    return value >> 16;
-}
-
-function int toFloor(fixed value) {
-    if (value < 10000) {
-        return value;
-    }
-
-    return toInt(value);
-}
-
-const fixed HUD_CENTER = 0.0;
-const fixed HUD_TOP = 0.1;
-const fixed HUD_BOTTOM = 0.2;
-const fixed HUD_LEFT = 0.1;
-const fixed HUD_RIGHT = 0.2;
-
-// ACS based DRPG Window
-
-const int SYM_HEIGHT = 9; // Symbol's height is 12px
-
-Script "window"(str _Text) { // s: -> str
-    fixed SCALE = GetCVar("drrp_window_scale");
-    // This crutch fixes the GZDoom Encoding bug in russian translation
-    // https://trello.com/c/Yjn7YM8b
-    str Text;
-    int TextLen = strlen(_Text);
+/*
+ This crutch fixes the GZDoom Encoding bug in russian translation
+ https://trello.com/c/Yjn7YM8b
+*/
+function str fixEncodingBug(str text) {
+    str output;
+    int TextLen = strlen(text);
     for (int i = 0; i < TextLen; i++) {
-        if (_Text[i] == 0x20) // space
-            Text = StrParam(s:Text, s:" ");
+        if (text[i] == 0x20) /* space */
+            output = StrParam(s:output, s:" ");
         else
-            Text = StrParam(s:Text, c:_Text[i]);
+            output = StrParam(s:output, c:text[i]);
     }
+
+    return output;
+}
+
+function float fapplyScaleF(float value) {
+    float SCALE = GetCVar("drrp_window_scale");
+
+    return value / SCALE;
+}
+
+function float iapplyScaleF(int value) {
+    float val = toFixed(value);
+
+    return fapplyScaleF(val);
+}
+
+function int fapplyScaleI(float value) {
+    return toFloor(fapplyScaleF(value));
+}
+
+function int iapplyScaleI(int value) {
+    return toFloor(iapplyScaleF(value));
+}
+
+/* // String wrap processor \\ */
+
+const bool DEBUG_STRINGWRAP = false;
+
+function str copyString(str text) {
+    return StrLeft(text, StrLen(text));
+}
+
+function int readWordLength(str text) {
+    if (DEBUG_STRINGWRAP) print(s:"readWordLength ", s:text);
+    int i = 0;
+
+    while (true) {
+        int sym = text[i];
+
+        /* print(s:"Sym ", c:sym); */
+
+        if (sym == ' ' || sym == 0x0) return ++i;
+
+        i++;
+    }
+
+    return i;
+}
+
+function str wrapWord(str word, int maxLength) {
+    if (DEBUG_STRINGWRAP) print(s:"wrapWord ", s:word, c:' ', i:maxLength);
+
+    if (maxLength == 0) return StrParam(c:'\n', s:word);
+
+    int len = StrLen(word);
+    str output = StrLeft(word, maxLength);
+    str remaining = StrRight(word, len - maxLength);
+
+    if (output[maxLength - 1] != ' ')
+        output = StrParam(s:output, c:'-');
+
+    output = StrParam(s:output, c:'\n');
+
+    output = StrParam(s:output, s:remaining);
+
+    if (DEBUG_STRINGWRAP) print(s:"wrapWord-output ", s:output);
+
+    return output;
+}
+
+function str wrapText(str text, int maxLength) {
+    if (DEBUG_STRINGWRAP) print(s:"wrapText ", s:text, c:' ', i:maxLength);
+    int len = strlen(text);
+    int wordLen = 0;
+
+    str remaining = copyString(text);
+    str output;
+    int currentLineLength = 0;
+
+    while (wordLen <= len) {
+        wordLen = readWordLength(remaining);
+
+        str word = StrLeft(remaining, wordLen);
+        len -= wordLen;
+        remaining = StrRight(remaining, len);
+
+        if (DEBUG_STRINGWRAP) print(s:"Edge: ", i:wordLen, s:" Word: ", s:word, s:" Remaining: ", s:remaining);
+
+        int lineFullLength = currentLineLength + wordLen;
+
+        if (lineFullLength < maxLength) {
+            output = StrParam(s:output, s:word);
+            currentLineLength += wordLen;
+            if (DEBUG_STRINGWRAP) print(s:"length enough ", s:output);
+            continue;
+        }
+
+        int extraChars = lineFullLength - maxLength;
+        int charsToBeWrappedAfter = wordLen - extraChars;
+
+        if (DEBUG_STRINGWRAP) print(s:"fullLine ", i:lineFullLength, s:" extraChars ", i:extraChars, s:" after ", i:charsToBeWrappedAfter);
+
+        str wrappedWord = wrapWord(word, charsToBeWrappedAfter);
+
+        currentLineLength = extraChars;
+        output = StrParam(s:output, s:wrappedWord);
+        if (DEBUG_STRINGWRAP) print(s:"line wrapped ", s:output, s:" length ", i:currentLineLength);
+    }
+
+    return output;
+}
+
+Script "testwrapper" (str text, int maxLength) {
+    print(s:wrapText("Hello world! THis is a very long text and must to be wrapped!!!", maxLength));
+}
+
+/* \\ String wrap processor // */
+
+const int SYM_HEIGHT = 9; /* Symbol's height is 12px */
+const int WINDOW_LEN = 21;
+
+function void drawDialogFrame(int posX, int posY, bool scrollable) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    if (scrollable) SetFont("M_DLGSCR");
+    else SetFont("M_DLGNSC");
+    HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
+        toFixed(posX) + HUD_LEFT,
+        toFixed(posY - 5) + HUD_TOP,
+        1);
+}
+
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+
+    drawDialogFrame(posX, posY, ScrollY >= 0);
+
+    if (ScrollY < 0) ScrollY = 0;
+
+    SetFont("smallfont");
+    SetHudClipRect(
+        posX,
+        posY,
+        160 - 2,
+        SYM_HEIGHT * 7 + 1,
+        0, true);
+    HudMessage(s: Text;
+        HUDMSG_PLAIN,
+        -10000001, /* id */
+        color,
+        toFixed(posX + 4) + HUD_LEFT,
+        toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
+        1); /* hold */
+
+    SetHudSize(0, 0, false);
+}
+
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int color) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+
+    drawDialogFrame(posX, posY, scrollable);
+
+    SetFont("smallfont");
+    SetHudClipRect(
+        posX,
+        posY,
+        160 - 2,
+        SYM_HEIGHT * 7 + 1,
+        0, true);
+    HudMessage(s: Text;
+        HUDMSG_TYPEON,
+        -10000001, /* id */
+        color,
+        toFixed(posX + 4) + HUD_LEFT,
+        toFixed(posY) + HUD_TOP,
+        10.0, /* hold */
+        0.01,
+        1); /* fadeout */
+
+    SetHudSize(0, 0, false);
+}
+
+function void clearDialogWindow(void) {
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+}
+
+function int getColorByType(int type) {
+    switch (type) {
+        case 1: return CR_GREEN; /* Terminal */
+        case 2: return CR_RED; /* Evil */
+        case 3: return CR_YELLOW; /* Hint */
+        case 0: /* Dialogue */
+        default:
+            return CR_WHITE;
+    }
+}
+
+const int LINES_ON_SCREEN = 7;
+
+Script "window" (str _Text, int type) {
+    const int posX = iapplyScaleI(320) - 80;
+    const int posY = iapplyScaleI(322);
+
+    const int COLOR = getColorByType(type);
+
+    str Text = fixEncodingBug(_Text);
 
     Delay(2);
 
@@ -110,56 +249,93 @@ Script "window"(str _Text) { // s: -> str
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    Thing_Stop(0); // TID_Player -> 0
+    bool enableScroll = height >= LINES_ON_SCREEN;
+
+    if (!enableScroll) ScrollY = -1;
+
+    Thing_Stop(0); /* TID_Player -> 0 */
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
+    drawDialogTypingWindow(Text,
+        posX,
+        posY,
+        enableScroll,
+        COLOR
+    );
+
+    int typingDelayTimer = 0;
+
     While(TRUE) {
-        if(ReadedKey & BT_FORWARD && ScrollY > 0) {
-            ScrollY -= SYM_HEIGHT;
-            Delay(4);
-        }
-        if(ReadedKey & BT_BACK && ScrollY < height * SYM_HEIGHT) {
-            ScrollY += SYM_HEIGHT;
-            Delay(4);
+        typingDelayTimer++;
+
+        if (typingDelayTimer > 32) {
+            if(enableScroll && ReadedKey & BT_FORWARD && ScrollY > 0) {
+                ScrollY--;
+                Delay(4);
+            }
+            if(enableScroll && ReadedKey & BT_BACK && ScrollY + LINES_ON_SCREEN <= height) {
+                ScrollY++;
+                Delay(4);
+            }
+
+            drawDialogWindow(Text, posX, posY, ScrollY, COLOR);
         }
 
-        SetHudSize(toFloor(640.0 / SCALE), toFloor(480.0 / SCALE), true);
-        SetHUDClipRect(0, 0, 0, 0, 0);
-        SetFont("M_WINDOW");
-        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
-            toFixed(toFloor(320.0 / SCALE) - 80) + HUD_LEFT, // x
-            toFixed(toFloor(260.0 / SCALE) - 5) + HUD_TOP, // y
-            1);
-        SetFont("smallfont");
-        SetHudClipRect(
-            toFloor(320.0 / SCALE) - 80, // x
-            toFloor(260.0 / SCALE), // y
-            160 - 2, // width
-            SYM_HEIGHT * 7 + 1, // height
-            0, true);
-        HudMessage(s: Text;
-            HUDMSG_PLAIN, // type
-            -10000001, // id
-            CR_WHITE, // color
-            toFixed(toFloor(320.0 / SCALE) - 76) + HUD_LEFT, // x
-            toFixed(toFloor(260.0 / SCALE) - ScrollY) + HUD_TOP, // y
-            1); // alpha
-        SetHudSize(0, 0, false);
         Delay(1);
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
         if((FirstRun == 0) && (ReadedKey & BT_USE))
-            Break;
+            break;
         if((FirstRun == 1) && !(ReadedKey & BT_USE))
             FirstRun = 0;
     }
 
-    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
-    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+    clearDialogWindow();
+
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
+}
+
+Script "hintwindow" (str _Text, int holdTicks) {
+    Log(s:_Text);
+    str Text = wrapText(fixEncodingBug(_Text), WINDOW_LEN);
+
+    Delay(2);
+
+    const int FINAL_POS_X = 410;
+    const int FINAL_POS_Y = 10;
+    const int COLOR = getColorByType(3);
+
+    const int ANIMATION_OFFSET = 200;
+    const int ANIMATION_SPEED = 20;
+
+    /* In animation */
+
+    for (int i = ANIMATION_OFFSET; i >= 0; i-=ANIMATION_SPEED) {
+        drawDialogWindow(Text,
+            iapplyScaleI(FINAL_POS_X + i),
+            iapplyScaleI(FINAL_POS_Y),
+            0,
+            COLOR
+        );
+        Delay(1);
+    }
+
+    Delay(holdTicks);
+
+    for (int i = 0; i < ANIMATION_OFFSET; i+=ANIMATION_SPEED) {
+        drawDialogWindow(Text,
+            iapplyScaleI(FINAL_POS_X + i),
+            iapplyScaleI(FINAL_POS_Y),
+            -1,
+            COLOR
+        );
+        Delay(1);
+    }
+
+    clearDialogWindow();
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
@@ -219,6 +395,9 @@ enum RPGGetFeatureStaticTypes {
     RPG_Strength
 };
 
+bool hasKillsAchievement = false;
+bool hasSecretsAchievement = false;
+
 
 Script "LevelDoneNotifierVisual" ( void ) {
     int monsterstotal  = GetLevelInfo( LEVELINFO_TOTAL_MONSTERS );
@@ -229,14 +408,16 @@ Script "LevelDoneNotifierVisual" ( void ) {
 
     SetFont( "BIGFONT" );
 
-    if ( monsterstotal && monsterskilled == monsterstotal ) {
+    if ( monsterstotal && monsterskilled == monsterstotal && !hasKillsAchievement ) {
         HudMessage( l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0 );
         LocalAmbientSound( "COMPLETE", 115 );
+        hasKillsAchievement = true;
     }
 
-    if ( secretstotal && secretsfound == secretstotal ) {
+    if ( secretstotal && secretsfound == secretstotal && !hasSecretsAchievement ) {
         HudMessage( l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0 );
         LocalAmbientSound( "SECRETS", 115 );
+        hasSecretsAchievement = true;
     }
 }
 

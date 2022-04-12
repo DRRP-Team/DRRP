@@ -1,6 +1,5 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
-
-//int catchupstate = 0;
 
 function fixed getMediumX(int x) {
     return (-1600 + x * 8) << 16;
@@ -16,10 +15,6 @@ function str getString(int id) {
 
 function str getStringIndex(int id) {
     return StrParam(s:StrParam(s:"DRRP_SEC6_", i:id));
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {
@@ -291,7 +286,7 @@ script 37 (int arg0, int arg1, int arg2) { //X=4 Y=9 START=L_100 END=L_124 UNKN=
     if(arg2 == 0) SpawnForced("Marine", getMediumX(44), getMediumY(76), 0, 169); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=17 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=6 Y=8 VAL=1
     if(arg2 == 0) Thing_Remove(73); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=2 Y=9
-    if(arg2 == 0) SpawnForced("ZombieCpt", getMediumX(44), getMediumY(60), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieCpt", getMediumX(44), getMediumY(60), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=18 STATE=0
 	if(arg2 == 0) {
 		Thing_Hate(1, 169, 0);
 	}
@@ -639,7 +634,7 @@ script 99 (int arg0, int arg1, int arg2) { //X=5 Y=21 START=L_279 END=L_298 UNKN
     if(arg2 == 1) ACS_ExecuteAlways(3000, 0, 9, 0, 1); // ( USE IF_VAR( 1 ) ) DOOR_UNLOCK LINE=423
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=57
     if(arg2 == 1) ACS_ExecuteAlways(3002, 0, 31); // ( USE IF_VAR( 1 ) ) DOOR_OPEN LINE=423
-    if(arg2 == 1) SpawnForced("Wretched", getMediumX(52), getMediumY(172), 0, 2); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
+    if(arg2 == 1) SpawnWithFog("Wretched", getMediumX(52), getMediumY(172), 0, 2); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
 	if(arg2 == 1) {
 		Thing_Hate(2, -sgenid0, 4);
 	}
@@ -833,135 +828,3 @@ script 133 (int arg0, int arg1, int arg2) { //X=29 Y=28 START=L_380 END=L_380 UN
 script 134 (int arg0, int arg1, int arg2) { //X=27 Y=30 START=L_381 END=L_381 UNKN=524288 UNKN2=0
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(84)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=84
 }
-
-/*
-script 1 (void)
-{//Comp
-ActivatorSound("misc/chat2", 255);
-Print(s:"Hello.\nWelcome to Mars.");
-  Delay(34);
-}
-
-script 3 (int id)
-{//Dialog
-ActivatorSound("misc/chat2", 255);
-    switch (id) {
-        case 0:
-            Print(s:"\cdHi, Marine!");
-            break;
-        case 1:
-            Print(s:"\cdI'm glad you're here, Marine. \n\cdA horde of monsters have been let loose by an evil presence. \n\cdBe careful!");
-            break;
-        case 2:
-            Print(s:"\cdHello, Marine. Welcome to Mars! \n\cdWalk over an item to pick it up. \n\cdAccess the inventory menu to switch weapons or use items. \n\cdUse your weapons to smash open crates. \n\cdCrates often contain useful items.\n\cdHealth vials are small blue bottles that instantly restore some of your health when you walk over them. \n\cdThey can be found throughout the base.");
-            break;
-        case 11:
-            Print(s:"\cgOH NOOOO!!!");
-            ThingSound(77, "DSPLDETH", 255);
-            Thing_Remove(77);
-            break;
-        case 12:
-            Door_Open(31, 128, 0);
-            Print(s:"\cgOH NOOOO!!!");
-            ThingSound(79, "DSPLDETH", 255);
-            Thing_Remove(79); //Spawn the killable Mr. Nadira
-            break;
-        default:
-            Print(s:"\cg[Script error] Invalid monologue id!");
-    }
-Delay(34);
-}
-
-script 4 (void)
-{ //Map
-ActivatorSound("misc/chat2", 255);
-GiveInventory("MapRevealer", 1);
-Print(s:"\cgAutomap data was loaded!");
-Delay(34*3);
-}
-
-script 6 (int sector)
-{//Opener
-    ActivatorSound("acess/GRANT1", 255);
-    Door_Open(sector, 128, 0);
-}
-
-script 8 (int doorf, int doorb) {//DoorCloser
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "drpga10");
-    SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga10b");
-    SetLineSpecial(doorf, ACS_Execute, 0, 3001);
-    SetLineSpecial(doorb, ACS_Execute, 0, 3001);
-}
-
-script 11 (void){ //catch-up
-    //TID's: 40-69
-    //Scientist: 40-49
-    //Marine: 50-59
-    //Guerard: 60(63)-69
-    //SpawnedCharacters: 70-79
-    switch(catchupstate){
-        case 0: //init
-            SpawnSpot("Scientist", 40, 70);
-            SpawnSpot("Marine0", 50, 70);
-            break;
-        case 1: //second door
-            SpawnSpot("Scientist", 41, 71);
-            SpawnSpot("Marine0", 51, 71);
-            ACS_Execute(8, 0, 1, 2);//Close the door
-            break;
-        case 2: //catch-up start
-            Thing_Remove(71);
-            SpawnSpot("Scientist", 42, 72);
-            SpawnSpot("Marine0", 52, 72);
-            SpawnSpot("DrGuerard", 63, 72);
-            Door_Open(18, 128, 0); //Open Zombieman door
-            break;
-        case 3: //Hello, Guerard!
-            Thing_Remove(72);
-            SpawnSpot("Scientist", 43, 73);
-            SpawnSpot("Marine0", 53, 73);
-            SpawnSpot("DrGuerard", 64, 73);
-            Door_Open(19, 128, 0);
-            break;
-        case 4:
-            Thing_Remove(73);
-            SpawnSpot("Scientist", 44, 74);
-            SpawnSpot("Marine0", 54, 74);
-            SpawnSpot("DrGuerard", 65, 74);
-            break;
-        case 5:
-            Thing_Remove(74);
-            SpawnSpot("Scientist", 45, 75);
-            SpawnSpot("Marine0", 55, 75);
-            SpawnSpot("DrGuerard", 66, 75);
-            Door_Open(22, 128, 0);
-            break;
-        case 6: //catch-up end
-            Thing_Remove(75);
-            SpawnSpot("Scientist", 46, 76);
-            SpawnSpot("Marine0", 56, 76);
-            break;
-        case 7: //before cativate the trap door
-            Thing_Remove(76);
-            SpawnSpot("Scientist", 47, 77);
-            SpawnSpot("Marine0", 57, 77);
-            SpawnSpot("DrGuerard", 68, 77);
-            ACS_Execute(7, 0, 8, 7);//Open the door
-            break;
-        case 8: //marine's die
-            //Thing_Remove(77);
-            Door_Close(27, 64, 0); //Close Gerard's door
-            Door_Open(26, 128, 0); //Open doors with monsters
-            SpawnSpot("Scientist", 48, 78);
-            SpawnSpot("Marine0", 58, 77);//77?
-            SpawnSpot("DrGuerard", 69, 78);
-            break;
-        case 9: //final bfg comp
-            Thing_Remove(78);
-            SpawnSpot("Scientist", 49);
-            break;
-        default:
-            Print(s:"\cg[Script error] Invalid catch-up state!");
-    }
-    catchupstate++;
-}*/

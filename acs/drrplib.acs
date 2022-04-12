@@ -1,0 +1,100 @@
+#library "drrplib"
+#include "zcommon.acs"
+
+const int SECONDS = 35; /* Ticks per second */
+
+/* HUD Alignment Anchor */
+const fixed HUD_CENTER = 0.0;
+const fixed HUD_TOP = 0.1;
+const fixed HUD_BOTTOM = 0.2;
+const fixed HUD_LEFT = 0.1;
+const fixed HUD_RIGHT = 0.2;
+
+/* Useful functions */
+
+function fixed toFixed(int value) {
+    return value << 16;
+}
+
+function int toInt(fixed value) {
+    return value >> 16;
+}
+
+function int toFloor(fixed value) {
+    if (value < 10000) {
+        return value;
+    }
+
+    return toInt(value);
+}
+
+/* Can be used if you don't have enough script parameters */
+function int encodeXY(int x, int y) {
+    return (x << 16) | y;
+}
+
+function int decodeX(int encoded) {
+    return encoded >> 16;
+}
+
+function int decodeY(int encoded) {
+    return encoded & 0xFFFF;
+}
+
+function bool isLocalized(str string) {
+    return !!strcmp(StrParam(l:string), string);
+}
+
+function int getStringWidth(str String) {
+    return StrLen(String);
+}
+
+function int uniLen(str text) {
+    return StrLen(text); /* TODO: */
+}
+
+function int getStringHeight(str String) {
+    int i      = 0;
+    int height = 0;
+
+    while(String[i] != '\0') {
+        if(String[i++] == '\n') height++;
+    }
+    return height;
+}
+
+function global str getThingName(int id, int state) {
+    Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
+    return "DRRPTODO";
+}
+
+function str localizeSound(str sound) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
+    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
+}
+
+function fixed fmax(fixed val1, fixed val2) {
+    return val1 > val2 ? val1 : val2;
+}
+
+function fixed fmin(fixed val1, fixed val2) {
+    return val1 < val2 ? val1 : val2;
+}
+
+function fixed fclamp(fixed value, fixed min, fixed max) {
+    return fmax(min, fmin(max, value));
+}
+
+function int idivF(int a, int b) {
+    return toFixed(a) / toFixed(b);
+}
+
+function int idivI(int a, int b) {
+    return toFloor(idivF(a, b));
+}
+
+
+function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {
+    SpawnForced("TeleportFog", x, y, z);
+    SpawnForced(classname, x, y, z, assignTid);
+}

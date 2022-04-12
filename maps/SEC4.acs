@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 // Coordinate offset is: (0;0)
@@ -16,10 +17,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - y * 8) << 16;
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {
@@ -151,7 +148,7 @@ script 24 (int arg0, int arg1, int arg2) { //X=25 Y=7 START=L_40 END=L_56 UNKN=8
     if(arg2 == 3) ACS_NamedExecute("transformation", 0, 807); // ( USE IF_VAR( 4 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 3) Delay(12); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=350
     if(arg2 == 3) Thing_Remove(807); // ( USE MODIFYWORLD IF_VAR( 4 ) ) HIDE_THINGS_AT X=25 Y=7
-    if(arg2 == 3) SpawnForced("DRRPImp", getMediumX(204), getMediumY(60), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 3) SpawnForced("DRRPImp", getMediumX(204), getMediumY(60), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch <PROPHESSOR 10.04.2022> Agree :/
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=25 Y=7
