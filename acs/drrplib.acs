@@ -45,12 +45,42 @@ function bool isLocalized(str string) {
     return !!strcmp(StrParam(l:string), string);
 }
 
-function int getStringWidth(str String) {
-    return StrLen(String);
+
+function bool isUnicodeSymbol(int symbol) {
+    return symbol < 0;
 }
 
-function int uniLen(str text) {
-    return StrLen(text); /* TODO: */
+function int unilen(str text) {
+    int len = 0;
+    int unicodeChars = 0;
+
+    while (text[len] != 0) {
+        if (text[len] < 0) unicodeChars++;
+        len++;
+    }
+
+    return len - (unicodeChars / 2);
+}
+
+function str at(str text, int position) {
+    int pos = 0;
+    while(true) {
+        int sym = text[pos];
+
+        if (pos == position * 2) {
+            return isUnicodeSymbol(sym)
+                ? StrParam(c:sym, c:text[pos + 1])
+                : StrParam(c:sym);
+        }
+
+        if (sym > 0) pos += 2;
+        else if (sym == 0) return "";
+        else pos += 1;
+    }
+}
+
+function int getStringWidth(str String) {
+    return UniLen(String);
 }
 
 function int getStringHeight(str String) {
