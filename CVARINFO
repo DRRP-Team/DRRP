@@ -22,6 +22,9 @@ server bool drrp_enable_extended_gibs       = true;
 server bool drrp_enable_blood_flashes       = true;
 server int drrp_lights_wrapper_type         = 2;
 
+user bool drrp_enable_beep                  = true;
+user int drrp_beep_volume                   = 20;
+
 // Flashlight
 server color flashlight_color               = "AB AB FF";
 server int flashlight_intensity             = 320; // Max -- 1024.

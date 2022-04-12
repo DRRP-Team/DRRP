@@ -242,6 +242,17 @@ function int getColorByType(int type) {
     }
 }
 
+const int BEEP_SPEED_DIV = 2;
+
+Script "beeping" (int len, int type) {
+    if (!GetCVar("drrp_enable_beep")) Terminate;
+
+    for (int i = 0; i < len / BEEP_SPEED_DIV; i++) {
+        AmbientSound("misc/chat2", GetCVar("drrp_beep_volume"));
+        Delay(BEEP_SPEED_DIV);
+    }
+}
+
 const int LINES_ON_SCREEN = 7;
 
 Script "window" (str _Text, int type) {
@@ -267,6 +278,8 @@ Script "window" (str _Text, int type) {
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
+    ACS_NamedExecute("beeping", 0, UniLen(Text), type);
+
     drawDialogTypingWindow(Text,
         posX,
         posY,
@@ -289,6 +302,7 @@ Script "window" (str _Text, int type) {
                 Delay(4);
             }
 
+            ACS_NamedTerminate("beeping", 0);
             drawDialogWindow(Text, posX, posY, ScrollY, COLOR);
         }
 
@@ -303,6 +317,7 @@ Script "window" (str _Text, int type) {
     }
 
     clearDialogWindow();
+    ACS_NamedTerminate("beeping", 0);
 
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
     SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
