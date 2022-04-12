@@ -66,7 +66,7 @@ function str copyString(str text) {
 }
 
 function int readWordLength(str text) {
-    if (DEBUG_STRINGWRAP) print(s:"readWordLength ", s:text);
+    /* if (DEBUG_STRINGWRAP) print(s:"readWordLength ", s:text); */
     int i = 0;
 
     while (true) {
@@ -83,7 +83,7 @@ function int readWordLength(str text) {
 }
 
 function str wrapWord(str word, int maxLength) {
-    if (DEBUG_STRINGWRAP) print(s:"wrapWord ", s:word, c:' ', i:maxLength);
+    /* if (DEBUG_STRINGWRAP) print(s:"wrapWord ", s:word, c:' ', i:maxLength); */
 
     if (maxLength == 0) return StrParam(c:'\n', s:word);
 
@@ -91,19 +91,21 @@ function str wrapWord(str word, int maxLength) {
     str output = StrLeft(word, maxLength);
     str remaining = StrRight(word, len - maxLength);
 
-    if (output[maxLength - 1] != ' ')
-        output = StrParam(s:output, c:'-');
+    int curChar = output[maxLength - 1];
 
-    output = StrParam(s:output, c:'\n');
+    /* Add hyphen */
+    if (curChar >= 'A') output = StrParam(s:output, c:'-');
 
-    output = StrParam(s:output, s:remaining);
+    output = StrParam(s:output, c:'\n', s:remaining);
 
-    if (DEBUG_STRINGWRAP) print(s:"wrapWord-output ", s:output);
+    if (DEBUG_STRINGWRAP) print(s:"wrapWord()-output ", s:output, c:'|');
 
     return output;
 }
 
+
 function str wrapText(str text, int maxLength) {
+    text = StrTrim(removeNewLines(text));
     if (DEBUG_STRINGWRAP) print(s:"wrapText ", s:text, c:' ', i:maxLength);
     int len = strlen(text);
     int wordLen = 0;
@@ -115,34 +117,46 @@ function str wrapText(str text, int maxLength) {
     while (wordLen <= len) {
         wordLen = readWordLength(remaining);
 
-        str word = StrLeft(remaining, wordLen);
+        str word = StrTrim(StrLeft(remaining, wordLen));
         len -= wordLen;
-        remaining = StrRight(remaining, len);
-
-        if (DEBUG_STRINGWRAP) print(s:"Edge: ", i:wordLen, s:" Word: ", s:word, s:" Remaining: ", s:remaining);
+        remaining = StrTrim(StrRight(remaining, len));
 
         int lineFullLength = currentLineLength + wordLen;
 
         if (lineFullLength < maxLength) {
-            output = StrParam(s:output, s:word);
+            print(s:"DEBUG ", s:word, c:'|');
+            // if (StrLen(word) != 0)
+            output = StrParam(s:output, c: ' ', s:word);
             currentLineLength += wordLen;
-            if (DEBUG_STRINGWRAP) print(s:"length enough ", s:output);
+            /* if (DEBUG_STRINGWRAP) print(s:"length enough ", s:output); */
             continue;
         }
 
         int extraChars = lineFullLength - maxLength;
         int charsToBeWrappedAfter = wordLen - extraChars;
 
-        if (DEBUG_STRINGWRAP) print(s:"fullLine ", i:lineFullLength, s:" extraChars ", i:extraChars, s:" after ", i:charsToBeWrappedAfter);
+        /* Do not wrap single character */
+        if (extraChars <= 2) charsToBeWrappedAfter -= 1;
+
+        /* Do not wrap symbol */
+        if (word[charsToBeWrappedAfter + 1] < 'A') charsToBeWrappedAfter--;;
+
+        /* Write whole word on next line if needed */
+        if (charsToBeWrappedAfter < 4) charsToBeWrappedAfter = 0;
+
+        if (DEBUG_STRINGWRAP) print(s:"Wrap word: '", s:word, s:"' extraChars ", i:extraChars, s:" after ", i:charsToBeWrappedAfter, s:" line length: ", i:lineFullLength);
 
         str wrappedWord = wrapWord(word, charsToBeWrappedAfter);
 
+        print(s:"WrappedWord = ", s:wrappedWord, c:'|');
+
         currentLineLength = extraChars;
-        output = StrParam(s:output, s:wrappedWord);
+        // if (StrLen(wrappedWord) != 0)
+        output = StrParam(s:output, c: ' ', s:wrappedWord);
         if (DEBUG_STRINGWRAP) print(s:"line wrapped ", s:output, s:" length ", i:currentLineLength);
     }
 
-    return output;
+    return StrTrim(output);
 }
 
 Script "testwrapper" (str text, int maxLength) {
@@ -152,7 +166,7 @@ Script "testwrapper" (str text, int maxLength) {
 /* \\ String wrap processor // */
 
 const int SYM_HEIGHT = 9; /* Symbol's height is 12px */
-const int WINDOW_LEN = 21;
+const int WINDOW_LEN = 20; /* Chars in one line */
 
 function void drawDialogFrame(int posX, int posY, bool scrollable) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
@@ -299,8 +313,8 @@ Script "window" (str _Text, int type) {
 }
 
 Script "hintwindow" (str _Text, int holdTicks) {
-    Log(s:_Text);
     str Text = wrapText(fixEncodingBug(_Text), WINDOW_LEN);
+    Log(s:Text);
 
     Delay(2);
 
@@ -317,7 +331,7 @@ Script "hintwindow" (str _Text, int holdTicks) {
         drawDialogWindow(Text,
             iapplyScaleI(FINAL_POS_X + i),
             iapplyScaleI(FINAL_POS_Y),
-            0,
+            -1,
             COLOR
         );
         Delay(1);

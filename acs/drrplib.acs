@@ -93,6 +93,78 @@ function int idivI(int a, int b) {
     return toFloor(idivF(a, b));
 }
 
+function str StrAdd(str a, str b) {
+    return StrParam(s:a, s:b);
+}
+
+
+function str removeChar(str string, int charToRemove) {
+    str output = "";
+
+    int len = StrLen(string);
+
+    for (int i = 0; i < len; i++) {
+        if (string[i] != charToRemove)
+            output = StrParam(s:output, c:string[i]);
+    }
+
+    return output;
+}
+
+function str replaceChar(str string, int char, int charToReplace) {
+    str output = "";
+
+    int len = StrLen(string);
+
+    for (int i = 0; i < len; i++) {
+        if (string[i] == char)
+            output = StrParam(s:output, c:charToReplace);
+        else
+            output = StrParam(s:output, c:string[i]);
+    }
+
+    return output;
+}
+
+function str removeNewLines(str string) {
+    str output = "";
+
+    int len = StrLen(string);
+
+    for (int i = 0; i < len; i++) {
+        if (string[i] == '\n') {
+            if (i + 1 < len && string[i + 1] != ' ')
+                output = StrParam(s:output, c:' ');
+        } else {
+            output = StrParam(s:output, c:string[i]);
+        }
+    }
+
+    return output;
+}
+
+function str StrLTrim(str string) {
+    int len = StrLen(string);
+    int spaces = 0;
+    for (; string[spaces] == ' '; spaces++) {}
+
+    return StrRight(string, len - spaces);
+}
+
+function str StrRTrim(str string) {
+    int len = StrLen(string);
+    int wordLen = len - 1;
+    for (; string[wordLen] == ' '; wordLen--) {}
+
+    return StrLeft(string, wordLen + 1);
+}
+
+function str StrTrim(str string) {
+    str trim = StrLTrim(StrRTrim(string));
+    /* print(s:"StrTrim(", s:string, s:") = ", s:trim, c:'|', i:StrLen(trim)); */
+    return trim;
+}
+
 
 function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {
     SpawnForced("TeleportFog", x, y, z);
