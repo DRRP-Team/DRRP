@@ -551,7 +551,7 @@ thing
 {
 x = -992.000;
 y = -672.000;
-type = 10554;
+type = 10816;
 id = 301;
 arg0 = 56;
 special = 80;
@@ -564,6 +564,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "9:13";
+renderstyle = "";
 }
 
 thing
@@ -3535,7 +3536,7 @@ thing
 {
 x = -160.000;
 y = -1120.000;
-type = 10554;
+type = 10816;
 id = 724;
 arg0 = 95;
 special = 80;
@@ -3548,6 +3549,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "22:20";
+renderstyle = "";
 }
 
 thing
@@ -4014,7 +4016,7 @@ thing
 {
 x = -32.000;
 y = -1568.000;
-type = 10554;
+type = 10816;
 id = 795;
 arg0 = 125;
 special = 80;
@@ -4027,6 +4029,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "24:27";
+renderstyle = "";
 }
 
 thing
@@ -6823,7 +6826,7 @@ thing
 {
 x = 160.000;
 y = -864.000;
-type = 10554;
+type = 10816;
 angle = 90;
 id = 880;
 arg0 = 74;
@@ -6837,6 +6840,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "27:16";
+renderstyle = "";
 }
 
 thing
@@ -7592,7 +7596,7 @@ thing
 {
 x = -864.000;
 y = 32.000;
-type = 10554;
+type = 10816;
 id = 354;
 arg0 = 1;
 special = 80;
@@ -7605,6 +7609,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "11:2";
+renderstyle = "";
 }
 
 thing
@@ -7692,7 +7697,7 @@ thing
 {
 x = 160.000;
 y = -1760.000;
-type = 10554;
+type = 10816;
 id = 894;
 arg0 = 134;
 special = 80;
@@ -7705,6 +7710,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "27:30";
+renderstyle = "";
 }
 
 thing
@@ -7791,7 +7797,7 @@ thing
 {
 x = -1120.000;
 y = -96.000;
-type = 10554;
+type = 10816;
 id = 228;
 arg0 = 11;
 special = 80;
@@ -7804,13 +7810,14 @@ single = true;
 coop = true;
 dm = true;
 comment = "7:4";
+renderstyle = "";
 }
 
 thing
 {
 x = -992.000;
 y = -992.000;
-type = 10554;
+type = 10816;
 id = 306;
 arg0 = 80;
 special = 80;
@@ -7823,6 +7830,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "9:18";
+renderstyle = "";
 }
 
 thing
@@ -7929,7 +7937,7 @@ thing
 {
 x = -1184.000;
 y = -1568.000;
-type = 10554;
+type = 10816;
 id = 219;
 arg0 = 124;
 special = 80;
@@ -7942,6 +7950,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "6:27";
+renderstyle = "";
 }
 
 thing
@@ -9364,6 +9373,21 @@ class3 = true;
 class4 = true;
 class5 = true;
 comment = "9:13";
+}
+
+thing
+{
+x = -1504.000;
+y = -1312.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
 }
 
 vertex

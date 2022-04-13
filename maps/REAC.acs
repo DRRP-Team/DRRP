@@ -59,7 +59,7 @@ Script 1 (int id)  { // Computers handler
                 ACS_NamedExecuteWait("window", 0, getString(8)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=8
                 break;
             } else if(lavacomputercounter == 0) {
-                ACS_NamedExecuteWait("window", 0, getString(6));
+                ACS_NamedExecuteWait("window", 0, getString(6), 4);
                 lavacomputercounter++;
                 break;
             }
@@ -73,7 +73,7 @@ Script 1 (int id)  { // Computers handler
                 Autosave();
                 ACS_NamedExecuteAlways("StartPortal", 0);
             } else if (aboutrodscounter == 1) {
-                ACS_NamedExecuteWait("window", 0, getString(14));
+                ACS_NamedExecuteWait("window", 0, getString(14), 4);
                 aboutrodscounter++;
             } else if (aboutrodscounter == 2) {
                 ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(15)); // Note about Rods
@@ -284,7 +284,7 @@ Script 105 (void) { // On Kronos Die
 script 332 (void) { // Lava trigger
     if(lavacomputercounter != 2) Terminate;
     lavacomputercounter++;
-    ACS_NamedExecuteWait("window", 0, getString(9)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
+    ACS_NamedExecuteWait("window", 0, getString(9), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
     Delay(10); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=300
     ACS_NamedExecuteWait("window", 0, getString(10)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
     SetMusic("D_EVIL");
