@@ -259,6 +259,10 @@ Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(322);
 
+    if (!type) {
+        type = getAimedActorDialogueType();
+    }
+
     const int COLOR = getColorByType(type);
 
     str Text = fixEncodingBug(_Text);

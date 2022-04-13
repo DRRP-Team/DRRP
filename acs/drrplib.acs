@@ -98,6 +98,23 @@ function global str getThingName(int id, int state) {
     return "DRRPTODO";
 }
 
+function str getAimedActorDialogueType(void) {
+    int tid = PickActor(0, GetActorAngle(0), GetActorPitch(0), 100.0, 5005,
+        MF_NOBLOOD, 0, PICKAF_RETURNTID);
+    str class = GetActorClass(tid);
+    if(GetCVar("drrp_debug_mode")) print(s:class);
+
+    /* if (!StriCmp(class, "Civilian")) return 2; */
+    if (!StriCmp(class, "DRRPComputer")) return 1;
+    /* if (!StriCmp(class, "DRRPPlayer")) return -1; */
+
+    return 0;
+}
+
+Script "TestDialogueType" (void) {
+    print(i:getAimedActorDialogueType());
+}
+
 function str localizeSound(str sound) {
     if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
