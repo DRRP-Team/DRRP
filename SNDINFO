@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -110,7 +110,10 @@ COMPLETE                    sounds/COMPLETE.ogg
 DOGSONG                     sounds/DOGSONG.ogg
 HODSONG                     sounds/HODSONG.ogg
 
+door/break                  sounds/DOORHIT.ogg
 
+flashlight/on               sounds/FLASHON.ogg
+flashlight/off              sounds/FLASHOFF.ogg
 
 // === Weapons ===
 weapon/gas                  sounds/GAS.ogg
@@ -152,7 +155,7 @@ weapon/fireext/pick         sounds/WTF.ogg
 // === Player ===
 player/taunt                sounds/TAUNT.ogg
 player/levelup              sounds/LEVELUP.ogg
-player/lowhp                sounds/DEPRECATED.ogg
+player/lowhp                sounds/LOWHP.ogg
 
 
 

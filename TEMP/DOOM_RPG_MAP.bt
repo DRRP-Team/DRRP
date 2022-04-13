@@ -1,0 +1,85 @@
+//------------------------------------------------
+//--- 010 Editor v9.0.2 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct FILE {
+
+
+struct HEADER {
+    uchar floor_color[3];
+    uchar ceil_color[3];
+    uchar loading_color[3];
+    uchar level_number;
+    uchar spawn_point;
+    uchar spawn_direction;
+    uchar unknown;
+} header;
+
+struct BSP_HEADER {
+    uint16 size;
+} bsp_header;
+
+struct BSP_ITEM {
+    uchar x1;
+    uchar y1;
+    uchar x2;
+    uchar y2;
+    uchar others[6];
+} bsp_item[bsp_header.size];
+
+struct LSEGMENTS_HEADER {
+    uint16 size;
+} lsegments_header; 
+
+struct LSEGMENT_ITEM {
+    uchar x1;
+    uchar y1;
+    uchar x2;
+    uchar y2;
+    uint16 texture_id;
+    uint16 flags;
+} lsegment_item[lsegments_header.size];
+
+struct THINGS_HEADER {
+    uint16 size;
+} things_header;
+
+struct THINGS_ITEM {
+    uchar x;
+    uchar y;
+    uchar id;
+    uint16 flags;
+} things_item[things_header.size];
+
+struct EVENTS_HEADER {
+    uint16 size;
+} events_header;
+
+struct EVENTS_ITEM {
+    uint32 data;
+} events_item[events_header.size];
+
+struct COMMANDS_HEADER {
+    uint16 size;
+} commands_header;
+
+struct COMMANDS_ITEM {
+    uchar command;
+    uint32 args;
+    uint32 details;
+} commands_item[commands_header.size];
+
+struct BLOCKMAP_ITEM {
+    uchar fourblocks;
+} blockmap_item[256];
+
+} file;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    textarea {
+      font-family: Consolas monospace;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="editor">
+    <textarea v-model="message" rows="7" cols="18" placeholder="Text without \n"></textarea><br />
+    <input type="text" @input="message = $event.target.value.replace(/\\n/g, '\n')"
+      :value="message.replace(/\n/g, '\\n')" placeholder="Text with \n"><br />
+    <span>Max line: {{maxLineLength}} <b>{{warning}}</b></span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: ''
+      },
+      computed: {
+        maxLineLength() {
+          return Math.max(...this.message.split(/\n/).map(x => x.length));
+        },
+        warning() {
+          if (this.maxLineLength > 21) return 'OVERFLOW!';
+          if (this.maxLineLength > 18) return 'Warning!';
+          return '';
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,23 +1,26 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
 
-// Compile drrp.acs!
+/* Compile drrp.acs! */
 
-// Map APIs 3000 - 3999
+/* Map APIs 3000 - 3999 */
 
 Script 3000 (int doorf, int doorb, bool nosound) { // Door Unlocker
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3000");
     if(!nosound) SectorSound(localizeSound("access/grant1"), 255);
 
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
-    SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
+    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
+    str openDoorTexture = isPomEnabled ? "DRDC9" : "NP_DRDC9";
+
+    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, openDoorTexture);
+    SetLineSpecial(doorf, ACS_Execute, 3002, 0);
     if(doorb != 0) {
-        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC9");
-        SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, openDoorTexture);
+        SetLineSpecial(doorb, ACS_Execute, 3002, 0);
     }
 }
 
@@ -52,20 +55,24 @@ Script 3006 (void) { // Jammed door
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3006");
     if((ClassifyActor(0) & ACTOR_PLAYER) && GetWeapon() == "DRRPAxe" && LineSide() == LINE_FRONT) {
 		ClearLineSpecial();
+        LocalAmbientSound("door/break", 127);
         Radius_Quake2(0, 1, 17, 0, 128, "");
         Delay(17);
-        Ceiling_RaiseToNearest(0, 4096);
+        Ceiling_RaiseToNearest(0, 128);
     }
 }
 
-Script 3007 (int doorf, int doorb) { // Door Unlocker
+Script 3007 (int doorf, int doorb) { // Door Locker
     if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script 3000");
 
-    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
+    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
+    str closedDoorTexture = isPomEnabled ? "DRDC8" : "NP_DRDC8";
+
+    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, closedDoorTexture);
     SetLineSpecial(doorf, ACS_Execute, 3001);
 
     if(doorb != 0) {
-        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "DRDC8");
+        SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, closedDoorTexture);
         SetLineSpecial(doorb, ACS_Execute, 3001);
     }
 }
@@ -108,13 +115,16 @@ Script 3011 (fixed x, fixed y, int direction) { // DRPG Teleport
 Script 3012 (int id, int time) { // Show tip
     if (!time) time = SECONDS * 7;
 
-    SetHudSize(640, 480, true);
-    //SetHUDClipRect(0, 0, 0, 0, 0);
-    //SetFont("M_WINDOW");
-    //HudMessage(s: "A"; HUDMSG_PLAIN, -10000, 0, 640.0, 10.1, 1);
-    SetFont("smallfont");
-    HudMessage(l: StrParam(s:"DRRP_D_TIP_", i:id); HUDMSG_PLAIN, -100001, CR_YELLOW,
-               600.0, 10.1, 15.0, 0.5);
-    Delay(time);
-    HudMessage(s: ""; HUDMSG_PLAIN, -100001, 0, 0.5, 0.8, 1);
+    ACS_NamedExecuteWait(
+        "hintwindow",
+        0,
+        StrParam(l: StrParam(s:"DRRP_D_TIP_", i:id)),
+        time
+    );
 }
+
+Script 3999 (void) { // Terminal dumb
+    Terminate;
+}
+
+/* New Map APIs */

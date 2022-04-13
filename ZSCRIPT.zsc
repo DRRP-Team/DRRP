@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  * 
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -36,7 +36,15 @@ class DRRPPlayer: DoomPlayer {
 
     int playerStats[ _RPG_Quantity ]; //Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength, MaxArmor;
 
+    int lowHealthTimer;
+
+    Array<String> MapsMonstersDone;
+    Array<String> MapsSecretsDone;
+
+    vector3 PreFreezeVel;
+
     override void BeginPlay() {
+        lowHealthTimer = -1;
         playerStats[ RPG_Experience ] = playerStats[ RPG_Accuracy ] = 0;
         playerStats[ RPG_Agility ] = playerStats[ RPG_Defence ] = playerStats[ RPG_Strength ] = 0;
         playerStats[ RPG_Level ] = 1;
@@ -45,6 +53,25 @@ class DRRPPlayer: DoomPlayer {
         SetAllPlayerLevelupFeatures();
         Super.BeginPlay();
     }
+
+    override void PlayerThink() {
+        Super.PlayerThink();
+
+        // Play sound on low health.
+        int TICKS_BETWEEN_LOW_HEALTH_SOUND = 70; // <PROPHESSOR> why can't I make it static const?
+        bool isLowHealth = health / double( playerStats[ RPG_MaxHealth ] ) < 0.35;
+        if (isLowHealth) {
+            lowHealthTimer += 1;
+            lowHealthTimer %= TICKS_BETWEEN_LOW_HEALTH_SOUND;
+
+            if ( !lowHealthTimer ) {
+                S_Sound( "player/lowhp", CHAN_BODY );
+                A_SetBlend( "AA0000", 0.2, 5 );
+            }
+        } else if (lowHealthTimer != -1) {
+            lowHealthTimer = -1;
+        }
+    } // of override void PlayerThink() {
 
 
     /* Static get/set features methods (usually for ACS) */
@@ -108,6 +135,10 @@ class DRRPPlayer: DoomPlayer {
     }
 
     void SetFeature( int type, int value, bool setFeatureConsequence = true ) {
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if ( debugCVar && debugCVar.GetBool() )
+            console.printf( GetClassName() .. "::SetFeature(). playerStats[ " .. type .. " ] = " .. value .. "; " .. ( setFeatureConsequence? "call" : "don't call" ) .. " consequence." );
+
         if ( type >= _RPG_FirstStat && type <= _RPG_Quantity ) {
             playerStats[ type ] = value;
 
@@ -162,7 +193,7 @@ class DRRPPlayer: DoomPlayer {
         return DRRPMath.Power( DRRPMath.e * 0.3725, -GetFeature( RPG_Accuracy ) );
     }
 
-    play virtual int getRPGAttackDamage( int min, int max = 0 ) {
+    virtual int getRPGAttackDamage( int min, int max = 0 ) {
         if ( ( max == 0 ) || ( max < min ) )
             max = min;
 
@@ -172,11 +203,11 @@ class DRRPPlayer: DoomPlayer {
         return Random( min + damageMultiplier, max + damageMultiplier );
     }
 
-    play virtual int getRPGDefenceDamage( int damage, name mod ) {
+    virtual int getRPGDefenceDamage( int damage, name mod ) {
 
-        CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", self.player );
-        if ( DebugCVar && DebugCVar.GetBool() )
-            console.printf( "#DRRPPlayer::getRPGDefenceDamage. Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
+        //CVar DebugCVar = CVar.GetCVar( "drrp_debug_mode", self.player );
+        //if ( DebugCVar && DebugCVar.GetBool() )
+        //    console.printf( GetClassName() .. "::getRPGDefenceDamage(). Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
 
         damage *= DRRPMath.Power( DRRPMath.e * 0.378, -( 1 + playerStats[ RPG_Defence ] ) ) + 0.053;
 

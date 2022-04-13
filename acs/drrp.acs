@@ -1,62 +1,15 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
  */
 
-#library game
+#import "drrplib.acs"
 #include "zcommon.acs"
 
-const int SECONDS = 35; // Ticks per second
-
-// Useful functions
-
-function bool isLocalized(str string) {
-    return !!strcmp(StrParam(l:string), string);
-}
-
-function int getStringWidth(str String) {
-    int i = 0;
-    while(String[i] != '\0') { i++; }
-    return i;
-}
-
-function int getStringHeight(str String) {
-    int i      = 0;
-    int height = 0;
-
-    while(String[i] != '\0') {
-        if(String[i++] == '\n') height++;
-    }
-    return height;
-}
-
-function global str getThingName(int id, int state) {
-    Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
-    return "DRRPTODO";
-}
-
-function str localizeSound(str sound) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
-}
-
-function fixed fmax(fixed val1, fixed val2) {
-    return val1 > val2 ? val1 : val2;
-}
-
-function fixed fmin(fixed val1, fixed val2) {
-    return val1 < val2 ? val1 : val2;
-}
-
-function fixed fclamp(fixed value, fixed min, fixed max) {
-    return fmax(min, fmin(max, value));
-}
-
-// \\ Useful functions
-
-script "fireextfade" (int mode) {
+/* DEPRECATED */
+Script "fireextfade" (int mode) {
     // TODO: Use additive point light
     if(mode) {
         // Sector_SetFade(0, 255, 255, 255);
@@ -65,21 +18,255 @@ script "fireextfade" (int mode) {
     }
 }
 
-// ACS based DRPG Window
+/* ACS based DRPG Window */
 
-Script "window"(str _Text) { // s: -> str
-    // This crutch fixes the GZDoom Encoding bug in russian translation
-    // https://trello.com/c/Yjn7YM8b
-    str Text;
-    int TextLen = strlen(_Text);
+/*
+ This crutch fixes the GZDoom Encoding bug in russian translation
+ https://trello.com/c/Yjn7YM8b
+*/
+function str fixEncodingBug(str text) {
+    str output;
+    int TextLen = strlen(text);
     for (int i = 0; i < TextLen; i++) {
-        if (_Text[i] == 0x20) // space
-            Text = StrParam(s:Text, s:" ");
+        if (text[i] == 0x20) /* space */
+            output = StrParam(s:output, s:" ");
         else
-            Text = StrParam(s:Text, c:_Text[i]);
+            output = StrParam(s:output, c:text[i]);
     }
 
-    const int SYM_HEIGHT = 12; // Symbol's height is 12px
+    return output;
+}
+
+function float fapplyScaleF(float value) {
+    float SCALE = GetCVar("drrp_window_scale");
+
+    return value / SCALE;
+}
+
+function float iapplyScaleF(int value) {
+    float val = toFixed(value);
+
+    return fapplyScaleF(val);
+}
+
+function int fapplyScaleI(float value) {
+    return toFloor(fapplyScaleF(value));
+}
+
+function int iapplyScaleI(int value) {
+    return toFloor(iapplyScaleF(value));
+}
+
+/* // String wrap processor \\ */
+
+const bool DEBUG_STRINGWRAP = false;
+
+function str copyString(str text) {
+    return StrLeft(text, StrLen(text));
+}
+
+function int readWordLength(str text) {
+    /* if (DEBUG_STRINGWRAP) print(s:"readWordLength ", s:text); */
+    int i = 0;
+
+    while (true) {
+        int sym = text[i];
+
+        /* print(s:"Sym ", c:sym); */
+
+        if (sym == ' ' || sym == 0x0) return ++i;
+
+        i++;
+    }
+
+    return i;
+}
+
+function str wrapWord(str word, int maxLength) {
+    /* if (DEBUG_STRINGWRAP) print(s:"wrapWord ", s:word, c:' ', i:maxLength); */
+
+    if (maxLength == 0) return StrParam(c:'\n', s:word);
+
+    int len = StrLen(word);
+    str output = StrLeft(word, maxLength);
+    str remaining = StrRight(word, len - maxLength);
+
+    int curChar = output[maxLength - 1];
+
+    /* Add hyphen */
+    if (curChar >= 'A') output = StrParam(s:output, c:'-');
+
+    output = StrParam(s:output, c:'\n', s:remaining);
+
+    if (DEBUG_STRINGWRAP) print(s:"wrapWord()-output ", s:output, c:'|');
+
+    return output;
+}
+
+
+function str wrapText(str text, int maxLength) {
+    text = StrTrim(removeNewLines(text));
+    if (DEBUG_STRINGWRAP) print(s:"wrapText ", s:text, c:' ', i:maxLength);
+    int len = strlen(text);
+    int wordLen = 0;
+
+    str remaining = copyString(text);
+    str output;
+    int currentLineLength = 0;
+
+    while (wordLen <= len) {
+        wordLen = readWordLength(remaining);
+
+        str word = StrTrim(StrLeft(remaining, wordLen));
+        len -= wordLen;
+        remaining = StrTrim(StrRight(remaining, len));
+
+        int lineFullLength = currentLineLength + wordLen;
+
+        if (lineFullLength < maxLength) {
+            output = StrParam(s:output, c: ' ', s:word);
+            currentLineLength += wordLen;
+            continue;
+        }
+
+        int extraChars = lineFullLength - maxLength;
+        int charsToBeWrappedAfter = wordLen - extraChars;
+
+        /* Do not wrap single character */
+        if (extraChars <= 2) charsToBeWrappedAfter -= 1;
+
+        /* Do not wrap symbol */
+        if (word[charsToBeWrappedAfter + 1] < 'A') charsToBeWrappedAfter--;;
+
+        /* Write whole word on next line if needed */
+        if (charsToBeWrappedAfter < 4) charsToBeWrappedAfter = 0;
+
+        if (DEBUG_STRINGWRAP) print(s:"Wrap word: '", s:word, s:"' extraChars ", i:extraChars, s:" after ", i:charsToBeWrappedAfter, s:" line length: ", i:lineFullLength);
+
+        str wrappedWord = wrapWord(word, charsToBeWrappedAfter);
+
+        if (DEBUG_STRINGWRAP) print(s:"WrappedWord = ", s:wrappedWord, c:'|');
+
+        currentLineLength = extraChars;
+        output = StrParam(s:output, c: ' ', s:wrappedWord);
+        if (DEBUG_STRINGWRAP) print(s:"line wrapped ", s:output, s:" length ", i:currentLineLength);
+    }
+
+    return StrTrim(output);
+}
+
+Script "testwrapper" (str text, int maxLength) {
+    print(s:wrapText("Hello world! THis is a very long text and must to be wrapped!!!", maxLength));
+}
+
+/* \\ String wrap processor // */
+
+const int SYM_HEIGHT = 9; /* Symbol's height is 12px */
+const int WINDOW_LEN = 20; /* Chars in one line */
+
+function void drawDialogFrame(int posX, int posY, bool scrollable) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    if (scrollable) SetFont("M_DLGSCR");
+    else SetFont("M_DLGNSC");
+    HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
+        toFixed(posX) + HUD_LEFT,
+        toFixed(posY - 5) + HUD_TOP,
+        1);
+}
+
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+
+    drawDialogFrame(posX, posY, ScrollY >= 0);
+
+    if (ScrollY < 0) ScrollY = 0;
+
+    SetFont("smallfont");
+    SetHudClipRect(
+        posX,
+        posY,
+        160 - 2,
+        SYM_HEIGHT * 7 + 1,
+        0, true);
+    HudMessage(s: Text;
+        HUDMSG_PLAIN,
+        -10000001, /* id */
+        color,
+        toFixed(posX + 4) + HUD_LEFT,
+        toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
+        1); /* hold */
+
+    SetHudSize(0, 0, false);
+}
+
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int color) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    SetHUDClipRect(0, 0, 0, 0, 0);
+
+    drawDialogFrame(posX, posY, scrollable);
+
+    SetFont("smallfont");
+    SetHudClipRect(
+        posX,
+        posY,
+        160 - 2,
+        SYM_HEIGHT * 7 + 1,
+        0, true);
+    HudMessage(s: Text;
+        HUDMSG_TYPEON,
+        -10000001, /* id */
+        color,
+        toFixed(posX + 4) + HUD_LEFT,
+        toFixed(posY) + HUD_TOP,
+        10.0, /* hold */
+        0.01,
+        1); /* fadeout */
+
+    SetHudSize(0, 0, false);
+}
+
+function void clearDialogWindow(void) {
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
+    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+}
+
+function int getColorByType(int type) {
+    switch (type) {
+        case 1: return CR_GREEN; /* Terminal */
+        case 2: return CR_RED; /* Evil */
+        case 3: return CR_YELLOW; /* Hint */
+        case 4: return CR_ORANGE; /* Martians *?
+        case 0: /* Dialogue */
+        default:
+            return CR_WHITE;
+    }
+}
+
+const int BEEP_SPEED_DIV = 2;
+
+Script "beeping" (int len, int type) {
+    if (!GetCVar("drrp_enable_beep")) Terminate;
+
+    for (int i = 0; i < len / BEEP_SPEED_DIV; i++) {
+        AmbientSound("misc/chat2", GetCVar("drrp_beep_volume"));
+        Delay(BEEP_SPEED_DIV);
+    }
+}
+
+const int LINES_ON_SCREEN = 7;
+
+Script "window" (str _Text, int type) {
+    const int posX = iapplyScaleI(320) - 80;
+    const int posY = iapplyScaleI(322);
+
+    if (!type) {
+        type = getAimedActorDialogueType();
+    }
+
+    const int COLOR = getColorByType(type);
+
+    str Text = fixEncodingBug(_Text);
 
     Delay(2);
 
@@ -88,40 +275,97 @@ Script "window"(str _Text) { // s: -> str
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    Thing_Stop(0); // TID_Player -> 0
+    bool enableScroll = height >= LINES_ON_SCREEN;
+
+    if (!enableScroll) ScrollY = -1;
+
+    Thing_Stop(0); /* TID_Player -> 0 */
     SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
+
+    ACS_NamedExecute("beeping", 0, UniLen(Text), type);
+
+    drawDialogTypingWindow(Text,
+        posX,
+        posY,
+        enableScroll,
+        COLOR
+    );
+
+    int typingDelayTimer = 0;
 
     While(TRUE) {
-        if(ReadedKey & BT_FORWARD && ScrollY > 0) {
-            ScrollY -= SYM_HEIGHT;
-            Delay(4);
-        }
-        if(ReadedKey & BT_BACK && ScrollY < height * SYM_HEIGHT) {
-            ScrollY += SYM_HEIGHT;
-            Delay(4);
+        typingDelayTimer++;
+
+        if (typingDelayTimer > 32) {
+            if(enableScroll && ReadedKey & BT_FORWARD && ScrollY > 0) {
+                ScrollY--;
+                Delay(4);
+            }
+            if(enableScroll && ReadedKey & BT_BACK && ScrollY + LINES_ON_SCREEN <= height) {
+                ScrollY++;
+                Delay(4);
+            }
+
+            ACS_NamedTerminate("beeping", 0);
+            drawDialogWindow(Text, posX, posY, ScrollY, COLOR);
         }
 
-        SetHudSize(640, 480, true);
-        SetHUDClipRect(0, 0, 0, 0, 0);
-        SetFont("M_WINDOW");
-        HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0, 324.0, 320.1, 1);
-        SetFont("smallfont");
-        SetHudClipRect(320 - 160 / 2 + 1, 320 + 1, 160 - 2, 70 - 2, 0, true);
-        HudMessage(s: Text; HUDMSG_PLAIN, -10000001, CR_WHITE, ((320 - 160 / 2 + 1) << 16) + 3.0 + 0.1, 322.1 - (ScrollY << 16), 1);
-        SetHudSize(0, 0, false);
         Delay(1);
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
         if((FirstRun == 0) && (ReadedKey & BT_USE))
-            Break;
+            break;
         if((FirstRun == 1) && !(ReadedKey & BT_USE))
             FirstRun = 0;
     }
 
-    HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
-    HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
+    clearDialogWindow();
+    ACS_NamedTerminate("beeping", 0);
+
     SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
+    SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
+}
+
+Script "hintwindow" (str _Text, int holdTicks) {
+    str Text = wrapText(fixEncodingBug(_Text), WINDOW_LEN);
+    Log(s:Text);
+
+    Delay(2);
+
+    const int FINAL_POS_X = 410;
+    const int FINAL_POS_Y = 10;
+    const int COLOR = getColorByType(3);
+
+    const int ANIMATION_OFFSET = 200;
+    const int ANIMATION_SPEED = 20;
+
+    /* In animation */
+
+    for (int i = ANIMATION_OFFSET; i >= 0; i-=ANIMATION_SPEED) {
+        drawDialogWindow(Text,
+            iapplyScaleI(FINAL_POS_X + i),
+            iapplyScaleI(FINAL_POS_Y),
+            -1,
+            COLOR
+        );
+        Delay(1);
+    }
+
+    Delay(holdTicks);
+
+    for (int i = 0; i < ANIMATION_OFFSET; i+=ANIMATION_SPEED) {
+        drawDialogWindow(Text,
+            iapplyScaleI(FINAL_POS_X + i),
+            iapplyScaleI(FINAL_POS_Y),
+            -1,
+            COLOR
+        );
+        Delay(1);
+    }
+
+    clearDialogWindow();
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
@@ -162,173 +406,6 @@ Script "transformation"(int tid, int timedelay) {
     Delay(timedelay || 2);
 }
 
-#define NUM_POM_TEXTURES 79
-str POM_TEXTURES[NUM_POM_TEXTURES] = {
-    "DRDC1",
-    "DRDC0",
-    "DRDC24",
-    "DRDC25",
-    "DRDC26",
-    "DRDC28",
-    "DRDC34",
-    "DRDC35",
-    "DRDC42",
-    "DRDC41", // Tunnels
-    "DRDC41A",
-    "DRDC43",
-    "DRDC43A",
-    "DRDC45",
-    "DRDC45A",
-    "DRDC47",
-    "DRDC47A", // // Tunnels
-    "DRDC44",
-    "DRDC46",
-    "DRDC48",
-    "DRDC2",
-    "DRDC3",
-    "DRDC4",
-    "DRDC5",
-    "DRDC6",
-    "DRDC9",
-    "DRDC8",
-    "DRDC27",
-    "DRDC32",
-    "RROCK04",
-    "RROCK05",
-    "RROCK06",
-    "RROCK07",
-    "RROCK08",
-    "DRDC11",
-    "DRDC12",
-    "SC77_01",
-    "MFLR8_1",
-    "METAL1",
-    "DRDC39",
-    "DRDC40",
-    // Computers
-    "DRDC30",
-    "DRDC31",
-    "CGR_CAPT",
-    "CGR_CRSR",
-    "CGR_EMPT",
-    "CGR_LC1",
-    "CGR_MSG",
-    "CGR_OFF",
-    "CGR_TXT1",
-    "CGR_UAC",
-    "CGR_M1A",
-    "CGR_M2A",
-    "CGR_M2B",
-    "compam",
-    // Flats
-    "DRDC51",
-    "DRDC52",
-    "DRDC53",
-    "DRDC54",
-    "DRDC55",
-    "DRDC55x",
-    "DRDC56",
-    "DRDC57",
-    "DRDC58",
-    "DRDC58x",
-    "DRDC59",
-    "DRDC60",
-    "DRDC61",
-    "DRDC61x",
-    "DRDC62",
-    "DRDC62x",
-    "DRDC63",
-    "DRDC63x",
-    "DRDC64",
-    "DRDC65",
-    "DRDC67",
-    "DRDC68",
-    "DRDC71",
-    "DRDC72"
-};
-
-Script "updateshaders" (bool forced) ENTER {
-    bool isHelmetEnabled = GetCVar("drrp_enable_helmet_shader");
-    bool isPomEnabled = GetCVar("drrp_enable_pom_shader");
-
-    if(!isPomEnabled) {
-        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
-            ReplaceTextures(POM_TEXTURES[i], StrParam(s:"NP_", s:POM_TEXTURES[i]));
-        }
-    } else if(forced) { // Only if called from menudef
-        for(int i = 0; i < NUM_POM_TEXTURES; i++) {
-            ReplaceTextures(StrParam(s:"NP_", s:POM_TEXTURES[i]), POM_TEXTURES[i]);
-        }
-    }
-
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HelmetShader", isHelmetEnabled);
-
-    ACS_NamedExecuteAlways("onCinematicShadersReload", 0, forced);
-}
-
-// This hook called on change cinematic shaders' CVAR
-// Redefine it in your map
-Script "onCinematicShadersLoad" (bool forced) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEFAULT Script onCinematicShadersUnload");
-}
-
-Script "onCinematicShadersUnload" (bool forced) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using DEPRECATED Script onCinematicShadersUnload");
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "RadialBlurShader", false);
-}
-
-#define CINEMATIC_SHADERS_COUNT 20
-str CINEMATIC_SHADERS[] = { "RadialBlurShader", "TITLEMAP", "INTRO", "HUB", "SEC1",
-                            "SEC2", "SEC3", "SEC4", "SEC5", "SEC6", "SEC7_Before",
-                            "SEC7_After", "XHUB", "REAC", "HeatHaze", "FilmGrain",
-                            "XHUBGrain", "DefaultLut", "BCFilter", "DoubleVisionShader" };
-
-// This hook must not be redefined but it can be.
-// Using to disable all cinematic shaders and (if they're enabled) enable map specific ones.
-Script "onCinematicShadersReload" (bool forced) {
-    if(GetCVar("drrp_debug_mode")) Print(s:"[DEBUG]: Using correct Script onCinematicShadersReload");
-
-    // Disable all cinematic shaders
-    for(int i = 0; i < CINEMATIC_SHADERS_COUNT; i++) {
-        ScriptCall("ShaderControllerActor", "SetEnabled", 0, CINEMATIC_SHADERS[i], false);
-    }
-
-    ACS_NamedExecute("playerDamageTimer", 0); // Recalculate damage shader
-
-    // Enable map specific ones if cinematic shader support is enabled
-    if(GetCVar("drrp_enable_cinematic_shader")) ACS_NamedExecuteAlways("onCinematicShadersLoad", 0, forced);
-}
-
-float playerDamageTimer = 0;
-
-// NOTE: This script must be executed as ACS_NamedExecuteAlways
-Script "onPlayerDamage" (void) {
-    // TODO: Use player health
-    // But we can't get the max player's HP from here :(
-    // OK: Enable shader
-    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", true);
-    // OK: Timed disable shader
-    playerDamageTimer += 5.0;
-    ACS_NamedExecute("playerDamageTimer", 0);
-}
-
-const int PLAYER_DAMAGE_TICK_VALUE = 3;
-
-// This script decreases the playerDamageTimer value and intensivity of the damage shader
-Script "playerDamageTimer" (void) {
-    while (playerDamageTimer > 0) {
-        playerDamageTimer -= 1.0;
-        // OK: Set shader intensivity related to the damage value and the player's health
-
-        ScriptCall("ShaderControllerActor", "SetUniformFloat", PlayerNumber(), "DoubleVisionShader",
-                    "distortion", fclamp(playerDamageTimer, 1.0, 5.0));
-
-        Delay(PLAYER_DAMAGE_TICK_VALUE);
-    }
-
-    ScriptCall("ShaderControllerActor", "SetEnabled", PlayerNumber(), "DoubleVisionShader", false);
-}
-
 /**
  * RPG System
  */
@@ -348,6 +425,9 @@ enum RPGGetFeatureStaticTypes {
     RPG_Strength
 };
 
+bool hasKillsAchievement = false;
+bool hasSecretsAchievement = false;
+
 
 Script "LevelDoneNotifierVisual" ( void ) {
     int monsterstotal  = GetLevelInfo( LEVELINFO_TOTAL_MONSTERS );
@@ -358,57 +438,18 @@ Script "LevelDoneNotifierVisual" ( void ) {
 
     SetFont( "BIGFONT" );
 
-    if ( monsterstotal && monsterskilled == monsterstotal ) {
+    if ( monsterstotal && monsterskilled == monsterstotal && !hasKillsAchievement ) {
         HudMessage( l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0 );
         LocalAmbientSound( "COMPLETE", 115 );
+        hasKillsAchievement = true;
     }
 
-    if ( secretstotal && secretsfound == secretstotal ) {
+    if ( secretstotal && secretsfound == secretstotal && !hasSecretsAchievement ) {
         HudMessage( l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0 );
         LocalAmbientSound( "SECRETS", 115 );
+        hasSecretsAchievement = true;
     }
 }
-
-/*Script "LevelStatsNotifier" ENTER {
-    int  monsterstotal,
-         secretstotal       = GetLevelInfo(LEVELINFO_TOTAL_SECRETS);
-
-    bool monsters = false,
-         secrets  = false;
-
-    if (secretstotal == 0)  secrets = true;
-
-    while (true) {
-        monsterstotal       = GetLevelInfo(LEVELINFO_TOTAL_MONSTERS);
-
-        int monsterskilled  = GetLevelInfo(LEVELINFO_KILLED_MONSTERS);
-        int secretsfound    = GetLevelInfo(LEVELINFO_FOUND_SECRETS);
-
-        if (monsterstotal && monsterskilled == monsterstotal && !monsters) {
-            SetFont("BIGFONT");
-            HudMessage(l:"DRRP_D_ACH_MONSTERS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
-            LocalAmbientSound("COMPLETE", 115);
-            monsters = true;
-            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 10);
-        }
-
-        if (secretsfound == secretstotal && !secrets) {
-            SetFont("BIGFONT");
-            HudMessage(l:"DRRP_D_ACH_SECRETS"; HUDMSG_TYPEON | HUDMSG_LOG, 18, CR_GRAY, 1.5, 0.82, 3.0, 0.005, 1.0);
-            LocalAmbientSound("SECRETS", 115);
-            secrets = true;
-            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 10);
-        }
-
-        if (monsters && secrets) {
-            ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Experience, ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Experience) + 25);
-            GiveInventory("Credit", 25);
-            break;
-        };
-
-        Delay(17);
-    }
-}*/
 
 Script "levelUp" (bool windowOnly) {
     int pLevel = ScriptCall("DRRPPlayer", "GetFeatureStatic", RPG_Level);
@@ -417,6 +458,8 @@ Script "levelUp" (bool windowOnly) {
         pLevel++;
         ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Level, pLevel);
     }
+
+    ScriptCall("ConversationController", "SetGlobalFreeze", true);
 
     ActivatorSound("player/levelup", 127);
     ACS_NamedExecuteWait("window", 0, StrParam(
@@ -429,8 +472,11 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
         l:"DRRP_B_ID77"));                  // Health restored.
+
+    ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
 
 #include "inc_flashlight.acs"
 #include "inc_mapapis.acs"
+#include "inc_shaders.acs"

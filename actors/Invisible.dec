@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  * 
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -15,11 +15,12 @@ Actor DRRPShop 10555 {
     //$Icon "tnt1a0"
     //$Title Shop
 
-
     -SOLID
 
     Height 64
     Radius 33
+
+    Tag "$DRRP_B_ID240"
 
     States {
         Spawn:
@@ -195,6 +196,8 @@ Actor DRRPComputer : DRRPTrigger 10816 {
     //$Icon "tnt1a0"
     //$Title Computer
 
+    Height 64
+
     Tag "$DRRP_E_COMPUTER"
 }
 
@@ -238,4 +241,8 @@ Actor InformatorActor: DRRPInformatorActor 10900 {
     //$Category Invisible
     //$Arg1 "DRRP" string index.
     //$Arg2 Get string from level: 0=<cur>, 1=INTRO, 2=HUB, 3..9=SEC1..7, 10=XHUB, 11=REAC
+}
+
+Actor DRRPMapSpotGravity : MapSpotGravity replaces MapSpotGravity {
+    Tag "$DRRP_EMPTY"
 }

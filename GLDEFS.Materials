@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -87,6 +87,8 @@ Material Texture DRDC16 {
 Material Texture DRDC21 {
     normal "materials/normal/drdc21.png"
     specular "materials/specular/drdc21.png"
+    Texture tex_heightmap   "materials/height/drdc21.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Brown bricks
@@ -170,13 +172,17 @@ Material Texture DRDC65 {
 // Cyan scute 1
 Material Texture DRDC37 {
     normal "materials/normal/drdc37.png"
-    specular "materials/specular/drdc37.png"
+    //specular "materials/specular/drdc37.png"
+    Texture tex_heightmap   "materials/height/drdc37.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Cyan scute 2
 Material Texture DRDC38 {
     normal "materials/normal/drdc38.png"
-    specular "materials/specular/drdc38.png"
+    //specular "materials/specular/drdc38.png"
+    Texture tex_heightmap   "materials/height/drdc38.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 // Horizontal pipes
@@ -218,6 +224,15 @@ Material Texture RPWAL23 {
 // Reactor portal animation
 Material Texture REAC1 {
     BrightMap "materials/emission/reac1_brt.png"
+    normal "materials/normal/drdc22.png"
+    Texture tex_heightmap   "materials/height/drdc22.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture DRDC49 {
+    normal "materials/normal/drdc22.png"
+    Texture tex_heightmap   "materials/height/drdc22.png"
+    shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture REAC2 {
@@ -403,28 +418,28 @@ Material Texture DRDC10b {
 
 Material Texture DRDC2 {
     BrightMap "materials/emission/drdc5_brt.png"
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
 Material Texture DRDC2b {
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture DRDC3 {
     BrightMap "materials/emission/drdc5_brt.png"
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
 Material Texture DRDC3b {
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -437,22 +452,22 @@ Material Texture DRDC4 {
     shader                  "shaders/parallax_pbr.fp"
 }
 Material Texture DRDC4b {
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
 
 Material Texture DRDC5 {
     BrightMap "materials/emission/drdc5_brt.png"
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
 Material Texture DRDC5b {
-    normal "materials/normal/drdc5.png"
-    specular "materials/specular/drdc5.png"
+    normal "materials/normal/drdc4.png"
+    specular "materials/specular/drdc4.png"
     Texture tex_heightmap   "materials/height/drdc4.png"
     shader                  "shaders/parallax_pbr.fp"
 }
@@ -1089,5 +1104,36 @@ Material Texture DRDC72 {
     normal "materials/normal/drdc72.png"
     //specular "materials/specular/drdc11.png"
     Texture tex_heightmap   "materials/height/drdc72.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+
+
+// Decals
+
+// X
+Material Texture DRPGZ002 {
+    normal "materials/normal/drpgz002.png"
+    //specular "materials/specular/drdc11.png"
+    Texture tex_heightmap   "materials/height/drpgz002.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+Material Texture DRPGZ004 {
+    Texture tex_heightmap   "materials/height/pushed.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+
+// Pentagram
+Material Texture DRPGZ005 {
+    Texture tex_heightmap   "materials/height/pushed.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+Material Texture DRPGZb05 {
+    Texture tex_heightmap   "materials/height/pushed.png"
+    shader                  "shaders/parallax_pbr.fp"
+}
+Material Texture DRPGZc05 {
+    Texture tex_heightmap   "materials/height/pushed.png"
     shader                  "shaders/parallax_pbr.fp"
 }

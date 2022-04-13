@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  * 
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -14,13 +14,20 @@ Actor DRRPFire_Decorate: DRRPFire 10250 {
     //$Icon "hilight"
 }
 
-Actor DRRPLava_Decorate: DRRPLava 10251 {
+Actor DRRPLava_Decorate 10251 {
     //$Category Damage
     //$Sprite LAVAA0
     //$Title Lava pool
     //$Colour #FFAA00
-    //$NotAngled
+    //$Angled
     //$Icon "hilight"
+
+    States {
+        Spawn:
+            TNT1 A 0
+            TNT1 A 0 A_SpawnItemEx("DRRPLava", 0, 0, 0, 0, 0, 0, GetAngle(0), SXF_TRANSFERSPECIAL)
+            Stop
+    }
 }
 
 Actor Explosion_Decorate: DRRPExplosion {

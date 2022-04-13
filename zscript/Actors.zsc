@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  * 
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -19,7 +19,7 @@ class DRRPArmorShard: Inventory replaces ArmorBonus {
     }
 
     override void BeginPlay() {
-        armorAmountGive = 1;
+        armorAmountGive = 4;
     }
 
     override void Touch( Actor toucher ) {
@@ -122,11 +122,10 @@ class DRRPActorsHandler: EventHandler {
         if ( DebugCVar && DebugCVar.GetBool() ) {
             String thing = e.Thing? e.Thing.GetClassName() .. "" : "NULL";
             String damageSource = e.DamageSource? e.DamageSource.GetClassName() .. "" : "NULL";
-            String inflictor = e.Inflictor? " through " .. e.Inflictor.GetClassName()  : "";
+            String inflictor = e.Inflictor? "=>" .. e.Inflictor.GetClassName()  : "";
 
-            console.printf( "#DRRPActorsHandler::WorldThingDamaged(). "
-                            .. "Damage \c[Fire]" .. e.Damage .. " \c-(as \c[Yellow]" .. e.DamageType 
-                            .. "\c-) to " .. thing .. " from " .. damageSource .. inflictor );
+            console.printf( TEXTCOLOR_DARKGRAY .. "DRRPActorsHandler::ThingDamaged(): \cX"
+                            .. e.Damage .. "\c- to " .. thing .. " (newhp " .. e.thing.health .. ") from " .. damageSource .. inflictor .. TEXTCOLOR_GRAY .. " (type " .. e.DamageType .. ")\c-." );
         }
 
         Super.WorldThingDamaged( e );
@@ -171,13 +170,15 @@ class DRRPExtraDamageGib: Actor {
     int rollingDelay, curRollingDelay;
 
     Default {
-        Radius 4;
-        Height 4;
-        -SOLID;
-        -SHOOTABLE;
         +BOUNCEONWALLS;
         +BOUNCEONFLOORS;
         +BOUNCEONCEILINGS;
+        -SOLID;
+        -SHOOTABLE;
+
+        Radius 4;
+        Height 4;
+        Tag "$DRRP_D_GIBS";
     }
 
     States {
@@ -232,13 +233,12 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
             TNT1 A 1 A_JumpIf( !counter--, "Null" );
             Loop;
     }
-
 }
 
 class DRRPKronosTeleportFog: TeleportFog {
 }
 
-class DRRPLightWrapper: Actor {
+class DRRPLightWrapper: Actor replaces PointLight {
     enum ELightsWrapperTypes {
         LWT_None = 0,
         LWT_NormalLight,
@@ -274,9 +274,10 @@ class DRRPLightWrapper: Actor {
 
         Destroy();
     } // of override void PostBeginPlay() {
-
 } // of class DRRPLightWrapper: Actor {
 
+class DRRPLightWrapper1 : DRRPLightWrapper replaces PointLight {}
+class DRRPLightWrapper2 : DRRPLightWrapper replaces PointLightAttenuated {}
 
 class DRRPInformatorActor: Actor {
     String informString; // As number in args[ 0 ].

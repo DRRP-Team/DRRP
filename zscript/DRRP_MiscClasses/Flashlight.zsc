@@ -16,13 +16,6 @@ class Util {
             light.ChangeTid(flashID);
             light.toFollow = act;
             light.activate(null);
-            Util.LogDebug("Light created and 'attached'");
-        }
-    }
-
-    static void LogDebug (String text) {
-        if (CVar.GetCvar("debug")) {
-            Console.printf("[ZScript]  "..text);
         }
     }
 
@@ -45,6 +38,12 @@ class ActorHeadLight : Spotlight {
         CAMERA          = 3
     };
 
+    enum ELightsWrapperTypes {
+        LWT_None = 0,
+        LWT_NormalLight,
+        LWT_AttenuatedLight
+    };
+
     PlayerPawn  toFollow;
     Vector3     offset;
     Vector3     finalOffset;
@@ -56,6 +55,7 @@ class ActorHeadLight : Spotlight {
     bool        on;
 
     ELocation location;
+
 
     void updateFromCvars () {
         Color c = CVar.FindCVar("flashlight_color").GetString();
@@ -69,16 +69,31 @@ class ActorHeadLight : Spotlight {
         self.SpotOuterAngle     = CVar.FindCVar("flashlight_outer").GetFloat();
         self.location           = CVar.FindCVar("flashlight_location").GetInt();
 
-        Util.LogDebug("Light loc offset: "..self.offset);
-    }
+        // DRRPTeam's update:
+        ELightsWrapperTypes dynLightType = CVar.GetCVar( "drrp_lights_wrapper_type" ).GetInt();
+
+        switch ( dynLightType ) {
+            case LWT_AttenuatedLight:
+                bATTENUATE = true;
+                break;
+
+            case LWT_NormalLight: 
+            default:
+                bATTENUATE = false;
+                break;
+        }
+
+    } // of void updateFromCvars () {
 
     override void Activate(Actor activator) {
         updateFromCvars();
+        A_PlaySound("flashlight/on", 127);
         on = true;
         super.Activate(activator);
     }
 
     override void DeActivate(Actor activator) {
+        A_PlaySound("flashlight/off", 127);
         on = false;
         super.DeActivate(activator);
     }
@@ -112,7 +127,6 @@ class ActorHeadLight : Spotlight {
         } else if (on && self.toFollow) {
             ready = true;
             zBump = (toFollow.height - toFollow.viewheight) / 2;
-            Util.LogDebug('zBump assigned: '..zBump);
         }
 
         Super.Tick();

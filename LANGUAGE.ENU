@@ -1,14 +1,13 @@
 /**
- *Copyright (c) 2018-2019 DRRP-Team
+ * Copyright (c) 2018-2022 DRRP-Team
  *
- *This software is released under the MIT License.
- *https://opensource.org/licenses/MIT
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
  */
 
 [enu default]
 
-// Base
-    DRRP_B_ID0 = "%1 damage!";
+    DRRP_B_ID0 = "%1 damage!"; // Серые поля не используются в DRRP
     DRRP_B_ID1 = "%1 attacks%2";
     DRRP_B_ID2 = "%1 took %2 damage!";
     DRRP_B_ID3 = "%1 took %2 damage! %1 died!";
@@ -88,10 +87,10 @@
     DRRP_B_ID77 = "Health restored.";
     DRRP_B_ID78 = "Level up!";
     DRRP_B_ID79 = "Found Secret!";
-    DRRP_B_ID80 = "Insufficient armor!";
+    DRRP_B_ID80 = "Insufficient armor!"; // Где это используется?
     DRRP_B_ID81 = "Insufficient funds!";
-    DRRP_B_ID82 = "Insufficient health!";
-    DRRP_B_ID83 = "Insufficient XP!";
+    DRRP_B_ID82 = "Insufficient health!"; // Где это используется?
+    DRRP_B_ID83 = "Insufficient XP!"; // Где это используется?
     DRRP_B_ID84 = "Gained %1 XP!";
     DRRP_B_ID85 = "Berserker activated!";
     DRRP_B_ID86 = "Berserker expired!";
@@ -299,371 +298,330 @@
     DRRP_B_ID288 = "~~~ MOVEMENT ~~~\n2 Move Fwd\n8 Move Back\n1 Move Left\n3 Move Right\n4 Turn Left/PgUp\n6 Turn Right/PgDn";
     DRRP_B_ID289 = "";
     DRRP_B_ID290 = "~~~~ OTHER ~~~~\n5 Atk/Talk/Use\n7 Next Weapon\n* Prev Weapon\n9 Pass Turn\n# Automap\n0 Menu Open/Back";
-
     DRRP_B_MONSTERCAST = "Monster Cast";
     DRRP_B_ITEMS = "Items";
-//\\ Base
-
-// DRRP
-    DRRP_D_DRRPVERSION      = "DRRP v0.4.x";
-    DRRP_D_SOUND_SUFFIX     = "/en";
-
-    DRRP_D_MENU_NEWGAME     = "New Game";
-    DRRP_D_MENU_DRRPMENU    = "DRRP Menu";
-    DRRP_D_MENU_OPTIONS     = "Options";
-    DRRP_D_MENU_LOADGAME    = "Load Game";
-    DRRP_D_MENU_SAVEGAME    = "Save Game";
-    DRRP_D_MENU_QUITGAME    = "Quit Game";
-
-    DRRP_D_MENU_DRRPMENU_GAMEMENU   = "Game menu";
-    DRRP_D_MENU_DRRPMENU_NOTEPAD    = "Notepad";    
-    DRRP_D_MENU_DRRPMENU_STATINFO   = "Statistic";
-    DRRP_D_MENU_DRRPMENU_SETTINGS   = "Settings";
+    DRRP_D_SOUND_SUFFIX = "/en";
+    DRRP_D_MENU_NEWGAME = "New Game";
+    DRRP_D_MENU_DRRPMENU = "DRRP Menu";
+    DRRP_D_MENU_OPTIONS = "Options";
+    DRRP_D_MENU_LOADGAME = "Load Game";
+    DRRP_D_MENU_SAVEGAME = "Save Game";
+    DRRP_D_MENU_QUITGAME = "Quit Game";
+    DRRP_D_MENU_DRRPMENU_GAMEMENU = "Game menu";
+    DRRP_D_MENU_DRRPMENU_NOTEPAD = "Notepad";
+    DRRP_D_MENU_DRRPMENU_STATINFO = "Statistic";
+    DRRP_D_MENU_DRRPMENU_SETTINGS = "Settings";
     DRRP_D_MENU_DRRPMENU_FLASHLIGHT = "Flashlight";
-    DRRP_D_MENU_DRRPMENU_SHADERS    = "Shaders";
-    DRRP_D_MENU_DRRPMENU_LANGUAGE   = "Language";
-    DRRP_D_MENU_DRRPMENU_MISC       = "Misc";
-
-    DRRP_D_KEYBINDINGS_TITLE        = "DRRP key bindings";
-    DRRP_D_KEYBINDINGS_FLASHLIGHT   = "Toggle flashlight";
-    DRRP_D_KEYBINDINGS_NOTEBOOK     = "Open Notebook";
-    DRRP_D_KEYBINDINGS_STATINFO     = "Open Statistic";
-    DRRP_D_KEYBINDINGS_FASTUSE      = "Fast use";
-
-    DRRP_D_MENU_MISC_FREELOOK       = "Disable freelook";
-    DRRP_D_MENU_MISC_DEBUGMODE      = "DRRP Debug Mode";
-
-    DRRP_D_MENU_LANGUAGE_TITLE      = "Language";
-    DRRP_D_MENU_STATINFO_TITLE      = "Statistic";
-
-    DRRP_D_MENU_INFOBAR_ENABLE      = "Show actor names";
-    DRRP_D_MENU_COMPASS_ENABLE      = "Enable compass";
-    DRRP_D_MENU_GIBS_ENABLE         = "Enable extra gibs";
-    DRRP_D_MENU_LIGHTS_TYPE         = "Lighting type for levels";
-
-    DRRP_HUD_COMPASSVISUAL          = "N-----W-----S-----E-----";
-
-    DRRP_D_MENU_LIGHTS_NONE         = "None";
-    DRRP_D_MENU_LIGHTS_NORMAL       = "Normal";
-    DRRP_D_MENU_LIGHTS_ATTENUATED   = "Attenuated";
-
-    DRRP_D_MENU_FLASHLIGHT_HELMET   = "Helmet";
-    DRRP_D_MENU_FLASHLIGHT_RSHOULDER= "Right Shoulder";
-    DRRP_D_MENU_FLASHLIGHT_LSHOULDER= "Left Shoulder";
-    DRRP_D_MENU_FLASHLIGHT_CENTER   = "Center View";
-
-    DRRP_D_MENU_FLASHLIGHT_TITLE    = "Flashlight";
-    DRRP_D_MENU_FLASHLIGHT_COLOR    = "Color";
-    DRRP_D_MENU_FLASHLIGHT_BRIGHNESS= "Brightness";
-    DRRP_D_MENU_FLASHLIGHT_IANGLE   = "Inner Angle";
-    DRRP_D_MENU_FLASHLIGHT_OANGLE   = "Outer Angle";
+    DRRP_D_MENU_DRRPMENU_SHADERS = "Shaders";
+    DRRP_D_MENU_DRRPMENU_LANGUAGE = "Language";
+    DRRP_D_MENU_DRRPMENU_PERFORMANCE = "Performance";
+    DRRP_D_MENU_DRRPMENU_MISC = "Misc";
+    DRRP_D_KEYBINDINGS_TITLE = "DRRP key bindings";
+    DRRP_D_KEYBINDINGS_FLASHLIGHT = "Toggle flashlight";
+    DRRP_D_KEYBINDINGS_NOTEBOOK = "Open Notebook";
+    DRRP_D_KEYBINDINGS_STATINFO = "Open Statistic";
+    DRRP_D_KEYBINDINGS_FASTUSE = "Fast use";
+    DRRP_D_MENU_MISC_FREELOOK = "Disable freelook";
+    DRRP_D_MENU_MISC_DEBUGMODE = "DRRP Debug Mode";
+    DRRP_D_MENU_BFLASH_ENABLE = "Enable blood splashes";
+    DRRP_D_MENU_LANGUAGE_TITLE = "Language";
+    DRRP_D_MENU_STATINFO_TITLE = "Statistic";
+    DRRP_D_MENU_INFOBAR_ENABLE = "Show actor names";
+    DRRP_D_MENU_COMPASS_ENABLE = "Enable compass";
+    DRRP_D_MENU_GIBS_ENABLE = "Enable extra gibs";
+    DRRP_D_MENU_LIGHTS_TYPE = "Lighting type for levels";
+    DRRP_HUD_COMPASSVISUAL = "N-----W-----S-----E-----";
+    DRRP_D_MENU_LIGHTS_NONE = "None";
+    DRRP_D_MENU_LIGHTS_NORMAL = "Normal";
+    DRRP_D_MENU_LIGHTS_ATTENUATED = "Attenuated";
+    DRRP_D_MENU_FLASHLIGHT_HELMET = "Helmet";
+    DRRP_D_MENU_FLASHLIGHT_RSHOULDER = "Right Shoulder";
+    DRRP_D_MENU_FLASHLIGHT_LSHOULDER = "Left Shoulder";
+    DRRP_D_MENU_FLASHLIGHT_CENTER = "Center View";
+    DRRP_D_MENU_FLASHLIGHT_TITLE = "Flashlight";
+    DRRP_D_MENU_FLASHLIGHT_COLOR = "Color";
+    DRRP_D_MENU_FLASHLIGHT_BRIGHNESS = "Brightness";
+    DRRP_D_MENU_FLASHLIGHT_IANGLE = "Inner Angle";
+    DRRP_D_MENU_FLASHLIGHT_OANGLE = "Outer Angle";
     DRRP_D_MENU_FLASHLIGHT_LOCATION = "Location";
-    DRRP_D_MENU_FLASHLIGHT_KEY      = "Key";
-
-    DRRP_D_MENU_SHADERS_TITLE       = "Shaders";
-    DRRP_D_MENU_SHADERS_ENABLE      = "Enable shaders";
-    DRRP_D_MENU_SHADERS_HELMET      = "Enable helmet shaders";
-    DRRP_D_MENU_SHADERS_DAMAGE      = "Enable damage shaders";
-    DRRP_D_MENU_SHADERS_POM         = "Enable materials";
-    DRRP_D_MENU_SHADERS_CINEMATIC   = "Enable cinematic shaders";
-    DRRP_D_MENU_SHADERS_LUT         = "> Enable lut tonemap shaders";
-    DRRP_D_MENU_SHADERS_APPLY       = "Apply changes";
-    
-    DRRP_D_PASSCODE_WRONG           = "Wrong passcode";
-
-    DRRP_D_NOTEBOOK_EMPTY           = "No records yet.";
-    DRRP_D_NOTEBOOK_NOTINGAME       = "You should be in game to use notebook.";
-    DRRP_D_NOTEBOOK_TIP_PART1       = "Press ";
-    DRRP_D_NOTEBOOK_TIP_PART2       = " to open notebook.";
-
-    DRRP_D_STATINFO_NOTINGAME       = "You should be in game to see your statistic.";
-    DRRP_D_STATINFO_HEADER          = "STATICTIC";
-    DRRP_D_STATINFO_PLAYER_T        = "PLAYER";
-    DRRP_D_STATINFO_THISSECTOR_T    = "THIS SECTOR";
-    DRRP_D_STATINFO_TOTAL_T         = "TOTAL";
-    DRRP_D_STATINFO_MAXKILLS_T      = "1��% KILLS";
-    DRRP_D_STATINFO_MAXSECRETS_T    = "1��% SECRETS";
-    DRRP_D_STATINFO_HEALTH          = "Health: ";
-    DRRP_D_STATINFO_ARMOR           = "Armor: ";
-    DRRP_D_STATINFO_CREDITS         = "Credits: ";
-    DRRP_D_STATINFO_LEVEL           = "Level: ";
-    DRRP_D_STATINFO_EXPERIENCE      = "Experience: ";
-    DRRP_D_STATINFO_DEFENCE         = "Defence: ";
-    DRRP_D_STATINFO_STRENGTH        = "Strength: ";
-    DRRP_D_STATINFO_AGILITY         = "Agility: ";
-    DRRP_D_STATINFO_ACCURACY        = "Accuracy: ";
-    DRRP_D_STATINFO_TIME            = "Time: ";
-    DRRP_D_STATINFO_SECRETS         = "Secrets: ";
-    DRRP_D_STATINFO_MONSTERS        = "Monsters: ";
-    DRRP_D_STATINFO_ITEMS           = "Items: ";
-    DRRP_D_STATINFO_TURNS           = "Turns: ";
-    DRRP_D_STATINFO_DEATHS          = "Deaths: ";
-    DRRP_D_STATINFO_NOTHING         = "Nothing";
-    DRRP_D_STATINFO_UNDERCONSTRUCT  = "<under construct>";
-
-    DRRP_D_CHARACTER                = "Character";
-    DRRP_D_EXPLOSION                = "Explosion";
-    DRRP_D_FOUNTAIN                 = "Fountain";
-    DRRP_D_ALARM                    = "Alarm";
-    DRRP_D_SPARKS                   = "Sparks";
-
-    DRRP_D_TMAP_PRESENTS            = "DRRP-Team presents";
-    DRRP_D_TMAP_DRRP                = "\cgD\cdR\cbR\chP";
-    DRRP_D_TMAP_DRPGRP              = "\cgDooM \cdRPG \cbRemake \chProject";
-    DRRP_D_TMAP_RPROPHESSOR         = "CEO, Mapper, Coder";
-    DRRP_D_TMAP_RUSERNAMEAK         = "Coder, Mapper";
-    DRRP_D_TMAP_RMORTHIMER          = "Coder";
-    DRRP_D_TMAP_RSTORMCATCHER       = "Mapper";
-    DRRP_D_TMAP_RDSSKULL            = "Graphics";
-    DRRP_D_TMAP_RLOLIMPIRE          = "Mapper";
-
-    DRRP_D_WIPLEVEL                 = "Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!";
-
-    DRRP_D_DOORCLOSED               = "\cgDoor closed!";
-
-    DRRP_D_YELLOWDOOR               = "You need a yellow card to open this door";
-    DRRP_D_REDDOOR                  = "You need a red card to open this door";
-    DRRP_D_BLUEDOOR                 = "You need a blue card to open this door";
-    DRRP_D_GREENDOOR                = "You need a green card to open this door";
-
-    DRRP_D_TIP_1                    = "You can jump and crouch\nto get to places like this";
-    DRRP_D_TIP_2                    = "Do not use your flashlight\nat this location\nIt causes lags";
-    DRRP_D_TIP_3                    = "After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction";
-    DRRP_D_TIP_4                    = "The last shop terminal\nis in this sector,\nso if you have any credits left,\nwe recommend purchasing right now";
-    DRRP_D_TIP_5                    = "You can use your flashlight";
-    DRRP_D_TIP_6                    = "You can use dog's jerk\nto speed up yourself";
-
-    DRRP_D_ACH_MONSTERS             = "Sector clear!\nYou killed all monsters!";
-    DRRP_D_ACH_SECRETS              = "Sector researched!\nYou found all secrets!";
-//\\ DRRP
-
-// SHOP
-    DRRP_S_BACK                     = "Back";
-    DRRP_S_CLOSE                    = "Close";
-    DRRP_S_DIALOG                   = "What do you want to buy?";
-    DRRP_S_NOTENOUTH                = "Not enough credits!";
-    DRRP_S_NEXT_AMM                 = "Next (Ammo)";
-    DRRP_S_NEXT_FEA                 = "Next (Stats)";
-
-    DRRP_S_SEC_MED                  = "Heal";
-    DRRP_S_MED_SMEDKIT_4            = "Small medkit [4 credits]";
-    DRRP_S_MED_SMEDKIT_6            = "Small medkit [6 credits]";
-    DRRP_S_MED_SMEDKIT_8            = "Small medkit [8 credits]";
-    DRRP_S_MED_LMEDKIT_15           = "Large medkit [15 credits]";
-    DRRP_S_MED_LMEDKIT_35           = "Large medkit [35 credits]";
-    DRRP_S_MED_SSPHERE_30           = "Soul sphere [30 credits]";
-    DRRP_S_MED_SSPHERE_50           = "Soul sphere [50 credits]";
-    DRRP_S_MED_BERS_40              = "Berserker [40 credits]";
-
-    DRRP_S_SEC_AMM                  = "Ammo";
-    DRRP_S_AMM_HAL_2                = "10x Hal. Cans [2 credits]";
-    DRRP_S_AMM_HAL_3                = "10x Hal. Cans [3 credits]";
-    DRRP_S_AMM_HAL_4                = "10x Hal. Cans [4 credits]";
-    DRRP_S_AMM_HAL_5                = "10x Hal. Cans [5 credits]";
-    DRRP_S_AMM_BUL_2                = "10x Bullets [2 credits]";
-    DRRP_S_AMM_BUL_3                = "10x Bullets [3 credits]";
-    DRRP_S_AMM_BUL_4                = "10x Bullets [4 credits]";
-    DRRP_S_AMM_BUL_5                = "10x Bullets [5 credits]";
-    DRRP_S_AMM_SHE_4                = "10x Shells [4 credits]";
-    DRRP_S_AMM_SHE_6                = "10x Shells [6 credits]";
-    DRRP_S_AMM_SHE_8                = "10x Shells [8 credits]";
-    DRRP_S_AMM_SHE_10               = "10x Shells [10 credits]";
-    DRRP_S_AMM_ROC_5                = "3x Rockets [5 credits]";
-    DRRP_S_AMM_ROC_6                = "3x Rockets [6 credits]";
-    DRRP_S_AMM_ROC_10               = "3x Rockets [10 credits]";
-    DRRP_S_AMM_CEL_8                = "10x Cells [8 credits]";
-    DRRP_S_AMM_CEL_12               = "10x Cells [12 credits]";
-    DRRP_S_AMM_CEL_15               = "10x Cells [15 credits]";
-
-    DRRP_S_SEC_FEA                  = "Stats";
-    DRRP_S_FEA_ACC_8                = "+1 Accuracy [8 credits]";
-    DRRP_S_FEA_ACC_15               = "+1 Accuracy [15 credits]";
-    DRRP_S_FEA_AGI_8                = "+1 Agility [8 credits]";
-    DRRP_S_FEA_AGI_15               = "+1 Agility [15 credits]";
-    DRRP_S_FEA_STR_10               = "+1 Strength [10 credits]";
-    DRRP_S_FEA_STR_20               = "+1 Strength [20 credits]";
-    DRRP_S_FEA_DEF_10               = "+1 Defense [10 credits]";
-    DRRP_S_FEA_DEF_20               = "+1 Defense [20 credits]";
-//\\ SHOP
-
-// #=====# Entities #=====#
-
-// Monsters
-    DRRP_M_ZOMBIEPVT    = "Zombie Pvt";
-    DRRP_M_ZOMBIELT     = "Zombie Lt";
-    DRRP_M_ZOMBIECPT    = "Zombie Cpt";
-    DRRP_M_HELLHOUND    = "Hellhound";
-    DRRP_M_CERBERUS     = "Cerberus";
-    DRRP_M_DEMONWOLF    = "Demon Wolf";
-    DRRP_M_TROOP        = "Troop";
-    DRRP_M_COMMANDO     = "Commando";
-    DRRP_M_ASSASSIN     = "Assassin";
-    DRRP_M_IMPLING      = "Impling";
-    DRRP_M_IMP          = "Imp";
-    DRRP_M_IMPLORD      = "Imp Lord";
-    DRRP_M_PHANTOM      = "Phantom";
-    DRRP_M_LOSTSOUL     = "Lost Soul";
-    DRRP_M_NIGHTMARE    = "Nightmare";
-    DRRP_M_BULLDEMON    = "Bull Demon";
-    DRRP_M_PINKY        = "Pinky";
-    DRRP_M_BELPHEGOR    = "Belphegor";
-    DRRP_M_MALWRATH     = "Malwrath";
-    DRRP_M_CACODEMON    = "Cacodemon";
-    DRRP_M_WRETCHED     = "Wretched";
-    DRRP_M_BEHOLDER     = "Beholder";
-    DRRP_M_RAHOVART     = "Rahovart";
-    DRRP_M_PAINELEMENTAL= "Pain Elemental";
-    DRRP_M_GHOUL        = "Ghoul";
-    DRRP_M_FIEND        = "Fiend";
-    DRRP_M_REVENANT     = "Revenant";
-    DRRP_M_BEHEMOTH     = "Behemoth";
-    DRRP_M_MANCUBUS     = "Mancubus";
-    DRRP_M_DRUJ         = "Druj";
-    DRRP_M_INFERNIS     = "Infernis";
-    DRRP_M_ARCHVILE     = "Archvile";
-    DRRP_M_APOLLYON     = "Apollyon";
-    DRRP_M_OGRE         = "Ogre";
-    DRRP_M_HELLKNIGHT   = "Hell Knight";
-    DRRP_M_BARON        = "Baron";
-    DRRP_M_CYBERDEMON   = "Cyberdemon";
-    DRRP_M_KRONOS       = "Kronos";
-
-    DRRP_M_CORPSE       = "corpse";
-//\\ Monsters
-
-// Obituarities
-    DRRP_OB_ZOMBIEPVT        = "%o was shot by a Soldier.";
-    DRRP_OB_ZOMBIELT         = "%o was shot by a Sergeant.";
-    DRRP_OB_ZOMBIECPT        = "%o was shot by a Capitan.";
-    DRRP_OB_HELLHOUND        = "%o passed away from bites of Hellhound.";
-    DRRP_OB_CERBERUS         = "%o was bitten by a Cerberus.";
-    DRRP_OB_DEMONWOLF        = "%o was torned to pieces by a Demon wolf.";
-    DRRP_OB_TROOP            = "%o was perforated by a Troop.";
-    DRRP_OB_COMMANDO         = "%o was caugth off guard by the Commando.";
-    DRRP_OB_ASSASSIN         = "%o didn't notice the Assasin.";
-    DRRP_OB_IMPLING          = "%o got a III degree burn from Impling.";
-    DRRP_OBM_IMPLING         = "%o was torned to pieces by an Impling.";
-    DRRP_OB_IMP              = "%o didn't notice an Imp's fireball.";
-    DRRP_OBM_IMP             = "%o was torned to pieces by an Imp.";
-    DRRP_OB_IMPLORD          = "%o got a hot hole in himself from Imp Lord.";
-    DRRP_OBM_IMPLORD         = "%o died of paws of Imp Lord.";
-    DRRP_OB_PHANTOM          = "%o was broken through by a Phantom.";
-    DRRP_OB_LOSTSOUL         = "%o was spooked by a lost soul.";
-    DRRP_OB_NIGHTMARE        = "%o was eaten by a Nightmare";
-    DRRP_OB_BULLDEMON        = "%o was bitten by a Bull demon.";
-    DRRP_OB_PINKY            = "%o was eaten alive by a Pinky.";
-    DRRP_OB_BELPHEGOR        = "%o was eaten alive by a Belphegor.";
-    DRRP_OB_MALWRATH         = "%o was smitten by a Malwrath.";
-    DRRP_OBM_MALWRATH        = "%o was bitten by a Malwrath.";
-    DRRP_OB_CACODEMON        = "%o was smitten by a Cacodemon.";
-    DRRP_OBM_CACODEMON       = "%o was bitten by a Cacodemon.";
-    DRRP_OB_WRETCHED         = "%o couldn't evade a Wretched's plasma.";
-    DRRP_OBM_WRETCHED        = "%o was brutally bitten by a Wretched.";
-    DRRP_OB_GHOUL            = "%o couldn't evade a Ghoul's rocket.";
-    DRRP_OBM_GHOUL           = "%o was punched by a Ghoul.";
-    DRRP_OB_FIEND            = "%o couldn't evade a Fiend's rocket.";
-    DRRP_OBM_GHOUL           = "%o couldn't evade a Fiend's fist.";
-    DRRP_OB_REVENANT         = "%o couldn't evade a Revenant's rocket.";
-    DRRP_OBM_GHOUL           = "%o couldn't evade a Revenant's fist.";
-    DRRP_OB_BEHEMOTH         = "%o was sqashed by a Behemoth.";
-    DRRP_OB_MANCUBUS         = "%o was sqashed by a Mancubus.";
-    DRRP_OB_DRUJ             = "%o was sqashed by a Druj.";
-    DRRP_OB_INFERNIS         = "%o was roasted after meeting with Infernis.";
-    DRRP_OB_ARCHVILE         = "%o was incinerated by an Archvile.";
-    DRRP_OB_APOLLYON         = "%o was charred due to Apollyon.";
-    DRRP_OB_OGRE             = "%o was killed by an Ogre.";
-    DRRP_OBM_OGRE            = "%o was eaten by an Ogre.";
-    DRRP_OB_HELLKNIGHT       = "%o couldn't get away from Hell Knight.";
-    DRRP_OBM_HELLKNIGHT      = "%o was torned to pieces by a Hell Knight.";
-    DRRP_OB_BARON            = "%o couldn't get away from Baron.";
-    DRRP_OBM_BARON           = "%o was torned to pieces by a Baron.";
-    DRRP_OB_CYBERDEMON       = "%o was splattered on a wall by a Cyberdemon.";
-    DRRP_OB_KRONOS           = "%o couldn't stand against Kronos.";
-    DRRP_OB_FIRE             = "%o burned out.";
-//\\ Obituarities
-
-
-// Weapons
-    DRRP_W_AXE          = "Axe";
-    DRRP_W_FIREEXT      = "Fire Extinguisher";
-    DRRP_W_SHOTGUN      = "Shotgun";
-    DRRP_W_SUPERSHOTGN  = "Super Shotgun";
-    DRRP_W_CHAINGUN     = "Chaingun";
-    DRRP_W_ROCKETLNCHR  = "Rocket Launcher";
-    DRRP_W_PLASMAGUN    = "Plasma Gun";
-    DRRP_W_BFG          = "BFG";
-    DRRP_W_PISTOL       = "Pistol";
-    DRRP_W_HELLHOUND    = "Hellhound";
-    DRRP_W_CERBERUS     = "Cerberus";
-    DRRP_W_DEMONWOLF    = "Demon Wolf";
-
-    DRRP_W_AXEPICKUP        = "You got an axe!";
-    DRRP_W_FIREEXTPICKUP    = "You got a fire extinguisher!";
-    DRRP_W_HELLHOUNDPICKUP  = "Hellhound!";
-    DRRP_W_CERBERUSPICKUP   = "Cerberus!";
-    DRRP_W_DEMONWOLFPICKUP  = "Demon wolf!";
-//\\ Weapons
-
-// Items
-    DRRP_I_REDKEY       = "Red Key";
-    DRRP_I_BLUEKEY      = "Blue Key";
-    DRRP_I_GREENKEY     = "Green Key";
-    DRRP_I_YELLOWKEY    = "Yellow Key";
-    DRRP_I_HALONCAN     = "Halon Can";
-    DRRP_I_HALONCANS    = "Halon Cans";
-    DRRP_I_BULLETCLIP   = "Bullet Clip";
-    DRRP_I_BULLETCLIPS  = "Bullet Clips";
-    DRRP_I_SHELLCLIP    = "Shell Clip";
-    DRRP_I_SHELLCLIPS   = "Shell Clips";
-    DRRP_I_ROCKET       = "Rocket";
-    DRRP_I_ROCKETS      = "Rockets";
-    DRRP_I_CELLCLIP     = "Cell Clip";
-    DRRP_I_CELLCLIPS    = "Cell Clips";
-    DRRP_I_HEALTHVIAL   = "Health Vial";
-    DRRP_I_ARMORSHARD   = "Armor Shard";
-    DRRP_I_FLAKJACKET   = "Flak Jacket";
-    DRRP_I_COMBATSUIT   = "Combat Suit";
-    DRRP_I_1CREDIT      = "1 credit";
-    DRRP_I_5CREDITS     = "5 credits"; // Unused.
-    DRRP_I_SMMEDKIT     = "Small medikit";
-    DRRP_I_LGMEDKIT     = "Large medikit";
-    DRRP_I_SOULSPHERE   = "Soul Sphere";
-    DRRP_I_BERSERKER    = "Berserker";
-    DRRP_I_DOGCOLLAR    = "Dog Collar";
-
-    DRRP_I_GOT_GREENKEY     = "Pickep up a green keycard.";
-    DRRP_I_GOT_REDKEY       = "Pickep up a red keycard.";
-    DRRP_I_GOT_BLUEKEY      = "Pickep up a blue keycard.";
-    DRRP_I_GOT_YELLOWKEY    = "Pickep up a yellow keycard.";
-    DRRP_I_GOT_HALONCAN     = "Pickep up a halon can.";
-    DRRP_I_GOT_HALONCANS    = "Pickep up a halon cans.";
-    DRRP_I_GOT_BULLETCLIP   = "Pickep up a clip.";
-    DRRP_I_GOT_BULLETCLIPS  = "Pickep up a clips.";
-    DRRP_I_GOT_SHELLCLIP    = "Pickep up a shell clip.";
-    DRRP_I_GOT_SHELLCLIPS   = "Pickep up a shell clips.";
-    DRRP_I_GOT_ROCKET       = "Pickep up a rocket.";
-    DRRP_I_GOT_ROCKETS      = "Pickep up a rockets.";
-    DRRP_I_GOT_CELLCLIP     = "Pickep up a cell clip.";
-    DRRP_I_GOT_CELLCLIPS    = "Pickep up a cell clips.";
-    DRRP_I_GOT_HEALTHVIAL   = "Pickep up a health vial.";
-    DRRP_I_GOT_ARMORSHARD   = "Pickep up an armor shard.";
-    DRRP_I_GOT_FLAKJACKET   = "Pickep up a flak jacket.";
-    DRRP_I_GOT_COMBATSUIT   = "Pickep up a combat suit.";
-    DRRP_I_GOT_1CREDIT      = "Pickep up a credit.";
-    DRRP_I_GOT_5CREDITS     = "Picked up a five credits!";
-    DRRP_I_GOT_SMMEDKIT     = "Pickep up a small medikit.";
-    DRRP_I_GOT_LGMEDKIT     = "Pickep up a large medikit.";
-    DRRP_I_GOT_SOULSPHERE   = "Soulsphere!";
-    DRRP_I_GOT_BERSERKER    = "Berserk!";
-    DRRP_I_GOT_DOGCOLLAR    = "Pickep up a dog collar.";
-//\\ Items
-
-// Entities (map decorations and characters)
+    DRRP_D_MENU_FLASHLIGHT_KEY = "Key";
+    DRRP_D_MENU_SHADERS_TITLE = "Shaders";
+    DRRP_D_MENU_SHADERS_ENABLE = "Enable shaders";
+    DRRP_D_MENU_SHADERS_HELMET = "Enable helmet shaders";
+    DRRP_D_MENU_SHADERS_DAMAGE = "Enable damage shaders";
+    DRRP_D_MENU_SHADERS_POM = "Enable parallax occlusion mapping";
+    DRRP_D_MENU_SHADERS_CINEMATIC = "Enable cinematic shaders";
+    DRRP_D_MENU_SHADERS_LUT = "> Enable lut tonemap shaders";
+    DRRP_D_MENU_SHADERS_APPLY = "Apply changes";
+    DRRP_D_MENU_PERFORMANCE_APPLYNEEDED = "Required to apply changes";
+    DRRP_D_MENU_PERFORMANCE_NEWMAPNEEDED = "Will be applied at the next map";
+    DRRP_D_MENU_WINDOW_SCALE = "Dialog scale";
+    DRRP_D_PASSCODE_WRONG = "Wrong passcode";
+    DRRP_D_NOTEBOOK_EMPTY = "No records yet.";
+    DRRP_D_NOTEBOOK_NOTINGAME = "You should be in game to use notebook.";
+    DRRP_D_NOTEBOOK_TIP_PART1 = "Press ";
+    DRRP_D_NOTEBOOK_TIP_PART2 = " to open notebook.";
+    DRRP_D_STATINFO_NOTINGAME = "You should be in game to see your statistic.";
+    DRRP_D_STATINFO_HEADER = "STATICTIC";
+    DRRP_D_STATINFO_PLAYER_T = "PLAYER";
+    DRRP_D_STATINFO_THISSECTOR_T = "THIS SECTOR";
+    DRRP_D_STATINFO_TOTAL_T = "TOTAL";
+    DRRP_D_STATINFO_MAXKILLS_T = "100% KILLS";
+    DRRP_D_STATINFO_MAXSECRETS_T = "100% SECRETS";
+    DRRP_D_STATINFO_HEALTH = "Health: ";
+    DRRP_D_STATINFO_ARMOR = "Armor: ";
+    DRRP_D_STATINFO_CREDITS = "Credits: ";
+    DRRP_D_STATINFO_LEVEL = "Level: ";
+    DRRP_D_STATINFO_EXPERIENCE = "Experience: ";
+    DRRP_D_STATINFO_DEFENCE = "Defence: ";
+    DRRP_D_STATINFO_STRENGTH = "Strength: ";
+    DRRP_D_STATINFO_AGILITY = "Agility: ";
+    DRRP_D_STATINFO_ACCURACY = "Accuracy: ";
+    DRRP_D_STATINFO_TIME = "Time: ";
+    DRRP_D_STATINFO_SECRETS = "Secrets: ";
+    DRRP_D_STATINFO_MONSTERS = "Monsters: ";
+    DRRP_D_STATINFO_ITEMS = "Items: ";
+    DRRP_D_STATINFO_TURNS = "Turns: ";
+    DRRP_D_STATINFO_DEATHS = "Deaths: ";
+    DRRP_D_STATINFO_NOTHING = "Nothing";
+    DRRP_D_STATINFO_UNDERCONSTRUCT = "<under construct>";
+    DRRP_D_CHARACTER = "Character";
+    DRRP_D_EXPLOSION = "Explosion";
+    DRRP_D_FOUNTAIN = "Fountain";
+    DRRP_D_ALARM = "Alarm";
+    DRRP_D_SPARKS = "Sparks";
+    DRRP_D_DEADMARINE = "Dead marine";
+    DRRP_D_NONSOLIDMEATS = "Meat";
+    DRRP_D_CANDLE = "Candle";
+    DRRP_D_GIBS = "Scraps";
+    DRRP_D_TMAP_PRESENTS = "DRRP-Team presents";
+    DRRP_D_TMAP_DRRP = "\cgD\cdR\cbR\chP";
+    DRRP_D_TMAP_DRPGRP = "\cgDooM \cdRPG \cbRemake \chProject";
+    DRRP_D_TMAP_RPROPHESSOR = "CEO, Mapper, Coder";
+    DRRP_D_TMAP_RUSERNAMEAK = "Coder, Mapper";
+    DRRP_D_TMAP_RMORTHIMER = "Coder";
+    DRRP_D_TMAP_RSTORMCATCHER = "Mapper";
+    DRRP_D_TMAP_RDSSKULL = "Graphics";
+    DRRP_D_TMAP_RLOLIMPIRE = "Mapper";
+    DRRP_D_WIPLEVEL = "Warning!\nThis level is under construction!\nPart of the functionality may not work correctly, or not work at all!";
+    DRRP_D_DOORCLOSED = "\cgDoor closed!";
+    DRRP_D_YELLOWDOOR = "You need a yellow card to open this door";
+    DRRP_D_REDDOOR = "You need a red card to open this door";
+    DRRP_D_BLUEDOOR = "You need a blue card to open this door";
+    DRRP_D_GREENDOOR = "You need a green card to open this door";
+    DRRP_D_TIP_1 = "You can jump and crouch\nto get to places like this";
+    DRRP_D_TIP_2 = "Do not use your flashlight\nat this location\nIt causes lags";
+    DRRP_D_TIP_3 = "After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction";
+    DRRP_D_TIP_4 = "The last shop terminal\nis in this sector,\nso if you have any credits left,\nwe recommend purchasing right now";
+    DRRP_D_TIP_5 = "You can use your flashlight";
+    DRRP_D_TIP_6 = "You can use dog's jerk\nto speed up yourself";
+    DRRP_D_ACH_MONSTERS = "Sector clear!\nYou killed all monsters!";
+    DRRP_D_ACH_SECRETS = "Sector researched!\nYou found all secrets!";
+    DRRP_S_BACK = "Back";
+    DRRP_S_CLOSE = "Close";
+    DRRP_S_DIALOG = "What do you want to buy?";
+    DRRP_S_NOTENOUTH = "Not enough credits!";
+    DRRP_S_NEXT_AMM = "Next (Ammo)";
+    DRRP_S_NEXT_FEA = "Next (Stats)";
+    DRRP_S_SEC_MED = "Heal";
+    DRRP_S_MED_SMEDKIT_4 = "Small medkit [4 credits]";
+    DRRP_S_MED_SMEDKIT_6 = "Small medkit [6 credits]";
+    DRRP_S_MED_SMEDKIT_8 = "Small medkit [8 credits]";
+    DRRP_S_MED_LMEDKIT_15 = "Large medkit [15 credits]";
+    DRRP_S_MED_LMEDKIT_35 = "Large medkit [35 credits]";
+    DRRP_S_MED_SSPHERE_30 = "Soul sphere [30 credits]";
+    DRRP_S_MED_SSPHERE_50 = "Soul sphere [50 credits]";
+    DRRP_S_MED_BERS_40 = "Berserker [40 credits]";
+    DRRP_S_SEC_AMM = "Ammo";
+    DRRP_S_AMM_HAL_2 = "10x Hal. Cans [2 credits]";
+    DRRP_S_AMM_HAL_3 = "10x Hal. Cans [3 credits]";
+    DRRP_S_AMM_HAL_4 = "10x Hal. Cans [4 credits]";
+    DRRP_S_AMM_HAL_5 = "10x Hal. Cans [5 credits]";
+    DRRP_S_AMM_BUL_2 = "10x Bullets [2 credits]";
+    DRRP_S_AMM_BUL_3 = "10x Bullets [3 credits]";
+    DRRP_S_AMM_BUL_4 = "10x Bullets [4 credits]";
+    DRRP_S_AMM_BUL_5 = "10x Bullets [5 credits]";
+    DRRP_S_AMM_SHE_4 = "10x Shells [4 credits]";
+    DRRP_S_AMM_SHE_6 = "10x Shells [6 credits]";
+    DRRP_S_AMM_SHE_8 = "10x Shells [8 credits]";
+    DRRP_S_AMM_SHE_10 = "10x Shells [10 credits]";
+    DRRP_S_AMM_ROC_5 = "3x Rockets [5 credits]";
+    DRRP_S_AMM_ROC_6 = "3x Rockets [6 credits]";
+    DRRP_S_AMM_ROC_10 = "3x Rockets [10 credits]";
+    DRRP_S_AMM_CEL_8 = "10x Cells [8 credits]";
+    DRRP_S_AMM_CEL_12 = "10x Cells [12 credits]";
+    DRRP_S_AMM_CEL_15 = "10x Cells [15 credits]";
+    DRRP_S_SEC_FEA = "Stats";
+    DRRP_S_FEA_ACC_8 = "+1 Accuracy [8 credits]";
+    DRRP_S_FEA_ACC_15 = "+1 Accuracy [15 credits]";
+    DRRP_S_FEA_AGI_8 = "+1 Agility [8 credits]";
+    DRRP_S_FEA_AGI_15 = "+1 Agility [15 credits]";
+    DRRP_S_FEA_STR_10 = "+1 Strength [10 credits]";
+    DRRP_S_FEA_STR_20 = "+1 Strength [20 credits]";
+    DRRP_S_FEA_DEF_10 = "+1 Defense [10 credits]";
+    DRRP_S_FEA_DEF_20 = "+1 Defense [20 credits]";
+    DRRP_M_ZOMBIEPVT = "Zombie Pvt";
+    DRRP_M_ZOMBIELT = "Zombie Lt";
+    DRRP_M_ZOMBIECPT = "Zombie Cpt";
+    DRRP_M_HELLHOUND = "Hellhound";
+    DRRP_M_CERBERUS = "Cerberus";
+    DRRP_M_DEMONWOLF = "Demon Wolf";
+    DRRP_M_TROOP = "Troop";
+    DRRP_M_COMMANDO = "Commando";
+    DRRP_M_ASSASSIN = "Assassin";
+    DRRP_M_IMPLING = "Impling";
+    DRRP_M_IMP = "Imp";
+    DRRP_M_IMPLORD = "Imp Lord";
+    DRRP_M_PHANTOM = "Phantom";
+    DRRP_M_LOSTSOUL = "Lost Soul";
+    DRRP_M_NIGHTMARE = "Nightmare";
+    DRRP_M_BULLDEMON = "Bull Demon";
+    DRRP_M_PINKY = "Pinky";
+    DRRP_M_BELPHEGOR = "Belphegor";
+    DRRP_M_MALWRATH = "Malwrath";
+    DRRP_M_CACODEMON = "Cacodemon";
+    DRRP_M_WRETCHED = "Wretched";
+    DRRP_M_BEHOLDER = "Beholder";
+    DRRP_M_RAHOVART = "Rahovart";
+    DRRP_M_PAINELEMENTAL = "Pain Elemental";
+    DRRP_M_GHOUL = "Ghoul";
+    DRRP_M_FIEND = "Fiend";
+    DRRP_M_REVENANT = "Revenant";
+    DRRP_M_BEHEMOTH = "Behemoth";
+    DRRP_M_MANCUBUS = "Mancubus";
+    DRRP_M_DRUJ = "Druj";
+    DRRP_M_INFERNIS = "Infernis";
+    DRRP_M_ARCHVILE = "Archvile";
+    DRRP_M_APOLLYON = "Apollyon";
+    DRRP_M_OGRE = "Ogre";
+    DRRP_M_HELLKNIGHT = "Hell Knight";
+    DRRP_M_BARON = "Baron";
+    DRRP_M_CYBERDEMON = "Cyberdemon";
+    DRRP_M_KRONOS = "Kronos";
+    DRRP_M_CORPSE = "corpse";
+    DRRP_OB_ZOMBIEPVT = "%o was shot by a Soldier.";
+    DRRP_OB_ZOMBIELT = "%o was shot by a Sergeant.";
+    DRRP_OB_ZOMBIECPT = "%o was shot by a Capitan.";
+    DRRP_OB_HELLHOUND = "%o passed away from bites of Hellhound.";
+    DRRP_OB_CERBERUS = "%o was bitten by a Cerberus.";
+    DRRP_OB_DEMONWOLF = "%o was torned to pieces by a Demon wolf.";
+    DRRP_OB_TROOP = "%o was perforated by a Troop.";
+    DRRP_OB_COMMANDO = "%o was caugth off guard by the Commando.";
+    DRRP_OB_ASSASSIN = "%o didn't notice the Assasin.";
+    DRRP_OB_IMPLING = "%o got a III degree burn from Impling.";
+    DRRP_OBM_IMPLING = "%o was torned to pieces by an Impling.";
+    DRRP_OB_IMP = "%o didn't notice an Imp's fireball.";
+    DRRP_OBM_IMP = "%o was torned to pieces by an Imp.";
+    DRRP_OB_IMPLORD = "%o got a hot hole in himself from Imp Lord.";
+    DRRP_OBM_IMPLORD = "%o died of paws of Imp Lord.";
+    DRRP_OB_PHANTOM = "%o was broken through by a Phantom.";
+    DRRP_OB_LOSTSOUL = "%o was spooked by a lost soul.";
+    DRRP_OB_NIGHTMARE = "%o was eaten by a Nightmare";
+    DRRP_OB_BULLDEMON = "%o was bitten by a Bull demon.";
+    DRRP_OB_PINKY = "%o was eaten alive by a Pinky.";
+    DRRP_OB_BELPHEGOR = "%o was eaten alive by a Belphegor.";
+    DRRP_OB_MALWRATH = "%o was smitten by a Malwrath.";
+    DRRP_OBM_MALWRATH = "%o was bitten by a Malwrath.";
+    DRRP_OB_CACODEMON = "%o was smitten by a Cacodemon.";
+    DRRP_OBM_CACODEMON = "%o was bitten by a Cacodemon.";
+    DRRP_OB_WRETCHED = "%o couldn't evade a Wretched's plasma.";
+    DRRP_OBM_WRETCHED = "%o was brutally bitten by a Wretched.";
+    DRRP_OB_GHOUL = "%o couldn't evade a Ghoul's rocket.";
+    DRRP_OBM_GHOUL = "%o couldn't evade a Revenant's fist.";
+    DRRP_OB_FIEND = "%o couldn't evade a Fiend's rocket.";
+    DRRP_OB_REVENANT = "%o couldn't evade a Revenant's rocket.";
+    DRRP_OB_BEHOLDER = "%o was discovered and stopped by the Beholder.";
+    DRRP_OBM_BEHOLDER = "%o peered into the close eye of the Beholder.";
+    DRRP_OB_RAHOVART = "%o was garbled by Rahovart.";
+    DRRP_OBM_RAHOVART = "%o was seduced by Rahovart.";
+    DRRP_OB_PAINELEMENTAL = "%o died of the induced pain shock of a Pain Elemental.";
+    DRRP_OBM_PAINELEMENTAL = "%o tasted pain next to the Pain Elemental.";
+    DRRP_OB_BEHEMOTH = "%o was sqashed by a Behemoth.";
+    DRRP_OB_MANCUBUS = "%o was sqashed by a Mancubus.";
+    DRRP_OB_DRUJ = "%o was sqashed by a Druj.";
+    DRRP_OB_INFERNIS = "%o was roasted after meeting with Infernis.";
+    DRRP_OB_ARCHVILE = "%o was incinerated by an Archvile.";
+    DRRP_OB_APOLLYON = "%o was charred due to Apollyon.";
+    DRRP_OB_OGRE = "%o was killed by an Ogre.";
+    DRRP_OBM_OGRE = "%o was eaten by an Ogre.";
+    DRRP_OB_HELLKNIGHT = "%o couldn't get away from Hell Knight.";
+    DRRP_OBM_HELLKNIGHT = "%o was torned to pieces by a Hell Knight.";
+    DRRP_OB_BARON = "%o couldn't get away from Baron.";
+    DRRP_OBM_BARON = "%o was torned to pieces by a Baron.";
+    DRRP_OB_CYBERDEMON = "%o was splattered on a wall by a Cyberdemon.";
+    DRRP_OB_KRONOS = "%o couldn't stand against Kronos.";
+    DRRP_OB_FIRE = "%o burned out.";
+    DRRP_W_AXE = "Axe";
+    DRRP_W_FIREEXT = "Fire Extinguisher";
+    DRRP_W_SHOTGUN = "Shotgun";
+    DRRP_W_SUPERSHOTGN = "Super Shotgun";
+    DRRP_W_CHAINGUN = "Chaingun";
+    DRRP_W_ROCKETLNCHR = "Rocket Launcher";
+    DRRP_W_PLASMAGUN = "Plasma Gun";
+    DRRP_W_BFG = "BFG";
+    DRRP_W_PISTOL = "Pistol";
+    DRRP_W_HELLHOUND = "Hellhound";
+    DRRP_W_CERBERUS = "Cerberus";
+    DRRP_W_DEMONWOLF = "Demon Wolf";
+    DRRP_W_AXEPICKUP = "You got an axe!";
+    DRRP_W_FIREEXTPICKUP = "You got a fire extinguisher!";
+    DRRP_W_HELLHOUNDPICKUP = "Hellhound!";
+    DRRP_W_CERBERUSPICKUP = "Cerberus!";
+    DRRP_W_DEMONWOLFPICKUP = "Demon wolf!";
+    DRRP_I_REDKEY = "Red Key";
+    DRRP_I_BLUEKEY = "Blue Key";
+    DRRP_I_GREENKEY = "Green Key";
+    DRRP_I_YELLOWKEY = "Yellow Key";
+    DRRP_I_HALONCAN = "Halon Can";
+    DRRP_I_HALONCANS = "Halon Cans";
+    DRRP_I_BULLETCLIP = "Bullet Clip";
+    DRRP_I_BULLETCLIPS = "Bullet Clips";
+    DRRP_I_SHELLCLIP = "Shell Clip";
+    DRRP_I_SHELLCLIPS = "Shell Clips";
+    DRRP_I_ROCKET = "Rocket";
+    DRRP_I_ROCKETS = "Rockets";
+    DRRP_I_CELLCLIP = "Cell Clip";
+    DRRP_I_CELLCLIPS = "Cell Clips";
+    DRRP_I_HEALTHVIAL = "Health Vial";
+    DRRP_I_ARMORSHARD = "Armor Shard";
+    DRRP_I_FLAKJACKET = "Flak Jacket";
+    DRRP_I_COMBATSUIT = "Combat Suit";
+    DRRP_I_1CREDIT = "1 credit";
+    DRRP_I_5CREDITS = "5 credits";
+    DRRP_I_SMMEDKIT = "Sm Medkit";
+    DRRP_I_LGMEDKIT = "Lg Medkit";
+    DRRP_I_SOULSPHERE = "Soul Sphere";
+    DRRP_I_BERSERKER = "Berserker";
+    DRRP_I_DOGCOLLAR = "Dog Collar";
+    DRRP_I_GOT_GREENKEY = "Pickep up a green keycard.";
+    DRRP_I_GOT_REDKEY = "Pickep up a red keycard.";
+    DRRP_I_GOT_BLUEKEY = "Pickep up a blue keycard.";
+    DRRP_I_GOT_YELLOWKEY = "Pickep up a yellow keycard.";
+    DRRP_I_GOT_HALONCAN = "Pickep up a halon can.";
+    DRRP_I_GOT_HALONCANS = "Pickep up a halon cans.";
+    DRRP_I_GOT_BULLETCLIP = "Pickep up a clip.";
+    DRRP_I_GOT_BULLETCLIPS = "Pickep up a clips.";
+    DRRP_I_GOT_SHELLCLIP = "Pickep up a shell clip.";
+    DRRP_I_GOT_SHELLCLIPS = "Pickep up a shell clips.";
+    DRRP_I_GOT_ROCKET = "Pickep up a rocket.";
+    DRRP_I_GOT_ROCKETS = "Pickep up a rockets.";
+    DRRP_I_GOT_CELLCLIP = "Pickep up a cell clip.";
+    DRRP_I_GOT_CELLCLIPS = "Pickep up a cell clips.";
+    DRRP_I_GOT_HEALTHVIAL = "Pickep up a health vial.";
+    DRRP_I_GOT_ARMORSHARD = "Pickep up an armor shard.";
+    DRRP_I_GOT_FLAKJACKET = "Pickep up a flak jacket.";
+    DRRP_I_GOT_COMBATSUIT = "Pickep up a combat suit.";
+    DRRP_I_GOT_1CREDIT = "Pickep up a credit.";
+    DRRP_I_GOT_5CREDITS = "Picked up a five credits!";
+    DRRP_I_GOT_SMMEDKIT = "Pickep up a small medikit.";
+    DRRP_I_GOT_LGMEDKIT = "Pickep up a large medikit.";
+    DRRP_I_GOT_SOULSPHERE = "Soulsphere!";
+    DRRP_I_GOT_BERSERKER = "Berserk!";
+    DRRP_I_GOT_DOGCOLLAR = "Pickep up a dog collar.";
     DRRP_E_CIVILIAN = "Civilian";
     DRRP_E_SCIENTIST = "Scientist";
     DRRP_E_MARINE = "Marine";
     DRRP_E_DRGUERARD = "Dr. Guerard";
-    DRRP_E_CIVILIAN = "Civilian";
     DRRP_E_LAVAPOOL = "Lava Pool";
     DRRP_E_FIRE = "Fire";
     DRRP_E_BARREL = "Barrel";
@@ -690,16 +648,10 @@
     DRRP_E_PORTAL = "Portal";
     DRRP_E_COMPUTER = "Computer";
     DRRP_E_ITEMVENDOR = "Item Vendor";
-
-    DRRP_E_BROKEN = "broken"; // as "he"
-    DRRP_E_BROKEN_W = "broken"; // as "she"
-    DRRP_E_BROKEN_I = "broken"; // as "it"
-//\\ Entities
-
-// #=====# Levels #=====#
-
-// INTRO
-    DRRP_INTRO_0 = "Entrance";
+    DRRP_E_BROKEN = "broken";
+    DRRP_E_BROKEN_W = "broken";
+    DRRP_E_BROKEN_I = "broken";
+    DRRP_INTRO_0 = "Tutorial";
     DRRP_INTRO_1 = "/junction.bsp";
     DRRP_INTRO_2 = "Enter Junction";
     DRRP_INTRO_3 = "";
@@ -794,10 +746,7 @@
     DRRP_INTRO_92 = "You can use ex-\nploding barrels\nto damage mon-\nsters. Cool, eh?";
     DRRP_INTRO_93 = "Showed those bar-\nrels, heh?";
     DRRP_INTRO_94 = "Yeah...";
-    DRRP_INTRO_95 = "[Combat Guide]\nTip 105:\nAlways put out\nthe fire;\nexperience is\ngiven for it."; // DRRP
-//\\ INTRO
-
-// HUB
+    DRRP_INTRO_95 = "[Combat Guide]\nTip 105:\nAlways put out\nthe fire;\nexperience is\ngiven for it."; // Добавлено в DRRP
     DRRP_HUB_0 = "Junction";
     DRRP_HUB_1 = "West wing";
     DRRP_HUB_2 = "Central corridor";
@@ -884,7 +833,7 @@
     DRRP_HUB_83 = "You will be taken\nback to Junction\nshould you get\nincapacitated\nduring combat.";
     DRRP_HUB_84 = "Not sure how long\nwe'll last here\nat Junction. Mon-\nsters have taken\nover every other\npart of the base\nand we need sup-\nplies.";
     DRRP_HUB_85 = "You can replay a\nsector several\ntimes to build up\nyour abilities.";
-    DRRP_HUB_86 = "Good to see you\nmade it. Your\ncurrent objective\nis to seek infor-\nmation on the\ncause of this in-\nvasion and find a\nway to stop it.";
+    DRRP_HUB_86 = "Good to see you.\nYour current\nobjective is to\nseek information\non the cause of\nthis invasion and\nfind a way to\nstop it."; // Fixed by PROPHESSOR
     DRRP_HUB_87 = "I don't trust\nGuerard and I\ndon't think you\nshould either.\nI've heard that\nhe's working with\nKronos and that\nthey're responsi-\nble for this\nmess.";
     DRRP_HUB_88 = "It's only a mat-\nter of time be-\nfore the demons\noverrun the en-\ntire planet...";
     DRRP_HUB_89 = "What? The main\nreactor is back\nonline? I hope\nthey aren't\nplanning on re-\nopening the por-\ntal.";
@@ -906,28 +855,25 @@
     DRRP_HUB_105 = "System offline.";
     DRRP_HUB_106 = "[Email]\nFrom: M. Ross\nTo: J. Raphael\nMan, lots of\nweird things are\ngoing on. I've\nbeen working\ncrazy hours at\nthe machine shop\nbut nobody tells\nme what I'm work-\ning on. I have a\nstrange feeling\nit has to do with\nwhat's going on\nat the reactor.\n-Matt";
     DRRP_HUB_107 = "No more email.";
-    DRRP_HUB_108 = "[Email]\nFrom: Col. Graff\nTo: D. Whitlark\nWhitlark, where\nare the reports\nyou promised me?\nYou said they'd\nbe done by Tues-\nday!\n-Col. Graff";
-    DRRP_HUB_109 = "INCOMING TEXT\nMESSAGE:\nHELP! I'm being\nheld against my\nwill in Sector 5.\nThey've taken my\nblue keycard and\nweapon! I have my\ncell phone but\nthe battery is\nabout to die and\nthis is the last\ntext message I'll\nbe able to send.\nSomeone please\nhelp me!\n-Dr. Jensen";
-    DRRP_HUB_110 = "[Email]\nFrom: D. Whitlark\nTo: Col. Graff\nSorry sir. I was\na little dis-\ntracted. I dis-\ncovered an old\ncomputer game\ncalled DOOM...\nit has to be at\nleast 100 years\nold but it's\nstill surpris-\ningly addictive.\nThe weird thing\nis that the set-\nting and scenario\nof the game is\nsimilar to ours.\nFunny, eh?\n-David";
-    DRRP_HUB_111 = "[Email]\nFrom: Col. Graff\nTo: D. Whitlark\nJust get me the\ndamned reports!\n-Col. Graff";
-    DRRP_HUB_112 = "[Email]\nFrom: D. Whitlark\nTo: Col. Graff\nYes sir! You'll\nhave them today.\nBTW, they're mak-\ning DOOM for the\ncell phone. Cool,\neh?\n-David";
-    DRRP_HUB_113 = "Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nOur budget has\nbeen increased to\nfund the study of\nmatter transpor-\ntation. We hope\nto have a func-\ntional prototype\nready for demon-\nstration in a few\nmonths.";
-    DRRP_HUB_114 = "Log Entry of\nDr. Guerard:\n*CLASSIFIED*\nSeems that my\ncolleague, Dr.\nJensen, has been\nfired over some\npetty security\nmatters. It's un-\nfortunate; he was\na skilled scien-\ntist.";
+    DRRP_HUB_108 = "[Email]\nFrom: Col. Graff\nTo: D. Whitlark\nWhitlark, where\nare the reports\nyou promised me?\nYou said they'd\nbe done by Tues-\nday!\n-Col. Graff"; // Fixed by PROPHESSOR
+    DRRP_HUB_109 = "INCOMING TEXT\nMESSAGE:\nHELP! I'm being\nheld against my\nwill in Sector 5.\nThey've taken my\nblue keycard and\nweapon! I have my\ncell phone but\nthe battery is\nabout to die and\nthis is the last\ntext message I'll\nbe able to send.\nSomeone please\nhelp me!\n-Dr. Jensen"; // Fixed by PROPHESSOR
+    DRRP_HUB_110 = "[Email]\nFrom: D. Whitlark\nTo: Col. Graff\nSorry sir. I was\na little dis-\ntracted. I dis-\ncovered an old\ncomputer game\ncalled DOOM...\nit has to be at\nleast 100 years\nold but it's\nstill surpris-\ningly addictive.\nThe weird thing\nis that the set-\nting and scenario\nof the game is\nsimilar to ours.\nFunny, eh?\n-David"; // Fixed by PROPHESSOR
+    DRRP_HUB_111 = "[Email]\nFrom: Col. Graff\nTo: D. Whitlark\nJust get me the\ndamned reports!\n-Col. Graff"; // Fixed by PROPHESSOR
+    DRRP_HUB_112 = "[Email]\nFrom: D. Whitlark\nTo: Col. Graff\nYes sir! You'll\nhave them today.\nBTW, they're mak-\ning DOOM for the\ncell phone. Cool,\neh?\n-David"; // Fixed by PROPHESSOR
+    DRRP_HUB_113 = "Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nOur budget has\nbeen increased to\nfund the study of\nmatter transpor-\ntation. We hope\nto have a func-\ntional prototype\nready for demon-\nstration in a few\nmonths."; // Fixed by PROPHESSOR
+    DRRP_HUB_114 = "Log Entry of\nDr. Guerard:\n*CLASSIFIED*\nSeems that my\ncolleague, Dr.\nJensen, has been\nfired over some\npetty security\nmatters. It's un-\nfortunate; he was\na skilled scien-\ntist."; // Fixed by PROPHESSOR
     DRRP_HUB_115 = "[Email]\nTo: B. Smith\nFrom: K. Simons\nDr. Jensen had me\ninvestigate Dr.\nGuerard's employ-\nment history.\nWhat I found was\nstrange. Guerard\nwas supposedly\nhired onto the\nteleportation re-\nsearch team 2\nyears ago but\nUACHQ has no rec-\nord of him.\n-Karina";
     DRRP_HUB_116 = "Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nDr. Guerard says\nthe electrical\nrequirements of\nour device ex-\nceeded his ini-\ntial estimations.\nWe will likely\nhave to move the\ndevice to a loca-\ntion with a\nlarger energy\nsource.";
     DRRP_HUB_117 = "Log Entry of\nDr. Guerard:\n*CLASSIFIED*\nWith Mr. Nadira's\nassistance, I was\nable to convince\nCol. Graff to\nmove our equip-\nment from the lab\nto the reactor.\nThis move should\nhelp meet the\nenergy demands of\nour next set of\nexperiments.";
     DRRP_HUB_118 = "[Email]\nTo: K. Simons\nFrom: B. Smith\nWell, the UAC is\na huge bureauc-\nracy with bil-\nlions of records.\nThey're bound to\nlose one once in\na while.\n-Brett";
     DRRP_HUB_119 = "Log Entry of\nDr. Jensen:\n*CLASSIFIED*\nThis is my last\nlog update. I've\nbeen fired for\nsupposed\n\"breaches\" in se-\ncurity protocol\nand somehow my\nresearch docu-\nments were com-\npromised. I have\nno idea how this\nhappened but I\nintend to find\nout.";
-    DRRP_HUB_120 = "End of log.";
-    DRRP_HUB_121 = "[Combat Guide]\nTip 133:\nA is for Axe;\ncrashes like\nthunder.\nZ is for zombies,\nrend them\nasunder.";
-    DRRP_HUB_122 = "[Combat Guide]\nTip 147: Reports\nhave come in that\nthe Commando\nclass is weak\nagainst plasma.";
-    DRRP_HUB_123 = "[Combat Guide]\nTip 161: The\nMancubus class\nwill blast you\nwith rockets; he\ndoesn't like the\ntaste of his own\nmedicine.";
-    DRRP_HUB_124 = "[Combat Guide]\nTip 134: B is for\nbuckshot, tried\nand true.\nCanines, Imps and\nBarons hate you.";
-    DRRP_HUB_125 = "[Combat Guide]\nTip 148: Fire\nretardant has\nproven effective\nagainst fire\ncreatures. Imag-\nine that!";
-    DRRP_HUB_126 = "[Combat Guide]\nTip 162: Those\ndamn bull demon\nthings aren't as\naffected by roc-\nkets as you'd\nthink.";
-//\\ HUB
-
-// SEC1
+    DRRP_HUB_120 = "End of log."; // Fixed by PROPHESSOR
+    DRRP_HUB_121 = "[Combat Guide]\nTip 133:\nA is for Axe;\ncrashes like\nthunder.\nZ is for zombies,\nrend them\nasunder."; // Fixed by PROPHESSOR
+    DRRP_HUB_122 = "[Combat Guide]\nTip 147: Reports\nhave come in that\nthe Commando\nclass is weak\nagainst plasma."; // Fixed by PROPHESSOR
+    DRRP_HUB_123 = "[Combat Guide]\nTip 161: The\nMancubus class\nwill blast you\nwith rockets; he\ndoesn't like the\ntaste of his own\nmedicine."; // Fixed by PROPHESSOR
+    DRRP_HUB_124 = "[Combat Guide]\nTip 134: B is for\nbuckshot, tried\nand true.\nCanines, Imps and\nBarons hate you."; // Fixed by PROPHESSOR
+    DRRP_HUB_125 = "[Combat Guide]\nTip 148: Fire\nretardant has\nproven effective\nagainst fire\ncreatures. Imag-\nine that!"; // Fixed by PROPHESSOR
+    DRRP_HUB_126 = "[Combat Guide]\nTip 162: Those\ndamn bull demon\nthings aren't as\naffected by roc-\nkets as you'd\nthink."; // Fixed by PROPHESSOR
     DRRP_SEC1_0 = "Sector 1";
     DRRP_SEC1_1 = "/junction.bsp";
     DRRP_SEC1_2 = "Enter Junction";
@@ -981,12 +927,9 @@
     DRRP_SEC1_50 = "Having trouble\nfinding the green\nkeycard? You\nwon't find it in\nthis sector.\nYou'll likely\nfind the green\nkeycard in a\nlater sector.\nYou'll need to\ntravel back here\nto open this\ndoor.";
     DRRP_SEC1_51 = "You can re-enter\nthis sector from\nJunction even af-\nter successfully\ncompleting it. By\nrevisiting pre-\nviously completed\nsectors you can\nuncover addition-\nal secrets and\nbuild strength by\nacquiring equip-\nment and fighting\nmonsters.";
     DRRP_SEC1_52 = "Super secret\npasscode: **7*";
-    DRRP_SEC1_53 = "[Combat Guide]\nTip 099: You can\nskip a combat\nturn by pressing\nthe 9 button\nwhile engaging an\nenemy. Use this\nstrategically to\ndraw an enemy\ninto your line of\nfire.";
-    DRRP_SEC1_54 = "[Combat Guide]\nTip 164: Explod-\ning barrels can\ndamage enemies,\nbut be careful as\nexploding barrels\ncan also hurt\nyou.";
+    DRRP_SEC1_53 = "[Combat Guide]\nTip 099: Don't be\nafraid to retreat\nand attack from\ncover if the enemy\nhas the advantage.";
+    DRRP_SEC1_54 = "[Combat Guide]\nTip 164: Explod-\ning barrels can\ndamage enemies,\nbut be careful as\nexploding barrels\ncan also hurt\nyou."; // Fixed by PROPHESSOR
     DRRP_SEC1_55 = "Segment Fault:\n&o0r _4s5%0D3 2 25";
-//\\ SEC1
-
-// SEC2
     DRRP_SEC2_0 = "Sector 2";
     DRRP_SEC2_1 = "/junction.bsp";
     DRRP_SEC2_2 = "Enter Junction";
@@ -1046,9 +989,6 @@
     DRRP_SEC2_56 = "Door 55 locked.\nEnter code:";
     DRRP_SEC2_57 = "Door 55 unlocked.";
     DRRP_SEC2_58 = "Door 55";
-//\\ SEC2
-
-// SEC3
     DRRP_SEC3_0 = "Sector 3";
     DRRP_SEC3_1 = "/junction.bsp";
     DRRP_SEC3_2 = "Enter Junction";
@@ -1120,9 +1060,6 @@
     DRRP_SEC3_68 = "[Email]\nTo: H. Hancock\nFrom: P. Marino\nWell, some weird\nthings have been\nhappening lately.\nI did some check-\ning into that\nsector and it\nturns out there's\nsome kind of\nlockdown - high-\nest clearances\nonly. The thing\nis, I've been un-\nable to find out\nwho authorized\nit. -Paul";
     DRRP_SEC3_69 = "[Email]\nTo: P. Marino\nFrom: H. Hancock\nSo... what should\nwe do? Should we\nreport this to\nsomeone?\n-Hugh";
     DRRP_SEC3_70 = "[Email]\nTo: H. Hancock\nFrom: P. Marino\nReport what? It's\nover our heads!\nOh, btw, I found\na green keycard\nin this sector.\nIt's in a secure\ncloset at the\nnorth end of this\nsector if anyone\ncomes looking.\n-Paul";
-//\\ SEC3
-
-// SEC4
     DRRP_SEC4_0 = "Sector 4";
     DRRP_SEC4_1 = "/junction.bsp";
     DRRP_SEC4_2 = "Enter Junction";
@@ -1139,24 +1076,24 @@
     DRRP_SEC4_13 = "[Email]\nTo: Col. Graff\nFrom: Kronos\nJensen has been\ntroublesome. Fire\nhim! You owe me.\n-Kronos";
     DRRP_SEC4_14 = "[Email]\nTo: Kronos\nFrom: Col. Graff\nI'll try. If I do\nthis, that's it,\nKronos. Our debt\nis cleared...\nwe're done. -Col.\nGraff";
     DRRP_SEC4_15 = "No more email.";
-    DRRP_SEC4_16 = "Hey! You're not\nsupposed to be\nhere!";
-    DRRP_SEC4_17 = "Walk away now and\nyou won't get\nhurt.";
-    DRRP_SEC4_18 = "I warned you. Now\nyou die! Cacode-\nmon, kill! [A\ndoor opened to\nyour left...]";
-    DRRP_SEC4_19 = "Please, don't\nhurt me! I'll\ntell you every-\nthing...";
+    DRRP_SEC4_16 = "Hey! You're not\nsupposed to be\nhere!"; // Fixed by PROPHESSOR
+    DRRP_SEC4_17 = "Walk away now and\nyou won't get\nhurt."; // Fixed by PROPHESSOR
+    DRRP_SEC4_18 = "I warned you. Now\nyou die! Cacode-\nmon, kill! [A\ndoor opened to\nyour left...]"; // Fixed by PROPHESSOR
+    DRRP_SEC4_19 = "Please, don't\nhurt me! I'll\ntell you every-\nthing..."; // Fixed by PROPHESSOR
     DRRP_SEC4_20 = "MUAHAHAHA!";
-    DRRP_SEC4_21 = "Signed on to\nUAC-IM...\n[INSTANT MESSAGE]\nGoodDoc99: Ma-\nrine, it's Dr.\nGuerard. You may\nhave stumbled\nupon a secret re-\nsearch facility\ninside an old\nsection of the\nbase. We think\nDr. Jensen has\nbeen storing sto-\nlen supplies\nthere.";
-    DRRP_SEC4_22 = "[INSTANT MESSAGE]\nGoodDoc99: Re-\nfrain from look-\ning around the\nlab. We need to\nget an investiga-\ntion team there\nto search for\nevidence and I\ndon't want the\narea contami-\nnated.";
-    DRRP_SEC4_23 = "[INSTANT MESSAGE]\nGoodDoc99: I've\nunlocked the door\nleading out of\nthe old base to\nJunction. Proceed\nforward with your\nmission and we'll\ntake care of re-\ncovering the sto-\nlen lab supplies.\nGuerard out.";
-    DRRP_SEC4_24 = "GoodDoc99 has\nsigned off.";
+    DRRP_SEC4_21 = "Signed on to\nUAC-IM...\n[INSTANT MESSAGE]\nGoodDoc99: Ma-\nrine, it's Dr.\nGuerard. You may\nhave stumbled\nupon a secret re-\nsearch facility\ninside an old\nsection of the\nbase. We think\nDr. Jensen has\nbeen storing sto-\nlen supplies\nthere."; // Fixed by PROPHESSOR
+    DRRP_SEC4_22 = "[INSTANT MESSAGE]\nGoodDoc99: Re-\nfrain from look-\ning around the\nlab. We need to\nget an investiga-\ntion team there\nto search for\nevidence and I\ndon't want the\narea contami-\nnated."; // Fixed by PROPHESSOR
+    DRRP_SEC4_23 = "[INSTANT MESSAGE]\nGoodDoc99: I've\nunlocked the door\nleading out of\nthe old base to\nJunction. Proceed\nforward with your\nmission and we'll\ntake care of re-\ncovering the sto-\nlen lab supplies.\nGuerard out."; // Fixed by PROPHESSOR
+    DRRP_SEC4_24 = "GoodDoc99 has\nsigned off."; // Fixed by PROPHESSOR
     DRRP_SEC4_25 = "[E-BOOK]\nIntroduction to\nQuantum Mechanics\nand Teleportation\n*Chapter 1*\n...";
     DRRP_SEC4_26 = "[E-BOOK]\nStabilization\nTechniques for\nRifts in the\nSpace/Time\nContinuum\n*Chapter 1*\n...";
-    DRRP_SEC4_27 = "[E-BOOK]\nBeginner's Guide\nto Controlled\nHydrocon Cata-\nlyzation\n*Chapter 1*\n...";
-    DRRP_SEC4_28 = "[E-BOOK]\nMore Power to\nYou: Energy\nStrategies for\nProjects Needing\nInordinate\nAmounts of Power\n*Chapter 1*\n...";
-    DRRP_SEC4_29 = "[E-BOOK]\nHow to Get People\nto Like You, Even\nif you are a\nCrazed, Diaboli-\ncal Lunatic\n*Chapter 1*\n...";
-    DRRP_SEC4_30 = "Probability that\nexploding waste\nbarrels will de-\nstroy a JC-107\nType-A titanium\nreinforced door:\nCalculating...";
+    DRRP_SEC4_27 = "[E-BOOK]\nBeginner's Guide\nto Controlled\nHydrocon Cata-\nlyzation\n*Chapter 1*\n..."; // Fixed by PROPHESSOR
+    DRRP_SEC4_28 = "[E-BOOK]\nMore Power to\nYou: Energy\nStrategies for\nProjects Needing\nInordinate\nAmounts of Power\n*Chapter 1*\n..."; // Fixed by PROPHESSOR
+    DRRP_SEC4_29 = "[E-BOOK]\nHow to Get People\nto Like You, Even\nif you are a\nCrazed, Diaboli-\ncal Lunatic\n*Chapter 1*\n..."; // Fixed by PROPHESSOR
+    DRRP_SEC4_30 = "Probability that\nexploding waste\nbarrels will de-\nstroy a JC-107\nType-A titanium\nreinforced door:\nCalculating..."; // Fixed by PROPHESSOR
     DRRP_SEC4_31 = "12%";
     DRRP_SEC4_32 = "System offline.";
-    DRRP_SEC4_33 = "Welcome! This is\nthe oldest part\nof the base.\nBuilt in 2112,\nthe surrounding\nstructures and\ntunnels made up\nUAC's first per-\nmanent Martian\nsettlement. This\narea is now only\nused to store\nhazardous waste.";
+    DRRP_SEC4_33 = "Welcome! This is\nthe oldest part\nof the base.\nBuilt in 2112,\nthe surrounding\nstructures and\ntunnels made up\nUAC's first per-\nmanent Martian\nsettlement. This\narea is now only\nused to store\nhazardous waste."; // Fixed by PROPHESSOR
     DRRP_SEC4_34 = "We've been having\ncomputer prob-\nlems. The latest\nglitch has locked\nour main door out\nof here back to\nJunction. Maybe\nyou can help us\nget it open.";
     DRRP_SEC4_35 = "Go talk to Dr.\nKelvin, he's\nworking on the\ncomputer trying\nto get the door\nopen. The door is\ndown the hall on\nthe right.";
     DRRP_SEC4_36 = "This is stupid!\nIt'll never work.";
@@ -1195,9 +1132,6 @@
     DRRP_SEC4_69 = "[Jenkins]\nYou can set them\noff by shooting\nthe end barrel.";
     DRRP_SEC4_70 = "[Jenkins]\nLet 'er rip, man!\nShoot those\nbarrels and light\nup this cave!";
     DRRP_SEC4_71 = "Super secret\npasscode: *2**";
-//\\ SEC4
-
-// SEC5
     DRRP_SEC5_0 = "Sector 5";
     DRRP_SEC5_1 = "/junction.bsp";
     DRRP_SEC5_2 = "Enter Junction";
@@ -1228,9 +1162,9 @@
     DRRP_SEC5_27 = "Zzz.. Wha? Oh,\nyou again. What?!\nYou need help\nwith a database?\nWell, everything\nI know I learned\nfrom an online\ntutorial. Let me\npull it up here\non this computer.\nOk, done. Use the\ncomputer to the\nleft to teach\nyourself database\nadministration.";
     DRRP_SEC5_28 = "Hrm. It looks\nlike part of the\nfile is cor-\nrupted. Oh well.\nYou already know\nenough to do ba-\nsics like re-\ntrieving data.";
     DRRP_SEC5_29 = "System offline.";
-    DRRP_SEC5_30 = "I learned how to\nuse databases.";
-    DRRP_SEC5_31 = "Learn Databases\n*Chapt 1 *\nThe SELECT state-\nment is used to\nacquire data from\na table in a da-\ntabase, basic\nsyntax is as fol-\nlows: SELECT col-\numn_names FROM\ntable_name. More\nadvanced usage of\nthe SELECT state-\nment is covered\nin later chap-\nters.";
-    DRRP_SEC5_32 = "*Chapt 2 *\nThe INSERT st4t\n3m*&#!~ .*&\n[FILE CORRUPTED]";
+    DRRP_SEC5_30 = "I learned how to\nuse databases."; // Fixed by PROPHESSOR
+    DRRP_SEC5_31 = "Learn Databases\n*Chapt 1 *\nThe SELECT state-\nment is used to\nacquire data from\na table in a da-\ntabase, basic\nsyntax is as fol-\nlows: SELECT col-\numn_names FROM\ntable_name. More\nadvanced usage of\nthe SELECT state-\nment is covered\nin later chap-\nters."; // Fixed by PROPHESSOR
+    DRRP_SEC5_32 = "*Chapt 2 *\nThe INSERT st4t\n3m*&#!~ .*&\n[FILE CORRUPTED]"; // Fixed by PROPHESSOR
     DRRP_SEC5_33 = "[FILE CORRUPTED]";
     DRRP_SEC5_34 = "Jeez, I think I'm\nlost. Wish my\nwife was here,\nshe'd ask someone\nfor directions.";
     DRRP_SEC5_35 = "What I'd give for\nan automap about\nnow.";
@@ -1323,9 +1257,6 @@
     DRRP_SEC5_122 = "Prison cell pass-\ncode is 229.";
     DRRP_SEC5_123 = "[Email]\nTo: Col. Graff\nFrom: F. Eckle\nGlad we caught\nthe thief. The\nprison passcode\nis 229.\n-Francis";
     DRRP_SEC5_124 = "There is a hidden\ndoor called Door\n55 in Sector 2.\nUse passcode 5555\nto unlock Door\n55.";
-//\\ SEC5
-
-// SEC6
     DRRP_SEC6_0 = "Sector 6";
     DRRP_SEC6_1 = "/junction.bsp";
     DRRP_SEC6_2 = "Enter Junction";
@@ -1411,9 +1342,6 @@
     DRRP_SEC6_82 = "2279";
     DRRP_SEC6_83 = "[Super Secret\nRoom] Door\nlocked. Enter\ncode:";
     DRRP_SEC6_84 = "There's a bonus\narea you might\nencounter some-\ntime after Sector\n7 that is pro-\ntected with a 7\ndigit passcode.\nUse the first 7\nnumbers in the\nFibonacci se-\nquence (starting\nwith zero) to un-\nlock the door.";
-//\\ SEC6
-
-// SEC7
     DRRP_SEC7_0 = "Sector 7";
     DRRP_SEC7_1 = "/junction.bsp";
     DRRP_SEC7_2 = "/junction_destroyed.bsp";
@@ -1426,18 +1354,18 @@
     DRRP_SEC7_9 = "[Dr. Kelvin]\nSomething seems\nto have gone very\nwrong. You didn't\nrematerialize in\nthe other tele-\nportation unit,\nand worse, none\nof your weapons\nrematerialized\nwith you! I don't\nhave to tell you\nto use extreme\ncaution. I think\nI can unlock that\ndoor. Yes, try it\nnow.";
     DRRP_SEC7_10 = "Whoa! I can't\ntalk now... some-\nthing's coming!";
     DRRP_SEC7_11 = "...";
-    DRRP_SEC7_12 = "[Email]\nTo: R. Williams\nFrom: J. LaGrave\nDid you go out\nand check on that\nsensor array? I'm\nstill getting\nwacky readings. I\nthink something's\nbusted out there.";
-    DRRP_SEC7_13 = "[Email]\nTo: J. LaGrave\nFrom: R. Williams\nChecked the ar-\nray. Everything\npassed my diag-\nnostics. But the\nreadings don't\nseem to make\nsense to me ei-\nther. I'm working\nwith Lloyd to try\nto find out\nwhat's going on.";
+    DRRP_SEC7_12 = "[Email]\nTo: R. Williams\nFrom: J. LaGrave\nDid you go out\nand check on that\nsensor array? I'm\nstill getting\nwacky readings. I\nthink something's\nbusted out there."; // f
+    DRRP_SEC7_13 = "[Email]\nTo: J. LaGrave\nFrom: R. Williams\nChecked the ar-\nray. Everything\npassed my diag-\nnostics. But the\nreadings don't\nseem to make\nsense to me ei-\nther. I'm working\nwith Lloyd to try\nto find out\nwhat's going on."; // f
     DRRP_SEC7_14 = "No more email.";
     DRRP_SEC7_15 = "Error....#$^@%*#^";
     DRRP_SEC7_16 = "Use passcode 666\nfor the door\nahead.";
     DRRP_SEC7_17 = "Red keycard in\nnortheast corner\nof this sector.";
-    DRRP_SEC7_18 = "Ahh... when I saw\nthose weapons\ncome through the\nteleporter with-\nout their owner,\nI knew something\nwas wrong. Look-\ning at these\ndata, it seems\nlike someone\ndeliberately sab-\notaged your tele-\nport. Here, I\nthink you'll need\nthese!\n[You got your\nweapons back]\nIf you're looking\nfor the red key-\ncard, try the\nnortheast corner\nof this sector.\nI've just enabled\nthe cycle oper-\nation on the door\nup ahead. The\ncode is 666.";
+    DRRP_SEC7_18 = "Ahh... when I saw\nthose weapons\ncome through the\nteleporter with-\nout their owner,\nI knew something\nwas wrong. Look-\ning at these\ndata, it seems\nlike someone\ndeliberately sab-\notaged your tele-\nport. Here, I\nthink you'll need\nthese!\n[You got your\nweapons back]\nIf you're looking\nfor the red key-\ncard, try the\nnortheast corner\nof this sector.\nI've just enabled\nthe cycle oper-\nation on the door\nup ahead. The\ncode is 666."; // f
     DRRP_SEC7_19 = "I'm going to stay\nhere and try to\nmake sense of\nthese other sen-\nsor readings. It\nlooks to me like\nthe reactor is\nback online, and\nthere are huge\npower draws all\nover the base. I\nthink something\nbig is about to\nhappen.";
     DRRP_SEC7_20 = "Code 666 should\nwork for the door\nahead.";
     DRRP_SEC7_21 = "New message\narriving...";
     DRRP_SEC7_22 = "Attn. all person-\nnel: If you can\nuse a terminal\nwith access to\nyour local sensor\narray, check your\nreadings now.\nWe're sensing a\nrise in the same\nreadings that\npreceded the at-\ntack wave. Report\nif you can.";
-    DRRP_SEC7_23 = "Too many users...\nblah blah blah.\nProbable cause:\nslashdot.org\nTry again in a\nfew seconds...\n-xian";
+    DRRP_SEC7_23 = "Too many users...\nblah blah blah.\nProbable cause:\nslashdot.org\nTry again in a\nfew seconds...\n-xian"; // f
     DRRP_SEC7_24 = "Door cycle oper-\nation offline.";
     DRRP_SEC7_25 = "666";
     DRRP_SEC7_26 = "Enter passcode:\n";
@@ -1454,9 +1382,6 @@
     DRRP_SEC7_37 = "You're definitely\ngoing to need the\nred keycard if\nyou want to get\nanywhere up\nahead. You'd bet-\nter go find it.";
     DRRP_SEC7_38 = "Look, I'm almost\nout of ammo and\narmor. I can't do\nyou much good.\nI'm going to stay\nhere and see what\nI can scrounge.";
     DRRP_SEC7_39 = "Super secret\npasscode: 2***";
-//\\ SEC7
-
-// XHUB
     DRRP_XHUB_0 = "Junction";
     DRRP_XHUB_1 = "/junction.bsp";
     DRRP_XHUB_2 = "/reactor.bsp";
@@ -1518,9 +1443,6 @@
     DRRP_XHUB_58 = "0112358";
     DRRP_XHUB_59 = "[Bonus Area!]\nDoor locked.\nEnter code:\n";
     DRRP_XHUB_60 = "Door unlocked.";
-//\\ XHUB
-
-// REAC
     DRRP_REAC_0 = "Reactor";
     DRRP_REAC_1 = "/junction_destroyed.bsp";
     DRRP_REAC_2 = "Locked Door";
@@ -1542,4 +1464,5 @@
     DRRP_REAC_18 = "Logged in as root.\n# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.";
     DRRP_REAC_19 = "Map data already\ndownloaded.";
     DRRP_REAC_20 = "The portal to\nHell has closed,\nbut one last\ncreature made it\nthrough...";
-//\\ REAC
+    DRRP_REAC_21 = "[Dr. Guerard] Now\nI'll show you who\nyou're really\ndealing with!";
+    DRRP_EMPTY = "";

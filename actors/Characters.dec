@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  * 
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -79,7 +79,7 @@ Actor Scientist : DRRPCharacter 10500  {
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Scientist White
+    //$Title Scientist (White)
 
 
     Tag     "$DRRP_E_SCIENTIST"
@@ -97,7 +97,7 @@ Actor Scientist1 : Scientist 10501 { // Black
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Scientist 1 Black
+    //$Title Scientist1 (Black)
     
     States {
         Spawn:
@@ -135,7 +135,7 @@ Actor Civilian : DRRPCharacter 10510 { // Orange
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Civilian Yellow
+    //$Title Civilian (Yellow)
 
     Tag     "$DRRP_E_CIVILIAN"
 
@@ -152,7 +152,7 @@ Actor Civilian1 : Civilian 10511 { // Purple
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Civilian 1 Purple
+    //$Title Civilian1 (Purple)
 
     // Translation "160:167=250:254"
     
@@ -169,7 +169,7 @@ Actor Civilian2 : Civilian 10512 { // Green
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Civilian 2 Green
+    //$Title Civilian2 (Green)
 
     // Translation "160:167=112:127"
     
@@ -191,7 +191,7 @@ Actor Marine : DRRPCharacter 10520  {
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Marine Green
+    //$Title Marine (Green)
 
     Tag     "$DRRP_E_MARINE"
 
@@ -208,7 +208,7 @@ Actor Marine1 : Marine 10521 { // Blue
     //$Colour #00FFFF
     //$NotAngled
     //$Icon "hilight"
-    //$Title Marine 1 Blue
+    //$Title Marine1 (Blue)
 
     // Translation "112:122=195:207", "123:127=243:247"
 

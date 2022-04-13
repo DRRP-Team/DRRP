@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 // Coordinate offset is: (960;576)
@@ -18,23 +19,11 @@ function fixed getMediumY(int y) {
     return (2048 - 576 - y * 8) << 16;
 }
 
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
-}
-
 Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "XHUB", true);
     ScriptCall("ShaderControllerActor", "SetEnabled", 0, "XHUBGrain", true);
 }
 
-bool test = true;
-
-Script "test" (void) {
-    test = !test;
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "XHUB", test);
-    ScriptCall("ShaderControllerActor", "SetEnabled", 0, "XHUBGrain", test);
-    Print(i:test);
-}
 
 bool lightoff = false;
 
@@ -68,7 +57,7 @@ script 1001 (void){
             break;
         case 3:
             lightoff = true;
-            SetMusic("d_silenc");
+            SetMusic("");
             AmbientSound("techno/poweroff", 255);
             Sector_SetFade(0, 128, 0, 0);
             Sector_SetColor(0, 0, 0, 0, 0);
@@ -120,7 +109,7 @@ script 6 (int arg0, int arg1, int arg2) { //X=6 Y=13 START=L_10 END=L_29 UNKN=10
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(45)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=45
     if(arg2 == 1) SpawnForced("TeleportFog", getMediumX(68), getMediumY(108), 0); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
     if(arg2 == 1) Delay(7);
-    if(arg2 == 1) SpawnForced("Assassin", getMediumX(68), getMediumY(108), 0, 1767); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
+    if(arg2 == 1) SpawnWithFog("Assassin", getMediumX(68), getMediumY(108), 0, 1767); // ( USE MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
     if(arg2 == 1) Thing_Hate(1767, 205, 4);
     if(arg2 == 1) ACS_NamedExecuteWait("drpgquake", 0, 200, 1); // ( USE IF_VAR( 1 ) ) EARTHQUAKE TIME=200 INTENSITY=1
     if(arg2 == 1) ACS_Execute(3009, 0, 205, 0); // ( USE IF_VAR( 1 ) ) PARTICLE COLOR=180 EFFECT=32
@@ -158,7 +147,7 @@ script 8 (int arg0, int arg1, int arg2) { //X=16 Y=17 START=L_31 END=L_62 UNKN=1
     if(arg2 == 2) Floor_LowerToHighest(2, 128, 2, 1);
     if(arg2 == 2) Delay(24); // ( USE IF_VAR( 2 ) ) SLEEP MSEC=700
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(52)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG_WITH_SOUND STR=52
-    if(arg2 == 2) SpawnForced("DRRPPainElemental", getMediumX(132), getMediumY(148), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=16 STATE=0
+    if(arg2 == 2) SpawnWithFog("DRRPPainElemental", getMediumX(132), getMediumY(148), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=16 STATE=0
     if(arg2 == 2) ACS_NamedExecuteWait("drpgquake", 0, 200, 1); // ( USE IF_VAR( 2 ) ) EARTHQUAKE TIME=200 INTENSITY=1
     if(arg2 == 2) ACS_Execute(3009, 0, 529, 0); // ( USE IF_VAR( 2 ) ) PARTICLE COLOR=180 EFFECT=32
     if(arg2 == 2) Delay(28); // ( USE IF_VAR( 2 ) ) SLEEP MSEC=800
@@ -174,12 +163,12 @@ script 8 (int arg0, int arg1, int arg2) { //X=16 Y=17 START=L_31 END=L_62 UNKN=1
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid2, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=26 Y=29 VAL=3
     //if(arg2 == 2) Thing_Remove(500); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=15 Y=20
     //if(arg2 == 2) Thing_Remove(499); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=15 Y=19
-    if(arg2 == 2) SpawnForced("Belphegor", getMediumX(100), getMediumY(132), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=19 STATE=0
-    if(arg2 == 2) SpawnForced("DRRPRevenant", getMediumX(60), getMediumY(108), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=20 STATE=0
-    if(arg2 == 2) SpawnForced("DRRPRevenant", getMediumX(76), getMediumY(156), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=21 STATE=0
-    if(arg2 == 2) SpawnForced("DRRPBaronOfHell", getMediumX(124), getMediumY(204), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=22 STATE=0
-    if(arg2 == 2) SpawnForced("Belphegor", getMediumX(196), getMediumY(156), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=23 STATE=0
-    if(arg2 == 2) SpawnForced("DRRPPainElemental", getMediumX(164), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=24 STATE=0
+    if(arg2 == 2) SpawnWithFog("Belphegor", getMediumX(100), getMediumY(132), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=19 STATE=0
+    if(arg2 == 2) SpawnWithFog("DRRPRevenant", getMediumX(60), getMediumY(108), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=20 STATE=0
+    if(arg2 == 2) SpawnWithFog("DRRPRevenant", getMediumX(76), getMediumY(156), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=21 STATE=0
+    if(arg2 == 2) SpawnWithFog("DRRPBaronOfHell", getMediumX(124), getMediumY(204), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=22 STATE=0
+    if(arg2 == 2) SpawnWithFog("Belphegor", getMediumX(196), getMediumY(156), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=23 STATE=0
+    if(arg2 == 2) SpawnWithFog("DRRPPainElemental", getMediumX(164), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=24 STATE=0
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=16 Y=17
 }
 script 9 (int arg0, int arg1, int arg2) { //X=2 Y=18 START=L_63 END=L_63 UNKN=524288 UNKN2=0
@@ -204,16 +193,19 @@ script 14 (int arg0, int arg1, int arg2) { //X=28 Y=18 START=L_70 END=L_70 UNKN=
 }
 script 15 (int arg0, int arg1, int arg2) { //X=22 Y=19 START=L_71 END=L_76 UNKN=3145728 UNKN2=0
     int sgenid0 = 723;
+    int scientist = 250;
+    if(arg2 == 1) ACS_Execute(3009, 0, scientist, 1);
+    if(arg2 == 1) AmbientSound("generic/char/pain", 32);
     // if(arg2 == 1) Print(s:"Works");
-    if(arg2 == 1) Thing_Remove(250); // Destroy scientist and zombie corpse
+    if(arg2 == 1) Thing_Remove(scientist); // Destroy scientist and zombie corpse
     if(arg2 == 1) Thing_Remove(218); // Destroy zombie corpse
     if(arg2 == 1) Thing_Remove(251); // Destroy zombie corpse
-    if(arg2 == 1) SpawnForced("ZombieCpt", getMediumX(58), getMediumY(213), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=9 STATE=0
-    if(arg2 == 1) SpawnForced("ZombieLt", getMediumX(61), getMediumY(214), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=10 STATE=0
-    if(arg2 == 1) SpawnForced("ZombiePvt", getMediumX(61), getMediumY(211), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=11 STATE=0
-    if(arg2 == 1) SpawnForced("ZombiePvt", getMediumX(50), getMediumY(213), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=12 STATE=0
-    if(arg2 == 1) SpawnForced("ZombieCpt", getMediumX(61), getMediumY(222), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=13 STATE=0
-    //if(arg2 == 1) SpawnForced("ZombiePvt", getMediumX(60), getMediumY(212), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=14 STATE=0
+    if(arg2 == 1) SpawnWithFog("ZombieCpt", getMediumX(58), getMediumY(213), 0, 251); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=9 STATE=0
+    if(arg2 == 1) SpawnWithFog("ZombieLt", getMediumX(61), getMediumY(214), 0, 251); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=10 STATE=0
+    if(arg2 == 1) SpawnWithFog("ZombiePvt", getMediumX(61), getMediumY(211), 0, 251); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=11 STATE=0
+    if(arg2 == 1) SpawnWithFog("ZombiePvt", getMediumX(50), getMediumY(213), 0, 251); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=12 STATE=0
+    if(arg2 == 1) SpawnWithFog("ZombieCpt", getMediumX(61), getMediumY(222), 0, 251); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=13 STATE=0
+    //if(arg2 == 1) SpawnWithFog("ZombiePvt", getMediumX(60), getMediumY(212), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=14 STATE=0
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1);
 }
 script 16 (int arg0, int arg1, int arg2) { //X=2 Y=20 START=L_77 END=L_77 UNKN=524288 UNKN2=0
@@ -245,7 +237,7 @@ script 21 (int arg0, int arg1, int arg2) { //X=24 Y=20 START=L_83 END=L_96 UNKN=
     if(arg2 == 3) ACS_NamedExecute("transformation", 0, 788); // ( USE IF_VAR( 4 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 3) Delay(12); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=350
     if(arg2 == 3) Thing_Remove(788); // ( USE MODIFYWORLD IF_VAR( 4 ) ) HIDE_THINGS_AT X=24 Y=20
-    if(arg2 == 3) SpawnForced("ZombieCpt", getMediumX(196), getMediumY(164), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 3) SpawnForced("ZombieCpt", getMediumX(196), getMediumY(164), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=24 Y=20
 }
@@ -309,7 +301,7 @@ script 35 (int arg0, int arg1, int arg2) { //X=18 Y=23 START=L_119 END=L_130 UNK
     if(arg2 == 2) ACS_NamedExecute("transformation", 0, 599); // ( USE IF_VAR( 2 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 2) Delay(12); // ( USE IF_VAR( 2 ) ) SLEEP MSEC=350
     if(arg2 == 2) Thing_Remove(599); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=18 Y=23
-    if(arg2 == 2) SpawnForced("Assassin", getMediumX(148), getMediumY(188), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=7 STATE=0
+    if(arg2 == 2) SpawnForced("Assassin", getMediumX(148), getMediumY(188), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=7 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 2 ) ) FRAME ARG1=0
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=18 Y=23
 }
@@ -387,7 +379,7 @@ script 48 (int arg0, int arg1, int arg2) { //X=17 Y=26 START=L_165 END=L_175 UNK
     if(arg2 == 2) ACS_NamedExecute("transformation", 0, 570); // ( USE IF_VAR( 2 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 2) Delay(12); // ( USE IF_VAR( 2 ) ) SLEEP MSEC=350
     if(arg2 == 2) Thing_Remove(570); // ( USE MODIFYWORLD IF_VAR( 2 ) ) HIDE_THINGS_AT X=17 Y=26
-    if(arg2 == 2) SpawnForced("Belphegor", getMediumX(140), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=8 STATE=0
+    if(arg2 == 2) SpawnForced("Belphegor", getMediumX(140), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=8 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 2 ) ) FRAME ARG1=0
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=17 Y=26
 }
@@ -428,7 +420,7 @@ script 55 (int arg0, int arg1, int arg2) { //X=27 Y=28 START=L_182 END=L_200 UNK
     if(arg2 == 4) ACS_NamedExecute("transformation", 0, 892); // ( USE IF_VAR( 8 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 4) Delay(12); // ( USE IF_VAR( 8 ) ) SLEEP MSEC=350
     if(arg2 == 4) Thing_Remove(892); // ( USE MODIFYWORLD IF_VAR( 8 ) ) HIDE_THINGS_AT X=27 Y=28
-    if(arg2 == 4) SpawnForced("Belphegor", getMediumX(220), getMediumY(228), 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 4) SpawnForced("Belphegor", getMediumX(220), getMediumY(228), 0, 0); // ( USE MODIFYWORLD IF_VAR( 8 ) ) SHOW_THING ID=1 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 8 ) ) FRAME ARG1=0
     if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 8 ) ) INC_VAR X=27 Y=28
 }
@@ -456,13 +448,14 @@ script 59 (int arg0, int arg1, int arg2) { //X=26 Y=29 START=L_207 END=L_227 UNK
     if(arg2 == 3) ACS_NamedExecuteWait("lockwindow", 0, getString(28), getString(27), 59); // ( USE IF_VAR( 4 ) ) PASSCODE_OR_HALT PASS=27 MSG=28
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) DOOR_UNLOCK LINE=11
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) DOOR_OPEN LINE=11
+    if(arg2 == 3) Autosave();
     if(arg2 == 3) ACS_Execute(3000, 0, 202, 201);
     if(arg2 == 3) ACS_Execute(3002, 0, 3);
-    if(arg2 == 3) SpawnForced("Nightmare", getMediumX(228), getMediumY(220), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=2 STATE=0
-    if(arg2 == 3) SpawnForced("Nightmare", getMediumX(236), getMediumY(220), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=3 STATE=0
-    if(arg2 == 3) SpawnForced("Nightmare", getMediumX(220), getMediumY(220), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=4 STATE=0
-    if(arg2 == 3) SpawnForced("Nightmare", getMediumX(196), getMediumY(212), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=5 STATE=0
-    if(arg2 == 3) SpawnForced("Nightmare", getMediumX(188), getMediumY(220), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=6 STATE=0
+    if(arg2 == 3) SpawnWithFog("Nightmare", getMediumX(228), getMediumY(220), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=2 STATE=0
+    if(arg2 == 3) SpawnWithFog("Nightmare", getMediumX(236), getMediumY(220), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=3 STATE=0
+    if(arg2 == 3) SpawnWithFog("Nightmare", getMediumX(220), getMediumY(220), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=4 STATE=0
+    if(arg2 == 3) SpawnWithFog("Nightmare", getMediumX(196), getMediumY(212), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=5 STATE=0
+    if(arg2 == 3) SpawnWithFog("Nightmare", getMediumX(188), getMediumY(220), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=6 STATE=0
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(29)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG_WITH_SOUND STR=29
     if(arg2 == 3) Delay(10); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=300
@@ -485,198 +478,3 @@ script 62 (int arg0, int arg1, int arg2) { //X=30 Y=30 START=L_232 END=L_232 UNK
 script 63 (int arg0, int arg1, int arg2) { //X=15 Y=31 START=L_233 END=L_233 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=212
 }
-
-
-/*
-
-#include "zcommon.acs"
-
-//vars
-bool doc = false;
-bool fmarine = false;
-bool lightoff = false;
-
-Script 666 ENTER{
-    SetHudSize(640, 400, 0);
-    SetFont("dbigfont");
-    HudMessage(l:"DRRP_B_ID57";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    //SetFont("smallfont");
-    //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
-    ACS_Execute(1000, 0);
-    ACS_Execute(1001, 0);
-    ACS_Execute(1002, 0);
-}
-
-script 1000 (void) {
-    AmbientSound("ambient/drone1", 100);
-    Delay(34*3);
-    Restart;
-}
-
-script 1001 (void){
-    int her = random(0, 3);
-    switch(her){
-        case 0:
-            break;
-        case 1:
-            AmbientSound(localizeSound("voice/reac01"), 127);
-            break;
-        case 2:
-            AmbientSound(localizeSound("voice/uac"), 127);
-            break;
-        case 3:
-            lightoff = true;
-            SetMusic("d_silenc");
-            AmbientSound("techno/poweroff", 255);
-            Sector_SetFade(0, 128, 0, 0);
-            Sector_SetColor(0, 0, 0, 0, 0);
-            Delay(34*7);
-            AmbientSound("techno/poweron", 255);
-            Sector_SetColor(0, 255, 255, 255, 0);
-            Sector_SetFade(0, 0, 0, 0);
-            lightoff = true;
-            SetMusic("*", 0);
-            break;
-    }
-    Delay(34*15);
-    Restart;
-}
-
-script "test" (void){
-    Thing_Activate(789);
-}
-
-script 1002 (void){
-        AmbientSound("alarm/alarm3", 127);
-    Delay(34*2);
-    Restart;
-}
-
-script 1 (int id)
-{//Comp
-    switch (id) {
-        case 0:
-            ActivatorSound("misc/chat2", 255);
-            Print(s:"Hello.\nWelcome to Mars.");
-            Delay(34);
-            break;
-        case 2:
-            ActivatorSound("misc/chat2", 255);
-            Print(s:"I'll kill you slow.\nKronos");
-            Delay(34);
-            break;
-    }
-
-}
-
-script 2 (void)
-{//Shop
-ActivatorSound("voice/only", 255);
-Print(s:"\cgShop is offline!");
-  Delay(34*2);
-}
-
-script 3 (int id) { // Monologue
-ActivatorSound("misc/chat2", 255);
-    switch (id) {
-        case 0:
-        Print(s:"\cdHi, Marine!");
-        break;
-
-        case 1:
-        if(!fmarine){
-            AmbientSound("DSRADIO", 127);
-            Print(s:"\cdThank god you're back!");
-            Delay(43*2);
-            AmbientSound("DSRADIO", 127);
-            Print(s:"\cdWe've suffered a massive attack!");
-            Delay(48*2);
-            AmbientSound("DSRADIO", 127);
-            Print(s:"\cd Hordes of monsters swarmed into Junction from the reactor area.");
-            Delay(43*2);
-            AmbientSound("DSRADIO", 127);
-            Print(s:"\cdDr. Kelvin was able to seal up the door to the reactor to stop the attack.");
-            Delay(43*3);
-            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            ThingSound(2, "DSPLPAIN", 127);
-            AmbientSound("DSRADIO", 127);
-            Print(s:"Ugh, I don't feel so good...");
-            Delay(43);
-            AmbientSound("DSPOPAIN", 127);
-            Print(s:"\cgOh no...");
-            Delay(36);
-            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            ThingSound(2, "DSPOPAIN", 127);
-            Radius_Quake(6, 12, 0, 10, 0);
-            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            SpawnSpot("ArchvileFire", 20);
-            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            Delay(38);
-            Radius_Quake(6, 12, 0, 10, 0);
-            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            Delay(2);
-            FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
-            Delay(2);
-            FadeRange(255, 0, 0, 1.0, 0, 0, 0, 0.0, 0.1);
-            Delay(6);
-            ThingSound(20, "DSPLDETH", 127);
-            FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
-            Thing_Remove(101);
-            Delay(2);
-            SpawnSpot("ZombieMan", 20);
-            fmarine = true;
-            SetLineBlocking(5, OFF);
-        }
-        break;
-
-        case 2:
-        Radius_Quake(6, 12, 0, 10, 0);
-        FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
-        ThingSound(2, "DSPLPAIN", 127);
-        Delay(20);
-        ThingSound(2, "DSPOPAIN", 127);
-        Delay(6);
-        ThingSound(2, "DSPLPAIN", 127);
-        AmbientSound("DSPOPAIN", 127);
-        Print(s:"Oh FUCK!");
-        Delay(43);
-        Radius_Quake(6, 12, 0, 10, 0);
-        FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
-        SpawnSpot("ArchvileFire", 10);
-        FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
-        Delay(6);
-        ThingSound(2, "DSPLDETH", 127);
-        FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.1);
-        Thing_Remove(102);
-        Delay(2);
-        SpawnSpot("ChaingunGuy", 10);
-        SetLineBlocking(6, OFF);
-        break;
-
-        case 666:
-        Print(s:"\cgFuck you, cheater!");
-        ActivatorSound(localizeSound("voice/wtf"), 255);
-        break;
-
-        case 10:
-        if(!doc){
-            Print(s:"\cdI'll heal you 1 times!");
-            doc = true;
-        }else{
-            Print(s:"\cdFuck you!");
-        }
-        HealThing(100);
-        break;
-    }
-Delay(34);
-}
-
-script 6 (int sector)
-{//Opener
-    ActivatorSound("acess/GRANT1", 255);
-    Door_Open(sector, 128, 0);
-}
-
-script 667 (void) {
-    PlaySound(0, "DSPLDETH");
-}*/

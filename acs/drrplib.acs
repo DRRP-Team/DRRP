@@ -1,0 +1,219 @@
+#library "drrplib"
+#include "zcommon.acs"
+
+const int SECONDS = 35; /* Ticks per second */
+
+/* HUD Alignment Anchor */
+const fixed HUD_CENTER = 0.0;
+const fixed HUD_TOP = 0.1;
+const fixed HUD_BOTTOM = 0.2;
+const fixed HUD_LEFT = 0.1;
+const fixed HUD_RIGHT = 0.2;
+
+/* Useful functions */
+
+function fixed toFixed(int value) {
+    return value << 16;
+}
+
+function int toInt(fixed value) {
+    return value >> 16;
+}
+
+function int toFloor(fixed value) {
+    if (value < 10000) {
+        return value;
+    }
+
+    return toInt(value);
+}
+
+/* Can be used if you don't have enough script parameters */
+function int encodeXY(int x, int y) {
+    return (x << 16) | y;
+}
+
+function int decodeX(int encoded) {
+    return encoded >> 16;
+}
+
+function int decodeY(int encoded) {
+    return encoded & 0xFFFF;
+}
+
+function bool isLocalized(str string) {
+    return !!strcmp(StrParam(l:string), string);
+}
+
+
+function bool isUnicodeSymbol(int symbol) {
+    return symbol < 0;
+}
+
+function int unilen(str text) {
+    int len = 0;
+    int unicodeChars = 0;
+
+    while (text[len] != 0) {
+        if (text[len] < 0) unicodeChars++;
+        len++;
+    }
+
+    return len - (unicodeChars / 2);
+}
+
+function str at(str text, int position) {
+    int pos = 0;
+    while(true) {
+        int sym = text[pos];
+
+        if (pos == position * 2) {
+            return isUnicodeSymbol(sym)
+                ? StrParam(c:sym, c:text[pos + 1])
+                : StrParam(c:sym);
+        }
+
+        if (sym > 0) pos += 2;
+        else if (sym == 0) return "";
+        else pos += 1;
+    }
+}
+
+function int getStringWidth(str String) {
+    return UniLen(String);
+}
+
+function int getStringHeight(str String) {
+    int i      = 0;
+    int height = 0;
+
+    while(String[i] != '\0') {
+        if(String[i++] == '\n') height++;
+    }
+    return height;
+}
+
+function global str getThingName(int id, int state) {
+    Print(s:"getThingName(", i:id, s:", ", i:state, s:")");
+    return "DRRPTODO";
+}
+
+function str getAimedActorDialogueType(void) {
+    int tid = PickActor(0, GetActorAngle(0), GetActorPitch(0), 100.0, 5005,
+        MF_NOBLOOD, 0, PICKAF_RETURNTID);
+    str class = GetActorClass(tid);
+    if(GetCVar("drrp_debug_mode")) print(s:class);
+
+    /* if (!StriCmp(class, "Civilian")) return 2; */
+    if (!StriCmp(class, "DRRPComputer")) return 1;
+    /* if (!StriCmp(class, "DRRPPlayer")) return -1; */
+
+    return 0;
+}
+
+Script "TestDialogueType" (void) {
+    print(i:getAimedActorDialogueType());
+}
+
+function str localizeSound(str sound) {
+    if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
+    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
+}
+
+function fixed fmax(fixed val1, fixed val2) {
+    return val1 > val2 ? val1 : val2;
+}
+
+function fixed fmin(fixed val1, fixed val2) {
+    return val1 < val2 ? val1 : val2;
+}
+
+function fixed fclamp(fixed value, fixed min, fixed max) {
+    return fmax(min, fmin(max, value));
+}
+
+function int idivF(int a, int b) {
+    return toFixed(a) / toFixed(b);
+}
+
+function int idivI(int a, int b) {
+    return toFloor(idivF(a, b));
+}
+
+function str StrAdd(str a, str b) {
+    return StrParam(s:a, s:b);
+}
+
+
+function str removeChar(str string, int charToRemove) {
+    str output = "";
+
+    int len = StrLen(string);
+
+    for (int i = 0; i < len; i++) {
+        if (string[i] != charToRemove)
+            output = StrParam(s:output, c:string[i]);
+    }
+
+    return output;
+}
+
+function str replaceChar(str string, int char, int charToReplace) {
+    str output = "";
+
+    int len = StrLen(string);
+
+    for (int i = 0; i < len; i++) {
+        if (string[i] == char)
+            output = StrParam(s:output, c:charToReplace);
+        else
+            output = StrParam(s:output, c:string[i]);
+    }
+
+    return output;
+}
+
+function str removeNewLines(str string) {
+    str output = "";
+
+    int len = StrLen(string);
+
+    for (int i = 0; i < len; i++) {
+        if (string[i] == '\n') {
+            if (i + 1 < len && string[i + 1] != ' ')
+                output = StrParam(s:output, c:' ');
+        } else {
+            output = StrParam(s:output, c:string[i]);
+        }
+    }
+
+    return output;
+}
+
+function str StrLTrim(str string) {
+    int len = StrLen(string);
+    int spaces = 0;
+    for (; string[spaces] == ' '; spaces++) {}
+
+    return StrRight(string, len - spaces);
+}
+
+function str StrRTrim(str string) {
+    int len = StrLen(string);
+    int wordLen = len - 1;
+    for (; string[wordLen] == ' '; wordLen--) {}
+
+    return StrLeft(string, wordLen + 1);
+}
+
+function str StrTrim(str string) {
+    str trim = StrLTrim(StrRTrim(string));
+    /* print(s:"StrTrim(", s:string, s:") = ", s:trim, c:'|', i:StrLen(trim)); */
+    return trim;
+}
+
+
+function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {
+    SpawnForced("TeleportFog", x, y, z);
+    SpawnForced(classname, x, y, z, assignTid);
+}

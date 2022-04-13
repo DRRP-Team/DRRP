@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -19,14 +19,14 @@
     monsters/zombiepvt/death2            dspodth2
     monsters/zombiepvt/death3            dspodth3
 
-    $pitchset monsters/zombiepvt/sight1  1.05
-    $pitchset monsters/zombiepvt/sight2  1.05
-    $pitchset monsters/zombiepvt/sight3  1.05
-    $pitchset monsters/zombiepvt/active  1.05
-    $pitchset monsters/zombiepvt/pain    1.05
-    $pitchset monsters/zombiepvt/death1  1.05
-    $pitchset monsters/zombiepvt/death2  1.05
-    $pitchset monsters/zombiepvt/death3  1.05
+    $pitchset monsters/zombiepvt/sight1  1.03
+    $pitchset monsters/zombiepvt/sight2  1.03
+    $pitchset monsters/zombiepvt/sight3  1.03
+    $pitchset monsters/zombiepvt/active  1.03
+    $pitchset monsters/zombiepvt/pain    1.03
+    $pitchset monsters/zombiepvt/death1  1.03
+    $pitchset monsters/zombiepvt/death2  1.03
+    $pitchset monsters/zombiepvt/death3  1.03
 
     $random monsters/zombiepvt/sight {
         monsters/zombiepvt/sight1
@@ -49,14 +49,14 @@
     monsters/zombiecpt/death2            dspodth2
     monsters/zombiecpt/death3            dspodth3
 
-    $pitchset monsters/zombiecpt/sight1  0.95
-    $pitchset monsters/zombiecpt/sight2  0.95
-    $pitchset monsters/zombiecpt/sight3  0.95
-    $pitchset monsters/zombiecpt/active  0.95
-    $pitchset monsters/zombiecpt/pain    0.95
-    $pitchset monsters/zombiecpt/death1  0.95
-    $pitchset monsters/zombiecpt/death2  0.95
-    $pitchset monsters/zombiecpt/death3  0.95
+    $pitchset monsters/zombiecpt/sight1  0.97
+    $pitchset monsters/zombiecpt/sight2  0.97
+    $pitchset monsters/zombiecpt/sight3  0.97
+    $pitchset monsters/zombiecpt/active  0.97
+    $pitchset monsters/zombiecpt/pain    0.97
+    $pitchset monsters/zombiecpt/death1  0.97
+    $pitchset monsters/zombiecpt/death2  0.97
+    $pitchset monsters/zombiecpt/death3  0.97
 
     $random monsters/zombiecpt/sight {
         monsters/zombiecpt/sight1
@@ -81,14 +81,14 @@
     monsters/troop/death2            dspodth2
     monsters/troop/death3            dspodth3
 
-    $pitchset monsters/troop/sight1  1.05
-    $pitchset monsters/troop/sight2  1.05
-    $pitchset monsters/troop/sight3  1.05
-    $pitchset monsters/troop/active  1.05
-    $pitchset monsters/troop/pain    1.05
-    $pitchset monsters/troop/death1  1.05
-    $pitchset monsters/troop/death2  1.05
-    $pitchset monsters/troop/death3  1.05
+    $pitchset monsters/troop/sight1  1.03
+    $pitchset monsters/troop/sight2  1.03
+    $pitchset monsters/troop/sight3  1.03
+    $pitchset monsters/troop/active  1.03
+    $pitchset monsters/troop/pain    1.03
+    $pitchset monsters/troop/death1  1.03
+    $pitchset monsters/troop/death2  1.03
+    $pitchset monsters/troop/death3  1.03
 
     $random monsters/troop/sight {
         monsters/troop/sight1
@@ -111,14 +111,14 @@
     monsters/assassin/death2            dspodth2
     monsters/assassin/death3            dspodth3
 
-    $pitchset monsters/assassin/sight1  0.95
-    $pitchset monsters/assassin/sight2  0.95
-    $pitchset monsters/assassin/sight3  0.95
-    $pitchset monsters/assassin/active  0.95
-    $pitchset monsters/assassin/pain    0.95
-    $pitchset monsters/assassin/death1  0.95
-    $pitchset monsters/assassin/death2  0.95
-    $pitchset monsters/assassin/death3  0.95
+    $pitchset monsters/assassin/sight1  0.97
+    $pitchset monsters/assassin/sight2  0.97
+    $pitchset monsters/assassin/sight3  0.97
+    $pitchset monsters/assassin/active  0.97
+    $pitchset monsters/assassin/pain    0.97
+    $pitchset monsters/assassin/death1  0.97
+    $pitchset monsters/assassin/death2  0.97
+    $pitchset monsters/assassin/death3  0.97
 
     $random monsters/assassin/sight {
         monsters/assassin/sight1
@@ -144,13 +144,13 @@
 
     $limit monsters/impling/active 6
 
-    $pitchset monsters/impling/sight1  1.05
-    $pitchset monsters/impling/sight2  1.05
-    $pitchset monsters/impling/active  1.05
-    $pitchset monsters/impling/pain    1.05
-    $pitchset monsters/impling/death1  1.05
-    $pitchset monsters/impling/death2  1.05
-    $pitchset monsters/impling/shotx   1.05
+    $pitchset monsters/impling/sight1  1.03
+    $pitchset monsters/impling/sight2  1.03
+    $pitchset monsters/impling/active  1.03
+    $pitchset monsters/impling/pain    1.03
+    $pitchset monsters/impling/death1  1.03
+    $pitchset monsters/impling/death2  1.03
+    $pitchset monsters/impling/shotx   1.03
 
     $random monsters/impling/sight {
         monsters/impling/sight1
@@ -172,13 +172,13 @@
 
     $limit monsters/implord/active 6
 
-    $pitchset monsters/implord/sight1  0.95
-    $pitchset monsters/implord/sight2  0.95
-    $pitchset monsters/implord/active  0.95
-    $pitchset monsters/implord/pain    0.95
-    $pitchset monsters/implord/death1  0.95
-    $pitchset monsters/implord/death2  0.95
-    $pitchset monsters/implord/shotx   0.95
+    $pitchset monsters/implord/sight1  0.97
+    $pitchset monsters/implord/sight2  0.97
+    $pitchset monsters/implord/active  0.97
+    $pitchset monsters/implord/pain    0.97
+    $pitchset monsters/implord/death1  0.97
+    $pitchset monsters/implord/death2  0.97
+    $pitchset monsters/implord/shotx   0.97
 
     $random monsters/implord/sight {
         monsters/implord/sight1
@@ -197,10 +197,10 @@
     monsters/phantom/melee            dssklatk
     monsters/phantom/death            dsfirxpl
 
-    $pitchset monsters/phantom/active 1.05
-    $pitchset monsters/phantom/pain   1.05
-    $pitchset monsters/phantom/melee  1.05
-    $pitchset monsters/phantom/death  1.05
+    $pitchset monsters/phantom/active 1.03
+    $pitchset monsters/phantom/pain   1.03
+    $pitchset monsters/phantom/melee  1.03
+    $pitchset monsters/phantom/death  1.03
 
 /// Nightmare
     monsters/nightmare/active           dsdmact
@@ -208,10 +208,10 @@
     monsters/nightmare/melee            dssklatk
     monsters/nightmare/death            dsfirxpl
 
-    $pitchset monsters/nightmare/active 0.95
-    $pitchset monsters/nightmare/pain   0.95
-    $pitchset monsters/nightmare/melee  0.95
-    $pitchset monsters/nightmare/death  0.95
+    $pitchset monsters/nightmare/active 0.97
+    $pitchset monsters/nightmare/pain   0.97
+    $pitchset monsters/nightmare/melee  0.97
+    $pitchset monsters/nightmare/death  0.97
 
 // Demons
 
@@ -222,11 +222,11 @@
     monsters/bulldemon/melee            dssgtatk
     monsters/bulldemon/death            dssgtdth
 
-    $pitchset monsters/bulldemon/sight  1.05
-    $pitchset monsters/bulldemon/active 1.05
-    $pitchset monsters/bulldemon/pain   1.05
-    $pitchset monsters/bulldemon/melee  1.05
-    $pitchset monsters/bulldemon/death  1.05
+    $pitchset monsters/bulldemon/sight  1.03
+    $pitchset monsters/bulldemon/active 1.03
+    $pitchset monsters/bulldemon/pain   1.03
+    $pitchset monsters/bulldemon/melee  1.03
+    $pitchset monsters/bulldemon/death  1.03
 
     $limit monsters/bulldemon/melee 4
 
@@ -237,11 +237,11 @@
     monsters/belphegor/melee            dssgtatk
     monsters/belphegor/death            dssgtdth
 
-    $pitchset monsters/belphegor/sight  0.95
-    $pitchset monsters/belphegor/active 0.95
-    $pitchset monsters/belphegor/pain   0.95
-    $pitchset monsters/belphegor/melee  0.95
-    $pitchset monsters/belphegor/death  0.95
+    $pitchset monsters/belphegor/sight  0.97
+    $pitchset monsters/belphegor/active 0.97
+    $pitchset monsters/belphegor/pain   0.97
+    $pitchset monsters/belphegor/melee  0.97
+    $pitchset monsters/belphegor/death  0.97
 
     $limit monsters/belphegor/melee 4
 
@@ -253,10 +253,10 @@
     monsters/malwrath/pain             dsdmpain
     monsters/malwrath/death            dscacdth
 
-    $pitchset monsters/malwrath/sight  1.05
-    $pitchset monsters/malwrath/active 1.05
-    $pitchset monsters/malwrath/pain   1.05
-    $pitchset monsters/malwrath/death  1.05
+    $pitchset monsters/malwrath/sight  1.03
+    $pitchset monsters/malwrath/active 1.03
+    $pitchset monsters/malwrath/pain   1.03
+    $pitchset monsters/malwrath/death  1.03
 
 /// Wretched
     monsters/wretched/sight            dscacsit
@@ -264,10 +264,10 @@
     monsters/wretched/pain             dsdmpain
     monsters/wretched/death            dscacdth
 
-    $pitchset monsters/wretched/sight  0.95
-    $pitchset monsters/wretched/active 0.95
-    $pitchset monsters/wretched/pain   0.95
-    $pitchset monsters/wretched/death  0.95
+    $pitchset monsters/wretched/sight  0.97
+    $pitchset monsters/wretched/active 0.97
+    $pitchset monsters/wretched/pain   0.97
+    $pitchset monsters/wretched/death  0.97
 
 // Revenants
 
@@ -277,10 +277,10 @@
     monsters/ghoul/pain             dspopain
     monsters/ghoul/death            dsskedth
 
-    $pitchset monsters/ghoul/sight  1.05
-    $pitchset monsters/ghoul/active 1.05
-    $pitchset monsters/ghoul/pain   1.05
-    $pitchset monsters/ghoul/death  1.05
+    $pitchset monsters/ghoul/sight  1.03
+    $pitchset monsters/ghoul/active 1.03
+    $pitchset monsters/ghoul/pain   1.03
+    $pitchset monsters/ghoul/death  1.03
 
 /// Revenant
     monsters/revenant/sight            dsskesit
@@ -288,10 +288,10 @@
     monsters/revenant/pain             dspopain
     monsters/revenant/death            dsskedth
 
-    $pitchset monsters/revenant/sight  0.95
-    $pitchset monsters/revenant/active 0.95
-    $pitchset monsters/revenant/pain   0.95
-    $pitchset monsters/revenant/death  0.95
+    $pitchset monsters/revenant/sight  0.97
+    $pitchset monsters/revenant/active 0.97
+    $pitchset monsters/revenant/pain   0.97
+    $pitchset monsters/revenant/death  0.97
 
 // Elementals
 
@@ -301,10 +301,10 @@
     monsters/beholder/pain             dspepain
     monsters/beholder/death            dspedth
 
-    $pitchset monsters/beholder/sight  1.05
-    $pitchset monsters/beholder/active 1.05
-    $pitchset monsters/beholder/pain   1.05
-    $pitchset monsters/beholder/death  1.05
+    $pitchset monsters/beholder/sight  1.03
+    $pitchset monsters/beholder/active 1.03
+    $pitchset monsters/beholder/pain   1.03
+    $pitchset monsters/beholder/death  1.03
 
 /// Pain Elemental
     monsters/painelemental/sight            dspesit
@@ -312,10 +312,10 @@
     monsters/painelemental/pain             dspepain
     monsters/painelemental/death            dspedth
 
-    $pitchset monsters/painelemental/sight  0.95
-    $pitchset monsters/painelemental/active 0.95
-    $pitchset monsters/painelemental/pain   0.95
-    $pitchset monsters/painelemental/death  0.95
+    $pitchset monsters/painelemental/sight  0.97
+    $pitchset monsters/painelemental/active 0.97
+    $pitchset monsters/painelemental/pain   0.97
+    $pitchset monsters/painelemental/death  0.97
 
 // Cubuses
 
@@ -326,11 +326,11 @@
     monsters/behemoth/raiseguns        dsmanatk
     monsters/behemoth/death            dsmandth
 
-    $pitchset monsters/behemoth/sight     1.05
-    $pitchset monsters/behemoth/active    1.05
-    $pitchset monsters/behemoth/pain      1.05
-    $pitchset monsters/behemoth/raiseguns 1.05
-    $pitchset monsters/behemoth/death     1.05
+    $pitchset monsters/behemoth/sight     1.03
+    $pitchset monsters/behemoth/active    1.03
+    $pitchset monsters/behemoth/pain      1.03
+    $pitchset monsters/behemoth/raiseguns 1.03
+    $pitchset monsters/behemoth/death     1.03
 
 /// Druj
     monsters/druj/sight            dsmansit
@@ -339,11 +339,11 @@
     monsters/druj/raiseguns        dsmanatk
     monsters/druj/death            dsmandth
 
-    $pitchset monsters/druj/sight     0.95
-    $pitchset monsters/druj/active    0.95
-    $pitchset monsters/druj/pain      0.95
-    $pitchset monsters/druj/raiseguns 0.95
-    $pitchset monsters/druj/death     0.95
+    $pitchset monsters/druj/sight     0.97
+    $pitchset monsters/druj/active    0.97
+    $pitchset monsters/druj/pain      0.97
+    $pitchset monsters/druj/raiseguns 0.97
+    $pitchset monsters/druj/death     0.97
 
 // Viles
 
@@ -353,10 +353,10 @@
     monsters/infernis/pain             dsvipain
     monsters/infernis/death            dsvildth
 
-    $pitchset monsters/infernis/sight  1.05
-    $pitchset monsters/infernis/active 1.05
-    $pitchset monsters/infernis/pain   1.05
-    $pitchset monsters/infernis/death  1.05
+    $pitchset monsters/infernis/sight  1.03
+    $pitchset monsters/infernis/active 1.03
+    $pitchset monsters/infernis/pain   1.03
+    $pitchset monsters/infernis/death  1.03
 
 /// Apollyon
     monsters/apollyon/sight            dsvilsit
@@ -364,10 +364,10 @@
     monsters/apollyon/pain             dsvipain
     monsters/apollyon/death            dsvildth
 
-    $pitchset monsters/apollyon/sight  0.95
-    $pitchset monsters/apollyon/active 0.95
-    $pitchset monsters/apollyon/pain   0.95
-    $pitchset monsters/apollyon/death  0.95
+    $pitchset monsters/apollyon/sight  0.97
+    $pitchset monsters/apollyon/active 0.97
+    $pitchset monsters/apollyon/pain   0.97
+    $pitchset monsters/apollyon/death  0.97
 
 // -Hells
 
@@ -377,7 +377,7 @@
     monsters/ogre/pain             dsdmpain
     monsters/ogre/death            dskntdth
 
-    $pitchset monsters/ogre/sight  1.05
-    $pitchset monsters/ogre/active 1.05
-    $pitchset monsters/ogre/pain   1.05
-    $pitchset monsters/ogre/death  1.05
+    $pitchset monsters/ogre/sight  1.03
+    $pitchset monsters/ogre/active 1.03
+    $pitchset monsters/ogre/pain   1.03
+    $pitchset monsters/ogre/death  1.03

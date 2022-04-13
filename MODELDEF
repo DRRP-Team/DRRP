@@ -1,0 +1,119 @@
+Model DRRPLava { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "lava.md3" // Model index, model file
+    Scale 10.0 10.0 10.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "LAVAA0.png" // Model index, texture
+    FrameIndex LAVA A 0 0 // sprite, frame, model index, model frame
+
+    Skin 0 "LAVAB0.png"
+    FrameIndex LAVA B 0 0
+
+    Skin 0 "LAVAC0.png"
+    FrameIndex LAVA C 0 0
+
+    Skin 0 "LAVAD0.png"
+    FrameIndex LAVA D 0 0
+}
+
+Model DRRPWardrobe { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "cabinet.md3" // Model index, model file
+    Scale 10.0 10.0 12.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "DCABA0.png" // Model index, texture
+    FrameIndex DCAB A 0 0 // sprite, frame, model index, model frame
+}
+
+Model DRRPCrate { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "crate.md3" // Model index, model file
+    Scale 10.0 10.0 12.0
+    Offset 0.0 0.0 0.1
+
+    // Define material
+    Path "models"
+
+    // Define animation
+    
+    Skin 0 "crateuv.png" // Model index, texture
+    FrameIndex CRAT A 0 0 // sprite, frame, model index, model frame
+
+    // Open
+    // NOINTERPOLATION
+    FrameIndex CRT2 B 0 0 // sprite, frame, model index, model frame
+    FrameIndex CRT2 C 0 1 // sprite, frame, model index, model frame
+    FrameIndex CRT2 D 0 2 // sprite, frame, model index, model frame
+    FrameIndex CRT2 E 0 3 // sprite, frame, model index, model frame
+    FrameIndex CRT2 F 0 4 // sprite, frame, model index, model frame
+    FrameIndex CRT2 G 0 5 // sprite, frame, model index, model frame
+    FrameIndex CRT2 H 0 6 // sprite, frame, model index, model frame
+
+    // Explode
+    // NOINTERPOLATION
+    // FrameIndex CRT3 B 0 8 // sprite, frame, model index, model frame
+    // FrameIndex CRT3 C 0 9 // sprite, frame, model index, model frame
+    // FrameIndex CRT3 D 0 10 // sprite, frame, model index, model frame
+    // FrameIndex CRT3 E 0 11 // sprite, frame, model index, model frame
+    // FrameIndex CRT3 F 0 12 // sprite, frame, model index, model frame
+    // FrameIndex CRT3 G 0 13 // sprite, frame, model index, model frame
+    // FrameIndex CRT3 H 0 13 // sprite, frame, model index, model frame
+}
+
+Model DRRPBed { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "bed.md3" // Model index, model file
+    Scale 15.0 12.0 15.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "BEDSA0.png" // Model index, texture
+    FrameIndex BEDS A 0 0 // sprite, frame, model index, model frame
+}
+
+Model DRRPTable { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "table.md3" // Model index, model file
+    Scale 12.0 12.0 13.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "DRTBA0.png" // Model index, texture
+    FrameIndex DRTB A 0 0 // sprite, frame, model index, model frame
+}
+
+Model DRRPChair { // Name of actor in DECORATE
+    // Define model
+    Path "models"
+    Model 0 "chair.md3" // Model index, model file
+    Scale 8.0 8.0 8.0
+
+    // Define material
+    Path "sprites/decorations"
+
+    // Define animation
+    
+    Skin 0 "CHAIA0.png" // Model index, texture
+    FrameIndex CHAI A 0 0 // sprite, frame, model index, model frame
+}

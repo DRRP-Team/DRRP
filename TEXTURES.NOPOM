@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2021 DRRP-Team
+ * Copyright (c) 2017-2022 DRRP-Team
  *
  * This software is released under the MIT License.
  * https://opensource.org/licenses/MIT
@@ -54,6 +54,19 @@ Texture "NP_DRDC34", 64, 64 {
     Patch "DRDC34", 0, 0
 }
 
+Texture "NP_DRDC21", 64, 64 {
+    Patch "DRDC21", 0, 0
+}
+
+// Reactor sides
+Texture "NP_REAC1", 64, 64 {
+    Patch "REAC1", 0, 0
+}
+
+Texture "NP_DRDC49", 64, 64 {
+    Patch "DRDC49", 0, 0
+}
+
 // Red metallic wall
 Texture "NP_DRDC36", 64, 64 {
     Patch "DRDC36", 0, 0
@@ -66,6 +79,14 @@ Texture "NP_DRDC36c", 64, 64 {
 }
 Texture "NP_DRDC36d", 64, 64 {
     Patch "DRDC36d", 0, 0
+}
+
+// Cyan
+Texture "NP_DRDC37", 64, 64 {
+    Patch "DRDC37", 0, 0
+}
+Texture "NP_DRDC38", 64, 64 {
+    Patch "DRDC38", 0, 0
 }
  
 // Scute/Elevator
@@ -559,4 +580,29 @@ Texture "NP_DRDC31c", 64, 64 {
 
     Texture "NP_DRDC72", 64, 64 {
         Patch "DRDC72", 0, 0
+    }
+
+// Decals
+    Texture "NP_DRPGZ002", 64, 64 {
+        Patch "DRPGZ002", 0, 0
+    }
+
+    Texture "NP_DRPGZ004", 64, 64 {
+        Patch "DRPGZ004", 0, 0
+    }
+
+    Texture "NP_DRPGZ005", 64, 64 {
+        Patch "DRPGZ005", 0, 0
+    }
+
+    Texture "NP_DRPGZb05", 64, 64 {
+        Patch "DRPGZb05", 0, 0
+    }
+
+    Texture "NP_DRPGZc05", 64, 64 {
+        Patch "DRPGZc05", 0, 0
+    }
+
+    Texture "NP_DRPGZ006", 64, 64 {
+        Patch "DRPGZ006", 0, 0
     }

@@ -10,7 +10,7 @@ script 10 (void) { //Activate cut-scene
 	SoundVolume(0, CHAN_7, 0.1);
 	SoundVolume(0, CHAN_5, 0.1);
 	SoundVolume(0, CHAN_6, 0.1);
-	SetMusic("d_silenc");
+	SetMusic("");
 	//Play music
 	SetMusic("D_MYST");
 	//Fade from black
