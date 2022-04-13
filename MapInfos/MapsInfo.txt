@@ -32,7 +32,7 @@ Map TITLEMAP3 "Introduction" {
 }
 
 Map INTRO "Entrance" {
-    Music    = "D_DEAD"
+    Music    = "D_ENTRNC"
     SkyBox   = "SKY2"
     Cluster  = 1
     LevelNum = 1
@@ -58,7 +58,7 @@ Map SEC1 "Sector 1" {
 }
 
 Map SEC2 "Sector 2" {
-    Music    = "D_DOOM"
+    Music    = "D_SEC2"
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 4
