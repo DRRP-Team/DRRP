@@ -236,6 +236,7 @@ function int getColorByType(int type) {
         case 1: return CR_GREEN; /* Terminal */
         case 2: return CR_RED; /* Evil */
         case 3: return CR_YELLOW; /* Hint */
+        case 4: return CR_ORANGE; /* Martians *?
         case 0: /* Dialogue */
         default:
             return CR_WHITE;
