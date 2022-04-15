@@ -105,10 +105,19 @@ function global str getThingName(int id, int state) {
     return "DRRPTODO";
 }
 
-function str getAimedActorDialogueType(void) {
-    int tid = PickActor(0, GetActorAngle(0), GetActorPitch(0), 100.0, 5005,
+function int getAimedActorTid(void) {
+    return PickActor(0, GetActorAngle(0), GetActorPitch(0), 100.0, 5005,
         MF_NOBLOOD, 0, PICKAF_RETURNTID);
-    str class = GetActorClass(tid);
+}
+
+function str getAimedActor(void) {
+    int tid = getAimedActorTid();
+    return GetActorClass(tid);
+}
+
+function str getAimedActorDialogueType(void) {
+
+    str class = getAimedActor();
     if(GetCVar("drrp_debug_mode")) print(s:class);
 
     /* if (!StriCmp(class, "Civilian")) return 2; */
@@ -116,6 +125,10 @@ function str getAimedActorDialogueType(void) {
     /* if (!StriCmp(class, "DRRPPlayer")) return -1; */
 
     return 0;
+}
+
+function int getThingSpecialArg(int tid, int spec, int arg) {
+    return ScriptCall("ConversationController", "GetActorArgument", tid, spec, arg);
 }
 
 Script "TestDialogueType" (void) {

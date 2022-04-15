@@ -275,6 +275,14 @@ function void clearDialogWindow(void) {
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
 }
 
+function void exitDialogWithoutSave(void) {
+    int tid = getAimedActorTid();
+
+    int scriptNo = GetThingSpecialArg(tid, ACS_Execute, 0);
+
+    ACS_Terminate(scriptNo, 0);
+}
+
 const int BEEP_SPEED_DIV = 2;
 
 Script "beeping" (int len, int type) {
@@ -343,10 +351,20 @@ Script "window" (str _Text, int type) {
 
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
-        if((FirstRun == 0) && (ReadedKey & BT_USE))
+        if((FirstRun == 0) && (ReadedKey & BT_USE)) {
             break;
+        }
         if((FirstRun == 1) && !(ReadedKey & BT_USE))
             FirstRun = 0;
+
+        if (   (ReadedKey & BT_MOVELEFT)
+            || (ReadedKey & BT_MOVERIGHT)
+            || (ReadedKey & BT_JUMP)
+            || (ReadedKey & BT_CROUCH)
+            ) {
+            exitDialogWithoutSave();
+            break;
+        }
     }
 
     clearDialogWindow();
@@ -398,6 +416,50 @@ Script "hintwindow" (str _Text, int holdTicks) {
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
     Delay(2);
+}
+
+Script "drawwindow" (str _Text, bool typing, int type) {
+    const int posX = iapplyScaleI(320) - 80;
+    const int posY = iapplyScaleI(322);
+    const int TYPING_DELAY = 32;
+
+    if (!type) {
+        type = getAimedActorDialogueType();
+    }
+
+    str Text = fixEncodingBug(_Text);
+
+    Delay(2);
+
+    if (typing) {
+        ACS_NamedExecute("beeping", 0, UniLen(Text), type);
+
+        drawDialogTypingWindow(Text,
+            posX,
+            posY,
+            false,
+            type
+        );
+    }
+
+    int typingDelayTimer = typing ? 0 : TYPING_DELAY;
+
+    While(TRUE) {
+        typingDelayTimer++;
+
+        if (typingDelayTimer > TYPING_DELAY) {
+            ACS_NamedTerminate("beeping", 0);
+            drawDialogWindow(Text, posX, posY, -1, type);
+            break;
+        }
+
+        Delay(1);
+    }
+}
+
+Script "clearwindow" (void) {
+    clearDialogWindow();
+    ACS_NamedTerminate("beeping", 0);
 }
 
 const int BLOOD_FLASH_ID = 30;
