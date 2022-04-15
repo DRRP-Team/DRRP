@@ -163,16 +163,6 @@ Script "testwrapper" (str text, int maxLength) {
 
 const int WINDOW_LEN = 20; /* Chars in one line */
 
-function void drawDialogFrame(int posX, int posY, bool scrollable) {
-    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
-    if (scrollable) SetFont("M_DLGSCR");
-    else SetFont("M_DLGNSC");
-    HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, 0,
-        toFixed(posX) + HUD_LEFT,
-        toFixed(posY - 5) + HUD_TOP,
-        1);
-}
-
 function int getClipHeight(void) {
     int font = GetCVar("drrp_font");
 
@@ -193,11 +183,45 @@ function int getLinesOnScreen(void) {
     }
 }
 
-function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
+function int getColorByType(int type) {
+    switch (type) {
+        case 1: return CR_GREEN; /* Terminal */
+        case 2: return CR_RED; /* Evil */
+        case 3: return CR_YELLOW; /* Hint */
+        case 4: return CR_ORANGE; /* Martians *?
+        case 0: /* Dialogue */
+        default:
+            return CR_WHITE;
+    }
+}
+
+function int getBgColorByType(int type) {
+    switch (type) {
+        case 1: return CR_DARKGREEN; /* Terminal */
+        case 2: return CR_DARKRED; /* Evil */
+        case 3: return CR_BLACK; /* Hint */
+        case 4: return CR_ORANGE; /* Martians *?
+        case 0: /* Dialogue */
+        default:
+            return CR_WHITE;
+    }
+}
+
+function void drawDialogFrame(int posX, int posY, bool scrollable, int type) {
+    SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
+    if (scrollable) SetFont("M_DLGSCR");
+    else SetFont("M_DLGNSC");
+    HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, getBgColorByType(type),
+        toFixed(posX) + HUD_LEFT,
+        toFixed(posY - 5) + HUD_TOP,
+        1);
+}
+
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
-    drawDialogFrame(posX, posY, ScrollY >= 0);
+    drawDialogFrame(posX, posY, ScrollY >= 0, type);
 
     if (ScrollY < 0) ScrollY = 0;
 
@@ -211,7 +235,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
     HudMessage(s: Text;
         HUDMSG_PLAIN,
         -10000001, /* id */
-        color,
+        getColorByType(type),
         toFixed(posX + 4) + HUD_LEFT,
         toFixed(posY - (ScrollY * drrpFontHeight())) + HUD_TOP,
         1); /* hold */
@@ -219,11 +243,11 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
     SetHudSize(0, 0, false);
 }
 
-function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int color) {
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
-    drawDialogFrame(posX, posY, scrollable);
+    drawDialogFrame(posX, posY, scrollable, type);
 
     SetFont(drrpFont());
     SetHudClipRect(
@@ -235,7 +259,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
     HudMessage(s: Text;
         HUDMSG_TYPEON,
         -10000001, /* id */
-        color,
+        getColorByType(type),
         toFixed(posX + 4) + HUD_LEFT,
         toFixed(posY) + HUD_TOP,
         10.0, /* hold */
@@ -248,18 +272,6 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
 function void clearDialogWindow(void) {
     HudMessage(s: ""; HUDMSG_PLAIN, -10000000, 0, 0.5, 0.8, 1);
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
-}
-
-function int getColorByType(int type) {
-    switch (type) {
-        case 1: return CR_GREEN; /* Terminal */
-        case 2: return CR_RED; /* Evil */
-        case 3: return CR_YELLOW; /* Hint */
-        case 4: return CR_ORANGE; /* Martians *?
-        case 0: /* Dialogue */
-        default:
-            return CR_WHITE;
-    }
 }
 
 const int BEEP_SPEED_DIV = 2;
@@ -280,8 +292,6 @@ Script "window" (str _Text, int type) {
     if (!type) {
         type = getAimedActorDialogueType();
     }
-
-    const int COLOR = getColorByType(type);
 
     str Text = fixEncodingBug(_Text);
 
@@ -306,7 +316,7 @@ Script "window" (str _Text, int type) {
         posX,
         posY,
         enableScroll,
-        COLOR
+        type
     );
 
     int typingDelayTimer = 0;
@@ -325,7 +335,7 @@ Script "window" (str _Text, int type) {
             }
 
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, ScrollY, COLOR);
+            drawDialogWindow(Text, posX, posY, ScrollY, type);
         }
 
         Delay(1);
@@ -353,7 +363,6 @@ Script "hintwindow" (str _Text, int holdTicks) {
 
     const int FINAL_POS_X = 410;
     const int FINAL_POS_Y = 10;
-    const int COLOR = getColorByType(3);
 
     const int ANIMATION_OFFSET = 200;
     const int ANIMATION_SPEED = 20;
@@ -365,7 +374,7 @@ Script "hintwindow" (str _Text, int holdTicks) {
             iapplyScaleI(FINAL_POS_X + i),
             iapplyScaleI(FINAL_POS_Y),
             -1,
-            COLOR
+            3
         );
         Delay(1);
     }
@@ -377,7 +386,7 @@ Script "hintwindow" (str _Text, int holdTicks) {
             iapplyScaleI(FINAL_POS_X + i),
             iapplyScaleI(FINAL_POS_Y),
             -1,
-            COLOR
+            3
         );
         Delay(1);
     }
