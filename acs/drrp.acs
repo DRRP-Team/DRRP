@@ -294,6 +294,25 @@ Script "beeping" (int len, int type) {
     }
 }
 
+const bool doNotPageScrollOutOfWindow = false;
+
+function int getNextPageScroll(int currentScroll, int textHeight) {
+    int linesOnScreen = getLinesOnScreen();
+    if (currentScroll < 0 || textHeight < linesOnScreen) return -1;
+
+    int lastLineShown = currentScroll + linesOnScreen - 1;
+
+    if (lastLineShown >= textHeight) return -1;
+
+    currentScroll += doNotPageScrollOutOfWindow
+        ? imin(textHeight - lastLineShown, linesOnScreen)
+        : linesOnScreen;
+
+    /* print(s:"Last line shown ", i:lastLineShown, s:" Height ", i:textHeight); */
+
+    return currentScroll;
+}
+
 Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(322);
@@ -352,7 +371,12 @@ Script "window" (str _Text, int type) {
         ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
 
         if((FirstRun == 0) && (ReadedKey & BT_USE)) {
-            break;
+            int nextScroll = getNextPageScroll(ScrollY, height);
+
+            if (nextScroll == -1) break;
+
+            ScrollY = nextScroll;
+            Delay(5);
         }
         if((FirstRun == 1) && !(ReadedKey & BT_USE))
             FirstRun = 0;

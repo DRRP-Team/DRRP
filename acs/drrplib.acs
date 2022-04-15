@@ -140,6 +140,14 @@ function str localizeSound(str sound) {
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
+function int imax(int val1, int val2) {
+    return val1 > val2 ? val1 : val2;
+}
+
+function int imin(int val1, int val2) {
+    return val1 < val2 ? val1 : val2;
+}
+
 function fixed fmax(fixed val1, fixed val2) {
     return val1 > val2 ? val1 : val2;
 }
