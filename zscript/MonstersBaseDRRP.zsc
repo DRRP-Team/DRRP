@@ -53,7 +53,7 @@ III) 40%:
 
 
 // [McM]: I believe this monstrous class will be here only in rebalance branch...
-class DRRPStaticMonsterWrapper abstract play {
+class DRRPMonsterUtils abstract play {
 
     /*  Most of the random-heired monsters has similar type "combo" attack (melee or projectile).
 
@@ -79,7 +79,7 @@ class DRRPStaticMonsterWrapper abstract play {
         return newProjectile;
     } // of static DRRPBaseProjectile A_ComboAttack( Actor spawner, class<DRRPBaseProjectile> prjClass, double prjMinDmg, double prjMaxDmg, double meleeMinDmg = 0, double meleeMaxDmg = 0 ) {}
 
-} // of DRRPStaticMonsterWrapper abstract {}
+} // of DRRPMonsterUtils abstract {}
 
 
 class Dog_BaseDRRP: MBFHelperDog abstract {
@@ -215,7 +215,7 @@ class DoomImp_BaseDRRP: DoomImp abstract {
     }
 
     void A_DRRP_ImpAttack( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, "DRRPImpFireball", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPImpFireball", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
     }
 
     States {
@@ -326,7 +326,7 @@ class Cacodemon_BaseDRRP: Cacodemon {
     }
 
     void A_DRRP_CacodemonAttack( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, ballType, DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+        DRRPMonsterUtils.A_ComboAttack( self, ballType, DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
     }
 
     States {
@@ -368,7 +368,7 @@ class Revenant_BaseDRRP: Revenant abstract {
     }
 
     void A_DRRP_RevenantShot( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, "DRRPRevenantTracer", DRRPMinDamage, DRRPMaxDamage, 0, 0 );
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPRevenantTracer", DRRPMinDamage, DRRPMaxDamage, 0, 0 );
     }
 
     States {
@@ -434,7 +434,7 @@ class PainElemental_BaseDRRP: PainElemental abstract {
     } // of action void A_DRRP_PainDie( class<Actor> spawnee ) {
 
     void A_DRRP_PainAttack( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, "DRRPPainShot", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPPainShot", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
     }
 
     States {
@@ -584,7 +584,7 @@ class HellKnight_BaseDRRP: HellKnight abstract {
     }
 
     void A_DRRP_HellKnightAttack( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, ballType, DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+        DRRPMonsterUtils.A_ComboAttack( self, ballType, DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
     }
 
     States {
@@ -617,7 +617,7 @@ class BaronOfHell_BaseDRRP: BaronOfHell abstract {
     }
 
     void A_DRRP_BaronAttack( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, "DRRPBaronBall", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPBaronBall", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
     }
 
     States {

@@ -877,7 +877,7 @@ class DRRPCyberdemon: Cyberdemon replaces Cyberdemon {
     }
 
     void A_DRRP_CyberAttack( void ) {
-        DRRPStaticMonsterWrapper.A_ComboAttack( self, "DRRPCyberdemonRocket", cyberRocketMinDamage, cyberRocketMaxDamage, 0, 0 );
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPCyberdemonRocket", cyberRocketMinDamage, cyberRocketMaxDamage, 0, 0 );
     }
 
     States {
