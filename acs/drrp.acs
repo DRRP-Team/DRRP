@@ -329,7 +329,7 @@ Script "window" (str _Text, int type) {
 
     Delay(2);
 
-    int ReadedKey;
+    int btn;
     int FirstRun = 1;
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
@@ -347,19 +347,25 @@ Script "window" (str _Text, int type) {
         type
     );
 
+    onBtnReset();
+
     int typingDelayTimer = 0;
 
     While(TRUE) {
+        btn = GetPlayerInput(-1, INPUT_BUTTONS);
         typingDelayTimer++;
 
         if (typingDelayTimer > 32) {
-            if(enableScroll && ReadedKey & BT_FORWARD && ScrollY > 0) {
-                ScrollY--;
-                Delay(4);
-            }
-            if(enableScroll && ReadedKey & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
-                ScrollY++;
-                Delay(4);
+            if (enableScroll) {
+                if(btn & BT_FORWARD && ScrollY > 0) {
+                    ScrollY--;
+                    Delay(4);
+                }
+
+                if(btn & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
+                    ScrollY++;
+                    Delay(4);
+                }
             }
 
             ACS_NamedTerminate("beeping", 0);
@@ -368,23 +374,19 @@ Script "window" (str _Text, int type) {
 
         Delay(1);
 
-        ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
-
-        if((FirstRun == 0) && (ReadedKey & BT_USE)) {
+        if(onBtnPress(BT_USE)) {
             int nextScroll = getNextPageScroll(ScrollY, height);
 
             if (nextScroll == -1) break;
 
             ScrollY = nextScroll;
-            Delay(5);
         }
-        if((FirstRun == 1) && !(ReadedKey & BT_USE))
-            FirstRun = 0;
 
-        if (   (ReadedKey & BT_MOVELEFT)
-            || (ReadedKey & BT_MOVERIGHT)
-            || (ReadedKey & BT_JUMP)
-            || (ReadedKey & BT_CROUCH)
+        /* Used old variant for optimization */
+        if (   (btn & BT_MOVELEFT)
+            || (btn & BT_MOVERIGHT)
+            || (btn & BT_JUMP)
+            || (btn & BT_CROUCH)
             ) {
             exitDialogWithoutSave();
             break;
