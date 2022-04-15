@@ -46,7 +46,7 @@ with open(DIR + NEW) as _in:
             enu.write(' // %s' % comment)
         enu.write('\n')
 
-        if rus:
+        if _rus:
             rus.write('    %s = "%s";' % (sid, escapeQuotes(_rus)))
             if comment:
                 rus.write(' // %s' % comment)
