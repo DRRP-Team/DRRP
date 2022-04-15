@@ -77,7 +77,7 @@ class DRRPStaticMonsterWrapper abstract play {
         }
 
         return newProjectile;
-    } // of static DRRPBaseProjectile Launch( Actor who,  ) {}
+    } // of static DRRPBaseProjectile A_ComboAttack( Actor spawner, class<DRRPBaseProjectile> prjClass, double prjMinDmg, double prjMaxDmg, double meleeMinDmg = 0, double meleeMaxDmg = 0 ) {}
 
 } // of DRRPStaticMonsterWrapper abstract {}
 
