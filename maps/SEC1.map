@@ -4881,8 +4881,8 @@ comment = "11:2";
 
 thing
 {
-x = -1872.000;
-y = 128.000;
+x = -1680.000;
+y = 112.000;
 type = 14006;
 id = -21;
 height = 64.000000;
@@ -4901,8 +4901,8 @@ comment = "-1:11";
 
 thing
 {
-x = -1872.000;
-y = 128.000;
+x = -1680.000;
+y = 112.000;
 type = 9804;
 id = -21;
 height = 64.000000;
@@ -4973,7 +4973,7 @@ x = -1584.000;
 y = 112.000;
 type = 9804;
 id = 107;
-height = 64.000000;
+height = 64;
 arg0 = 255;
 arg1 = 255;
 arg2 = 255;
@@ -7951,6 +7951,42 @@ renderstyle = "";
 comment = "1:18";
 }
 
+thing
+{
+x = 32.000;
+y = 16.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = -160.000;
+y = 688.000;
+type = 10900;
+angle = 225;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
 vertex
 {
 x = 0.000;
@@ -7960,7 +7996,7 @@ y = 0.000;
 vertex
 {
 x = 0.000;
-y = 32.000;
+y = 24.000;
 }
 
 vertex
@@ -7978,7 +8014,7 @@ y = 0.000;
 vertex
 {
 x = 64.000;
-y = 32.000;
+y = 24.000;
 }
 
 vertex
@@ -31965,7 +32001,7 @@ sidedef
 {
 sector = 0;
 texturemiddle = "DRDC10";
-offsetx = 32;
+offsetx = 40;
 }
 
 sidedef
@@ -50090,7 +50126,7 @@ lightlevel = 64;
 sector
 {
 texturefloor = "flatfl";
-textureceiling = "blwhi";
+textureceiling = "white";
 heightceiling = 64;
 lightlevel = 64;
 }
