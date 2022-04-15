@@ -296,6 +296,10 @@ Script "window" (str _Text, int type) {
 
     str Text = fixEncodingBug(_Text);
 
+    ScriptCall("ConversationController", "SetGlobalFreeze", true);
+    /* Prevent mouse move glitches */
+    SetPlayerProperty(0, true, PROP_TOTALLYFROZEN);
+
     Delay(2);
 
     int ReadedKey;
@@ -306,10 +310,6 @@ Script "window" (str _Text, int type) {
     bool enableScroll = height >= getLinesOnScreen();
 
     if (!enableScroll) ScrollY = -1;
-
-    Thing_Stop(0); /* TID_Player -> 0 */
-    SetPlayerProperty(0, True, PROP_TOTALLYFROZEN);
-    SetPlayerProperty(0, 2, PROP_INVULNERABILITY);
 
     ACS_NamedExecute("beeping", 0, UniLen(Text), type);
 
@@ -352,8 +352,8 @@ Script "window" (str _Text, int type) {
     clearDialogWindow();
     ACS_NamedTerminate("beeping", 0);
 
-    SetPlayerProperty(0, False, PROP_TOTALLYFROZEN);
-    SetPlayerProperty(0, 0, PROP_INVULNERABILITY);
+    SetPlayerProperty(0, false, PROP_TOTALLYFROZEN);
+    ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
 Script "hintwindow" (str _Text, int holdTicks) {
@@ -486,8 +486,6 @@ Script "levelUp" (bool windowOnly) {
         ScriptCall("DRRPPlayer", "SetFeatureStatic", RPG_Level, pLevel);
     }
 
-    ScriptCall("ConversationController", "SetGlobalFreeze", true);
-
     ActivatorSound("player/levelup", 127);
     ACS_NamedExecuteWait("window", 0, StrParam(
         s:"- ", l:"DRRP_B_ID78", s:" -\n",  // Level up!
@@ -499,8 +497,6 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
         l:"DRRP_B_ID77"), 5);                  // Health restored.
-
-    ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
 
