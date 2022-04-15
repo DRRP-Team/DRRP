@@ -323,7 +323,7 @@ Show actor names,DRRP_D_MENU_INFOBAR_ENABLE,,,Отображать назван�
 Enable compass,DRRP_D_MENU_COMPASS_ENABLE,,,Включить компас
 Enable extra gibs,DRRP_D_MENU_GIBS_ENABLE,,,Разлет дополнительных останков
 Lighting type for levels,DRRP_D_MENU_LIGHTS_TYPE,,,Тип освещения на картах
-N-----W-----S-----E-----,DRRP_HUD_COMPASSVISUAL,,,С----сз----З----юз----Ю----юв----В----св----
+N----nw----W----sw----S----se----E----ne----,DRRP_HUD_COMPASSVISUAL,,,С----сз----З----юз----Ю----юв----В----св----
 None,DRRP_D_MENU_LIGHTS_NONE,,,Нет
 Normal,DRRP_D_MENU_LIGHTS_NORMAL,,,Обычный
 Attenuated,DRRP_D_MENU_LIGHTS_ATTENUATED,,,Объемный
@@ -402,12 +402,12 @@ You need a yellow card to open this door,DRRP_D_YELLOWDOOR,,,Вам нужна �
 You need a red card to open this door,DRRP_D_REDDOOR,,,Вам нужна красная ключ-карта для открытия этой двери
 You need a blue card to open this door,DRRP_D_BLUEDOOR,,,Вам нужна синяя ключ-карта для открытия этой двери
 You need a green card to open this door,DRRP_D_GREENDOOR,,,Вам нужна зеленая ключ-карта для открытия этой двери
-You can jump and crouch\nto get to places like this,DRRP_D_TIP_1,,,"Вы можете прыгать и приседать,\nчтобы добраться до мест как это"
-Do not use your flashlight\nat this location\nIt causes lags,DRRP_D_TIP_2,,,Не используйте фонарик\nна этой локации\nОн вызывает лаги
-"After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction",DRRP_D_TIP_3,,,"После входа в телепорт\nпути назад не будет\nЕсли у вас остались\nнезаконченные дела\nв других секторах,\nрекомендуем вернуться в Переход"
-"The last shop terminal\nis in this sector,\nso if you have any credits left,\nwe recommend purchasing right now",DRRP_D_TIP_4,,,"Последний торговый терминал\nнаходится в этом секторе\nЕсли у вас остались кредиты,\nрекомендуем закупиться сейчас"
-You can use your flashlight,DRRP_D_TIP_5,,,Вы можете использовать фонарик
-You can use dog's jerk\nto speed up yourself,DRRP_D_TIP_6,,,Вы можете использовать рывок\nсобаки для ускорения
+You can jump and crouch to get to places like this.,DRRP_D_TIP_1,,,"Вы можете прыгать и приседать, чтобы добраться до мест как это."
+Do not use your flashlight\nat this location\nIt causes lags,DRRP_D_TIP_2,,,Не используйте фонарик на этой локации. Он вызывает лаги.
+"After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction",DRRP_D_TIP_3,,,"После входа в телепорт пути назад не будет.\nЕсли у вас остались незаконченные дела в других секторах, рекомендуем вернуться в Переход."
+"The last shop terminal is in this sector. \nIf you have any credits left, it's the last change to go shopping.",DRRP_D_TIP_4,,,"Последний торговый терминал находится в этом секторе.\nЕсли у вас остались кредиты, сейчас - последняя возможность закупиться."
+You can use your flashlight.,DRRP_D_TIP_5,,,Вы можете использовать фонарик.
+You can use dog jerk to speed up yourself.,DRRP_D_TIP_6,,,Вы можете использовать рывок собаки для ускорения.
 Sector clear!\nYou killed all monsters!,DRRP_D_ACH_MONSTERS,,,Сектор Чист!\nВы убили всех монстров!
 Sector researched!\nYou found all secrets!,DRRP_D_ACH_SECRETS,,,Сектор исследован!\nВы нашли все секреты!
 Back,DRRP_S_BACK,,,Назад
@@ -882,7 +882,7 @@ D0or..^$#.&~\nu^l0ck3d,DRRP_SEC1_10,,,ДОерь..^$#.&~\nо^кОыт3а
 ...,DRRP_SEC1_11,,,...
 "6oor,##$%^\nunl0cke6",DRRP_SEC1_12,,,"6верь,##$%^\nоткОыт6"
 %$#$*&::::\nun10cked,DRRP_SEC1_13,,,%$#$*&::::\nот1Орыта
-^^)(id_s0f7,DRRP_SEC1_14,,,^^)(ьд_бОг7
+^^)(id_s0f7,DRRP_SEC1_14,,,
 Doo$*&::::\nunl***ed,DRRP_SEC1_15,,,Две$*&::::\nотк***та
 W!dg3+ wa5 h3r3,DRRP_SEC1_16,,,З!№с@ бы# *(д%ет
 Do!!!!##23$\nun(0*c3d,DRRP_SEC1_17,,,Дв!!!!##23$\nот(О*ы3а
@@ -996,17 +996,17 @@ Cabinet code\nentry restricted.,DRRP_SEC3_8,,,Ввод кода ограниче
 [Weapons Cabinet]\nEnter passcode:\n,DRRP_SEC3_10,,,[Оружейный шкаф]\nВведите пароль:\n
 Cabinet unlocked.,DRRP_SEC3_11,,,Шкаф открыт.
 You got your\nweapons back.,DRRP_SEC3_12,,,Ты вернул свое\nоружие.
-Empty.,DRRP_SEC3_13,,,Пусто
+Empty.,DRRP_SEC3_13,,,Пусто.
 Secure closet\ndoor 1 unlocked.,DRRP_SEC3_14,,,1-я дверь отсека\nбезопасности\nразблокирована.
 Secure closet\ndoor 2 unlocked.,DRRP_SEC3_15,,,2-я дверь отсека\nбезопасности\nразблокирована.
 4545,DRRP_SEC3_16,,,
-North lab en-\ntrance passcode:\n,DRRP_SEC3_17,,,Введите код доступа\nк северной\nлаборатории:
+North lab en-\ntrance passcode:\n,DRRP_SEC3_17,,,Введите код доступа\nк северной части\nлаборатории:
 North entrance\nunlocked.,DRRP_SEC3_18,,,Вход разблокирован.
 "[Email]\nTo: Mr. Nadira\nFrom: Kronos\nHe's closing in!\nPerform a secu-\nrity lockdown\nASAP and don't\nallow any access\ninto the facil-\nity. If he man-\nages to get in,\nyou know what to\ndo. -Kronos",DRRP_SEC3_19,,,"[Почта]\nКому: Мр. Надира\nОт: Кронос\nОн приближается!\nЗапусти процедуру\nизоляции как можно\nбыстрее, и не пускай\nникого на объект.\nЕсли же ему удастся\nпопасть внутрь, ты\nзнаешь, что делать."
 POP3 error.\nAuthentication\nfailed. Please\ncontact your\nsysadmin.,DRRP_SEC3_20,,,"POP3 error.\nAuthentication failed.\nПожалуйста,\nсвяжитесь с\nсистемным\nадминистратором. "
-North entrance\npasscode is 4545.,DRRP_SEC3_21,,,Код доступа к северной\nлаборатории: 4545
+North entrance\npasscode is 4545.,DRRP_SEC3_21,,,Код доступа к\nсеверной части\nлаборатории: 4545
 [Email]\nTo: All Staff\nFrom: Mr. Nadira\nI've changed the\nnorth entrance\npasscode to 4545.\n-Mr. Nadira,DRRP_SEC3_22,,,[Почта]\nКому: Персоналу\nОт: Мр. Надира\nЯ изменил пароль\nот двери в северную\nлабораторию на 4545.\n-Мр. Надира
-No more email.,DRRP_SEC3_23,,,Письма закончились
+No more email.,DRRP_SEC3_23,,,Конец переписки.
 You're not sup-\nposed to be here.\nThe place is un-\nder lockdown.,DRRP_SEC3_24,,,"Тебя здесь быть не\nдолжно, эта зона\nизолирована."
 Green keycard\nnorth of lab.,DRRP_SEC3_25,,,Зеленая ключ-карта\nнаходится к северу от\nлаборатории.
 You lookin' for\nthe green key-\ncard? A guy found\nit and put it in\na secure storage\ncloset north of\nthe lab.,DRRP_SEC3_26,,,Ты ищешь зеленую\nключ-карту? Кто-то\nнашел ее и поместил\nв отсек безопасности\nна севере\nлаборатории.
@@ -1026,7 +1026,7 @@ Code 741 to lock\nthe lab door.,DRRP_SEC3_39,,,Пароль 741 закроет\n
 "[Mr. Nadira]\nHey, are you the\nMarine that Dr...\nYeah, maybe I can\nhelp you. You'll\nneed to check\nyour weapons\nthough, firearms\nare not allowed\nin the lab. I'll\ntake your weapons\nand put them in\nthis cabinet to\nmy left.",DRRP_SEC3_40,,,"[Мр. Надира]\nЭй, а ты тот Морпех,\nкоторого Др....\nДа, возможно, я\nсмогу помочь.\nОднако, любое\nогнестрельное\nоружие в лаборатории \nпод запретом. Я\nпомещу его на время\nв этот оружейный\nшкаф. "
 [Mr. Nadira]\nYou'll get your\nweapons back\nlater! Use my\ncode: 741 at the\nterminal to lock\nthe door. We need\nto secure the\narea.,DRRP_SEC3_41,,,"[Мр. Надира]\nТы заберешь его\nпозже! Используй\nмой код: 741, в\nтерминале чтобы\nзакрыть дверь. Нам\nнужно обезопасить\nзону."
 [Mr. Nadira]\nLock the door be-\nhind you! The\ncode is 741. Your\nweapons are in\nthis cabinet. You\ncan get them back\nlater.,DRRP_SEC3_42,,,"[Мр. Надира]\nЗапри за собой дверь\nПароль: 741. \nТвое оружие в этом\nшкафу, ты сможешь\nзабрать его позже."
-Weapons Cabinet,DRRP_SEC3_43,,,Оружейный Шкаф.
+Weapons Cabinet,DRRP_SEC3_43,Used DRRP_E_WARDROBE instead,,Оружейный Шкаф.
 WARNING: Door\nunlocked.,DRRP_SEC3_44,,,ВНИМАНИЕ:\nДверь открыта.
 741,DRRP_SEC3_45,,,
 [Cycle door]\nEnter code:,DRRP_SEC3_46,,,[Блокировка двери]\nВведите пароль:
@@ -1058,33 +1058,33 @@ Sector 4,DRRP_SEC4_0,,,Сектор 4
 /junction.bsp,DRRP_SEC4_1,,,/junction.bsp
 Enter Junction,DRRP_SEC4_2,,,В Переход
 ,DRRP_SEC4_3,,,
-Barrel Storage,DRRP_SEC4_4,,,Хранилище Баков
-Medical Lab,DRRP_SEC4_5,,,Мед. Лаборатория
-"The sticky note\nread ""5313"".",DRRP_SEC4_6,,,"Клейкая записка\n""5313"""
-"System Offline\n[but there is a\nsticky note on\nthe monitor that\nreads: ""5313""]",DRRP_SEC4_7,,,"Система отключена\n[на мониторе была\nприклеена записка\n""5313""]"
+Barrel Storage,DRRP_SEC4_4,,,Хранилище отходов.
+Medical Lab,DRRP_SEC4_5,,,Мед. Лаборатория.
+"The sticky note\nread ""5313"".",DRRP_SEC4_6,,,"На стикере было\nнаписано ""5313""."
+"System Offline\n[but there is a\nsticky note on\nthe monitor that\nreads: ""5313""]",DRRP_SEC4_7,,,"Система отключена\n[К монитору\nприклеен стикер с\nнадписью ""5313""]"
 Logged in as root\n\n# scp /map.dat .\nSaving... Done.\nYou got the map\ndata.,DRRP_SEC4_8,,,Login root\n\n# scp /map.dat .\nСохранение...\nВсе.\nВы получили\nданные карты
 Map data already\ndownloaded.,DRRP_SEC4_9,,,Данные карты\nуже загружены
 5313,DRRP_SEC4_10,,,
 Door locked.\nEnter code:,DRRP_SEC4_11,,,Дверь закрыта\nВведите пароль:\n
-Door opened.,DRRP_SEC4_12,,,Дверь открыта
-[Email]\nTo: Col. Graff\nFrom: Kronos\nJensen has been\ntroublesome. Fire\nhim! You owe me.\n-Kronos,DRRP_SEC4_13,,,[Почта]\nКому: Полк. Графф\nОт: Кронос\nДженсен стал про-\nблемой для нас.\nУволь его! Ты мне\nдолжен\n-Кронос
-"[Email]\nTo: Kronos\nFrom: Col. Graff\nI'll try. If I do\nthis, that's it,\nKronos. Our debt\nis cleared...\nwe're done. -Col.\nGraff",DRRP_SEC4_14,,,"[Почта]\nКому: Кронос\nОт: Полк. Графф\nЯ попробую. Если\nя сделаю это, мы\nв расчете, Кронос\n-Полк. Графф"
+Door opened.,DRRP_SEC4_12,,,Дверь открыта.
+[Email]\nTo: Col. Graff\nFrom: Kronos\nJensen has been\ntroublesome. Fire\nhim! You owe me.\n-Kronos,DRRP_SEC4_13,,,"[Почта]\nКому: Полк. Графф\nОт: Кронос\nДженсен доставил\nмне много хлопот.\nУволь его, ты мне\nдолжен!\n-Кронос"
+"[Email]\nTo: Kronos\nFrom: Col. Graff\nI'll try. If I do\nthis, that's it,\nKronos. Our debt\nis cleared...\nwe're done. -Col.\nGraff",DRRP_SEC4_14,,,"[Почта]\nКому: Кронос\nОт: Полк. Графф\nЯ постараюсь. Если у\nменя выйдет, то мы в\nрасчете.\n-Полк. Графф"
 No more email.,DRRP_SEC4_15,,,Письма закончились
-Hey! You're not\nsupposed to be\nhere!,DRRP_SEC4_16,Fixed by PROPHESSOR,,Эй! Тебе сюда нельзя!
-Walk away now and\nyou won't get\nhurt.,DRRP_SEC4_17,Fixed by PROPHESSOR,,"Уходи, или будет\nбольно"
-"I warned you. Now\nyou die! Cacode-\nmon, kill! [A\ndoor opened to\nyour left...]",DRRP_SEC4_18,Fixed by PROPHESSOR,,"Я тебя предупредил.\nА теперь умри!\nКакодемон, фас!\n[Дверь слева открылась...]"
+Hey! You're not\nsupposed to be\nhere!,DRRP_SEC4_16,Fixed by PROPHESSOR,,Эй! Тебя здесь быть\nне должно!
+Walk away now and\nyou won't get\nhurt.,DRRP_SEC4_17,Fixed by PROPHESSOR,,"Уходи, или будет\nбольно."
+"I warned you. Now\nyou die! Cacode-\nmon, kill! [A\ndoor opened to\nyour left...]",DRRP_SEC4_18,Fixed by PROPHESSOR,,"Я тебя предупредил.\nА теперь умри.\nКакодемон, фас\n[Дверь слева\nоткрылась...]"
 "Please, don't\nhurt me! I'll\ntell you every-\nthing...",DRRP_SEC4_19,Fixed by PROPHESSOR,,"Прошу, не бейте!\nЯ все расскажу..."
 MUAHAHAHA!,DRRP_SEC4_20,,,УХАХАХА!
-"Signed on to\nUAC-IM...\n[INSTANT MESSAGE]\nGoodDoc99: Ma-\nrine, it's Dr.\nGuerard. You may\nhave stumbled\nupon a secret re-\nsearch facility\ninside an old\nsection of the\nbase. We think\nDr. Jensen has\nbeen storing sto-\nlen supplies\nthere.",DRRP_SEC4_21,Fixed by PROPHESSOR,,"Подключение к\nчату UAC...\n[СООБЩЕНИЕ]\n@GoodDoc99:\nМорпех, это Др.\nГерард. Возможно,\nты наткнулся на\nспрятанную лабо-\nраторию в старой\nсекции базы. Мы\nполагаем, что Др.\nДженсен хранил\nтам контрабанду."
+"Signed on to\nUAC-IM...\n[INSTANT MESSAGE]\nGoodDoc99: Ma-\nrine, it's Dr.\nGuerard. You may\nhave stumbled\nupon a secret re-\nsearch facility\ninside an old\nsection of the\nbase. We think\nDr. Jensen has\nbeen storing sto-\nlen supplies\nthere.",DRRP_SEC4_21,Fixed by PROPHESSOR,,"Подключение к\nчату UAC...\n[СООБЩЕНИЕ]\n@GoodDoc99:\nМорпех, это Др.\nГерард. Возможно,\nты наткнулся на\nспрятанную\nлабораторию в\nстарой секции базы.\nМы полагаем, что\nДр. Дженсен хранил\nтам контрабанду."
 [INSTANT MESSAGE]\nGoodDoc99: Re-\nfrain from look-\ning around the\nlab. We need to\nget an investiga-\ntion team there\nto search for\nevidence and I\ndon't want the\narea contami-\nnated.,DRRP_SEC4_22,Fixed by PROPHESSOR,,[СООБЩЕНИЕ]\n@GoodDoc99:\nНичего не трогай в\nлаборатории. Нам\nнужно послать туда\nотряд для поисков\nулик.
-[INSTANT MESSAGE]\nGoodDoc99: I've\nunlocked the door\nleading out of\nthe old base to\nJunction. Proceed\nforward with your\nmission and we'll\ntake care of re-\ncovering the sto-\nlen lab supplies.\nGuerard out.,DRRP_SEC4_23,Fixed by PROPHESSOR,,"[СООБЩЕНИЕ]\n@GoodDoc99:\nЯ открыл дверь,\nведущую к Пере-\nходу. Продолжай\nдвигаться, а мы\nпозаботимся о\nдоставке украден-\nных запасов."
-GoodDoc99 has\nsigned off.,DRRP_SEC4_24,Fixed by PROPHESSOR,,GoodDoc99\nвышел из\nчата
-[E-BOOK]\nIntroduction to\nQuantum Mechanics\nand Teleportation\n*Chapter 1*\n...,DRRP_SEC4_25,,,[ЭЛ.КНИГА]\nВведение в Кван-\nтовую Механику и\nТелепортацию\n*Глава 1*\n...
-[E-BOOK]\nStabilization\nTechniques for\nRifts in the\nSpace/Time\nContinuum\n*Chapter 1*\n...,DRRP_SEC4_26,,,[ЭЛ.КНИГА]\nМетоды Стабили-\nзации Трещин в\nПространственно/\nВременном Конти-\nнууме\n*Глава 1*\n...
-[E-BOOK]\nBeginner's Guide\nto Controlled\nHydrocon Cata-\nlyzation\n*Chapter 1*\n...,DRRP_SEC4_27,Fixed by PROPHESSOR,,[ЭЛ.КНИГА]\nРуководство для\nновичков: Управ-\nление катализацией\nсистемы Гидрокон\n*Глава 1*\n...
-[E-BOOK]\nMore Power to\nYou: Energy\nStrategies for\nProjects Needing\nInordinate\nAmounts of Power\n*Chapter 1*\n...,DRRP_SEC4_28,Fixed by PROPHESSOR,,"[ЭЛ.КНИГА]\nБольше Энергии:\nЭнергитические\nстратегии для\nпроектов,\nнуждающихся в\nчерезмерном\nколичестве\nэнергии\n*Глава 1*\n..."
+[INSTANT MESSAGE]\nGoodDoc99: I've\nunlocked the door\nleading out of\nthe old base to\nJunction. Proceed\nforward with your\nmission and we'll\ntake care of re-\ncovering the sto-\nlen lab supplies.\nGuerard out.,DRRP_SEC4_23,Fixed by PROPHESSOR,,"[СООБЩЕНИЕ]\n@GoodDoc99:\nЯ открыл дверь,\nведущую к \nПереходу. Продолжай\nдвигаться, а мы\nпозаботимся о\nдоставке \nукраденных запасов."
+GoodDoc99 has\nsigned off.,DRRP_SEC4_24,Fixed by PROPHESSOR,,GoodDoc99 \nпокинул чат. 
+[E-BOOK]\nIntroduction to\nQuantum Mechanics\nand Teleportation\n*Chapter 1*\n...,DRRP_SEC4_25,,,[ЭЛ.КНИГА]\nВведение в\nКвантовую Механику\nи Телепортацию\n*Глава 1*\n...
+[E-BOOK]\nStabilization\nTechniques for\nRifts in the\nSpace/Time\nContinuum\n*Chapter 1*\n...,DRRP_SEC4_26,,,[ЭЛ.КНИГА]\nМетоды \nСтабилизации\nТрещин в\nПространственно\nВременном\nКонтинууме\n*Глава 1*\n...
+[E-BOOK]\nBeginner's Guide\nto Controlled\nHydrocon Cata-\nlyzation\n*Chapter 1*\n...,DRRP_SEC4_27,Fixed by PROPHESSOR,,[ЭЛ.КНИГА]\nРуководство для\nновичков: \nУправление катализацией\nсистемы Гидрокон\n*Глава 1*\n...
+[E-BOOK]\nMore Power to\nYou: Energy\nStrategies for\nProjects Needing\nInordinate\nAmounts of Power\n*Chapter 1*\n...,DRRP_SEC4_28,Fixed by PROPHESSOR,,"[ЭЛ.КНИГА]\nБольше Энергии:\nЭнергитические\nстратегии для\nпроектов,\nнуждающихся в\nчерезмерном\nколичестве\nэнергии.\n*Глава 1*\n..."
 "[E-BOOK]\nHow to Get People\nto Like You, Even\nif you are a\nCrazed, Diaboli-\ncal Lunatic\n*Chapter 1*\n...",DRRP_SEC4_29,Fixed by PROPHESSOR,,"[ЭЛ.КНИГА]\nКак нравиться людям,\nдаже если вы\nотбитый на голову\n*Глава 1*\n..."
-Probability that\nexploding waste\nbarrels will de-\nstroy a JC-107\nType-A titanium\nreinforced door:\nCalculating...,DRRP_SEC4_30,Fixed by PROPHESSOR,,Взрыв огнеопасных\nотходов уничтожит\nтитановую укре-\nпленнную дверь\nJC-107 тип А\nс вероятностью:\nВычисление...
+Probability that\nexploding waste\nbarrels will de-\nstroy a JC-107\nType-A titanium\nreinforced door:\nCalculating...,DRRP_SEC4_30,Fixed by PROPHESSOR,,Взрыв огнеопасных\nотходов уничтожит\nтитановую\nукрепленнную дверь\nJC-107 тип А\nс вероятностью:\nВычисление...
 12%,DRRP_SEC4_31,,,
 System offline.,DRRP_SEC4_32,,,Система отключена
 "Welcome! This is\nthe oldest part\nof the base.\nBuilt in 2112,\nthe surrounding\nstructures and\ntunnels made up\nUAC's first per-\nmanent Martian\nsettlement. This\narea is now only\nused to store\nhazardous waste.",DRRP_SEC4_33,Fixed by PROPHESSOR,,"Добро пожаловать!\nЭто самая старая\nчасть базы,\nпостроенная в\n2112 году. Эти\nмодули и туннели\nбыли первыми\nМарсианскими\nпоселениями UAC.\nСейчас эта зона\nиспользуется для\nхранения опасных\nотходов."

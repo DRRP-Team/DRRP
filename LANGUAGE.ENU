@@ -330,7 +330,7 @@
     DRRP_D_MENU_COMPASS_ENABLE = "Enable compass";
     DRRP_D_MENU_GIBS_ENABLE = "Enable extra gibs";
     DRRP_D_MENU_LIGHTS_TYPE = "Lighting type for levels";
-    DRRP_HUD_COMPASSVISUAL = "N-----W-----S-----E-----";
+    DRRP_HUD_COMPASSVISUAL = "N----nw----W----sw----S----se----E----ne----";
     DRRP_D_MENU_LIGHTS_NONE = "None";
     DRRP_D_MENU_LIGHTS_NORMAL = "Normal";
     DRRP_D_MENU_LIGHTS_ATTENUATED = "Attenuated";
@@ -409,12 +409,12 @@
     DRRP_D_REDDOOR = "You need a red card to open this door";
     DRRP_D_BLUEDOOR = "You need a blue card to open this door";
     DRRP_D_GREENDOOR = "You need a green card to open this door";
-    DRRP_D_TIP_1 = "You can jump and crouch\nto get to places like this";
+    DRRP_D_TIP_1 = "You can jump and crouch to get to places like this.";
     DRRP_D_TIP_2 = "Do not use your flashlight\nat this location\nIt causes lags";
     DRRP_D_TIP_3 = "After entering the portal\nthere will be no way back\nTherefore, if you have\nunfinished business\nin other sectors,\nwe recommend returning to Junction";
-    DRRP_D_TIP_4 = "The last shop terminal\nis in this sector,\nso if you have any credits left,\nwe recommend purchasing right now";
-    DRRP_D_TIP_5 = "You can use your flashlight";
-    DRRP_D_TIP_6 = "You can use dog's jerk\nto speed up yourself";
+    DRRP_D_TIP_4 = "The last shop terminal is in this sector. \nIf you have any credits left, it's the last change to go shopping.";
+    DRRP_D_TIP_5 = "You can use your flashlight.";
+    DRRP_D_TIP_6 = "You can use dog jerk to speed up yourself.";
     DRRP_D_ACH_MONSTERS = "Sector clear!\nYou killed all monsters!";
     DRRP_D_ACH_SECRETS = "Sector researched!\nYou found all secrets!";
     DRRP_S_BACK = "Back";
@@ -631,6 +631,7 @@
     DRRP_E_CHAIR = "Chair";
     DRRP_E_YELLOWLAMP = "Yellow Lamp";
     DRRP_E_CABINET = "Cabinet";
+    DRRP_E_WARDROBE = "Weapons Cabinet";
     DRRP_E_BLUELAMP = "Blue Lamp";
     DRRP_E_TABLE = "Table";
     DRRP_E_BUNKBEDS = "Bunk Beds";
@@ -1032,7 +1033,7 @@
     DRRP_SEC3_40 = "[Mr. Nadira]\nHey, are you the\nMarine that Dr...\nYeah, maybe I can\nhelp you. You'll\nneed to check\nyour weapons\nthough, firearms\nare not allowed\nin the lab. I'll\ntake your weapons\nand put them in\nthis cabinet to\nmy left.";
     DRRP_SEC3_41 = "[Mr. Nadira]\nYou'll get your\nweapons back\nlater! Use my\ncode: 741 at the\nterminal to lock\nthe door. We need\nto secure the\narea.";
     DRRP_SEC3_42 = "[Mr. Nadira]\nLock the door be-\nhind you! The\ncode is 741. Your\nweapons are in\nthis cabinet. You\ncan get them back\nlater.";
-    DRRP_SEC3_43 = "Weapons Cabinet";
+    DRRP_SEC3_43 = "Weapons Cabinet"; // Used DRRP_E_WARDROBE instead
     DRRP_SEC3_44 = "WARNING: Door\nunlocked.";
     DRRP_SEC3_45 = "741";
     DRRP_SEC3_46 = "[Cycle door]\nEnter code:";
