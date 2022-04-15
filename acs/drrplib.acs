@@ -12,6 +12,13 @@ const fixed HUD_RIGHT = 0.2;
 
 /* Useful functions */
 
+function void throw(str error) {
+    Print(s:"[ERROR] ", s:error);
+    Log(s:"[ERROR] ", s:error);
+    int a[3] = {1, 2, 3};
+    print(i:a[999]);
+}
+
 function fixed toFixed(int value) {
     return value << 16;
 }
@@ -211,6 +218,31 @@ function str StrTrim(str string) {
     /* print(s:"StrTrim(", s:string, s:") = ", s:trim, c:'|', i:StrLen(trim)); */
     return trim;
 }
+
+function str drrpFont(void) {
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return "defsmallfont2"; /* DRPG */
+        case 2: return "defsmallfont1"; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
+}
+
+function int drrpFontWidth(void) {
+    return 9;
+}
+
+function int drrpFontHeight(void) {
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 12; /* DRPG */
+        case 2: return 9; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
+}
+
 
 
 function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {

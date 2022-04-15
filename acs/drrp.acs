@@ -161,7 +161,6 @@ Script "testwrapper" (str text, int maxLength) {
 
 /* \\ String wrap processor // */
 
-const int SYM_HEIGHT = 9; /* Symbol's height is 12px */
 const int WINDOW_LEN = 20; /* Chars in one line */
 
 function void drawDialogFrame(int posX, int posY, bool scrollable) {
@@ -174,6 +173,26 @@ function void drawDialogFrame(int posX, int posY, bool scrollable) {
         1);
 }
 
+function int getClipHeight(void) {
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 60; /* DRPG */
+        case 2: return 64; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
+}
+
+function int getLinesOnScreen(void) {
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 5; /* DRPG */
+        case 2: return 7; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
+}
+
 function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
@@ -182,19 +201,19 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
 
     if (ScrollY < 0) ScrollY = 0;
 
-    SetFont("smallfont");
+    SetFont(drrpFont());
     SetHudClipRect(
         posX,
         posY,
         160 - 2,
-        SYM_HEIGHT * 7 + 1,
+        getClipHeight(),
         0, true);
     HudMessage(s: Text;
         HUDMSG_PLAIN,
         -10000001, /* id */
         color,
         toFixed(posX + 4) + HUD_LEFT,
-        toFixed(posY - (ScrollY * SYM_HEIGHT)) + HUD_TOP,
+        toFixed(posY - (ScrollY * drrpFontHeight())) + HUD_TOP,
         1); /* hold */
 
     SetHudSize(0, 0, false);
@@ -206,12 +225,12 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
 
     drawDialogFrame(posX, posY, scrollable);
 
-    SetFont("smallfont");
+    SetFont(drrpFont());
     SetHudClipRect(
         posX,
         posY,
         160 - 2,
-        SYM_HEIGHT * 7 + 1,
+        getClipHeight(),
         0, true);
     HudMessage(s: Text;
         HUDMSG_TYPEON,
@@ -254,8 +273,6 @@ Script "beeping" (int len, int type) {
     }
 }
 
-const int LINES_ON_SCREEN = 7;
-
 Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(322);
@@ -275,7 +292,7 @@ Script "window" (str _Text, int type) {
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
-    bool enableScroll = height >= LINES_ON_SCREEN;
+    bool enableScroll = height >= getLinesOnScreen();
 
     if (!enableScroll) ScrollY = -1;
 
@@ -302,7 +319,7 @@ Script "window" (str _Text, int type) {
                 ScrollY--;
                 Delay(4);
             }
-            if(enableScroll && ReadedKey & BT_BACK && ScrollY + LINES_ON_SCREEN <= height) {
+            if(enableScroll && ReadedKey & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
                 ScrollY++;
                 Delay(4);
             }
