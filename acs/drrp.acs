@@ -209,9 +209,8 @@ function int getBgColorByType(int type) {
 
 function void drawDialogFrame(int posX, int posY, bool scrollable, int type) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
-    if (scrollable) SetFont("M_DLGSCR");
-    else SetFont("M_DLGNSC");
-    HudMessage(s: "A"; HUDMSG_PLAIN, -10000000, getBgColorByType(type),
+    SetFont("M_DIALOG");
+    HudMessage(i: scrollable; HUDMSG_PLAIN, -10000000, getBgColorByType(type),
         toFixed(posX) + HUD_LEFT,
         toFixed(posY - 5) + HUD_TOP,
         1);
