@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 // Coordinate offset is: (0;0)
@@ -18,10 +19,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - y * 8) << 16;
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {
@@ -98,27 +95,27 @@ script 1 (int arg0, int arg1, int arg2) { //X=9 Y=1 START=L_0 END=L_59 UNKN=3145
     if(arg2 == 0) Thing_Remove(276); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=8 Y=20
     if(arg2 == 0) SpawnForced("DRRPLava", getMediumX(68), getMediumY(164), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=30 STATE=0
     if(arg2 == 0) Thing_Remove(406); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=12 Y=22
-    if(arg2 == 0) SpawnForced("DRRPPainElemental", getMediumX(100), getMediumY(180), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=31 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPPainElemental", getMediumX(100), getMediumY(180), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=31 STATE=0
     if(arg2 == 0) Thing_Remove(86); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=2 Y=22
-    if(arg2 == 0) SpawnForced("DRRPBaronOfHell", getMediumX(20), getMediumY(180), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=34 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPBaronOfHell", getMediumX(20), getMediumY(180), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=34 STATE=0
     if(arg2 == 0) Thing_Remove(308); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=9 Y=20
-    if(arg2 == 0) SpawnForced("ZombieCpt", getMediumX(76), getMediumY(164), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=35 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieCpt", getMediumX(76), getMediumY(164), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=35 STATE=0
     if(arg2 == 0) Thing_Remove(140); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=4 Y=12
-    if(arg2 == 0) SpawnForced("Apollyon", getMediumX(36), getMediumY(100), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=36 STATE=0
+    if(arg2 == 0) SpawnWithFog("Apollyon", getMediumX(36), getMediumY(100), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=36 STATE=0
     if(arg2 == 0) Thing_Remove(142); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=4 Y=14
-    if(arg2 == 0) SpawnForced("Belphegor", getMediumX(36), getMediumY(116), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=37 STATE=0
+    if(arg2 == 0) SpawnWithFog("Belphegor", getMediumX(36), getMediumY(116), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=37 STATE=0
     if(arg2 == 0) Thing_Remove(112); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=3 Y=16
-    if(arg2 == 0) SpawnForced("Belphegor", getMediumX(28), getMediumY(132), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=38 STATE=0
+    if(arg2 == 0) SpawnWithFog("Belphegor", getMediumX(28), getMediumY(132), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=38 STATE=0
     if(arg2 == 0) Thing_Remove(271); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=8 Y=15
-    if(arg2 == 0) SpawnForced("DRRPPainElemental", getMediumX(68), getMediumY(124), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=39 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPPainElemental", getMediumX(68), getMediumY(124), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=39 STATE=0
     if(arg2 == 0) Thing_Remove(132); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=4 Y=4
-    if(arg2 == 0) SpawnForced("Druj", getMediumX(36), getMediumY(36), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=42 STATE=0
+    if(arg2 == 0) SpawnWithFog("Druj", getMediumX(36), getMediumY(36), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=42 STATE=0
     if(arg2 == 0) Thing_Remove(105); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=3 Y=9
-    if(arg2 == 0) SpawnForced("Nightmare", getMediumX(28), getMediumY(76), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=43 STATE=0
+    if(arg2 == 0) SpawnWithFog("Nightmare", getMediumX(28), getMediumY(76), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=43 STATE=0
     if(arg2 == 0) Thing_Remove(201); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=6 Y=9
-    if(arg2 == 0) SpawnForced("Nightmare", getMediumX(52), getMediumY(76), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=44 STATE=0
+    if(arg2 == 0) SpawnWithFog("Nightmare", getMediumX(52), getMediumY(76), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=44 STATE=0
     if(arg2 == 0) Thing_Remove(156); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=4 Y=28
-    if(arg2 == 0) SpawnForced("ZombieCpt", getMediumX(36), getMediumY(228), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=45 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieCpt", getMediumX(36), getMediumY(228), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=45 STATE=0
 }
 script 2 (int arg0, int arg1, int arg2) { //X=26 Y=1 START=L_60 END=L_60 UNKN=524288 UNKN2=0
     /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=406
@@ -171,8 +168,8 @@ script 12 (int arg0, int arg1, int arg2) { //X=4 Y=6 START=L_78 END=L_88 UNKN=57
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(18)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=18
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=9 Y=6 VAL=1
     if(arg2 == 0) ScriptCall("WeaponController", "ReturnWeapons", PlayerNumber(), weaponMask); // ( USE IF_VAR( 0 ) ) TAKE_OR_RETURN_WEAPONS ACTION=1
-    if(arg2 == 0) SpawnForced("Belphegor", getMediumX(68), getMediumY(44), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
-    if(arg2 == 0) SpawnForced("Belphegor", getMediumX(60), getMediumY(52), 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
+    if(arg2 == 0) SpawnWithFog("Belphegor", getMediumX(68), getMediumY(44), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 0) SpawnWithFog("Belphegor", getMediumX(60), getMediumY(52), 0, 0); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=4 Y=6
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(19)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=19
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=4 Y=6
@@ -211,13 +208,13 @@ script 15 (int arg0, int arg1, int arg2) { //X=15 Y=6 START=L_97 END=L_118 UNKN=
     if(arg2 == 0) Thing_Remove(453); // ( USE MODIFYWORLD IF_VAR( 0 ) ) HIDE_THINGS_AT X=14 Y=5
     if(arg2 == 0) SpawnForced("Explosion", getMediumX(15), getMediumY(5), 32, 32); // ( USE IF_VAR( 0 ) ) EXPLODE X=15 Y=5 TYPE=0
     if(arg2 == 0) SpawnForced("Explosion", getMediumX(15), getMediumY(7), 32, 32); // ( USE IF_VAR( 0 ) ) EXPLODE X=15 Y=7 TYPE=0
-    if(arg2 == 0) SpawnForced("DemonWolf", getMediumX(100), getMediumY(76), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
-    if(arg2 == 0) SpawnForced("DemonWolf", getMediumX(124), getMediumY(36), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
-    if(arg2 == 0) SpawnForced("Apollyon", getMediumX(132), getMediumY(84), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
-    if(arg2 == 0) SpawnForced("Nightmare", getMediumX(124), getMediumY(68), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=6 STATE=0
-    if(arg2 == 0) SpawnForced("Belphegor", getMediumX(156), getMediumY(44), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=7 STATE=0
-    if(arg2 == 0) SpawnForced("DRRPPainElemental", getMediumX(100), getMediumY(84), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=8 STATE=0
-    if(arg2 == 0) SpawnForced("DRRPPainElemental", getMediumX(140), getMediumY(100), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=11 STATE=0
+    if(arg2 == 0) SpawnWithFog("DemonWolf", getMediumX(100), getMediumY(76), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
+    if(arg2 == 0) SpawnWithFog("DemonWolf", getMediumX(124), getMediumY(36), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
+    if(arg2 == 0) SpawnWithFog("Apollyon", getMediumX(132), getMediumY(84), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
+    if(arg2 == 0) SpawnWithFog("Nightmare", getMediumX(124), getMediumY(68), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=6 STATE=0
+    if(arg2 == 0) SpawnWithFog("Belphegor", getMediumX(156), getMediumY(44), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=7 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPPainElemental", getMediumX(100), getMediumY(84), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=8 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPPainElemental", getMediumX(140), getMediumY(100), 0, 32); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=11 STATE=0
     if(arg2 == 0) Thing_Hate(32, 0, 0);
     if(arg2 == 0) ChangeFloor(666, "CEILING4");   // TODO: // ( USE IF_VAR( 0 ) ) FLOORCOLOR COLOR=8200980
     if(arg2 == 0) ChangeCeiling(666, "CEILING2"); // TODO: // ( USE IF_VAR( 0 ) ) CEILCOLOR COLOR=11488050
@@ -305,8 +302,8 @@ script 32 (int arg0, int arg1, int arg2) { //X=25 Y=13 START=L_153 END=L_156 UNK
     int sgenid0 = 869; // [x=27, y=5]
     int sgenid1 = -813; // [x=25, y=13]
     if(arg2 == 0) Autosave();
-    if(arg2 == 0) SpawnForced("DRRPBaronOfHell", getMediumX(180), getMediumY(116), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=46 STATE=0
-    if(arg2 == 0) SpawnForced("DRRPBaronOfHell", getMediumX(228), getMediumY(116), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=47 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPBaronOfHell", getMediumX(180), getMediumY(116), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=46 STATE=0
+    if(arg2 == 0) SpawnWithFog("DRRPBaronOfHell", getMediumX(228), getMediumY(116), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=47 STATE=0
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=27 Y=5 VAL=1
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, arg2 + 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) INC_VAR X=25 Y=13
 }
@@ -375,7 +372,7 @@ script 48 (int arg0, int arg1, int arg2) { //X=10 Y=23 START=L_181 END=L_181 UNK
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=248
 }
 script 49 (int arg0, int arg1, int arg2) { //X=11 Y=23 START=L_182 END=L_183 UNKN=1048576 UNKN2=0
-    if(arg2 == 0) SpawnForced("DemonWolf", getMediumX(60), getMediumY(164), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 0) SpawnWithFog("DemonWolf", getMediumX(60), getMediumY(164), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
     /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=248
 }
 script 50 (int arg0, int arg1, int arg2) { //X=22 Y=23 START=L_184 END=L_185 UNKN=1048576 UNKN2=0

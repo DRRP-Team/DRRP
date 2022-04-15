@@ -36,7 +36,7 @@ class InfobarHandler: EventHandler {
 
                 tClass = InfobarTraceRay.HitActor;
 
-                if ( ( InfobarTraceRay.HitType == TRACE_HitActor ) && !( tClass is "DRRPTrigger" ) ) {
+                if ( ( InfobarTraceRay.HitType == TRACE_HitActor ) && (!( tClass is "DRRPTrigger" ) || ( tClass is "DRRPComputer" )) ) {
 
                     if ( tClass.bIsMonster )InfobarFontColor = Font.CR_RED;         // Enemy;
                     if ( tClass.bFriendly ) InfobarFontColor = Font.CR_GREEN;       // Friend;

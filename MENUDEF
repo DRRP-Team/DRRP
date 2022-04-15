@@ -70,9 +70,17 @@ OptionMenu "Misc" {
     Option "$DRRP_D_MENU_BFLASH_ENABLE",  "drrp_enable_blood_flashes", "ONOFF"
     Option "$DRRP_D_MENU_LIGHTS_TYPE", "drrp_lights_wrapper_type", LightsWrapperType
     Slider "$DRRP_D_MENU_WINDOW_SCALE", "drrp_window_scale", 1.0, 3.0, 0.25, 2
+    Option "$DRRP_D_MENU_BEEP_ENABLE",  "drrp_enable_beep", "ONOFF"
+    Slider "$DRRP_D_MENU_BEEP_VOLUME", "drrp_beep_volume", 0, 125, 5, 0
+    Option "$DRRP_D_MENU_FONT", "drrp_font", FontType
     StaticText " "
     Option "$DRRP_D_MENU_MISC_FREELOOK", "sv_freelook", "YesNo"
     Option "$DRRP_D_MENU_MISC_DEBUGMODE", "drrp_debug_mode", "OnOff"
+}
+
+OptionValue "FontType" {
+    1, "$DRRP_D_MENU_FONT_DRPG"
+    2, "$DRRP_D_MENU_FONT_GZDOOM"
 }
 
 OptionValue "LightsWrapperType" {

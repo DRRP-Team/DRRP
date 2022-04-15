@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 // Coordinate offset is: (1824;1888)
@@ -16,10 +17,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - 1888 - y * 8) << 16;
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 bool wasInvasionActivated      = false;
@@ -373,12 +370,12 @@ script 35 (int arg0, int arg1, int arg2) { //X=11 Y=16 START=L_88 END=L_120 UNKN
         Thing_Remove(561); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) HIDE_THINGS_AT X=17 Y=17
         SpawnForced("DRRPFire", getMediumX(140), getMediumY(108), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=8 STATE=0
         SpawnForced("DRRPFire", getMediumX(156), getMediumY(148), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=9 STATE=0
-        SpawnForced("Troop", getMediumX(148), getMediumY(108), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=10 STATE=0
-        SpawnForced("Troop", getMediumX(140), getMediumY(156), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=11 STATE=0
-        SpawnForced("Impling", getMediumX(156), getMediumY(108), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=12 STATE=0
-        SpawnForced("Impling", getMediumX(148), getMediumY(164), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=13 STATE=0
-        SpawnForced("Malwrath", getMediumX(156), getMediumY(132), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
-        SpawnForced("Ghoul", getMediumX(172), getMediumY(132), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
+        SpawnWithFog("Troop", getMediumX(148), getMediumY(108), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=10 STATE=0
+        SpawnWithFog("Troop", getMediumX(140), getMediumY(156), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=11 STATE=0
+        SpawnWithFog("Impling", getMediumX(156), getMediumY(108), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=12 STATE=0
+        SpawnWithFog("Impling", getMediumX(148), getMediumY(164), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=13 STATE=0
+        SpawnWithFog("Malwrath", getMediumX(156), getMediumY(132), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=14 STATE=0
+        SpawnWithFog("Ghoul", getMediumX(172), getMediumY(132), 0, 35); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 1 ) ) SHOW_THING ID=15 STATE=0
         ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) INC_VAR X=11 Y=16
         Thing_Hate(35, 0, 0);
         Delay(43 / 2);
@@ -619,15 +616,15 @@ script 74 (int arg0, int arg1, int arg2) { //X=10 Y=30 START=L_214 END=L_221 UNK
     int sgenid0 = -147; // [x=4, y=19]
     /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_THING_STATE ARG1=150116 X=4 Y=19 VAL=2
     //if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=4 Y=19 VAL=2
-    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(20), getMediumY(156), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
-    if(arg2 == 0) SpawnForced("Malwrath", getMediumX(12), getMediumY(140), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
+    if(arg2 == 0) SpawnWithFog("Malwrath", getMediumX(20), getMediumY(156), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 0) SpawnWithFog("Malwrath", getMediumX(12), getMediumY(140), 0, 1); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=1 STATE=0
 	if(arg2 == 0) {
 		Thing_Hate(1, -sgenid0);
 	}
-    if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(20), getMediumY(108), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
-    if(arg2 == 0) SpawnForced("ZombieLt", getMediumX(12), getMediumY(100), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
-    if(arg2 == 0) SpawnForced("Ghoul", getMediumX(28), getMediumY(196), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
-    if(arg2 == 0) SpawnForced("BullDemon", getMediumX(12), getMediumY(204), 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieLt", getMediumX(20), getMediumY(108), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=2 STATE=0
+    if(arg2 == 0) SpawnWithFog("ZombieLt", getMediumX(12), getMediumY(100), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=3 STATE=0
+    if(arg2 == 0) SpawnWithFog("Ghoul", getMediumX(28), getMediumY(196), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=4 STATE=0
+    if(arg2 == 0) SpawnWithFog("BullDemon", getMediumX(12), getMediumY(204), 0, 0); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=5 STATE=0
 	if(arg2 == 0) ACS_Execute(3009, 0, sgenid0, 1);
 }
 
@@ -644,89 +641,3 @@ script 75 (int arg0, int arg1, int arg2) { //X=12 Y=30 START=L_222 END=L_231 UNK
     if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(28)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=28
     if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 8 ) ) SET_VAR X=12 Y=30 VAL=0
 }
-
-/*
-
-#include "zcommon.acs"
-
-bool invasion      = false;
-int preinvasion  = 0; //2 comps
-
-Script 666 ENTER{
-    SetHudSize(640, 400, 0);
-    SetFont("dbigfont");
-    HudMessage(l:"DRRP_B_ID60";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
-    SetFont("smallfont");
-    ACS_Execute(1000, 0);
-}
-
-script 1000 (void) {
-    if(invasion){
-        AmbientSound("ambient/mach04", 127);
-    }else{
-        AmbientSound("ambient/drone1", 127);
-    }
-    Delay(34*3);
-    Restart;
-}
-
-script 9 (void){//Invasion line
-    if(preinvasion == 2 && !invasion){
-            invasion = true;
-            //Print(s:"Are you serious?");
-            FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.7);
-            ACS_ExecuteWait(11, 0, 42);
-            AmbientSound(localizeSound("voice/powershake"), 255);
-            Delay(43*2);
-            //Print(s:"Are you \cgIDIOT?!!!");
-            Radius_Quake(4, 43*2, 0, 10, 0);
-            AmbientSound("alarm/alarm1", 255);
-            FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
-            SetThingSpecial(24, 0, 255, 100, 100);
-            Delay(43);
-            AmbientSound("alarm/alarm1", 255);
-            FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
-            SpawnSpot("Explosion", 23);
-            Delay(43);
-            AmbientSound("alarm/alarm1", 255);
-            FadeRange(128, 0, 0, 1.0, 0, 0, 0, 0.0, 0.5);
-            SpawnSpot("Explosion", 23);
-            Delay(43*2);
-            SpawnSpot("Explosion", 23);
-            SpawnSpot("Explosion", 16);
-            SpawnSpot("DRRPFire", 16);
-            Radius_Quake(12, 43, 1, 10, 0);
-            FadeRange(0, 0, 0, 1.0, 0, 0, 0, 0.0, 0.3);
-            Sector_SetColor(666, 128, 0, 0, 0);
-            Sector_SetColor(668, 128, 0, 0, 0);
-            Sector_SetColor(100, 128, 0, 0, 0);
-            Sector_SetColor(13, 128, 0, 0, 0);
-            Sector_SetFade(13, 255, 0, 0);
-            Sector_SetColor(30, 128, 0, 0, 0);
-            Floor_LowerByValue(100, 999, 64);
-            ActivatorSound("DSPLDETH", 196);
-            Thing_Remove(17);
-            Delay(43 / 2);
-            SpawnSpot("DRRPFire", 18);
-            Delay(43 / 2);
-            Delay(43*3);
-            //SpawnSpot("DRRPFire", 18);
-            AmbientSound(localizeSound("voice/only"), 200);
-            Delay(43*2);
-            ACS_Execute(1001, 0);
-    }
-}
-
-script 10 (void) { //quake
-    Radius_Quake(9, 12, 0, 10, 0);
-    Door_Open(2, 128, 0);
-}
-
-script 42 (void) { // Behind the door 42
-    ACS_Execute(3000, 0, 5, 6);
-    SpawnSpot("ZombieLt", 140);
-    SpawnSpot("Malwrath", 141);
-    SpawnSpot("Ghoul", 143);
-    SpawnSpot("BullDemon", 144);
-}
-*/

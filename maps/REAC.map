@@ -4979,6 +4979,66 @@ dm = true;
 renderstyle = "";
 }
 
+thing
+{
+x = -32.000;
+y = -792.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = 544.000;
+y = -544.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = 416.000;
+y = 352.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = 224.000;
+y = 1184.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
 vertex
 {
 x = 532.000;
@@ -12535,6 +12595,7 @@ arg0 = 1;
 arg2 = 4;
 blocking = true;
 playeruse = true;
+repeatspecial = true;
 }
 
 linedef

@@ -31,6 +31,7 @@ Script 666 ENTER {
 
 int lavacomputercounter = 0;
 int mapcomputercounter = 0;
+int aboutrodscounter = 0;
 
 Script 1 (int id)  { // Computers handler
     // ActivatorSound("misc/chat2", 255);
@@ -58,7 +59,7 @@ Script 1 (int id)  { // Computers handler
                 ACS_NamedExecuteWait("window", 0, getString(8)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=8
                 break;
             } else if(lavacomputercounter == 0) {
-                ACS_NamedExecuteWait("window", 0, getString(6));
+                ACS_NamedExecuteWait("window", 0, getString(6), 4);
                 lavacomputercounter++;
                 break;
             }
@@ -66,22 +67,38 @@ Script 1 (int id)  { // Computers handler
             lavacomputercounter++;
             break;
         case 4:
-            ACS_NamedExecuteWait("window", 0, getString(12));
-            Autosave();
-            AmbientSound(localizeSound("bet/earth"), 200);
-            Delay(45*2);
-            SetLineBlocking(664, OFF);
-            Line_SetBlocking(664, OFF, BLOCKF_PROJECTILES | BLOCKF_HITSCAN);
-            SetLineTexture(664, SIDE_FRONT, TEXTURE_MIDDLE, "");
-            SetLineTexture(664, SIDE_BACK, TEXTURE_MIDDLE, "");
-            Radius_Quake(12, 22, 0, 10, 0);
-            AmbientSound(localizeSound("voice/reacon"), 127);
-            Delay(75);
-            ACS_Execute(667, 0);
-            ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(15)); // Note about Rods
+            if (aboutrodscounter == 0) {
+                aboutrodscounter++;
+                ACS_NamedExecuteWait("window", 0, getString(12));
+                Autosave();
+                ACS_NamedExecuteAlways("StartPortal", 0);
+            } else if (aboutrodscounter == 1) {
+                ACS_NamedExecuteWait("window", 0, getString(14), 4);
+                aboutrodscounter++;
+            } else if (aboutrodscounter == 2) {
+                ScriptCall("NotebookAPI", "AddNotebookEntry", getStringIndex(15)); // Note about Rods
+                ACS_NamedExecuteWait("window", 0, getString(15));
+                aboutrodscounter++;
+            } else if (aboutrodscounter == 3) {
+                ACS_NamedExecuteWait("window", 0, getString(16));
+                aboutrodscounter = 1;
+            }
             break;
     }
-    Delay(30);
+    Delay(10);
+}
+
+Script "StartPortal" (void) {
+    AmbientSound(localizeSound("bet/earth"), 200);
+    Delay(45*2);
+    SetLineBlocking(664, OFF);
+    Line_SetBlocking(664, OFF, BLOCKF_PROJECTILES | BLOCKF_HITSCAN);
+    SetLineTexture(664, SIDE_FRONT, TEXTURE_MIDDLE, "");
+    SetLineTexture(664, SIDE_BACK, TEXTURE_MIDDLE, "");
+    Radius_Quake(12, 22, 0, 10, 0);
+    AmbientSound(localizeSound("voice/reacon"), 127);
+    Delay(75);
+    ACS_Execute(667, 0);
 }
 
 Script 2 (void) {
@@ -237,10 +254,10 @@ script 104 (void){ // Kronos
     Autosave();
     ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
     //
-    AmbientSound("voice/laugh", 200);
-    ACS_NamedExecuteWait("window", 0, getString(21));
-    //
     AmbientSound(localizeSound("bet/destroy"), 200);
+    ACS_NamedExecuteWait("window", 0, getString(21), 2);
+    //
+    AmbientSound("voice/laugh", 200);
     Thing_Remove(10);
     Delay(50);
     ACS_NamedExecute("transformation", 0, 10);
@@ -267,9 +284,9 @@ Script 105 (void) { // On Kronos Die
 script 332 (void) { // Lava trigger
     if(lavacomputercounter != 2) Terminate;
     lavacomputercounter++;
-    ACS_NamedExecuteWait("window", 0, getString(9)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
+    ACS_NamedExecuteWait("window", 0, getString(9), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
     Delay(10); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=300
-    ACS_NamedExecuteWait("window", 0, getString(10)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
+    ACS_NamedExecuteWait("window", 0, getString(10), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
     SetMusic("D_EVIL");
     FadeRange(255, 128, 0, 1.0, 0, 0, 0, 0.0, 5.0);
     //lava

@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 // Coordinate offset is: (0;0)
@@ -16,10 +17,6 @@ function fixed getMediumX(int x) {
 
 function fixed getMediumY(int y) {
     return (2048 - y * 8) << 16;
-}
-
-function str localizeSound(str sound) {
-    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
 }
 
 Script "onCinematicShadersLoad" (bool forced) {
@@ -151,8 +148,8 @@ script 24 (int arg0, int arg1, int arg2) { //X=25 Y=7 START=L_40 END=L_56 UNKN=8
     if(arg2 == 3) ACS_NamedExecute("transformation", 0, 807); // ( USE IF_VAR( 4 ) ) PARTICLE COLOR=33023 EFFECT=35
     if(arg2 == 3) Delay(12); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=350
     if(arg2 == 3) Thing_Remove(807); // ( USE MODIFYWORLD IF_VAR( 4 ) ) HIDE_THINGS_AT X=25 Y=7
-    if(arg2 == 3) SpawnForced("DRRPImp", getMediumX(204), getMediumY(60), 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
-    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch
+    if(arg2 == 3) SpawnForced("DRRPImp", getMediumX(204), getMediumY(60), 0, 0); // ( USE MODIFYWORLD IF_VAR( 4 ) ) SHOW_THING ID=0 STATE=0
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", -808, 1); // Crutch <PROPHESSOR 10.04.2022> Agree :/
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=25 Y=7
     if(arg2 == 3) Delay(7); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=200
@@ -360,6 +357,7 @@ script 58 (int arg0, int arg1, int arg2) { //X=15 Y=19 START=L_156 END=L_163 UNK
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(56)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=56
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=15 Y=19
     if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG_WITH_SOUND STR=57
+    if(arg2 == 2) SpawnForced("TeleportFog", getMediumX(124), getMediumY(124), 0, 0); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=12 STATE=0
     if(arg2 == 2) SpawnForced("DrGuerard", getMediumX(124), getMediumY(124), 0, 495); // ( USE MODIFYWORLD IF_VAR( 2 ) ) SHOW_THING ID=12 STATE=0
     if(arg2 == 2) SetThingSpecial(495, 80, 52);
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid1, 1); // ( USE IF_VAR( 2 ) ) SET_VAR X=15 Y=15 VAL=1
@@ -475,7 +473,7 @@ script 76 (int arg0, int arg1, int arg2) { //X=23 Y=23 START=L_225 END=L_244 UNK
     int sgenid3 = -660; // [x=20, y=20]
     int sgenid4 = -595; // [x=18, y=19]
     int sgenid5 = -659; // [x=20, y=19]
-    int sgenid6 = -560;//529; // [x=16, y=17]
+    int sgenid6 = -560;//529; // [x=16, y=17] // line replaced with dumb thing
     int sgenid7 = -759; // [x=23, y=23]
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=20 Y=22 VAL=4
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid1, 9); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SET_VAR X=13 Y=20 VAL=9
