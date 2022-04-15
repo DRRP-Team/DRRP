@@ -188,7 +188,8 @@ function int getColorByType(int type) {
         case 1: return CR_GREEN; /* Terminal */
         case 2: return CR_RED; /* Evil */
         case 3: return CR_YELLOW; /* Hint */
-        case 4: return CR_ORANGE; /* Martians *?
+        case 4: return CR_ORANGE; /* Martians */
+        case 5: return CR_YELLOW; /* Level Up */
         case 0: /* Dialogue */
         default:
             return CR_WHITE;
@@ -200,7 +201,8 @@ function int getBgColorByType(int type) {
         case 1: return CR_DARKGREEN; /* Terminal */
         case 2: return CR_DARKRED; /* Evil */
         case 3: return CR_BLACK; /* Hint */
-        case 4: return CR_ORANGE; /* Martians *?
+        case 4: return CR_ORANGE; /* Martians */
+        case 5: return CR_BLACK; /* Level Up */
         case 0: /* Dialogue */
         default:
             return CR_WHITE;
@@ -496,7 +498,7 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID75", i:2, s:"\n",       // Strength:
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
-        l:"DRRP_B_ID77"));                  // Health restored.
+        l:"DRRP_B_ID77"), 5);                  // Health restored.
 
     ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
