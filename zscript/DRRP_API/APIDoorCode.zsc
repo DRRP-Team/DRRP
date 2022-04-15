@@ -5,188 +5,150 @@
  *https://opensource.org/licenses/MIT
  */
 
+
 class DoorCodeInputActor {
-    static int DoorCode(Actor activator, string info, string code, int scriptnum) {
-        EventHandler.SendNetworkEvent("opendoorinput@@@@" .. info .. "@@@@" .. code, 666, scriptnum);
+    static int DoorCode( Actor activator, string info, string code, int scriptnum ) {
+        EventHandler.SendNetworkEvent( "drrp_opendoorinput@@@@" .. info .. "@@@@" .. code, scriptnum );
  
         return 1;
     }
 }
 
-class DoorCodeInputStubItem : Inventory {
-    String code;
-    String displayTooltip;
-    int scriptnum;
+
+// Hack because "InputProcess()" is under UI scope.
+struct DoorCodeDynamicInfo {
+	String codeStr; // Not an integers because of potential leading zeros (like password "042").
+	int curinputpos;
+
+	bool inputActivated, prevInputActive;
 }
 
-class DoorCodeInputHandler : EventHandler {
-    String codeStr;
-    String realCodeStr;
-    String displayTooltip;
+
+class DoorCodeInputHandler: EventHandler {
+    String windowTooltip;
+	String realCodeStr;
+	int successScriptNum; // Script to resume when code is correct.
+	DoorCodeDynamicInfo door;
 
     override void OnRegister() {
-        SetOrder(666);
+        SetOrder( 3678 );
+
+  		door.codeStr = "";
+		door.curinputpos = 0;
+		door.inputActivated = false;
+
+		Super.OnRegister();
     }
 
-    override void NetworkProcess(ConsoleEvent e) {
-        Array<string> command;
-        e.Name.Split(command, "@@@@");
-        if(command[0] == "opendoorinput") { // ["opendoorinput", message, code]
-            if(command.size() == 3) {
-                players[e.player].mo.A_GiveInventory("DoorCodeInputStubItem");
-                ACS_Suspend(-int(name("lockwindow")), 0);
-                DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
-                item.code = command[2];
-                item.displayTooltip = command[1];
-                item.scriptnum = e.args[1];
-                Menu.SetMenu("DoorCodeInputMenu");
-            }
-        } else if (command[0] == "closedoorinput") {
-            DoorCodeInputStubItem item = DoorCodeInputStubItem(players[e.player].mo.findInventory("DoorCodeInputStubItem"));
-            if(item == null) return;
+    override void NetworkProcess( ConsoleEvent e ) {
+        Array<String> command;
+        e.Name.Split( command, "@@@@" ); // ["opendoorinput", message, code].
 
-            if (e.Args[0] == 1) {
-                players[e.Player].mo.A_PlaySound("access/grant1" .. StringTable.Localize("$DRRP_D_SOUND_SUFFIX"));;
-                ACS_Execute(-int(name("lockwindow")), 0, 0, 0, 0);
-            } else if (e.Args[0] == 2) {
-                players[e.Player].mo.A_PlaySound("access/deny1" .. StringTable.Localize("$DRRP_D_SOUND_SUFFIX"));;
-                players[e.Player].mo.A_Print(StringTable.Localize("$DRRP_D_PASSCODE_WRONG"));
-                ACS_Terminate(-int(name("lockwindow")), 0);
-                ACS_Terminate(item.scriptnum, 0);
-            } else if (e.Args[0] == 3) {
-                ACS_Terminate(-int(name("lockwindow")), 0);
-                ACS_Terminate(item.scriptnum, 0);
-            }
-        }
-    }
+		//console.printf( "NetworkProcess(). " .. e.Name );
 
-    void initDoorCodeWindow() {
-        DoorCodeInputStubItem item = DoorCodeInputStubItem(players[consoleplayer].mo.findInventory("DoorCodeInputStubItem"));
+		PlayerPawn player = players[ e.player ].mo;
 
-        if(item == null) {
-            codeStr = "____";
-            realCodeStr = "0000";
-            displayTooltip = "you shouldn't see this\n";
-        } else {
-            realCodeStr = item.code;
-            codeStr = "";
-            displayTooltip = item.displayTooltip;
+        if ( ( command[ 0 ] == "drrp_opendoorinput" ) ) {
+			if ( command.Size() == 3 ) {
+    			door.inputActivated = true;
+				door.curinputpos = 0;
+				door.codeStr = "";
 
-            for(int i = 0; i < self.realCodeStr.Length(); i++) {
-                codeStr.AppendFormat("_");
-            }
-        }
-    }
-}
+    			windowTooltip = command[ 1 ];
+    			realCodeStr = command[ 2 ];
+                successScriptNum = e.args[ 0 ];
 
-class DoorCodeInputMenu : GenericMenu {
-    String codeStr;
-    String realCodeStr;
-    String displayTooltip;
+				// Temporary paragraph (now there's no ACS-based freezing):
+				player.player.cheats |= CF_TOTALLYFROZEN;
+				player.vel *= 0.5;
 
-    Override
-    void init(Menu parent) {
-        DoorCodeInputStubItem item = DoorCodeInputStubItem(players[consoleplayer].mo.findInventory("DoorCodeInputStubItem"));
+    			// All the ACS code part based on the level freeze when Menu class is opened...
+                ACS_Suspend( successScriptNum, 0 );
+                //ACS_Terminate( successScriptNum, 0 );
 
-        if(item == null) {
-            codeStr = "____";
-            realCodeStr = "0000";
-            displayTooltip = "you shouldn't see this\n";
-        } else {
-            realCodeStr = item.code;
-            codeStr = "";
-            displayTooltip = item.displayTooltip;
+				console.printf( TEXTCOLOR_GREEN .. "Your code will be echoed " .. TEXTCOLOR_FIRE .. "here\c-." );
+			}
 
-            for(int i = 0; i < self.realCodeStr.Length(); i++) {
-                codeStr.AppendFormat("_");
+        } else if ( command[ 0 ] == "drrp_closedoorinput" ) {
+	        //player.ACS_NamedExecute( "clearwindow", 0 );
+
+			player.player.cheats &= ~CF_TOTALLYFROZEN;
+
+			// Right password:
+            if ( door.codeStr == realCodeStr || DRRPUtil.GetInternalMetaString() == "Alohomora" ) {
+				ACS_Execute( successScriptNum, 0 );
+				console.printf( "Executed " .. successScriptNum );
+
+			// Wrong password:
+            } else if ( door.curinputpos == realCodeStr.Length() )  {
+                player.A_PlaySound( "access/deny1" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ) );
+                player.A_Print( StringTable.Localize( "$DRRP_D_PASSCODE_WRONG" ) );
+				ACS_Terminate( successScriptNum, 0 );
             }
         }
-    }
-    
-    override void Drawer() {
-        ACS_NamedExecute("drawwindow", 0, displayTooltip .. " " .. self.codeStr, 0, 0);
 
-        // then
-
-        ACS_NamedExecute("clearwindow", 0);
-
-        // Super.Drawer();
-
-        // let tex = TexMan.CheckForTexture("M_DLGNSC", TexMan.Type_MiscPatch);
-        // if (tex.IsValid()) {
-        //     Vector2 v = TexMan.GetScaledSize(tex);
-        //     int x = 320;
-        //     int y = 318;
-        //     screen.DrawTexture(tex, false, x, y, DTA_LeftOffset, int(v.x / 2), DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);
-        //     Font font = Font.FindFont("smallfont");
-        //     screen.DrawText(font, Font.CR_WHITE, 244, 322, displayTooltip .. " " .. self.codeStr, DTA_VirtualWidth, 640, DTA_VirtualHeight, 480);
-        // }
+		Super.NetworkProcess( e );
     }
 
+	override bool InputProcess( InputEvent e ) {
+		if ( door.inputActivated && e.Type == e.Type_KeyDown ) {
+			PlayerPawn player = players[ consoleplayer ].mo;
+			bool redrawWindow = false;
 
-    // Here we handle only keys from '0' to '9' (ASCII 48...57):
-    override bool OnUIEvent( UIEvent e ) {
-        Super.OnUIEvent( e );
+		    // Keys from '0' to '9':
+			if ( e.KeyChar >= 0x30 && e.KeyChar <= 0x39 ) {
+				String newStr = String.Format( "%s%c", door.codeStr.Left( door.curinputpos ), e.KeyChar );
 
-        if ( e.Type == UiEvent.Type_KeyDown ) {
+	            for( int j = door.curinputpos + 1; j < realCodeStr.Length(); j++ )
+	                newStr.AppendFormat( "_" );
 
-            // Handle numbers from 0 to 9:
-            if ( e.keyChar >= 48 && e.keyChar <= 57 ) {
+				door.codeStr = newStr;
+				door.curinputpos++;
 
-                for ( int i = 0; i < codeStr.Length(); i++ ) {
-                    if ( codeStr.CharAt( i ) != '_' )
-                        continue;
+				if ( door.curinputpos == realCodeStr.Length() )
+					door.inputActivated = false;
+				else
+					redrawWindow = true;
 
-                    codeStr = String.format( "%s%c", codeStr.Left( i ), e.keyChar );
+			// A backspace key:
+			} else if ( e.KeyScan == e.Key_Backspace ) {
+				if ( door.curinputpos == 0 ) {
+					door.inputActivated = false;
+				} else {
+	                String codeStrEndPart = "";
 
-                    for( int j = codeStr.Length(); j < self.realCodeStr.Length(); j++ )
-                        codeStr.AppendFormat( "_" );
+	                for ( int i = 0; i < door.codeStr.Length() - door.curinputpos + 1; i++ )
+	                    codeStrEndPart = codeStrEndPart .. "_";
 
-                    break;
-                }
+	                door.codeStr.Truncate( door.curinputpos - 1 );
+	                door.codeStr = door.codeStr .. codeStrEndPart;
 
-                // Length of input is less than password length:
-                for ( int i = 0; i < codeStr.Length(); i++ )
-                    if ( codeStr.CharAt( i ) == '_' )
-                        return true;
+					door.curinputpos--;
 
-                // Limit by length:
-                EventHandler.SendNetworkEvent( "closedoorinput", codeStr == realCodeStr ? 1 : 2 );
-                Close();
+					redrawWindow = true;
+				}
 
-            }
+			// An escape key:
+			} else if ( e.KeyScan == e.Key_Escape ) {
+				door.inputActivated = false;
+			}
 
-        } // of if ( e.Type == UiEvent.Type_KeyDown ) {
 
-        return true;
-    }
+			if ( !door.inputActivated ) {
+				console.printf( "Code: \"" .. door.codeStr .. "\" (pre-finish)." );
+				EventHandler.SendNetworkEvent( "drrp_closedoorinput" );
+			} else if ( redrawWindow ) {
+				//ACS_Execute( -int( Name( "clearwindow" ) ), 0 );
 
-    // Here we handle backspace and escape:
-    override bool MenuEvent( int mkey, bool fromcontroller ) {
-        switch ( mkey ) {
-            case Menu.MKEY_Clear: // Backspace.
-                int inputEndIndex = codeStr.IndexOf( "_" );
+				console.printf( "Code: \"" .. door.codeStr .. "\"." );
+				DRRPUtil.SetInternalMetaString( windowTooltip .. "\n" .. door.codeStr );
 
-                if ( inputEndIndex > 0 ) {
-                    String codeStrEndPart = "";
+		        //ACS_Execute( -int( Name( "drawwindow" ) ), 0, 0, 0 );
+			}
+		}
 
-                    for ( int i = 0; i < codeStr.Length() - inputEndIndex + 1; i++ )
-                        codeStrEndPart = codeStrEndPart .. "_";
+		return false;
+	} // of override bool InputProcess( InputEvent e ) {}
 
-                    codeStr.Truncate( inputEndIndex - 1 );
-                    codeStr = codeStr .. codeStrEndPart;
-                }
+} // of class DoorCodeInputHandler : EventHandler {}
 
-                break;
-
-            case Menu.MKEY_Back: // Escape.
-                EventHandler.SendNetworkEvent( "closedoorinput", 3 );
-                break;
-
-            default:
-                break;
-        }
-
-        return Super.MenuEvent( mkey, fromcontroller );
-    }
-}

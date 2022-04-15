@@ -5,7 +5,7 @@
  * https://opensource.org/licenses/MIT
  */
 
-class DRRPMath {
+class DRRPUtil {
     const e = 2.71828182845904523536;
 
     // Returns (digit^power).
@@ -23,29 +23,41 @@ class DRRPMath {
         }
 
         return outValue;
-    } // of static double Power( double digit, double power ) {
+    } // of static double Power( double digit, double power ) {}
 
-}
 
-class DRRPActorAdditionalFunctions play {
-
-    const velocityParticlesDelay = 4;
     // The higher the value this constant has, the slower the particle speed.
+	//It is neccesary only in two similar cases in th whole project, so a
+	//constant definition is enough.
+    const velocityParticlesDelay = 4.0;
 
     static play Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {
         Actor particle = Actor.Spawn( spawnee, (
                                 spawner.pos.x + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
                                 spawner.pos.y + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
                                 spawner.pos.z + Random( splatZ * 0.05, splatZ * 0.95 ) ) );
+
         particle.Vel = ( ( spawner.pos.x - particle.pos.x ) / velocityParticlesDelay,
                          ( spawner.pos.y - particle.pos.y ) / velocityParticlesDelay,
                          ( ( spawner.pos.z + splatZ / 2 ) - particle.pos.z ) / velocityParticlesDelay );
+
         return particle;
-    }
-
-} // of class DRRPActorAdditionalFunctions {
+    } // of static play Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {}
 
 
+	// A string buffer, same for ZScript and ACS:
+	static void SetInternalMetaString( String str ) {
+		CVar.GetCVar( "drrp_internal_metastring" ).SetString( str );
+	}
+	static String GetInternalMetaString( void ) {
+		return CVar.GetCVar( "drrp_internal_metastring" ).GetString();
+	}
+
+} // of class DRRPUtil {}
+
+
+
+// Some UsernameAK's data classes:
 
 class DRRPIntToStringBruteforceMultiMapArrayWrapper {
     Array<String> TheStringArray;
