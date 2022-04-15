@@ -212,6 +212,19 @@ function str StrTrim(str string) {
     return trim;
 }
 
+function str drrpFont(void) {
+    return "defsmallfont2";
+}
+
+function int drrpFontWidth(void) {
+    return 9;
+}
+
+function int drrpFontHeight(void) {
+    return 12;
+}
+
+
 
 function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {
     SpawnForced("TeleportFog", x, y, z);
