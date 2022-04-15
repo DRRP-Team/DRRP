@@ -30,11 +30,13 @@ class DRRPBaseProjectile: Actor abstract {
     }
 
     override int DoSpecialDamage( Actor target, int damage, Name damagetype ) {
-        //console.printf( GetClassName() .. ". Target: " .. target );
         Super.DoSpecialDamage( target, damage, damagetype );
 
         int newdmg = Random( projectileMinDamage, projectileMaxDamage );
-        console.printf( GetClassName() .. ": dmg " .. newdmg .. " as rnd( " .. projectileMinDamage .. ", " .. projectileMaxDamage .. " )." );
+
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if ( debugCVar && debugCVar.GetBool() )
+	        console.printf( GetClassName() .. ": dmg " .. newdmg .. " as rnd( " .. projectileMinDamage .. ", " .. projectileMaxDamage .. " ), target \"" .. target .. "\"." );
 
         return newdmg;
     }
