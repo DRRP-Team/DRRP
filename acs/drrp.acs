@@ -400,6 +400,50 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     Delay(2);
 }
 
+Script "drawwindow" (str _Text, bool typing, int type) {
+    const int posX = iapplyScaleI(320) - 80;
+    const int posY = iapplyScaleI(322);
+    const int TYPING_DELAY = 32;
+
+    if (!type) {
+        type = getAimedActorDialogueType();
+    }
+
+    str Text = fixEncodingBug(_Text);
+
+    Delay(2);
+
+    if (typing) {
+        ACS_NamedExecute("beeping", 0, UniLen(Text), type);
+
+        drawDialogTypingWindow(Text,
+            posX,
+            posY,
+            false,
+            type
+        );
+    }
+
+    int typingDelayTimer = typing ? 0 : TYPING_DELAY;
+
+    While(TRUE) {
+        typingDelayTimer++;
+
+        if (typingDelayTimer > TYPING_DELAY) {
+            ACS_NamedTerminate("beeping", 0);
+            drawDialogWindow(Text, posX, posY, -1, type);
+            break;
+        }
+
+        Delay(1);
+    }
+}
+
+Script "clearwindow" (void) {
+    clearDialogWindow();
+    ACS_NamedTerminate("beeping", 0);
+}
+
 const int BLOOD_FLASH_ID = 30;
 const int BLOOD_FLASH_LAYERS = 2;
 
