@@ -16,14 +16,16 @@ user bool drrp_enable_damage_shader         = true;
 user bool drrp_enable_infobar               = true;
 user bool drrp_enable_compass               = true;
 
-user float drrp_window_scale                = 1.5; // Min 1, Max 3
+user float drrp_window_scale                = 1.5; // 1.0-3.0
 
 server bool drrp_enable_extended_gibs       = true;
 server bool drrp_enable_blood_flashes       = true;
 server int drrp_lights_wrapper_type         = 2;
 
 user bool drrp_enable_beep                  = true;
-user int drrp_beep_volume                   = 20;
+user int drrp_beep_volume                   = 20; // 0-127
+
+user int drrp_font                          = 1; // DRPG - 1, GZDoom - 2
 
 // Flashlight
 server color flashlight_color               = "AB AB FF";

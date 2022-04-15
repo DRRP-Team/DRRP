@@ -174,8 +174,23 @@ function void drawDialogFrame(int posX, int posY, bool scrollable) {
 }
 
 function int getClipHeight(void) {
-    return 60; /* DRPG */
-    return 64; /* GZDoom */
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 60; /* DRPG */
+        case 2: return 64; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
+}
+
+function int getLinesOnScreen(void) {
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 5; /* DRPG */
+        case 2: return 7; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
 }
 
 function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int color) {
@@ -186,7 +201,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int co
 
     if (ScrollY < 0) ScrollY = 0;
 
-    SetFont("defsmallfont2");
+    SetFont(drrpFont());
     SetHudClipRect(
         posX,
         posY,
@@ -210,7 +225,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
 
     drawDialogFrame(posX, posY, scrollable);
 
-    SetFont("defsmallfont2");
+    SetFont(drrpFont());
     SetHudClipRect(
         posX,
         posY,
@@ -256,11 +271,6 @@ Script "beeping" (int len, int type) {
         AmbientSound("misc/chat2", GetCVar("drrp_beep_volume"));
         Delay(BEEP_SPEED_DIV);
     }
-}
-
-function int getLinesOnScreen(void) {
-    return 5; /* DRPG */
-    return 7; /* GZDOOM */
 }
 
 Script "window" (str _Text, int type) {

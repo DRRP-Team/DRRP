@@ -12,6 +12,13 @@ const fixed HUD_RIGHT = 0.2;
 
 /* Useful functions */
 
+function void throw(str error) {
+    Print(s:"[ERROR] ", s:error);
+    Log(s:"[ERROR] ", s:error);
+    int a[3] = {1, 2, 3};
+    print(i:a[999]);
+}
+
 function fixed toFixed(int value) {
     return value << 16;
 }
@@ -213,7 +220,13 @@ function str StrTrim(str string) {
 }
 
 function str drrpFont(void) {
-    return "defsmallfont2";
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return "defsmallfont2"; /* DRPG */
+        case 2: return "defsmallfont1"; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
 }
 
 function int drrpFontWidth(void) {
@@ -221,7 +234,13 @@ function int drrpFontWidth(void) {
 }
 
 function int drrpFontHeight(void) {
-    return 12;
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 12; /* DRPG */
+        case 2: return 9; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
 }
 
 
