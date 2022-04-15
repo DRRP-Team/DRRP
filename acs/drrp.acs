@@ -333,7 +333,6 @@ Script "window" (str _Text, int type) {
     Delay(2);
 
     int btn;
-    int FirstRun = 1;
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
@@ -403,26 +402,46 @@ Script "window" (str _Text, int type) {
     ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
+function void drawHintWindow(str Text, int posX, int posY) {
+    const int WINDOW_LEN = 27;
+    const int FONT_WIDTH = 9;
+
+    SetHudSize(640, 480);
+    SetFont("M_NOTIF");
+    HudMessage(s: "A"; HUDMSG_PLAIN, -10000010, CR_WHITE,
+        toFixed(posX) + HUD_LEFT,
+        toFixed(posY - 5) + HUD_TOP,
+        1);
+
+    SetFont("defsmallfont2");
+    SetHudWrapWidth(WINDOW_LEN * FONT_WIDTH);
+    HudMessage(s: Text;
+        HUDMSG_PLAIN,
+        -10000011, /* id */
+        getColorByType(3),
+        toFixed(posX + 70) + HUD_LEFT,
+        toFixed(posY) + HUD_TOP,
+        1); /* hold */
+}
+
 Script "hintwindow" (str _Text, int holdTicks) {
     str Text = fixEncodingBug(_Text);
     Log(s:Text);
 
     Delay(2);
 
-    const int FINAL_POS_X = 410;
+    const int FINAL_POS_X = 420;
     const int FINAL_POS_Y = 10;
 
-    const int ANIMATION_OFFSET = 200;
+    const int ANIMATION_OFFSET = 500;
     const int ANIMATION_SPEED = 20;
 
     /* In animation */
 
     for (int i = ANIMATION_OFFSET; i >= 0; i-=ANIMATION_SPEED) {
-        drawDialogWindow(Text,
-            iapplyScaleI(FINAL_POS_X + i),
-            iapplyScaleI(FINAL_POS_Y),
-            -1,
-            3
+        drawHintWindow(Text,
+            FINAL_POS_X + i,
+            FINAL_POS_Y
         );
         Delay(1);
     }
@@ -430,11 +449,9 @@ Script "hintwindow" (str _Text, int holdTicks) {
     Delay(holdTicks);
 
     for (int i = 0; i < ANIMATION_OFFSET; i+=ANIMATION_SPEED) {
-        drawDialogWindow(Text,
-            iapplyScaleI(FINAL_POS_X + i),
-            iapplyScaleI(FINAL_POS_Y),
-            -1,
-            3
+        drawHintWindow(Text,
+            FINAL_POS_X + i,
+            FINAL_POS_Y
         );
         Delay(1);
     }
