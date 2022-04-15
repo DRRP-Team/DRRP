@@ -162,6 +162,7 @@ Script "testwrapper" (str text, int maxLength) {
 /* \\ String wrap processor // */
 
 const int WINDOW_LEN = 20; /* Chars in one line */
+const int WINDOW_WRAP_LEN = WINDOW_LEN - 3;
 
 function int getClipHeight(void) {
     int font = GetCVar("drrp_font");
@@ -233,6 +234,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int ty
         160 - 2,
         getClipHeight(),
         0, true);
+    SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
     HudMessage(s: Text;
         HUDMSG_PLAIN,
         -10000001, /* id */
@@ -257,6 +259,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
         160 - 2,
         getClipHeight(),
         0, true);
+    SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
     HudMessage(s: Text;
         HUDMSG_TYPEON,
         -10000001, /* id */
@@ -401,7 +404,7 @@ Script "window" (str _Text, int type) {
 }
 
 Script "hintwindow" (str _Text, int holdTicks) {
-    str Text = wrapText(fixEncodingBug(_Text), WINDOW_LEN);
+    str Text = fixEncodingBug(_Text);
     Log(s:Text);
 
     Delay(2);

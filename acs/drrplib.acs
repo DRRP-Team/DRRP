@@ -252,6 +252,14 @@ function str drrpFont(void) {
 
 function int drrpFontWidth(void) {
     return 9;
+
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 9; /* DRPG */
+        case 2: return 9; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
 }
 
 function int drrpFontHeight(void) {
