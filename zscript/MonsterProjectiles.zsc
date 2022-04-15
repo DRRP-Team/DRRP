@@ -1,0 +1,199 @@
+/**
+ * Copyright (c) 2021-2022 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+class DRRPBaseProjectile: Actor abstract {
+    int projectileMinDamage, projectileMaxDamage;
+
+    Default {
+        Radius 6;
+        Height 8;
+        Speed 10;
+        FastSpeed 20;
+        Damage 1; // Technically always overriden in "DoSpecialDamage()".
+        Projectile;
+        +RANDOMIZE;
+        +ZDOOMTRANS;
+        +BRIGHT;
+        RenderStyle "Add";
+        Alpha 0.75;
+        SeeSound "";
+        DeathSound "";
+    }
+
+    void SetDRRPDamage( int mind, int maxd ) {
+        projectileMinDamage = mind;
+        projectileMaxDamage = maxd;
+    }
+
+    override int DoSpecialDamage( Actor target, int damage, Name damagetype ) {
+        Super.DoSpecialDamage( target, damage, damagetype );
+
+        int newdmg = Random( projectileMinDamage, projectileMaxDamage );
+
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if ( debugCVar && debugCVar.GetBool() )
+	        console.printf( GetClassName() .. ": dmg " .. newdmg .. " as rnd( " .. projectileMinDamage .. ", " .. projectileMaxDamage .. " ), target \"" .. target .. "\"." );
+
+        return newdmg;
+    }
+
+} // of DRRPBaseProjectile: Actor abstract {}
+
+
+class DRRPFatShot: DRRPBaseProjectile {
+    Default {
+        Radius 8;
+        Height 10;
+        Speed 10;
+        FastSpeed 35;
+        SeeSound "fatso/attack";
+        DeathSound "fatso/shotx";
+    }
+
+    States {
+    Spawn:
+        MANF AB 4;
+        Loop;
+    Death:
+        MISL B 8;
+        MISL C 6;
+        MISL D 4;
+        Stop;
+    }
+}
+class DRRPPainShot: DRRPFatShot {}
+
+
+class DRRPImpFireball: DRRPBaseProjectile {
+    Default {
+        SeeSound "imp/attack";
+        DeathSound "imp/shotx";
+    }
+
+    States {
+    Spawn:
+        BAL1 AB 4;
+        Loop;
+    Death:
+        BAL1 CDE 6;
+        Stop;
+    }
+}
+
+
+class DRRPCacodemonBall: DRRPBaseProjectile {
+    Default {
+        SeeSound "caco/attack";
+        DeathSound "caco/shotx";
+    }
+
+    States {
+    Spawn:
+        BAL2 AB 4;
+        Loop;
+    Death:
+        BAL2 CDE 6;
+        Stop;
+    }
+}
+class DRRPMalwrathBall: DRRPCacodemonBall {
+    Default {
+        Translation "168:180=224:231", "181:191=160:167", "253:253=164:164", "47:47=162:162", "208:223=224:231";
+        Scale 0.8;
+    }
+}
+class DRRPWretchedBall: DRRPCacodemonBall {
+    Default {
+        Translation "168:191=193:207", "167:167=244:244", "16:47=193:201", "192:207=168:184", "240:242=185:191", "223:223=207:207", "0:2=246:246";
+        Scale 1.2;
+    }
+}
+
+
+class DRRPRevenantTracer: DRRPBaseProjectile {
+    Default {
+        Radius 11;
+        Height 8;
+        SeeSound "skeleton/attack";
+        DeathSound "skeleton/tracex";
+    }
+
+    States {
+    Spawn:
+        FATB AB 2 A_Tracer;
+        Loop;
+    Death:
+        FBXP A 8;
+        FBXP B 6;
+        FBXP C 4;
+        Stop;
+    }
+}
+
+
+class DRRPHellKnightBall: DRRPBaseProjectile {
+    Default {
+        Radius 6;
+        Height 16;
+        Speed 15;
+        FastSpeed 20;
+        SeeSound "baron/attack";
+        DeathSound "baron/shotx";
+        Decal "BaronScorch";
+    }
+
+    States {
+    Spawn:
+		BAL7 AB 4 BRIGHT;
+		Loop;
+	Death:
+		BAL7 CDE 6 BRIGHT;
+		Stop;
+    }
+}
+class DRRPOgreBall: DRRPHellKnightBall {
+    Default {
+        Translation "112:127=176:191", "128:143=%[0.00,0.00,0.00]:[0.77,0.82,0.64]", "144:151=%[0.00,0.00,0.00]:[0.80,0.85,0.65]", "48:63=%[0.00,0.00,0.00]:[0.76,0.82,0.64]", "13:15=%[0.00,0.00,0.00]:[0.65,0.69,0.54]";
+    }
+}
+class DRRPBaronBall: DRRPHellKnightBall replaces BaronBall {
+    Default {
+        Translation "112:127=160:167";
+    }
+}
+
+
+class DRRPCyberdemonRocket: DRRPBaseProjectile {
+    Default {
+        Radius 11;
+        Height 8;
+        Speed 20;
+        Damage 20;
+        +ROCKETTRAIL
+        -ZDOOMTRANS;
+        RenderStyle "Normal";
+        SeeSound "weapons/rocklf";
+        DeathSound "weapons/rocklx";
+        Obituary "$OB_MPROCKET";
+    }
+
+    States {
+    Spawn:
+        MISL A 1 Bright;
+        Loop;
+    Death:
+        MISL B 8 Bright A_Explode;
+        MISL C 6 Bright;
+        MISL D 4 Bright;
+        Stop;
+    BrainExplode:
+        MISL BC 10 Bright;
+        MISL D 10 A_BrainExplode;
+        Stop;
+    }
+}
+

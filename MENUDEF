@@ -68,6 +68,7 @@ OptionMenu "Misc" {
     Option "$DRRP_D_MENU_COMPASS_ENABLE", "drrp_enable_compass", "ONOFF"
     Option "$DRRP_D_MENU_GIBS_ENABLE",  "drrp_enable_extended_gibs", "ONOFF"
     Option "$DRRP_D_MENU_BFLASH_ENABLE",  "drrp_enable_blood_flashes", "ONOFF"
+    Option "$DRRP_D_MENU_LOW_HEALTH_INDICATOR_ENABLE",  "drrp_enable_low_health_indicator", "ONOFF"
     Option "$DRRP_D_MENU_LIGHTS_TYPE", "drrp_lights_wrapper_type", LightsWrapperType
     Slider "$DRRP_D_MENU_WINDOW_SCALE", "drrp_window_scale", 1.0, 3.0, 0.25, 2
     Option "$DRRP_D_MENU_BEEP_ENABLE",  "drrp_enable_beep", "ONOFF"
