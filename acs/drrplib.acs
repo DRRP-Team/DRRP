@@ -301,7 +301,7 @@ function void onBtnReset(void) {
     }
 }
 
-function bool onBtnPress(int button) {
+function bool onBtnClick(int button) {
     int input = GetPlayerInput(-1, INPUT_BUTTONS);
 
     int idx = _getBtnStateIndex(button);
@@ -323,7 +323,7 @@ function bool onBtnPress(int button) {
     return false;
 }
 
-function bool onBtnHold(int button) {
+function bool onBtnPress(int button) {
     int input = GetPlayerInput(-1, INPUT_BUTTONS);
 
     return input & button;

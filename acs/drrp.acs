@@ -374,7 +374,7 @@ Script "window" (str _Text, int type) {
 
         Delay(1);
 
-        if(onBtnPress(BT_USE)) {
+        if(onBtnClick(BT_USE)) {
             int nextScroll = getNextPageScroll(ScrollY, height);
 
             if (nextScroll == -1) break;
