@@ -43,7 +43,7 @@ class InfobarHandler: EventHandler {
                     if ( tClass.bSpecial )  InfobarFontColor = Font.CR_SAPPHIRE;    // Item.
 
                     if ( tClass is 'DRRPInformatorActor' ) {
-                        SetInfobarString( DRRPInformatorActor( tClass ).informString );
+                        SetInfobarString( DRRPInformatorActor( tClass ).getInformString() );
                         InfobarFontColor = Font.CR_YELLOW;
                     } else
                         SetInfobarString( tClass.GetTag() );
