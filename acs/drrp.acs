@@ -607,6 +607,15 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID77"), 5);                  // Health restored.
 }
 
+function str getString(int id) {
+    return StrParam(l:StrParam(s:"DRRP_B_ID", i:id));
+}
+
+/* DRRPInformatorActor */
+Script "getString" (int id) {
+    SetResultValue(getString(id));
+}
+
 
 #include "inc_flashlight.acs"
 #include "inc_mapapis.acs"
