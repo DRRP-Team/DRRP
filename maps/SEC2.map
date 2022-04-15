@@ -5751,7 +5751,7 @@ renderstyle = "";
 thing
 {
 x = -1120.000;
-y = -1656.000;
+y = -1664.000;
 type = 10265;
 angle = 270;
 id = 348;
@@ -5772,7 +5772,7 @@ renderstyle = "";
 thing
 {
 x = -1120.000;
-y = -1512.000;
+y = -1536.000;
 type = 10265;
 angle = 270;
 id = 346;
@@ -13349,80 +13349,86 @@ y = -1792.000;
 
 vertex
 {
-x = -1144.000;
-y = -1544.000;
+x = -1152.000;
+y = -1568.000;
 }
 
 vertex
 {
-x = -1144.000;
-y = -1496.000;
-}
-
-vertex
-{
-x = -1120.000;
-y = -1496.000;
-}
-
-vertex
-{
-x = -1096.000;
-y = -1496.000;
-}
-
-vertex
-{
-x = -1096.000;
-y = -1544.000;
-}
-
-vertex
-{
-x = -1144.000;
-y = -1688.000;
-}
-
-vertex
-{
-x = -1144.000;
-y = -1640.000;
-}
-
-vertex
-{
-x = -1128.000;
-y = -1640.000;
-}
-
-vertex
-{
-x = -1096.000;
-y = -1640.000;
-}
-
-vertex
-{
-x = -1096.000;
-y = -1688.000;
-}
-
-vertex
-{
-x = -1136.000;
+x = -1152.000;
 y = -1504.000;
 }
 
 vertex
 {
+x = -1128.000;
+y = -1504.000;
+}
+
+vertex
+{
+x = -1088.000;
+y = -1504.000;
+}
+
+vertex
+{
+x = -1088.000;
+y = -1568.000;
+}
+
+vertex
+{
+x = -1152.000;
+y = -1696.000;
+}
+
+vertex
+{
+x = -1152.000;
+y = -1632.000;
+}
+
+vertex
+{
 x = -1136.000;
+y = -1632.000;
+}
+
+vertex
+{
+x = -1088.000;
+y = -1632.000;
+}
+
+vertex
+{
+x = -1088.000;
+y = -1696.000;
+}
+
+vertex
+{
+x = -1144.000;
 y = -1512.000;
 }
 
 vertex
 {
+x = -1144.000;
+y = -1520.000;
+}
+
+vertex
+{
+x = -1136.000;
+y = -1536.000;
+}
+
+vertex
+{
 x = -1128.000;
-y = -1528.000;
+y = -1536.000;
 }
 
 vertex
@@ -13434,13 +13440,7 @@ y = -1528.000;
 vertex
 {
 x = -1112.000;
-y = -1520.000;
-}
-
-vertex
-{
-x = -1104.000;
-y = -1504.000;
+y = -1512.000;
 }
 
 vertex
@@ -40686,7 +40686,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40697,7 +40699,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40708,7 +40712,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40719,7 +40725,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40730,7 +40738,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40741,7 +40751,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40752,7 +40764,9 @@ sector = 189;
 sidedef
 {
 sector = 191;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = -40;
+offsety = -32;
 }
 
 sidedef
@@ -40774,7 +40788,9 @@ sector = 190;
 sidedef
 {
 sector = 192;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = 16;
+offsety = -40;
 }
 
 sidedef
@@ -40785,7 +40801,9 @@ sector = 190;
 sidedef
 {
 sector = 192;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = 16;
+offsety = -40;
 }
 
 sidedef
@@ -40796,7 +40814,9 @@ sector = 190;
 sidedef
 {
 sector = 192;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = 16;
+offsety = -40;
 }
 
 sidedef
@@ -40807,7 +40827,9 @@ sector = 190;
 sidedef
 {
 sector = 192;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = 16;
+offsety = -40;
 }
 
 sidedef
@@ -40818,7 +40840,9 @@ sector = 190;
 sidedef
 {
 sector = 192;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = 16;
+offsety = -40;
 }
 
 sidedef
@@ -40829,7 +40853,9 @@ sector = 190;
 sidedef
 {
 sector = 192;
-texturetop = "drdc13";
+texturetop = "textures/flats/drdc61x.png";
+offsetx = 16;
+offsety = -40;
 }
 
 sidedef
@@ -45780,14 +45806,13 @@ ypanningceiling = 32.000000;
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "SLIME14";
+textureceiling = "textures/flats/drdc62.png";
 heightceiling = 64;
 lightlevel = 78;
 xpanningfloor = 32.000000;
 rotationfloor = 270.000000;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
@@ -46108,20 +46133,19 @@ ypanningceiling = 32.000000;
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "SLIME14";
+textureceiling = "textures/flats/drdc62.png";
 heightceiling = 64;
 lightlevel = 78;
 xpanningfloor = 32.000000;
 rotationfloor = 270.000000;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "SLIME14";
+textureceiling = "textures/flats/drdc62.png";
 heightceiling = 64;
 lightlevel = 94;
 xpanningfloor = 32.000000;
@@ -47920,53 +47944,51 @@ ypanningceiling = 32.000000;
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "white";
+textureceiling = "textures/flats/drdc63x.png";
 heightceiling = 64;
 lightlevel = 78;
 xpanningfloor = 32.000000;
 rotationfloor = 270.000000;
 ypanningfloor = 32.000000;
 ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
 }
 
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "white";
+textureceiling = "textures/flats/drdc63x.png";
 heightceiling = 64;
 lightlevel = 78;
 xpanningfloor = 32.000000;
 rotationfloor = 270.000000;
 ypanningfloor = 32.000000;
-ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
+ypanningceiling = -32.000000;
 }
 
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "drdc13";
+textureceiling = "textures/flats/drdc61x.png";
 heightceiling = 66;
 lightlevel = 78;
 xpanningfloor = 32.000000;
 rotationfloor = 270.000000;
 ypanningfloor = 32.000000;
-ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
+ypanningceiling = 56.000000;
+xpanningceiling = 80.000000;
 }
 
 sector
 {
 texturefloor = "SLIME14";
-textureceiling = "drdc13";
+textureceiling = "textures/flats/drdc61x.png";
 heightceiling = 66;
 lightlevel = 78;
 xpanningfloor = 32.000000;
 rotationfloor = 270.000000;
 ypanningfloor = 32.000000;
-ypanningceiling = 32.000000;
-xpanningceiling = 32.000000;
+ypanningceiling = 40.000000;
+xpanningceiling = 64.000000;
 }
 
 sector
