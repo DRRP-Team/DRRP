@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# dec names -> hex names
+
 import os
 
 files = []
