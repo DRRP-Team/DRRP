@@ -284,8 +284,8 @@ class DRRPInformatorActor: Actor {
 
     Default {
         +SOLID;
-        Height 32;
-        Radius 16;
+        Height 64;
+        Radius 32;
     }
 
     // "LineTrace()" (see "Infobar.zsc") cannot find actors without flag "+SOLID".
@@ -334,7 +334,6 @@ class DRRPInformatorActor: Actor {
         //console.printf( "\"" .. informString .. "\" as: " .. "$DRRP_" .. levelPrefix .. "_" .. args[ 0 ] );
         Super.PostBeginPlay();
     }
-
 } // of class DRRPInformatorActor: Actor {
 
 class DRRPDamageDoll: DRRPPlayer {
