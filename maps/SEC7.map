@@ -20391,6 +20391,75 @@ dm = true;
 renderstyle = "";
 }
 
+thing
+{
+x = 1776.000;
+y = 544.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 3;
+}
+
+thing
+{
+x = 1760.000;
+y = 1952.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 3;
+}
+
+thing
+{
+x = 1184.000;
+y = 288.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 40;
+}
+
+thing
+{
+x = 288.000;
+y = 1856.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 40;
+}
+
 vertex
 {
 x = 1624.000;
