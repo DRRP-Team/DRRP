@@ -254,10 +254,10 @@ script 104 (void){ // Kronos
     Autosave();
     ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
     //
-    AmbientSound("voice/laugh", 200);
+    AmbientSound(localizeSound("bet/destroy"), 200);
     ACS_NamedExecuteWait("window", 0, getString(21), 2);
     //
-    AmbientSound(localizeSound("bet/destroy"), 200);
+    AmbientSound("voice/laugh", 200);
     Thing_Remove(10);
     Delay(50);
     ACS_NamedExecute("transformation", 0, 10);
@@ -286,7 +286,7 @@ script 332 (void) { // Lava trigger
     lavacomputercounter++;
     ACS_NamedExecuteWait("window", 0, getString(9), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
     Delay(10); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=300
-    ACS_NamedExecuteWait("window", 0, getString(10)); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
+    ACS_NamedExecuteWait("window", 0, getString(10), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
     SetMusic("D_EVIL");
     FadeRange(255, 128, 0, 1.0, 0, 0, 0, 0.0, 5.0);
     //lava

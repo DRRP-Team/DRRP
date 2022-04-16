@@ -1,0 +1,633 @@
+/**
+ * Copyright (c) 2021-2022 DRRP-Team
+ * 
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+/*  == Drop items: ==
+
+// See "/ZScript/Patches.zsc :: DRRPGeneralRandomSpawner".
+I  ) 20% || (is 'Dog' / 'Cyber' / 'Kronos'): NULL
+
+II ) 40%:
+    1) 33% Health bonus;
+    2) 33% Armor bonus;
+    3) 33% Credit:
+        a) (monsLvl==1 && 1%): gold credit;
+        b) (monsLvl==2 && 3%): gold credit;
+        c) (monsLvl==3 && 5%): gold credit;
+        d) Green credit.
+
+
+// Part III is in this file.
+III) 40%:
+    1) (is 'Zombieman'):
+        a) 6%: clips 4x;
+        b) 30%: shell;
+        c) 64%: clip.
+    2) (is 'Chaingunner'):
+        a) 33%: clips 4x;
+        b) 67%: clip.
+    3) (is 'Cacodemon'):
+        a) 6%: large medikit;
+        b) 94%: small medikit.
+    4) (is 'PainElemental'):
+        100%: gold credit.
+    5) (is 'Revenant'):
+        a) 6%: rockets 4x;
+        b) 94%: rocket.
+    6) (is 'Fatso'):
+        a) 6%: cells 4x;
+        b) 94%: cell.
+    7) (is 'ArchVile'):
+        a) 30%: gold credit;
+        b) 4%: large medikit;
+        c) 66%: small medikit.
+    8) (is 'Baron'):
+        a) 30%: cells 4x;
+        a) 70%: shells 4x;
+    9) (is 'Pinky'):
+        a) 0%: NULL.
+*/
+
+
+// [McM]: I believe this monstrous class will be here only in rebalance branch...
+class DRRPMonsterUtils abstract play {
+
+    /*  Most of the random-heired monsters has similar type "combo" attack (melee or projectile).
+
+      Actor spawner                     : a pointer to the attacker monster (usually "self").
+      class<DRRPBaseProjectile> prjClass: a class inherited from the DRRPBaseProjectile.
+      int prjMinDmg, int prjMaxDmg      : minimal and maximal limits of the new projectile random damage to set to.
+      int meleeMinDmg, int meleeMaxDmg  : minimal and maximal limits of the melee. To clear melee attack set the "meleeMaxDmg" to zero value.
+    */
+    static DRRPBaseProjectile A_ComboAttack( Actor spawner, class<DRRPBaseProjectile> prjClass, double prjMinDmg, double prjMaxDmg, double meleeMinDmg = 0, double meleeMaxDmg = 0 ) {
+        DRRPBaseProjectile newProjectile = NULL;
+
+        if ( spawner.target ) {
+            if ( meleeMaxDmg != 0 && spawner.CheckMeleeRange() ) {
+                spawner.A_CustomMeleeAttack( Random( int(meleeMinDmg), int(meleeMaxDmg) ) );
+            } else {
+                spawner.A_FaceTarget();
+
+                if ( newProjectile = DRRPBaseProjectile( spawner.SpawnMissile( spawner.target, prjClass ) ) )
+                    newProjectile.SetDRRPDamage( int(prjMinDmg), int(prjMaxDmg) );
+            }
+        }
+
+        return newProjectile;
+    } // of static DRRPBaseProjectile A_ComboAttack( Actor spawner, class<DRRPBaseProjectile> prjClass, double prjMinDmg, double prjMaxDmg, double meleeMinDmg = 0, double meleeMaxDmg = 0 ) {}
+
+} // of DRRPMonsterUtils abstract {}
+
+
+class Dog_BaseDRRP: MBFHelperDog abstract {
+    double DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+
+    Default {
+        +LOOKALLAROUND;
+
+        Speed 8; // 10
+
+        DamageFactor "DRRPShotgunDmg", 4.0;
+        DamageFactor "DRRPPlasmaDmg", 2.0;
+
+        ActiveSound  "monsters/hellhound/see";
+        PainSound    "monsters/hellhound/pain";
+        DeathSound   "monsters/hellhound/death";
+        SeeSound     "monsters/hellhound/bark";
+        AttackSound  "monsters/hellhound/bark";
+        Dog_BaseDRRP.MeleeMinDamage 5;
+        Dog_BaseDRRP.MeleeMaxDamage 17;
+    }
+
+    States {
+    Melee:
+        DOGS EF 8 A_FaceTarget;
+        DOGS G 8 A_CustomMeleeAttack( Random( DRRPMeleeMinDamage, DRRPMeleeMaxDamage ) );
+        Goto See;
+    }
+}
+
+class ZombieMan_BaseDRRP: ZombieMan abstract {
+    double DRRPMinDamage, DRRPMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+
+    Default {
+        DropItem "Clip", 0, 0;
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPAxeDmg", 3.0;
+        ZombieMan_BaseDRRP.MinDamage 3;
+        ZombieMan_BaseDRRP.MaxDamage 15;
+    }
+
+    States {
+    Missile:
+        POSS E 10 A_FaceTarget;
+        POSS F 8 A_CustomBulletAttack( 22.5, 0, 1, Random( DRRPMinDamage, DRRPMaxDamage ), "BulletPuff", 0, CBAF_NORANDOM );
+        POSS E 8;
+        Goto See;
+    }
+}
+
+class ShotgunGuy_BaseDRRP: ShotgunGuy abstract {
+    double DRRPMinDamage, DRRPMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+
+    Default {
+        DropItem "DRRPShell", 0, 0;
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPAxeDmg", 3.0;
+        ShotgunGuy_BaseDRRP.MinDamage 2;
+        ShotgunGuy_BaseDRRP.MaxDamage 14;
+    }
+
+    States {
+    Missile:
+        SPOS E 10 A_FaceTarget;
+        SPOS F 10 A_CustomBulletAttack( 22.5, 0, 3, Random( DRRPMinDamage, DRRPMaxDamage ), "BulletPuff", 0, CBAF_NORANDOM );
+        SPOS E 10;
+        Goto See;
+    }
+}
+
+class ChaingunGuy_BaseDRRP: ChaingunGuy abstract {
+    double DRRPMinDamage, DRRPMaxDamage, backfireChance;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property BackfireChance: backfireChance;
+
+    Default {
+        DropItem "Chaingun", 0, 0;
+        DamageFactor "DRRPBulletDmg", 3.0;
+        DamageFactor "DRRPPlasmaDmg", 2.0;
+        +LOOKALLAROUND;
+        ChaingunGuy_BaseDRRP.MinDamage 1;
+        ChaingunGuy_BaseDRRP.MaxDamage 11;
+        ChaingunGuy_BaseDRRP.BackfireChance 32; // (0 = totally avoid backfire) .. (255 = backfire always after pain).
+    }
+
+    States {
+    Missile:
+        CPOS E 10 A_FaceTarget;
+        CPOS FE 4 Bright A_CustomBulletAttack( 22.5, 0, 1, Random( DRRPMinDamage, DRRPMaxDamage ), "BulletPuff", 0, CBAF_NORANDOM );
+        CPOS F 2 A_CPosRefire;
+        Goto Missile + 1;
+    Pain:
+        CPOS G 3 A_Pain;
+        CPOS G 1 A_JumpIfCloser( 196, 1 );
+        Goto See;
+        CPOS G 3 A_Jump( backfireChance, 1 );
+        Goto See;
+        CPOS G 0;
+        Goto Missile + 1;
+    }
+}
+
+class DoomImp_BaseDRRP: DoomImp abstract {
+    double DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+
+    Default {
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPShotgunDmg", 3.0;
+        MeleeRange 48.0;
+        DoomImp_BaseDRRP.MinDamage 10;
+        DoomImp_BaseDRRP.MaxDamage 20;
+        DoomImp_BaseDRRP.MeleeMinDamage 10;
+        DoomImp_BaseDRRP.MeleeMaxDamage 20;
+    }
+
+    void A_DRRP_ImpAttack( void ) {
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPImpFireball", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+    }
+
+    States {
+    Melee:
+    Missile:
+        TROO EF 8 A_FaceTarget;
+        TROO G 6 A_DRRP_ImpAttack;
+        Goto See;
+    }
+}
+
+class LostSoul_BaseDRRP: LostSoul abstract {
+    double DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+
+    Default {
+        Health 150;
+        Species "LostSoul_BaseDRRP, Phantom, DRRPLostSoul, Nightmare";
+
+        DamageFunction 0;
+        +LOOKALLAROUND;
+        -DONTFALL;
+        +NOINFIGHTSPECIES;
+        +BRIGHT;
+        DamageFactor "DRRPFireExtDmg", 10.0;
+        DamageFactor "DRRPFireDmg", 0.0;
+
+        LostSoul_BaseDRRP.MeleeMinDamage 4;
+        LostSoul_BaseDRRP.MeleeMaxDamage 28;
+    }
+
+    override bool Slam( Actor victim ) {
+        victim.DamageMobj( self, self, Random( DRRPMeleeMinDamage, DRRPMeleeMaxDamage ), 'None' );
+        return Super.Slam( victim );;
+    }
+
+    States {
+    See:
+        SKUL AABB 3 A_Chase;
+        Loop;
+    Death:
+        SKUL F 6 Bright;
+        SKUL G 6 Bright A_Scream;
+        SKUL H 6 Bright;
+        SKUL I 6 Bright A_NoBlocking;
+        SKUL J 6;
+        SKUL K 6;
+        SOUL Z -1;
+        Stop;
+    Death.DRRPFireExtDmg:
+        LSOL F 6 Bright A_Gravity;
+        LSOL G 5 Bright A_Scream;
+        LSOL H 5 Bright A_NoBlocking;
+        LSOL I 5 Bright;
+        SOUL Z -1;
+        Stop;
+    }
+}
+
+class Demon_BaseDRRP: Demon abstract {
+    double DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+
+    Default {
+        +LOOKALLAROUND;
+        DamageFactor "DRRPRocketDmg", 0.5;
+        DamageFactor "DRRPShotgunDmg", 2.0;
+
+        Radius 20;
+        Speed 5; // 10
+        Demon_BaseDRRP.MeleeMinDamage 4;
+        Demon_BaseDRRP.MeleeMaxDamage 28;
+    }
+
+    States {
+    Melee:
+        SARG EF 8 Fast A_FaceTarget;
+        SARG G 8 Fast A_CustomMeleeAttack( Random( DRRPMeleeMinDamage, DRRPMeleeMaxDamage ) );
+        Goto See;
+    }
+}
+
+class Cacodemon_BaseDRRP: Cacodemon {
+    class<DRRPBaseProjectile> ballType;
+    double DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+    Property BallType: ballType;
+
+    Default {
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPAxeDmg", 10.0;
+        DamageFactor "DRRPBulletDmg", 2.0;
+        MeleeRange 48.0;
+        Cacodemon_BaseDRRP.MinDamage 10;
+        Cacodemon_BaseDRRP.MaxDamage 20;
+        Cacodemon_BaseDRRP.MeleeMinDamage 10;
+        Cacodemon_BaseDRRP.MeleeMaxDamage 20;
+        Cacodemon_BaseDRRP.BallType "DRRPCacodemonBall";
+    }
+
+    void A_DRRP_CacodemonAttack( void ) {
+        DRRPMonsterUtils.A_ComboAttack( self, ballType, DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+    }
+
+    States {
+    Missile:
+        HEAD BC 5 A_FaceTarget;
+        HEAD D 4 Bright A_DRRP_CacodemonAttack;
+        HEAD C 9;
+        HEAD D 4 Bright A_DRRP_CacodemonAttack;
+        HEAD C 9;
+        HEAD D 4 Bright A_DRRP_CacodemonAttack;
+        HEAD C 9;
+        Goto See;
+    }
+}
+
+
+class Revenant_BaseDRRP: Revenant abstract {
+    double DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+
+    Default {
+        +LOOKALLAROUND;
+
+        MeleeRange 48.0;
+        Scale 0.74;
+        Speed 5;
+
+        DamageFactor "DRRPAxeDmg", 5.0;
+        DamageFactor "DRRPRocketDmg", 2.0;
+
+        Revenant_BaseDRRP.MinDamage 6;
+        Revenant_BaseDRRP.MaxDamage 48;
+        Revenant_BaseDRRP.MeleeMinDamage 24;
+        Revenant_BaseDRRP.MeleeMaxDamage 32;
+    }
+
+    void A_DRRP_RevenantShot( void ) {
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPRevenantTracer", DRRPMinDamage, DRRPMaxDamage, 0, 0 );
+    }
+
+    States {
+    Melee:
+        SKEL G 0 A_FaceTarget;
+        SKEL G 6 A_SkelWhoosh;
+        SKEL H 6 A_FaceTarget;
+        SKEL I 6 A_CustomMeleeAttack( Random( DRRPMeleeMinDamage, DRRPMeleeMaxDamage ), "skeleton/melee" );
+        Goto See;
+    Missile:
+        SKEL J 0 Bright A_FaceTarget;
+        SKEL J 10 Bright A_FaceTarget;
+        SKEL K 10 A_DRRP_RevenantShot;
+        SKEL K 10 A_FaceTarget;
+        Goto See;
+    Death:
+        SKEL L 7;
+        SKEL M 7 A_SpawnItem( "DRRPExplosion", 0, 38 );
+        SKEL M 0 A_Jump( 256, "DeathReal" ); // For final monster cast.
+        SKEL N 7 A_Scream;
+        SKEL OP 7;
+        SKEL Q -1;
+        Stop;
+    DeathReal:
+        TNT1 A 7 A_Scream;
+        TNT1 A 7 A_NoBlocking;
+        TNT1 A 7;
+        TNT1 A -1;
+        Stop;
+    }
+}
+
+class PainElemental_BaseDRRP: PainElemental abstract {
+    class<Actor> painDeathSkillSpawnClass;
+    double DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+    Property SkullClassSpawn: painDeathSkillSpawnClass;
+
+    Default {
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPFireDmg", 0.0;
+        DamageFactor "DRRPPhysicalDmg", 2.0;
+        MeleeRange 48.0;
+        PainElemental_BaseDRRP.MinDamage 10;
+        PainElemental_BaseDRRP.MaxDamage 20;
+        PainElemental_BaseDRRP.MeleeMinDamage 10;
+        PainElemental_BaseDRRP.MeleeMaxDamage 20;
+        PainElemental_BaseDRRP.SkullClassSpawn "DRRPLostSoul";
+    }
+
+
+    // Lost souls and its derivatives must not die right after default A_PainDie() spawning.
+    action void A_DRRP_PainSpawnSoul( class<Actor> spawnee ) {
+        if ( target && IsFriend( target ) ) // And I thought you were my friend!
+            bFriendly = false;
+
+        A_PainAttack( spawnee );
+    } // of action void A_DRRP_PainDie( class<Actor> spawnee ) {
+
+    void A_DRRP_PainAttack( void ) {
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPPainShot", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+    }
+
+    States {
+    Melee:
+    Missile:
+        PAIN D 5 A_FaceTarget;
+        PAIN E 5 A_FaceTarget;
+        PAIN F 5 Bright A_FaceTarget;
+        PAIN F 0 Bright A_DRRP_PainAttack;
+        Goto See;
+    Death:
+        PAIN H 8 Bright;
+        PAIN I 8 Bright {
+            A_Scream();
+            A_NoBlocking();
+            A_DRRP_PainSpawnSoul( painDeathSkillSpawnClass );
+        }
+        PAIN J 8 Bright;
+        PAIN K 8 Bright A_DRRP_PainSpawnSoul( painDeathSkillSpawnClass );
+        PAIN L 8 Bright;
+        PAIN M 8 Bright A_DRRP_PainSpawnSoul( painDeathSkillSpawnClass );
+        PAIN Z -1;
+        Stop;
+    }
+}
+
+class Fatso_BaseDRRP: Fatso abstract {
+    int fatAttackCounter;
+    double DRRPMinDamage, DRRPMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+
+    Default {
+        Scale 0.92;
+        Radius 30;
+        Height 52;
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPRocketDmg", 2.5;
+        Fatso_BaseDRRP.MinDamage 10;
+        Fatso_BaseDRRP.MinDamage 20;
+    }
+
+    void A_DRRP_FatPrepare( void ) {
+        fatAttackCounter = 0;
+    }
+
+    void A_DRRP_FatAttack( void ) {
+        if ( target ) {
+            double angle1;
+            DRRPBaseProjectile fatMissile;
+
+            switch ( fatAttackCounter ) {
+                case 0: angle1 = -11.25; break;
+                case 1: angle1 = 0.0; break;
+                case 2: default: angle1 = -5.625; break;
+            }
+
+            A_FaceTarget();
+
+            for ( int i = 0; i < 2; i++ ) {
+                if ( fatMissile = DRRPBaseProjectile( SpawnMissile( target, "DRRPFatShot" ) ) ) {
+                    fatMissile.angle += angle1 + i * 11.25;
+                    fatMissile.VelFromAngle();
+                    fatMissile.SetDRRPDamage( DRRPMinDamage, DRRPMaxDamage );
+                }
+            }
+
+            fatAttackCounter++;
+        }
+    } // of void A_DRRP_FatAttack( void ) {
+
+    States {
+    Missile:
+        FATT G 20 {
+            A_FatRaise();
+            A_DRRP_FatPrepare();
+        }
+        FATT H 10 Bright A_DRRP_FatAttack;
+        FATT IG 5 A_FaceTarget;
+        FATT H 10 Bright A_DRRP_FatAttack;
+        FATT IG 5 A_FaceTarget;
+        FATT H 10 Bright A_DRRP_FatAttack;
+        FATT IG 5 A_FaceTarget;
+        Goto See;
+    }
+}
+
+class ArchVile_BaseDRRP: ArchVile abstract {
+    int vileMinDamage, vileMaxDamage;
+    Property MinDamage: vileMinDamage;
+    Property MaxDamage: vileMaxDamage;
+
+    Default {
+        Scale 0.7;
+        Speed 7; // Doom's default: 15.
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPAxeDmg", 10.0;
+        DamageFactor "DRRPFireExtDmg", 4.0;
+        DamageFactor "DRRPFireDmg", 0.0;
+        ArchVile_BaseDRRP.MinDamage 10;
+        ArchVile_BaseDRRP.MaxDamage 20;
+    }
+
+    States {
+    See:
+        TNT1 A 0 Bright A_JumpIf( CheckClass( "DRRPFire", AAPTR_TARGET, true ), "Spawn" ); // Reset target if it's fire.
+        VILE AABB 2 A_Chase;
+        VILE CC 2 A_VileChase;
+        VILE DDEE 2 A_Chase;
+        VILE FF 2 A_VileChase;
+        Loop;
+    Missile:
+        VILE G 0 Bright A_VileStart;
+        VILE G 10 Bright A_FaceTarget;
+        VILE H 8 Bright A_VileTarget;
+        VILE IJKLMN 8 Bright A_FaceTarget;
+        VILE O 8 Bright A_VileAttack( "vile/stop", Random( vileMinDamage, vileMaxDamage ), 0, 1, 0.2 );
+        VILE P 20 Bright;
+        Goto See;
+    }
+}
+
+class HellKnight_BaseDRRP: HellKnight abstract {
+    double DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+    class<DRRPBaseProjectile> ballType;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+    Property BallType: ballType;
+
+    Default {
+        Scale 0.85;
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPShotgunDmg", 5.0;
+
+        HellKnight_BaseDRRP.MinDamage 10;
+        HellKnight_BaseDRRP.MaxDamage 20;
+        HellKnight_BaseDRRP.MeleeMinDamage 10;
+        HellKnight_BaseDRRP.MeleeMaxDamage 20;
+        HellKnight_BaseDRRP.BallType "DRRPHellKnightBall";
+    }
+
+    void A_DRRP_HellKnightAttack( void ) {
+        DRRPMonsterUtils.A_ComboAttack( self, ballType, DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+    }
+
+    States {
+    Melee:
+    Missile:
+        BOS2 EF 8 A_FaceTarget;
+        BOS2 G 8 A_DRRP_HellKnightAttack; // A_CustomComboAttack( "DRRPHellKnightBall", 32, 4 * Random( 4, 7 ), "baron/melee" );
+        Goto See;
+    }
+}
+
+class BaronOfHell_BaseDRRP: BaronOfHell abstract {
+    double DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage;
+
+    Property MinDamage: DRRPMinDamage;
+    Property MaxDamage: DRRPMaxDamage;
+    Property MeleeMinDamage: DRRPMeleeMinDamage;
+    Property MeleeMaxDamage: DRRPMeleeMaxDamage;
+
+    Default {
+        Scale 0.85;
+        +LOOKALLAROUND;
+
+        DamageFactor "DRRPShotgunDmg", 5.0;
+
+        BaronOfHell_BaseDRRP.MinDamage 10;
+        BaronOfHell_BaseDRRP.MaxDamage 20;
+        BaronOfHell_BaseDRRP.MeleeMinDamage 10;
+        BaronOfHell_BaseDRRP.MeleeMaxDamage 20;
+    }
+
+    void A_DRRP_BaronAttack( void ) {
+        DRRPMonsterUtils.A_ComboAttack( self, "DRRPBaronBall", DRRPMinDamage, DRRPMaxDamage, DRRPMeleeMinDamage, DRRPMeleeMaxDamage );
+    }
+
+    States {
+    Melee:
+    Missile:
+        BOSS EF 8 A_FaceTarget;
+        BOSS G 8 A_DRRP_BaronAttack; //A_CustomComboAttack( "DRRPOgreBall", 32, 2 * Random( 4, 7 ), "baron/melee" );
+        Goto See;
+    }
+}
+
+
+// The cyberdemon and the Kronos doesn't need to be here because of their unique characteristics.

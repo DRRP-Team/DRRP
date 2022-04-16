@@ -42,9 +42,10 @@ class InfobarHandler: EventHandler {
                     if ( tClass.bFriendly ) InfobarFontColor = Font.CR_GREEN;       // Friend;
                     if ( tClass.bSpecial )  InfobarFontColor = Font.CR_SAPPHIRE;    // Item.
 
-                    if ( tClass is 'DRRPInformatorActor' )
-                        SetInfobarString( DRRPInformatorActor( tClass ).informString );
-                    else
+                    if ( tClass is 'DRRPInformatorActor' ) {
+                        SetInfobarString( DRRPInformatorActor( tClass ).getInformString() );
+                        InfobarFontColor = Font.CR_YELLOW;
+                    } else
                         SetInfobarString( tClass.GetTag() );
 
                     if ( tClass.bCorpse ) {
