@@ -58,14 +58,14 @@ Map SEC1 "Sector 1" {
 }
 
 Map SEC2 "Sector 2" {
-    Music    = "D_SEC2"
+    Music    = "D_SEC2" // Was "D_DOOM".
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 4
 }
 
 Map SEC3 "Sector 3" {
-    Music    = "D_MUS2"
+    Music    = "D_SEC3" // Was "D_MUS2".
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 5
@@ -79,14 +79,14 @@ Map SEC4 "Sector 4" {
 }
 
 Map SEC5 "Sector 5" {
-    Music    = "D_MUS3"
+    Music    = "D_SEC5" // Was "D_MUS3".
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 7
 }
 
 Map SEC6 "Sector 6" {
-    Music    = "SONG25"
+    Music    = "D_SEC6" // Was "SONG25".
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 8
