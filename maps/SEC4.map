@@ -2399,20 +2399,18 @@ thing
 {
 x = 288.000;
 y = 864.000;
-type = 10815;
-id = 146;
-special = 80;
-arg0 = 57;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-comment = "4:18";
 renderstyle = "";
+arg0 = 2;
 }
 
 thing
@@ -21196,6 +21194,114 @@ class2 = true;
 class3 = true;
 renderstyle = "";
 comment = "16:19";
+}
+
+thing
+{
+x = 1232.000;
+y = 288.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = 800.000;
+y = 656.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 4;
+}
+
+thing
+{
+x = 736.000;
+y = 432.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 4;
+}
+
+thing
+{
+x = 800.000;
+y = 432.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 4;
+}
+
+thing
+{
+x = 1256.000;
+y = 656.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 5;
+}
+
+thing
+{
+x = 1376.000;
+y = 544.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 5;
 }
 
 vertex
