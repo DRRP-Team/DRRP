@@ -29186,7 +29186,8 @@ offsetx_mid = 16.000000;
 sidedef
 {
 sector = 263;
-texturetop = "DRDC21";
+texturetop = "DRDC43A";
+offsety = -10;
 }
 
 sidedef
@@ -41133,8 +41134,8 @@ rotationceiling = 90.000000;
 
 sector
 {
-texturefloor = "DRDC24";
-textureceiling = "DRDC24";
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
 heightceiling = 64;
 lightlevel = 128;
 }
@@ -41502,8 +41503,8 @@ hidden = true;
 
 sector
 {
-texturefloor = "DRDC73";
-textureceiling = "DRDC44";
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
 heightceiling = 64;
 lightlevel = 255;
 rotationceiling = 90.000000;
