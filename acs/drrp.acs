@@ -385,10 +385,10 @@ Script "window" (str _Text, int type) {
         }
 
         /* Used old variant for optimization */
-        if (   (btn & BT_MOVELEFT)
-            || (btn & BT_MOVERIGHT)
-            || (btn & BT_JUMP)
-            || (btn & BT_CROUCH)
+        if (   onBtnClick(BT_MOVELEFT)
+            || onBtnClick(BT_MOVERIGHT)
+            || onBtnClick(BT_JUMP)
+            || onBtnClick(BT_CROUCH)
             ) {
             exitDialogWithoutSave();
             break;
