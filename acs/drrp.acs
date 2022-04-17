@@ -162,6 +162,7 @@ Script "testwrapper" (str text, int maxLength) {
 /* \\ String wrap processor // */
 
 const int WINDOW_LEN = 20; /* Chars in one line */
+const int WINDOW_WRAP_LEN = WINDOW_LEN - 3;
 
 function int getClipHeight(void) {
     int font = GetCVar("drrp_font");
@@ -218,7 +219,7 @@ function void drawDialogFrame(int posX, int posY, bool scrollable, int type) {
         1);
 }
 
-function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type) {
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type, bool wrap) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
@@ -233,6 +234,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int ty
         160 - 2,
         getClipHeight(),
         0, true);
+    if (wrap) SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
     HudMessage(s: Text;
         HUDMSG_PLAIN,
         -10000001, /* id */
@@ -244,7 +246,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int ty
     SetHudSize(0, 0, false);
 }
 
-function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type) {
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type, bool wrap) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
@@ -257,6 +259,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
         160 - 2,
         getClipHeight(),
         0, true);
+    if (wrap) SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
     HudMessage(s: Text;
         HUDMSG_TYPEON,
         -10000001, /* id */
@@ -275,6 +278,14 @@ function void clearDialogWindow(void) {
     HudMessage(s: ""; HUDMSG_PLAIN, -10000001, 0, 0.5, 0.8, 1);
 }
 
+function void exitDialogWithoutSave(void) {
+    int tid = getAimedActorTid();
+
+    int scriptNo = GetThingSpecialArg(tid, ACS_Execute, 0);
+
+    ACS_Terminate(scriptNo, 0);
+}
+
 const int BEEP_SPEED_DIV = 2;
 
 Script "beeping" (int len, int type) {
@@ -284,6 +295,25 @@ Script "beeping" (int len, int type) {
         AmbientSound("misc/chat2", GetCVar("drrp_beep_volume"));
         Delay(BEEP_SPEED_DIV);
     }
+}
+
+const bool doNotPageScrollOutOfWindow = false;
+
+function int getNextPageScroll(int currentScroll, int textHeight) {
+    int linesOnScreen = getLinesOnScreen();
+    if (currentScroll < 0 || textHeight < linesOnScreen) return -1;
+
+    int lastLineShown = currentScroll + linesOnScreen - 1;
+
+    if (lastLineShown >= textHeight) return -1;
+
+    currentScroll += doNotPageScrollOutOfWindow
+        ? imin(textHeight - lastLineShown, linesOnScreen)
+        : linesOnScreen;
+
+    /* print(s:"Last line shown ", i:lastLineShown, s:" Height ", i:textHeight); */
+
+    return currentScroll;
 }
 
 Script "window" (str _Text, int type) {
@@ -302,8 +332,7 @@ Script "window" (str _Text, int type) {
 
     Delay(2);
 
-    int ReadedKey;
-    int FirstRun = 1;
+    int btn;
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
@@ -317,36 +346,54 @@ Script "window" (str _Text, int type) {
         posX,
         posY,
         enableScroll,
-        type
+        type,
+        false
     );
+
+    onBtnReset();
 
     int typingDelayTimer = 0;
 
     While(TRUE) {
+        btn = GetPlayerInput(-1, INPUT_BUTTONS);
         typingDelayTimer++;
 
         if (typingDelayTimer > 32) {
-            if(enableScroll && ReadedKey & BT_FORWARD && ScrollY > 0) {
-                ScrollY--;
-                Delay(4);
-            }
-            if(enableScroll && ReadedKey & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
-                ScrollY++;
-                Delay(4);
+            if (enableScroll) {
+                if(btn & BT_FORWARD && ScrollY > 0) {
+                    ScrollY--;
+                    Delay(4);
+                }
+
+                if(btn & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
+                    ScrollY++;
+                    Delay(4);
+                }
             }
 
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, ScrollY, type);
+            drawDialogWindow(Text, posX, posY, ScrollY, type, false);
         }
 
         Delay(1);
 
-        ReadedKey = GetPlayerInput(-1, INPUT_BUTTONS);
+        if(onBtnClick(BT_USE)) {
+            int nextScroll = getNextPageScroll(ScrollY, height);
 
-        if((FirstRun == 0) && (ReadedKey & BT_USE))
+            if (nextScroll == -1) break;
+
+            ScrollY = nextScroll;
+        }
+
+        /* Used old variant for optimization */
+        if (   onBtnClick(BT_MOVELEFT)
+            || onBtnClick(BT_MOVERIGHT)
+            || onBtnClick(BT_JUMP)
+            || onBtnClick(BT_CROUCH)
+            ) {
+            exitDialogWithoutSave();
             break;
-        if((FirstRun == 1) && !(ReadedKey & BT_USE))
-            FirstRun = 0;
+        }
     }
 
     clearDialogWindow();
@@ -356,26 +403,46 @@ Script "window" (str _Text, int type) {
     ScriptCall("ConversationController", "SetGlobalFreeze", false);
 }
 
+function void drawHintWindow(str Text, int posX, int posY) {
+    const int WINDOW_LEN = 27;
+    const int FONT_WIDTH = 9;
+
+    SetHudSize(640, 480);
+    SetFont("M_NOTIF");
+    HudMessage(s: "A"; HUDMSG_PLAIN, -10000010, CR_WHITE,
+        toFixed(posX) + HUD_LEFT,
+        toFixed(posY - 5) + HUD_TOP,
+        1);
+
+    SetFont("defsmallfont2");
+    SetHudWrapWidth(WINDOW_LEN * FONT_WIDTH);
+    HudMessage(s: Text;
+        HUDMSG_PLAIN,
+        -10000011, /* id */
+        getColorByType(3),
+        toFixed(posX + 70) + HUD_LEFT,
+        toFixed(posY) + HUD_TOP,
+        1); /* hold */
+}
+
 Script "hintwindow" (str _Text, int holdTicks) {
-    str Text = wrapText(fixEncodingBug(_Text), WINDOW_LEN);
+    str Text = fixEncodingBug(_Text);
     Log(s:Text);
 
     Delay(2);
 
-    const int FINAL_POS_X = 410;
+    const int FINAL_POS_X = 420;
     const int FINAL_POS_Y = 10;
 
-    const int ANIMATION_OFFSET = 200;
+    const int ANIMATION_OFFSET = 500;
     const int ANIMATION_SPEED = 20;
 
     /* In animation */
 
     for (int i = ANIMATION_OFFSET; i >= 0; i-=ANIMATION_SPEED) {
-        drawDialogWindow(Text,
-            iapplyScaleI(FINAL_POS_X + i),
-            iapplyScaleI(FINAL_POS_Y),
-            -1,
-            3
+        drawHintWindow(Text,
+            FINAL_POS_X + i,
+            FINAL_POS_Y
         );
         Delay(1);
     }
@@ -383,11 +450,9 @@ Script "hintwindow" (str _Text, int holdTicks) {
     Delay(holdTicks);
 
     for (int i = 0; i < ANIMATION_OFFSET; i+=ANIMATION_SPEED) {
-        drawDialogWindow(Text,
-            iapplyScaleI(FINAL_POS_X + i),
-            iapplyScaleI(FINAL_POS_Y),
-            -1,
-            3
+        drawHintWindow(Text,
+            FINAL_POS_X + i,
+            FINAL_POS_Y
         );
         Delay(1);
     }
@@ -420,7 +485,8 @@ Script "drawwindow" (str _Text, bool typing, int type) {
             posX,
             posY,
             false,
-            type
+            type,
+            false
         );
     }
 
@@ -431,7 +497,7 @@ Script "drawwindow" (str _Text, bool typing, int type) {
 
         if (typingDelayTimer > TYPING_DELAY) {
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, -1, type);
+            drawDialogWindow(Text, posX, posY, -1, type, false);
             break;
         }
 
@@ -541,6 +607,15 @@ Script "levelUp" (bool windowOnly) {
         l:"DRRP_B_ID71", i:1, s:"\n",       // Accuracy:
         l:"DRRP_B_ID70", i:1, s:"\n\n",     // Agility:
         l:"DRRP_B_ID77"), 5);                  // Health restored.
+}
+
+function str getString(int id) {
+    return StrParam(l:StrParam(s:"DRRP_B_ID", i:id));
+}
+
+/* DRRPInformatorActor */
+Script "getString" (int id) {
+    SetResultValue(getString(id));
 }
 
 

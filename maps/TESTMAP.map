@@ -2326,10 +2326,10 @@ renderstyle = "";
 
 thing
 {
-x = 304.000;
-y = 1808.000;
+x = 320.000;
+y = 1800.000;
 type = 10900;
-arg1str = "Arg1";
+angle = 90;
 coop = true;
 dm = true;
 single = true;
@@ -2338,169 +2338,16 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-comment = "INTRO";
 renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 272.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "HUB";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 240.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC1";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 208.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC2";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 176.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC3";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 144.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC4";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 112.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC5";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 80.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC6";
-renderstyle = "";
-arg0str = "Arg0";
-}
-
-thing
-{
-x = 48.000;
-y = 1808.000;
-type = 10900;
-arg1str = "Arg1";
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-comment = "SEC7";
-renderstyle = "";
-arg0str = "Arg0";
+arg1 = 1;
 }
 
 thing
 {
 x = 16.000;
-y = 1808.000;
+y = 1792.000;
 type = 10900;
-arg1str = "Arg1";
+angle = 90;
 coop = true;
 dm = true;
 single = true;
@@ -2509,17 +2356,17 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-comment = "XHUB";
 renderstyle = "";
-arg0str = "Arg0";
+arg0 = 3;
+arg1 = 11;
 }
 
 thing
 {
-x = -16.000;
-y = 1808.000;
+x = 48.000;
+y = 1792.000;
 type = 10900;
-arg1str = "Arg1";
+angle = 90;
 coop = true;
 dm = true;
 single = true;
@@ -2528,9 +2375,159 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-comment = "REAC";
 renderstyle = "";
-arg0str = "Arg0";
+arg0 = 21;
+arg1 = 10;
+}
+
+thing
+{
+x = 80.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 21;
+arg1 = 2;
+}
+
+thing
+{
+x = 112.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 20;
+arg1 = 2;
+}
+
+thing
+{
+x = 272.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 14;
+arg1 = 2;
+}
+
+thing
+{
+x = 240.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 16;
+arg1 = 2;
+}
+
+thing
+{
+x = 208.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 17;
+arg1 = 2;
+}
+
+thing
+{
+x = 176.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 18;
+arg1 = 2;
+}
+
+thing
+{
+x = 144.000;
+y = 1792.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 19;
+arg1 = 2;
+}
+
+thing
+{
+x = -736.000;
+y = 4704.000;
+type = 10750;
+angle = 315;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
 }
 
 thing
@@ -3743,9 +3740,110 @@ renderstyle = "";
 
 thing
 {
-x = -736.000;
-y = 4704.000;
-type = 10750;
+x = -304.000;
+y = 1696.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 160.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 224.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 288.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 352.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 416.000;
+type = 10900;
+angle = 45;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 480.000;
+type = 10900;
 angle = 315;
 coop = true;
 dm = true;
@@ -3756,6 +3854,399 @@ skill3 = true;
 skill4 = true;
 skill5 = true;
 renderstyle = "";
+}
+
+thing
+{
+x = -416.000;
+y = 32.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 1;
+}
+
+thing
+{
+x = -224.000;
+y = 32.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = -224.000;
+y = -160.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 3;
+}
+
+thing
+{
+x = -448.000;
+y = 576.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 4;
+}
+
+thing
+{
+x = -192.000;
+y = 576.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 5;
+}
+
+thing
+{
+x = -384.000;
+y = 672.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 6;
+}
+
+thing
+{
+x = -320.000;
+y = 672.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 6;
+}
+
+thing
+{
+x = -256.000;
+y = 672.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 6;
+}
+
+thing
+{
+x = -384.000;
+y = 1056.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 7;
+}
+
+thing
+{
+x = -320.000;
+y = 1056.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 7;
+}
+
+thing
+{
+x = -256.000;
+y = 1056.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 7;
+}
+
+thing
+{
+x = -192.000;
+y = 1888.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 8;
+}
+
+thing
+{
+x = -192.000;
+y = 1824.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 8;
+}
+
+thing
+{
+x = -288.000;
+y = 1952.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 9;
+}
+
+thing
+{
+x = -432.000;
+y = 1696.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 10;
+}
+
+thing
+{
+x = 336.000;
+y = 1856.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 11;
+}
+
+thing
+{
+x = 624.000;
+y = 1856.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 11;
+}
+
+thing
+{
+x = 912.000;
+y = 1856.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 11;
+}
+
+thing
+{
+x = 1200.000;
+y = 1856.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 11;
+}
+
+thing
+{
+x = -64.000;
+y = 1952.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 12;
+}
+
+thing
+{
+x = 0.000;
+y = 1952.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 12;
+}
+
+thing
+{
+x = -320.000;
+y = -224.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 13;
 }
 
 vertex
@@ -34739,6 +35230,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -34765,6 +35257,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -34774,6 +35267,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -34783,6 +35277,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -34984,6 +35479,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -34993,6 +35489,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35002,6 +35499,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35011,6 +35509,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35020,6 +35519,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35029,6 +35529,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35038,6 +35539,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35047,6 +35549,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35056,6 +35559,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35065,6 +35569,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35074,6 +35579,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35083,6 +35589,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35092,6 +35599,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35101,6 +35609,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35110,6 +35619,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35119,6 +35629,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35128,6 +35639,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35137,6 +35649,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35146,6 +35659,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35155,6 +35669,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35164,6 +35679,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35173,6 +35689,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 90.000000;
 }
 
 sector
@@ -35182,6 +35699,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35191,6 +35709,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35200,6 +35719,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35209,6 +35729,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35218,6 +35739,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35227,6 +35749,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35236,6 +35759,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35245,6 +35769,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35254,6 +35779,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35263,6 +35789,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35272,6 +35799,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35281,6 +35809,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35290,6 +35819,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35299,6 +35829,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35308,6 +35839,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35317,6 +35849,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35326,6 +35859,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35335,6 +35869,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35344,6 +35879,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35353,6 +35889,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35362,6 +35899,7 @@ textureceiling = "flatfl";
 heightfloor = 32;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector
@@ -35371,6 +35909,7 @@ textureceiling = "flatfl";
 heightfloor = 8;
 heightceiling = 64;
 lightlevel = 255;
+rotationfloor = 270.000000;
 }
 
 sector

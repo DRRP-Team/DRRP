@@ -99,8 +99,8 @@ Script 16 (int comp) { // Activate the computer
 	switch(comp) {
 		case 1: // Monologue API testing
 			print(s:"Switched");
-			ScriptCall("ConversationLineController", "SetArgument", 1,
-				ScriptCall("ConversationLineController", "GetArgument", 1) + 1
+			ScriptCall("ConversationController", "SetArgument", 1,
+				ScriptCall("ConversationController", "GetArgument", 1) + 1
 			);
 			break;
 		case 2:

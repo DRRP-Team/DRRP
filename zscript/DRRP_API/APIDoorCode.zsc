@@ -27,7 +27,7 @@ struct DoorCodeDynamicInfo {
 class DoorCodeInputHandler: EventHandler {
     String windowTooltip;
     String realCodeStr;
-    int successScriptNum; // Script to resume when code is correct.
+    int dialogScriptNo; // The script, that called passcode window
     DoorCodeDynamicInfo door;
 
     override void OnRegister() {
@@ -56,15 +56,15 @@ class DoorCodeInputHandler: EventHandler {
 
                 windowTooltip = command[ 1 ];
                 realCodeStr = command[ 2 ];
-                successScriptNum = e.args[ 0 ];
+                dialogScriptNo = e.args[ 0 ];
 
                 // Temporary paragraph (now there's no ACS-based freezing):
                 player.player.cheats |= CF_TOTALLYFROZEN;
                 player.vel *= 0.5;
 
                 // All the ACS code part based on the level freeze when Menu class is opened...
-                ACS_Suspend( successScriptNum, 0 );
-                //ACS_Terminate( successScriptNum, 0 );
+                ACS_Suspend( dialogScriptNo, 0 );
+                //ACS_Terminate( dialogScriptNo, 0 );
 
                 console.printf( TEXTCOLOR_GREEN .. "Your code will be echoed " .. TEXTCOLOR_FIRE .. "here\c-." );
             }
@@ -76,14 +76,14 @@ class DoorCodeInputHandler: EventHandler {
 
             // Right password:
             if ( door.codeStr == realCodeStr || DRRPUtil.GetInternalMetaString() == "Alohomora" ) {
-                ACS_Execute( successScriptNum, 0 );
-                console.printf( "Executed " .. successScriptNum );
+                ACS_Execute( dialogScriptNo, 0 );
+                console.printf( "Executed " .. dialogScriptNo );
 
             // Wrong password:
             } else if ( door.curinputpos == realCodeStr.Length() )  {
                 player.A_PlaySound( "access/deny1" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ) );
                 player.A_Print( StringTable.Localize( "$DRRP_D_PASSCODE_WRONG" ) );
-                ACS_Terminate( successScriptNum, 0 );
+                ACS_Terminate( dialogScriptNo, 0 );
             }
         }
 

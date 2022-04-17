@@ -11,6 +11,10 @@ version "2.5"
 #include "zscript/Actors.zsc"
 #include "zscript/Weapons.zsc"
 
+#include "zscript/MonsterProjectiles.zsc"
+#include "zscript/MonstersBaseDRRP.zsc"
+#include "zscript/Monsters.zsc"
+
 // APIs
 #include "zscript/DRRP_API/APIWeapons.zsc"
 #include "zscript/DRRP_API/APIConversation.zsc"
@@ -33,10 +37,12 @@ version "2.5"
 
 class DRRPPlayer: DoomPlayer {
     static const String dogNames[] = { "HellHound", "Cerberus", "DemonWolf" };
+    const TICKS_BETWEEN_LOW_HEALTH_SOUND = 70; // [PROPHESSOR]: why can't I make it static const? // [McM]: why not?
 
     int playerStats[ _RPG_Quantity ]; //Experience, NextLevelXP, Level, Accuracy, Agility, Defense, Strength, MaxArmor;
 
-    int lowHealthTimer;
+    bool lowHealthIndicatorEnabled;
+    int lowHealthIndicatorTimer;
 
     Array<String> MapsMonstersDone;
     Array<String> MapsSecretsDone;
@@ -44,32 +50,38 @@ class DRRPPlayer: DoomPlayer {
     vector3 PreFreezeVel;
 
     override void BeginPlay() {
-        lowHealthTimer = -1;
         playerStats[ RPG_Experience ] = playerStats[ RPG_Accuracy ] = 0;
         playerStats[ RPG_Agility ] = playerStats[ RPG_Defence ] = playerStats[ RPG_Strength ] = 0;
         playerStats[ RPG_Level ] = 1;
         playerStats[ RPG_MaxArmor ] = playerStats[ RPG_MaxHealth ] = 30;
 
         SetAllPlayerLevelupFeatures();
+
+        lowHealthIndicatorTimer = -1;
+        lowHealthIndicatorEnabled = false;
         Super.BeginPlay();
     }
 
     override void PlayerThink() {
         Super.PlayerThink();
 
-        // Play sound on low health.
-        int TICKS_BETWEEN_LOW_HEALTH_SOUND = 70; // <PROPHESSOR> why can't I make it static const?
-        bool isLowHealth = health / double( playerStats[ RPG_MaxHealth ] ) < 0.35;
-        if (isLowHealth) {
-            lowHealthTimer += 1;
-            lowHealthTimer %= TICKS_BETWEEN_LOW_HEALTH_SOUND;
+        if ( !( level.maptime % 35 ) ) // Update the variable every second automatically.
+            lowHealthIndicatorEnabled = CVar.GetCVar( "drrp_enable_low_health_indicator", player ).GetBool();
 
-            if ( !lowHealthTimer ) {
-                S_Sound( "player/lowhp", CHAN_BODY );
-                A_SetBlend( "AA0000", 0.2, 5 );
+        if ( lowHealthIndicatorEnabled && health > 0 ) {
+            // Play sound on low health.
+            bool islowHealthIndicator = health / double( playerStats[ RPG_MaxHealth ] ) < 0.35;
+            if ( islowHealthIndicator ) {
+                lowHealthIndicatorTimer += 1;
+                lowHealthIndicatorTimer %= TICKS_BETWEEN_LOW_HEALTH_SOUND;
+
+                if ( !lowHealthIndicatorTimer ) {
+                    S_Sound( "player/lowhp", CHAN_BODY | CHAN_MAYBE_LOCAL );
+                    A_SetBlend( "AA0000", 0.2, 5 );
+                }
+            } else if ( lowHealthIndicatorTimer != -1 ) {
+                lowHealthIndicatorTimer = -1;
             }
-        } else if (lowHealthTimer != -1) {
-            lowHealthTimer = -1;
         }
     } // of override void PlayerThink() {
 
@@ -211,27 +223,30 @@ class DRRPPlayer: DoomPlayer {
 
         damage *= DRRPUtil.Power( DRRPUtil.e * 0.378, -( 1 + playerStats[ RPG_Defence ] ) ) + 0.053;
 
-        String ReadyWeapon = "";
-        if ( self.player.ReadyWeapon ) 
+        if ( self.player.ReadyWeapon ) {
+            String ReadyWeapon = "";
+
             ReadyWeapon = self.player.ReadyWeapon.GetClassName();
-            // We may haven't any weapons, for example, in Sector 3, Nadira's hall.
+            // Player may have not any weapons, for example, in 
+            //the Sector 3, Nadira's hall.
 
-        if ( ( ReadyWeapon ~== "DRRPAxe" ) && ( mod != 'DRRPFireDmg' ) ) {
-            S_Sound( "weapon/axe/block", CHAN_AUTO, 0.67 );
-            return damage / 2;
-        }
+            if ( ( ReadyWeapon ~== "DRRPAxe" ) && ( mod != 'DRRPFireDmg' ) ) {
+                S_Sound( "weapon/axe/block", CHAN_AUTO, 0.67 );
+                return damage / 2;
+            }
 
-        for ( int i = 0; i < DRRPPlayer.dogNames.Size(); i++ ) {
-            if ( ReadyWeapon.Left( DRRPPlayer.dogNames[ i ].Length() ) == DRRPPlayer.dogNames[ i ] ) {
-                S_Sound( "monsters/hellhound/pain", CHAN_WEAPON, 0.5 );
-                TakeInventory( DRRPPlayer.dogNames[ i ] .. "Health", damage );
+            for ( int i = 0; i < DRRPPlayer.dogNames.Size(); i++ ) {
+                if ( ReadyWeapon.Left( DRRPPlayer.dogNames[ i ].Length() ) == DRRPPlayer.dogNames[ i ] ) {
+                    S_Sound( "monsters/hellhound/pain", CHAN_WEAPON, 0.5 );
+                    TakeInventory( DRRPPlayer.dogNames[ i ] .. "Health", damage );
 
-                if ( FindInventory( DRRPPlayer.dogNames[ i ] .. "Health" ).Amount == 0 ) {
-                    TakeInventory( ReadyWeapon, 1 );
-                    S_Sound( "monsters/hellhound/death", CHAN_WEAPON, 0.5 );
+                    if ( FindInventory( DRRPPlayer.dogNames[ i ] .. "Health" ).Amount == 0 ) {
+                        TakeInventory( ReadyWeapon, 1 );
+                        S_Sound( "monsters/hellhound/death", CHAN_WEAPON, 0.5 );
+                    }
+
+                    return 0;
                 }
-
-                return 0;
             }
         }
 

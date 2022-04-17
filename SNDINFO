@@ -311,6 +311,12 @@ $volume             weapon/gas          0.4
 $volume             access/grantb1      16.0
 $volume             access/grantb2      16.0
 
+$volume             fire/start      0.5
+$volume             fire/loop1      0.5
+$volume             fire/loop2      0.5
+$volume             fire/loop3      0.5
+$volume             fire/die        0.5
+
 // === Ambients ===
 $ambient 1 drone1 World continuous 0.65
 $ambient 5 ambient/mach04 World continuous 0.45
@@ -336,3 +342,5 @@ $Limit              generic/expl/barrel6     0
 $Limit              generic/expl/barrel7     0
 
 $Limit              ROCK                     0
+
+$Limit              misc/teleport            1

@@ -7782,7 +7782,7 @@ thing
 {
 x = -352.000;
 y = 1184.000;
-type = 10554;
+type = 10816;
 id = 616;
 special = 80;
 arg0 = 16;
@@ -7795,6 +7795,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "19:8";
+renderstyle = "";
 }
 
 thing
@@ -9656,6 +9657,235 @@ single = true;
 coop = true;
 dm = true;
 renderstyle = "";
+}
+
+thing
+{
+x = 320.000;
+y = -32.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = -288.000;
+y = 992.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = -1248.000;
+y = -32.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 63;
+}
+
+thing
+{
+x = -1312.000;
+y = 224.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 78;
+}
+
+thing
+{
+x = -800.000;
+y = 672.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 67;
+}
+
+thing
+{
+x = -1184.000;
+y = 672.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 55;
+}
+
+thing
+{
+x = -608.000;
+y = 96.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 4;
+}
+
+thing
+{
+x = 96.000;
+y = 1632.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 59;
+}
+
+thing
+{
+x = -416.000;
+y = 1184.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 71;
+}
+
+thing
+{
+x = 160.000;
+y = 864.000;
+type = 10900;
+angle = 180;
+arg0 = 86;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+renderstyle = "";
+skill3 = true;
+skill4 = true;
+skill5 = true;
+}
+
+thing
+{
+x = 224.000;
+y = 1248.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 84;
+}
+
+thing
+{
+x = 32.000;
+y = 608.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 85;
+}
+
+thing
+{
+x = -1440.000;
+y = 224.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 87;
 }
 
 vertex
@@ -28956,7 +29186,8 @@ offsetx_mid = 16.000000;
 sidedef
 {
 sector = 263;
-texturetop = "DRDC21";
+texturetop = "DRDC43A";
+offsety = -10;
 }
 
 sidedef
@@ -40903,8 +41134,8 @@ rotationceiling = 90.000000;
 
 sector
 {
-texturefloor = "DRDC24";
-textureceiling = "DRDC24";
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
 heightceiling = 64;
 lightlevel = 128;
 }
@@ -41272,8 +41503,8 @@ hidden = true;
 
 sector
 {
-texturefloor = "DRDC73";
-textureceiling = "DRDC44";
+texturefloor = "DOORTRAK";
+textureceiling = "DOORTRAK";
 heightceiling = 64;
 lightlevel = 255;
 rotationceiling = 90.000000;
