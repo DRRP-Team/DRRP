@@ -40,6 +40,42 @@ class DoorCodeInputHandler: EventHandler {
         Super.OnRegister();
     }
 
+    void OpenPasscodeWindow(String _windowTooltip, String _realCodeStr, int _dialogScriptNo) {
+        door.inputActivated = true;
+        door.curinputpos = 0;
+        door.codeStr = "";
+
+        windowTooltip = _windowTooltip;
+        realCodeStr = _realCodeStr;
+        dialogScriptNo = _dialogScriptNo;
+
+        // All the ACS code part based on the level freeze when Menu class is opened...
+        ACS_Suspend( dialogScriptNo, 0 );
+        //ACS_Terminate( dialogScriptNo, 0 );
+
+        console.printf( TEXTCOLOR_GREEN .. "Your code will be echoed " .. TEXTCOLOR_FIRE .. "here\c-." );
+    }
+
+    void OnCorrectPasscode(PlayerPawn player) {
+        DRRPUtil.ACS_NamedExecute("clearwindow");
+        ACS_Execute( dialogScriptNo, 0 );
+        console.printf( "Executed " .. dialogScriptNo );
+    }
+
+    void OnIncorrectPasscode(PlayerPawn player) {
+        DRRPUtil.ACS_NamedExecute("clearwindow");
+        player.A_PlaySound( "access/deny1" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ) );
+        player.A_Print( StringTable.Localize( "$DRRP_D_PASSCODE_WRONG" ) );
+        ACS_Terminate( dialogScriptNo, 0 );
+    }
+
+    ui void OnRenderWindow(String windowText, String code) {
+        console.printf( "Code: \"" .. code .. "\"." );
+        DRRPUtil.SetInternalMetaString( windowTooltip .. "\n" .. code );
+
+        DRRPUtil.ACS_NamedExecute("drawPasscodeWindow");
+    }
+
     override void NetworkProcess( ConsoleEvent e ) {
         Array<String> command;
         e.Name.Split( command, "@@@@" ); // ["opendoorinput", message, code].
@@ -49,41 +85,19 @@ class DoorCodeInputHandler: EventHandler {
         PlayerPawn player = players[ e.player ].mo;
 
         if ( ( command[ 0 ] == "drrp_opendoorinput" ) ) {
-            if ( command.Size() == 3 ) {
-                door.inputActivated = true;
-                door.curinputpos = 0;
-                door.codeStr = "";
-
-                windowTooltip = command[ 1 ];
-                realCodeStr = command[ 2 ];
-                dialogScriptNo = e.args[ 0 ];
-
-                // Temporary paragraph (now there's no ACS-based freezing):
-                player.player.cheats |= CF_TOTALLYFROZEN;
-                player.vel *= 0.5;
-
-                // All the ACS code part based on the level freeze when Menu class is opened...
-                ACS_Suspend( dialogScriptNo, 0 );
-                //ACS_Terminate( dialogScriptNo, 0 );
-
-                console.printf( TEXTCOLOR_GREEN .. "Your code will be echoed " .. TEXTCOLOR_FIRE .. "here\c-." );
+            if ( command.Size() != 3) {
+                Log('Insuffiscient arguments for ' .. command[0] .. ' command! '..e.Name);
+                return;
             }
 
+            OpenPasscodeWindow(command[1], command[2], e.args[0]);
         } else if ( command[ 0 ] == "drrp_closedoorinput" ) {
-            //player.ACS_NamedExecute( "clearwindow", 0 );
-
-            player.player.cheats &= ~CF_TOTALLYFROZEN;
-
             // Right password:
             if ( door.codeStr == realCodeStr || DRRPUtil.GetInternalMetaString() == "Alohomora" ) {
-                ACS_Execute( dialogScriptNo, 0 );
-                console.printf( "Executed " .. dialogScriptNo );
-
+                OnCorrectPasscode(player);
             // Wrong password:
             } else if ( door.curinputpos == realCodeStr.Length() )  {
-                player.A_PlaySound( "access/deny1" .. StringTable.Localize( "$DRRP_D_SOUND_SUFFIX" ) );
-                player.A_Print( StringTable.Localize( "$DRRP_D_PASSCODE_WRONG" ) );
-                ACS_Terminate( dialogScriptNo, 0 );
+                OnIncorrectPasscode(player);
             }
         }
 
@@ -138,17 +152,16 @@ class DoorCodeInputHandler: EventHandler {
                 console.printf( "Code: \"" .. door.codeStr .. "\" (pre-finish)." );
                 EventHandler.SendNetworkEvent( "drrp_closedoorinput" );
             } else if ( redrawWindow ) {
-                //ACS_Execute( -int( Name( "clearwindow" ) ), 0 );
-
-                console.printf( "Code: \"" .. door.codeStr .. "\"." );
-                DRRPUtil.SetInternalMetaString( windowTooltip .. "\n" .. door.codeStr );
-
-                //ACS_Execute( -int( Name( "drawwindow" ) ), 0, 0, 0 );
+                OnRenderWindow(windowTooltip, door.codeStr);
             }
         }
 
         return false;
     } // of override bool InputProcess( InputEvent e ) {}
+
+    void Log(String text) {
+        Console.Printf('[APIDoorCode] ' .. text);
+    }
 
 } // of class DoorCodeInputHandler : EventHandler {}
 

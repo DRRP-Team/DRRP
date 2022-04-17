@@ -337,7 +337,26 @@ function bool onBtnPress(int button) {
     return input & button;
 }
 
+const str INTERNAL_META_STRING_KEY = "drrp_internal_metastring";
 
+function str GetInternalMetaString(void) {
+    return GetCVarString(INTERNAL_META_STRING_KEY);
+}
+
+function void SetInternalMetaString(str data) {
+    SetCVarString(INTERNAL_META_STRING_KEY, data);
+}
+
+function void pauseGame(void) {
+    ScriptCall("ConversationController", "SetGlobalFreeze", true);
+    /* Prevent mouse move glitches */
+    SetPlayerProperty(0, true, PROP_TOTALLYFROZEN);
+}
+
+function void resumeGame(void) {
+    SetPlayerProperty(0, false, PROP_TOTALLYFROZEN);
+    ScriptCall("ConversationController", "SetGlobalFreeze", false);
+}
 
 function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {
     SpawnForced("TeleportFog", x, y, z);

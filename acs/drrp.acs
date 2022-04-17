@@ -210,20 +210,21 @@ function int getBgColorByType(int type) {
     }
 }
 
-function void drawDialogFrame(int posX, int posY, bool scrollable, int type) {
+function void drawDialogFrame(int posX, int posY, bool scrollable, int type, int duration) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetFont("M_DIALOG");
     HudMessage(i: scrollable; HUDMSG_PLAIN, -10000000, getBgColorByType(type),
         toFixed(posX) + HUD_LEFT,
         toFixed(posY - 5) + HUD_TOP,
-        1);
+        duration);
 }
 
-function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type, bool wrap) {
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type, bool wrap, int duration) {
+    print(s:Text, s:" posX ", i:posX, s:" posY ", i:posY, s:" Scroll ", i:ScrollY, s:" type ", i:type, s:" wrap ", b:wrap);
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
-    drawDialogFrame(posX, posY, ScrollY >= 0, type);
+    drawDialogFrame(posX, posY, ScrollY >= 0, type, duration);
 
     if (ScrollY < 0) ScrollY = 0;
 
@@ -241,16 +242,16 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int ty
         getColorByType(type),
         toFixed(posX + 4) + HUD_LEFT,
         toFixed(posY - (ScrollY * drrpFontHeight())) + HUD_TOP,
-        1); /* hold */
+        duration); /* hold */
 
     SetHudSize(0, 0, false);
 }
 
-function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type, bool wrap) {
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type, bool wrap, int duration) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
-    drawDialogFrame(posX, posY, scrollable, type);
+    drawDialogFrame(posX, posY, scrollable, type, duration);
 
     SetFont(drrpFont());
     SetHudClipRect(
@@ -266,7 +267,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
         getColorByType(type),
         toFixed(posX + 4) + HUD_LEFT,
         toFixed(posY) + HUD_TOP,
-        10.0, /* hold */
+        duration, /* hold */
         0.01,
         1); /* fadeout */
 
@@ -326,9 +327,7 @@ Script "window" (str _Text, int type) {
 
     str Text = fixEncodingBug(_Text);
 
-    ScriptCall("ConversationController", "SetGlobalFreeze", true);
-    /* Prevent mouse move glitches */
-    SetPlayerProperty(0, true, PROP_TOTALLYFROZEN);
+    pauseGame();
 
     Delay(2);
 
@@ -347,7 +346,8 @@ Script "window" (str _Text, int type) {
         posY,
         enableScroll,
         type,
-        false
+        false,
+        0
     );
 
     onBtnReset();
@@ -372,7 +372,7 @@ Script "window" (str _Text, int type) {
             }
 
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, ScrollY, type, false);
+            drawDialogWindow(Text, posX, posY, ScrollY, type, false, 1);
         }
 
         Delay(1);
@@ -399,8 +399,7 @@ Script "window" (str _Text, int type) {
     clearDialogWindow();
     ACS_NamedTerminate("beeping", 0);
 
-    SetPlayerProperty(0, false, PROP_TOTALLYFROZEN);
-    ScriptCall("ConversationController", "SetGlobalFreeze", false);
+    resumeGame();
 }
 
 function void drawHintWindow(str Text, int posX, int posY) {
@@ -486,7 +485,8 @@ Script "drawwindow" (str _Text, bool typing, int type) {
             posY,
             false,
             type,
-            false
+            false,
+            0
         );
     }
 
@@ -497,7 +497,7 @@ Script "drawwindow" (str _Text, bool typing, int type) {
 
         if (typingDelayTimer > TYPING_DELAY) {
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, -1, type, false);
+            drawDialogWindow(Text, posX, posY, -1, type, false, 1);
             break;
         }
 
@@ -505,9 +505,33 @@ Script "drawwindow" (str _Text, bool typing, int type) {
     }
 }
 
+Script "drawPasscodeWindow" (void) {
+    str _Text = GetInternalMetaString();
+
+    print(s:"drawPasscodeWindow ", s:_Text);
+
+    int posX = iapplyScaleI(320) - 80;
+    int posY = iapplyScaleI(322);
+
+    int type = getAimedActorDialogueType();
+
+    print(s:"11");
+
+    str Text = fixEncodingBug(_Text);
+
+    print(s:"12 Text ", s:Text, s:" posX ", i:posX, s:" posY ", i:posY);
+
+    Delay(2);
+
+    pauseGame();
+
+    drawDialogWindow(Text, posX, posY, -1, type, false, 0);
+}
+
 Script "clearwindow" (void) {
     clearDialogWindow();
     ACS_NamedTerminate("beeping", 0);
+    resumeGame();
 }
 
 const int BLOOD_FLASH_ID = 30;

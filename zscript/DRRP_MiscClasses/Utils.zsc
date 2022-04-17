@@ -44,14 +44,19 @@ class DRRPUtil {
         return particle;
     } // of static play Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {}
 
+    const INTERNAL_META_STRING_KEY = "drrp_internal_metastring";
 
 	// A string buffer, same for ZScript and ACS:
 	static void SetInternalMetaString( String str ) {
-		CVar.GetCVar( "drrp_internal_metastring" ).SetString( str );
+		CVar.GetCVar( INTERNAL_META_STRING_KEY ).SetString( str );
 	}
 	static String GetInternalMetaString( void ) {
-		return CVar.GetCVar( "drrp_internal_metastring" ).GetString();
+		return CVar.GetCVar( INTERNAL_META_STRING_KEY ).GetString();
 	}
+
+    static void ACS_NamedExecute( String scriptName, int arg1=0, int arg2=0, int arg3=0) {
+        ACS_Execute(-int(name(scriptName)), 0, arg1, arg2, arg3);
+    }
 
 } // of class DRRPUtil {}
 
