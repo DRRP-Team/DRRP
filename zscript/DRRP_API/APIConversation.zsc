@@ -34,28 +34,30 @@ class ConversationController play {
         return true;
     }
 
-    static int GetActorArgument(int actorID) {
+    static int GetActorArgument(int actorID, int special=80, int arg=4) {
         ActorIterator it = ActorIterator.Create(actorID);
-        Actor actor      = it.Next();
+        Actor actor      = null;
 
-        if (actor) {
-            return actor.args[4];
-        } else {
-            return -1;
+        while (actor = it.next()) {
+            if (actor.special != special) continue;
+
+            return actor.args[arg];
         }
+
+        return -1;
     }
 
-    static bool SetActorArgument(int actorID, int lineArg) {
+    static bool SetActorArgument(int actorID, int lineArg, int special=80, int arg=4) {
         ActorIterator it = ActorIterator.Create(actorID);
         Actor actor      = null;
 
         bool found = false;
 
         while (actor = it.Next()) {
-            if (actor.special != 80) continue;
+            if (actor.special != special) continue;
 
             found = true;
-            actor.args[4] = lineArg;
+            actor.args[arg] = lineArg;
         }
 
         return found;

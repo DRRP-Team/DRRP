@@ -280,12 +280,12 @@ class DRRPLightWrapper1 : DRRPLightWrapper replaces PointLight {}
 class DRRPLightWrapper2 : DRRPLightWrapper replaces PointLightAttenuated {}
 
 class DRRPInformatorActor: Actor {
-    String informString; // As number in args[ 0 ].
+    String levelPrefix;
 
     Default {
         +SOLID;
-        Height 32;
-        Radius 16;
+        Height 64;
+        Radius 32;
     }
 
     // "LineTrace()" (see "Infobar.zsc") cannot find actors without flag "+SOLID".
@@ -294,8 +294,6 @@ class DRRPInformatorActor: Actor {
     }
 
     override void PostBeginPlay() {
-        String levelPrefix = "";
-
         int levelnum = ( args[ 1 ] == 0 )? level.levelnum : args[ 1 ];
 
         switch ( levelnum ) {
@@ -329,10 +327,12 @@ class DRRPInformatorActor: Actor {
                 break;
         }
 
-        informString = StringTable.Localize( "$DRRP_" .. levelPrefix .. "_" .. args[ 0 ] );
-
         //console.printf( "\"" .. informString .. "\" as: " .. "$DRRP_" .. levelPrefix .. "_" .. args[ 0 ] );
         Super.PostBeginPlay();
+    }
+
+    String getInformString() { // As number in args[ 0 ].
+        return StringTable.Localize( "$DRRP_" .. levelPrefix .. "_" .. args[ 0 ] );
     }
 
 } // of class DRRPInformatorActor: Actor {

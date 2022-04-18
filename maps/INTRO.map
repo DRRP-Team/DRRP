@@ -7272,6 +7272,23 @@ dm = true;
 renderstyle = "";
 }
 
+thing
+{
+x = 992.000;
+y = 1440.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
 vertex
 {
 x = 1152.000;

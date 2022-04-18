@@ -17445,7 +17445,7 @@ thing
 {
 x = 608.000;
 y = 544.000;
-type = 10554;
+type = 10816;
 id = 311;
 special = 80;
 arg0 = 69;
@@ -17458,6 +17458,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "9:23";
+renderstyle = "";
 }
 
 thing
@@ -17604,7 +17605,7 @@ thing
 {
 x = 608.000;
 y = 1696.000;
-type = 10554;
+type = 10816;
 id = 293;
 special = 80;
 arg0 = 21;
@@ -17617,6 +17618,7 @@ single = true;
 coop = true;
 dm = true;
 comment = "9:5";
+renderstyle = "";
 }
 
 thing
@@ -18197,6 +18199,7 @@ coop = true;
 dm = true;
 comment = "13:23";
 renderstyle = "";
+height = -64;
 }
 
 thing
@@ -18218,6 +18221,7 @@ coop = true;
 dm = true;
 comment = "13:23";
 renderstyle = "";
+height = -64;
 }
 
 thing
@@ -18709,6 +18713,96 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+}
+
+thing
+{
+x = 1952.000;
+y = 736.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = 96.000;
+y = 448.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = 992.000;
+y = 1904.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 71;
+}
+
+thing
+{
+x = 864.000;
+y = 1888.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 71;
+}
+
+thing
+{
+x = 928.000;
+y = 1952.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 71;
 }
 
 vertex
@@ -70976,7 +71070,6 @@ sidedef
 {
 sector = 93;
 texturetop = "DRDC8";
-offsety = 8;
 scalex_top = -1.000000;
 }
 

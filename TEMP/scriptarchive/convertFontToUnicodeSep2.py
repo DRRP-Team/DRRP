@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
+# Russian big letters
+
 import os
 
-FROM1 = 0xc0
-FROM2 = 0xdf
-#FROM1 = 0x410
-#FROM2 = 0x42f
+FROM1 = 0xe0
+FROM2 = 0xff
 
 TO1 = 0x410
+TO2 = 0x42F
 
 files = []
 

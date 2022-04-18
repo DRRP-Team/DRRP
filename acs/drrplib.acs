@@ -105,10 +105,19 @@ function global str getThingName(int id, int state) {
     return "DRRPTODO";
 }
 
-function str getAimedActorDialogueType(void) {
-    int tid = PickActor(0, GetActorAngle(0), GetActorPitch(0), 100.0, 5005,
+function int getAimedActorTid(void) {
+    return PickActor(0, GetActorAngle(0), GetActorPitch(0), 100.0, 5005,
         MF_NOBLOOD, 0, PICKAF_RETURNTID);
-    str class = GetActorClass(tid);
+}
+
+function str getAimedActor(void) {
+    int tid = getAimedActorTid();
+    return GetActorClass(tid);
+}
+
+function str getAimedActorDialogueType(void) {
+
+    str class = getAimedActor();
     if(GetCVar("drrp_debug_mode")) print(s:class);
 
     /* if (!StriCmp(class, "Civilian")) return 2; */
@@ -118,6 +127,10 @@ function str getAimedActorDialogueType(void) {
     return 0;
 }
 
+function int getThingSpecialArg(int tid, int spec, int arg) {
+    return ScriptCall("ConversationController", "GetActorArgument", tid, spec, arg);
+}
+
 Script "TestDialogueType" (void) {
     print(i:getAimedActorDialogueType());
 }
@@ -125,6 +138,14 @@ Script "TestDialogueType" (void) {
 function str localizeSound(str sound) {
     if(GetCVar("drrp_debug_mode")) Print(s:"localizeSound(", s:sound, s:") [", l:"DRRP_D_SOUND_SUFFIX", s:"]");
     return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
+}
+
+function int imax(int val1, int val2) {
+    return val1 > val2 ? val1 : val2;
+}
+
+function int imin(int val1, int val2) {
+    return val1 < val2 ? val1 : val2;
 }
 
 function fixed fmax(fixed val1, fixed val2) {
@@ -231,6 +252,14 @@ function str drrpFont(void) {
 
 function int drrpFontWidth(void) {
     return 9;
+
+    int font = GetCVar("drrp_font");
+
+    switch (font) {
+        case 1: return 9; /* DRPG */
+        case 2: return 9; /* GZDOOM */
+        default: throw("INVALID FONT");
+    }
 }
 
 function int drrpFontHeight(void) {
@@ -241,6 +270,71 @@ function int drrpFontHeight(void) {
         case 2: return 9; /* GZDOOM */
         default: throw("INVALID FONT");
     }
+}
+
+#define BUTTONS_STATES_LEN 13
+
+/*
+ * 0 - Not pressed
+ * 1 - Pressed
+*/
+
+int _buttonStates[BUTTONS_STATES_LEN][2] = {
+    { BT_ATTACK, 0 },
+    { BT_USE, 0 },
+    { BT_JUMP, 0 },
+    { BT_CROUCH, 0 },
+    { BT_ALTATTACK, 0 },
+    { BT_SPEED, 0 },
+    { BT_MOVERIGHT, 0 },
+    { BT_MOVELEFT, 0 },
+    { BT_BACK, 0 },
+    { BT_FORWARD, 0 },
+    { BT_RIGHT, 0 },
+    { BT_LEFT, 0 },
+    { 33554432, 0 }, /* BT_RUN */
+};
+
+function int _getBtnStateIndex(int button) {
+    for (int i = 0; i < BUTTONS_STATES_LEN; i++) {
+        if (_buttonStates[i][0] == button) return i;
+    }
+
+    return -1;
+}
+
+function void onBtnReset(void) {
+    for (int i = 0; i < BUTTONS_STATES_LEN; i++) {
+        _buttonStates[i][1] = 1;
+    }
+}
+
+function bool onBtnClick(int button) {
+    int input = GetPlayerInput(-1, INPUT_BUTTONS);
+
+    int idx = _getBtnStateIndex(button);
+
+    if (idx == -1) throw("INVALID BUTTON");
+
+    /* print(s:"onBtnPress Btn: ", i:button, s:" State: ", b:_buttonStates[idx][1]); */
+
+    if (!(input & button)) {
+        _buttonStates[idx][1] = 0;
+        return false;
+    }
+
+    if (_buttonStates[idx][1] == 0) {
+        _buttonStates[idx][1] = 1;
+        return true;
+    }
+
+    return false;
+}
+
+function bool onBtnPress(int button) {
+    int input = GetPlayerInput(-1, INPUT_BUTTONS);
+
+    return input & button;
 }
 
 

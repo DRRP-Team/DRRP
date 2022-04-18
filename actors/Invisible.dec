@@ -41,6 +41,7 @@ Actor DRRPTrigger : DRRPCharacter 10554 {
     -SOLID
     -SHOOTABLE
     +NOSECTOR
+    +NOGRAVITY
 
     Tag "Trigger"
     Radius 33

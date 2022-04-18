@@ -595,7 +595,8 @@ script 71 (int arg0, int arg1, int arg2) { //X=8 Y=29 START=L_204 END=L_209 UNKN
     int sgenid0 = -285; // [x=8, y=29]
     if(arg2 == 0) ACS_NamedExecuteWait("lockwindow", 0, getString(19), getString(18), 71); // ( USE IF_VAR( 0 ) ) PASSCODE_OR_HALT PASS=18 MSG=19
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_UNLOCK LINE=289
-    if(arg2 == 0) ACS_Execute(3000, 0, 3, 4); // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=289
+    if(arg2 == 0) ACS_Execute(3000, 0, 3, 4, true); // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=289
+    if(arg2 == 0) ACS_Execute(3002, 0, 8); // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=289
     /* Not Implemented */ // ( USE IF_VAR( 0 ) ) STBARMSG STR=20
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=8 Y=29
     if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(21)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=21

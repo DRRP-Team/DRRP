@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 
+# Separate big and small letters
+
 import os
 
-FROM1 = 0xe0
-FROM2 = 0xff
+FROM1 = 0xc0
+FROM2 = 0xdf
+#FROM1 = 0x410
+#FROM2 = 0x42f
 
 TO1 = 0x410
-TO2 = 0x42F
 
 files = []
 
