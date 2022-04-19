@@ -219,7 +219,7 @@ function void drawDialogFrame(int posX, int posY, bool scrollable, int type) {
         1);
 }
 
-function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type) {
+function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type, bool wrap) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
@@ -234,7 +234,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int ty
         160 - 2,
         getClipHeight(),
         0, true);
-    SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
+    if (wrap) SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
     HudMessage(s: Text;
         HUDMSG_PLAIN,
         -10000001, /* id */
@@ -246,7 +246,7 @@ function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int ty
     SetHudSize(0, 0, false);
 }
 
-function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type) {
+function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollable, int type, bool wrap) {
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
@@ -259,7 +259,7 @@ function void drawDialogTypingWindow(str Text, int posX, int posY, bool scrollab
         160 - 2,
         getClipHeight(),
         0, true);
-    SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
+    if (wrap) SetHudWrapWidth(WINDOW_WRAP_LEN * drrpFontWidth());
     HudMessage(s: Text;
         HUDMSG_TYPEON,
         -10000001, /* id */
@@ -346,7 +346,8 @@ Script "window" (str _Text, int type) {
         posX,
         posY,
         enableScroll,
-        type
+        type,
+        false
     );
 
     onBtnReset();
@@ -371,7 +372,7 @@ Script "window" (str _Text, int type) {
             }
 
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, ScrollY, type);
+            drawDialogWindow(Text, posX, posY, ScrollY, type, false);
         }
 
         Delay(1);
@@ -385,10 +386,10 @@ Script "window" (str _Text, int type) {
         }
 
         /* Used old variant for optimization */
-        if (   (btn & BT_MOVELEFT)
-            || (btn & BT_MOVERIGHT)
-            || (btn & BT_JUMP)
-            || (btn & BT_CROUCH)
+        if (   onBtnClick(BT_MOVELEFT)
+            || onBtnClick(BT_MOVERIGHT)
+            || onBtnClick(BT_JUMP)
+            || onBtnClick(BT_CROUCH)
             ) {
             exitDialogWithoutSave();
             break;
@@ -484,7 +485,8 @@ Script "drawwindow" (str _Text, bool typing, int type) {
             posX,
             posY,
             false,
-            type
+            type,
+            false
         );
     }
 
@@ -495,7 +497,7 @@ Script "drawwindow" (str _Text, bool typing, int type) {
 
         if (typingDelayTimer > TYPING_DELAY) {
             ACS_NamedTerminate("beeping", 0);
-            drawDialogWindow(Text, posX, posY, -1, type);
+            drawDialogWindow(Text, posX, posY, -1, type, false);
             break;
         }
 
