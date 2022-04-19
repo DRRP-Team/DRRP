@@ -51,7 +51,7 @@ Map HUB "Junction" {
 }
 
 Map SEC1 "Sector 1" {
-    Music    = "D_DOOM"
+    Music    = "D_THE_DA" // Was D_DOOM
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 3
@@ -65,14 +65,14 @@ Map SEC2 "Sector 2" {
 }
 
 Map SEC3 "Sector 3" {
-    Music    = "D_SEC3" // Was "D_MUS2".
+    Music    = "D_ROMERO" // Was "D_SEC3" // Was "D_MUS2".
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 5
 }
 
 Map SEC4 "Sector 4" {
-    Music    = "D_MUS1"
+    Music    = "D_MESSAG" // Was "D_MUS1"
     SkyBox   = "sky2"
     Cluster  = 1
     LevelNum = 6
