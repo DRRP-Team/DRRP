@@ -28,7 +28,7 @@ user int drrp_beep_volume                   = 20; // 0-127
 
 user int drrp_font                          = 1; // DRPG - 1, GZDoom - 2
 
-server string drrp_internal_metastring		= "";
+user string drrp_internal_metastring		= "";
 
 // Flashlight
 server color flashlight_color               = "AB AB FF";

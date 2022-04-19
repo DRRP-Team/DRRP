@@ -506,7 +506,7 @@ Script "drawwindow" (str _Text, bool typing, int type) {
 }
 
 Script "drawPasscodeWindow" (void) {
-    str _Text = GetInternalMetaString();
+    str _Text = "123"; // GetInternalMetaString();
 
     print(s:"drawPasscodeWindow ", s:_Text);
 

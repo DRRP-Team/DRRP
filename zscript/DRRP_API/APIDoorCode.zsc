@@ -71,9 +71,9 @@ class DoorCodeInputHandler: EventHandler {
 
     ui void OnRenderWindow(String windowText, String code) {
         console.printf( "Code: \"" .. code .. "\"." );
-        DRRPUtil.SetInternalMetaString( windowTooltip .. "\n" .. code );
+        // DRRPUtil.SetInternalMetaString( windowTooltip .. "\n" .. code );
 
-        DRRPUtil.ACS_NamedExecute("drawPasscodeWindow");
+        // DRRPUtil.ACS_NamedExecute("drawPasscodeWindow");
     }
 
     override void NetworkProcess( ConsoleEvent e ) {
@@ -104,7 +104,7 @@ class DoorCodeInputHandler: EventHandler {
         Super.NetworkProcess( e );
     }
 
-    override bool InputProcess( InputEvent e ) {
+    override UI bool InputProcess( InputEvent e ) {
         if ( door.inputActivated && e.Type == e.Type_KeyDown ) {
             PlayerPawn player = players[ consoleplayer ].mo;
             bool redrawWindow = false;
