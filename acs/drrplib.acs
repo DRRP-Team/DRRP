@@ -271,6 +271,10 @@ function void useExtendedInput(bool mode) {
     ScriptCall("ConversationController", "SendEvent", "ExtendedInput", mode);
 }
 
+function int getKeyCodeForCommand(str command) {
+    return ScriptCall("ConversationController", "GetKeyCodeForCommand", command);
+}
+
 // #define DEBUG_INPUT
 
 Script "onInput" (int sym) {

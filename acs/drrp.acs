@@ -320,7 +320,9 @@ Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(322);
 
-    /*useExtendedInput(true);*/
+    useExtendedInput(true);
+
+    onInput();
 
     if (!type) {
         type = getAimedActorDialogueType();
@@ -331,6 +333,14 @@ Script "window" (str _Text, int type) {
     pauseGame();
 
     Delay(2);
+
+    int BTN_UP = getKeyCodeForCommand("+forward");
+    int BTN_DOWN = getKeyCodeForCommand("+backward");
+    int BTN_USE = getKeyCodeForCommand("+use");
+    int BTN_LEFT = getKeyCodeForCommand("+moveleft");
+    int BTN_RIGHT = getKeyCodeForCommand("+moveright");
+    int BTN_JUMP = getKeyCodeForCommand("+jump");
+    int BTN_CROUCH = getKeyCodeForCommand("+crouch");
 
     int btn;
     int ScrollY  = 0;
@@ -356,17 +366,17 @@ Script "window" (str _Text, int type) {
     int typingDelayTimer = 0;
 
     While(TRUE) {
-        btn = GetPlayerInput(-1, INPUT_BUTTONS);
+        btn = onInput();
         typingDelayTimer++;
 
         if (typingDelayTimer > 32) {
             if (enableScroll) {
-                if(btn & BT_FORWARD && ScrollY > 0) {
+                if((btn == BTN_UP) && ScrollY > 0) {
                     ScrollY--;
                     Delay(4);
                 }
 
-                if(btn & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
+                if((btn == BTN_DOWN) && ScrollY + getLinesOnScreen() <= height) {
                     ScrollY++;
                     Delay(4);
                 }
@@ -378,7 +388,7 @@ Script "window" (str _Text, int type) {
 
         Delay(1);
 
-        if(onBtnClick(BT_USE)) {
+        if(btn == BTN_USE) {
             int nextScroll = getNextPageScroll(ScrollY, height);
 
             if (nextScroll == -1) break;
@@ -387,11 +397,11 @@ Script "window" (str _Text, int type) {
         }
 
         /* Used old variant for optimization */
-        if (   onBtnClick(BT_MOVELEFT)
-            || onBtnClick(BT_MOVERIGHT)
-            || onBtnClick(BT_JUMP)
-            || onBtnClick(BT_CROUCH)
-            /*|| onInput() == INPUT_ESC*/
+        if (   btn == BTN_LEFT
+            || btn == BTN_RIGHT
+            || btn == BTN_JUMP
+            || btn == BTN_CROUCH
+            || onInput() == INPUT_ESC
             ) {
             exitDialogWithoutSave();
             break;
@@ -401,7 +411,7 @@ Script "window" (str _Text, int type) {
     clearDialogWindow();
     ACS_NamedTerminate("beeping", 0);
 
-    /*useExtendedInput(false);*/
+    useExtendedInput(false);
 
     resumeGame();
 }

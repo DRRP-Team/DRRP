@@ -90,4 +90,13 @@ class ConversationController play {
         EventHandler.SendNetworkEvent(event, arg1, arg2, arg3);
     }
 
+    static int GetKeyCodeForCommand(String command) {
+        int key1, key2;
+        [key1, key2] = Bindings.GetKeysForCommand(command);
+
+        Console.Printf(key1..", "..key2);
+
+        return key1;
+    }
+
 }
