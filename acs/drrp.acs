@@ -486,7 +486,7 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     while (true) {
         input = onInput();
 
-        if (input >= 48 && input <= 57 || input == INPUT_ESC) {
+        if (input >= '0' && input <= '9' || input == INPUT_ESC) {
             if (input == INPUT_ESC) code = StrLeft(code, StrLen(code) - 1);
             else code = StrParam(s:code, c:input);
 

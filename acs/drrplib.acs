@@ -266,8 +266,12 @@ function int onInput(void) {
     return lastInput;
 }
 
+// #define DEBUG_INPUT
+
 Script "onInput" (int sym) {
-    /* Print(s:"On input ", i:sym, s:" ", c:sym); */
+#ifdef DEBUG_INPUT
+    Print(s:"On input ", i:sym, s:" ", c:sym);
+#endif
     lastInput = sym;
     lastInputIdx++;
 }
