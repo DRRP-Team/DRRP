@@ -346,7 +346,7 @@ Script "window" (str _Text, int type) {
         enableScroll,
         type,
         false,
-        0
+        10.0
     );
 
     onBtnReset();
