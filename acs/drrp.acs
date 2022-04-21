@@ -458,27 +458,6 @@ Script "hintwindow" (str _Text, int holdTicks) {
     clearDialogWindow();
 }
 
-int lastInput = -1;
-int lastInputIdx = 0;
-int lastInputReadIdx = -1;
-
-const int INPUT_ESC = 8;
-
-function int onInput(void) {
-    if (lastInputIdx == lastInputReadIdx) return 0;
-
-    lastInputReadIdx = lastInputIdx;
-
-    return lastInput;
-}
-
-Script "onInput" (int sym) {
-    /* Print(s:"On input ", i:sym, s:" ", c:sym); */
-    lastInput = sym;
-    lastInputIdx++;
-}
-
-
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
 
     /* ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
