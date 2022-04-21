@@ -320,8 +320,6 @@ Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(322);
 
-    /*useExtendedInput(true);*/
-
     if (!type) {
         type = getAimedActorDialogueType();
     }
@@ -463,8 +461,6 @@ Script "hintwindow" (str _Text, int holdTicks) {
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     useExtendedInput(true);
-    /* ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
-    //Delay(2); */
 
     int posX = iapplyScaleI(320) - 80;
     int posY = iapplyScaleI(322);

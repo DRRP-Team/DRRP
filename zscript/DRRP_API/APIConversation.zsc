@@ -94,7 +94,9 @@ class ConversationController play {
         int key1, key2;
         [key1, key2] = Bindings.GetKeysForCommand(command);
 
-        Console.Printf(key1..", "..key2);
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if (debugCVar && debugCVar.GetBool())
+            Console.Printf(key1..", "..key2);
 
         return key1;
     }
