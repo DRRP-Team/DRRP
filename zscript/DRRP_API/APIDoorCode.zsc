@@ -29,7 +29,7 @@ class PlayerInputHandler: EventHandler {
 
     override bool InputProcess( InputEvent e ) {
         if (self.extendedInput) return false;
-        if ( e.Type == e.Type_KeyDown ) DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar);
+        if ( e.Type == e.Type_KeyDown ) DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar, e.KeyScan);
         return false;
     } // of override bool InputProcess( InputEvent e ) {}
 

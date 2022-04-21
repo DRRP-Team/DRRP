@@ -333,6 +333,7 @@ Script "window" (str _Text, int type) {
     Delay(2);
 
     int btn;
+    int btn2;
     int ScrollY  = 0;
     int height   = getStringHeight(Text);
 
@@ -357,16 +358,17 @@ Script "window" (str _Text, int type) {
 
     While(TRUE) {
         btn = GetPlayerInput(-1, INPUT_BUTTONS);
+        btn2 = onInput();
         typingDelayTimer++;
 
         if (typingDelayTimer > 32) {
             if (enableScroll) {
-                if(btn & BT_FORWARD && ScrollY > 0) {
+                if((btn & BT_FORWARD || btn2 == INPUT_SCROLL_UP) && ScrollY > 0) {
                     ScrollY--;
                     Delay(4);
                 }
 
-                if(btn & BT_BACK && ScrollY + getLinesOnScreen() <= height) {
+                if((btn & BT_BACK || btn2 == INPUT_SCROLL_DOWN) && ScrollY + getLinesOnScreen() <= height) {
                     ScrollY++;
                     Delay(4);
                 }
@@ -386,12 +388,10 @@ Script "window" (str _Text, int type) {
             ScrollY = nextScroll;
         }
 
-        /* Used old variant for optimization */
         if (   onBtnClick(BT_MOVELEFT)
             || onBtnClick(BT_MOVERIGHT)
             || onBtnClick(BT_JUMP)
             || onBtnClick(BT_CROUCH)
-            /*|| onInput() == INPUT_ESC*/
             ) {
             exitDialogWithoutSave();
             break;
@@ -400,8 +400,6 @@ Script "window" (str _Text, int type) {
 
     clearDialogWindow();
     ACS_NamedTerminate("beeping", 0);
-
-    /*useExtendedInput(false);*/
 
     resumeGame();
 }

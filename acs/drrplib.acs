@@ -256,8 +256,10 @@ int lastInput = -1;
 int lastInputIdx = 0;
 int lastInputReadIdx = -1;
 
-const int INPUT_BACKSPACE = 8;
-const int INPUT_ESC       = 27;
+const int INPUT_BACKSPACE   = 8;
+const int INPUT_ESC         = 27;
+const int INPUT_SCROLL_UP   = 408;
+const int INPUT_SCROLL_DOWN = 409;
 
 function int onInput(void) {
     if (lastInputIdx == lastInputReadIdx) return 0;
@@ -277,11 +279,12 @@ function int getKeyCodeForCommand(str command) {
 
 // #define DEBUG_INPUT
 
-Script "onInput" (int sym) {
+Script "onInput" (int sym, int keyScan) {
+    int out = sym == 0 ? keyScan : sym;
 #ifdef DEBUG_INPUT
-    Print(s:"On input ", i:sym, s:" ", c:sym);
+    Print(s:"On input ", i:out, s:" ", c:sym);
 #endif
-    lastInput = sym;
+    lastInput = out;
     lastInputIdx++;
 }
 
