@@ -82,4 +82,23 @@ class ConversationController play {
         }
 
     } // of static void SetGlobalfreeze( bool freezeset ) {}
+
+    static void SendEvent(String event, int arg1=0, int arg2=0, int arg3=0) {
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if (debugCVar && debugCVar.GetBool())
+            Console.Printf("SendEvent "..event.." ("..arg1..", "..arg2..", "..arg3..")");
+        EventHandler.SendNetworkEvent(event, arg1, arg2, arg3);
+    }
+
+    static int GetKeyCodeForCommand(String command) {
+        int key1, key2;
+        [key1, key2] = Bindings.GetKeysForCommand(command);
+
+        CVar debugCVar = CVar.GetCVar( "drrp_debug_mode", players[ consoleplayer ] );
+        if (debugCVar && debugCVar.GetBool())
+            Console.Printf(key1..", "..key2);
+
+        return key1;
+    }
+
 }

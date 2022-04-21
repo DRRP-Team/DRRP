@@ -240,6 +240,55 @@ function str StrTrim(str string) {
     return trim;
 }
 
+function str StrPadRight(str original, int length, int symbol) {
+    int len = StrLen(original);
+    if (len >= length) return original;
+
+    for (int i = 0; i < length - len; i++) {
+        original = StrParam(s:original, c:symbol);
+    }
+
+    return original;
+}
+
+
+int lastInput = -1;
+int lastInputIdx = 0;
+int lastInputReadIdx = -1;
+
+const int INPUT_BACKSPACE   = 8;
+const int INPUT_ESC         = 27;
+const int INPUT_SCROLL_UP   = 408;
+const int INPUT_SCROLL_DOWN = 409;
+
+function int onInput(void) {
+    if (lastInputIdx == lastInputReadIdx) return 0;
+
+    lastInputReadIdx = lastInputIdx;
+
+    return lastInput;
+}
+
+function void useExtendedInput(bool mode) {
+    ScriptCall("ConversationController", "SendEvent", "ExtendedInput", mode);
+}
+
+function int getKeyCodeForCommand(str command) {
+    return ScriptCall("ConversationController", "GetKeyCodeForCommand", command);
+}
+
+// #define DEBUG_INPUT
+
+Script "onInput" (int sym, int keyScan) {
+    int out = sym == 0 ? keyScan : sym;
+#ifdef DEBUG_INPUT
+    Print(s:"On input ", i:out, s:" ", c:sym);
+#endif
+    lastInput = out;
+    lastInputIdx++;
+}
+
+
 function str drrpFont(void) {
     int font = GetCVar("drrp_font");
 
@@ -337,7 +386,26 @@ function bool onBtnPress(int button) {
     return input & button;
 }
 
+const str INTERNAL_META_STRING_KEY = "drrp_internal_metastring";
 
+function str GetInternalMetaString(void) {
+    return GetUserCVarString(0, INTERNAL_META_STRING_KEY);
+}
+
+function void SetInternalMetaString(str data) {
+    SetUserCVarString(0, INTERNAL_META_STRING_KEY, data);
+}
+
+function void pauseGame(void) {
+    ScriptCall("ConversationController", "SetGlobalFreeze", true);
+    /* Prevent mouse move glitches */
+    SetPlayerProperty(0, true, PROP_TOTALLYFROZEN);
+}
+
+function void resumeGame(void) {
+    SetPlayerProperty(0, false, PROP_TOTALLYFROZEN);
+    ScriptCall("ConversationController", "SetGlobalFreeze", false);
+}
 
 function void SpawnWithFog(str classname, float x, float y, float z, int assignTid) {
     SpawnForced("TeleportFog", x, y, z);
