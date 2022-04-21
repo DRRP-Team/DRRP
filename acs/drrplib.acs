@@ -266,6 +266,10 @@ function int onInput(void) {
     return lastInput;
 }
 
+function void useExtendedInput(bool mode) {
+    ScriptCall("ConversationController", "SendEvent", "ExtendedInput", mode);
+}
+
 // #define DEBUG_INPUT
 
 Script "onInput" (int sym) {

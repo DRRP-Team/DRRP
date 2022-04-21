@@ -459,7 +459,7 @@ Script "hintwindow" (str _Text, int holdTicks) {
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
-
+    /* useExtendedInput(true); */
     /* ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
     //Delay(2); */
 

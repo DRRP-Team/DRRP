@@ -82,4 +82,10 @@ class ConversationController play {
         }
 
     } // of static void SetGlobalfreeze( bool freezeset ) {}
+
+    static void SendEvent(String event, int arg1=0, int arg2=0, int arg3=0) {
+        Console.Printf("SendEvent "..event.." "..arg1);
+        EventHandler.SendNetworkEvent(event, arg1, arg2, arg3);
+    }
+
 }
