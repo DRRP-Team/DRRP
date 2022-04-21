@@ -256,7 +256,8 @@ int lastInput = -1;
 int lastInputIdx = 0;
 int lastInputReadIdx = -1;
 
-const int INPUT_ESC = 8;
+const int INPUT_BACKSPACE = 8;
+const int INPUT_ESC       = 27;
 
 function int onInput(void) {
     if (lastInputIdx == lastInputReadIdx) return 0;

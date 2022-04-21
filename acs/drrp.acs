@@ -320,6 +320,8 @@ Script "window" (str _Text, int type) {
     const int posX = iapplyScaleI(320) - 80;
     const int posY = iapplyScaleI(322);
 
+    /*useExtendedInput(true);*/
+
     if (!type) {
         type = getAimedActorDialogueType();
     }
@@ -389,6 +391,7 @@ Script "window" (str _Text, int type) {
             || onBtnClick(BT_MOVERIGHT)
             || onBtnClick(BT_JUMP)
             || onBtnClick(BT_CROUCH)
+            /*|| onInput() == INPUT_ESC*/
             ) {
             exitDialogWithoutSave();
             break;
@@ -397,6 +400,8 @@ Script "window" (str _Text, int type) {
 
     clearDialogWindow();
     ACS_NamedTerminate("beeping", 0);
+
+    /*useExtendedInput(false);*/
 
     resumeGame();
 }
@@ -459,7 +464,7 @@ Script "hintwindow" (str _Text, int holdTicks) {
 }
 
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
-    /* useExtendedInput(true); */
+    useExtendedInput(true);
     /* ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
     //Delay(2); */
 
@@ -486,8 +491,8 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
     while (true) {
         input = onInput();
 
-        if (input >= '0' && input <= '9' || input == INPUT_ESC) {
-            if (input == INPUT_ESC) code = StrLeft(code, StrLen(code) - 1);
+        if (input >= '0' && input <= '9' || input == INPUT_BACKSPACE) {
+            if (input == INPUT_BACKSPACE) code = StrLeft(code, StrLen(code) - 1);
             else code = StrParam(s:code, c:input);
 
             SectorSound("misc/i_pkup", 127);
@@ -512,9 +517,16 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
             }
         }
 
+        if (input == INPUT_ESC) {
+            exitDialogWithoutSave();
+            clearDialogWindow();
+            break;
+        }
+
         Delay(1);
     }
 
+    useExtendedInput(false);
 
     resumeGame();
 }
