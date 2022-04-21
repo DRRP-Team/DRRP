@@ -48,10 +48,10 @@ class DRRPUtil {
 
 	// A string buffer, same for ZScript and ACS:
 	static void SetInternalMetaString( String str ) {
-		CVar.GetCVar( INTERNAL_META_STRING_KEY ).SetString( str );
+		CVar.FindCVar( INTERNAL_META_STRING_KEY ).SetString( str );
 	}
 	static String GetInternalMetaString( void ) {
-		return CVar.GetCVar( INTERNAL_META_STRING_KEY ).GetString();
+		return CVar.FindCVar( INTERNAL_META_STRING_KEY ).GetString();
 	}
 
     static void ACS_NamedExecute( String scriptName, int arg1=0, int arg2=0, int arg3=0) {

@@ -220,7 +220,6 @@ function void drawDialogFrame(int posX, int posY, bool scrollable, int type, int
 }
 
 function void drawDialogWindow(str Text, int posX, int posY, int ScrollY, int type, bool wrap, int duration) {
-    print(s:Text, s:" posX ", i:posX, s:" posY ", i:posY, s:" Scroll ", i:ScrollY, s:" type ", i:type, s:" wrap ", b:wrap);
     SetHudSize(iapplyScaleI(640), iapplyScaleI(480), true);
     SetHUDClipRect(0, 0, 0, 0, 0);
 
@@ -459,9 +458,86 @@ Script "hintwindow" (str _Text, int holdTicks) {
     clearDialogWindow();
 }
 
+int lastInput = -1;
+int lastInputIdx = 0;
+int lastInputReadIdx = -1;
+
+const int INPUT_ESC = 8;
+
+function int onInput(void) {
+    if (lastInputIdx == lastInputReadIdx) return 0;
+
+    lastInputReadIdx = lastInputIdx;
+
+    return lastInput;
+}
+
+Script "onInput" (int sym) {
+    /* Print(s:"On input ", i:sym, s:" ", c:sym); */
+    lastInput = sym;
+    lastInputIdx++;
+}
+
+
 Script "lockwindow"(str Text, str Password, int ScriptNumber) {
-    ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
+
+    /* ScriptCall("DoorCodeInputActor", "DoorCode", Text, Password, ScriptNumber);
+    //Delay(2); */
+
+    int posX = iapplyScaleI(320) - 80;
+    int posY = iapplyScaleI(322);
+
+    int type = getAimedActorDialogueType();
+
+    int passLen = StrLen(Password);
+
     Delay(2);
+
+    pauseGame();
+
+    str code = "";
+
+    drawDialogWindow(
+        StrParam(s:Text, s:StrPadRight(code, passLen, '_')),
+        posX, posY, -1, type, false, 0
+    );
+
+    int input = -1;
+
+    while (true) {
+        input = onInput();
+
+        if (input >= 48 && input <= 57 || input == INPUT_ESC) {
+            if (input == INPUT_ESC) code = StrLeft(code, StrLen(code) - 1);
+            else code = StrParam(s:code, c:input);
+
+            SectorSound("misc/i_pkup", 127);
+
+            drawDialogWindow(
+                StrParam(s:Text, s:StrPadRight(code, passLen, '_')),
+                posX, posY, -1, type, false, 0
+            );
+
+            if (StrLen(code) >= passLen) {
+                if (!StrCmp(code, Password)) {
+                    clearDialogWindow();
+                    Delay(1);
+                    break;
+                } else {
+                    Print(l:"DRRP_D_DOORCLOSED");
+                    SectorSound(localizeSound("access/deny1"), 127);
+                    exitDialogWithoutSave();
+                    clearDialogWindow();
+                    break;
+                }
+            }
+        }
+
+        Delay(1);
+    }
+
+
+    resumeGame();
 }
 
 Script "drawwindow" (str _Text, bool typing, int type) {
@@ -505,28 +581,6 @@ Script "drawwindow" (str _Text, bool typing, int type) {
     }
 }
 
-Script "drawPasscodeWindow" (void) {
-    str _Text = "123"; // GetInternalMetaString();
-
-    print(s:"drawPasscodeWindow ", s:_Text);
-
-    int posX = iapplyScaleI(320) - 80;
-    int posY = iapplyScaleI(322);
-
-    int type = getAimedActorDialogueType();
-
-    print(s:"11");
-
-    str Text = fixEncodingBug(_Text);
-
-    print(s:"12 Text ", s:Text, s:" posX ", i:posX, s:" posY ", i:posY);
-
-    Delay(2);
-
-    pauseGame();
-
-    drawDialogWindow(Text, posX, posY, -1, type, false, 0);
-}
 
 Script "clearwindow" (void) {
     clearDialogWindow();

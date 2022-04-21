@@ -240,6 +240,18 @@ function str StrTrim(str string) {
     return trim;
 }
 
+function str StrPadRight(str original, int length, int symbol) {
+    int len = StrLen(original);
+    if (len >= length) return original;
+
+    for (int i = 0; i < length - len; i++) {
+        original = StrParam(s:original, c:symbol);
+    }
+
+    return original;
+}
+
+
 function str drrpFont(void) {
     int font = GetCVar("drrp_font");
 
@@ -340,11 +352,11 @@ function bool onBtnPress(int button) {
 const str INTERNAL_META_STRING_KEY = "drrp_internal_metastring";
 
 function str GetInternalMetaString(void) {
-    return GetCVarString(INTERNAL_META_STRING_KEY);
+    return GetUserCVarString(0, INTERNAL_META_STRING_KEY);
 }
 
 function void SetInternalMetaString(str data) {
-    SetCVarString(INTERNAL_META_STRING_KEY, data);
+    SetUserCVarString(0, INTERNAL_META_STRING_KEY, data);
 }
 
 function void pauseGame(void) {
