@@ -1,4 +1,6 @@
-//
+#library "inc_shop"
+#include "zcommon.acs"
+#import "drrplib.acs"
 
 struct ShopItem {
     str name;
@@ -63,6 +65,18 @@ function void DrawTextRight(str text, int id, int x, int y, int color) {
     HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_RIGHT, toFixed(y) + HUD_TOP, 0, 1);
 }
 
+function void DrawTextCenter(str text, int id, int x, int y, int color) {
+    SetHudSize(640, 480);
+    SetFont("defsmallfont2");
+    HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_TOP, 0, 1);
+}
+
+function void DrawTextLeft(str text, int id, int x, int y, int color) {
+    SetHudSize(640, 480);
+    SetFont("defsmallfont2");
+    HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_LEFT, toFixed(y) + HUD_TOP, 0, 1);
+}
+
 function void ShopDrawWindowCredits(void) {
     DrawImage("SHCRED", SHOP_ID + 1, 530, 22);
     DrawTextRight("999", SHOP_ID + 22, 520 + 44 + 60, 8 + 5 + 10, CR_YELLOW);
@@ -98,6 +112,28 @@ function void ShopDrawWindowInventory(void) {
 }
 
 function void ShopDrawWindowStatistics(void) {
+    DrawTextCenter("Statistics", SHOP_ID + 23, 75, 276, CR_WHITE);
+
+    int height = 305;
+    const int height_inc = 30;
+    const int name_offset = 15;
+    const int value_offset = 92 + 40;
+
+    DrawTextLeft("Strength:", SHOP_ID + 24, name_offset, height, CR_WHITE);
+    DrawTextRight("99", SHOP_ID + 28, value_offset, height, CR_WHITE);
+    height += height_inc;
+    DrawTextLeft("Defense:", SHOP_ID + 25, name_offset, height, CR_WHITE);
+    DrawTextRight("99", SHOP_ID + 29, value_offset, height, CR_WHITE);
+    height += height_inc;
+    DrawTextLeft("Accuracy:", SHOP_ID + 26, name_offset, height, CR_WHITE);
+    DrawTextRight("99", SHOP_ID + 30, value_offset, height, CR_WHITE);
+    height += height_inc;
+    DrawTextLeft("Agility:", SHOP_ID + 27, name_offset, height, CR_WHITE);
+    DrawTextRight("99", SHOP_ID + 31, value_offset, height, CR_WHITE);
+
+    height += 50;
+    DrawTextLeft("Level:", SHOP_ID + 32, name_offset, height, CR_WHITE);
+    DrawTextRight("99", SHOP_ID + 33, value_offset, height, CR_WHITE);
 }
 
 function void ShopDrawWindowMain(void) {
