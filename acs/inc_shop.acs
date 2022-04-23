@@ -14,7 +14,8 @@ enum {
     SHOP_MENU_STATS  = 2
 }
 
-const int SHOP_ID = -102034;
+const int SHOP_ID       = -102034;
+const int SHOP_ID_MAX   = SHOP_ID + 100;
 
 ShopItem ShopMenu[3][6];
 int shopMenuItems[3] = { 0, 0, 0 };
@@ -46,13 +47,54 @@ function void ShopMenuInitialize(int id) {
     }
 }
 
+function void DrawImage(str image, int id, int x, int y) {
+    SetHudSize(640, 480);
+    SetFont(image);
+    HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_LEFT, toFixed(y) + HUD_TOP, 0, 1);
+}
+
+function void ClearImage(int id) {
+    HudMessage(s:""; HUDMSG_PLAIN, id, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
+}
+
+function void DrawTextRight(str text, int id, int x, int y, int color) {
+    SetHudSize(640, 480);
+    SetFont("defsmallfont2");
+    HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_RIGHT, toFixed(y) + HUD_TOP, 0, 1);
+}
+
 function void ShopDrawWindowCredits(void) {
+    DrawImage("SHCRED", SHOP_ID + 1, 530, 22);
+    DrawTextRight("999", SHOP_ID + 22, 520 + 44 + 60, 8 + 5 + 10, CR_YELLOW);
 }
 
 function void ShopDrawWindowInventoryItem(str image, int amount) {
 }
 
 function void ShopDrawWindowInventory(void) {
+    int tmpHeight = 18 + 8;
+    DrawImage("SHBALL", SHOP_ID + 2, 21, 26);
+    DrawTextRight("999", SHOP_ID + 12, 47 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHCLIP", SHOP_ID + 3, 101, 26);
+    DrawTextRight("999", SHOP_ID + 13, 125 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHSHEL", SHOP_ID + 4, 175, 27);
+    DrawTextRight("999", SHOP_ID + 14, 195 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHROCK", SHOP_ID + 5, 252, 19);
+    DrawTextRight("999", SHOP_ID + 15, 270 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHCELL", SHOP_ID + 6, 321, 25);
+    DrawTextRight("999", SHOP_ID + 16, 343 + 31, tmpHeight, CR_WHITE);
+
+    tmpHeight = 58 + 8;
+    DrawImage("SHMED1", SHOP_ID + 7, 18, 61);
+    DrawTextRight("999", SHOP_ID + 17, 47 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHMED2", SHOP_ID + 8, 93, 61);
+    DrawTextRight("999", SHOP_ID + 18, 125 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHSOUL", SHOP_ID + 9, 170, 58);
+    DrawTextRight("999", SHOP_ID + 19, 195 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHBERS", SHOP_ID + 10, 246, 58);
+    DrawTextRight("999", SHOP_ID + 20, 270 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHDOGC", SHOP_ID + 11, 320, 55);
+    DrawTextRight("999", SHOP_ID + 21, 343 + 31, tmpHeight, CR_WHITE);
 }
 
 function void ShopDrawWindowStatistics(void) {
@@ -65,13 +107,16 @@ function void ShopDrawWindowInfo(void) {
 }
 
 function void ShopDrawWindow(void) {
-    SetHudSize(640, 480);
-    SetFont("SHOP");
-    HudMessage(s:"A"; HUDMSG_PLAIN, SHOP_ID, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
+    DrawImage("SHOP", SHOP_ID_MAX - 1, 0, 0);
+    ShopDrawWindowCredits();
+    ShopDrawWindowInventory();
+    ShopDrawWindowStatistics();
+    ShopDrawWindowMain();
+    ShopDrawWindowInfo();
 }
 
 function void ShopHideWindow(void) {
-    HudMessage(s:""; HUDMSG_PLAIN, SHOP_ID, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
+    for (int i = SHOP_ID; i < SHOP_ID_MAX; i++) ClearImage(i);
 }
 
 Script "ShopOpen" (int id) {
