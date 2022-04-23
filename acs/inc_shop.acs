@@ -19,7 +19,7 @@ enum {
 const int SHOP_ID       = -102034;
 const int SHOP_ID_MAX   = SHOP_ID + 100;
 
-ShopItem ShopMenu[3][6];
+ShopItem shopMenu[3][6];
 int shopMenuItems[3] = { 0, 0, 0 };
 int shopCurrentMenu = 0;
 int shopCurrentItem = 0;
@@ -43,9 +43,12 @@ function void ShopMenuSetItem(
 function void ShopMenuInitialize(int id) {
     switch (id) {
         default:
-            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "10x Halon canisters", 5, 999, "DRRPShopBalloon", 1);
-            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "10x Bullets", 5, 999, "DRRPShopClipBox", 1);
-            shopMenuItems[SHOP_MENU_AMMO] = 2;
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 999, "DRRPShopBalloon", 10);
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 999, "DRRPShopClipBox", 10);
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShopShellBox", 10);
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 99, "DRRPShopRocketBox", 4);
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 999, "DRRPShopCellBox", 10);
+            shopMenuItems[SHOP_MENU_AMMO] = 5;
     }
 }
 
@@ -80,9 +83,6 @@ function void DrawTextLeft(str text, int id, int x, int y, int color) {
 function void ShopDrawWindowCredits(void) {
     DrawImage("SHCRED", SHOP_ID + 1, 530, 22);
     DrawTextRight("999", SHOP_ID + 22, 520 + 44 + 60, 8 + 5 + 10, CR_YELLOW);
-}
-
-function void ShopDrawWindowInventoryItem(str image, int amount) {
 }
 
 function void ShopDrawWindowInventory(void) {
@@ -137,6 +137,27 @@ function void ShopDrawWindowStatistics(void) {
 }
 
 function void ShopDrawWindowMain(void) {
+    shopCurrentMenu = 1;
+    DrawTextCenter("Buy: Ammo", SHOP_ID + 34, 270, 276, CR_WHITE);
+
+    DrawTextLeft("Health", SHOP_ID + 35, 195, 445, CR_WHITE);
+    DrawTextRight("Stats", SHOP_ID + 36, 345, 445, CR_WHITE);
+
+    const int MAIN_ID = SHOP_ID + 40;
+    const int height = 300;
+    const int height_inc = 26;
+
+    for (int i = 0; i < shopMenuItems[shopCurrentMenu]; i++) {
+        ShopItem item = shopMenu[shopCurrentMenu][i];
+        DrawTextLeft(
+            StrParam(s:item.name, s:" (", i:item.price, s:" UAC)"),
+            MAIN_ID + i,
+            165, height + height_inc * i,
+            CR_WHITE
+        );
+
+        DrawImage("SHOPSEL", MAIN_ID + 6 + i, 161, 290 + height_inc * i);
+    }
 }
 
 function void ShopDrawWindowInfo(void) {
