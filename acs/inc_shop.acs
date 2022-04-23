@@ -8,6 +8,8 @@ struct ShopItem {
     int max;
     str item;
     int amount;
+    str description;
+    str image;
 }
 
 enum {
@@ -28,7 +30,8 @@ bool shopIsOpened = false;
 
 function void ShopMenuSetItem(
     int menu,
-    int pos, str name, int price, int max, str itemClass, int amount
+    int pos, str name, int price, int max, str itemClass, int amount,
+    str description, str image
 ) {
     if (pos > 5) throw("[ShopMenuSetItem] Invalid position!");
     ShopItem item;
@@ -37,17 +40,19 @@ function void ShopMenuSetItem(
     item.max = max;
     item.item = itemClass;
     item.amount = amount;
+    item.description = description;
+    item.image = image;
     ShopMenu[menu][pos] = item;
 }
 
 function void ShopMenuInitialize(int id) {
     switch (id) {
         default:
-            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 999, "DRRPShopBalloon", 10);
-            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 999, "DRRPShopClipBox", 10);
-            ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShopShellBox", 10);
-            ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 99, "DRRPShopRocketBox", 4);
-            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 999, "DRRPShopCellBox", 10);
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 999, "DRRPShopBalloon", 10, "DRRP_SHOP_HALONS", "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 999, "DRRPShopClipBox", 10, "DRRP_SHOP_BULLETS", "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShopShellBox", 10, "DRRP_SHOP_SHELLS", "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 99, "DRRPShopRocketBox", 4, "DRRP_SHOP_ROCKETS", "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 999, "DRRPShopCellBox", 10, "DRRP_SHOP_CELLS", "SHCELL");
             shopMenuItems[SHOP_MENU_AMMO] = 5;
     }
 }
@@ -56,6 +61,17 @@ function void DrawImage(str image, int id, int x, int y) {
     SetHudSize(640, 480);
     SetFont(image);
     HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_LEFT, toFixed(y) + HUD_TOP, 0, 1);
+}
+
+function void DrawImageCenter(str image, int id, int x, int y) {
+    SetHudSize(640, 480);
+    SetFont(image);
+    HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_CENTER, 0, 1);
+}
+
+function void DrawImageCenterScale(str image, int id, int x, int y) {
+    SetFont(image);
+    HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_CENTER, 0, 1);
 }
 
 function void ClearImage(int id) {
@@ -161,6 +177,17 @@ function void ShopDrawWindowMain(void) {
 }
 
 function void ShopDrawWindowInfo(void) {
+    const int SUB_ID = SHOP_ID + 50;
+    ShopItem item = shopMenu[shopCurrentMenu][shopCurrentItem];
+
+    /* DrawTextCenter(item.name, SUB_ID + 5, 510, 280, CR_WHITE); */
+    DrawTextRight(StrParam(i:item.price, s:" UAC"), SUB_ID + 4, 620, 280, CR_YELLOW);
+    SetHudSize(150, 150);
+    DrawImageCenterScale(item.image, SUB_ID + 1, 120, 98);
+    DrawTextRight(StrParam(s:"x", i:item.amount), SUB_ID + 3, 600, 315, CR_WHITE);
+    DrawTextCenter("Press Enter to buy", SUB_ID + 2, 510, 340, CR_YELLOW);
+    /* TODO: SetHudWrapWidth */
+    DrawTextLeft(item.description, SUB_ID, 412, 366, CR_WHITE);
 }
 
 function void ShopDrawWindow(void) {
