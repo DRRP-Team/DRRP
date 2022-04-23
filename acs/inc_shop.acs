@@ -1,0 +1,88 @@
+//
+
+struct ShopItem {
+    str name;
+    int price;
+    int max;
+    str item;
+    int amount;
+}
+
+enum {
+    SHOP_MENU_HEALTH = 0,
+    SHOP_MENU_AMMO   = 1,
+    SHOP_MENU_STATS  = 2
+}
+
+ShopItem ShopMenu[3][6];
+int shopMenuItems[3] = { 0, 0, 0 };
+int shopCurrentMenu = 0;
+int shopCurrentItem = 0;
+
+bool shopIsOpened = false;
+
+function void ShopMenuSetItem(
+    int menu,
+    int pos, str name, int price, int max, str itemClass, int amount
+) {
+    if (pos > 5) throw("[ShopMenuSetItem] Invalid position!");
+    ShopItem item;
+    item.name = name;
+    item.price = price;
+    item.max = max;
+    item.item = itemClass;
+    item.amount = amount;
+    ShopMenu[menu][pos] = item;
+}
+
+function void ShopMenuInitialize(int id) {
+    switch (id) {
+        default:
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "10x Halon canisters", 5, 999, "DRRPShopBalloon", 1);
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "10x Bullets", 5, 999, "DRRPShopClipBox", 1);
+            shopMenuItems[SHOP_MENU_AMMO] = 2;
+    }
+}
+
+function void ShopDrawWindowCredits(void) {
+}
+
+function void ShopDrawWindowInventoryItem(str image, int amount) {
+}
+
+function void ShopDrawWindowInventory(void) {
+}
+
+function void ShopDrawWindowStatistics(void) {
+}
+
+function void ShopDrawWindowMain(void) {
+}
+
+function void ShopDrawWindowInfo(void) {
+}
+
+function void ShopDrawWindow(void) {
+    print(s:"ShopDrawWindow()");
+}
+
+Script "ShopOpen" (int id) {
+    pauseGame();
+    useExtendedInput(true);
+    ShopMenuInitialize(id);
+
+    int btn = -1;
+
+    while (true) {
+        ShopDrawWindow();
+        btn = onInput();
+
+        if (btn == INPUT_ESC) break;
+
+        Delay(1);
+    }
+
+    useExtendedInput(false);
+    resumeGame();
+}
+
