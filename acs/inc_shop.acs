@@ -14,6 +14,8 @@ enum {
     SHOP_MENU_STATS  = 2
 }
 
+const int SHOP_ID = -102034;
+
 ShopItem ShopMenu[3][6];
 int shopMenuItems[3] = { 0, 0, 0 };
 int shopCurrentMenu = 0;
@@ -63,13 +65,20 @@ function void ShopDrawWindowInfo(void) {
 }
 
 function void ShopDrawWindow(void) {
-    print(s:"ShopDrawWindow()");
+    SetHudSize(640, 480);
+    SetFont("SHOP");
+    HudMessage(s:"A"; HUDMSG_PLAIN, SHOP_ID, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
+}
+
+function void ShopHideWindow(void) {
+    HudMessage(s:""; HUDMSG_PLAIN, SHOP_ID, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
 }
 
 Script "ShopOpen" (int id) {
     pauseGame();
     useExtendedInput(true);
     ShopMenuInitialize(id);
+    LocalAmbientSound("menu/activate", 100);
 
     int btn = -1;
 
@@ -81,6 +90,10 @@ Script "ShopOpen" (int id) {
 
         Delay(1);
     }
+
+    LocalAmbientSound("menu/clear", 100);
+
+    ShopHideWindow();
 
     useExtendedInput(false);
     resumeGame();
