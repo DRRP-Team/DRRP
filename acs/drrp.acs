@@ -504,7 +504,7 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
                 } else {
                     Print(l:"DRRP_D_DOORCLOSED");
                     SectorSound(localizeSound("access/deny1"), 127);
-                    exitDialogWithoutSave();
+                    ACS_Terminate(ScriptNumber, 0);
                     clearDialogWindow();
                     break;
                 }
@@ -512,7 +512,7 @@ Script "lockwindow"(str Text, str Password, int ScriptNumber) {
         }
 
         if (input == INPUT_ESC) {
-            exitDialogWithoutSave();
+            ACS_Terminate(ScriptNumber, 0);
             clearDialogWindow();
             break;
         }
