@@ -1,0 +1,357 @@
+struct ShopItem {
+    str name;
+    int price;
+    int max;
+    str classname;
+    int amount;
+    str description;
+    str image;
+}
+
+enum {
+    SHOP_MENU_HEALTH = 0,
+    SHOP_MENU_AMMO   = 1,
+    SHOP_MENU_STATS  = 2
+}
+
+const int SHOP_ID       = -102034;
+const int SHOP_ID_MAX   = SHOP_ID + 100;
+
+ShopItem shopMenu[3][6];
+int shopMenuItems[3] = { 0, 0, 0 };
+str shopMenuNames[3] = { "DRRP_SHOP_SEC_HEALTH", "DRRP_SHOP_SEC_AMMO", "DRRP_SHOP_SEC_STATS" };
+int shopCurrentMenu = 0;
+int shopCurrentItem = 0;
+
+function void ShopMenuSetItem(
+    int menu,
+    int pos, str name, int price, int max, str classname, int amount,
+    str description, str image
+) {
+    if (pos > 5) throw("[ShopMenuSetItem] Invalid position!");
+    ShopItem item;
+    item.name = name;
+    item.price = price;
+    item.max = max;
+    item.classname = classname;
+    item.amount = amount;
+    item.description = description;
+    item.image = image;
+    ShopMenu[menu][pos] = item;
+}
+
+function void ShopMenuSetItemEmpty(int menu, int pos) {
+    if (pos > 5) throw("[ShopMenuSetItem] Invalid position!");
+    ShopItem item;
+    ShopMenu[menu][pos] = item;
+}
+
+function void ShopMenuInitialize(int id) {
+    shopCurrentMenu = 0;
+    shopCurrentItem = 0;
+
+    switch (id) {
+        case 0:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 8, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 35, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 2);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 2;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 5, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 5, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 10, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 10, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 15, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
+            shopMenuItems[SHOP_MENU_AMMO] = 5;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 15, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 15, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 20, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 20, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+            break;
+        case 1:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 6, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 1);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 2);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 1;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 4, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 3, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 6, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItemEmpty(SHOP_MENU_AMMO, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_AMMO, 4);
+            shopMenuItems[SHOP_MENU_AMMO] = 3;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 15, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 15, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 20, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 20, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+            break;
+        case 2:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 2, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 35, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, l("DRRP_SHOP_SOULSPHERE"), 50, 99, "InventorySoulSphere", 1, l("DRRP_SHOP_SOULSPHERE_INFO"), "SHSOUL");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 3;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 3, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 4, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 8, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 6, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 12, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
+            shopMenuItems[SHOP_MENU_AMMO] = 5;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 15, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 15, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 20, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 20, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+            break;
+        default:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 4, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 15, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, l("DRRP_SHOP_SOULSPHERE"), 30, 99, "InventorySoulSphere", 1, l("DRRP_SHOP_SOULSPHERE_INFO"), "SHSOUL");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 3, l("DRRP_SHOP_BERSERK"), 40, 99, "DRRPBerserkItem", 1, l("DRRP_SHOP_BERSERK_INFO"), "SHBERS");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 4;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 2, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 2, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 4, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 5, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 8, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
+            shopMenuItems[SHOP_MENU_AMMO] = 5;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 8, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 8, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 10, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 10, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+    }
+}
+
+function str ShopInvAmText(str classname) {
+    return StrParam(i:CheckInventory(classname));
+}
+
+function void ShopDrawWindowCredits(void) {
+    DrawImage("SHCRED", SHOP_ID + 1, 530, 22);
+    DrawTextRight(ShopInvAmText("Credit"), SHOP_ID + 22, 520 + 44 + 60, 8 + 5 + 10, CR_YELLOW);
+}
+
+function void ShopDrawWindowInventory(void) {
+    int tmpHeight = 18 + 8;
+    DrawImage("SHBALL", SHOP_ID + 2, 21, 26);
+    DrawTextRight(ShopInvAmText("Balloon"), SHOP_ID + 12, 47 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHCLIP", SHOP_ID + 3, 101, 26);
+    DrawTextRight(ShopInvAmText("Clip"), SHOP_ID + 13, 125 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHSHEL", SHOP_ID + 4, 175, 27);
+    DrawTextRight(ShopInvAmText("DRRPShell"), SHOP_ID + 14, 195 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHROCK", SHOP_ID + 5, 252, 19);
+    DrawTextRight(ShopInvAmText("RocketAmmo"), SHOP_ID + 15, 270 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHCELL", SHOP_ID + 6, 321, 25);
+    DrawTextRight(ShopInvAmText("Cell"), SHOP_ID + 16, 343 + 31, tmpHeight, CR_WHITE);
+
+    tmpHeight = 58 + 8;
+    DrawImage("SHMED1", SHOP_ID + 7, 18, 61);
+    DrawTextRight(ShopInvAmText("SmallMedikit"), SHOP_ID + 17, 47 + 31, tmpHeight, CR_WHITE);
+    DrawImage("SHMED2", SHOP_ID + 8, 93, 61);
+    DrawTextRight(ShopInvAmText("LargeMedikit"), SHOP_ID + 18, 125 + 31, tmpHeight, CR_WHITE);
+    if (CheckInventory("InventorySoulSphere") || CheckInventory("DRRPBerserkItem")) {
+        DrawImage("SHSOUL", SHOP_ID + 9, 170, 58);
+        DrawTextRight(ShopInvAmText("InventorySoulSphere"), SHOP_ID + 19, 195 + 31, tmpHeight, CR_WHITE);
+        DrawImage("SHBERS", SHOP_ID + 10, 246, 58);
+        DrawTextRight(ShopInvAmText("DRRPBerserkItem"), SHOP_ID + 20, 270 + 31, tmpHeight, CR_WHITE);
+    }
+    if (CheckInventory("DogCollar")) {
+        DrawImage("SHDOGC", SHOP_ID + 11, 320, 55);
+        DrawTextRight(ShopInvAmText("DogCollar"), SHOP_ID + 21, 343 + 31, tmpHeight, CR_WHITE);
+    }
+}
+
+function str ShopFeatAmText(int feature) {
+    return StrParam(i:GetPlayerFeature(feature));
+}
+
+function void ShopDrawWindowStatistics(void) {
+    DrawTextCenter(l("DRRP_SHOP_WINDOW_STATS"), SHOP_ID + 23, 75, 276, CR_WHITE);
+
+    int height = 305;
+    const int height_inc = 30;
+    const int name_offset = 15;
+    const int value_offset = 92 + 40;
+
+    DrawTextLeft(l("DRRP_SHOP_STAT_STRENGTH"), SHOP_ID + 24, name_offset, height, CR_WHITE);
+    DrawTextRight(ShopFeatAmText(RPG_Strength), SHOP_ID + 28, value_offset, height, CR_WHITE);
+    height += height_inc;
+    DrawTextLeft(l("DRRP_SHOP_STAT_DEFENSE"), SHOP_ID + 25, name_offset, height, CR_WHITE);
+    DrawTextRight(ShopFeatAmText(RPG_Defense), SHOP_ID + 29, value_offset, height, CR_WHITE);
+    height += height_inc;
+    DrawTextLeft(l("DRRP_SHOP_STAT_ACCURACY"), SHOP_ID + 26, name_offset, height, CR_WHITE);
+    DrawTextRight(ShopFeatAmText(RPG_Accuracy), SHOP_ID + 30, value_offset, height, CR_WHITE);
+    height += height_inc;
+    DrawTextLeft(l("DRRP_SHOP_STAT_AGILITY"), SHOP_ID + 27, name_offset, height, CR_WHITE);
+    DrawTextRight(ShopFeatAmText(RPG_Agility), SHOP_ID + 31, value_offset, height, CR_WHITE);
+
+    height += 50;
+    DrawTextLeft(l("DRRP_SHOP_STAT_LEVEL"), SHOP_ID + 32, name_offset, height, CR_WHITE);
+    DrawTextRight(ShopFeatAmText(RPG_Level), SHOP_ID + 33, value_offset, height, CR_WHITE);
+}
+
+function str ShopPrevMenuName(void) {
+    if (shopCurrentMenu > 0) return l(shopMenuNames[shopCurrentMenu - 1]);
+    return l(shopMenuNames[2]);
+}
+
+function str ShopNextMenuName(void) {
+    return l(shopMenuNames[(shopCurrentMenu + 1) % 3]);
+}
+
+function int ShopCantIBuyIt(ShopItem item) {
+    if (CheckInventory("Credit") < item.price) return 1;
+
+    if (item.max >= 0 && CheckInventory(item.classname) >= item.max) return 2;
+
+    return 0;
+}
+
+function void ShopDrawWindowMain(void) {
+    DrawTextCenter(StrParam(l:"DRRP_SHOP_BUY", l:shopMenuNames[shopCurrentMenu]),
+        SHOP_ID + 34, 270, 276, CR_WHITE);
+
+    DrawTextLeft(ShopPrevMenuName(), SHOP_ID + 35, 195, 445, CR_WHITE);
+    DrawTextRight(ShopNextMenuName(), SHOP_ID + 36, 345, 445, CR_WHITE);
+
+    const int MAIN_ID = SHOP_ID + 40;
+    const int height = 300;
+    const int height_inc = 26;
+
+    for (int i = 0; i < 5; i++) {
+        ShopItem item = shopMenu[shopCurrentMenu][i];
+        if (i < shopMenuItems[shopCurrentMenu])
+            DrawTextLeft(
+                StrParam(s:item.name, s:" (", i:item.price, s:" UAC)"),
+                MAIN_ID + i,
+                165, height + height_inc * i,
+                CR_WHITE
+            );
+        else
+            ClearImage(MAIN_ID + i);
+
+        if (shopCurrentItem == i) {
+            if (ShopCantIBuyIt(item)) /* You can't */
+                DrawImage("SHOPSEL2", MAIN_ID + 6, 161, 290 + height_inc * i);
+            else /* You can */
+                DrawImage("SHOPSEL", MAIN_ID + 6, 161, 290 + height_inc * i);
+        }
+    }
+}
+
+function void ShopDrawWindowInfo(void) {
+    const int SUB_ID = SHOP_ID + 50;
+    ShopItem item = shopMenu[shopCurrentMenu][shopCurrentItem];
+
+    /* DrawTextCenter(item.name, SUB_ID + 1, 510, 280, CR_WHITE); */
+    DrawTextRight(StrParam(i:item.price, s:" UAC"), SUB_ID + 4, 620, 280, CR_YELLOW);
+    SetHudSize(150, 150);
+    DrawImageCenterScale(item.image, SUB_ID + 5, 120, 98);
+    DrawTextRight(StrParam(s:"x", i:item.amount), SUB_ID + 3, 600, 315, CR_WHITE);
+    int cantIBuy = ShopCantIBuyIt(item);
+    if (cantIBuy == 0) DrawTextCenter(l("DRRP_SHOP_PRESS_ENTER"), SUB_ID + 2, 510, 340, CR_YELLOW);
+    if (cantIBuy == 1) DrawTextCenter(l("DRRP_SHOP_NOCREDITS"), SUB_ID + 2, 510, 340, CR_RED);
+    if (cantIBuy == 2) DrawTextCenter(l("DRRP_SHOP_OVERFLOW"), SUB_ID + 2, 510, 340, CR_RED);
+    SetHudWrapWidth(210);
+    DrawTextLeft(item.description, SUB_ID, 412, 366, CR_WHITE);
+    SetHudWrapWidth(0);
+}
+
+function void ShopDrawWindow(void) {
+    DrawImage("SHOP", SHOP_ID_MAX - 1, 0, 0);
+    ShopDrawWindowCredits();
+    ShopDrawWindowInventory();
+    ShopDrawWindowStatistics();
+    ShopDrawWindowMain();
+    ShopDrawWindowInfo();
+}
+
+function void ShopHideWindow(void) {
+    for (int i = SHOP_ID; i < SHOP_ID_MAX; i++) ClearImage(i);
+}
+
+Script "ShopOpen" (int id) {
+    pauseGame();
+    useExtendedInput(true);
+    ShopMenuInitialize(id);
+    LocalAmbientSound("menu/activate", 100);
+
+    int btn = -1;
+
+    while (true) {
+        ShopDrawWindow();
+        btn = onInput();
+
+        if (btn == INPUT_ESC) break;
+
+        if (btn == INPUT_BOTTOM && shopCurrentItem + 1 < shopMenuItems[shopCurrentMenu]) {
+            shopCurrentItem++;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_TOP && shopCurrentItem - 1 >= 0) {
+            shopCurrentItem--;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_LEFT) {
+            shopCurrentMenu--;
+            if (shopCurrentMenu < 0) {
+                shopCurrentMenu = 2;
+            }
+            shopCurrentItem = 0;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_RIGHT) {
+            shopCurrentMenu++;
+            if (shopCurrentMenu > 2) {
+                shopCurrentMenu = 0;
+            }
+            shopCurrentItem = 0;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_ENTER) {
+            ShopItem item = shopMenu[shopCurrentMenu][shopCurrentItem];
+
+            if (ShopCantIBuyIt(item)) {
+                LocalAmbientSound("menu/invalid", 100);
+                continue;
+            }
+
+            LocalAmbientSound("menu/choose", 100);
+            GiveInventory(item.classname, item.amount);
+            TakeInventory("Credit", item.price);
+        }
+
+        Delay(1);
+    }
+
+    LocalAmbientSound("menu/dismiss", 100);
+
+    ShopHideWindow();
+
+    useExtendedInput(false);
+    resumeGame();
+}
+

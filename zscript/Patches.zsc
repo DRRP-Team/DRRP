@@ -10,7 +10,7 @@
 
 class DRRPCharacter_ZSPatch: Actor {
     action void A_DRRP_TransformationParticles( void ) {
-        DRRPActorAdditionalFunctions.SummonDRRPParticle( self, "DRRPTransformationParticle", radius, height );
+        DRRPUtil.SummonDRRPParticle( self, "DRRPTransformationParticle", radius, height );
     }
 }
 
