@@ -1,7 +1,3 @@
-#library "inc_shop"
-#include "zcommon.acs"
-#import "drrplib.acs"
-
 struct ShopItem {
     str name;
     int price;

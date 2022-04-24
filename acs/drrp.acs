@@ -6,7 +6,6 @@
  */
 
 #import "drrplib.acs"
-#import "inc_shop.acs"
 #include "zcommon.acs"
 
 /* DEPRECATED */
@@ -671,4 +670,4 @@ Script "getString" (int id) {
 #include "inc_flashlight.acs"
 #include "inc_mapapis.acs"
 #include "inc_shaders.acs"
-//#include "inc_shop.acs"
+#include "inc_shop.acs"
