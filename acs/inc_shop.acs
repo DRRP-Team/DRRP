@@ -172,7 +172,8 @@ function void ShopDrawWindowMain(void) {
             CR_WHITE
         );
 
-        DrawImage("SHOPSEL", MAIN_ID + 6 + i, 161, 290 + height_inc * i);
+        if (shopCurrentItem == i)
+            DrawImage("SHOPSEL", MAIN_ID + 6, 161, 290 + height_inc * i);
     }
 }
 
@@ -180,10 +181,10 @@ function void ShopDrawWindowInfo(void) {
     const int SUB_ID = SHOP_ID + 50;
     ShopItem item = shopMenu[shopCurrentMenu][shopCurrentItem];
 
-    /* DrawTextCenter(item.name, SUB_ID + 5, 510, 280, CR_WHITE); */
+    /* DrawTextCenter(item.name, SUB_ID + 1, 510, 280, CR_WHITE); */
     DrawTextRight(StrParam(i:item.price, s:" UAC"), SUB_ID + 4, 620, 280, CR_YELLOW);
     SetHudSize(150, 150);
-    DrawImageCenterScale(item.image, SUB_ID + 1, 120, 98);
+    DrawImageCenterScale(item.image, SUB_ID + 5, 120, 98);
     DrawTextRight(StrParam(s:"x", i:item.amount), SUB_ID + 3, 600, 315, CR_WHITE);
     DrawTextCenter("Press Enter to buy", SUB_ID + 2, 510, 340, CR_YELLOW);
     /* TODO: SetHudWrapWidth */
@@ -216,6 +217,16 @@ Script "ShopOpen" (int id) {
         btn = onInput();
 
         if (btn == INPUT_ESC) break;
+
+        if (btn == INPUT_BOTTOM && shopCurrentItem + 1 < shopMenuItems[shopCurrentMenu]) {
+            shopCurrentItem++;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_TOP && shopCurrentItem - 1 >= 0) {
+            shopCurrentItem--;
+            LocalAmbientSound("menu/cursor", 100);
+        }
 
         Delay(1);
     }
