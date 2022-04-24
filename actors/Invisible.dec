@@ -189,15 +189,7 @@ Actor DRRPShop : DRRPComputer 10555 {
     //$Icon "tnt1a0"
     //$Title Shop
 
-    +USESPECIAL
     Tag "$DRRP_B_ID240"
-
-    States {
-        Use:
-            TNT1 A 0
-            TNT1 A 0 ACS_NamedExecute("ShopOpen", Args[1])
-            Stop
-    }
 }
 
 Actor DRRPDoor : DRRPInfo 10815 {
