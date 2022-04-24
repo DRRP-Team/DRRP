@@ -132,30 +132,36 @@ function void ShopDrawWindowCredits(void) {
     DrawTextRight("999", SHOP_ID + 22, 520 + 44 + 60, 8 + 5 + 10, CR_YELLOW);
 }
 
+function str ShopInvAmText(str classname) {
+    return StrParam(i:CheckInventory(classname));
+}
+
 function void ShopDrawWindowInventory(void) {
     int tmpHeight = 18 + 8;
     DrawImage("SHBALL", SHOP_ID + 2, 21, 26);
-    DrawTextRight("999", SHOP_ID + 12, 47 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("Balloon"), SHOP_ID + 12, 47 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHCLIP", SHOP_ID + 3, 101, 26);
-    DrawTextRight("999", SHOP_ID + 13, 125 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("Clip"), SHOP_ID + 13, 125 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHSHEL", SHOP_ID + 4, 175, 27);
-    DrawTextRight("999", SHOP_ID + 14, 195 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("DRRPShell"), SHOP_ID + 14, 195 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHROCK", SHOP_ID + 5, 252, 19);
-    DrawTextRight("999", SHOP_ID + 15, 270 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("RocketAmmo"), SHOP_ID + 15, 270 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHCELL", SHOP_ID + 6, 321, 25);
-    DrawTextRight("999", SHOP_ID + 16, 343 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("Cell"), SHOP_ID + 16, 343 + 31, tmpHeight, CR_WHITE);
 
     tmpHeight = 58 + 8;
     DrawImage("SHMED1", SHOP_ID + 7, 18, 61);
-    DrawTextRight("999", SHOP_ID + 17, 47 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("SmallMedikit"), SHOP_ID + 17, 47 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHMED2", SHOP_ID + 8, 93, 61);
-    DrawTextRight("999", SHOP_ID + 18, 125 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("LargeMedikit"), SHOP_ID + 18, 125 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHSOUL", SHOP_ID + 9, 170, 58);
-    DrawTextRight("999", SHOP_ID + 19, 195 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("InventorySoulSphere"), SHOP_ID + 19, 195 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHBERS", SHOP_ID + 10, 246, 58);
-    DrawTextRight("999", SHOP_ID + 20, 270 + 31, tmpHeight, CR_WHITE);
-    DrawImage("SHDOGC", SHOP_ID + 11, 320, 55);
-    DrawTextRight("999", SHOP_ID + 21, 343 + 31, tmpHeight, CR_WHITE);
+    DrawTextRight(ShopInvAmText("DRRPBerserkItem"), SHOP_ID + 20, 270 + 31, tmpHeight, CR_WHITE);
+    if (CheckInventory("DogCollar")) {
+        DrawImage("SHDOGC", SHOP_ID + 11, 320, 55);
+        DrawTextRight(ShopInvAmText("DogCollar"), SHOP_ID + 21, 343 + 31, tmpHeight, CR_WHITE);
+    }
 }
 
 function void ShopDrawWindowStatistics(void) {
