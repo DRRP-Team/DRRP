@@ -168,8 +168,8 @@ function void ShopDrawWindowInventory(void) {
     DrawTextRight(ShopInvAmText("SmallMedikit"), SHOP_ID + 17, 47 + 31, tmpHeight, CR_WHITE);
     DrawImage("SHMED2", SHOP_ID + 8, 93, 61);
     DrawTextRight(ShopInvAmText("LargeMedikit"), SHOP_ID + 18, 125 + 31, tmpHeight, CR_WHITE);
-    DrawImage("SHSOUL", SHOP_ID + 9, 170, 58);
     if (CheckInventory("InventorySoulSphere") || CheckInventory("DRRPBerserkItem")) {
+        DrawImage("SHSOUL", SHOP_ID + 9, 170, 58);
         DrawTextRight(ShopInvAmText("InventorySoulSphere"), SHOP_ID + 19, 195 + 31, tmpHeight, CR_WHITE);
         DrawImage("SHBERS", SHOP_ID + 10, 246, 58);
         DrawTextRight(ShopInvAmText("DRRPBerserkItem"), SHOP_ID + 20, 270 + 31, tmpHeight, CR_WHITE);
