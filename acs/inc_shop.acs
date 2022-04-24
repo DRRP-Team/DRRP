@@ -51,7 +51,76 @@ function void ShopMenuSetItemEmpty(int menu, int pos) {
 }
 
 function void ShopMenuInitialize(int id) {
+    shopCurrentMenu = 0;
+    shopCurrentItem = 0;
+
     switch (id) {
+        case 0:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 8, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 35, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 2);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 2;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 5, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 5, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 10, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 10, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 15, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
+            shopMenuItems[SHOP_MENU_AMMO] = 5;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 15, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 15, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 20, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 20, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+            break;
+        case 1:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 6, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 1);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 2);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 1;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 4, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 3, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 6, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItemEmpty(SHOP_MENU_AMMO, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_AMMO, 4);
+            shopMenuItems[SHOP_MENU_AMMO] = 3;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 15, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 15, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 20, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 20, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+            break;
+        case 2:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 2, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 35, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, l("DRRP_SHOP_SOULSPHERE"), 50, 99, "InventorySoulSphere", 1, l("DRRP_SHOP_SOULSPHERE_INFO"), "SHSOUL");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 3);
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 3;
+
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 3, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 4, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 8, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 6, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 12, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
+            shopMenuItems[SHOP_MENU_AMMO] = 5;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 15, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 15, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 20, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 20, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
+            break;
         default:
             ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 4, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
             ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 15, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
@@ -60,11 +129,11 @@ function void ShopMenuInitialize(int id) {
             ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
             shopMenuItems[SHOP_MENU_HEALTH] = 4;
 
-            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 5, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 5, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 10, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 10, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 15, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 2, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 2, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 4, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 5, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 8, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
             shopMenuItems[SHOP_MENU_AMMO] = 5;
 
             ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 8, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
@@ -278,9 +347,6 @@ Script "ShopOpen" (int id) {
     useExtendedInput(true);
     ShopMenuInitialize(id);
     LocalAmbientSound("menu/activate", 100);
-
-    shopCurrentMenu = 0;
-    shopCurrentItem = 0;
 
     int btn = -1;
 
