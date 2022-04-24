@@ -6501,22 +6501,20 @@ comment = "1:26";
 
 thing
 {
-x = 288.000;
-y = -1632.000;
-type = 10814;
-id = 956;
-arg0 = 133;
-special = 80;
+x = -1440.000;
+y = -1120.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-comment = "29:28";
 renderstyle = "";
+arg0 = 80;
 }
 
 thing
@@ -6906,20 +6904,20 @@ renderstyle = "";
 
 thing
 {
-x = 288.000;
+x = 32.000;
 y = -1632.000;
-type = 10555;
+type = 10900;
 angle = 180;
-id = 924;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-comment = "28:28";
+renderstyle = "";
+arg0 = 81;
 }
 
 thing
@@ -9445,38 +9443,20 @@ arg0 = 65;
 
 thing
 {
-x = -1440.000;
-y = -1120.000;
-type = 10900;
-angle = 90;
-coop = true;
-dm = true;
-single = true;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-renderstyle = "";
-arg0 = 80;
-}
-
-thing
-{
-x = 32.000;
+x = 272.000;
 y = -1632.000;
-type = 10900;
-angle = 180;
-coop = true;
-dm = true;
-single = true;
+type = 10555;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+single = true;
+dm = true;
+coop = true;
 renderstyle = "";
-arg0 = 81;
+arg0str = "ShopOpen";
+arg2 = 3;
 }
 
 vertex
@@ -19332,10 +19312,13 @@ linedef
 v1 = 306;
 v2 = 305;
 sidefront = 443;
+special = 80;
 blocking = true;
 dontdraw = true;
 playeruse = true;
 repeatspecial = true;
+arg2 = 3;
+arg0str = "ShopOpen";
 }
 
 linedef

@@ -18226,19 +18226,20 @@ height = -64;
 
 thing
 {
-x = 672.000;
-y = 1808.000;
-type = 10555;
-angle = 90;
+x = 928.000;
+y = 1952.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
 renderstyle = "";
+arg0 = 71;
 }
 
 thing
@@ -18789,20 +18790,20 @@ arg0 = 71;
 
 thing
 {
-x = 928.000;
-y = 1952.000;
-type = 10900;
-angle = 180;
-coop = true;
-dm = true;
-single = true;
+x = 672.000;
+y = 1792.000;
+type = 10555;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+single = true;
+dm = true;
+coop = true;
 renderstyle = "";
-arg0 = 71;
+arg0str = "ShopOpen";
+arg2 = 1;
 }
 
 vertex
@@ -52607,8 +52608,13 @@ v1 = 682;
 v2 = 691;
 sidefront = 3092;
 sideback = 3093;
+special = 80;
 twosided = true;
 secret = true;
+repeatspecial = true;
+arg0str = "ShopOpen";
+arg2 = 1;
+playeruse = true;
 }
 
 linedef
