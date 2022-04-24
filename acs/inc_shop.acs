@@ -23,7 +23,7 @@ const int SHOP_ID_MAX   = SHOP_ID + 100;
 
 ShopItem shopMenu[3][6];
 int shopMenuItems[3] = { 0, 0, 0 };
-str shopMenuNames[3] = { "Health", "Ammo", "Stats" };
+str shopMenuNames[3] = { "DRRP_SHOP_SEC_HEALTH", "DRRP_SHOP_SEC_AMMO", "DRRP_SHOP_SEC_STATS" };
 int shopCurrentMenu = 0;
 int shopCurrentItem = 0;
 
@@ -53,24 +53,24 @@ function void ShopMenuSetItemEmpty(int menu, int pos) {
 function void ShopMenuInitialize(int id) {
     switch (id) {
         default:
-            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, "Small medikit", 4, 99, "SmallMedikit", 1, "DRRP_SHOP_SMMED", "SHMED1");
-            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, "Large medikit", 15, 99, "LargeMedikit", 1, "DRRP_SHOP_LGMED", "SHMED2");
-            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, "Soul sphere", 30, 99, "InventorySoulSphere", 1, "DRRP_SHOP_SOULSPHERE", "SHSOUL");
-            ShopMenuSetItem(SHOP_MENU_HEALTH, 3, "Berserk", 40, 99, "DRRPBerserkItem", 1, "DRRP_SHOP_BERSERK", "SHBERS");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, l("DRRP_SHOP_SMMED"), 4, 99, "SmallMedikit", 1, l("DRRP_SHOP_SMMED_INFO"), "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, l("DRRP_SHOP_LGMED"), 15, 99, "LargeMedikit", 1, l("DRRP_SHOP_LGMED_INFO"), "SHMED2");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, l("DRRP_SHOP_SOULSPHERE"), 30, 99, "InventorySoulSphere", 1, l("DRRP_SHOP_SOULSPHERE_INFO"), "SHSOUL");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 3, l("DRRP_SHOP_BERSERK"), 40, 99, "DRRPBerserkItem", 1, l("DRRP_SHOP_BERSERK_INFO"), "SHBERS");
             ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
             shopMenuItems[SHOP_MENU_HEALTH] = 4;
 
-            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 600, "Balloon", 10, "DRRP_SHOP_HALONS", "SHBALL");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 400, "Clip", 10, "DRRP_SHOP_BULLETS", "SHCLIP");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShell", 10, "DRRP_SHOP_SHELLS", "SHSHEL");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 100, "RocketAmmo", 4, "DRRP_SHOP_ROCKETS", "SHROCK");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 600, "Cell", 10, "DRRP_SHOP_CELLS", "SHCELL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, l("DRRP_SHOP_HALONS"), 5, 600, "Balloon", 10, l("DRRP_SHOP_HALONS_INFO"), "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, l("DRRP_SHOP_BULLETS"), 5, 400, "Clip", 10, l("DRRP_SHOP_BULLETS_INFO"), "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, l("DRRP_SHOP_SHELLS"), 10, 99, "DRRPShell", 10, l("DRRP_SHOP_SHELLS_INFO"), "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, l("DRRP_SHOP_ROCKETS"), 10, 100, "RocketAmmo", 4, l("DRRP_SHOP_ROCKETS_INFO"), "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, l("DRRP_SHOP_CELLS"), 15, 600, "Cell", 10, l("DRRP_SHOP_CELLS_INFO"), "SHCELL");
             shopMenuItems[SHOP_MENU_AMMO] = 5;
 
-            ShopMenuSetItem(SHOP_MENU_STATS, 0, "+1 Accuracy", 8, -1, "DRRPShopPlayerAccuracy", 1, "DRRP_SHOP_ACCURACY", "");
-            ShopMenuSetItem(SHOP_MENU_STATS, 1, "+1 Agility", 8, -1, "DRRPShopPlayerAgility", 1, "DRRP_SHOP_AGILITY", "");
-            ShopMenuSetItem(SHOP_MENU_STATS, 2, "+1 Strength", 10, -1, "DRRPShopPlayerStrength", 1, "DRRP_SHOP_STRENGTH", "");
-            ShopMenuSetItem(SHOP_MENU_STATS, 3, "+1 Defense", 10, -1, "DRRPShopPlayerDefense", 1, "DRRP_SHOP_DEFENSE", "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, l("DRRP_SHOP_ACCURACY"), 8, -1, "DRRPShopPlayerAccuracy", 1, l("DRRP_SHOP_ACCURACY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, l("DRRP_SHOP_AGILITY"), 8, -1, "DRRPShopPlayerAgility", 1, l("DRRP_SHOP_AGILITY_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, l("DRRP_SHOP_STRENGTH"), 10, -1, "DRRPShopPlayerStrength", 1, l("DRRP_SHOP_STRENGTH_INFO"), "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, l("DRRP_SHOP_DEFENSE"), 10, -1, "DRRPShopPlayerDefense", 1, l("DRRP_SHOP_DEFENSE_INFO"), "");
             ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
             shopMenuItems[SHOP_MENU_STATS] = 4;
     }
@@ -169,37 +169,37 @@ function str ShopFeatAmText(int feature) {
 }
 
 function void ShopDrawWindowStatistics(void) {
-    DrawTextCenter("Statistics", SHOP_ID + 23, 75, 276, CR_WHITE);
+    DrawTextCenter(l("DRRP_SHOP_WINDOW_STATS"), SHOP_ID + 23, 75, 276, CR_WHITE);
 
     int height = 305;
     const int height_inc = 30;
     const int name_offset = 15;
     const int value_offset = 92 + 40;
 
-    DrawTextLeft("Strength:", SHOP_ID + 24, name_offset, height, CR_WHITE);
+    DrawTextLeft(l("DRRP_SHOP_STAT_STRENGTH"), SHOP_ID + 24, name_offset, height, CR_WHITE);
     DrawTextRight(ShopFeatAmText(RPG_Strength), SHOP_ID + 28, value_offset, height, CR_WHITE);
     height += height_inc;
-    DrawTextLeft("Defense:", SHOP_ID + 25, name_offset, height, CR_WHITE);
+    DrawTextLeft(l("DRRP_SHOP_STAT_DEFENSE"), SHOP_ID + 25, name_offset, height, CR_WHITE);
     DrawTextRight(ShopFeatAmText(RPG_Defense), SHOP_ID + 29, value_offset, height, CR_WHITE);
     height += height_inc;
-    DrawTextLeft("Accuracy:", SHOP_ID + 26, name_offset, height, CR_WHITE);
+    DrawTextLeft(l("DRRP_SHOP_STAT_ACCURACY"), SHOP_ID + 26, name_offset, height, CR_WHITE);
     DrawTextRight(ShopFeatAmText(RPG_Accuracy), SHOP_ID + 30, value_offset, height, CR_WHITE);
     height += height_inc;
-    DrawTextLeft("Agility:", SHOP_ID + 27, name_offset, height, CR_WHITE);
+    DrawTextLeft(l("DRRP_SHOP_STAT_AGILITY"), SHOP_ID + 27, name_offset, height, CR_WHITE);
     DrawTextRight(ShopFeatAmText(RPG_Agility), SHOP_ID + 31, value_offset, height, CR_WHITE);
 
     height += 50;
-    DrawTextLeft("Level:", SHOP_ID + 32, name_offset, height, CR_WHITE);
+    DrawTextLeft(l("DRRP_SHOP_STAT_LEVEL"), SHOP_ID + 32, name_offset, height, CR_WHITE);
     DrawTextRight(ShopFeatAmText(RPG_Level), SHOP_ID + 33, value_offset, height, CR_WHITE);
 }
 
 function str ShopPrevMenuName(void) {
-    if (shopCurrentMenu > 0) return shopMenuNames[shopCurrentMenu - 1];
-    return shopMenuNames[2];
+    if (shopCurrentMenu > 0) return l(shopMenuNames[shopCurrentMenu - 1]);
+    return l(shopMenuNames[2]);
 }
 
 function str ShopNextMenuName(void) {
-    return shopMenuNames[(shopCurrentMenu + 1) % 3];
+    return l(shopMenuNames[(shopCurrentMenu + 1) % 3]);
 }
 
 function int ShopCantIBuyIt(ShopItem item) {
@@ -211,7 +211,7 @@ function int ShopCantIBuyIt(ShopItem item) {
 }
 
 function void ShopDrawWindowMain(void) {
-    DrawTextCenter(StrParam(s:"Buy: ", s:shopMenuNames[shopCurrentMenu]),
+    DrawTextCenter(StrParam(l:"DRRP_SHOP_BUY", l:shopMenuNames[shopCurrentMenu]),
         SHOP_ID + 34, 270, 276, CR_WHITE);
 
     DrawTextLeft(ShopPrevMenuName(), SHOP_ID + 35, 195, 445, CR_WHITE);
@@ -252,11 +252,12 @@ function void ShopDrawWindowInfo(void) {
     DrawImageCenterScale(item.image, SUB_ID + 5, 120, 98);
     DrawTextRight(StrParam(s:"x", i:item.amount), SUB_ID + 3, 600, 315, CR_WHITE);
     int cantIBuy = ShopCantIBuyIt(item);
-    if (cantIBuy == 0) DrawTextCenter("Press Enter to buy", SUB_ID + 2, 510, 340, CR_YELLOW);
-    if (cantIBuy == 1) DrawTextCenter("Not enough credits", SUB_ID + 2, 510, 340, CR_RED);
-    if (cantIBuy == 2) DrawTextCenter("You have enough!", SUB_ID + 2, 510, 340, CR_RED);
-    /* TODO: SetHudWrapWidth */
+    if (cantIBuy == 0) DrawTextCenter(l("DRRP_SHOP_PRESS_ENTER"), SUB_ID + 2, 510, 340, CR_YELLOW);
+    if (cantIBuy == 1) DrawTextCenter(l("DRRP_SHOP_NOCREDITS"), SUB_ID + 2, 510, 340, CR_RED);
+    if (cantIBuy == 2) DrawTextCenter(l("DRRP_SHOP_OVERFLOW"), SUB_ID + 2, 510, 340, CR_RED);
+    SetHudWrapWidth(210);
     DrawTextLeft(item.description, SUB_ID, 412, 366, CR_WHITE);
+    SetHudWrapWidth(0);
 }
 
 function void ShopDrawWindow(void) {

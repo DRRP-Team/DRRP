@@ -12,6 +12,10 @@ const fixed HUD_RIGHT = 0.2;
 
 /* Useful functions */
 
+function str l(str string) { /* localize */
+    return StrParam(l:string);
+}
+
 function void throw(str error) {
     Print(s:"[ERROR] ", s:error);
     Log(s:"[ERROR] ", s:error);
