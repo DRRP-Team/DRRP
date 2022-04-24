@@ -18,7 +18,7 @@ version "2.5"
 // APIs
 #include "zscript/DRRP_API/APIWeapons.zsc"
 #include "zscript/DRRP_API/APIConversation.zsc"
-#include "zscript/DRRP_API/APIDoorCode.zsc"
+#include "zscript/DRRP_API/APIInput.zsc"
 #include "zscript/DRRP_API/APIShaders.zsc"
 #include "zscript/DRRP_API/APINotebook.zsc"
 
@@ -202,14 +202,14 @@ class DRRPPlayer: DoomPlayer {
 
 
     double GetScatterMultiplier( void ) {
-        return DRRPMath.Power( DRRPMath.e * 0.3725, -GetFeature( RPG_Accuracy ) );
+        return DRRPUtil.Power( DRRPUtil.e * 0.3725, -GetFeature( RPG_Accuracy ) );
     }
 
     virtual int getRPGAttackDamage( int min, int max = 0 ) {
         if ( ( max == 0 ) || ( max < min ) )
             max = min;
 
-        //int damageMultiplier = DRRPMath.Power( GetFeature( RPG_Strength ), 0.6 ) * 0.33 + 0.67;
+        //int damageMultiplier = DRRPUtil.Power( GetFeature( RPG_Strength ), 0.6 ) * 0.33 + 0.67;
         int damageMultiplier = GetFeature( RPG_Strength ) * 0.33 + 0.67;
 
         return Random( min + damageMultiplier, max + damageMultiplier );
@@ -221,7 +221,7 @@ class DRRPPlayer: DoomPlayer {
         //if ( DebugCVar && DebugCVar.GetBool() )
         //    console.printf( GetClassName() .. "::getRPGDefenceDamage(). Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
 
-        damage *= DRRPMath.Power( DRRPMath.e * 0.378, -( 1 + playerStats[ RPG_Defence ] ) ) + 0.053;
+        damage *= DRRPUtil.Power( DRRPUtil.e * 0.378, -( 1 + playerStats[ RPG_Defence ] ) ) + 0.053;
 
         if ( self.player.ReadyWeapon ) {
             String ReadyWeapon = "";

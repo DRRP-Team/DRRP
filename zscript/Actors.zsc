@@ -224,7 +224,7 @@ class DRRPTeleportFog: TeleportFog replaces TeleportFog {
     }
 
     void A_DRRP_TeleportationParticles( void ) {
-        DRRPActorAdditionalFunctions.SummonDRRPParticle( self, "DRRPTeleportationParticle", 24, 64 );
+        DRRPUtil.SummonDRRPParticle( self, "DRRPTeleportationParticle", 24, 64 );
     }
 
     States {

@@ -1193,7 +1193,7 @@ renderstyle = "";
 thing
 {
 x = 32.000;
-y = 416.000;
+y = 400.000;
 type = 10555;
 angle = 270;
 id = 496;
@@ -11588,10 +11588,12 @@ v1 = 337;
 v2 = 85;
 sidefront = 406;
 sideback = 407;
+special = 80;
 twosided = true;
 dontpegbottom = true;
 playeruse = true;
 repeatspecial = true;
+arg0str = "ShopOpen";
 }
 
 linedef

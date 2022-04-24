@@ -1,0 +1,37 @@
+/**
+ *Copyright (c) 2018-2019 DRRP-Team
+ *
+ *This software is released under the MIT License.
+ *https://opensource.org/licenses/MIT
+ */
+
+class PlayerInputHandler: EventHandler {
+
+    private bool extendedInput;
+
+    override void OnRegister() {
+        self.extendedInput = false;
+    }
+
+    void UseExtendedInput(bool mode) {
+        self.IsUiProcessor = mode;
+        self.extendedInput = mode;
+    }
+
+    override void NetworkProcess(ConsoleEvent e) {
+        if (e.Name == "ExtendedInput") UseExtendedInput(e.Args[0]);
+    }
+
+    override bool UiProcess(UiEvent e) {
+        if ( e.Type == e.Type_KeyDown ) DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar);
+        return false;
+    }
+
+    override bool InputProcess( InputEvent e ) {
+        if (self.extendedInput) return false;
+        if ( e.Type == e.Type_KeyDown ) DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar, e.KeyScan);
+        return false;
+    } // of override bool InputProcess( InputEvent e ) {}
+
+} // of class PlayerInputHandler : EventHandler {}
+

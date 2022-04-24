@@ -7,27 +7,6 @@
 
 // 10801 - 10900
 
-Actor DRRPShop 10555 {
-    //$Category Invisible
-    //$Sprite STEMA0
-    //$Colour #555555
-    //$NotAngled
-    //$Icon "tnt1a0"
-    //$Title Shop
-
-    -SOLID
-
-    Height 64
-    Radius 33
-
-    Tag "$DRRP_B_ID240"
-
-    States {
-        Spawn:
-            TNT1 A -1
-            Stop
-    }
-}
 
 Actor DRRPTrigger : DRRPCharacter 10554 {
     //$Category Invisible
@@ -200,6 +179,17 @@ Actor DRRPComputer : DRRPTrigger 10816 {
     Height 64
 
     Tag "$DRRP_E_COMPUTER"
+}
+
+Actor DRRPShop : DRRPComputer 10555 {
+    //$Category Invisible
+    //$Sprite STEMA0
+    //$Colour #555555
+    //$NotAngled
+    //$Icon "tnt1a0"
+    //$Title Shop
+
+    Tag "$DRRP_B_ID240"
 }
 
 Actor DRRPDoor : DRRPInfo 10815 {

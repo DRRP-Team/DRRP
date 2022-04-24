@@ -1192,10 +1192,10 @@ skill5 = true;
 
 thing
 {
-x = 32.000;
-y = 416.000;
-type = 10555;
-angle = 270;
+x = 352.000;
+y = -32.000;
+type = 10900;
+angle = 180;
 coop = true;
 dm = true;
 single = true;
@@ -1205,8 +1205,7 @@ skill3 = true;
 skill4 = true;
 skill5 = true;
 renderstyle = "";
-id = 496;
-comment = "15:16";
+arg0 = 3;
 }
 
 thing
@@ -2396,20 +2395,18 @@ arg0 = 1;
 
 thing
 {
-x = 352.000;
-y = -32.000;
-type = 10900;
-angle = 180;
-coop = true;
-dm = true;
-single = true;
+x = 32.000;
+y = 400.000;
+type = 10555;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+single = true;
+dm = true;
+coop = true;
 renderstyle = "";
-arg0 = 3;
 }
 
 vertex
@@ -6754,9 +6751,11 @@ linedef
 v1 = 77;
 v2 = 262;
 sidefront = 352;
+special = 80;
 blocking = true;
 playeruse = true;
 repeatspecial = true;
+arg0str = "ShopOpen";
 }
 
 linedef
