@@ -6,7 +6,7 @@ struct ShopItem {
     str name;
     int price;
     int max;
-    str item;
+    str classname;
     int amount;
     str description;
     str image;
@@ -29,7 +29,7 @@ int shopCurrentItem = 0;
 
 function void ShopMenuSetItem(
     int menu,
-    int pos, str name, int price, int max, str itemClass, int amount,
+    int pos, str name, int price, int max, str classname, int amount,
     str description, str image
 ) {
     if (pos > 5) throw("[ShopMenuSetItem] Invalid position!");
@@ -37,7 +37,7 @@ function void ShopMenuSetItem(
     item.name = name;
     item.price = price;
     item.max = max;
-    item.item = itemClass;
+    item.classname = classname;
     item.amount = amount;
     item.description = description;
     item.image = image;
@@ -55,16 +55,16 @@ function void ShopMenuInitialize(int id) {
         default:
             ShopMenuSetItem(SHOP_MENU_HEALTH, 0, "Small medikit", 4, 99, "SmallMedikit", 1, "DRRP_SHOP_SMMED", "SHMED1");
             ShopMenuSetItem(SHOP_MENU_HEALTH, 1, "Large medikit", 15, 99, "LargeMedikit", 1, "DRRP_SHOP_LGMED", "SHMED2");
-            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, "Soul sphere", 30, 99, "SoulSphere", 1, "DRRP_SHOP_SOULSPHERE", "SHSOUL");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, "Soul sphere", 30, 99, "InventorySoulSphere", 1, "DRRP_SHOP_SOULSPHERE", "SHSOUL");
             ShopMenuSetItem(SHOP_MENU_HEALTH, 3, "Berserk", 40, 99, "DRRPBerserkItem", 1, "DRRP_SHOP_BERSERK", "SHBERS");
             ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
             shopMenuItems[SHOP_MENU_HEALTH] = 4;
 
-            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 999, "DRRPShopBalloon", 10, "DRRP_SHOP_HALONS", "SHBALL");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 999, "DRRPShopClipBox", 10, "DRRP_SHOP_BULLETS", "SHCLIP");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShopShellBox", 10, "DRRP_SHOP_SHELLS", "SHSHEL");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 99, "DRRPShopRocketBox", 4, "DRRP_SHOP_ROCKETS", "SHROCK");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 999, "DRRPShopCellPack", 10, "DRRP_SHOP_CELLS", "SHCELL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 600, "Balloon", 10, "DRRP_SHOP_HALONS", "SHBALL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 400, "Clip", 10, "DRRP_SHOP_BULLETS", "SHCLIP");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShell", 10, "DRRP_SHOP_SHELLS", "SHSHEL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 100, "RocketAmmo", 4, "DRRP_SHOP_ROCKETS", "SHROCK");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 600, "Cell", 10, "DRRP_SHOP_CELLS", "SHCELL");
             shopMenuItems[SHOP_MENU_AMMO] = 5;
 
             ShopMenuSetItem(SHOP_MENU_STATS, 0, "+1 Accuracy", 8, -1, "DRRPShopPlayerAccuracy", 1, "DRRP_SHOP_ACCURACY", "");
@@ -202,6 +202,14 @@ function str ShopNextMenuName(void) {
     return shopMenuNames[(shopCurrentMenu + 1) % 3];
 }
 
+function int ShopCantIBuyIt(ShopItem item) {
+    if (CheckInventory("Credit") < item.price) return 1;
+
+    if (item.max >= 0 && CheckInventory(item.classname) >= item.max) return 2;
+
+    return 0;
+}
+
 function void ShopDrawWindowMain(void) {
     DrawTextCenter(StrParam(s:"Buy: ", s:shopMenuNames[shopCurrentMenu]),
         SHOP_ID + 34, 270, 276, CR_WHITE);
@@ -225,8 +233,12 @@ function void ShopDrawWindowMain(void) {
         else
             ClearImage(MAIN_ID + i);
 
-        if (shopCurrentItem == i)
-            DrawImage("SHOPSEL", MAIN_ID + 6, 161, 290 + height_inc * i);
+        if (shopCurrentItem == i) {
+            if (ShopCantIBuyIt(item)) /* You can't */
+                DrawImage("SHOPSEL2", MAIN_ID + 6, 161, 290 + height_inc * i);
+            else /* You can */
+                DrawImage("SHOPSEL", MAIN_ID + 6, 161, 290 + height_inc * i);
+        }
     }
 }
 
@@ -239,7 +251,10 @@ function void ShopDrawWindowInfo(void) {
     SetHudSize(150, 150);
     DrawImageCenterScale(item.image, SUB_ID + 5, 120, 98);
     DrawTextRight(StrParam(s:"x", i:item.amount), SUB_ID + 3, 600, 315, CR_WHITE);
-    DrawTextCenter("Press Enter to buy", SUB_ID + 2, 510, 340, CR_YELLOW);
+    int cantIBuy = ShopCantIBuyIt(item);
+    if (cantIBuy == 0) DrawTextCenter("Press Enter to buy", SUB_ID + 2, 510, 340, CR_YELLOW);
+    if (cantIBuy == 1) DrawTextCenter("Not enough credits", SUB_ID + 2, 510, 340, CR_RED);
+    if (cantIBuy == 2) DrawTextCenter("You have enough!", SUB_ID + 2, 510, 340, CR_RED);
     /* TODO: SetHudWrapWidth */
     DrawTextLeft(item.description, SUB_ID, 412, 366, CR_WHITE);
 }
@@ -262,6 +277,9 @@ Script "ShopOpen" (int id) {
     useExtendedInput(true);
     ShopMenuInitialize(id);
     LocalAmbientSound("menu/activate", 100);
+
+    shopCurrentMenu = 0;
+    shopCurrentItem = 0;
 
     int btn = -1;
 
@@ -299,10 +317,23 @@ Script "ShopOpen" (int id) {
             LocalAmbientSound("menu/cursor", 100);
         }
 
+        if (btn == INPUT_ENTER) {
+            ShopItem item = shopMenu[shopCurrentMenu][shopCurrentItem];
+
+            if (ShopCantIBuyIt(item)) {
+                LocalAmbientSound("menu/invalid", 100);
+                continue;
+            }
+
+            LocalAmbientSound("menu/choose", 100);
+            GiveInventory(item.classname, item.amount);
+            TakeInventory("Credit", item.price);
+        }
+
         Delay(1);
     }
 
-    LocalAmbientSound("menu/clear", 100);
+    LocalAmbientSound("menu/dismiss", 100);
 
     ShopHideWindow();
 
