@@ -145,57 +145,6 @@ function void ShopMenuInitialize(int id) {
     }
 }
 
-function void ClearImage(int id) {
-    HudMessage(s:""; HUDMSG_PLAIN, id, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
-}
-
-function void DrawImage(str image, int id, int x, int y) {
-    if (!StrLen(image)) {
-        ClearImage(id);
-        return;
-    }
-    SetHudSize(640, 480);
-    SetFont(image);
-    HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_LEFT, toFixed(y) + HUD_TOP, 0, 1);
-}
-
-function void DrawImageCenter(str image, int id, int x, int y) {
-    if (!StrLen(image)) {
-        ClearImage(id);
-        return;
-    }
-    SetHudSize(640, 480);
-    SetFont(image);
-    HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_CENTER, 0, 1);
-}
-
-function void DrawImageCenterScale(str image, int id, int x, int y) {
-    if (!StrLen(image)) {
-        ClearImage(id);
-        return;
-    }
-    SetFont(image);
-    HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_CENTER, 0, 1);
-}
-
-function void DrawTextRight(str text, int id, int x, int y, int color) {
-    SetHudSize(640, 480);
-    SetFont("defsmallfont2");
-    HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_RIGHT, toFixed(y) + HUD_TOP, 0, 1);
-}
-
-function void DrawTextCenter(str text, int id, int x, int y, int color) {
-    SetHudSize(640, 480);
-    SetFont("defsmallfont2");
-    HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_TOP, 0, 1);
-}
-
-function void DrawTextLeft(str text, int id, int x, int y, int color) {
-    SetHudSize(640, 480);
-    SetFont("defsmallfont2");
-    HudMessage(s:text; HUDMSG_PLAIN, id, color, toFixed(x) + HUD_LEFT, toFixed(y) + HUD_TOP, 0, 1);
-}
-
 function str ShopInvAmText(str classname) {
     return StrParam(i:CheckInventory(classname));
 }
