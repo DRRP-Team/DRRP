@@ -611,21 +611,6 @@ Script "transformation"(int tid, int timedelay) {
  * RPG System
  */
 
-// For "/ZScript/RPGSystem.zsc":
-enum RPGGetFeatureStaticTypes {
-    RPG_Level,
-    RPG_Experience,
-    RPG_NextLevelXP,
-
-    RPG_MaxHealth,
-    RPG_MaxArmor,
-
-    RPG_Accuracy,
-    RPG_Agility,
-    RPG_Defense,
-    RPG_Strength
-};
-
 bool hasKillsAchievement = false;
 bool hasSecretsAchievement = false;
 

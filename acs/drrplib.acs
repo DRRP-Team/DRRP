@@ -391,6 +391,25 @@ function bool onBtnPress(int button) {
     return input & button;
 }
 
+// For "/ZScript/RPGSystem.zsc":
+enum RPGGetFeatureStaticTypes {
+    RPG_Level,
+    RPG_Experience,
+    RPG_NextLevelXP,
+
+    RPG_MaxHealth,
+    RPG_MaxArmor,
+
+    RPG_Accuracy,
+    RPG_Agility,
+    RPG_Defense,
+    RPG_Strength
+};
+
+function int GetPlayerFeature(int feature) {
+    return ScriptCall("DRRPPlayer", "GetFeatureStatic", feature);
+}
+
 const str INTERNAL_META_STRING_KEY = "drrp_internal_metastring";
 
 function str GetInternalMetaString(void) {
