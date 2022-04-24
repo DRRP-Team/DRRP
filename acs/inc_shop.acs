@@ -23,10 +23,9 @@ const int SHOP_ID_MAX   = SHOP_ID + 100;
 
 ShopItem shopMenu[3][6];
 int shopMenuItems[3] = { 0, 0, 0 };
+str shopMenuNames[3] = { "Health", "Ammo", "Stats" };
 int shopCurrentMenu = 0;
 int shopCurrentItem = 0;
-
-bool shopIsOpened = false;
 
 function void ShopMenuSetItem(
     int menu,
@@ -45,37 +44,69 @@ function void ShopMenuSetItem(
     ShopMenu[menu][pos] = item;
 }
 
+function void ShopMenuSetItemEmpty(int menu, int pos) {
+    if (pos > 5) throw("[ShopMenuSetItem] Invalid position!");
+    ShopItem item;
+    ShopMenu[menu][pos] = item;
+}
+
 function void ShopMenuInitialize(int id) {
     switch (id) {
         default:
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 0, "Small medikit", 4, 99, "SmallMedikit", 1, "DRRP_SHOP_SMMED", "SHMED1");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 1, "Large medikit", 15, 99, "LargeMedikit", 1, "DRRP_SHOP_LGMED", "SHMED2");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 2, "Soul sphere", 30, 99, "SoulSphere", 1, "DRRP_SHOP_SOULSPHERE", "SHSOUL");
+            ShopMenuSetItem(SHOP_MENU_HEALTH, 3, "Berserk", 40, 99, "DRRPBerserkItem", 1, "DRRP_SHOP_BERSERK", "SHBERS");
+            ShopMenuSetItemEmpty(SHOP_MENU_HEALTH, 4);
+            shopMenuItems[SHOP_MENU_HEALTH] = 4;
+
             ShopMenuSetItem(SHOP_MENU_AMMO, 0, "Halon canisters", 5, 999, "DRRPShopBalloon", 10, "DRRP_SHOP_HALONS", "SHBALL");
             ShopMenuSetItem(SHOP_MENU_AMMO, 1, "Bullets", 5, 999, "DRRPShopClipBox", 10, "DRRP_SHOP_BULLETS", "SHCLIP");
             ShopMenuSetItem(SHOP_MENU_AMMO, 2, "Shells", 10, 99, "DRRPShopShellBox", 10, "DRRP_SHOP_SHELLS", "SHSHEL");
             ShopMenuSetItem(SHOP_MENU_AMMO, 3, "Rockets", 10, 99, "DRRPShopRocketBox", 4, "DRRP_SHOP_ROCKETS", "SHROCK");
-            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 999, "DRRPShopCellBox", 10, "DRRP_SHOP_CELLS", "SHCELL");
+            ShopMenuSetItem(SHOP_MENU_AMMO, 4, "Cells", 15, 999, "DRRPShopCellPack", 10, "DRRP_SHOP_CELLS", "SHCELL");
             shopMenuItems[SHOP_MENU_AMMO] = 5;
+
+            ShopMenuSetItem(SHOP_MENU_STATS, 0, "+1 Accuracy", 8, 99, "DRRPShopPlayerAccuracy", 1, "DRRP_SHOP_ACCURACY", "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 1, "+1 Agility", 8, 99, "DRRPShopPlayerAgility", 1, "DRRP_SHOP_AGILITY", "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 2, "+1 Strength", 10, 99, "DRRPShopPlayerStrength", 1, "DRRP_SHOP_STRENGTH", "");
+            ShopMenuSetItem(SHOP_MENU_STATS, 3, "+1 Defense", 10, 99, "DRRPShopPlayerDefense", 1, "DRRP_SHOP_DEFENSE", "");
+            ShopMenuSetItemEmpty(SHOP_MENU_STATS, 4);
+            shopMenuItems[SHOP_MENU_STATS] = 4;
     }
 }
 
+function void ClearImage(int id) {
+    HudMessage(s:""; HUDMSG_PLAIN, id, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
+}
+
 function void DrawImage(str image, int id, int x, int y) {
+    if (!StrLen(image)) {
+        ClearImage(id);
+        return;
+    }
     SetHudSize(640, 480);
     SetFont(image);
     HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_LEFT, toFixed(y) + HUD_TOP, 0, 1);
 }
 
 function void DrawImageCenter(str image, int id, int x, int y) {
+    if (!StrLen(image)) {
+        ClearImage(id);
+        return;
+    }
     SetHudSize(640, 480);
     SetFont(image);
     HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_CENTER, 0, 1);
 }
 
 function void DrawImageCenterScale(str image, int id, int x, int y) {
+    if (!StrLen(image)) {
+        ClearImage(id);
+        return;
+    }
     SetFont(image);
     HudMessage(s:"A"; HUDMSG_PLAIN, id, CR_WHITE, toFixed(x) + HUD_CENTER, toFixed(y) + HUD_CENTER, 0, 1);
-}
-
-function void ClearImage(int id) {
-    HudMessage(s:""; HUDMSG_PLAIN, id, CR_WHITE, 0 + HUD_LEFT, 0 + HUD_TOP, 0, 1);
 }
 
 function void DrawTextRight(str text, int id, int x, int y, int color) {
@@ -152,25 +183,37 @@ function void ShopDrawWindowStatistics(void) {
     DrawTextRight("99", SHOP_ID + 33, value_offset, height, CR_WHITE);
 }
 
-function void ShopDrawWindowMain(void) {
-    shopCurrentMenu = 1;
-    DrawTextCenter("Buy: Ammo", SHOP_ID + 34, 270, 276, CR_WHITE);
+function str ShopPrevMenuName(void) {
+    if (shopCurrentMenu > 0) return shopMenuNames[shopCurrentMenu - 1];
+    return shopMenuNames[2];
+}
 
-    DrawTextLeft("Health", SHOP_ID + 35, 195, 445, CR_WHITE);
-    DrawTextRight("Stats", SHOP_ID + 36, 345, 445, CR_WHITE);
+function str ShopNextMenuName(void) {
+    return shopMenuNames[(shopCurrentMenu + 1) % 3];
+}
+
+function void ShopDrawWindowMain(void) {
+    DrawTextCenter(StrParam(s:"Buy: ", s:shopMenuNames[shopCurrentMenu]),
+        SHOP_ID + 34, 270, 276, CR_WHITE);
+
+    DrawTextLeft(ShopPrevMenuName(), SHOP_ID + 35, 195, 445, CR_WHITE);
+    DrawTextRight(ShopNextMenuName(), SHOP_ID + 36, 345, 445, CR_WHITE);
 
     const int MAIN_ID = SHOP_ID + 40;
     const int height = 300;
     const int height_inc = 26;
 
-    for (int i = 0; i < shopMenuItems[shopCurrentMenu]; i++) {
+    for (int i = 0; i < 5; i++) {
         ShopItem item = shopMenu[shopCurrentMenu][i];
-        DrawTextLeft(
-            StrParam(s:item.name, s:" (", i:item.price, s:" UAC)"),
-            MAIN_ID + i,
-            165, height + height_inc * i,
-            CR_WHITE
-        );
+        if (i < shopMenuItems[shopCurrentMenu])
+            DrawTextLeft(
+                StrParam(s:item.name, s:" (", i:item.price, s:" UAC)"),
+                MAIN_ID + i,
+                165, height + height_inc * i,
+                CR_WHITE
+            );
+        else
+            ClearImage(MAIN_ID + i);
 
         if (shopCurrentItem == i)
             DrawImage("SHOPSEL", MAIN_ID + 6, 161, 290 + height_inc * i);
@@ -225,6 +268,24 @@ Script "ShopOpen" (int id) {
 
         if (btn == INPUT_TOP && shopCurrentItem - 1 >= 0) {
             shopCurrentItem--;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_LEFT) {
+            shopCurrentMenu--;
+            if (shopCurrentMenu < 0) {
+                shopCurrentMenu = 2;
+            }
+            shopCurrentItem = 0;
+            LocalAmbientSound("menu/cursor", 100);
+        }
+
+        if (btn == INPUT_RIGHT) {
+            shopCurrentMenu++;
+            if (shopCurrentMenu > 2) {
+                shopCurrentMenu = 0;
+            }
+            shopCurrentItem = 0;
             LocalAmbientSound("menu/cursor", 100);
         }
 
