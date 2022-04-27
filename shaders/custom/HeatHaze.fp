@@ -11,7 +11,7 @@
 
 void main() {
     float Speed        = 1.8;
-    float Offset       = 4.4;
+    float Offset       = 4.4 * Temperature;
     float TextureScale = 1.0;
 
     vec3 heatnormal = texture(HazeBump, vec2(TexCoord.xy * TextureScale + vec2(0, timer * .01 * Speed))).rgb - 0.5;

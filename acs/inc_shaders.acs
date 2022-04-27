@@ -7,11 +7,11 @@
 
 // Compile drrp.acs!
 
-#define CINEMATIC_SHADERS_COUNT 20
+#define CINEMATIC_SHADERS_COUNT 19
 str CINEMATIC_SHADERS[] = {
     // Cinematic shaders
     "RadialBlurShader",
-    "HeatHaze",
+    // "HeatHaze",
     "FilmGrain",
     "XHUBGrain",
     "BCFilter",
