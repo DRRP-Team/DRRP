@@ -678,7 +678,7 @@ script 107 (int arg0, int arg1, int arg2) { //X=1 Y=23 START=L_306 END=L_313 UNK
     int sgenid0 = -88; // [x=2, y=24]
     int sgenid1 = 55; // [x=1, y=23]
     if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(61)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=61
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(62)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=62
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(62), DLG_JENSEN); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=62
     if(arg2 == 0) Thing_Remove(170); // Jensen in the room
     if(arg2 == 0) SpawnForced("Scientist", getMediumX(20), getMediumY(196), 0, 88); // ( USE MODIFYWORLD IF_VAR( 0 ) ) SHOW_THING ID=15 STATE=0
     if(arg2 == 0) SetThingSpecial(88, 80, 116);

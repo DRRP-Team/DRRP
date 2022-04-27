@@ -439,11 +439,11 @@ script 58 (int arg0, int arg1, int arg2) { //X=15 Y=29 START=L_206 END=L_206 UNK
 script 59 (int arg0, int arg1, int arg2) { //X=26 Y=29 START=L_207 END=L_227 UNKN=11010048 UNKN2=0
     int sgenid0 = -861; // [x=26, y=29]
     int sgenid1 = -892; // [x=27, y=28]
-    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(24)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=24
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(24), DLG_SCIENTIST); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=24
     if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=26 Y=29
-    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(25)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=25
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(25), DLG_SCIENTIST); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=25
     if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=26 Y=29
-    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(26)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=26
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(26), DLG_SCIENTIST); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=26
     if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=26 Y=29 VAL=0
     if(arg2 == 3) ACS_NamedExecuteWait("lockwindow", 0, getString(28), getString(27), 59); // ( USE IF_VAR( 4 ) ) PASSCODE_OR_HALT PASS=27 MSG=28
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) DOOR_UNLOCK LINE=11
@@ -459,7 +459,7 @@ script 59 (int arg0, int arg1, int arg2) { //X=26 Y=29 START=L_207 END=L_227 UNK
     /* Not Implemented */ // ( USE IF_VAR( 4 ) ) FRAME ARG1=0
     if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(29)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG_WITH_SOUND STR=29
     if(arg2 == 3) Delay(10); // ( USE IF_VAR( 4 ) ) SLEEP MSEC=300
-    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(30)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG_WITH_SOUND STR=30
+    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(30), DLG_SCIENTIST); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG_WITH_SOUND STR=30
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid1, 4); // ( USE IF_VAR( 4 ) ) SET_VAR X=27 Y=28 VAL=4
     if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=26 Y=29
     if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(29)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=29
