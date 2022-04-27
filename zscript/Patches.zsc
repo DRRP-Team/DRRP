@@ -136,7 +136,7 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
         Height 64;
         Mass 0x7FFFFFFF;
         Alpha 1; // Enable for shader
-        RenderStyle "Add"; // Enable for shader
+        // RenderStyle "Add"; // Enable for shader
         DamageType "DRRPFireDmg";
         DamageFactor "DRRPFireExtDmg", 1.0;
         DamageFactor "Normal", 0;

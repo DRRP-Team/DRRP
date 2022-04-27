@@ -100,7 +100,7 @@ vec4 getFire(in vec2 texcoord) {
     // Shade central part of the fire
     baseTexture.rgb *= mix(0.7, 1., fireShade);
 
-    float fireColorRampIndex = baseTexture.r * fireTemperature;
+    float fireColorRampIndex = baseTexture.r * baseTexture.a * fireTemperature;
 
     vec4 colorRamp = texture(tex_colorRamp, vec2(fireColorRampIndex, 0.5f));
     
