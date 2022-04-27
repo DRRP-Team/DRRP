@@ -165,6 +165,10 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
         return true;
     } // of override bool CanCollideWith( Actor other, bool passive )
 
+    bool useShader() {
+        return CVar.FindCVar("drrp_enable_fire_shader").GetBool();
+    }
+
     override void Tick() {
         damageNearestPlayers();
 
@@ -193,8 +197,12 @@ class DRRPFire: Actor { // Has Decorate heir (DRRPFire_Decorate).
             FIRE A 0 Bright A_PlaySound("fire/loop3", CHAN_7, (Args[0] * 1.0) / 255, true, 2.5);
             FIRE A 0 Bright A_Jump(256, Random(1, 8));
         Spawn.Loop:
-            FIRE ABCDEFGH 2 BRIGHT;
+            FIRE A 0 Bright A_JumpIf(useShader(), "Spawn.Loop.Shader");
+            FIRE ABCDEFGH 2 BRIGHT; // Sprite
             Loop;
+        Spawn.Loop.Shader:
+            FLAM AAAAAAAA 2 BRIGHT; // Shader
+            Goto Spawn.Loop;
     }
 }
 
