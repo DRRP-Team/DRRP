@@ -1,0 +1,699 @@
+#include "zcommon.acs"
+
+const int CRATES_SPOT   = 18;
+const int CRATES_ID     = 19;
+const int CRATES_SHARDS = 14523;
+const int DROP_ID       = 14522;
+
+// Coordinate offset is: (960;576)
+
+function str getString(int id) {
+    return StrParam(l:StrParam(s:"DRRP_HUB_", i:id));
+}
+
+function fixed getMediumX(int x) {
+    return (-960 + x * 8) << 16;
+}
+
+function fixed getMediumY(int y) {
+    return (2048 - 576 - y * 8) << 16;
+}
+
+function str localizeSound(str sound) {
+    return StrParam(s:sound, l:"DRRP_D_SOUND_SUFFIX");;
+}
+
+/**
+ * Returns current game stage
+ * 0 - First enter
+ * 1 - After SEC3
+ * 2 - After SEC5
+ * 3 - After End
+ */
+function int stage(void) {
+    if (!CheckInventory("DRRPGreenCard"))    return 0;
+    if (!CheckInventory("DRRPBlueCard"))     return 1;
+    if (!CheckInventory("DRRPRedCard"))      return 2;
+    return 3;
+}
+
+int current_stage;
+
+function bool isStage(int _stage) {
+    return stage() == _stage;
+}
+
+#define IDSNUMBER 18
+
+int idsToReset[IDSNUMBER] = {
+    -179,
+    -242,
+    -310,
+    -312,
+    -279,
+    -188,
+    -442,
+    -475,
+    -537,
+    -570,
+    -434,
+    -465,
+    -496,
+    -529,
+    -666,
+    -696,
+    -727,
+    -819
+};
+
+/**
+ * Resets counters of all characters after every stage change
+ * It's used to fix the bug when the character got counter 2
+ * but at this stage the character can't process it.
+ */
+function void resetAllCharacters(void) {
+    for (int i = 0; i < IDSNUMBER; i++) {
+        ScriptCall("ConversationController", "SetArgument", idsToReset[i], 0);
+    }
+}
+
+Script "onCinematicShadersLoad" (bool forced) {
+    if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HUB", true);
+}
+
+/* DRRPInformatorActor */
+Script "getString" (int id) {
+    SetResultValue(getString(id));
+}
+
+Script 666 ENTER {
+    SetHudSize(640, 400, 0);
+    SetFont("bigfont");
+    HudMessage(l:"DRRP_B_ID57";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
+    //SetFont("smallfont");
+    //HudMessage(s:"By \cgPROPHESSOR"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    ACS_Execute(1000, 0);
+    ACS_Execute(1001, 0);
+    //ACS_Execute(3005, 0); // WIP level
+    ACS_Execute(3004, 0); // Give automap
+    current_stage = stage();
+}
+
+Script 667 RETURN {
+    Thing_Remove(CRATES_ID);
+    Thing_Remove(CRATES_SHARDS);
+    Thing_Remove(DROP_ID);
+    SpawnSpot("DRRPCrate", CRATES_SPOT, CRATES_ID);
+    ScriptCall("ConversationController", "SetArgument", -465, 0); // Reset the doctor
+    if (current_stage != stage()) { // Got a new keycard
+        if(GetCVar("drrp_debug_mode")) print(s:"You got a new keycard! All dialogs were updated!");
+        resetAllCharacters();
+        current_stage = stage();
+    }
+}
+
+script 1000 (void) {
+    AmbientSound("ambient/drone1", 127);
+    Delay(34*3);
+    Restart;
+}
+
+script 1001 (void){
+    int her = random(0, 3);
+    switch(her){
+        case 0:
+        break;
+        case 1:
+        AmbientSound(localizeSound("ms/doctor"), 127);
+        break;
+        case 2:
+        AmbientSound(localizeSound("ms/psy"), 127);
+        break;
+        case 3:
+        AmbientSound(localizeSound("ms/safe"), 127);
+    }
+    Delay(34*15);
+    Restart;
+}
+
+script 1 (int arg0, int arg1, int arg2) { //X=15 Y=16 START=L_0 END=L_0 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) SHOP ID=0
+}
+script 2 (int arg0, int arg1, int arg2) { //X=14 Y=17 START=L_1 END=L_10 UNKN=5242880 UNKN2=0
+    int sgenid0 = -465; // [x=14, y=17]
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(43)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG_WITH_SOUND STR=43
+    if(arg2 == 0) GiveInventory("Health", 1000); // ( USE IF_VAR( 0 ) ) INC_STAT AMOUNT=100 STAT=0
+    if(arg2 == 0) FadeRange(255, 255, 255, 1.0, 0, 0, 0, 0.0, 0.5);
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) STBARMSG STR=44
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=14 Y=17
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(45)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=45
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=14 Y=17
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(46)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=46
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=14 Y=17
+    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(47)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=47
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 4 ) ) SET_VAR X=14 Y=17 VAL=0
+}
+script 3 (int arg0, int arg1, int arg2) { //X=16 Y=17 START=L_11 END=L_20 UNKN=5242880 UNKN2=0
+    int sgenid0 = -529; // [x=16, y=17]
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(38)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=38
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=16 Y=17
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(39)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=39
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 1 ) ) INC_VAR X=16 Y=17
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(40)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=40
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=16 Y=17
+    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(41)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=41
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=16 Y=17
+    if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(42)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=42
+    if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 8 ) ) SET_VAR X=16 Y=17 VAL=0
+}
+script 4 (int arg0, int arg1, int arg2) { //X=2 Y=18 START=L_21 END=L_21 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=204
+}
+script 5 (int arg0, int arg1, int arg2) { //X=3 Y=18 START=L_22 END=L_25 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=-2146302714 X=5 Y=18
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=11 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=204
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=206
+}
+script 6 (int arg0, int arg1, int arg2) { //X=4 Y=18 START=L_26 END=L_27 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=204
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=206
+}
+script 7 (int arg0, int arg1, int arg2) { //X=5 Y=18 START=L_28 END=L_31 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( -32768 ) ) STBARMSG_ALT STR=19
+    /* Not Implemented */ // ( IF_VAR( 28672 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=206
+}
+script 8 (int arg0, int arg1, int arg2) { //X=7 Y=18 START=L_32 END=L_44 UNKN=6815744 UNKN2=0
+    int sgenid0 = -242; // [x=7, y=18]
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(57)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=57
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=18 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(58)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=58
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=7 Y=18 VAL=1
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(59)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=59
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(60)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=60
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=7 Y=18 VAL=2
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(61)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=61
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=7 Y=18 VAL=0
+    if(arg2 == 2 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(62)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=62
+    if(arg2 == 2 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=7 Y=18 VAL=3
+    if(arg2 == 3 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(63)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=63
+    if(arg2 == 3 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 4 ) ) SET_VAR X=7 Y=18 VAL=0
+}
+script 9 (int arg0, int arg1, int arg2) { //X=13 Y=18 START=L_45 END=L_63 UNKN=9961472 UNKN2=0
+    int sgenid0 = -434; // [x=13, y=18]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(108)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=108
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=13 Y=18 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=13 Y=18 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(109)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=109
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=13 Y=18
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(110)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=110
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=13 Y=18 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(107)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=107
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=13 Y=18 VAL=0
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 1 ) ) SET_VAR X=13 Y=18 VAL=1
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(111)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=111
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 2 ) ) INC_VAR X=13 Y=18
+    if(arg2 == 3 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(112)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=112
+    if(arg2 == 3 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=13 Y=18
+    if(arg2 == 4 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(107)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=107
+    if(arg2 == 4 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 8 ) ) SET_VAR X=13 Y=18 VAL=0
+}
+script 10 (int arg0, int arg1, int arg2) { //X=25 Y=18 START=L_64 END=L_67 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( 8192 ) ) STBARMSG_ALT STR=20
+    /* Not Implemented */ // ( IF_VAR( -12288 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=16
+}
+script 11 (int arg0, int arg1, int arg2) { //X=26 Y=18 START=L_68 END=L_69 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=16
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=18
+}
+script 12 (int arg0, int arg1, int arg2) { //X=27 Y=18 START=L_70 END=L_73 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=1186054 X=25 Y=18
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=12 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=16
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=18
+}
+script 13 (int arg0, int arg1, int arg2) { //X=28 Y=18 START=L_74 END=L_74 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=18
+}
+script 14 (int arg0, int arg1, int arg2) { //X=5 Y=19 START=L_75 END=L_85 UNKN=5767168 UNKN2=0
+    int sgenid0 = -179; // [x=5, y=19]
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(51)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=51
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=5 Y=19 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(52)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=52
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=5 Y=19 VAL=1
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(53)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=53
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(54)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=54
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=5 Y=19 VAL=2
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(55)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=55
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=5 Y=19 VAL=0
+    if(arg2 == 2 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(56)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=56
+    if(arg2 == 2 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=5 Y=19 VAL=0
+}
+script 15 (int arg0, int arg1, int arg2) { //X=25 Y=19 START=L_86 END=L_99 UNKN=7340032 UNKN2=0
+    int sgenid0 = -819; // [x=25, y=19]
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(93)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=93
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=25 Y=19 VAL=1
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(94)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=94
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=25 Y=19 VAL=2
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(95)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=95
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=25 Y=19 VAL=3
+    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(96)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=96
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 4 ) ) INC_VAR X=25 Y=19
+    if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(97)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=97
+    if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 8 ) ) INC_VAR X=25 Y=19
+    if(arg2 == 5) ACS_NamedExecuteWait("window", 0, getString(98)); // ( USE IF_VAR( 16 ) ) SHOW_MONOLOG STR=98
+    if(arg2 == 5) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 16 ) ) INC_VAR X=25 Y=19
+    if(arg2 == 6) ACS_NamedExecuteWait("window", 0, getString(99)); // ( USE IF_VAR( 32 ) ) SHOW_MONOLOG STR=99
+    if(arg2 == 6) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 32 ) ) SET_VAR X=25 Y=19 VAL=3
+}
+script 16 (int arg0, int arg1, int arg2) { //X=2 Y=20 START=L_100 END=L_100 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=197
+}
+script 17 (int arg0, int arg1, int arg2) { //X=3 Y=20 START=L_101 END=L_104 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=-2146171642 X=5 Y=20
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=10 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=197
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=199
+}
+script 18 (int arg0, int arg1, int arg2) { //X=4 Y=20 START=L_105 END=L_106 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=197
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=199
+}
+script 19 (int arg0, int arg1, int arg2) { //X=5 Y=20 START=L_107 END=L_110 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( -32768 ) ) STBARMSG_ALT STR=18
+    /* Not Implemented */ // ( IF_VAR( 28672 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=199
+}
+script 20 (int arg0, int arg1, int arg2) { //X=10 Y=20 START=L_111 END=L_111 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=171
+}
+script 21 (int arg0, int arg1, int arg2) { //X=20 Y=20 START=L_112 END=L_112 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=73
+}
+script 22 (int arg0, int arg1, int arg2) { //X=25 Y=20 START=L_113 END=L_116 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( 8192 ) ) STBARMSG_ALT STR=21
+    /* Not Implemented */ // ( IF_VAR( -12288 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=8
+}
+script 23 (int arg0, int arg1, int arg2) { //X=26 Y=20 START=L_117 END=L_118 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=8
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=6
+}
+script 24 (int arg0, int arg1, int arg2) { //X=27 Y=20 START=L_119 END=L_122 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=1317126 X=25 Y=20
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=13 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=8
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=6
+}
+script 25 (int arg0, int arg1, int arg2) { //X=28 Y=20 START=L_123 END=L_123 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=6
+}
+script 26 (int arg0, int arg1, int arg2) { //X=10 Y=21 START=L_124 END=L_125 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) REQUIRE_KEYCARD KEY=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=171
+}
+script 27 (int arg0, int arg1, int arg2) { //X=15 Y=21 START=L_126 END=L_126 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( NORTH ) IF_VAR( 0 ) ) STBARMSG STR=2
+}
+script 28 (int arg0, int arg1, int arg2) { //X=20 Y=21 START=L_127 END=L_128 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) REQUIRE_KEYCARD KEY=2
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=73
+}
+script 29 (int arg0, int arg1, int arg2) { //X=9 Y=22 START=L_129 END=L_140 UNKN=6291456 UNKN2=0
+    int sgenid0 = -310; // [x=9, y=22]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(64)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=64
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=9 Y=22 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(65)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=65
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=9 Y=22 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(66)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=66
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(67)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=67
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(68)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=68
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=9 Y=22 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(69)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=69
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=9 Y=22 VAL=0
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(70)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=70
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=22 VAL=0
+}
+script 30 (int arg0, int arg1, int arg2) { //X=10 Y=22 START=L_141 END=L_141 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=171
+}
+script 31 (int arg0, int arg1, int arg2) { //X=15 Y=22 START=L_142 END=L_142 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( SOUTH ) IF_VAR( 0 ) ) STBARMSG STR=4
+}
+script 32 (int arg0, int arg1, int arg2) { //X=20 Y=22 START=L_143 END=L_143 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=73
+}
+script 33 (int arg0, int arg1, int arg2) { //X=6 Y=23 START=L_144 END=L_144 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=146
+}
+script 34 (int arg0, int arg1, int arg2) { //X=8 Y=23 START=L_145 END=L_157 UNKN=6815744 UNKN2=0
+    int sgenid0 = -279; // [x=8, y=23]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(121)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=121
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=8 Y=23
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(122)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=122
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=8 Y=23
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(123)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=123
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=8 Y=23
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(124)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=124
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=8 Y=23 VAL=0
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(125)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=125
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=8 Y=23 VAL=0
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(126)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=126
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=8 Y=23 VAL=0
+}
+script 35 (int arg0, int arg1, int arg2) { //X=13 Y=23 START=L_158 END=L_159 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( EAST ) IF_VAR( 0 ) ) STBARMSG STR=1
+    /* Not Implemented */ // ( ENTER_FROM( WEST ) IF_VAR( 0 ) ) STBARMSG STR=2
+}
+script 36 (int arg0, int arg1, int arg2) { //X=17 Y=23 START=L_160 END=L_160 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( WEST ) IF_VAR( 0 ) ) STBARMSG STR=3
+}
+script 37 (int arg0, int arg1, int arg2) { //X=18 Y=23 START=L_161 END=L_161 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( EAST ) IF_VAR( 0 ) ) STBARMSG STR=2
+}
+script 38 (int arg0, int arg1, int arg2) { //X=22 Y=23 START=L_162 END=L_182 UNKN=11010048 UNKN2=0
+    int sgenid0 = -727; // [x=22, y=23]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(113)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=113
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=22 Y=23 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(114)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=114
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=22 Y=23 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(115)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=115
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=22 Y=23 VAL=1
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(116)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=116
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=22 Y=23 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(117)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=117
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=22 Y=23 VAL=2
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(118)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=118
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=22 Y=23 VAL=2
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(119)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=119
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=22 Y=23 VAL=3
+    if(arg2 == 2 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(120)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=120
+    if(arg2 == 2 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=22 Y=23 VAL=0
+    if(arg2 == 2 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(107)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=107
+    if(arg2 == 2 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=22 Y=23 VAL=0
+    if(arg2 == 3 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(120)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=120
+    if(arg2 == 3 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 4 ) ) SET_VAR X=22 Y=23 VAL=0
+}
+script 39 (int arg0, int arg1, int arg2) { //X=6 Y=24 START=L_183 END=L_186 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=1075447302 X=6 Y=26
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=9 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=146
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=144
+}
+script 40 (int arg0, int arg1, int arg2) { //X=9 Y=24 START=L_187 END=L_200 UNKN=7340032 UNKN2=0
+    int sgenid0 = -312; // [x=9, y=24]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(71)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=71
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=9 Y=24 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(72)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=72
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=9 Y=24 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(73)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=73
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(74)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=74
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(75)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=75
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=9 Y=24 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(76)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=76
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=9 Y=24 VAL=2
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(77)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=77
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=24 VAL=0
+    if(arg2 == 2 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(78)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=78
+    if(arg2 == 2 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=9 Y=24 VAL=0
+}
+script 41 (int arg0, int arg1, int arg2) { //X=10 Y=24 START=L_201 END=L_201 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=110
+}
+script 42 (int arg0, int arg1, int arg2) { //X=20 Y=24 START=L_202 END=L_202 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=43
+}
+script 43 (int arg0, int arg1, int arg2) { //X=21 Y=24 START=L_203 END=L_216 UNKN=7340032 UNKN2=0
+    int sgenid0 = -696; // [x=21, y=24]
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(31)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=31
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=21 Y=24 VAL=1
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(32)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=32
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=21 Y=24 VAL=2
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(33)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=33
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 3); // ( USE IF_VAR( 2 ) ) SET_VAR X=21 Y=24 VAL=3
+    if(arg2 == 3) ACS_NamedExecuteWait("window", 0, getString(34)); // ( USE IF_VAR( 4 ) ) SHOW_MONOLOG STR=34
+    if(arg2 == 3) ScriptCall("ConversationController", "SetArgument", sgenid0, 4); // ( USE IF_VAR( 4 ) ) SET_VAR X=21 Y=24 VAL=4
+    if(arg2 == 4) ACS_NamedExecuteWait("window", 0, getString(35)); // ( USE IF_VAR( 8 ) ) SHOW_MONOLOG STR=35
+    if(arg2 == 4) ScriptCall("ConversationController", "SetArgument", sgenid0, 5); // ( USE IF_VAR( 8 ) ) SET_VAR X=21 Y=24 VAL=5
+    if(arg2 == 5) ACS_NamedExecuteWait("window", 0, getString(36)); // ( USE IF_VAR( 16 ) ) SHOW_MONOLOG STR=36
+    if(arg2 == 5) ScriptCall("ConversationController", "SetArgument", sgenid0, 6); // ( USE IF_VAR( 16 ) ) SET_VAR X=21 Y=24 VAL=6
+    if(arg2 == 6) ACS_NamedExecuteWait("window", 0, getString(37)); // ( USE IF_VAR( 32 ) ) SHOW_MONOLOG STR=37
+    if(arg2 == 6) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 32 ) ) SET_VAR X=21 Y=24 VAL=0
+}
+script 44 (int arg0, int arg1, int arg2) { //X=6 Y=25 START=L_217 END=L_219 UNKN=1572864 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SHOW_MONOLOG_IF_LEVEL_UNFINISHED STR=50 LEVEL_ID=1024
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=146
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=144
+}
+script 45 (int arg0, int arg1, int arg2) { //X=10 Y=25 START=L_220 END=L_221 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) REQUIRE_KEYCARD KEY=1
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=110
+}
+script 46 (int arg0, int arg1, int arg2) { //X=16 Y=25 START=L_222 END=L_233 UNKN=6291456 UNKN2=0
+    int sgenid0 = -537; // [x=16, y=25]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(86)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=86
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=16 Y=25 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(87)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=87
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=16 Y=25 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(88)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=88
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(89)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=89
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(90)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=90
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=16 Y=25 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(91)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=91
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=16 Y=25 VAL=0
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(92)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=92
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=16 Y=25 VAL=0
+}
+script 47 (int arg0, int arg1, int arg2) { //X=20 Y=25 START=L_234 END=L_235 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) REQUIRE_KEYCARD KEY=3
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=43
+}
+script 48 (int arg0, int arg1, int arg2) { //X=6 Y=26 START=L_236 END=L_239 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( 4096 ) ) STBARMSG_ALT STR=17
+    /* Not Implemented */ // ( IF_VAR( -8192 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=144
+}
+script 49 (int arg0, int arg1, int arg2) { //X=10 Y=26 START=L_240 END=L_240 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=110
+}
+script 50 (int arg0, int arg1, int arg2) { //X=13 Y=26 START=L_241 END=L_254 UNKN=7340032 UNKN2=0
+    int sgenid0 = -442; // [x=13, y=26]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(102)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=102
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=13 Y=26 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(103)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=103
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=13 Y=26 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(104)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=104
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=13 Y=26
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(106)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=106
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=13 Y=26 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(107)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=107
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=13 Y=26 VAL=0
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(105)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=105
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(107)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=107
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=13 Y=26 VAL=0
+}
+script 51 (int arg0, int arg1, int arg2) { //X=17 Y=26 START=L_255 END=L_258 UNKN=2097152 UNKN2=0
+    int sgenid0 = -570; // [x=17, y=26]
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(100)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=100
+    if(arg2 == 0) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=17 Y=26 VAL=1
+    if(arg2 == 1) ACS_NamedExecuteWait("window", 0, getString(101)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=101
+    if(arg2 == 1) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=17 Y=26 VAL=0
+}
+script 52 (int arg0, int arg1, int arg2) { //X=20 Y=26 START=L_259 END=L_260 UNKN=1048576 UNKN2=0
+    if(arg2 == 0) ACS_NamedExecuteWait("window", 0, getString(48)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=48
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=43
+}
+script 53 (int arg0, int arg1, int arg2) { //X=2 Y=27 START=L_261 END=L_261 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=135
+}
+script 54 (int arg0, int arg1, int arg2) { //X=3 Y=27 START=L_262 END=L_265 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=-2145712890 X=5 Y=27
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=8 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=135
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=133
+}
+script 55 (int arg0, int arg1, int arg2) { //X=4 Y=27 START=L_266 END=L_268 UNKN=1572864 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 0 ) ) SHOW_MONOLOG_IF_LEVEL_UNFINISHED STR=49 LEVEL_ID=768
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=135
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=133
+}
+script 56 (int arg0, int arg1, int arg2) { //X=5 Y=27 START=L_269 END=L_272 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( -32768 ) ) STBARMSG_ALT STR=16
+    /* Not Implemented */ // ( IF_VAR( 28672 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( NORTH WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=133
+}
+script 57 (int arg0, int arg1, int arg2) { //X=14 Y=27 START=L_273 END=L_290 UNKN=9437184 UNKN2=0
+    int sgenid0 = -475; // [x=14, y=27]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(22)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=22
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=14 Y=27 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(23)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=23
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=14 Y=27 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(24)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=24
+    if(arg2 == 0 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=14 Y=27 VAL=1
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(25)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=25
+    if(arg2 == 0 && isStage(3)) ScriptCall("ConversationController", "SetArgument", sgenid0, arg2 + 1); // ( USE IF_VAR( 0 ) ) INC_VAR X=14 Y=27
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(26)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=26
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=14 Y=27 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(27)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=27
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=14 Y=27 VAL=0
+    if(arg2 == 1 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(28)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=28
+    if(arg2 == 1 && isStage(2)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=14 Y=27 VAL=0
+    if(arg2 == 1 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(29)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=29
+    if(arg2 == 1 && isStage(3)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=14 Y=27 VAL=0
+    if(arg2 == 2) ACS_NamedExecuteWait("window", 0, getString(30)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=30
+    if(arg2 == 2) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=14 Y=27 VAL=0
+}
+script 58 (int arg0, int arg1, int arg2) { //X=5 Y=28 START=L_291 END=L_302 UNKN=6291456 UNKN2=0
+    int sgenid0 = -188; // [x=5, y=28]
+    if(arg2 == 0 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(79)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=79
+    if(arg2 == 0 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=5 Y=28 VAL=1
+    if(arg2 == 0 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(80)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=80
+    if(arg2 == 0 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 1); // ( USE IF_VAR( 0 ) ) SET_VAR X=5 Y=28 VAL=1
+    if(arg2 == 0 && isStage(2)) ACS_NamedExecuteWait("window", 0, getString(81)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=81
+    if(arg2 == 0 && isStage(3)) ACS_NamedExecuteWait("window", 0, getString(82)); // ( USE IF_VAR( 0 ) ) SHOW_MONOLOG STR=82
+    if(arg2 == 1 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(83)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=83
+    if(arg2 == 1 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 2); // ( USE IF_VAR( 1 ) ) SET_VAR X=5 Y=28 VAL=2
+    if(arg2 == 1 && isStage(1)) ACS_NamedExecuteWait("window", 0, getString(84)); // ( USE IF_VAR( 1 ) ) SHOW_MONOLOG STR=84
+    if(arg2 == 1 && isStage(1)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 1 ) ) SET_VAR X=5 Y=28 VAL=0
+    if(arg2 == 2 && isStage(0)) ACS_NamedExecuteWait("window", 0, getString(85)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=85
+    if(arg2 == 2 && isStage(0)) ScriptCall("ConversationController", "SetArgument", sgenid0, 0); // ( USE IF_VAR( 2 ) ) SET_VAR X=5 Y=28 VAL=0
+}
+script 59 (int arg0, int arg1, int arg2) { //X=6 Y=28 START=L_303 END=L_306 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( IF_VAR( 16384 ) ) STBARMSG_ALT STR=14
+    /* Not Implemented */ // ( IF_VAR( -20480 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST SOUTH ) IF_VAR( 0 ) ) STBARMSG_ALT STR=15
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=125
+}
+script 60 (int arg0, int arg1, int arg2) { //X=15 Y=28 START=L_307 END=L_307 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( ENTER_FROM( SOUTH ) IF_VAR( 0 ) ) STBARMSG STR=5
+}
+script 61 (int arg0, int arg1, int arg2) { //X=6 Y=29 START=L_308 END=L_309 UNKN=1048576 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=125
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=123
+}
+script 62 (int arg0, int arg1, int arg2) { //X=15 Y=29 START=L_310 END=L_310 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST WEST SOUTH ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=35
+}
+script 63 (int arg0, int arg1, int arg2) { //X=6 Y=30 START=L_311 END=L_314 UNKN=2097152 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) NEXT_LEVEL_START_POS ARG1=-1071905274 X=6 Y=28
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) CH_LEVEL LEVEL_NAME=7 UNKN=0 COMPLETE=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=125
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=123
+}
+script 64 (int arg0, int arg1, int arg2) { //X=15 Y=30 START=L_315 END=L_315 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( USE IF_VAR( 0 ) ) DOOR_OPEN LINE=35
+}
+script 65 (int arg0, int arg1, int arg2) { //X=6 Y=31 START=L_316 END=L_316 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=123
+}
+script 66 (int arg0, int arg1, int arg2) { //X=15 Y=31 START=L_317 END=L_317 UNKN=524288 UNKN2=0
+    /* Not Implemented */ // ( LEAVE_TO( EAST NORTH WEST ) IF_VAR( 0 ) ) DOOR_CLOSE LINE=35
+}
+
+/*
+script 1 (void)
+{//Comp
+ActivatorSound("misc/chat2", 255);
+Print(s:"Hello.\nWelcome to Mars.");
+  Delay(34);
+}
+
+script 2 (void)
+{//Shop
+ActivatorSound(localizeSound("voice/only"), 255);
+Print(s:"\cgShop is offline!");
+  Delay(34*2);
+}
+
+script 3 (int id)
+{//Dialog
+ActivatorSound("misc/chat2", 255);
+    switch (id) {
+        case 0:
+        Print(s:"\cdHi, Marine!");
+        break;
+
+        case 1:
+        Print(s:"\cdI'll just heal you!");
+        HealThing(100);
+        break;
+
+        case 666:
+        Print(s:"\cgFuck you, cheater!");
+        ActivatorSound(localizeSound("voice/wtf"), 255);
+        break;
+    }
+Delay(34);
+}
+/*
+        Thing_Stop(0);
+        SetPlayerProperty(0, 1, PROP_TOTALLYFROZEN);
+while(true) {
+if(GetPlayerInput(INPUT_BUTTONS) != 0) {break;}
+Delay(1);
+}
+
+
+script 4 (void)
+{ //Map
+ActivatorSound("misc/chat2", 255);
+GiveInventory("MapRevealer", 1);
+Print(s:"\cgAutomap data was loaded!");
+Delay(34*3);
+}
+
+script 5 (void)
+{//Closed
+ActivatorSound("acess/deny1", 255);
+Print(s:"\cgDoor closed!");
+Delay(34);
+}
+
+script 6 (int sector)
+{//Opener
+    ActivatorSound("acess/GRANT1", 255);
+    Door_Open(sector, 128, 0);
+}
+
+script 7 (int doorf, int doorb, int nosound) {//DoorOpener
+    SetLineTexture(doorf, SIDE_FRONT, TEXTURE_TOP, "drpga09");
+    SetLineTexture(doorb, SIDE_FRONT, TEXTURE_TOP, "drpga09b");
+    SetLineSpecial(doorf, Door_Raise, 0, 16, 105);
+    SetLineSpecial(doorb, Door_Raise, 0, 16, 105);
+    if(nosound == 0){
+        SectorSound("acess/grant1", 255);
+    }
+}
+
+script 10 (void) { //quake
+    Radius_Quake(9, 12, 0, 10, 0);
+    Door_Open(2, 128, 0);
+}
+
+//#define MAX_LEVELS 16
+
+world bool 1:exitedLevels[];
+
+script 778(int levelnum) {
+    Terminate;
+    if(exitedLevels[levelnum-1]) {
+        Teleport_NewMap(levelnum, 0, 0);
+    } else {
+        Print(s:"You need to complete previous level at first.");
+        Teleport_NewMap(levelnum, 0, 0); //FIXME: Cincrement
+    }
+}*/

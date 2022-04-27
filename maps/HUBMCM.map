@@ -11,23 +11,21 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+class3 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 220;
+comment = "6:28";
 }
 
 thing
 {
 x = 0.000;
-y = -368.000;
+y = -416.000;
 type = 1;
 angle = 90;
 skill1 = true;
@@ -46,6 +44,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 509;
+comment = "15:29";
 }
 
 thing
@@ -59,17 +59,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+renderstyle = "";
+class3 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 187;
+comment = "5:27";
 }
 
 thing
@@ -84,17 +82,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+renderstyle = "";
+class3 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 218;
+comment = "6:26";
 }
 
 thing
@@ -108,17 +104,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+renderstyle = "";
+class3 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 180;
+comment = "5:20";
 }
 
 thing
@@ -132,17 +126,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+renderstyle = "";
+class3 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 178;
+comment = "5:18";
 }
 
 thing
@@ -157,17 +149,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+renderstyle = "";
+class3 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 786;
+comment = "24:18";
 }
 
 thing
@@ -182,66 +172,56 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+renderstyle = "";
+class3 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+id = 788;
+comment = "24:20";
 }
 
 thing
 {
-x = -64.000;
-y = 352.000;
-type = 10500;
-angle = 270;
+x = -384.000;
+y = -96.000;
+type = 10501;
+angle = 45;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-comment = "[i]1";
+arg0 = 40;
+special = 80;
+id = 312;
+comment = "9:24";
+renderstyle = "";
 }
 
 thing
 {
-x = 64.000;
-y = 352.000;
-type = 10512;
-angle = 270;
+x = 0.000;
+y = -352.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 60;
+special = 80;
+id = 508;
+comment = "15:28";
+renderstyle = "";
 }
 
 thing
@@ -266,6 +246,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 376;
+comment = "11:24";
 }
 
 thing
@@ -290,6 +272,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 476;
+comment = "14:28";
 }
 
 thing
@@ -314,54 +298,49 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 540;
+comment = "16:28";
 }
 
 thing
 {
-x = -64.000;
-y = -288.000;
-type = 10500;
-angle = 270;
+x = -384.000;
+y = 32.000;
+type = 10511;
+angle = 315;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 29;
+special = 80;
+id = 310;
+comment = "9:22";
+renderstyle = "";
 }
 
 thing
 {
-x = 40.000;
-y = -168.000;
-type = 10520;
-angle = 270;
+x = -320.000;
+y = 32.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 30;
+special = 80;
+id = 342;
+comment = "10:22";
+renderstyle = "";
 }
 
 thing
@@ -386,78 +365,68 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 531;
+comment = "16:19";
 }
 
 thing
 {
-x = -384.000;
-y = -96.000;
-type = 10501;
-angle = 270;
+x = -448.000;
+y = -32.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 34;
+special = 80;
+id = 279;
+comment = "8:23";
+renderstyle = "";
 }
 
 thing
 {
-x = -384.000;
-y = 32.000;
-type = 10511;
-angle = 270;
+x = -128.000;
+y = -32.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 35;
+special = 80;
+id = 439;
+comment = "13:23";
+renderstyle = "";
 }
 
 thing
 {
-x = -608.000;
-y = -352.000;
-type = 10510;
-angle = 270;
+x = 128.000;
+y = -32.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 36;
+special = 80;
+id = 567;
+comment = "17:23";
+renderstyle = "";
 }
 
 thing
@@ -482,6 +451,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 374;
+comment = "11:22";
 }
 
 thing
@@ -490,7 +461,7 @@ x = 336.000;
 y = -288.000;
 type = 10265;
 angle = 180;
-height = 48.000000;
+height = 48;
 arg0 = 2;
 arg1 = 255;
 skill1 = true;
@@ -509,97 +480,87 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 667;
+comment = "20:27";
 }
 
 thing
 {
-x = 384.000;
-y = -96.000;
-type = 10521;
-angle = 270;
+x = 0.000;
+y = 96.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 27;
+special = 80;
+id = 501;
+comment = "15:21";
+renderstyle = "";
 }
 
 thing
 {
-x = -480.000;
-y = 288.000;
-type = 10520;
-angle = 270;
+x = 320.000;
+y = 32.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 32;
+special = 80;
+id = 662;
+comment = "20:22";
+renderstyle = "";
 }
 
 thing
 {
-x = -608.000;
-y = 224.000;
-type = 10501;
-angle = 270;
+x = -544.000;
+y = -352.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+arg0 = 59;
+special = 80;
+id = 220;
+comment = "6:28";
+renderstyle = "";
 }
 
 thing
 {
-x = 608.000;
-y = 224.000;
-type = 10500;
-angle = 270;
+x = 0.000;
+y = 32.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
+arg0 = 31;
+special = 80;
+id = 502;
+comment = "15:22";
 renderstyle = "";
 }
 
@@ -608,21 +569,22 @@ thing
 x = -480.000;
 y = 160.000;
 type = 9001;
-angle = 180;
-id = 18;
+angle = 135;
 arg0 = 6;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
 renderstyle = "";
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+id = 18;
+comment = "7:20";
 }
 
 thing
@@ -630,7 +592,7 @@ thing
 x = 320.000;
 y = 64.000;
 type = 9800;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 50;
 arg2 = 255;
@@ -651,6 +613,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 661;
+comment = "20:21";
 }
 
 thing
@@ -658,7 +622,7 @@ thing
 x = 320.000;
 y = 128.000;
 type = 9800;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 50;
 arg2 = 255;
@@ -679,6 +643,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 660;
+comment = "20:20";
 }
 
 thing
@@ -687,7 +653,7 @@ x = 320.000;
 y = -128.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 255;
 arg1 = 50;
 arg2 = 50;
@@ -708,6 +674,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 664;
+comment = "20:24";
 }
 
 thing
@@ -716,7 +684,7 @@ x = 320.000;
 y = -192.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 255;
 arg1 = 50;
 arg2 = 50;
@@ -737,6 +705,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 665;
+comment = "20:25";
 }
 
 thing
@@ -745,7 +715,7 @@ x = -320.000;
 y = -128.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 255;
 arg1 = 255;
 arg2 = 50;
@@ -766,6 +736,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 344;
+comment = "10:24";
 }
 
 thing
@@ -774,7 +746,7 @@ x = -320.000;
 y = -192.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 255;
 arg1 = 255;
 arg2 = 50;
@@ -795,6 +767,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 345;
+comment = "10:25";
 }
 
 thing
@@ -803,7 +777,7 @@ x = -320.000;
 y = 128.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 255;
 arg2 = 50;
@@ -824,6 +798,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 340;
+comment = "10:20";
 }
 
 thing
@@ -832,7 +808,7 @@ x = -320.000;
 y = 64.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 255;
 arg2 = 50;
@@ -853,6 +829,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 341;
+comment = "10:21";
 }
 
 thing
@@ -861,7 +839,7 @@ x = -352.000;
 y = 224.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 255;
 arg2 = 50;
@@ -882,6 +860,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 307;
+comment = "9:19";
 }
 
 thing
@@ -890,7 +870,7 @@ x = -352.000;
 y = -288.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 255;
 arg1 = 255;
 arg2 = 50;
@@ -911,6 +891,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 315;
+comment = "9:27";
 }
 
 thing
@@ -919,7 +901,7 @@ x = 352.000;
 y = -288.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 255;
 arg1 = 50;
 arg2 = 50;
@@ -940,6 +922,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 667;
+comment = "20:27";
 }
 
 thing
@@ -947,7 +931,7 @@ thing
 x = 352.000;
 y = 224.000;
 type = 9800;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 50;
 arg2 = 255;
@@ -968,6 +952,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 659;
+comment = "20:19";
 }
 
 thing
@@ -986,17 +972,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
+id = 1496;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+comment = "15:16";
 }
 
 thing
@@ -1015,17 +999,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
+id = 4340;
+comment = "13:18";
 }
 
 thing
@@ -1044,17 +1026,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
+id = 2790;
+comment = "8:23";
 }
 
 thing
@@ -1063,7 +1043,7 @@ x = 416.000;
 y = -32.000;
 type = 9800;
 angle = 180;
-height = 32.000000;
+height = 32;
 arg0 = 50;
 arg1 = 255;
 arg2 = 50;
@@ -1084,6 +1064,8 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 695;
+comment = "21:23";
 }
 
 thing
@@ -1102,17 +1084,15 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
+id = 4420;
+comment = "13:26";
 }
 
 thing
@@ -1121,7 +1101,7 @@ x = 96.000;
 y = -224.000;
 type = 9800;
 angle = 180;
-height = 40.000000;
+height = 32;
 arg0 = 50;
 arg1 = 255;
 arg2 = 50;
@@ -1142,144 +1122,103 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 538;
+comment = "16:26";
 }
 
 thing
 {
-x = -256.000;
-y = -96.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 50;
-arg3 = 26;
+x = -320.000;
+y = -32.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = -256.000;
-y = 32.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 50;
-arg3 = 26;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = -64.000;
-y = -352.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 50;
-arg3 = 26;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
-}
-
-thing
-{
-x = 64.000;
-y = -352.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 50;
-arg3 = 26;
-skill1 = true;
-skill2 = true;
-skill3 = true;
-skill4 = true;
-skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
+arg0 = 1;
 }
 
 thing
 {
 x = 0.000;
-y = 384.000;
-type = 10555;
+y = -288.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
+renderstyle = "";
+arg0 = 2;
+}
+
+thing
+{
+x = 0.000;
+y = 288.000;
+type = 10900;
+angle = 270;
 coop = true;
 dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
 renderstyle = "";
+arg0 = 4;
+}
+
+thing
+{
+x = 352.000;
+y = -288.000;
+type = 10900;
+angle = 135;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 5;
+}
+
+thing
+{
+x = 320.000;
+y = -32.000;
+type = 10900;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 3;
 }
 
 thing
 {
 x = -64.000;
-y = -144.000;
+y = -96.000;
 type = 10750;
 angle = 270;
 skill1 = true;
@@ -1287,33 +1226,36 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 472;
+comment = "14:24";
 }
 
 thing
 {
 x = -64.000;
-y = -176.000;
+y = -160.000;
 type = 10702;
-angle = 270;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 473;
+comment = "14:25";
 }
 
 thing
@@ -1327,63 +1269,51 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 536;
+comment = "16:24";
 }
 
 thing
 {
-x = 64.000;
-y = -96.000;
-type = 9800;
+x = 656.000;
+y = 160.000;
+type = 10900;
 angle = 180;
-height = 32.000000;
-arg0 = 50;
-arg1 = 50;
-arg2 = 255;
-arg3 = 26;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
 renderstyle = "";
+arg0 = 21;
 }
 
 thing
 {
-x = 64.000;
-y = 224.000;
-type = 9800;
+x = 656.000;
+y = 288.000;
+type = 10900;
 angle = 180;
-height = 32.000000;
-arg0 = 50;
-arg1 = 50;
-arg2 = 255;
-arg3 = 26;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
 renderstyle = "";
+arg0 = 20;
 }
 
 thing
@@ -1391,18 +1321,20 @@ thing
 x = 384.000;
 y = 32.000;
 type = 10706;
-angle = 270;
+angle = 225;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
 renderstyle = "";
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+id = 694;
+comment = "21:22";
 }
 
 thing
@@ -1427,35 +1359,25 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 630;
+comment = "19:22";
 }
 
 thing
 {
-x = 256.000;
-y = 32.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 50;
-arg3 = 26;
+x = -656.000;
+y = 288.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
+arg0 = 19;
 }
 
 thing
@@ -1480,35 +1402,25 @@ class2 = true;
 class3 = true;
 class4 = true;
 class5 = true;
+id = 632;
+comment = "19:24";
 }
 
 thing
 {
-x = 256.000;
-y = -96.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 255;
-arg1 = 255;
-arg2 = 50;
-arg3 = 26;
+x = -656.000;
+y = 160.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-skill6 = true;
-skill7 = true;
-skill8 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
-class4 = true;
-class5 = true;
+renderstyle = "";
+arg0 = 18;
 }
 
 thing
@@ -1516,21 +1428,22 @@ thing
 x = 480.000;
 y = 288.000;
 type = 9001;
-angle = 180;
-id = 18;
+angle = 315;
 arg0 = 6;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 18;
+comment = "22:18";
 }
 
 thing
@@ -1538,18 +1451,20 @@ thing
 x = 480.000;
 y = 160.000;
 type = 10706;
-angle = 270;
+angle = 90;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 724;
+comment = "22:20";
 }
 
 thing
@@ -1557,21 +1472,22 @@ thing
 x = -480.000;
 y = -224.000;
 type = 9001;
-angle = 180;
-id = 18;
+angle = 225;
 arg0 = 6;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 18;
+comment = "7:26";
 }
 
 thing
@@ -1585,38 +1501,33 @@ skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
-renderstyle = "";
+id = 252;
+comment = "7:28";
 }
 
 thing
 {
-x = -480.000;
-y = -352.000;
-type = 9800;
-angle = 180;
-height = 32.000000;
-arg0 = 50;
-arg1 = 50;
-arg2 = 255;
-arg3 = 26;
+x = -544.000;
+y = -400.000;
+type = 10900;
+angle = 90;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
 renderstyle = "";
+arg0 = 14;
 }
 
 thing
@@ -1624,18 +1535,188 @@ thing
 x = -608.000;
 y = -224.000;
 type = 10702;
-angle = 270;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
+renderstyle = "";
 single = true;
 coop = true;
 dm = true;
 class1 = true;
 class2 = true;
 class3 = true;
+id = 186;
+comment = "5:26";
+}
+
+thing
+{
+x = -608.000;
+y = -352.000;
+type = 10510;
+angle = 45;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 58;
+special = 80;
+id = 188;
+comment = "5:28";
+renderstyle = "";
+}
+
+thing
+{
+x = -480.000;
+y = -224.000;
+type = 10705;
+angle = 225;
+arg0 = 6;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+id = 19;
+comment = "7:26";
+}
+
+thing
+{
+x = 480.000;
+y = 288.000;
+type = 10705;
+angle = 315;
+arg0 = 6;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+id = 19;
+comment = "22:18";
+}
+
+thing
+{
+x = -480.000;
+y = 160.000;
+type = 10705;
+angle = 135;
+arg0 = 6;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+single = true;
+coop = true;
+dm = true;
+class1 = true;
+class2 = true;
+class3 = true;
+id = 19;
+comment = "7:20";
+}
+
+thing
+{
+x = 0.000;
+y = 400.000;
+type = 10555;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+single = true;
+dm = true;
+coop = true;
+renderstyle = "";
+height = -46;
+}
+
+thing
+{
+x = 448.000;
+y = -32.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 38;
+special = 80;
+id = 727;
+comment = "22:23";
+renderstyle = "";
+}
+
+thing
+{
+x = -64.000;
+y = 352.000;
+type = 10500;
+angle = 315;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 2;
+special = 80;
+id = 465;
+comment = "14:17";
+renderstyle = "";
+}
+
+thing
+{
+x = 64.000;
+y = 352.000;
+type = 10512;
+angle = 225;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 3;
+special = 80;
+id = 529;
+comment = "16:17";
 renderstyle = "";
 }
 
@@ -1645,93 +1726,478 @@ x = 320.000;
 y = -224.000;
 type = 10500;
 angle = 90;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
+arg0 = 52;
+special = 80;
+id = 666;
+comment = "20:26";
 renderstyle = "";
 }
 
 thing
 {
-x = -480.000;
-y = -224.000;
-type = 10705;
-angle = 90;
-id = 19;
-arg0 = 6;
+x = -64.000;
+y = -288.000;
+type = 10500;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
+arg0 = 57;
+special = 80;
+id = 475;
+comment = "14:27";
 renderstyle = "";
 }
 
 thing
 {
-x = 480.000;
+x = -320.000;
+y = -96.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 41;
+special = 80;
+id = 344;
+comment = "10:24";
+renderstyle = "";
+}
+
+thing
+{
+x = -608.000;
 y = 288.000;
-type = 10705;
-angle = 90;
-id = 19;
-arg0 = 6;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
+arg0 = 7;
+special = 80;
+id = 178;
+comment = "5:18";
 renderstyle = "";
 }
 
 thing
 {
 x = -480.000;
-y = 160.000;
-type = 10705;
-angle = 90;
-id = 19;
-arg0 = 6;
+y = 288.000;
+type = 10520;
+angle = 225;
+coop = true;
+dm = true;
+single = true;
 skill1 = true;
 skill2 = true;
 skill3 = true;
 skill4 = true;
 skill5 = true;
-single = true;
-coop = true;
-dm = true;
-class1 = true;
-class2 = true;
-class3 = true;
+arg0 = 8;
+special = 80;
+id = 242;
+comment = "7:18";
 renderstyle = "";
 }
 
 thing
 {
-x = -8.000;
-y = 148.000;
-type = 32000;
-angle = 86;
-height = -8.000000;
+x = -128.000;
+y = 288.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 9;
+special = 80;
+id = 434;
+comment = "13:18";
+renderstyle = "";
+}
+
+thing
+{
+x = 608.000;
+y = 288.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 10;
+special = 80;
+id = 818;
+comment = "25:18";
+renderstyle = "";
+}
+
+thing
+{
+x = 384.000;
+y = -96.000;
+type = 10521;
+angle = 135;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 43;
+special = 80;
+id = 696;
+comment = "21:24";
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = -224.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 49;
+special = 80;
+id = 346;
+comment = "10:26";
+renderstyle = "";
+}
+
+thing
+{
+x = -544.000;
+y = -224.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 48;
+special = 80;
+id = 218;
+comment = "6:26";
+renderstyle = "";
+}
+
+thing
+{
+x = -608.000;
+y = 224.000;
+type = 10501;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 14;
+special = 80;
+id = 179;
+comment = "5:19";
+renderstyle = "";
+}
+
+thing
+{
+x = 608.000;
+y = 224.000;
+type = 10500;
+angle = 180;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 15;
+special = 80;
+id = 819;
+comment = "25:19";
+renderstyle = "";
+}
+
+thing
+{
+x = 192.000;
+y = -32.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 37;
+special = 80;
+id = 599;
+comment = "18:23";
+renderstyle = "";
+}
+
+thing
+{
+x = -608.000;
+y = -288.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 56;
+special = 80;
+id = 187;
+comment = "5:27";
+renderstyle = "";
+}
+
+thing
+{
+x = 320.000;
+y = -96.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 42;
+special = 80;
+id = 664;
+comment = "20:24";
+renderstyle = "";
+}
+
+thing
+{
+x = -608.000;
+y = 160.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 19;
+special = 80;
+id = 180;
+comment = "5:20";
+renderstyle = "";
+}
+
+thing
+{
+x = -320.000;
+y = 160.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 20;
+special = 80;
+id = 340;
+comment = "10:20";
+renderstyle = "";
+}
+
+thing
+{
+x = 320.000;
+y = 160.000;
+type = 10815;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 21;
+special = 80;
+id = 660;
+comment = "20:20";
+renderstyle = "";
+}
+
+thing
+{
+x = 608.000;
+y = 160.000;
+type = 10813;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 22;
+special = 80;
+id = 820;
+comment = "25:20";
+renderstyle = "";
+}
+
+thing
+{
+x = 64.000;
+y = -160.000;
+type = 10520;
+angle = 225;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 46;
+special = 80;
+id = 537;
+comment = "16:25";
+renderstyle = "";
+}
+
+thing
+{
+x = -128.000;
+y = -224.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 50;
+special = 80;
+id = 442;
+comment = "13:26";
+renderstyle = "";
+}
+
+thing
+{
+x = 128.000;
+y = -224.000;
+type = 10816;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+arg0 = 51;
+special = 80;
+id = 570;
+comment = "17:26";
+renderstyle = "";
+}
+
+thing
+{
+x = -656.000;
+y = -288.000;
+type = 10900;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 16;
+}
+
+thing
+{
+x = -544.000;
+y = -176.000;
+type = 10900;
+angle = 270;
+coop = true;
+dm = true;
+single = true;
+skill1 = true;
+skill2 = true;
+skill3 = true;
+skill4 = true;
+skill5 = true;
+renderstyle = "";
+arg0 = 17;
 }
 
 vertex
@@ -3356,14 +3822,14 @@ y = 64.000;
 
 vertex
 {
-x = -88.000;
-y = -264.000;
+x = 287.000;
+y = 27.000;
 }
 
 vertex
 {
-x = -88.000;
-y = -312.000;
+x = 288.000;
+y = 28.000;
 }
 
 vertex
@@ -3584,50 +4050,68 @@ y = -96.000;
 
 vertex
 {
-x = -88.000;
-y = 328.000;
+x = 344.000;
+y = -44.000;
 }
 
 vertex
 {
-x = -40.000;
-y = 328.000;
+x = 342.000;
+y = -46.000;
 }
 
 vertex
 {
-x = -40.000;
-y = 376.000;
+x = 336.000;
+y = -52.000;
 }
 
 vertex
 {
-x = -88.000;
-y = 376.000;
+x = 280.000;
+y = -52.000;
 }
 
 vertex
 {
-x = 88.000;
-y = 376.000;
+x = 280.000;
+y = -51.000;
 }
 
 vertex
 {
-x = 40.000;
-y = 376.000;
+x = 280.000;
+y = -44.000;
 }
 
 vertex
 {
-x = 88.000;
-y = 328.000;
+x = 304.000;
+y = -44.000;
 }
 
 vertex
 {
-x = 40.000;
-y = 328.000;
+x = 280.000;
+y = -20.000;
+}
+
+vertex
+{
+x = 336.000;
+y = -20.000;
+}
+
+vertex
+{
+x = 280.000;
+y = -28.000;
+}
+
+vertex
+{
+x = 304.000;
+y = -28.000;
 }
 
 vertex
@@ -3686,230 +4170,194 @@ y = -144.000;
 
 vertex
 {
-x = 64.000;
-y = -144.000;
-}
-
-vertex
-{
-x = 16.000;
-y = -144.000;
-}
-
-vertex
-{
-x = 64.000;
-y = -192.000;
-}
-
-vertex
-{
-x = 16.000;
-y = -192.000;
-}
-
-vertex
-{
-x = -40.000;
-y = -312.000;
-}
-
-vertex
-{
-x = -40.000;
-y = -264.000;
-}
-
-vertex
-{
-x = -632.000;
-y = 248.000;
-}
-
-vertex
-{
-x = -632.000;
-y = 200.000;
-}
-
-vertex
-{
-x = -584.000;
-y = 200.000;
-}
-
-vertex
-{
-x = -584.000;
-y = 248.000;
-}
-
-vertex
-{
-x = 632.000;
-y = 248.000;
-}
-
-vertex
-{
-x = 584.000;
-y = 248.000;
-}
-
-vertex
-{
-x = 632.000;
-y = 200.000;
-}
-
-vertex
-{
-x = 584.000;
-y = 200.000;
+x = 291.000;
+y = 28.000;
 }
 
 vertex
 {
 x = 344.000;
-y = -200.000;
+y = 28.000;
 }
 
 vertex
 {
-x = 296.000;
-y = -200.000;
+x = 208.000;
+y = 4.571;
+}
+
+vertex
+{
+x = 312.000;
+y = -28.000;
+}
+
+vertex
+{
+x = 312.000;
+y = -44.000;
+}
+
+vertex
+{
+x = 332.000;
+y = -44.000;
+}
+
+vertex
+{
+x = 336.000;
+y = -60.000;
 }
 
 vertex
 {
 x = 344.000;
-y = -248.000;
+y = -68.000;
+}
+
+vertex
+{
+x = 288.000;
+y = -12.000;
+}
+
+vertex
+{
+x = 280.000;
+y = -4.000;
+}
+
+vertex
+{
+x = 280.000;
+y = 20.000;
 }
 
 vertex
 {
 x = 296.000;
-y = -248.000;
+y = 20.000;
 }
 
 vertex
 {
-x = 408.000;
-y = -120.000;
+x = 288.000;
+y = 16.000;
 }
 
 vertex
 {
-x = 408.000;
+x = 288.000;
+y = 0.000;
+}
+
+vertex
+{
+x = 344.000;
+y = 20.000;
+}
+
+vertex
+{
+x = 296.000;
+y = -4.000;
+}
+
+vertex
+{
+x = 344.000;
+y = -4.000;
+}
+
+vertex
+{
+x = 344.000;
+y = -12.000;
+}
+
+vertex
+{
+x = 280.000;
+y = -92.000;
+}
+
+vertex
+{
+x = 280.000;
+y = -68.000;
+}
+
+vertex
+{
+x = 288.000;
+y = -60.000;
+}
+
+vertex
+{
+x = 288.000;
+y = -92.000;
+}
+
+vertex
+{
+x = 288.000;
 y = -72.000;
 }
 
 vertex
 {
-x = 360.000;
-y = -120.000;
+x = 332.000;
+y = -68.000;
 }
 
 vertex
 {
-x = 360.000;
+x = 292.000;
+y = -68.000;
+}
+
+vertex
+{
+x = 336.000;
 y = -72.000;
 }
 
 vertex
 {
-x = -408.000;
-y = -72.000;
+x = 336.000;
+y = -32.000;
 }
 
 vertex
 {
-x = -408.000;
-y = -120.000;
+x = 332.000;
+y = -28.000;
 }
 
 vertex
 {
-x = -360.000;
-y = -120.000;
+x = 344.000;
+y = -92.000;
 }
 
 vertex
 {
-x = -360.000;
-y = -72.000;
+x = 336.000;
+y = -92.000;
 }
 
 vertex
 {
-x = -360.000;
-y = 56.000;
+x = 344.000;
+y = -28.000;
 }
 
 vertex
 {
-x = -408.000;
-y = 56.000;
-}
-
-vertex
-{
-x = -360.000;
-y = 8.000;
-}
-
-vertex
-{
-x = -408.000;
-y = 8.000;
-}
-
-vertex
-{
-x = -584.000;
-y = -328.000;
-}
-
-vertex
-{
-x = -632.000;
-y = -328.000;
-}
-
-vertex
-{
-x = -584.000;
-y = -376.000;
-}
-
-vertex
-{
-x = -632.000;
-y = -376.000;
-}
-
-vertex
-{
-x = -456.000;
-y = 312.000;
-}
-
-vertex
-{
-x = -504.000;
-y = 312.000;
-}
-
-vertex
-{
-x = -456.000;
-y = 264.000;
-}
-
-vertex
-{
-x = -504.000;
-y = 264.000;
+x = 336.000;
+y = -40.000;
 }
 
 vertex
@@ -4118,12 +4566,6 @@ y = -184.000;
 
 vertex
 {
-x = 208.000;
-y = 4.571;
-}
-
-vertex
-{
 x = -120.000;
 y = -80.000;
 }
@@ -4138,18 +4580,6 @@ vertex
 {
 x = -112.000;
 y = -88.000;
-}
-
-vertex
-{
-x = 291.000;
-y = 28.000;
-}
-
-vertex
-{
-x = 342.000;
-y = -46.000;
 }
 
 vertex
@@ -4786,258 +5216,6 @@ vertex
 {
 x = -464.000;
 y = -284.000;
-}
-
-vertex
-{
-x = 344.000;
-y = 28.000;
-}
-
-vertex
-{
-x = 344.000;
-y = 20.000;
-}
-
-vertex
-{
-x = 296.000;
-y = 20.000;
-}
-
-vertex
-{
-x = 288.000;
-y = 16.000;
-}
-
-vertex
-{
-x = 288.000;
-y = 0.000;
-}
-
-vertex
-{
-x = 296.000;
-y = -4.000;
-}
-
-vertex
-{
-x = 344.000;
-y = -4.000;
-}
-
-vertex
-{
-x = 344.000;
-y = -12.000;
-}
-
-vertex
-{
-x = 288.000;
-y = -12.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -4.000;
-}
-
-vertex
-{
-x = 280.000;
-y = 20.000;
-}
-
-vertex
-{
-x = 287.000;
-y = 27.000;
-}
-
-vertex
-{
-x = 288.000;
-y = 28.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -20.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -20.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -28.000;
-}
-
-vertex
-{
-x = 304.000;
-y = -28.000;
-}
-
-vertex
-{
-x = 304.000;
-y = -44.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -44.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -52.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -51.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -52.000;
-}
-
-vertex
-{
-x = 344.000;
-y = -44.000;
-}
-
-vertex
-{
-x = 344.000;
-y = -28.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -40.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -32.000;
-}
-
-vertex
-{
-x = 332.000;
-y = -28.000;
-}
-
-vertex
-{
-x = 312.000;
-y = -28.000;
-}
-
-vertex
-{
-x = 312.000;
-y = -44.000;
-}
-
-vertex
-{
-x = 332.000;
-y = -44.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -60.000;
-}
-
-vertex
-{
-x = 344.000;
-y = -68.000;
-}
-
-vertex
-{
-x = 288.000;
-y = -60.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -68.000;
-}
-
-vertex
-{
-x = 280.000;
-y = -92.000;
-}
-
-vertex
-{
-x = 288.000;
-y = -92.000;
-}
-
-vertex
-{
-x = 288.000;
-y = -72.000;
-}
-
-vertex
-{
-x = 292.000;
-y = -68.000;
-}
-
-vertex
-{
-x = 332.000;
-y = -68.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -72.000;
-}
-
-vertex
-{
-x = 336.000;
-y = -92.000;
-}
-
-vertex
-{
-x = 344.000;
-y = -92.000;
 }
 
 linedef
@@ -7395,13 +7573,9 @@ linedef
 {
 v1 = 270;
 v2 = 271;
-sidefront = 333;
-sideback = 334;
-special = 80;
-arg0 = 3;
+sidefront = 334;
+sideback = 333;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
@@ -8040,135 +8214,79 @@ linedef
 {
 v1 = 308;
 v2 = 309;
-sidefront = 418;
-sideback = 419;
-special = 80;
-arg0 = 3;
-arg2 = 1;
+sidefront = 419;
+sideback = 418;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 309;
-v2 = 310;
-sidefront = 420;
-sideback = 421;
-special = 80;
-arg0 = 3;
-arg2 = 1;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 310;
 v2 = 311;
-sidefront = 422;
-sideback = 423;
-special = 80;
-arg0 = 3;
-arg2 = 1;
+sidefront = 421;
+sideback = 420;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 311;
-v2 = 308;
-sidefront = 424;
-sideback = 425;
-special = 80;
-arg0 = 3;
-arg2 = 1;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 312;
-v2 = 313;
-sidefront = 426;
-sideback = 427;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 314;
 v2 = 312;
-sidefront = 428;
-sideback = 429;
-special = 80;
-arg0 = 3;
+sidefront = 423;
+sideback = 422;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 315;
-v2 = 314;
-sidefront = 430;
-sideback = 431;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 313;
-v2 = 315;
-sidefront = 432;
-sideback = 433;
-special = 80;
-arg0 = 3;
+v2 = 314;
+sidefront = 425;
+sideback = 424;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
-v1 = 316;
-v2 = 317;
-sidefront = 434;
-special = 80;
-arg0 = 1;
-blocking = true;
-repeatspecial = true;
-playeruse = true;
+v1 = 315;
+v2 = 316;
+sidefront = 427;
+sideback = 426;
+twosided = true;
 }
 
 linedef
 {
 v1 = 317;
+v2 = 315;
+sidefront = 429;
+sideback = 428;
+twosided = true;
+}
+
+linedef
+{
+v1 = 318;
+v2 = 317;
+sidefront = 431;
+sideback = 430;
+twosided = true;
+}
+
+linedef
+{
+v1 = 314;
 v2 = 318;
-sidefront = 435;
-blocking = true;
+sidefront = 433;
+sideback = 432;
+twosided = true;
 }
 
 linedef
 {
 v1 = 319;
 v2 = 320;
-sidefront = 436;
+sidefront = 434;
 special = 80;
 arg0 = 1;
 blocking = true;
@@ -8180,22 +8298,42 @@ linedef
 {
 v1 = 320;
 v2 = 321;
-sidefront = 437;
+sidefront = 435;
 blocking = true;
 }
 
 linedef
 {
-v1 = 318;
-v2 = 322;
-sidefront = 438;
+v1 = 322;
+v2 = 323;
+sidefront = 436;
+special = 80;
+arg0 = 1;
 blocking = true;
+repeatspecial = true;
+playeruse = true;
 }
 
 linedef
 {
 v1 = 323;
 v2 = 324;
+sidefront = 437;
+blocking = true;
+}
+
+linedef
+{
+v1 = 321;
+v2 = 325;
+sidefront = 438;
+blocking = true;
+}
+
+linedef
+{
+v1 = 326;
+v2 = 327;
 sidefront = 439;
 special = 102;
 arg0 = 4;
@@ -8205,14 +8343,14 @@ blocking = true;
 linedef
 {
 v1 = 44;
-v2 = 316;
+v2 = 319;
 sidefront = 440;
 blocking = true;
 }
 
 linedef
 {
-v1 = 321;
+v1 = 324;
 v2 = 39;
 sidefront = 441;
 blocking = true;
@@ -8220,132 +8358,92 @@ blocking = true;
 
 linedef
 {
-v1 = 325;
-v2 = 326;
-sidefront = 442;
-sideback = 443;
-special = 80;
-arg0 = 3;
+v1 = 312;
+v2 = 37;
+sidefront = 443;
+sideback = 442;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
-v1 = 327;
-v2 = 325;
-sidefront = 444;
-sideback = 445;
-special = 80;
-arg0 = 3;
+v1 = 312;
+v2 = 313;
+sidefront = 445;
+sideback = 444;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 309;
+v2 = 312;
+sidefront = 447;
+sideback = 446;
+twosided = true;
+}
+
+linedef
+{
+v1 = 309;
+v2 = 310;
+sidefront = 449;
+sideback = 448;
+twosided = true;
 }
 
 linedef
 {
 v1 = 328;
-v2 = 327;
-sidefront = 446;
-sideback = 447;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 326;
-v2 = 328;
-sidefront = 448;
-sideback = 449;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 271;
-v2 = 329;
-sidefront = 450;
-sideback = 451;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 329;
-v2 = 330;
-sidefront = 452;
-sideback = 453;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 330;
 v2 = 270;
-sidefront = 454;
-sideback = 455;
-special = 80;
-arg0 = 3;
+sidefront = 451;
+sideback = 450;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 328;
+v2 = 329;
+sidefront = 453;
+sideback = 452;
+twosided = true;
+}
+
+linedef
+{
+v1 = 270;
+v2 = 330;
+sidefront = 455;
+sideback = 454;
+twosided = true;
 }
 
 linedef
 {
 v1 = 331;
 v2 = 332;
-sidefront = 456;
-sideback = 457;
-special = 80;
-arg0 = 3;
+sidefront = 457;
+sideback = 456;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 332;
 v2 = 333;
-sidefront = 458;
-sideback = 459;
-special = 80;
-arg0 = 3;
+sidefront = 459;
+sideback = 458;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
-v1 = 333;
-v2 = 334;
-sidefront = 460;
-sideback = 461;
-special = 80;
-arg0 = 3;
+v1 = 334;
+v2 = 335;
+sidefront = 461;
+sideback = 460;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
@@ -8358,379 +8456,263 @@ blocking = true;
 
 linedef
 {
-v1 = 335;
-v2 = 336;
-sidefront = 463;
-sideback = 464;
-special = 80;
-arg0 = 3;
+v1 = 336;
+v2 = 337;
+sidefront = 464;
+sideback = 463;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 337;
-v2 = 335;
-sidefront = 465;
-sideback = 466;
-special = 80;
-arg0 = 3;
+v2 = 338;
+sidefront = 466;
+sideback = 465;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 271;
+v2 = 328;
+sidefront = 468;
+sideback = 467;
+twosided = true;
 }
 
 linedef
 {
 v1 = 338;
-v2 = 337;
-sidefront = 467;
-sideback = 468;
-special = 80;
-arg0 = 3;
+v2 = 270;
+sidefront = 470;
+sideback = 469;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 336;
-v2 = 338;
-sidefront = 469;
-sideback = 470;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 339;
 v2 = 340;
-sidefront = 471;
-sideback = 472;
-special = 80;
-arg0 = 3;
+sidefront = 472;
+sideback = 471;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 341;
-v2 = 339;
-sidefront = 473;
-sideback = 474;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 342;
-v2 = 341;
-sidefront = 475;
-sideback = 476;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 340;
-v2 = 342;
-sidefront = 477;
-sideback = 478;
-special = 80;
-arg0 = 3;
+v2 = 341;
+sidefront = 474;
+sideback = 473;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 342;
+v2 = 339;
+sidefront = 476;
+sideback = 475;
+twosided = true;
+}
+
+linedef
+{
+v1 = 329;
+v2 = 342;
+sidefront = 478;
+sideback = 477;
+twosided = true;
+}
+
+linedef
+{
+v1 = 341;
+v2 = 343;
+sidefront = 480;
+sideback = 479;
+twosided = true;
 }
 
 linedef
 {
 v1 = 343;
 v2 = 344;
-sidefront = 479;
-sideback = 480;
-special = 80;
-arg0 = 3;
+sidefront = 482;
+sideback = 481;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 345;
-v2 = 343;
-sidefront = 481;
-sideback = 482;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 346;
-v2 = 345;
-sidefront = 483;
-sideback = 484;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 344;
-v2 = 346;
-sidefront = 485;
-sideback = 486;
-special = 80;
-arg0 = 3;
+v2 = 345;
+sidefront = 484;
+sideback = 483;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 345;
+v2 = 336;
+sidefront = 486;
+sideback = 485;
+twosided = true;
+}
+
+linedef
+{
+v1 = 346;
+v2 = 347;
+sidefront = 488;
+sideback = 487;
+twosided = true;
 }
 
 linedef
 {
 v1 = 347;
 v2 = 348;
-sidefront = 487;
-sideback = 488;
-special = 80;
-arg0 = 3;
+sidefront = 490;
+sideback = 489;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 348;
-v2 = 349;
-sidefront = 489;
-sideback = 490;
-special = 80;
-arg0 = 3;
+v2 = 334;
+sidefront = 492;
+sideback = 491;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 349;
-v2 = 350;
-sidefront = 491;
-sideback = 492;
-special = 80;
-arg0 = 3;
+v2 = 346;
+sidefront = 494;
+sideback = 493;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 350;
-v2 = 347;
-sidefront = 493;
-sideback = 494;
-special = 80;
-arg0 = 3;
+v2 = 349;
+sidefront = 496;
+sideback = 495;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 351;
 v2 = 352;
-sidefront = 495;
-sideback = 496;
-special = 80;
-arg0 = 3;
+sidefront = 498;
+sideback = 497;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 353;
 v2 = 351;
-sidefront = 497;
-sideback = 498;
-special = 80;
-arg0 = 3;
+sidefront = 500;
+sideback = 499;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 354;
-v2 = 353;
-sidefront = 499;
-sideback = 500;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 352;
-v2 = 354;
-sidefront = 501;
-sideback = 502;
-special = 80;
-arg0 = 3;
+v2 = 350;
+sidefront = 502;
+sideback = 501;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
-v1 = 355;
-v2 = 356;
-sidefront = 503;
-sideback = 504;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 357;
+v1 = 354;
 v2 = 355;
-sidefront = 505;
-sideback = 506;
-special = 80;
-arg0 = 3;
+sidefront = 504;
+sideback = 503;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 358;
-v2 = 357;
-sidefront = 507;
-sideback = 508;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
 v1 = 356;
-v2 = 358;
-sidefront = 509;
-sideback = 510;
-special = 80;
-arg0 = 3;
+v2 = 357;
+sidefront = 506;
+sideback = 505;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 357;
+v2 = 353;
+sidefront = 508;
+sideback = 507;
+twosided = true;
+}
+
+linedef
+{
+v1 = 335;
+v2 = 356;
+sidefront = 510;
+sideback = 509;
+twosided = true;
+}
+
+linedef
+{
+v1 = 316;
+v2 = 358;
+sidefront = 512;
+sideback = 511;
+twosided = true;
+}
+
+linedef
+{
+v1 = 358;
+v2 = 308;
+sidefront = 514;
+sideback = 513;
+twosided = true;
 }
 
 linedef
 {
 v1 = 359;
-v2 = 360;
-sidefront = 511;
-sideback = 512;
-special = 80;
-arg0 = 3;
+v2 = 354;
+sidefront = 516;
+sideback = 515;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
 }
 
 linedef
 {
-v1 = 361;
-v2 = 359;
-sidefront = 513;
-sideback = 514;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 362;
-v2 = 361;
-sidefront = 515;
-sideback = 516;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 360;
-v2 = 362;
-sidefront = 517;
-sideback = 518;
-special = 80;
-arg0 = 3;
-twosided = true;
-repeatspecial = true;
-playeruse = true;
-}
-
-linedef
-{
-v1 = 334;
+v1 = 355;
 v2 = 331;
-sidefront = 519;
-sideback = 520;
-special = 80;
-arg0 = 3;
+sidefront = 518;
+sideback = 517;
 twosided = true;
-repeatspecial = true;
-playeruse = true;
+}
+
+linedef
+{
+v1 = 333;
+v2 = 359;
+sidefront = 520;
+sideback = 519;
+twosided = true;
 }
 
 linedef
@@ -8772,7 +8754,7 @@ twosided = true;
 linedef
 {
 v1 = 209;
-v2 = 363;
+v2 = 360;
 sidefront = 529;
 sideback = 530;
 twosided = true;
@@ -8789,7 +8771,7 @@ twosided = true;
 
 linedef
 {
-v1 = 363;
+v1 = 360;
 v2 = 156;
 sidefront = 533;
 sideback = 534;
@@ -8808,14 +8790,14 @@ twosided = true;
 linedef
 {
 v1 = 290;
-v2 = 364;
+v2 = 361;
 sidefront = 537;
 blocking = true;
 }
 
 linedef
 {
-v1 = 364;
+v1 = 361;
 v2 = 292;
 sidefront = 538;
 blocking = true;
@@ -8823,7 +8805,7 @@ blocking = true;
 
 linedef
 {
-v1 = 365;
+v1 = 362;
 v2 = 288;
 sidefront = 539;
 blocking = true;
@@ -8832,7 +8814,7 @@ blocking = true;
 linedef
 {
 v1 = 287;
-v2 = 365;
+v2 = 362;
 sidefront = 540;
 blocking = true;
 }
@@ -8840,14 +8822,14 @@ blocking = true;
 linedef
 {
 v1 = 123;
-v2 = 366;
+v2 = 363;
 sidefront = 541;
 blocking = true;
 }
 
 linedef
 {
-v1 = 366;
+v1 = 363;
 v2 = 146;
 sidefront = 542;
 blocking = true;
@@ -8856,14 +8838,14 @@ blocking = true;
 linedef
 {
 v1 = 150;
-v2 = 367;
+v2 = 364;
 sidefront = 543;
 blocking = true;
 }
 
 linedef
 {
-v1 = 367;
+v1 = 364;
 v2 = 160;
 sidefront = 544;
 blocking = true;
@@ -8871,8 +8853,8 @@ blocking = true;
 
 linedef
 {
-v1 = 368;
-v2 = 322;
+v1 = 365;
+v2 = 325;
 sidefront = 545;
 sideback = 546;
 twosided = true;
@@ -8880,15 +8862,15 @@ twosided = true;
 
 linedef
 {
-v1 = 368;
-v2 = 323;
+v1 = 365;
+v2 = 326;
 sidefront = 547;
 blocking = true;
 }
 
 linedef
 {
-v1 = 322;
+v1 = 325;
 v2 = 88;
 sidefront = 548;
 blocking = true;
@@ -8896,8 +8878,8 @@ blocking = true;
 
 linedef
 {
-v1 = 369;
-v2 = 318;
+v1 = 366;
+v2 = 321;
 sidefront = 549;
 sideback = 550;
 twosided = true;
@@ -8905,8 +8887,8 @@ twosided = true;
 
 linedef
 {
-v1 = 370;
-v2 = 371;
+v1 = 367;
+v2 = 368;
 sidefront = 551;
 sideback = 552;
 twosided = true;
@@ -8914,7 +8896,7 @@ twosided = true;
 
 linedef
 {
-v1 = 370;
+v1 = 367;
 v2 = 56;
 sidefront = 553;
 blocking = true;
@@ -8923,7 +8905,7 @@ blocking = true;
 linedef
 {
 v1 = 227;
-v2 = 372;
+v2 = 369;
 sidefront = 554;
 blocking = true;
 }
@@ -8990,8 +8972,8 @@ blocking = true;
 
 linedef
 {
-v1 = 373;
-v2 = 374;
+v1 = 370;
+v2 = 371;
 sidefront = 564;
 sideback = 565;
 twosided = true;
@@ -9009,16 +8991,16 @@ blocking = true;
 
 linedef
 {
-v1 = 324;
-v2 = 319;
+v1 = 327;
+v2 = 322;
 sidefront = 567;
 blocking = true;
 }
 
 linedef
 {
-v1 = 374;
-v2 = 375;
+v1 = 371;
+v2 = 372;
 sidefront = 568;
 sideback = 569;
 twosided = true;
@@ -9026,7 +9008,7 @@ twosided = true;
 
 linedef
 {
-v1 = 376;
+v1 = 373;
 v2 = 41;
 sidefront = 570;
 blocking = true;
@@ -9034,8 +9016,8 @@ blocking = true;
 
 linedef
 {
-v1 = 374;
-v2 = 324;
+v1 = 371;
+v2 = 327;
 sidefront = 571;
 sideback = 572;
 twosided = true;
@@ -9045,8 +9027,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 369;
-v2 = 373;
+v1 = 366;
+v2 = 370;
 sidefront = 573;
 sideback = 574;
 twosided = true;
@@ -9056,8 +9038,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 323;
-v2 = 369;
+v1 = 326;
+v2 = 366;
 sidefront = 575;
 sideback = 576;
 twosided = true;
@@ -9067,8 +9049,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 319;
-v2 = 377;
+v1 = 322;
+v2 = 374;
 sidefront = 577;
 sideback = 578;
 twosided = true;
@@ -9076,8 +9058,8 @@ twosided = true;
 
 linedef
 {
-v1 = 377;
-v2 = 378;
+v1 = 374;
+v2 = 375;
 sidefront = 579;
 sideback = 580;
 twosided = true;
@@ -9085,8 +9067,8 @@ twosided = true;
 
 linedef
 {
-v1 = 378;
-v2 = 320;
+v1 = 375;
+v2 = 323;
 sidefront = 581;
 sideback = 582;
 twosided = true;
@@ -9094,7 +9076,7 @@ twosided = true;
 
 linedef
 {
-v1 = 379;
+v1 = 376;
 v2 = 68;
 sidefront = 583;
 blocking = true;
@@ -9102,8 +9084,8 @@ blocking = true;
 
 linedef
 {
-v1 = 379;
-v2 = 380;
+v1 = 376;
+v2 = 377;
 sidefront = 584;
 sideback = 585;
 twosided = true;
@@ -9113,62 +9095,62 @@ dontpegtop = true;
 linedef
 {
 v1 = 76;
-v2 = 381;
+v2 = 378;
 sidefront = 586;
 blocking = true;
 }
 
 linedef
 {
-v1 = 381;
-v2 = 370;
+v1 = 378;
+v2 = 367;
 sidefront = 587;
 blocking = true;
 }
 
 linedef
 {
-v1 = 372;
-v2 = 379;
+v1 = 369;
+v2 = 376;
 sidefront = 588;
 blocking = true;
 }
 
 linedef
 {
-v1 = 382;
-v2 = 383;
+v1 = 379;
+v2 = 380;
 sidefront = 589;
 blocking = true;
 }
 
 linedef
 {
-v1 = 384;
-v2 = 382;
+v1 = 381;
+v2 = 379;
 sidefront = 590;
 blocking = true;
 }
 
 linedef
 {
-v1 = 385;
-v2 = 384;
+v1 = 382;
+v2 = 381;
 sidefront = 591;
 blocking = true;
 }
 
 linedef
 {
-v1 = 383;
-v2 = 385;
+v1 = 380;
+v2 = 382;
 sidefront = 592;
 blocking = true;
 }
 
 linedef
 {
-v1 = 385;
+v1 = 382;
 v2 = 40;
 sidefront = 593;
 sideback = 594;
@@ -9177,8 +9159,8 @@ twosided = true;
 
 linedef
 {
-v1 = 382;
-v2 = 386;
+v1 = 379;
+v2 = 383;
 sidefront = 595;
 sideback = 596;
 special = 181;
@@ -9188,40 +9170,40 @@ twosided = true;
 
 linedef
 {
-v1 = 387;
-v2 = 388;
+v1 = 384;
+v2 = 385;
 sidefront = 597;
 blocking = true;
 }
 
 linedef
 {
-v1 = 389;
-v2 = 387;
+v1 = 386;
+v2 = 384;
 sidefront = 598;
 blocking = true;
 }
 
 linedef
 {
-v1 = 386;
-v2 = 389;
+v1 = 383;
+v2 = 386;
 sidefront = 599;
 blocking = true;
 }
 
 linedef
 {
-v1 = 388;
-v2 = 386;
+v1 = 385;
+v2 = 383;
 sidefront = 600;
 blocking = true;
 }
 
 linedef
 {
-v1 = 389;
-v2 = 384;
+v1 = 386;
+v2 = 381;
 sidefront = 601;
 sideback = 602;
 twosided = true;
@@ -9229,8 +9211,8 @@ twosided = true;
 
 linedef
 {
-v1 = 388;
-v2 = 390;
+v1 = 385;
+v2 = 387;
 sidefront = 603;
 sideback = 604;
 special = 181;
@@ -9240,40 +9222,40 @@ twosided = true;
 
 linedef
 {
-v1 = 390;
-v2 = 391;
+v1 = 387;
+v2 = 388;
 sidefront = 605;
 blocking = true;
 }
 
 linedef
 {
-v1 = 391;
-v2 = 392;
+v1 = 388;
+v2 = 389;
 sidefront = 606;
 blocking = true;
 }
 
 linedef
 {
-v1 = 392;
-v2 = 393;
+v1 = 389;
+v2 = 390;
 sidefront = 607;
 blocking = true;
 }
 
 linedef
 {
-v1 = 393;
-v2 = 390;
+v1 = 390;
+v2 = 387;
 sidefront = 608;
 blocking = true;
 }
 
 linedef
 {
-v1 = 391;
-v2 = 387;
+v1 = 388;
+v2 = 384;
 sidefront = 609;
 sideback = 610;
 twosided = true;
@@ -9281,8 +9263,8 @@ twosided = true;
 
 linedef
 {
-v1 = 393;
-v2 = 394;
+v1 = 390;
+v2 = 391;
 sidefront = 611;
 sideback = 612;
 special = 181;
@@ -9292,24 +9274,24 @@ twosided = true;
 
 linedef
 {
-v1 = 394;
-v2 = 395;
+v1 = 391;
+v2 = 392;
 sidefront = 613;
 blocking = true;
 }
 
 linedef
 {
-v1 = 395;
-v2 = 375;
+v1 = 392;
+v2 = 372;
 sidefront = 614;
 blocking = true;
 }
 
 linedef
 {
-v1 = 396;
-v2 = 373;
+v1 = 393;
+v2 = 370;
 sidefront = 615;
 sideback = 616;
 special = 181;
@@ -9319,24 +9301,24 @@ twosided = true;
 
 linedef
 {
-v1 = 375;
-v2 = 396;
+v1 = 372;
+v2 = 393;
 sidefront = 617;
 blocking = true;
 }
 
 linedef
 {
-v1 = 396;
-v2 = 394;
+v1 = 393;
+v2 = 391;
 sidefront = 618;
 blocking = true;
 }
 
 linedef
 {
-v1 = 395;
-v2 = 392;
+v1 = 392;
+v2 = 389;
 sidefront = 619;
 sideback = 620;
 twosided = true;
@@ -9370,7 +9352,7 @@ blocking = true;
 linedef
 {
 v1 = 236;
-v2 = 397;
+v2 = 330;
 sidefront = 625;
 sideback = 626;
 twosided = true;
@@ -9394,8 +9376,8 @@ blocking = true;
 
 linedef
 {
-v1 = 395;
-v2 = 319;
+v1 = 392;
+v2 = 322;
 sidefront = 629;
 sideback = 630;
 twosided = true;
@@ -9403,8 +9385,8 @@ twosided = true;
 
 linedef
 {
-v1 = 320;
-v2 = 392;
+v1 = 323;
+v2 = 389;
 sidefront = 631;
 sideback = 632;
 twosided = true;
@@ -9412,16 +9394,16 @@ twosided = true;
 
 linedef
 {
-v1 = 398;
-v2 = 399;
+v1 = 394;
+v2 = 395;
 sidefront = 633;
 blocking = true;
 }
 
 linedef
 {
-v1 = 400;
-v2 = 398;
+v1 = 396;
+v2 = 394;
 sidefront = 634;
 blocking = true;
 }
@@ -9429,7 +9411,7 @@ blocking = true;
 linedef
 {
 v1 = 89;
-v2 = 400;
+v2 = 396;
 sidefront = 635;
 blocking = true;
 }
@@ -9437,7 +9419,7 @@ blocking = true;
 linedef
 {
 v1 = 89;
-v2 = 399;
+v2 = 395;
 sidefront = 636;
 sideback = 637;
 twosided = true;
@@ -9447,7 +9429,7 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 399;
+v1 = 395;
 v2 = 97;
 sidefront = 638;
 blocking = true;
@@ -9455,7 +9437,7 @@ blocking = true;
 
 linedef
 {
-v1 = 399;
+v1 = 395;
 v2 = 85;
 sidefront = 639;
 sideback = 640;
@@ -9491,7 +9473,7 @@ twosided = true;
 linedef
 {
 v1 = 229;
-v2 = 368;
+v2 = 365;
 sidefront = 646;
 blocking = true;
 }
@@ -9517,7 +9499,7 @@ twosided = true;
 linedef
 {
 v1 = 303;
-v2 = 371;
+v2 = 368;
 sidefront = 651;
 sideback = 652;
 twosided = true;
@@ -9525,8 +9507,8 @@ twosided = true;
 
 linedef
 {
-v1 = 371;
-v2 = 380;
+v1 = 368;
+v2 = 377;
 sidefront = 653;
 sideback = 654;
 twosided = true;
@@ -9534,7 +9516,7 @@ twosided = true;
 
 linedef
 {
-v1 = 380;
+v1 = 377;
 v2 = 71;
 sidefront = 655;
 sideback = 656;
@@ -9554,7 +9536,7 @@ twosided = true;
 
 linedef
 {
-v1 = 371;
+v1 = 368;
 v2 = 227;
 sidefront = 659;
 sideback = 660;
@@ -9563,7 +9545,7 @@ twosided = true;
 
 linedef
 {
-v1 = 380;
+v1 = 377;
 v2 = 76;
 sidefront = 661;
 sideback = 662;
@@ -9574,7 +9556,7 @@ dontpegtop = true;
 linedef
 {
 v1 = 247;
-v2 = 401;
+v2 = 328;
 sidefront = 663;
 sideback = 664;
 twosided = true;
@@ -9582,7 +9564,7 @@ twosided = true;
 
 linedef
 {
-v1 = 397;
+v1 = 330;
 v2 = 235;
 sidefront = 665;
 sideback = 666;
@@ -9591,7 +9573,7 @@ twosided = true;
 
 linedef
 {
-v1 = 397;
+v1 = 330;
 v2 = 37;
 sidefront = 667;
 sideback = 668;
@@ -9601,7 +9583,7 @@ twosided = true;
 linedef
 {
 v1 = 274;
-v2 = 402;
+v2 = 309;
 sidefront = 669;
 sideback = 670;
 twosided = true;
@@ -9660,15 +9642,15 @@ twosided = true;
 linedef
 {
 v1 = 36;
-v2 = 403;
+v2 = 397;
 sidefront = 680;
 blocking = true;
 }
 
 linedef
 {
-v1 = 403;
-v2 = 376;
+v1 = 397;
+v2 = 373;
 sidefront = 681;
 blocking = true;
 }
@@ -9676,7 +9658,7 @@ blocking = true;
 linedef
 {
 v1 = 49;
-v2 = 383;
+v2 = 380;
 sidefront = 682;
 sideback = 683;
 special = 181;
@@ -9687,30 +9669,30 @@ twosided = true;
 linedef
 {
 v1 = 50;
-v2 = 404;
+v2 = 398;
 sidefront = 684;
 blocking = true;
 }
 
 linedef
 {
-v1 = 404;
-v2 = 405;
+v1 = 398;
+v2 = 399;
 sidefront = 685;
 blocking = true;
 }
 
 linedef
 {
-v1 = 405;
-v2 = 406;
+v1 = 399;
+v2 = 400;
 sidefront = 686;
 blocking = true;
 }
 
 linedef
 {
-v1 = 406;
+v1 = 400;
 v2 = 29;
 sidefront = 687;
 blocking = true;
@@ -9719,22 +9701,22 @@ blocking = true;
 linedef
 {
 v1 = 118;
-v2 = 407;
+v2 = 401;
 sidefront = 688;
 blocking = true;
 }
 
 linedef
 {
-v1 = 407;
-v2 = 408;
+v1 = 401;
+v2 = 402;
 sidefront = 689;
 blocking = true;
 }
 
 linedef
 {
-v1 = 408;
+v1 = 402;
 v2 = 103;
 sidefront = 690;
 blocking = true;
@@ -9743,7 +9725,7 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 409;
+v1 = 403;
 v2 = 107;
 sidefront = 691;
 blocking = true;
@@ -9751,8 +9733,8 @@ blocking = true;
 
 linedef
 {
-v1 = 410;
-v2 = 409;
+v1 = 404;
+v2 = 403;
 sidefront = 692;
 blocking = true;
 }
@@ -9760,7 +9742,7 @@ blocking = true;
 linedef
 {
 v1 = 106;
-v2 = 410;
+v2 = 404;
 sidefront = 693;
 blocking = true;
 dontpegbottom = true;
@@ -9768,8 +9750,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 411;
-v2 = 412;
+v1 = 405;
+v2 = 406;
 sidefront = 694;
 blocking = true;
 }
@@ -9777,7 +9759,7 @@ blocking = true;
 linedef
 {
 v1 = 110;
-v2 = 411;
+v2 = 405;
 sidefront = 695;
 blocking = true;
 dontpegbottom = true;
@@ -9793,7 +9775,7 @@ blocking = true;
 
 linedef
 {
-v1 = 412;
+v1 = 406;
 v2 = 111;
 sidefront = 697;
 blocking = true;
@@ -9801,8 +9783,8 @@ blocking = true;
 
 linedef
 {
-v1 = 413;
-v2 = 414;
+v1 = 407;
+v2 = 408;
 sidefront = 698;
 sideback = 699;
 twosided = true;
@@ -9810,8 +9792,8 @@ twosided = true;
 
 linedef
 {
-v1 = 414;
-v2 = 415;
+v1 = 408;
+v2 = 409;
 sidefront = 700;
 sideback = 701;
 twosided = true;
@@ -9819,8 +9801,8 @@ twosided = true;
 
 linedef
 {
-v1 = 415;
-v2 = 416;
+v1 = 409;
+v2 = 410;
 sidefront = 702;
 sideback = 703;
 twosided = true;
@@ -9828,8 +9810,8 @@ twosided = true;
 
 linedef
 {
-v1 = 416;
-v2 = 417;
+v1 = 410;
+v2 = 411;
 sidefront = 704;
 sideback = 705;
 twosided = true;
@@ -9837,8 +9819,8 @@ twosided = true;
 
 linedef
 {
-v1 = 417;
-v2 = 418;
+v1 = 411;
+v2 = 412;
 sidefront = 706;
 sideback = 707;
 twosided = true;
@@ -9846,8 +9828,8 @@ twosided = true;
 
 linedef
 {
-v1 = 418;
-v2 = 419;
+v1 = 412;
+v2 = 413;
 sidefront = 708;
 sideback = 709;
 twosided = true;
@@ -9855,8 +9837,8 @@ twosided = true;
 
 linedef
 {
-v1 = 419;
-v2 = 420;
+v1 = 413;
+v2 = 414;
 sidefront = 710;
 sideback = 711;
 twosided = true;
@@ -9864,8 +9846,8 @@ twosided = true;
 
 linedef
 {
-v1 = 420;
-v2 = 421;
+v1 = 414;
+v2 = 415;
 sidefront = 712;
 sideback = 713;
 twosided = true;
@@ -9873,8 +9855,8 @@ twosided = true;
 
 linedef
 {
-v1 = 421;
-v2 = 422;
+v1 = 415;
+v2 = 416;
 sidefront = 714;
 sideback = 715;
 twosided = true;
@@ -9882,8 +9864,8 @@ twosided = true;
 
 linedef
 {
-v1 = 422;
-v2 = 423;
+v1 = 416;
+v2 = 417;
 sidefront = 716;
 sideback = 717;
 twosided = true;
@@ -9891,8 +9873,8 @@ twosided = true;
 
 linedef
 {
-v1 = 423;
-v2 = 424;
+v1 = 417;
+v2 = 418;
 sidefront = 718;
 sideback = 719;
 twosided = true;
@@ -9900,8 +9882,8 @@ twosided = true;
 
 linedef
 {
-v1 = 424;
-v2 = 413;
+v1 = 418;
+v2 = 407;
 sidefront = 720;
 sideback = 721;
 twosided = true;
@@ -9909,8 +9891,8 @@ twosided = true;
 
 linedef
 {
-v1 = 425;
-v2 = 426;
+v1 = 419;
+v2 = 420;
 sidefront = 722;
 sideback = 723;
 twosided = true;
@@ -9918,8 +9900,8 @@ twosided = true;
 
 linedef
 {
-v1 = 427;
-v2 = 425;
+v1 = 421;
+v2 = 419;
 sidefront = 724;
 sideback = 725;
 twosided = true;
@@ -9927,8 +9909,8 @@ twosided = true;
 
 linedef
 {
-v1 = 428;
-v2 = 427;
+v1 = 422;
+v2 = 421;
 sidefront = 726;
 sideback = 727;
 twosided = true;
@@ -9936,8 +9918,8 @@ twosided = true;
 
 linedef
 {
-v1 = 429;
-v2 = 428;
+v1 = 423;
+v2 = 422;
 sidefront = 728;
 sideback = 729;
 twosided = true;
@@ -9945,8 +9927,8 @@ twosided = true;
 
 linedef
 {
-v1 = 430;
-v2 = 429;
+v1 = 424;
+v2 = 423;
 sidefront = 730;
 sideback = 731;
 twosided = true;
@@ -9954,8 +9936,8 @@ twosided = true;
 
 linedef
 {
-v1 = 431;
-v2 = 430;
+v1 = 425;
+v2 = 424;
 sidefront = 732;
 sideback = 733;
 twosided = true;
@@ -9963,8 +9945,8 @@ twosided = true;
 
 linedef
 {
-v1 = 432;
-v2 = 431;
+v1 = 426;
+v2 = 425;
 sidefront = 734;
 sideback = 735;
 twosided = true;
@@ -9972,8 +9954,8 @@ twosided = true;
 
 linedef
 {
-v1 = 433;
-v2 = 432;
+v1 = 427;
+v2 = 426;
 sidefront = 736;
 sideback = 737;
 twosided = true;
@@ -9981,8 +9963,8 @@ twosided = true;
 
 linedef
 {
-v1 = 434;
-v2 = 433;
+v1 = 428;
+v2 = 427;
 sidefront = 738;
 sideback = 739;
 twosided = true;
@@ -9990,8 +9972,8 @@ twosided = true;
 
 linedef
 {
-v1 = 426;
-v2 = 434;
+v1 = 420;
+v2 = 428;
 sidefront = 740;
 sideback = 741;
 twosided = true;
@@ -9999,8 +9981,8 @@ twosided = true;
 
 linedef
 {
-v1 = 435;
-v2 = 436;
+v1 = 429;
+v2 = 430;
 sidefront = 742;
 sideback = 743;
 twosided = true;
@@ -10008,8 +9990,8 @@ twosided = true;
 
 linedef
 {
-v1 = 437;
-v2 = 438;
+v1 = 431;
+v2 = 432;
 sidefront = 744;
 sideback = 745;
 twosided = true;
@@ -10017,8 +9999,8 @@ twosided = true;
 
 linedef
 {
-v1 = 438;
-v2 = 439;
+v1 = 432;
+v2 = 433;
 sidefront = 746;
 sideback = 747;
 twosided = true;
@@ -10026,8 +10008,8 @@ twosided = true;
 
 linedef
 {
-v1 = 439;
-v2 = 440;
+v1 = 433;
+v2 = 434;
 sidefront = 748;
 sideback = 749;
 twosided = true;
@@ -10035,8 +10017,8 @@ twosided = true;
 
 linedef
 {
-v1 = 440;
-v2 = 435;
+v1 = 434;
+v2 = 429;
 sidefront = 750;
 sideback = 751;
 twosided = true;
@@ -10044,8 +10026,8 @@ twosided = true;
 
 linedef
 {
-v1 = 441;
-v2 = 442;
+v1 = 435;
+v2 = 436;
 sidefront = 752;
 sideback = 753;
 twosided = true;
@@ -10053,8 +10035,8 @@ twosided = true;
 
 linedef
 {
-v1 = 443;
-v2 = 441;
+v1 = 437;
+v2 = 435;
 sidefront = 754;
 sideback = 755;
 twosided = true;
@@ -10062,8 +10044,8 @@ twosided = true;
 
 linedef
 {
-v1 = 444;
-v2 = 443;
+v1 = 438;
+v2 = 437;
 sidefront = 756;
 sideback = 757;
 twosided = true;
@@ -10071,8 +10053,8 @@ twosided = true;
 
 linedef
 {
-v1 = 445;
-v2 = 444;
+v1 = 439;
+v2 = 438;
 sidefront = 758;
 sideback = 759;
 twosided = true;
@@ -10080,8 +10062,8 @@ twosided = true;
 
 linedef
 {
-v1 = 446;
-v2 = 445;
+v1 = 440;
+v2 = 439;
 sidefront = 760;
 sideback = 761;
 twosided = true;
@@ -10089,8 +10071,8 @@ twosided = true;
 
 linedef
 {
-v1 = 447;
-v2 = 446;
+v1 = 441;
+v2 = 440;
 sidefront = 762;
 sideback = 763;
 twosided = true;
@@ -10098,8 +10080,8 @@ twosided = true;
 
 linedef
 {
-v1 = 448;
-v2 = 447;
+v1 = 442;
+v2 = 441;
 sidefront = 764;
 sideback = 765;
 twosided = true;
@@ -10107,8 +10089,8 @@ twosided = true;
 
 linedef
 {
-v1 = 449;
-v2 = 448;
+v1 = 443;
+v2 = 442;
 sidefront = 766;
 sideback = 767;
 twosided = true;
@@ -10116,8 +10098,8 @@ twosided = true;
 
 linedef
 {
-v1 = 450;
-v2 = 449;
+v1 = 444;
+v2 = 443;
 sidefront = 768;
 sideback = 769;
 twosided = true;
@@ -10125,8 +10107,8 @@ twosided = true;
 
 linedef
 {
-v1 = 451;
-v2 = 450;
+v1 = 445;
+v2 = 444;
 sidefront = 770;
 sideback = 771;
 twosided = true;
@@ -10134,8 +10116,8 @@ twosided = true;
 
 linedef
 {
-v1 = 452;
-v2 = 451;
+v1 = 446;
+v2 = 445;
 sidefront = 772;
 sideback = 773;
 twosided = true;
@@ -10143,8 +10125,8 @@ twosided = true;
 
 linedef
 {
-v1 = 442;
-v2 = 452;
+v1 = 436;
+v2 = 446;
 sidefront = 774;
 sideback = 775;
 twosided = true;
@@ -10152,8 +10134,8 @@ twosided = true;
 
 linedef
 {
-v1 = 436;
-v2 = 437;
+v1 = 430;
+v2 = 431;
 sidefront = 776;
 sideback = 777;
 twosided = true;
@@ -10162,7 +10144,7 @@ twosided = true;
 linedef
 {
 v1 = 131;
-v2 = 453;
+v2 = 447;
 sidefront = 778;
 sideback = 779;
 twosided = true;
@@ -10172,8 +10154,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 453;
-v2 = 454;
+v1 = 447;
+v2 = 448;
 sidefront = 780;
 sideback = 781;
 twosided = true;
@@ -10183,8 +10165,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 454;
-v2 = 455;
+v1 = 448;
+v2 = 449;
 sidefront = 782;
 sideback = 783;
 twosided = true;
@@ -10194,8 +10176,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 455;
-v2 = 456;
+v1 = 449;
+v2 = 450;
 sidefront = 784;
 sideback = 785;
 twosided = true;
@@ -10205,7 +10187,7 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 456;
+v1 = 450;
 v2 = 182;
 sidefront = 786;
 sideback = 787;
@@ -10216,7 +10198,7 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 457;
+v1 = 451;
 v2 = 124;
 sidefront = 788;
 sideback = 789;
@@ -10227,8 +10209,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 458;
-v2 = 457;
+v1 = 452;
+v2 = 451;
 sidefront = 790;
 sideback = 791;
 twosided = true;
@@ -10238,8 +10220,8 @@ dontpegbottom = true;
 
 linedef
 {
-v1 = 459;
-v2 = 458;
+v1 = 453;
+v2 = 452;
 sidefront = 792;
 sideback = 793;
 twosided = true;
@@ -10250,7 +10232,7 @@ dontpegbottom = true;
 linedef
 {
 v1 = 176;
-v2 = 459;
+v2 = 453;
 sidefront = 794;
 sideback = 795;
 twosided = true;
@@ -10260,9 +10242,33 @@ dontpegbottom = true;
 
 linedef
 {
+v1 = 454;
+v2 = 455;
+sidefront = 796;
+blocking = true;
+}
+
+linedef
+{
+v1 = 456;
+v2 = 457;
+sidefront = 797;
+blocking = true;
+}
+
+linedef
+{
+v1 = 458;
+v2 = 459;
+sidefront = 798;
+blocking = true;
+}
+
+linedef
+{
 v1 = 460;
 v2 = 461;
-sidefront = 796;
+sidefront = 799;
 blocking = true;
 }
 
@@ -10270,7 +10276,7 @@ linedef
 {
 v1 = 462;
 v2 = 463;
-sidefront = 797;
+sidefront = 800;
 blocking = true;
 }
 
@@ -10278,7 +10284,7 @@ linedef
 {
 v1 = 464;
 v2 = 465;
-sidefront = 798;
+sidefront = 801;
 blocking = true;
 }
 
@@ -10286,37 +10292,13 @@ linedef
 {
 v1 = 466;
 v2 = 467;
-sidefront = 799;
-blocking = true;
-}
-
-linedef
-{
-v1 = 468;
-v2 = 469;
-sidefront = 800;
-blocking = true;
-}
-
-linedef
-{
-v1 = 470;
-v2 = 471;
-sidefront = 801;
-blocking = true;
-}
-
-linedef
-{
-v1 = 472;
-v2 = 473;
 sidefront = 802;
 blocking = true;
 }
 
 linedef
 {
-v1 = 474;
+v1 = 468;
 v2 = 189;
 sidefront = 803;
 blocking = true;
@@ -10324,31 +10306,31 @@ blocking = true;
 
 linedef
 {
-v1 = 475;
-v2 = 476;
+v1 = 469;
+v2 = 470;
 sidefront = 804;
 blocking = true;
 }
 
 linedef
 {
-v1 = 477;
-v2 = 478;
+v1 = 471;
+v2 = 472;
 sidefront = 805;
 blocking = true;
 }
 
 linedef
 {
-v1 = 465;
-v2 = 466;
+v1 = 459;
+v2 = 460;
 sidefront = 806;
 blocking = true;
 }
 
 linedef
 {
-v1 = 466;
+v1 = 460;
 v2 = 223;
 sidefront = 807;
 sideback = 808;
@@ -10357,96 +10339,96 @@ twosided = true;
 
 linedef
 {
-v1 = 471;
-v2 = 479;
+v1 = 465;
+v2 = 473;
 sidefront = 809;
 blocking = true;
 }
 
 linedef
 {
-v1 = 479;
-v2 = 464;
+v1 = 473;
+v2 = 458;
 sidefront = 810;
 blocking = true;
 }
 
 linedef
 {
-v1 = 469;
-v2 = 480;
+v1 = 463;
+v2 = 474;
 sidefront = 811;
 blocking = true;
 }
 
 linedef
 {
-v1 = 480;
-v2 = 470;
+v1 = 474;
+v2 = 464;
 sidefront = 812;
 blocking = true;
 }
 
 linedef
 {
-v1 = 467;
-v2 = 481;
+v1 = 461;
+v2 = 475;
 sidefront = 813;
 blocking = true;
 }
 
 linedef
 {
-v1 = 481;
-v2 = 482;
+v1 = 475;
+v2 = 476;
 sidefront = 814;
 blocking = true;
 }
 
 linedef
 {
-v1 = 473;
-v2 = 483;
+v1 = 467;
+v2 = 477;
 sidefront = 815;
 blocking = true;
 }
 
 linedef
 {
-v1 = 483;
-v2 = 474;
+v1 = 477;
+v2 = 468;
 sidefront = 816;
 blocking = true;
 }
 
 linedef
 {
-v1 = 478;
-v2 = 484;
+v1 = 472;
+v2 = 478;
 sidefront = 817;
 blocking = true;
 }
 
 linedef
 {
-v1 = 484;
-v2 = 472;
+v1 = 478;
+v2 = 466;
 sidefront = 818;
 blocking = true;
 }
 
 linedef
 {
-v1 = 476;
-v2 = 485;
+v1 = 470;
+v2 = 479;
 sidefront = 819;
 blocking = true;
 }
 
 linedef
 {
-v1 = 485;
-v2 = 477;
+v1 = 479;
+v2 = 471;
 sidefront = 820;
 blocking = true;
 }
@@ -10454,23 +10436,23 @@ blocking = true;
 linedef
 {
 v1 = 189;
-v2 = 486;
+v2 = 480;
 sidefront = 821;
 blocking = true;
 }
 
 linedef
 {
-v1 = 486;
-v2 = 475;
+v1 = 480;
+v2 = 469;
 sidefront = 822;
 blocking = true;
 }
 
 linedef
 {
-v1 = 463;
-v2 = 487;
+v1 = 457;
+v2 = 481;
 sidefront = 823;
 sideback = 824;
 twosided = true;
@@ -10479,7 +10461,7 @@ twosided = true;
 linedef
 {
 v1 = 199;
-v2 = 488;
+v2 = 482;
 sidefront = 825;
 sideback = 826;
 twosided = true;
@@ -10487,24 +10469,24 @@ twosided = true;
 
 linedef
 {
-v1 = 489;
-v2 = 490;
+v1 = 483;
+v2 = 484;
 sidefront = 827;
 blocking = true;
 }
 
 linedef
 {
-v1 = 491;
-v2 = 492;
+v1 = 485;
+v2 = 486;
 sidefront = 828;
 blocking = true;
 }
 
 linedef
 {
-v1 = 472;
-v2 = 493;
+v1 = 466;
+v2 = 487;
 sidefront = 829;
 sideback = 830;
 twosided = true;
@@ -10520,104 +10502,104 @@ blocking = true;
 
 linedef
 {
-v1 = 492;
-v2 = 494;
+v1 = 486;
+v2 = 488;
 sidefront = 832;
 blocking = true;
 }
 
 linedef
 {
-v1 = 494;
-v2 = 495;
+v1 = 488;
+v2 = 489;
 sidefront = 833;
 blocking = true;
 }
 
 linedef
 {
-v1 = 490;
-v2 = 496;
+v1 = 484;
+v2 = 490;
 sidefront = 834;
 blocking = true;
 }
 
 linedef
 {
-v1 = 496;
-v2 = 491;
+v1 = 490;
+v2 = 485;
 sidefront = 835;
 blocking = true;
 }
 
 linedef
 {
-v1 = 497;
-v2 = 489;
+v1 = 491;
+v2 = 483;
 sidefront = 836;
 blocking = true;
 }
 
 linedef
 {
-v1 = 498;
-v2 = 497;
+v1 = 492;
+v2 = 491;
 sidefront = 837;
 blocking = true;
 }
 
 linedef
 {
-v1 = 499;
-v2 = 500;
+v1 = 493;
+v2 = 494;
 sidefront = 838;
 blocking = true;
 }
 
 linedef
 {
-v1 = 501;
-v2 = 499;
+v1 = 495;
+v2 = 493;
 sidefront = 839;
 blocking = true;
 }
 
 linedef
 {
-v1 = 463;
-v2 = 501;
+v1 = 457;
+v2 = 495;
 sidefront = 840;
 blocking = true;
 }
 
 linedef
 {
-v1 = 502;
-v2 = 498;
+v1 = 496;
+v2 = 492;
 sidefront = 841;
 blocking = true;
 }
 
 linedef
 {
-v1 = 500;
-v2 = 460;
+v1 = 494;
+v2 = 454;
 sidefront = 842;
 blocking = true;
 }
 
 linedef
 {
-v1 = 482;
-v2 = 468;
+v1 = 476;
+v2 = 462;
 sidefront = 843;
 blocking = true;
 }
 
 linedef
 {
-v1 = 463;
-v2 = 500;
+v1 = 457;
+v2 = 494;
 sidefront = 844;
 sideback = 845;
 twosided = true;
@@ -10628,7 +10610,7 @@ dontpegbottom = true;
 linedef
 {
 v1 = 211;
-v2 = 503;
+v2 = 497;
 sidefront = 846;
 sideback = 847;
 twosided = true;
@@ -10644,8 +10626,8 @@ blocking = true;
 
 linedef
 {
-v1 = 495;
-v2 = 504;
+v1 = 489;
+v2 = 498;
 sidefront = 849;
 sideback = 850;
 twosided = true;
@@ -10653,32 +10635,32 @@ twosided = true;
 
 linedef
 {
-v1 = 495;
-v2 = 505;
+v1 = 489;
+v2 = 499;
 sidefront = 851;
 blocking = true;
 }
 
 linedef
 {
-v1 = 505;
-v2 = 506;
+v1 = 499;
+v2 = 500;
 sidefront = 852;
 blocking = true;
 }
 
 linedef
 {
-v1 = 506;
-v2 = 502;
+v1 = 500;
+v2 = 496;
 sidefront = 853;
 blocking = true;
 }
 
 linedef
 {
-v1 = 461;
-v2 = 500;
+v1 = 455;
+v2 = 494;
 sidefront = 854;
 sideback = 855;
 twosided = true;
@@ -10686,7 +10668,7 @@ twosided = true;
 
 linedef
 {
-v1 = 461;
+v1 = 455;
 v2 = 223;
 sidefront = 856;
 blocking = true;
@@ -10695,23 +10677,23 @@ blocking = true;
 linedef
 {
 v1 = 188;
-v2 = 487;
+v2 = 481;
 sidefront = 857;
 blocking = true;
 }
 
 linedef
 {
-v1 = 487;
-v2 = 462;
+v1 = 481;
+v2 = 456;
 sidefront = 858;
 blocking = true;
 }
 
 linedef
 {
-v1 = 503;
-v2 = 507;
+v1 = 497;
+v2 = 501;
 sidefront = 859;
 sideback = 860;
 twosided = true;
@@ -10719,8 +10701,8 @@ twosided = true;
 
 linedef
 {
-v1 = 507;
-v2 = 504;
+v1 = 501;
+v2 = 498;
 sidefront = 861;
 sideback = 862;
 twosided = true;
@@ -10728,8 +10710,8 @@ twosided = true;
 
 linedef
 {
-v1 = 503;
-v2 = 468;
+v1 = 497;
+v2 = 462;
 sidefront = 863;
 sideback = 864;
 twosided = true;
@@ -10737,7 +10719,7 @@ twosided = true;
 
 linedef
 {
-v1 = 504;
+v1 = 498;
 v2 = 198;
 sidefront = 865;
 sideback = 866;
@@ -10746,8 +10728,8 @@ twosided = true;
 
 linedef
 {
-v1 = 488;
-v2 = 508;
+v1 = 482;
+v2 = 502;
 sidefront = 867;
 sideback = 868;
 twosided = true;
@@ -10755,8 +10737,8 @@ twosided = true;
 
 linedef
 {
-v1 = 508;
-v2 = 493;
+v1 = 502;
+v2 = 487;
 sidefront = 869;
 sideback = 870;
 twosided = true;
@@ -10764,8 +10746,8 @@ twosided = true;
 
 linedef
 {
-v1 = 488;
-v2 = 489;
+v1 = 482;
+v2 = 483;
 sidefront = 871;
 sideback = 872;
 twosided = true;
@@ -10773,442 +10755,10 @@ twosided = true;
 
 linedef
 {
-v1 = 493;
+v1 = 487;
 v2 = 178;
 sidefront = 873;
 sideback = 874;
-twosided = true;
-}
-
-linedef
-{
-v1 = 509;
-v2 = 510;
-sidefront = 875;
-sideback = 876;
-twosided = true;
-}
-
-linedef
-{
-v1 = 510;
-v2 = 511;
-sidefront = 877;
-sideback = 878;
-twosided = true;
-}
-
-linedef
-{
-v1 = 511;
-v2 = 512;
-sidefront = 879;
-sideback = 880;
-twosided = true;
-}
-
-linedef
-{
-v1 = 512;
-v2 = 513;
-sidefront = 881;
-sideback = 882;
-twosided = true;
-}
-
-linedef
-{
-v1 = 513;
-v2 = 514;
-sidefront = 883;
-sideback = 884;
-twosided = true;
-}
-
-linedef
-{
-v1 = 514;
-v2 = 515;
-sidefront = 885;
-sideback = 886;
-twosided = true;
-}
-
-linedef
-{
-v1 = 515;
-v2 = 516;
-sidefront = 887;
-sideback = 888;
-twosided = true;
-}
-
-linedef
-{
-v1 = 516;
-v2 = 517;
-sidefront = 889;
-sideback = 890;
-twosided = true;
-}
-
-linedef
-{
-v1 = 517;
-v2 = 518;
-sidefront = 891;
-sideback = 892;
-twosided = true;
-}
-
-linedef
-{
-v1 = 518;
-v2 = 519;
-sidefront = 893;
-sideback = 894;
-twosided = true;
-}
-
-linedef
-{
-v1 = 519;
-v2 = 520;
-sidefront = 895;
-sideback = 896;
-twosided = true;
-}
-
-linedef
-{
-v1 = 521;
-v2 = 401;
-sidefront = 897;
-sideback = 898;
-twosided = true;
-}
-
-linedef
-{
-v1 = 522;
-v2 = 523;
-sidefront = 899;
-sideback = 900;
-twosided = true;
-}
-
-linedef
-{
-v1 = 524;
-v2 = 522;
-sidefront = 901;
-sideback = 902;
-twosided = true;
-}
-
-linedef
-{
-v1 = 525;
-v2 = 524;
-sidefront = 903;
-sideback = 904;
-twosided = true;
-}
-
-linedef
-{
-v1 = 526;
-v2 = 525;
-sidefront = 905;
-sideback = 906;
-twosided = true;
-}
-
-linedef
-{
-v1 = 527;
-v2 = 526;
-sidefront = 907;
-sideback = 908;
-twosided = true;
-}
-
-linedef
-{
-v1 = 528;
-v2 = 529;
-sidefront = 909;
-sideback = 910;
-twosided = true;
-}
-
-linedef
-{
-v1 = 530;
-v2 = 528;
-sidefront = 911;
-sideback = 912;
-twosided = true;
-}
-
-linedef
-{
-v1 = 531;
-v2 = 402;
-sidefront = 913;
-sideback = 914;
-twosided = true;
-}
-
-linedef
-{
-v1 = 532;
-v2 = 531;
-sidefront = 915;
-sideback = 916;
-twosided = true;
-}
-
-linedef
-{
-v1 = 523;
-v2 = 532;
-sidefront = 917;
-sideback = 918;
-twosided = true;
-}
-
-linedef
-{
-v1 = 533;
-v2 = 534;
-sidefront = 919;
-sideback = 920;
-twosided = true;
-}
-
-linedef
-{
-v1 = 535;
-v2 = 536;
-sidefront = 921;
-sideback = 922;
-twosided = true;
-}
-
-linedef
-{
-v1 = 536;
-v2 = 537;
-sidefront = 923;
-sideback = 924;
-twosided = true;
-}
-
-linedef
-{
-v1 = 537;
-v2 = 538;
-sidefront = 925;
-sideback = 926;
-twosided = true;
-}
-
-linedef
-{
-v1 = 538;
-v2 = 533;
-sidefront = 927;
-sideback = 928;
-twosided = true;
-}
-
-linedef
-{
-v1 = 539;
-v2 = 540;
-sidefront = 929;
-sideback = 930;
-twosided = true;
-}
-
-linedef
-{
-v1 = 541;
-v2 = 539;
-sidefront = 931;
-sideback = 932;
-twosided = true;
-}
-
-linedef
-{
-v1 = 542;
-v2 = 541;
-sidefront = 933;
-sideback = 934;
-twosided = true;
-}
-
-linedef
-{
-v1 = 543;
-v2 = 542;
-sidefront = 935;
-sideback = 936;
-twosided = true;
-}
-
-linedef
-{
-v1 = 544;
-v2 = 543;
-sidefront = 937;
-sideback = 938;
-twosided = true;
-}
-
-linedef
-{
-v1 = 545;
-v2 = 544;
-sidefront = 939;
-sideback = 940;
-twosided = true;
-}
-
-linedef
-{
-v1 = 546;
-v2 = 545;
-sidefront = 941;
-sideback = 942;
-twosided = true;
-}
-
-linedef
-{
-v1 = 547;
-v2 = 546;
-sidefront = 943;
-sideback = 944;
-twosided = true;
-}
-
-linedef
-{
-v1 = 548;
-v2 = 547;
-sidefront = 945;
-sideback = 946;
-twosided = true;
-}
-
-linedef
-{
-v1 = 549;
-v2 = 548;
-sidefront = 947;
-sideback = 948;
-twosided = true;
-}
-
-linedef
-{
-v1 = 550;
-v2 = 549;
-sidefront = 949;
-sideback = 950;
-twosided = true;
-}
-
-linedef
-{
-v1 = 540;
-v2 = 550;
-sidefront = 951;
-sideback = 952;
-twosided = true;
-}
-
-linedef
-{
-v1 = 534;
-v2 = 535;
-sidefront = 953;
-sideback = 954;
-twosided = true;
-}
-
-linedef
-{
-v1 = 520;
-v2 = 397;
-sidefront = 955;
-sideback = 956;
-twosided = true;
-}
-
-linedef
-{
-v1 = 520;
-v2 = 521;
-sidefront = 957;
-sideback = 958;
-twosided = true;
-}
-
-linedef
-{
-v1 = 401;
-v2 = 520;
-sidefront = 959;
-sideback = 960;
-twosided = true;
-}
-
-linedef
-{
-v1 = 401;
-v2 = 509;
-sidefront = 961;
-sideback = 962;
-twosided = true;
-}
-
-linedef
-{
-v1 = 529;
-v2 = 527;
-sidefront = 963;
-sideback = 964;
-twosided = true;
-}
-
-linedef
-{
-v1 = 529;
-v2 = 37;
-sidefront = 965;
-sideback = 966;
-twosided = true;
-}
-
-linedef
-{
-v1 = 402;
-v2 = 529;
-sidefront = 967;
-sideback = 968;
-twosided = true;
-}
-
-linedef
-{
-v1 = 402;
-v2 = 530;
-sidefront = 969;
-sideback = 970;
 twosided = true;
 }
 
@@ -11596,7 +11146,7 @@ offsety = 24;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 }
 
 sidedef
@@ -11971,7 +11521,7 @@ offsetx_mid = -1.000000;
 
 sidedef
 {
-sector = 100;
+sector = 43;
 }
 
 sidedef
@@ -11987,7 +11537,7 @@ sector = 82;
 
 sidedef
 {
-sector = 102;
+sector = 66;
 }
 
 sidedef
@@ -12092,7 +11642,7 @@ scalex_mid = -1.000000;
 
 sidedef
 {
-sector = 99;
+sector = 37;
 }
 
 sidedef
@@ -12184,7 +11734,7 @@ scalex_mid = -1.000000;
 
 sidedef
 {
-sector = 101;
+sector = 80;
 }
 
 sidedef
@@ -12535,7 +12085,7 @@ sector = 20;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
@@ -12548,13 +12098,13 @@ offsetx_mid = 8.000000;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC27";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC27";
 offsetx = 32;
 offsetx_mid = -13.000000;
@@ -12562,21 +12112,21 @@ offsetx_mid = -13.000000;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC27";
 offsetx_mid = -45.000000;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC27";
 offsetx_mid = 32.000000;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC27";
 offsetx_mid = 13.000000;
 }
@@ -12593,31 +12143,31 @@ sector = 25;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC34";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 13;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 offsetx = 21;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC27";
 offsetx = 13;
 }
@@ -12655,20 +12205,20 @@ offsetx_mid = 16.000000;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 offsetx = 24;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC34";
 }
 
@@ -12679,7 +12229,7 @@ sector = 38;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
@@ -12832,7 +12382,7 @@ texturemiddle = "DOORSTOP";
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
@@ -13055,7 +12605,7 @@ sector = 50;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
@@ -13249,7 +12799,7 @@ offsety = 16;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 texturemiddle = "DRDC27";
 offsetx = -27;
 offsety = 32;
@@ -13276,7 +12826,7 @@ offsetx_mid = 32.000000;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 texturemiddle = "DRDC27";
 offsetx = -59;
 offsety = 32;
@@ -13298,7 +12848,7 @@ texturemiddle = "DRDC10";
 
 sidedef
 {
-sector = 108;
+sector = 1;
 texturemiddle = "DRDC42";
 }
 
@@ -13359,7 +12909,7 @@ offsetx_mid = 16.000000;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 }
 
 sidedef
@@ -13414,7 +12964,7 @@ offsetx_mid = 32.000000;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 texturemiddle = "DRDC42";
 scalex_mid = -1.000000;
 }
@@ -13508,12 +13058,13 @@ scalex_mid = -1.000000;
 
 sidedef
 {
-sector = 49;
+sector = 97;
 }
 
 sidedef
 {
-sector = 23;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -13572,7 +13123,7 @@ sector = 14;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 texturemiddle = "DRDC29";
 }
 
@@ -14045,82 +13596,91 @@ offsetx = 92;
 
 sidedef
 {
-sector = 75;
+sector = 95;
 }
 
 sidedef
 {
-sector = 78;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 1;
 }
 
 sidedef
 {
-sector = 78;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 1;
+offsetx = 6;
 }
 
 sidedef
 {
-sector = 78;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 95;
 }
 
 sidedef
 {
-sector = 78;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 95;
 }
 
 sidedef
 {
-sector = 66;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 95;
 }
 
 sidedef
 {
-sector = 66;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 95;
 }
 
 sidedef
 {
-sector = 66;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 75;
+sector = 95;
 }
 
 sidedef
 {
-sector = 66;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14178,7 +13738,24 @@ offsetx_mid = 1.000000;
 
 sidedef
 {
-sector = 49;
+sector = 1;
+}
+
+sidedef
+{
+sector = 95;
+offsetx = 136;
+}
+
+sidedef
+{
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14188,37 +13765,20 @@ sector = 65;
 
 sidedef
 {
-sector = 49;
+sector = 23;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 1;
 }
 
 sidedef
 {
 sector = 65;
-}
-
-sidedef
-{
-sector = 49;
-}
-
-sidedef
-{
-sector = 65;
-}
-
-sidedef
-{
-sector = 49;
-}
-
-sidedef
-{
-sector = 65;
-}
-
-sidedef
-{
-sector = 49;
+texturebottom = "DRDC27";
+offsetx = 2;
 }
 
 sidedef
@@ -14228,52 +13788,63 @@ sector = 23;
 
 sidedef
 {
-sector = 49;
+sector = 65;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 95;
 }
 
 sidedef
 {
 sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 49;
+sector = 95;
+}
+
+sidedef
+{
+sector = 97;
+offsetx = 134;
+}
+
+sidedef
+{
+sector = 95;
 }
 
 sidedef
 {
 sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 25;
+sector = 95;
 }
 
 sidedef
 {
-sector = 79;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 25;
+sector = 1;
 }
 
 sidedef
 {
-sector = 79;
-}
-
-sidedef
-{
-sector = 25;
-}
-
-sidedef
-{
-sector = 79;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14285,207 +13856,134 @@ offsetx_mid = -37.000000;
 
 sidedef
 {
-sector = 68;
+sector = 95;
 }
 
 sidedef
 {
-sector = 80;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 68;
+sector = 95;
 }
 
 sidedef
 {
-sector = 80;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 68;
+sector = 97;
 }
 
 sidedef
 {
-sector = 80;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 68;
+sector = 95;
 }
 
 sidedef
 {
-sector = 80;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 62;
+sector = 95;
 }
 
 sidedef
 {
-sector = 37;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 62;
+sector = 95;
 }
 
 sidedef
 {
-sector = 37;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 62;
+sector = 95;
 }
 
 sidedef
 {
-sector = 37;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 62;
+sector = 95;
 }
 
 sidedef
 {
-sector = 37;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 108;
+sector = 95;
 }
 
 sidedef
 {
-sector = 43;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 108;
+sector = 95;
 }
 
 sidedef
 {
-sector = 43;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 108;
+sector = 95;
 }
 
 sidedef
 {
-sector = 43;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 108;
+sector = 95;
 }
 
 sidedef
 {
-sector = 43;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 3;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 3;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 3;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 3;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 82;
-}
-
-sidedef
-{
-sector = 2;
-}
-
-sidedef
-{
-sector = 104;
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14495,7 +13993,8 @@ sector = 1;
 
 sidedef
 {
-sector = 104;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14505,7 +14004,8 @@ sector = 1;
 
 sidedef
 {
-sector = 104;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14515,7 +14015,8 @@ sector = 1;
 
 sidedef
 {
-sector = 104;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -14525,52 +14026,151 @@ sector = 1;
 
 sidedef
 {
-sector = 25;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 0;
+sector = 1;
 }
 
 sidedef
 {
-sector = 25;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 0;
+sector = 1;
 }
 
 sidedef
 {
-sector = 25;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 0;
+sector = 1;
 }
 
 sidedef
 {
-sector = 25;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 0;
+sector = 1;
 }
 
 sidedef
 {
-sector = 25;
+sector = 65;
+texturebottom = "DRDC27";
 }
 
 sidedef
 {
-sector = 79;
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 1;
+}
+
+sidedef
+{
+sector = 65;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 1;
+}
+
+sidedef
+{
+sector = 65;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 1;
+}
+
+sidedef
+{
+sector = 65;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
+}
+
+sidedef
+{
+sector = 95;
+}
+
+sidedef
+{
+sector = 23;
+texturebottom = "DRDC27";
 }
 
 sidedef
@@ -15606,7 +15206,7 @@ sector = 95;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 offsetx = 134;
 }
 
@@ -15642,7 +15242,7 @@ sector = 91;
 
 sidedef
 {
-sector = 108;
+sector = 1;
 texturemiddle = "CGR_CRSR";
 offsetx = 40;
 }
@@ -15728,21 +15328,21 @@ scalex_mid = 1.400000;
 
 sidedef
 {
-sector = 99;
+sector = 37;
 texturemiddle = "DRDC46";
 offsetx = 19;
 }
 
 sidedef
 {
-sector = 99;
+sector = 37;
 texturemiddle = "DRDC46";
 offsetx = 42;
 }
 
 sidedef
 {
-sector = 99;
+sector = 37;
 texturemiddle = "PANBORD1";
 offsetx = 5;
 offsety = -7;
@@ -15750,20 +15350,20 @@ offsety = -7;
 
 sidedef
 {
-sector = 100;
+sector = 43;
 texturemiddle = "DRDC46";
 offsetx = 32;
 }
 
 sidedef
 {
-sector = 100;
+sector = 43;
 texturemiddle = "DRDC46";
 }
 
 sidedef
 {
-sector = 100;
+sector = 43;
 texturemiddle = "PANBORD1";
 offsetx = 5;
 offsety = -7;
@@ -15771,13 +15371,13 @@ offsety = -7;
 
 sidedef
 {
-sector = 102;
+sector = 66;
 texturemiddle = "DRDC48";
 }
 
 sidedef
 {
-sector = 102;
+sector = 66;
 texturemiddle = "PANBORD1";
 offsetx = 5;
 offsety = -7;
@@ -15785,21 +15385,21 @@ offsety = -7;
 
 sidedef
 {
-sector = 101;
+sector = 80;
 texturemiddle = "DRDC48";
 offsetx = 19;
 }
 
 sidedef
 {
-sector = 102;
+sector = 66;
 texturemiddle = "DRDC48";
 offsetx = 32;
 }
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15810,7 +15410,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15821,7 +15421,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15832,7 +15432,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15843,7 +15443,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15854,7 +15454,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15865,7 +15465,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15876,7 +15476,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15887,7 +15487,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15898,7 +15498,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15909,7 +15509,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15920,7 +15520,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15931,7 +15531,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15942,7 +15542,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15953,7 +15553,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15964,7 +15564,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15975,7 +15575,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15986,7 +15586,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -15997,7 +15597,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16008,7 +15608,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16019,7 +15619,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16030,7 +15630,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16041,7 +15641,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16053,7 +15653,7 @@ offsetx = 5;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16064,7 +15664,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16075,7 +15675,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16086,7 +15686,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16097,7 +15697,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16108,7 +15708,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16119,7 +15719,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16130,7 +15730,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16141,7 +15741,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16152,7 +15752,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16163,7 +15763,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16174,7 +15774,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16185,7 +15785,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16196,7 +15796,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16207,7 +15807,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16218,7 +15818,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 }
 
@@ -16229,7 +15829,7 @@ sector = 82;
 
 sidedef
 {
-sector = 103;
+sector = 78;
 texturebottom = "DRDC27";
 offsetx = 5;
 }
@@ -16241,7 +15841,7 @@ sector = 82;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = -35;
@@ -16254,7 +15854,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = -24;
@@ -16267,7 +15867,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 }
@@ -16279,7 +15879,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = 34;
@@ -16292,7 +15892,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = 26;
@@ -16305,7 +15905,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = 5;
@@ -16318,7 +15918,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = 45;
@@ -16331,7 +15931,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 }
@@ -16343,7 +15943,7 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturetop = "DRDC47A";
 texturebottom = "DRDC47A";
 offsetx = -8;
@@ -16356,299 +15956,299 @@ sector = 34;
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 offsetx = 63;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 offsetx = 23;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = 12;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -28;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -12;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -36;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -24;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -12;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -32;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 21;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 offsetx = 13;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = 4;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = 8;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -8;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -4;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -24;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -20;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -32;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -28;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = 4;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -40;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -8;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -4;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -20;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -16;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 offsetx = 28;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 offsetx = 100;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -20;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -8;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 offsetx = 96;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 texturemiddle = "DRDC28";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -4;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -16;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "PIPES";
 offsetx = -12;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -24;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -28;
 }
 
 sidedef
 {
-sector = 105;
+sector = 79;
 texturemiddle = "DRDC28";
 offsetx = 51;
 }
 
 sidedef
 {
-sector = 105;
+sector = 79;
 texturemiddle = "LITE5";
 }
 
 sidedef
 {
-sector = 105;
+sector = 79;
 texturemiddle = "DRDC28";
 offsetx = 31;
 offsety = 8;
@@ -16656,28 +16256,28 @@ offsety = 8;
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -32;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 offsetx = 55;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -16;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturetop = "DRDC28";
 texturebottom = "DRDC28";
 offsetx = 31;
@@ -16685,716 +16285,173 @@ offsetx = 31;
 
 sidedef
 {
-sector = 105;
+sector = 79;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 offsetx = 96;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 texturemiddle = "DRDC28";
 offsetx = 40;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 offsetx = 92;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = 4;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -40;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "PIPES";
 offsetx = -36;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 28;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "DRDC28";
 offsetx = 79;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 texturemiddle = "DRDC28";
 offsetx = 5;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 texturemiddle = "DRDC28";
 offsetx = 16;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 96;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 100;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 107;
+sector = 2;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 92;
 }
 
 sidedef
 {
-sector = 106;
+sector = 3;
 }
 
 sidedef
 {
-sector = 104;
+sector = 0;
 offsetx = 96;
 }
 
 sidedef
 {
-sector = 107;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 97;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-offsetx = 6;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 97;
-offsetx = 134;
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 97;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 109;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 95;
-}
-
-sidedef
-{
-sector = 95;
-offsetx = 136;
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sidedef
-{
-sector = 109;
-texturebottom = "DRDC27";
-}
-
-sidedef
-{
-sector = 110;
-}
-
-sidedef
-{
-sector = 110;
-texturebottom = "DRDC27";
-offsetx = 2;
-}
-
-sidedef
-{
-sector = 108;
-}
-
-sector
-{
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 168;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
+sector = 2;
 }
 
 sector
@@ -17411,11 +16468,11 @@ ypanningfloor = -30.000000;
 
 sector
 {
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
+texturefloor = "absflat1";
+textureceiling = "absflat1";
 heightfloor = -32;
 heightceiling = 32;
-lightlevel = 168;
+lightlevel = 144;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -17428,11 +16485,24 @@ texturefloor = "ABSFLAT1";
 textureceiling = "ABSFLAT1";
 heightfloor = -32;
 heightceiling = 32;
-lightlevel = 168;
+lightlevel = 196;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
+ypanningfloor = -30.000000;
+}
+
+sector
+{
+texturefloor = "ABSFLAT1";
+textureceiling = "ABSFLAT1";
+heightfloor = -32;
+heightceiling = 32;
+lightlevel = 232;
+rotationfloor = 270.000000;
+xpanningceiling = 16.000000;
+xpanningfloor = -37.000000;
+ypanningfloor = -30.000000;
 }
 
 sector
@@ -17723,10 +16793,11 @@ ypanningfloor = -16.000000;
 
 sector
 {
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightceiling = 64;
-lightlevel = 168;
+texturefloor = "CEILING";
+textureceiling = "ABSFLAT1";
+heightfloor = -34;
+heightceiling = 32;
+lightlevel = 176;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -17925,7 +16996,7 @@ texturefloor = "absflat1";
 textureceiling = "absflat1";
 heightfloor = -32;
 heightceiling = 32;
-lightlevel = 168;
+lightlevel = 184;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -18010,11 +17081,11 @@ yscalefloor = 8.000000;
 
 sector
 {
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
+texturefloor = "absflat1";
+textureceiling = "absflat1";
 heightfloor = -32;
 heightceiling = 32;
-lightlevel = 168;
+lightlevel = 184;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -18324,10 +17395,11 @@ ypanningfloor = -16.000000;
 
 sector
 {
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightceiling = 64;
-lightlevel = 168;
+texturefloor = "CEILING";
+textureceiling = "ABSFLAT1";
+heightfloor = -34;
+heightceiling = 32;
+lightlevel = 136;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -18336,11 +17408,11 @@ ypanningfloor = -16.000000;
 
 sector
 {
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
+texturefloor = "absflat1";
+textureceiling = "absflat1";
 heightfloor = -32;
 heightceiling = 32;
-lightlevel = 168;
+lightlevel = 184;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -18502,11 +17574,10 @@ ypanningfloor = -16.000000;
 
 sector
 {
-texturefloor = "ABSFLAT1";
+texturefloor = "CEILING";
 textureceiling = "ABSFLAT1";
-heightfloor = -32;
+heightfloor = -34;
 heightceiling = 32;
-lightlevel = 168;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
@@ -18517,19 +17588,19 @@ sector
 {
 texturefloor = "ABSFLAT1";
 textureceiling = "ABSFLAT1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 168;
+heightfloor = -24;
+heightceiling = 24;
+lightlevel = 256;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
+ypanningfloor = -30.000000;
 }
 
 sector
 {
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
+texturefloor = "absflat1";
+textureceiling = "absflat1";
 heightfloor = -32;
 heightceiling = 32;
 lightlevel = 168;
@@ -18760,160 +17831,6 @@ textureceiling = "absflat1";
 heightfloor = -32;
 heightceiling = 40;
 lightlevel = 208;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 184;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 184;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 168;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 184;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "CEILING";
-textureceiling = "ABSFLAT1";
-heightfloor = -34;
-heightceiling = 32;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
-heightfloor = -32;
-heightceiling = 32;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -30.000000;
-}
-
-sector
-{
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
-heightfloor = -24;
-heightceiling = 24;
-lightlevel = 256;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -30.000000;
-}
-
-sector
-{
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 232;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -30.000000;
-}
-
-sector
-{
-texturefloor = "ABSFLAT1";
-textureceiling = "ABSFLAT1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 196;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -30.000000;
-}
-
-sector
-{
-texturefloor = "absflat1";
-textureceiling = "absflat1";
-heightfloor = -32;
-heightceiling = 32;
-lightlevel = 144;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "CEILING";
-textureceiling = "ABSFLAT1";
-heightfloor = -34;
-heightceiling = 32;
-lightlevel = 176;
-rotationfloor = 270.000000;
-xpanningceiling = 16.000000;
-xpanningfloor = -37.000000;
-ypanningfloor = -16.000000;
-}
-
-sector
-{
-texturefloor = "CEILING";
-textureceiling = "ABSFLAT1";
-heightfloor = -34;
-heightceiling = 32;
-lightlevel = 136;
 rotationfloor = 270.000000;
 xpanningceiling = 16.000000;
 xpanningfloor = -37.000000;
