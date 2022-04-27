@@ -58,7 +58,7 @@ float voronoi2d(const in vec2 point) {
 
 /* End of libs */
 
-const float fireSpeed = 2.5;
+const float fireSpeed = 3.0;
 
 const vec2 perlinNoiseDirection = vec2(0.0f, 0.5f);
 const float perlinNoiseScale = 7.5f;
@@ -83,25 +83,36 @@ vec2 getFireNoise(in vec2 texcoord) {
 const vec3 fireLumCoeff = vec3(0.2126f,0.7152f,0.0722f);
 const float fireNoiseCoeff = 0.3f; // 0 - texture, 1 - noise
 const float fireTemperature = 1.0f; // 0.1 - red, 0.5 - orange, 1 - white (look at fire_colorRamp)
+const vec3 fireColorCorrection = vec3(3.0, 2.0, 2.0);
+
+float fade(float x) {
+    if (x >= 5) return 1.0 - x;
+    return x;
+}
 
 vec4 getFire(in vec2 texcoord) {
     vec2 fireCoords = vec2(texcoord.x + 0.5, texcoord.y);
-    vec2 maskCoords = vec2(texcoord.x + 0.2, texcoord.y/*  - 0.1 */);
+    vec2 maskCoords = vec2(texcoord.x, texcoord.y - 0.1);
 
     vec2 fireNoise = getFireNoise(fireCoords);
     float fireShape = fireNoise.x;
     float fireShade = fireNoise.y;
 
-    vec2 finalFireShape = mix(maskCoords, vec2(fireShape), fireNoiseCoeff);
+    vec2 finalFireShape = mix(maskCoords, vec2(maskCoords.x, fireShape), fireNoiseCoeff);
     vec4 baseTexture = getTexel(finalFireShape);
     // Shade central part of the fire
-    baseTexture.rgb *= mix(0.5, 1., fireShade);
+    // baseTexture.rgb *= mix(0.5, 1., fireShade);
 
     float fireColorRampIndex = baseTexture.r * fireTemperature; // dot(baseTexture.rgb, fireLumCoeff);
 
-    vec4 colorRamp = texture(tex_colorRamp, vec2(fireColorRampIndex, 0.0f));
+    vec4 colorRamp = texture(tex_colorRamp, vec2(fireColorRampIndex, 0.5f));
     
-    vec4 fire = baseTexture * (colorRamp * 1.5);
+    vec4 fire = baseTexture * (colorRamp * vec4(fireColorCorrection, 1));
+
+    fire = mix(fire, getTexel(maskCoords), 0.5);
+
+    // Cut top fire artifacts caused by maskCoords Y-shifting
+    fire.a -= pow(1.0 - (maskCoords.y + 0.22), 2);
 
     return fire;
 }
