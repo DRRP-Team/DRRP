@@ -123,6 +123,7 @@ OptionMenu "Shaders" {
     Option "$DRRP_D_MENU_SHADERS_CINEMATIC", "drrp_enable_cinematic_shader", "ONOFF"
     Option "$DRRP_D_MENU_SHADERS_LUT", "drrp_enable_lut_shader", "ONOFF"
     Option "$DRRP_D_MENU_SHADERS_FIRE", "drrp_enable_fire_shader", "ONOFF"
+    Option "$DRRP_D_MENU_SHADERS_TEMPERATURE", "drrp_enable_temperature_shader", "ONOFF"
     Command "$DRRP_D_MENU_SHADERS_APPLY", "pukename updateshaders 1"
 }
 

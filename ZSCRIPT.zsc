@@ -59,12 +59,13 @@ class DRRPPlayer: DoomPlayer {
 
         lowHealthIndicatorTimer = -1;
         lowHealthIndicatorEnabled = false;
+
+        Shader.SetEnabled(player, "HeatHaze", true);
+
         Super.BeginPlay();
     }
 
-    override void PlayerThink() {
-        Super.PlayerThink();
-
+    void healthIndicatorTick() {
         if ( !( level.maptime % 35 ) ) // Update the variable every second automatically.
             lowHealthIndicatorEnabled = CVar.GetCVar( "drrp_enable_low_health_indicator", player ).GetBool();
 
@@ -83,6 +84,59 @@ class DRRPPlayer: DoomPlayer {
                 lowHealthIndicatorTimer = -1;
             }
         }
+    }
+
+    const TEMPERATURE_MIN_DISTANCE = 128;
+
+    float getTemperature() {
+        float maxTemperature = 0.0;
+
+        ThinkerIterator lavaIterator = ThinkerIterator.Create("DRRPLava");
+
+        for (DRRPLava lava; lava = DRRPLava(lavaIterator.Next());) {
+            double distance = Distance3D(lava);
+
+            if (distance > TEMPERATURE_MIN_DISTANCE) continue;
+
+            float temperature = 1.0 - (distance / TEMPERATURE_MIN_DISTANCE);
+
+            if (maxTemperature < temperature) maxTemperature = temperature;
+        }
+
+        ThinkerIterator fireIterator = ThinkerIterator.Create("DRRPFire");
+
+        for (DRRPFire fire; fire = DRRPFire(fireIterator.Next());) {
+            double distance = Distance3D(fire);
+
+            if (distance > TEMPERATURE_MIN_DISTANCE) continue;
+
+            float temperature = (1.0 - (distance / TEMPERATURE_MIN_DISTANCE)) / 2;
+
+            if (maxTemperature < temperature) maxTemperature = temperature;
+        }
+
+        return maxTemperature;
+    }
+
+    void heatShaderTick() {
+        float temperature = getTemperature();
+
+        // Console.Printf("Temperature: "..temperature);
+
+        Shader.SetEnabled(player, "HeatHaze", true);
+        Shader.SetUniform1f(player, "HeatHaze", "Temperature", temperature);
+        A_SetBlend("AA5500", temperature, 5);
+    }
+
+    override void PlayerThink() {
+        Super.PlayerThink();
+
+        healthIndicatorTick();
+
+        if (CVar.FindCVar("drrp_enable_temperature_shader").GetBool())
+            heatShaderTick();
+        else
+            Shader.SetEnabled(player, "HeatHaze", false);
     } // of override void PlayerThink() {
 
 
