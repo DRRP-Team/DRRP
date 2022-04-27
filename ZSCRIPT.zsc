@@ -94,7 +94,7 @@ class DRRPPlayer: DoomPlayer {
         ThinkerIterator lavaIterator = ThinkerIterator.Create("DRRPLava");
 
         for (DRRPLava lava; lava = DRRPLava(lavaIterator.Next());) {
-            double distance = Distance3D(lava);
+            double distance = Distance2D(lava);
 
             if (distance > TEMPERATURE_MIN_DISTANCE) continue;
 
@@ -106,7 +106,7 @@ class DRRPPlayer: DoomPlayer {
         ThinkerIterator fireIterator = ThinkerIterator.Create("DRRPFire");
 
         for (DRRPFire fire; fire = DRRPFire(fireIterator.Next());) {
-            double distance = Distance3D(fire);
+            double distance = Distance2D(fire);
 
             if (distance > TEMPERATURE_MIN_DISTANCE) continue;
 
