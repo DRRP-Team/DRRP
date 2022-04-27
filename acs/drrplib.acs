@@ -119,16 +119,37 @@ function str getAimedActor(void) {
     return GetActorClass(tid);
 }
 
+enum {
+    DLG_DEFAULT     = 0,
+    DLG_TERMINAL    = 1,
+    DLG_EVIL        = 2,
+    DLG_HINT        = 3, /* Unused */
+    DLG_MARTIANS    = 4,
+    DLG_LEVELUP     = 5,
+    DLG_MARINE      = 6,
+    DLG_GUERARD     = 7,
+    DLG_JENSEN      = 8,
+    DLG_SCIENTIST   = 9,
+    DLG_CIVILIAN    = 10
+};
+
 function str getAimedActorDialogueType(void) {
 
     str class = getAimedActor();
     if(GetCVar("drrp_debug_mode")) print(s:class);
 
-    /* if (!StriCmp(class, "Civilian")) return 2; */
-    if (!StriCmp(class, "DRRPComputer")) return 1;
+    if (!StriCmp(class, "DRRPComputer")) return DLG_TERMINAL;
+    if (!StriCmp(class, "DrGuerard")) return DLG_GUERARD;
     /* if (!StriCmp(class, "DRRPPlayer")) return -1; */
+    if (!StriCmp(class, "Civilian")) return DLG_CIVILIAN;
+    if (!StriCmp(class, "Civilian1")) return DLG_CIVILIAN;
+    if (!StriCmp(class, "Civilian2")) return DLG_CIVILIAN;
+    if (!StriCmp(class, "Marine")) return DLG_MARINE;
+    if (!StriCmp(class, "Marine1")) return DLG_MARINE;
+    if (!StriCmp(class, "Scientist")) return DLG_SCIENTIST;
+    if (!StriCmp(class, "Scientist1")) return DLG_SCIENTIST;
 
-    return 0;
+    return DLG_DEFAULT;
 }
 
 function int getThingSpecialArg(int tid, int spec, int arg) {
