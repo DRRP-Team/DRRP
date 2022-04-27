@@ -133,7 +133,10 @@ class DRRPPlayer: DoomPlayer {
 
         healthIndicatorTick();
 
-        heatShaderTick();
+        if (CVar.FindCVar("drrp_enable_temperature_shader").GetBool())
+            heatShaderTick();
+        else
+            Shader.SetEnabled(player, "HeatHaze", false);
     } // of override void PlayerThink() {
 
 
