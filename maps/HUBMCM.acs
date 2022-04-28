@@ -1,7 +1,9 @@
 #include "zcommon.acs"
 
-const int CRATES_SPOT = 18;
-const int CRATES_ID   = 19;
+const int CRATES_SPOT   = 18;
+const int CRATES_ID     = 19;
+const int CRATES_SHARDS = 14523;
+const int DROP_ID       = 14522;
 
 // Coordinate offset is: (960;576)
 
@@ -79,21 +81,28 @@ Script "onCinematicShadersLoad" (bool forced) {
     if(GetCVar("drrp_enable_lut_shader")) ScriptCall("ShaderControllerActor", "SetEnabled", 0, "HUB", true);
 }
 
+/* DRRPInformatorActor */
+Script "getString" (int id) {
+    SetResultValue(getString(id));
+}
+
 Script 666 ENTER {
     SetHudSize(640, 400, 0);
     SetFont("bigfont");
     HudMessage(l:"DRRP_B_ID57";HUDMSG_FADEOUT, 0, CR_RED, 320.4, 190.0, 3.5, 1.0);
     SetFont("smallfont");
-    HudMessage(s:"By \cgStormCatcher.77"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
+    HudMessage(s:"By \cgMorthimer McMare"; HUDMSG_FADEOUT, 0, CR_WHITE, 320.4, 205.0, 3.5, 1.0);
     ACS_Execute(1000, 0);
     ACS_Execute(1001, 0);
-    ACS_Execute(3005, 0); // WIP level
+    //ACS_Execute(3005, 0); // WIP level
     ACS_Execute(3004, 0); // Give automap
     current_stage = stage();
 }
 
 Script 667 RETURN {
     Thing_Remove(CRATES_ID);
+    Thing_Remove(CRATES_SHARDS);
+    Thing_Remove(DROP_ID);
     SpawnSpot("DRRPCrate", CRATES_SPOT, CRATES_ID);
     ScriptCall("ConversationController", "SetArgument", -465, 0); // Reset the doctor
     if (current_stage != stage()) { // Got a new keycard

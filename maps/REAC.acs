@@ -1,3 +1,4 @@
+#import "drrplib.acs"
 #include "zcommon.acs"
 
 bool RBShader = false;
@@ -59,7 +60,7 @@ Script 1 (int id)  { // Computers handler
                 ACS_NamedExecuteWait("window", 0, getString(8)); // ( USE IF_VAR( 2 ) ) SHOW_MONOLOG STR=8
                 break;
             } else if(lavacomputercounter == 0) {
-                ACS_NamedExecuteWait("window", 0, getString(6), 4);
+                ACS_NamedExecuteWait("window", 0, getString(6), DLG_MARTIANS);
                 lavacomputercounter++;
                 break;
             }
@@ -255,7 +256,10 @@ script 104 (void){ // Kronos
     ACS_NamedExecuteWait("drpgquake", 0, 100, 8);
     //
     AmbientSound(localizeSound("bet/destroy"), 200);
-    ACS_NamedExecuteWait("window", 0, getString(21), 2);
+
+    Delay(2 * SECONDS);
+
+    ACS_NamedExecuteWait("window", 0, getString(21), DLG_EVIL);
     //
     AmbientSound("voice/laugh", 200);
     Thing_Remove(10);
@@ -284,9 +288,9 @@ Script 105 (void) { // On Kronos Die
 script 332 (void) { // Lava trigger
     if(lavacomputercounter != 2) Terminate;
     lavacomputercounter++;
-    ACS_NamedExecuteWait("window", 0, getString(9), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
+    ACS_NamedExecuteWait("window", 0, getString(9), DLG_MARTIANS); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=9
     Delay(10); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SLEEP MSEC=300
-    ACS_NamedExecuteWait("window", 0, getString(10), 4); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
+    ACS_NamedExecuteWait("window", 0, getString(10), DLG_MARTIANS); // ( ENTER_FROM( WEST SOUTH EAST NORTH ) IF_VAR( 1 ) ) SHOW_MONOLOG_WITH_SOUND STR=10
     SetMusic("D_EVIL");
     FadeRange(255, 128, 0, 1.0, 0, 0, 0, 0.0, 5.0);
     //lava

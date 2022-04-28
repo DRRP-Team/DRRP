@@ -186,12 +186,12 @@ function int getLinesOnScreen(void) {
 
 function int getColorByType(int type) {
     switch (type) {
-        case 1: return CR_GREEN; /* Terminal */
-        case 2: return CR_RED; /* Evil */
-        case 3: return CR_YELLOW; /* Hint */
-        case 4: return CR_ORANGE; /* Martians */
-        case 5: return CR_YELLOW; /* Level Up */
-        case 0: /* Dialogue */
+        case DLG_TERMINAL:  return CR_GREEN;
+        case DLG_EVIL:      return CR_RED;
+        case DLG_MARTIANS:  return CR_ORANGE;
+        case DLG_LEVELUP:   return CR_YELLOW;
+        case DLG_MARINE:    return CR_GRAY;
+        case DLG_DEFAULT:
         default:
             return CR_WHITE;
     }
@@ -199,14 +199,30 @@ function int getColorByType(int type) {
 
 function int getBgColorByType(int type) {
     switch (type) {
-        case 1: return CR_DARKGREEN; /* Terminal */
-        case 2: return CR_DARKRED; /* Evil */
-        case 3: return CR_BLACK; /* Hint */
-        case 4: return CR_ORANGE; /* Martians */
-        case 5: return CR_BLACK; /* Level Up */
-        case 0: /* Dialogue */
+        case DLG_TERMINAL: return CR_DARKGREEN;
+        case DLG_EVIL: return CR_DARKRED;
+        case DLG_MARTIANS: return CR_ORANGE;
+        case DLG_LEVELUP: return CR_BLACK;
+        case DLG_DEFAULT:
         default:
             return CR_WHITE;
+    }
+}
+
+function str getBeepByType(int type) {
+    switch (type) {
+        case DLG_EVIL:      return "beep/1";
+        case DLG_TERMINAL:  return "beep/3";
+        case DLG_SCIENTIST: return "beep/4";
+        case DLG_GUERARD:   return "beep/5";
+        case DLG_JENSEN:    return "beep/6";
+        case DLG_CIVILIAN:  return "beep/7";
+        case DLG_MARTIANS:  return "beep/8";
+        case DLG_MARINE:    return "beep/9";
+        case DLG_DEFAULT:
+        case DLG_LEVELUP:
+        default:
+            return "misc/chat2";
     }
 }
 
@@ -291,8 +307,10 @@ const int BEEP_SPEED_DIV = 2;
 Script "beeping" (int len, int type) {
     if (!GetCVar("drrp_enable_beep")) Terminate;
 
+    str sound = getBeepByType(type);
+
     for (int i = 0; i < len / BEEP_SPEED_DIV; i++) {
-        AmbientSound("misc/chat2", GetCVar("drrp_beep_volume"));
+        AmbientSound(sound, GetCVar("drrp_beep_volume"));
         Delay(BEEP_SPEED_DIV);
     }
 }

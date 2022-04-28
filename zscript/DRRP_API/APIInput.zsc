@@ -11,6 +11,7 @@ class PlayerInputHandler: EventHandler {
 
     override void OnRegister() {
         self.extendedInput = false;
+        Super.OnRegister();
     }
 
     void UseExtendedInput(bool mode) {
@@ -20,16 +21,18 @@ class PlayerInputHandler: EventHandler {
 
     override void NetworkProcess(ConsoleEvent e) {
         if (e.Name == "ExtendedInput") UseExtendedInput(e.Args[0]);
+        Super.NetworkProcess( e );
     }
 
     override bool UiProcess(UiEvent e) {
         if ( e.Type == e.Type_KeyDown ) DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar);
-        return false;
+        return Super.UiProcess( e );
     }
 
     override bool InputProcess( InputEvent e ) {
-        if (self.extendedInput) return false;
-        if ( e.Type == e.Type_KeyDown ) DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar, e.KeyScan);
+        if ( !self.extendedInput && e.Type == e.Type_KeyDown )
+            DRRPUtil.ACS_NamedExecute("onInput", e.KeyChar, e.KeyScan);
+
         return false;
     } // of override bool InputProcess( InputEvent e ) {}
 

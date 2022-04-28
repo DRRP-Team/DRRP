@@ -9,6 +9,12 @@
 You WANT to fold code by indent...
 */
 
+
+Material Sprite FLAMA0 {
+    Shader "shaders/fire.fp"
+    Texture tex_colorRamp "textures/shadermaps/fire.png"
+}
+
 Material Texture ceil01 {
     BrightMap "materials/emission/ceil01.png"
 }

@@ -264,8 +264,8 @@ function void ShopDrawWindowInfo(void) {
 
     /* DrawTextCenter(item.name, SUB_ID + 1, 510, 280, CR_WHITE); */
     DrawTextRight(StrParam(i:item.price, s:" UAC"), SUB_ID + 4, 620, 280, CR_YELLOW);
-    SetHudSize(150, 150);
-    DrawImageCenterScale(item.image, SUB_ID + 5, 120, 98);
+    SetHudSize(200, 150);
+    DrawImageCenterScale(item.image, SUB_ID + 5, 160, 97);
     DrawTextRight(StrParam(s:"x", i:item.amount), SUB_ID + 3, 600, 315, CR_WHITE);
     int cantIBuy = ShopCantIBuyIt(item);
     if (cantIBuy == 0) DrawTextCenter(l("DRRP_SHOP_PRESS_ENTER"), SUB_ID + 2, 510, 340, CR_YELLOW);
