@@ -8,14 +8,14 @@
 GameInfo {
     PlayerClasses    = "DoomRPGPlayer"
 
-    EventHandlers = "NotebookHandler",
-                    "InfobarHandler", 
-                    "CompassHandler",
-                    "PlayerInputHandler",
+    AddEventHandlers = "NotebookHandler",
+                       "InfobarHandler", 
+                       "CompassHandler",
+                       "PlayerInputHandler",
 
-                    "RPGSystemHandler",
-                    "DRRPActorsHandler",
-                    "LevelStatsNotifierHandler",
+                       "RPGSystemHandler",
+                       "DRRPActorsHandler",
+                       "LevelStatsNotifierHandler",
 
-                    "ShaderControllerActor"
+                       "ShaderControllerActor"
 }
