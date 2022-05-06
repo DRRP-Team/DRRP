@@ -26,6 +26,7 @@ class RPGSystemHandler: EventHandler {
 
     override void OnRegister() {
         SetOrder( 670 );
+		Super.OnRegister();
     }
 
 

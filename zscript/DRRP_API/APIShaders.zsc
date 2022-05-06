@@ -10,13 +10,15 @@ class ShaderControllerActor: StaticEventHandler {
     int WorldReloadedTick;
 
     override void WorldLoaded( WorldEvent e ) {
-        if ( e.IsSaveGame ) {
+        if ( e.IsSaveGame )
             WorldReloadedTick = 1;
-        }
+
+        Super.WorldLoaded( e );
     } // of override void WorldLoaded( WorldEvent e ) {
 
     override void PlayerEntered( PlayerEvent e ) {
         WorldReloadedTick = 1;
+        Super.PlayerEntered( e );
     } // of override void PlayerEntered( PlayerEvent e ) {
 
     override void WorldTick() {
@@ -37,6 +39,8 @@ class ShaderControllerActor: StaticEventHandler {
 
             } // if ( !WorldReloadedTick ) {
         } // if ( WorldReloadedTick ) {
+
+        Super.WorldTick();
     } // of override void WorldTick() {
 
 
@@ -82,6 +86,8 @@ class ShaderControllerActor: StaticEventHandler {
         Shader.SetUniform1f(players, "HeatHaze", "timer", gametic + e.FracTic);
         Shader.SetUniform1f(players, "FilmGrain", "timer", gametic + e.FracTic);
         Shader.SetUniform1f(players, "XHUBGrain", "timer", gametic + e.FracTic);
+
+        Super.RenderOverlay( e );
     }
 
 }

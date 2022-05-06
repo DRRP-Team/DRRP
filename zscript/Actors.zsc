@@ -92,6 +92,7 @@ class DRRPActorsHandler: EventHandler {
 
     override void OnRegister() {
         SetOrder( 2174 );
+		Super.OnRegister();
     }
 
     override void WorldThingDamaged( WorldEvent e ) {

@@ -38,6 +38,8 @@ class NotebookHandler: EventHandler {
     override void NetworkProcess( ConsoleEvent e ) {
         if ( e.name ~== "killnotebook" )
             players[ e.player ].mo.A_TakeInventory( "NotebookTooltipItem", 0 );
+
+        Super.NetworkProcess( e );
     } // of override void NetworkProcess( ConsoleEvent e ) {
 
 }
