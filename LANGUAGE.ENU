@@ -714,7 +714,7 @@
     DRRP_INTRO_10 = "Move out, Marine!"; // translated by amon
     DRRP_INTRO_11 = "Use axe to chop\ndown jammed\ndoors."; // redacted by amon
     DRRP_INTRO_12 = "You'll need the\nAxe to chop down\njammed doors."; // redacted by amon
-    DRRP_INTRO_13 = "You can switch\nbetween the axe\nand other weapons\nby accessing your\ninventory menu,\nor cycle through\nyour weapons by\npressing the *\nand 7 keys. Use\nthe axe to chop\ndown jammed doors\nor zombies; it's\neffective for\nclose combat."; // redacted by amon
+    DRRP_INTRO_13 = "You can switch\nbetween weapons by\nscrolling the mouse\nwheel or by pressing\nthe keys 0 to 9. Use the\nax to open jammed\ndoors, and it is also\neffective against\nzombies."; // redacted by amon
     DRRP_INTRO_14 = "[Email]\nTo: D. Whitlark\nFrom: J. Raphael\nThe yellow key-\ncard is in a room\nin the southwest\ncorner of this\nsector.\n-Jah";
     DRRP_INTRO_15 = "[Email]\nTo: J. Raphael\nFrom: D. Whitlark\nI checked but\ncouldn't find it.\nWhat gives?\n-David";
     DRRP_INTRO_16 = "[Email]\nTo: D. Whitlark\nFrom: J. Raphael\nSorry, I meant\nsoutheast corner.\n-Jah";
@@ -1112,7 +1112,7 @@
     DRRP_SEC3_68 = "[Email]\nTo: H. Hancock\nFrom: P. Marino\nWell, some weird\nthings have been\nhappening lately.\nI did some check-\ning into that\nsector and it\nturns out there's\nsome kind of\nlockdown - high-\nest clearances\nonly. The thing\nis, I've been un-\nable to find out\nwho authorized\nit. -Paul";
     DRRP_SEC3_69 = "[Email]\nTo: P. Marino\nFrom: H. Hancock\nSo... what should\nwe do? Should we\nreport this to\nsomeone?\n-Hugh";
     DRRP_SEC3_70 = "[Email]\nTo: H. Hancock\nFrom: P. Marino\nReport what? It's\nover our heads!\nOh, btw, I found\na green keycard\nin this sector.\nIt's in a secure\ncloset at the\nnorth end of this\nsector if anyone\ncomes looking.\n-Paul";
-    DRRP_SEC3_71 = "Secure Closet"; // Added for DRRP
+    DRRP_SEC3_71 = "Secure Closet."; // Added for DRRP
     DRRP_SEC4_0 = "Sector 4";
     DRRP_SEC4_1 = "/junction.bsp";
     DRRP_SEC4_2 = "Enter Junction";
@@ -1196,7 +1196,7 @@
     DRRP_SEC5_8 = "[Email]\nTo: F. Eckle\nFrom: G. Smith\nI've set up a new\npasscode on Door\n09 that exits\nthis area. You'll\nneed to access\nthe computer lo-\ncated in a room\nwest of this po-\nsition to open\nthe door.\n-Gary";
     DRRP_SEC5_9 = "[Email]\nTo: G. Smith\nFrom: F. Eckle\nHey genius, you\nforgot to send\nthe new passcode.\n-Francis";
     DRRP_SEC5_10 = "Door 09 passcode\nis 675...";
-    DRRP_SEC5_11 = "[Email]\nTo: F. Eckle\nFrom: G. Smith\nOh right. The\ncode is 675...\nuh, I can't re-\nmember the last\nnumber. Sorry.\nI'll reset it to\nsomething I can\nremember first\nthing on Monday.\n-Gary";
+    DRRP_SEC5_11 = "[Email]\nTo: F. Eckle\nFrom: G. Smith\nOh right. The\ncode is 675...\nuh, I can't re-\nmember the last\nnumber. Sorry.\nI'll try to remember\nher by Monday.\n-Gary";
     DRRP_SEC5_12 = "No more email.";
     DRRP_SEC5_13 = "ERR^R! @A#\n!$_# ^%^";
     DRRP_SEC5_14 = "MEMO%Y FAUL+\n02x0FF012 ^$#^";
@@ -1299,11 +1299,11 @@
     DRRP_SEC5_111 = "[Dr. Jensen]\nI'm pretty sure\nthe Secure Closet\ncode is 648. I\nwatched them set\nthe code after\nthey detained me.";
     DRRP_SEC5_112 = "Meet back up with\nJensen at the\ncomputer.";
     DRRP_SEC5_113 = "Keep the keycard\nand rocket\nlauncher. You'll\nneed them more\nthan me. I've\nfound some more\ninformation on\nthis computer...";
-    DRRP_SEC5_114 = "There's recent\ncommunication\nfrom Dr. Guerard\nto Mr. Nadira.\nNadira is ordered\nto meet up with\nGuerard in the\nPower Control\nRoom in Sector 6.\nHe mentioned\nsomething about\n\"big plans\"...";
+    DRRP_SEC5_114 = "[Dr. Jensen]\nThere's recent\ncommunication\nfrom Dr. Guerard\nto Mr. Nadira.\nNadira is ordered\nto meet up with\nGuerard in the\nPower Control\nRoom in Sector 6.\nHe mentioned\nsomething about\n\"big plans\"...";
     DRRP_SEC5_115 = "Exit to the west\nof the prison.";
-    DRRP_SEC5_116 = "I think Guerard\nhas been using\nNadira's mind\ncontrol equipment\nto influence peo-\nple at UAC ad-\nministration and\nit looks like\nboth may be work-\ning for Kronos.";
-    DRRP_SEC5_117 = "Ok, I got the\ndoor out of here\nunlocked. Get\nback to Junction\nthrough the exit\nwest of the\nprison. We'll\nmeet up in Sector\n6. We must find\nout what Guerard\nis up to.";
-    DRRP_SEC5_118 = "Proceed to Junc-\ntion through the\nexit west of the\nprison. I'll meet\nup with you in\nthe next sector.";
+    DRRP_SEC5_116 = "[Dr. Jensen]\nI think Guerard\nhas been using\nNadira's mind\ncontrol equipment\nto influence peo-\nple at UAC ad-\nministration and\nit looks like\nboth may be work-\ning for Kronos.";
+    DRRP_SEC5_117 = "[Dr. Jensen]\nOk, I got the\ndoor out of here\nunlocked. Get\nback to Junction\nthrough the exit\nwest of the\nprison. We'll\nmeet up in Sector\n6. We must find\nout what Guerard\nis up to.";
+    DRRP_SEC5_118 = "[Dr. Jensen]\nProceed to Junc-\ntion through the\nexit west of the\nprison. I'll meet\nup with you in\nthe next sector.";
     DRRP_SEC5_119 = "[Email]\nTo: F. Eckle\nFrom: Col. Graff\nBe on the lookout\nfor an ex-\nemployee seen\nsnooping around\nthe base. His\nname is Dr. Jen-\nsen. Detain him\nif he's found.\n-Col. Graff";
     DRRP_SEC5_120 = "[Email]\nTo: Col. Graff\nFrom: F. Eckle\nWe found Jensen\nin the data cen-\nter trying to ac-\ncess email logs.\nHe's being held\nin cell 42-A in\nthe Sector 5\nBrig. He was\narmed with a roc-\nket launcher and\nhad a blue key-\ncard. What's all\nthis about?\n-Francis";
     DRRP_SEC5_121 = "[Email]\nTo: F. Eckle\nFrom: Col. Graff\nExcellent work!\nJensen was fired.\nWe found a bunch\nof stolen equip-\nment in a make-\nshift laboratory\nin Sector 4 and\nwe suspect Jen-\nsen. The esteemed\nDr. Guerard will\nneed to have a\n\"chat\" with Jen-\nsen later to in-\nvestigate the\nmatter. What's\nthe passcode to\nthe cell?\n-Col. Graff";
