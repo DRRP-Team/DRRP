@@ -125,7 +125,6 @@ class DRRPPlayer: DoomPlayer {
 
         Shader.SetEnabled(player, "HeatHaze", true);
         Shader.SetUniform1f(player, "HeatHaze", "Temperature", temperature);
-        A_SetBlend("AA5500", temperature, 5);
     }
 
     override void PlayerThink() {
