@@ -22,5 +22,5 @@ void main() {
     FragColor.r = texture(InputTexture, (TexCoord.xy - vec2(.001)) + heatoffset.xy * .001 * Offset * (1. + Temperature)).r;
     FragColor.b = texture(InputTexture, (TexCoord.xy - vec2(.001)) + heatoffset.xy * .001 * Offset * (1. - Temperature)).b;
 
-    FragColor.rgb = mix(FragColor.rgb, heatColor, Temperature);
+    FragColor.rgb = mix(FragColor.rgb, heatColor, min(Temperature, 0.75));
 }
