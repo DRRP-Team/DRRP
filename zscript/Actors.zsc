@@ -352,7 +352,7 @@ class DRRPDamageDoll: DRRPPlayer {
 
     override void Tick() {
         Super.Tick();
-        if ( 0x4000 - health )
+        if ( 0x4000 - health && target )
             console.printf( "(Doll): taked " 
                             .. TEXTCOLOR_YELLOW .. 0x4000 - health .. TEXTCOLOR_NORMAL 
                             .. " HP by " .. ( ( target == NULL )
