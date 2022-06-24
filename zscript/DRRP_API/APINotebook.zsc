@@ -12,6 +12,8 @@ class NotebookItem: Inventory {
 class NotebookTooltipItem: Inventory {}
 
 class NotebookHandler: EventHandler {
+    ui int timer;
+    ui bool isNotebookMessageShown;
 
     /* Writes a notebook tooltip message. */
     override void RenderOverlay( RenderEvent e ) {
@@ -27,7 +29,15 @@ class NotebookHandler: EventHandler {
             String ss = StringTable.Localize("$DRRP_D_NOTEBOOK_TIP_PART1") 
                     .. s .. StringTable.Localize("$DRRP_D_NOTEBOOK_TIP_PART2");
 
-            Screen.drawText(font, Font.CR_GOLD, Screen.GetWidth() - font.StringWidth(ss), 0, ss);
+            self.timer++;
+
+            if (self.timer >= 10) {
+                self.timer = 0;
+                self.isNotebookMessageShown = !self.isNotebookMessageShown;
+            }
+
+            if (self.isNotebookMessageShown)
+                Screen.drawText(font, Font.CR_GOLD, Screen.GetWidth() - font.StringWidth(ss), 0, ss);
         }
 
         Super.RenderOverlay( e );
