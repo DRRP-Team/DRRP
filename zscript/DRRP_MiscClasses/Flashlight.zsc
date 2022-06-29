@@ -20,7 +20,7 @@ class Util {
     }
 
     static int round (double num) {
-        int result = (num - floor(num) > 0.5) ? ceil(num) : floor(num);
+        int result = (num - floor(num) > 0.5) ? int( ceil(num) ) : int( floor(num) );
 
         return result;
     }

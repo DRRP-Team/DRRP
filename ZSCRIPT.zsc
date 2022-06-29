@@ -263,7 +263,7 @@ class DRRPPlayer: DoomPlayer {
             max = min;
 
         //int damageMultiplier = DRRPUtil.Power( GetFeature( RPG_Strength ), 0.6 ) * 0.33 + 0.67;
-        int damageMultiplier = GetFeature( RPG_Strength ) * 0.33 + 0.67;
+        int damageMultiplier = int( GetFeature( RPG_Strength ) * 0.33 + 0.67 );
 
         return Random( min + damageMultiplier, max + damageMultiplier );
     }
@@ -274,7 +274,7 @@ class DRRPPlayer: DoomPlayer {
         //if ( DebugCVar && DebugCVar.GetBool() )
         //    console.printf( GetClassName() .. "::getRPGDefenceDamage(). Incoming damage: " .. damage .. "; DamageType: " .. mod .. "." );
 
-        damage *= DRRPUtil.Power( DRRPUtil.e * 0.378, -( 1 + playerStats[ RPG_Defence ] ) ) + 0.053;
+        damage = int( damage * DRRPUtil.Power( DRRPUtil.e * 0.378, -( 1 + playerStats[ RPG_Defence ] ) ) + 0.053 );
 
         if ( self.player.ReadyWeapon ) {
             String ReadyWeapon = "";

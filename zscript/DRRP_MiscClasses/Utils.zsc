@@ -33,9 +33,9 @@ class DRRPUtil {
 
     static play Actor SummonDRRPParticle( Actor spawner, name spawnee, double splatXY, double splatZ ) {
         Actor particle = Actor.Spawn( spawnee, (
-                                spawner.pos.x + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
-                                spawner.pos.y + Random( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
-                                spawner.pos.z + Random( splatZ * 0.05, splatZ * 0.95 ) ) );
+                                spawner.pos.x + FRandom( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
+                                spawner.pos.y + FRandom( splatXY * 0.5, splatXY * 1.5 ) * RandomPick( -1, 1 ),
+                                spawner.pos.z + FRandom( splatZ * 0.05, splatZ * 0.95 ) ) );
 
         particle.Vel = ( ( spawner.pos.x - particle.pos.x ) / velocityParticlesDelay,
                          ( spawner.pos.y - particle.pos.y ) / velocityParticlesDelay,

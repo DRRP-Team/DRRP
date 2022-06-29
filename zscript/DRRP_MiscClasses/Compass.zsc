@@ -25,7 +25,7 @@ class CompassHandler: EventHandler {
             // About "Players[ i ].mo.Angle - 85". Alas, so strange angle is a
             //visual crutch for the compass positioneering, with it the string
             //displayed exactly to the cardinal points.
-            CompassStrPos = floor( ( Players[ i ].mo.Angle - 85 ) % 360 / 360.0 * VisualStr.Length() ) + VisualStr.Length();
+            CompassStrPos = int( floor( ( Players[ i ].mo.Angle - 85.0 ) % 360 / 360.0 * VisualStr.Length() ) ) + VisualStr.Length();
             VisualStr = VisualStr .. VisualStr .. VisualStr.Left( StrVisibleLen / 2 );
 
             // (North in DRRP) = (Top on the automap) = (90 degree in ZDoom).
